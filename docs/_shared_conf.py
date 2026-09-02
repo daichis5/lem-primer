@@ -30,6 +30,12 @@ html_static_path = []
 # resolve to (ASCE, Emerald, NRC Research Press, OUP) answer 403 to automated
 # requests. Checking them only produces noise that hides real breakage, so skip
 # the resolver and let linkcheck report on the links that genuinely can rot.
-linkcheck_ignore = [r"https://doi\.org/.*"]
+linkcheck_ignore = [
+    r"https://doi\.org/.*",
+    # lem-lab is a private repository: GitHub answers 404 to unauthenticated
+    # requests, so CI cannot verify this link. Remove this entry if it becomes
+    # public.
+    r"https://github\.com/daichis5/lem-lab",
+]
 linkcheck_retries = 2
 linkcheck_timeout = 30
