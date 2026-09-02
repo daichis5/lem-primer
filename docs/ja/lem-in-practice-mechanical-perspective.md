@@ -85,8 +85,7 @@ series: "3 of 3"
 
 $$
 z=s(x)
-\tag{1}
-$$
+$$ (eq-practice-surface-2d)
 
 とする．これを有限個のスライス底面へ分割できれば，各底面について次を定義できる．
 
@@ -105,8 +104,7 @@ $$
 $$
 \boldsymbol{R}_{b,i}
 =-N_i\boldsymbol{n}_i-T_i\boldsymbol{m}_i
-\tag{2}
-$$
+$$ (eq-practice-base-force)
 
 と書ける．Mohr–Coulomb強度と共通安全率を用いれば，底面せん断力の大きさは
 
@@ -116,8 +114,7 @@ T_i
 \frac{
 c_i'A_i+(N_i-U_i)\tan\phi_i'
 }{F_s}
-\tag{3}
-$$
+$$ (eq-practice-base-shear)
 
 となる．
 
@@ -127,16 +124,14 @@ $$
 \sum_i \boldsymbol{R}_{b,i}
 +\sum \boldsymbol{F}_{\mathrm{external}}
 =\boldsymbol{0},
-\tag{4}
-$$
+$$ (eq-practice-force-balance)
 
 $$
 \sum_i
 \boldsymbol{r}_i\times\boldsymbol{R}_{b,i}
 +\sum \boldsymbol{M}_{\mathrm{external}}
 =\boldsymbol{0}.
-\tag{5}
-$$
+$$ (eq-practice-moment-balance)
 
 この意味で，**安全率を計算するという操作そのものは，円弧に限定されない**．
 
@@ -167,8 +162,7 @@ $$
 
 $$
 M_O(N_i)=0.
-\tag{6}
-$$
+$$ (eq-practice-circle-normal-moment)
 
 したがって，円弧中心まわりのモーメント式では，未知の底面法線力が直接現れない．
 
@@ -178,8 +172,7 @@ $$
 
 $$
 M_O(T_i)=R\,T_i
-\tag{7}
-$$
+$$ (eq-practice-circle-shear-moment)
 
 と書ける．これにより，全体モーメント式が簡潔になる．
 
@@ -197,7 +190,7 @@ $$
 
 ### 3. 楕円・複合面・任意形状へ拡張すると何が変わるか
 
-円弧以外の面でも式(2)～(5)は計算できる．しかし，円弧がもっていた特別な性質は一般に失われる．
+円弧以外の面でも式 {eq}`eq-practice-base-force` ～{eq}`eq-practice-moment-balance` は計算できる．しかし，円弧がもっていた特別な性質は一般に失われる．
 
 #### 3.1 底面法線力が共通点を通らない
 
@@ -205,8 +198,7 @@ $$
 
 $$
 M_O(N_i)\neq 0
-\tag{8}
-$$
+$$ (eq-practice-general-normal-moment)
 
 となる．
 
@@ -223,8 +215,7 @@ M_O(T_i)
 \left(
 \boldsymbol{r}_i\times\left(-T_i\boldsymbol{m}_i\right)
 \right)
-\tag{9}
-$$
+$$ (eq-practice-general-shear-moment)
 
 のように個別に計算する必要がある．円弧の共通半径$R$による単純化は使えない．
 
@@ -244,8 +235,7 @@ $$
 F_s^{\mathrm{Bishop}}
 \lessgtr
 F_s^{\mathrm{Spencer/MP}}
-\tag{10}
-$$
+$$ (eq-practice-method-difference)
 
 のどちらになるかを一律には決められない．簡便法が常に安全側，または常に危険側になるとは限らない．
 
@@ -329,8 +319,7 @@ $$
 -\boldsymbol{a}\times\sum\boldsymbol{F},
 \qquad
 \boldsymbol{a}=\overrightarrow{OO'}
-\tag{11}
-$$
+$$ (eq-practice-moment-transfer)
 
 であり，$\sum\boldsymbol{F}=\boldsymbol{0}$なら結果は変わらない．
 
@@ -338,8 +327,7 @@ $$
 
 $$
 \sum\boldsymbol{F}\neq\boldsymbol{0}
-\tag{12}
-$$
+$$ (eq-practice-unbalanced-force)
 
 となり得る．その場合，モーメント中心を変えるとモーメント残差も変化する．
 
@@ -382,8 +370,7 @@ $$
 \frac{
 c_i'A_i+(N_i-U_i)\tan\phi_i'
 }{F_s}
-\tag{13}
-$$
+$$ (eq-practice-shear-magnitude)
 
 が決めるのはせん断力の大きさだけであり，方向は決めない．
 
@@ -393,8 +380,7 @@ $$
 \boldsymbol{T}_i
 =
 -\|\boldsymbol{T}_i\|\boldsymbol{m}_i
-\tag{14}
-$$
+$$ (eq-practice-shear-vector)
 
 を構成する単位方向ベクトル$\boldsymbol{m}_i$が必要になる．
 
@@ -414,8 +400,7 @@ $$
 \begin{bmatrix}
 \cos\theta & \sin\theta & 0
 \end{bmatrix}^{\mathsf{T}}.
-\tag{15}
-$$
+$$ (eq-practice-global-direction)
 
 対称斜面では対称面から候補が決まるが，非対称斜面，横方向荷重，複雑な地層では自明ではない．
 
@@ -431,15 +416,13 @@ $$
 -\boldsymbol{n}_i\boldsymbol{n}_i^{\mathsf{T}}
 \right)
 \boldsymbol{d},
-\tag{16}
-$$
+$$ (eq-practice-projection)
 
 $$
 \boldsymbol{m}_i
 =
 \frac{\boldsymbol{p}_i}{\|\boldsymbol{p}_i\|}
-\tag{17}
-$$
+$$ (eq-practice-local-direction)
 
 として局所方向を得る．したがって，全体すべり方向が一つでも，曲面上の局所せん断方向はカラムごとに異なる．
 
@@ -485,8 +468,7 @@ $$
 \end{cases}
 \longrightarrow
 N_i,\ \text{カラム間力},\ F_s.
-\tag{18}
-$$
+$$ (eq-practice-direction-chain)
 
 したがって，全体すべり方向が不適切なら，抵抗力を誤った方向へ配分し，安全率を過大または過小に評価し得る．
 
@@ -590,8 +572,7 @@ $$
 
 $$
 N_i-U_i<0
-\tag{19}
-$$
+$$ (eq-practice-negative-normal)
 
 となる底面で，摩擦抵抗をそのまま負値として扱うか，接触を切るか，張力亀裂を設定するかで結果が変わる．土が引張力を伝達しないモデルなら，接触条件に整合する処理が必要である．
 
@@ -664,8 +645,7 @@ $$
 &\text{どのつり合いと力学的意味が維持されているか}
 \end{aligned}
 }
-\tag{20}
-$$
+$$ (eq-practice-summary)
 
 LEMを実際に利用するときに重要なのは，安全率の桁数ではなく，**すべり面形状，内力仮定，モーメント軸，すべり方向，数値処理が，想定する破壊機構と整合しているかを説明できること**である．
 

@@ -9,11 +9,11 @@ series: "1 of 3"
 ## 応力，Mohr–Coulomb 則，$N_i$・$T_i$，つり合い式
 
 > **LEM理解シリーズ 1/3**  
-> この資料は，連続体力学の応力テンソルから，すべり面上の表面力（traction），法線・せん断成分，有効応力，Mohr–Coulomb強度を経て，LEMで用いる底面合力$N_i$，$U_i$，$T_i$へ到達する流れを理解するための資料である．
+> この資料では，連続体力学の応力テンソルから，すべり面上の表面力（traction），法線・せん断成分，有効応力，Mohr–Coulomb強度を経て，LEMで用いる底面合力$N_i$，$U_i$，$T_i$へ到達する流れを理解する．
 
-## まず全体像
+## LEMの全体像（概要）
 
-斜面が崩れるかどうかを判定するとき，LEMは次の場面を考える．
+斜面が崩れるかどうかを判定するとき，LEMは次のように斜面安定問題を定義する．
 
 ```{figure} ./figures/fig_c00_slope_overview.svg
 :name: fig-c00-slope-overview
@@ -22,24 +22,39 @@ series: "1 of 3"
 LEMが対象とする場面．斜面の中にすべり面を仮定し，その上の土塊をスライスへ分割して，各底面に働く力を扱う．
 ```
 
-- 斜面の中に，崩れる可能性のある曲面（**すべり面**）を1つ仮定する．
-- すべり面より上の土塊（**すべり土塊**）を，鉛直な細片（**スライス**，3次元では**カラム**）へ分割する．
-- 各スライスの底面には，土塊を支える**法線力** $N_i$ と，すべりに抵抗する**せん断力** $T_i$ が働く．
+1. 斜面の中に，崩れる可能性のある曲面（**すべり面**）を1つ仮定する．
+2. すべり面より上の土塊（**すべり土塊**）を，鉛直な細片（2次元では**スライス**，3次元では**カラム**）へ分割する．
+3. 各スライスの底面にはすべり面下の地盤から受ける**表面力**が作用する．これを面に垂直な**法線力** $N_i$ と，面に沿う**せん断力** $T_i$ に分解して扱う．
 
-安全率 $F_s$ は，すべりに抵抗する力（**抵抗力**）と，すべらせようとする力（**駆動力**）の比として定義される．
+この設定のもとで，安全率 $F_s$ は，その底面が発揮できる最大のせん断力（**せん断強度**）と，現在の状態で実際に動員されているせん断力の比として定義する．
+
+$$
+F_s=\frac{\text{発揮できる最大せん断力}}{\text{動員されているせん断力}}
+$$ (eq-start-fs-definition)
+
+$F_s$ は，仮定したすべり面についての安定性の指標である．例えば $F_s=2$ は，発揮できるせん断強度が動員されているせん断力の2倍あることを，$F_s<1$ は，その面に沿ってはつり合いを保てないことを意味する．
+
+LEMの説明資料では，式 {eq}`eq-start-fs-definition`の分子（せん断強度）を**抵抗力**，分母（動員せん断力）を**駆動力**として，以下のように表現されることがある．
 
 $$
 F_s=\frac{\text{抵抗力}}{\text{駆動力}}
-\tag{1}
-$$
+$$ (eq-start-fs-definition-mod)
 
-$F_s$ は，仮定したすべり面についての安定性の指標である．例えば，$F_s=2$ は抵抗力が駆動力の2倍あることを，$F_s<1$ は，その面に沿ってはつり合いを保てないことを意味する．
+せん断力自体は，駆動力ではなく，**すべりに抵抗する力**であるため，この表現は厳密ではない．
+ただし，**力のつり合い**を考えると，土塊が静止しているとき，底面が動員しているせん断力は，自重がすべらせようとする接線方向の成分とちょうど釣り合っている．
+両者は大きさが等しいため，分母を「駆動力」と読み替えても比の値は変わらない．
+そのため，理解のしやすさから，このような表現がしばしばなされる．
+
 
 ```{note}
-「抵抗力」「駆動力」は，最初のイメージをつかむための簡単な言い方であり，厳密ではない．場合によっては，比を取る対象が力ではない．例えば Fellenius 法や Bishop 簡便法は，円弧中心まわりの**モーメント**の比として安全率を求める．本資料でも §6 では，発揮できるせん断強度と，つり合いを保つために必要なせん断応力の比として定義し直す．
+式 {eq}`eq-start-fs-definition`および{eq}`eq-start-fs-definition-mod`
+中の「力」という表現は，場合によっては比をとる対象が力ではないため，厳密ではない．
+例えば Bishop 簡便法は，円弧中心まわりの**力のモーメント**の比として安全率を求める．
+本資料でも §6 では，この定義を，発揮できるせん断強度と，つり合いを保つために必要なせん断応力の比として書き直す．
 ```
 
-本資料が説明するのは，この図の $N_i$ と $T_i$ が，地盤内部の点ごとの応力からどのように作られるかである．土そのものの強さを表す Mohr–Coulomb 則が，どこで底面の $T_i$ に変わるのかを追う．
+以降では，この図の $N_i$ と $T_i$ が，地盤内部の点ごとの応力からどのように作られるかを説明し，
+土そのものの強さを表す Mohr–Coulomb 則が，どこで底面の $T_i$ に変わるのかを追う．
 
 ## この資料で理解すること
 
@@ -59,8 +74,7 @@ $$
 T_i
 =
 \frac{c_i'A_i+(N_i-U_i)\tan\phi_i'}{F_s}
-\tag{2}
-$$
+$$ (eq-start-goal)
 
 がどこから来たのか，またこの式が**LEMのスタート地点**である理由を説明できることを目標とする．
 
@@ -152,8 +166,7 @@ $$
 
 $$
 \boldsymbol{\sigma}=\boldsymbol{\sigma}(\boldsymbol{x})
-\tag{3}
-$$
+$$ (eq-start-stress-field)
 
 で表される．すべり面上の応力分布は，離散化する前から未知の関数である．これを連続体解析として決定するには，つり合い式だけでなく，構成則，変位の適合条件，境界条件などが必要になる．LEM（limit equilibrium method，極限平衡法）は，一般にこの完全な境界値問題を解く代わりに，すべり土塊を有限個のスライスまたはカラムへ分割し，各部分の合力とつり合いを扱う．
 
@@ -185,8 +198,7 @@ $$
 =
 \boldsymbol{\sigma}(\boldsymbol{x})\boldsymbol{n}(\boldsymbol{x})
 }
-\tag{4}
-$$
+$$ (eq-start-cauchy)
 
 で与えられる．
 
@@ -213,8 +225,7 @@ t_n
 \boldsymbol{n}^{\mathsf T}\boldsymbol{t}
 =
 \boldsymbol{n}^{\mathsf T}\boldsymbol{\sigma}\boldsymbol{n}
-\tag{5}
-$$
+$$ (eq-start-normal-component)
 
 とする．引張正の規約では圧縮時に $t_n<0$ となるため，地盤工学で用いる圧縮正の法線応力の大きさを
 
@@ -224,8 +235,7 @@ $$
 =
 -\boldsymbol{n}^{\mathsf T}\boldsymbol{\sigma}\boldsymbol{n}
 }
-\tag{6}
-$$
+$$ (eq-start-sigma-n)
 
 と定義する．圧縮状態では $\sigma_n\ge 0$ となる．土が引張を受ける場合や，有効法線応力が負になる場合の扱いは，第3資料で述べる数値上の注意点に関わる．
 
@@ -237,15 +247,13 @@ $$
 =
 -\sigma_n\boldsymbol{n}+\boldsymbol{\tau}
 }
-\tag{7}
-$$
+$$ (eq-start-traction-split)
 
 ここで
 
 $$
 \boldsymbol{\tau}\cdot\boldsymbol{n}=0
-\tag{8}
-$$
+$$ (eq-start-tau-tangential)
 
 である．
 
@@ -296,8 +304,7 @@ $$
 \|\boldsymbol{m}\|=1,
 \qquad
 \boldsymbol{m}\cdot\boldsymbol{n}=0
-\tag{9}
-$$
+$$ (eq-start-slip-direction)
 
 を満たす $\boldsymbol{m}$ を局所的な想定すべり方向とし，抵抗せん断表面力を
 
@@ -305,8 +312,7 @@ $$
 \boxed{
 \boldsymbol{\tau}_m=-\tau_m\boldsymbol{m}
 }
-\tag{10}
-$$
+$$ (eq-start-shear-traction)
 
 と表す．
 
@@ -363,8 +369,7 @@ $$
 =
 \boldsymbol{\sigma}^{(c)}-u\boldsymbol{I}
 }
-\tag{11}
-$$
+$$ (eq-start-effective-tensor)
 
 である．
 
@@ -376,8 +381,7 @@ $$
 =
 \sigma_n-u
 }
-\tag{12}
-$$
+$$ (eq-start-effective-normal)
 
 となる．したがって「有効応力」は本来テンソル全体を指し，$\sigma_n'$ はその特定の面に対する有効法線成分である．間隙水圧は等方的に作用するため，表面力のせん断成分を直接は変化させない．
 
@@ -438,8 +442,7 @@ c'+\sigma_n'\tan\phi'
 =
 c'+(\sigma_n-u)\tan\phi'
 }
-\tag{13}
-$$
+$$ (eq-start-mohr-coulomb)
 
 と表す．
 
@@ -451,8 +454,7 @@ u\uparrow
 \sigma_n'\downarrow
 \quad\Longrightarrow\quad
 \tau_f\downarrow
-\tag{14}
-$$
+$$ (eq-start-pore-pressure-effect)
 
 となる．
 
@@ -468,8 +470,7 @@ $$
 \boxed{
 F_s=\frac{\tau_f}{\tau_m}
 }
-\tag{15}
-$$
+$$ (eq-start-fs-stress)
 
 したがって
 
@@ -479,8 +480,7 @@ $$
 =
 \frac{c'+(\sigma_n-u)\tan\phi'}{F_s}
 }
-\tag{16}
-$$
+$$ (eq-start-mobilized-stress)
 
 である．ベクトルとしての抵抗せん断表面力は
 
@@ -490,13 +490,12 @@ $$
 =
 -\frac{c'+(\sigma_n-u)\tan\phi'}{F_s}\boldsymbol{m}
 }
-\tag{17}
-$$
+$$ (eq-start-mobilized-vector)
 
 となる．
 
 ```{note}
-式 (16) と (17) は，現在の $\tau_m$ を事前に測定してから比を取るという意味ではない．未知の $F_s$ を導入してせん断強度の動員割合を表し，この表面力を作用させた土塊が力とモーメントのつり合いを満たすように，$F_s$ と他の未知力を同時に求める．
+式 {eq}`eq-start-mobilized-stress` と {eq}`eq-start-mobilized-vector` は，現在の $\tau_m$ を事前に測定してから比を取るという意味ではない．未知の $F_s$ を導入してせん断強度の動員割合を表し，この表面力を作用させた土塊が力とモーメントのつり合いを満たすように，$F_s$ と他の未知力を同時に求める．
 ```
 
 ```{figure} ./figures/fig_c03_strength_mobilization.svg
@@ -544,8 +543,7 @@ $$
 
 $$
 A_i=\int_{S_i}dA
-\tag{18}
-$$
+$$ (eq-start-base-area)
 
 とする．底面に作用する表面力全体の合力は厳密に
 
@@ -555,8 +553,7 @@ $$
 =
 \int_{S_i}\boldsymbol{t}\,dA
 }
-\tag{19}
-$$
+$$ (eq-start-resultant)
 
 である．
 
@@ -568,8 +565,7 @@ $$
 =
 -\int_{S_i}\sigma_n(\boldsymbol{x})\boldsymbol{n}(\boldsymbol{x})\,dA
 }
-\tag{20}
-$$
+$$ (eq-start-normal-resultant)
 
 $$
 \boxed{
@@ -577,15 +573,13 @@ $$
 =
 -\int_{S_i}\tau_m(\boldsymbol{x})\boldsymbol{m}(\boldsymbol{x})\,dA
 }
-\tag{21}
-$$
+$$ (eq-start-shear-resultant)
 
-である．なお，$\boldsymbol{R}_i=\int_{S_i}\boldsymbol{t}\,dA$ は厳密であるが，$\boldsymbol{T}_i$ を式 (21) の形で書けるのは，各点の実際のせん断表面力が $-\boldsymbol{m}(\boldsymbol{x})$ 方向に一致する，すなわち 6 節の動員状態にあると仮定した場合である．この仮定の下で
+である．なお，$\boldsymbol{R}_i=\int_{S_i}\boldsymbol{t}\,dA$ は厳密であるが，$\boldsymbol{T}_i$ を式 {eq}`eq-start-shear-resultant` の形で書けるのは，各点の実際のせん断表面力が $-\boldsymbol{m}(\boldsymbol{x})$ 方向に一致する，すなわち 6 節の動員状態にあると仮定した場合である．この仮定の下で
 
 $$
 \boldsymbol{R}_i=\boldsymbol{N}_i+\boldsymbol{T}_i
-\tag{22}
-$$
+$$ (eq-start-resultant-split)
 
 となる．
 
@@ -595,8 +589,7 @@ $$
 \left\|\boldsymbol{N}_i\right\|
 \le
 \int_{S_i}\sigma_n\,dA
-\tag{23}
-$$
+$$ (eq-start-resultant-bound)
 
 となる．等号が成り立つのは法線方向が底面全体で共通である場合などに限られる．すなわち，局所的な法線力の大きさを足したスカラーと，向きを考慮して足したベクトル合力の大きさは区別しなければならない．
 
@@ -663,8 +656,7 @@ $$
 \qquad
 \boldsymbol{m}(\boldsymbol{x})=\boldsymbol{m}_i
 \qquad (\boldsymbol{x}\in S_i)
-\tag{24}
-$$
+$$ (eq-start-representative-direction)
 
 とモデル化し，法線応力と間隙水圧のスカラー積分値を
 
@@ -674,8 +666,7 @@ N_i=\int_{S_i}\sigma_n\,dA,
 \qquad
 U_i=\int_{S_i}u\,dA
 }
-\tag{25}
-$$
+$$ (eq-start-ni-ui)
 
 と定義する．このとき，すべり土塊に作用する法線合力ベクトルは
 
@@ -683,8 +674,7 @@ $$
 \boxed{
 \boldsymbol{N}_i=-N_i\boldsymbol{n}_i
 }
-\tag{26}
-$$
+$$ (eq-start-ni-vector)
 
 となる．さらに $\sigma_n$ と $u$ まで代表値で一定とする追加の仮定を置けば
 
@@ -692,8 +682,7 @@ $$
 N_i=\sigma_{n,i}A_i,
 \qquad
 U_i=u_iA_i
-\tag{27}
-$$
+$$ (eq-start-ni-uniform)
 
 である．
 
@@ -709,8 +698,7 @@ T_{f,i}
 =
 c_i'A_i+(N_i-U_i)\tan\phi_i'
 }
-\tag{28}
-$$
+$$ (eq-start-base-strength)
 
 となる．動員されるせん断力の大きさは
 
@@ -720,8 +708,7 @@ T_i
 =
 \frac{c_i'A_i+(N_i-U_i)\tan\phi_i'}{F_s}
 }
-\tag{29}
-$$
+$$ (eq-start-base-shear)
 
 であり，$\boldsymbol{m}_i$ が底面内で一定なら，その抵抗方向を含むベクトルは
 
@@ -729,12 +716,11 @@ $$
 \boxed{
 \boldsymbol{T}_i=-T_i\boldsymbol{m}_i
 }
-\tag{30}
-$$
+$$ (eq-start-base-shear-vector)
 
 となる．
 
-重要なのは，スカラー式 $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ を得るために，$\sigma_n$ と $u$ の点ごとの分布まで一定である必要はないことである．$c_i'$ と $\phi_i'$ が一定で，$N_i$ と $U_i$ を式 (25) の積分値として定義すれば，式 (28) は成立する．
+重要なのは，スカラー式 $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ を得るために，$\sigma_n$ と $u$ の点ごとの分布まで一定である必要はないことである．$c_i'$ と $\phi_i'$ が一定で，$N_i$ と $U_i$ を式 {eq}`eq-start-ni-ui` の積分値として定義すれば，式 {eq}`eq-start-base-strength` は成立する．
 
 :::{dropdown} 補足 F：Mohr–Coulomb 則の面積分
 底面 $S_i$ で $c_i'$ と $\phi_i'$ が一定であるとする．発揮可能なせん断強度の合力の大きさは
@@ -816,8 +802,7 @@ $$
 T_i
 =
 \frac{c_i'A_i+(N_i-U_i)\tan\phi_i'}{F_s}
-\tag{31}
-$$
+$$ (eq-start-strength-law-recap)
 
 を得ても，$N_i$，$T_i$，$F_s$ およびスライス間力・カラム間力はまだ未知である．
 
@@ -831,8 +816,7 @@ $$
 +\sum_j\boldsymbol{Q}_{ij}
 =\boldsymbol{0}
 }
-\tag{32}
-$$
+$$ (eq-start-force-balance)
 
 と書ける．また，任意の基準点 $O$ に関するモーメントのつり合いは
 
@@ -842,8 +826,7 @@ $$
 \boldsymbol{r}_k\times\boldsymbol{F}_k
 =\boldsymbol{0}
 }
-\tag{33}
-$$
+$$ (eq-start-moment-balance)
 
 である．
 
@@ -920,8 +903,7 @@ N_i,\quad U_i,\quad T_i
 F_s\ \text{と各未知合力}
 \end{array}
 }
-\tag{34}
-$$
+$$ (eq-start-summary)
 
 ---
 
@@ -933,7 +915,7 @@ $$
 - 安全率 $F_s$ は，何と何の比として導入されたか．
 - $N_i$，$U_i$，$T_i$ は，点ごとの応力にどのような操作を加えて作られたか．
 - 底面 $S_i$ で一定と仮定する必要があるのはどの量で，一定でなくてよいのはどの量か．
-- 式 (29) を得てもなお未知として残るのは何か．
+- 式 {eq}`eq-start-base-shear` を得てもなお未知として残るのは何か．
 
 ---
 
