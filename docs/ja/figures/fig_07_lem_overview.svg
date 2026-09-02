@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940" role="img" aria-labelledby="title desc">
+  <title id="title">2D・3D LEMの系譜と近似階層</title>
+  <desc id="desc">連続体力学からすべり面と離散化を経て二次元スライス法へ進み，Fellenius，Bishop，Janbu，Spencer，Morgenstern–Priceの閉じ方が代表的な三次元カラム法へ発展する系譜と，共通する六つの近似層を示す．</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+    <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 20px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 16px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 13px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.box2d{fill:#eff6ff;stroke:#93c5fd;stroke-width:2}.box3d{fill:#f0fdf4;stroke:#86efac;stroke-width:2}.neutral{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1600" height="940" fill="#fff"/>
+  <text x="800" y="46" text-anchor="middle" class="title">LEMの系譜：内力の閉じ方を2Dから3Dへ移植・一般化する</text>
+
+  <rect x="540" y="75" width="520" height="62" rx="13" class="neutral"/><text x="800" y="102" text-anchor="middle" class="head">連続体力学</text><text x="800" y="125" text-anchor="middle" class="small">応力場・変位場・構成則・境界条件</text>
+  <line x1="800" y1="139" x2="800" y2="181" stroke="#64748b" stroke-width="4" marker-end="url(#gray)"/>
+  <text x="820" y="165" class="small">すべり面の仮定＋離散化</text>
+  <rect x="540" y="190" width="520" height="62" rx="13" class="box2d"/><text x="800" y="218" text-anchor="middle" class="head">2Dスライス法：不静定な静力学問題</text><text x="800" y="241" text-anchor="middle" class="small">内力をどう扱い，どのつり合いを満足させるか</text>
+
+  <text x="380" y="292" text-anchor="middle" class="head">2Dでの閉じ方</text>
+  <text x="1220" y="292" text-anchor="middle" class="head">代表的な3D拡張</text>
+  <line x1="800" y1="254" x2="800" y2="744" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8"/>
+
+  <g transform="translate(80 315)">
+    <rect width="580" height="76" rx="12" class="box2d"/><text x="22" y="31" class="label">Fellenius</text><text x="22" y="57" class="small">内力効果を省略・モーメント中心</text>
+    <line x1="600" y1="38" x2="820" y2="38" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <rect x="840" width="580" height="76" rx="12" class="box3d"/><text x="862" y="31" class="label">Hovland型3D</text><text x="862" y="57" class="small">カラム間力を省略し，有限幅形状を集計</text>
+  </g>
+  <g transform="translate(80 405)">
+    <rect width="580" height="76" rx="12" class="box2d"/><text x="22" y="31" class="label">Bishop簡便法</text><text x="22" y="57" class="small">Xを簡略化・鉛直力＋全体モーメント</text>
+    <line x1="600" y1="38" x2="820" y2="38" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <rect x="840" width="580" height="76" rx="12" class="box3d"/><text x="862" y="31" class="label">Hungr／Ugai 3D Bishop</text><text x="862" y="57" class="small">カラム鉛直力＋回転軸モーメント</text>
+  </g>
+  <g transform="translate(80 495)">
+    <rect width="580" height="76" rx="12" class="box2d"/><text x="22" y="31" class="label">Janbu簡便法</text><text x="22" y="57" class="small">Xを簡略化・全体力つり合いを重視</text>
+    <line x1="600" y1="38" x2="820" y2="38" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <rect x="840" width="580" height="76" rx="12" class="box3d"/><text x="862" y="31" class="label">Ugai／Cheng–Yip 3D Janbu</text><text x="862" y="57" class="small">二水平軸へ力つり合い型の仮定を拡張</text>
+  </g>
+  <g transform="translate(80 585)">
+    <rect width="580" height="76" rx="12" class="box2d"/><text x="22" y="31" class="label">Spencer</text><text x="22" y="57" class="small">内力合力を平行と仮定・力＋モーメント</text>
+    <line x1="600" y1="38" x2="820" y2="38" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <rect x="840" width="580" height="76" rx="12" class="box3d"/><text x="862" y="31" class="label">Ugai／Extended 3D Spencer</text><text x="862" y="57" class="small">空間内の平行性・方向面として再定義</text>
+  </g>
+  <g transform="translate(80 675)">
+    <rect width="580" height="76" rx="12" class="box2d"/><text x="22" y="31" class="label">Morgenstern–Price／GLE</text><text x="22" y="57" class="small">内力比をλf(x)で関数化・力＋モーメント</text>
+    <line x1="600" y1="38" x2="820" y2="38" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <rect x="840" width="580" height="76" rx="12" class="box3d"/><text x="862" y="31" class="label">Lam–Fredlund／Cheng–Yip 3D GLE</text><text x="862" y="57" class="small">二方向の内力関数・非対称3D形状</text>
+  </g>
+
+  <text x="800" y="796" text-anchor="middle" class="head">どの系統にも共通する近似の階層</text>
+  <g transform="translate(55 820)">
+    <rect width="230" height="72" rx="11" fill="#f8fafc" stroke="#cbd5e1"/><text x="115" y="30" text-anchor="middle" class="label">1　幾何学的離散化</text><text x="115" y="54" text-anchor="middle" class="small">分布 → 合力</text>
+    <rect x="250" width="230" height="72" rx="11" fill="#fff7ed" stroke="#fdba74"/><text x="365" y="30" text-anchor="middle" class="label">2　破壊機構</text><text x="365" y="54" text-anchor="middle" class="small">探索する面族</text>
+    <rect x="500" width="230" height="72" rx="11" fill="#fefce8" stroke="#fde047"/><text x="615" y="30" text-anchor="middle" class="label">3　強度動員</text><text x="615" y="54" text-anchor="middle" class="small">共通F<tspan baseline-shift="sub" font-size="10">s</tspan></text>
+    <rect x="750" width="230" height="72" rx="11" fill="#eff6ff" stroke="#93c5fd"/><text x="865" y="30" text-anchor="middle" class="label">4　内部力のclosure</text><text x="865" y="54" text-anchor="middle" class="small">手法名の中心</text>
+    <rect x="1000" width="230" height="72" rx="11" fill="#f5f3ff" stroke="#c4b5fd"/><text x="1115" y="30" text-anchor="middle" class="label">5　3D方向・回転軸</text><text x="1115" y="54" text-anchor="middle" class="small">空間で追加</text>
+    <rect x="1250" width="230" height="72" rx="11" fill="#f0fdf4" stroke="#86efac"/><text x="1365" y="30" text-anchor="middle" class="label">6　数値解法・探索</text><text x="1365" y="54" text-anchor="middle" class="small">収束と局所解</text>
+  </g>
+  <text x="800" y="925" text-anchor="middle" class="small">手法名だけでなく，六つの層で採用した仮定を確認する</text>
+</svg>

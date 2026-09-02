@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">応力テンソルから任意面のtractionを取り出す関係</title>
+  <desc id="desc">点の応力テンソル，法線を持つ切断面，Cauchy公式で得られるtractionを左から右へ示す．</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/></marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#d64545"/></marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/></marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}
+      .label{font:500 20px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}
+      .small{font:500 16px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}
+      .math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}
+      .panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#ffffff"/>
+  <text x="600" y="48" text-anchor="middle" class="title">応力テンソルから面に作用する力を取り出す</text>
+
+  <rect x="48" y="92" width="340" height="510" rx="18" class="panel"/>
+  <text x="218" y="132" text-anchor="middle" class="label">点の応力状態</text>
+  <text x="218" y="162" text-anchor="middle" class="small">Cauchy応力テンソル</text>
+  <polygon points="142,278 264,236 326,280 203,324" fill="#eef2ff" stroke="#586174" stroke-width="2"/>
+  <polygon points="142,278 203,324 203,454 142,408" fill="#e0e7ff" stroke="#586174" stroke-width="2"/>
+  <polygon points="203,324 326,280 326,410 203,454" fill="#dbeafe" stroke="#586174" stroke-width="2"/>
+  <line x1="264" y1="236" x2="264" y2="188" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <line x1="142" y1="343" x2="86" y2="343" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <line x1="326" y1="345" x2="374" y2="345" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <line x1="234" y1="313" x2="300" y2="290" stroke="#d64545" stroke-width="4" marker-end="url(#arrow-red)"/>
+  <line x1="238" y1="454" x2="292" y2="435" stroke="#d64545" stroke-width="4" marker-end="url(#arrow-red)"/>
+  <text x="277" y="192" class="math">σ<tspan baseline-shift="sub" font-size="15">zz</tspan></text>
+  <text x="78" y="333" text-anchor="end" class="math">σ<tspan baseline-shift="sub" font-size="15">xx</tspan></text>
+  <text x="292" y="270" class="math" fill="#d64545">τ<tspan baseline-shift="sub" font-size="15">xy</tspan></text>
+  <rect x="105" y="500" width="226" height="68" rx="10" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="218" y="542" text-anchor="middle" class="math">σ = σ(x)</text>
+
+  <line x1="414" y1="346" x2="530" y2="346" stroke="#64748b" stroke-width="4" marker-end="url(#arrow-gray)"/>
+  <text x="472" y="326" text-anchor="middle" class="small">面の向きを指定</text>
+
+  <rect x="550" y="92" width="602" height="510" rx="18" class="panel"/>
+  <text x="851" y="132" text-anchor="middle" class="label">法線 n をもつ面に作用するtraction</text>
+  <path d="M650 475 C720 386 833 296 1005 219 L1060 338 C894 407 787 492 714 565 Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
+  <path d="M714 565 C787 492 894 407 1060 338" fill="none" stroke="#586174" stroke-width="6"/>
+  <ellipse cx="856" cy="442" rx="112" ry="48" transform="rotate(-29 856 442)" fill="#e0f2fe" fill-opacity="0.78" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 7"/>
+  <circle cx="856" cy="442" r="6" fill="#172033"/>
+  <line x1="856" y1="442" x2="922" y2="545" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <text x="930" y="561" class="math" fill="#2563eb">n</text>
+  <line x1="856" y1="442" x2="965" y2="356" stroke="#7c3aed" stroke-width="6" marker-end="url(#arrow-purple)"/>
+  <text x="978" y="350" class="math" fill="#7c3aed">t(n)</text>
+  <line x1="856" y1="442" x2="929" y2="403" stroke="#d64545" stroke-width="4" marker-end="url(#arrow-red)"/>
+  <text x="964" y="440" class="small" fill="#d64545">せん断成分</text>
+  <rect x="646" y="184" width="408" height="86" rx="12" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="850" y="221" text-anchor="middle" class="math">t(x,n) = σ(x)n</text>
+  <text x="850" y="250" text-anchor="middle" class="small">Cauchyの公式</text>
+  <text x="850" y="586" text-anchor="middle" class="small">同じ点でも，面の向き n が変われば t(n) も変わる</text>
+</svg>

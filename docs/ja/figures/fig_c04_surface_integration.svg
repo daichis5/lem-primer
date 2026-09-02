@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">分布tractionから底面合力への面積分</title>
+  <desc id="desc">曲面底面上に分布する法線・せん断tractionを面積分し，代表的な法線合力とせん断合力へ変換する．</desc>
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+    <marker id="r" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
+    <marker id="g" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 19px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 16px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 21px Georgia,"Times New Roman",serif;fill:#172033}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#fff"/>
+  <text x="600" y="46" text-anchor="middle" class="title">点ごとの応力分布から，有限底面の合力へ</text>
+  <rect x="42" y="86" width="650" height="548" rx="18" class="panel"/>
+  <text x="367" y="126" text-anchor="middle" class="label">曲面底面 S<tspan baseline-shift="sub" font-size="13">i</tspan> 上の分布traction</text>
+  <path d="M105 470 C225 355 385 330 623 432 L590 548 C377 452 230 475 137 585 Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
+  <path d="M137 585 C230 475 377 452 590 548" fill="none" stroke="#586174" stroke-width="5"/>
+  <path d="M171 539 C265 449 390 441 558 506" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 7"/>
+  <text x="375" y="577" text-anchor="middle" class="math">S<tspan baseline-shift="sub" font-size="14">i</tspan></text>
+  <g stroke-linecap="round">
+    <line x1="199" y1="510" x2="178" y2="560" stroke="#2563eb" stroke-width="3" marker-end="url(#b)"/><line x1="199" y1="510" x2="252" y2="485" stroke="#d64545" stroke-width="3" marker-end="url(#r)"/>
+    <line x1="278" y1="472" x2="272" y2="528" stroke="#2563eb" stroke-width="4" marker-end="url(#b)"/><line x1="278" y1="472" x2="340" y2="467" stroke="#d64545" stroke-width="3" marker-end="url(#r)"/>
+    <line x1="374" y1="464" x2="385" y2="521" stroke="#2563eb" stroke-width="4" marker-end="url(#b)"/><line x1="374" y1="464" x2="435" y2="478" stroke="#d64545" stroke-width="4" marker-end="url(#r)"/>
+    <line x1="477" y1="479" x2="505" y2="535" stroke="#2563eb" stroke-width="3" marker-end="url(#b)"/><line x1="477" y1="479" x2="536" y2="507" stroke="#d64545" stroke-width="3" marker-end="url(#r)"/>
+  </g>
+  <text x="118" y="250" class="small" fill="#2563eb">法線traction</text>
+  <line x1="222" y1="245" x2="274" y2="245" stroke="#2563eb" stroke-width="4" marker-end="url(#b)"/>
+  <text x="118" y="289" class="small" fill="#d64545">抵抗せん断traction</text>
+  <line x1="280" y1="284" x2="332" y2="284" stroke="#d64545" stroke-width="4" marker-end="url(#r)"/>
+  <rect x="97" y="151" width="540" height="68" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="367" y="193" text-anchor="middle" class="math">t(x,n) = −σ<tspan baseline-shift="sub" font-size="14">n</tspan>(x)n(x) − τ<tspan baseline-shift="sub" font-size="14">m</tspan>(x)m(x)</text>
+
+  <line x1="716" y1="350" x2="808" y2="350" stroke="#64748b" stroke-width="5" marker-end="url(#g)"/>
+  <text x="762" y="326" text-anchor="middle" class="label">面積分</text>
+  <text x="762" y="384" text-anchor="middle" class="math">∫ dA</text>
+
+  <rect x="832" y="86" width="326" height="548" rx="18" class="panel"/>
+  <text x="995" y="126" text-anchor="middle" class="label">底面のベクトル合力</text>
+  <polygon points="892,420 1057,388 1100,443 932,479" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
+  <line x1="989" y1="429" x2="946" y2="300" stroke="#2563eb" stroke-width="7" marker-end="url(#b)"/>
+  <text x="914" y="289" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">i</tspan></text>
+  <line x1="989" y1="429" x2="1082" y2="410" stroke="#d64545" stroke-width="7" marker-end="url(#r)"/>
+  <text x="1087" y="398" class="math" fill="#d64545">T<tspan baseline-shift="sub" font-size="14">i</tspan></text>
+  <rect x="867" y="160" width="256" height="97" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <text x="995" y="198" text-anchor="middle" class="math">N<tspan baseline-shift="sub" font-size="14">i</tspan> = ∫<tspan baseline-shift="sub" font-size="14">Sᵢ</tspan> −σ<tspan baseline-shift="sub" font-size="14">n</tspan>n dA</text>
+  <text x="995" y="235" text-anchor="middle" class="math">T<tspan baseline-shift="sub" font-size="14">i</tspan> = ∫<tspan baseline-shift="sub" font-size="14">Sᵢ</tspan> −τ<tspan baseline-shift="sub" font-size="14">m</tspan>m dA</text>
+  <text x="995" y="543" text-anchor="middle" class="small">分布を消去するのではなく，</text>
+  <text x="995" y="570" text-anchor="middle" class="small">有限個の未知合力へ置き換える</text>
+</svg>

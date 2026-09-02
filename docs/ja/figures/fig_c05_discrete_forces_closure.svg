@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">離散化と力学的closureの違い</title>
+  <desc id="desc">連続な未知応力分布を有限個の合力へ離散化した後，つり合い式と強度式だけでは不足し，内力仮定によって問題を閉じる流れ．</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+    <marker id="blue" viewBox="0 0 9 9" markerWidth="3" markerHeight="3" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2563eb"/></marker>
+    <marker id="red" viewBox="0 0 9 9" markerWidth="3" markerHeight="3" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#d64545"/></marker>
+    <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 19px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 19px Georgia,"Times New Roman",serif;fill:#172033}.box{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.step{font:700 14px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#fff}
+    </style>
+  </defs>
+  <rect width="1400" height="720" fill="#fff"/>
+  <text x="700" y="48" text-anchor="middle" class="title">離散化しただけでは，LEMの問題は閉じない</text>
+
+  <g transform="translate(35 92)">
+    <rect width="280" height="525" rx="18" class="box"/>
+    <circle cx="30" cy="30" r="18" fill="#64748b"/><text x="30" y="35" text-anchor="middle" class="step">1</text>
+    <text x="140" y="38" text-anchor="middle" class="head">連続体</text>
+    <path d="M38 350 C90 245 172 233 244 298 L250 415 C169 366 94 380 42 448Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
+    <path d="M42 448 C94 380 169 366 250 415" fill="none" stroke="#586174" stroke-width="4"/>
+    <path d="M63 423 C110 370 166 365 225 397" fill="none" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6 6"/>
+    <g stroke="#7c3aed" stroke-width="3">
+      <line x1="77" y1="402" x2="58" y2="370"/><line x1="116" y1="382" x2="105" y2="341"/><line x1="160" y1="377" x2="165" y2="329"/><line x1="203" y1="390" x2="224" y2="347"/>
+    </g>
+    <text x="140" y="122" text-anchor="middle" class="small">すべり面上の未知分布</text>
+    <text x="140" y="156" text-anchor="middle" class="math">σ<tspan baseline-shift="sub" font-size="13">n</tspan>(x), τ(x)</text>
+    <text x="140" y="487" text-anchor="middle" class="small">未知量は関数</text>
+  </g>
+
+  <line x1="325" y1="355" x2="376" y2="355" stroke="#64748b" stroke-width="4" marker-end="url(#arr)"/>
+  <text x="350" y="332" text-anchor="middle" class="small">空間離散化</text>
+
+  <g transform="translate(390 92)">
+    <rect width="280" height="525" rx="18" class="box"/>
+    <circle cx="30" cy="30" r="18" fill="#2563eb"/><text x="30" y="35" text-anchor="middle" class="step">2</text>
+    <text x="140" y="38" text-anchor="middle" class="head">スライス／カラム</text>
+    <path d="M35 380 C100 260 188 260 246 324 L247 430 C170 382 96 392 38 465Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
+    <path d="M38 465 C96 392 170 382 247 430" fill="none" stroke="#586174" stroke-width="4"/>
+    <line x1="88" y1="322" x2="88" y2="412" stroke="#8b7355" stroke-width="2"/><line x1="143" y1="279" x2="143" y2="389" stroke="#8b7355" stroke-width="2"/><line x1="198" y1="281" x2="198" y2="397" stroke="#8b7355" stroke-width="2"/>
+    <line x1="116" y1="400" x2="105" y2="352" stroke="#2563eb" stroke-width="4" marker-end="url(#blue)"/>
+    <line x1="116" y1="400" x2="160" y2="388" stroke="#d64545" stroke-width="4" marker-end="url(#red)"/>
+    <text x="91" y="344" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+    <text x="164" y="385" class="math" fill="#d64545">T<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+    <text x="140" y="123" text-anchor="middle" class="small">有限個の未知合力</text>
+    <text x="140" y="159" text-anchor="middle" class="math">N<tspan baseline-shift="sub" font-size="13">i</tspan>, T<tspan baseline-shift="sub" font-size="13">i</tspan>, E<tspan baseline-shift="sub" font-size="13">i</tspan>, X<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+    <text x="140" y="487" text-anchor="middle" class="small">未知数は有限になる</text>
+  </g>
+
+  <line x1="680" y1="355" x2="731" y2="355" stroke="#64748b" stroke-width="4" marker-end="url(#arr)"/>
+  <text x="705" y="332" text-anchor="middle" class="small">式を与える</text>
+
+  <g transform="translate(745 92)">
+    <rect width="280" height="525" rx="18" class="box"/>
+    <circle cx="30" cy="30" r="18" fill="#d97706"/><text x="30" y="35" text-anchor="middle" class="step">3</text>
+    <text x="140" y="38" text-anchor="middle" class="head">まだ不静定</text>
+    <rect x="36" y="100" width="208" height="72" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="140" y="130" text-anchor="middle" class="math">ΣF = 0, ΣM = 0</text><text x="140" y="156" text-anchor="middle" class="small">つり合い式</text>
+    <rect x="36" y="192" width="208" height="92" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="140" y="227" text-anchor="middle" class="math">T<tspan baseline-shift="sub" font-size="13">i</tspan> = strength / F<tspan baseline-shift="sub" font-size="13">s</tspan></text><text x="140" y="258" text-anchor="middle" class="small">強度動員式</text>
+    <text x="140" y="337" text-anchor="middle" class="head" fill="#d97706">未知数 ＞ 独立な式</text>
+    <path d="M80 376 H200 V430 H80Z" fill="#fff7ed" stroke="#d97706" stroke-width="2"/>
+    <text x="140" y="409" text-anchor="middle" class="math">?</text>
+    <text x="140" y="487" text-anchor="middle" class="small">分割を細かくしても解消しない</text>
+  </g>
+
+  <line x1="1035" y1="355" x2="1086" y2="355" stroke="#14916a" stroke-width="5" marker-end="url(#green)"/>
+  <text x="1060" y="320" text-anchor="middle" class="small" fill="#14916a">内力仮定</text>
+  <text x="1060" y="340" text-anchor="middle" class="small" fill="#14916a">closure</text>
+
+  <g transform="translate(1100 92)">
+    <rect width="265" height="525" rx="18" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+    <circle cx="30" cy="30" r="18" fill="#14916a"/><text x="30" y="35" text-anchor="middle" class="step">4</text>
+    <text x="132" y="38" text-anchor="middle" class="head">解ける系</text>
+    <text x="132" y="113" text-anchor="middle" class="small">例：内力成分を無視</text>
+    <text x="132" y="145" text-anchor="middle" class="small">または方向・比を関数化</text>
+    <rect x="33" y="192" width="199" height="77" rx="10" fill="#fff" stroke="#86efac"/>
+    <text x="132" y="224" text-anchor="middle" class="math">X = λ f(x)E</text>
+    <text x="132" y="251" text-anchor="middle" class="small">追加仮定の一例</text>
+    <path d="M132 300 V365" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+    <circle cx="132" cy="408" r="56" fill="#fff" stroke="#14916a" stroke-width="3"/>
+    <text x="132" y="401" text-anchor="middle" class="math">F<tspan baseline-shift="sub" font-size="13">s</tspan></text>
+    <text x="132" y="430" text-anchor="middle" class="small">安全率</text>
+    <text x="132" y="487" text-anchor="middle" class="small">仮定の違いが各LEMの違い</text>
+  </g>
+</svg>

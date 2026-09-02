@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="780" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">スライス法の未知数とつり合い式</title>
+  <desc id="desc">n個のスライスに残る底面法線力，スライス間力，その作用位置，安全率を数え，各スライスの三つのつり合い式だけでは不足することと，追加仮定によるclosureを示す．</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+    <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 20px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 16px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 14px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 20px Georgia,"Times New Roman",serif;fill:#172033}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1400" height="780" fill="#fff"/>
+  <text x="700" y="48" text-anchor="middle" class="title">つり合い式と底面強度式だけでは，内部力分布は一意に決まらない</text>
+
+  <rect x="45" y="86" width="500" height="610" rx="18" class="panel"/>
+  <text x="295" y="128" text-anchor="middle" class="head">n個のスライスに残る未知量</text>
+  <path d="M95 365 C180 240 335 220 495 300 L500 500 C348 438 205 452 100 555Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
+  <path d="M100 555 C205 452 348 438 500 500" fill="none" stroke="#586174" stroke-width="5"/>
+  <line x1="175" y1="286" x2="178" y2="485" stroke="#8b7355" stroke-width="2"/><line x1="255" y1="240" x2="258" y2="450" stroke="#8b7355" stroke-width="2"/><line x1="335" y1="232" x2="338" y2="451" stroke="#8b7355" stroke-width="2"/><line x1="415" y1="257" x2="418" y2="465" stroke="#8b7355" stroke-width="2"/>
+  <line x1="296" y1="445" x2="278" y2="365" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/><text x="248" y="352" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+  <line x1="334" y1="340" x2="390" y2="337" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/><text x="352" y="320" class="math" fill="#14916a">E<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+  <line x1="338" y1="398" x2="338" y2="344" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/><text x="348" y="388" class="math" fill="#14916a">X<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+  <line x1="358" y1="398" x2="358" y2="342" stroke="#d97706" stroke-width="2" stroke-dasharray="6 5"/><text x="366" y="375" class="math" fill="#d97706">h<tspan baseline-shift="sub" font-size="13">i</tspan></text>
+  <g transform="translate(78 165)">
+    <rect width="438" height="102" rx="12" fill="#fff" stroke="#cbd5e1"/>
+    <text x="22" y="30" class="small">底面法線力</text><text x="255" y="30" class="math">N<tspan baseline-shift="sub" font-size="13">i</tspan>：n</text>
+    <text x="22" y="59" class="small">スライス間の E, X, h</text><text x="255" y="59" class="math">3(n−1)</text>
+    <text x="22" y="88" class="small">共通安全率</text><text x="255" y="88" class="math">F<tspan baseline-shift="sub" font-size="13">s</tspan>：1</text>
+  </g>
+  <text x="295" y="615" text-anchor="middle" class="head" fill="#d97706">代表的な合計：4n − 2</text>
+  <text x="295" y="649" text-anchor="middle" class="small">未知数の厳密な数え方は定式化により変わる</text>
+
+  <line x1="566" y1="391" x2="642" y2="391" stroke="#64748b" stroke-width="5" marker-end="url(#gray)"/>
+
+  <rect x="665" y="86" width="300" height="610" rx="18" class="panel"/>
+  <text x="815" y="128" text-anchor="middle" class="head">利用できる式</text>
+  <rect x="707" y="180" width="216" height="164" rx="12" fill="#fff" stroke="#cbd5e1"/>
+  <text x="815" y="222" text-anchor="middle" class="math">ΣF<tspan baseline-shift="sub" font-size="13">x</tspan> = 0</text>
+  <text x="815" y="265" text-anchor="middle" class="math">ΣF<tspan baseline-shift="sub" font-size="13">z</tspan> = 0</text>
+  <text x="815" y="308" text-anchor="middle" class="math">ΣM<tspan baseline-shift="sub" font-size="13">y</tspan> = 0</text>
+  <text x="815" y="382" text-anchor="middle" class="small">各スライスに3式</text>
+  <text x="815" y="420" text-anchor="middle" class="head" fill="#2563eb">合計：3n</text>
+  <path d="M725 486 H905" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="815" y="530" text-anchor="middle" class="math" fill="#d64545">4n−2 &gt; 3n</text>
+  <text x="815" y="564" text-anchor="middle" class="label">一般に式が不足</text>
+  <text x="815" y="620" text-anchor="middle" class="small">細分化しても，未知数と式が</text>
+  <text x="815" y="645" text-anchor="middle" class="small">同時に増えるだけである</text>
+
+  <line x1="986" y1="391" x2="1053" y2="391" stroke="#14916a" stroke-width="5" marker-end="url(#green)"/>
+  <text x="1018" y="363" text-anchor="middle" class="small" fill="#14916a">closure</text>
+
+  <rect x="1075" y="86" width="280" height="610" rx="18" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <text x="1215" y="128" text-anchor="middle" class="head">追加仮定で閉じる</text>
+  <rect x="1110" y="182" width="210" height="82" rx="11" fill="#fff" stroke="#86efac"/><text x="1215" y="215" text-anchor="middle" class="label">内力の一部を</text><text x="1215" y="242" text-anchor="middle" class="label">無視する</text>
+  <rect x="1110" y="292" width="210" height="82" rx="11" fill="#fff" stroke="#86efac"/><text x="1215" y="325" text-anchor="middle" class="label">方向・成分比を</text><text x="1215" y="352" text-anchor="middle" class="label">仮定する</text>
+  <rect x="1110" y="402" width="210" height="82" rx="11" fill="#fff" stroke="#86efac"/><text x="1215" y="435" text-anchor="middle" class="label">一部のつり合いを</text><text x="1215" y="462" text-anchor="middle" class="label">要求しない</text>
+  <line x1="1215" y1="511" x2="1215" y2="563" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+  <circle cx="1215" cy="606" r="48" fill="#fff" stroke="#14916a" stroke-width="3"/>
+  <text x="1215" y="600" text-anchor="middle" class="math">F<tspan baseline-shift="sub" font-size="13">s</tspan></text>
+  <text x="1215" y="627" text-anchor="middle" class="small">＋内力</text>
+  <text x="700" y="742" text-anchor="middle" class="small">各LEMの違いは，この不足をどの仮定で補うかの違いである</text>
+</svg>

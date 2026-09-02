@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="510" viewBox="0 0 1060 510" role="img" aria-labelledby="title desc">
+  <title id="title">LEMが対象とする斜面・すべり面・スライスの全体像</title>
+  <desc id="desc">斜面の中に仮定したすべり面と，その上のすべり土塊，鉛直に分割したスライス，および1つのスライス底面に作用する自重，法線力，抵抗せん断力を示す．</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+    <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
+    <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
+    <marker id="gray" viewBox="0 0 9 9" markerWidth="3" markerHeight="3" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#64748b"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}
+      .label{font:600 18px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}
+      .small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}
+      .math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}
+    </style>
+  </defs>
+  <rect width="1060" height="510" fill="#fff"/>
+  <text x="530" y="40" text-anchor="middle" class="title">LEMが見ている場面</text>
+
+  <path d="M60 360 L330 360 L700 140 L1000 140 L1000 450 L60 450 Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
+  <path d="M300 360 L330 360 L700 140 L900 140 A438 438 0 0 1 300 360 Z" fill="#f7dfae" stroke="none"/>
+  <g stroke="#a8977a" stroke-width="1.6" stroke-dasharray="6 5">
+    <line x1="400" y1="318" x2="400" y2="395"/>
+    <line x1="500" y1="259" x2="500" y2="406"/>
+    <line x1="800" y1="140" x2="800" y2="284"/>
+  </g>
+  <path d="M600 200 L700 140 L700 356 A438 438 0 0 1 600 394 Z" fill="#fdecc8" stroke="#172033" stroke-width="2"/>
+  <path d="M300 360 A438 438 0 0 0 900 140" fill="none" stroke="#172033" stroke-width="5"/>
+  <path d="M60 360 L330 360 L700 140 L1000 140" fill="none" stroke="#8b7355" stroke-width="3"/>
+
+  <path d="M398 338 L334 369" fill="none" stroke="#64748b" stroke-width="3.5" stroke-dasharray="9 6" marker-end="url(#gray)"/>
+  <text x="298" y="328" text-anchor="middle" class="small">土塊がすべる向き</text>
+
+  <line x1="655" y1="202" x2="655" y2="294" stroke="#d64545" stroke-width="4" marker-end="url(#red)"/>
+  <line x1="650" y1="378" x2="615" y2="284" stroke="#2563eb" stroke-width="4" marker-end="url(#blue)"/>
+  <line x1="650" y1="378" x2="748" y2="341" stroke="#14916a" stroke-width="4" marker-end="url(#green)"/>
+  <circle cx="650" cy="378" r="5" fill="#172033"/>
+  <text x="666" y="238" class="math" fill="#d64545">W<tspan font-size="15">i</tspan></text>
+  <text x="666" y="257" class="small" fill="#d64545">自重</text>
+  <text x="588" y="272" text-anchor="end" class="math" fill="#2563eb">N<tspan font-size="15">i</tspan></text>
+  <text x="588" y="291" text-anchor="end" class="small" fill="#2563eb">底面法線力</text>
+  <text x="764" y="332" class="math" fill="#14916a">T<tspan font-size="15">i</tspan></text>
+  <text x="764" y="351" class="small" fill="#14916a">底面せん断力（抵抗）</text>
+
+  <text x="770" y="178" text-anchor="middle" class="label">すべり土塊</text>
+  <line x1="655" y1="126" x2="655" y2="166" stroke="#586174" stroke-width="1.6"/>
+  <text x="655" y="114" text-anchor="middle" class="label">スライス <tspan class="math">i</tspan></text>
+  <line x1="252" y1="404" x2="306" y2="369" stroke="#586174" stroke-width="1.6"/>
+  <text x="172" y="414" class="label">すべり面</text>
+  <text x="172" y="436" class="small">（仮定する曲面）</text>
+  <text x="906" y="420" text-anchor="middle" class="small">地盤</text>
+  <text x="498" y="186" text-anchor="end" class="small">斜面</text>
+  <line x1="506" y1="180" x2="556" y2="222" stroke="#586174" stroke-width="1.6"/>
+
+  <text x="530" y="486" text-anchor="middle" class="small">安全率は「すべりに抵抗する力」÷「すべらせようとする力」として定義される</text>
+</svg>

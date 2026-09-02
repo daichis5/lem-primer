@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">円弧面と一般形状面における底面法線力の違い</title>
+  <desc id="desc">円弧面の底面法線力の作用線は共通中心へ集まるが，楕円や複合面では一般に一点へ集まらず，法線力のモーメントを考慮する必要がある．</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+    <marker id="orange" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d97706"/></marker>
+    <style>
+      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 22px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 17px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1400" height="760" fill="#fff"/>
+  <text x="700" y="48" text-anchor="middle" class="title">一般形状でも計算できるが，円弧固有の単純化は失われる</text>
+
+  <rect x="45" y="88" width="620" height="590" rx="18" class="panel"/>
+  <text x="355" y="132" text-anchor="middle" class="head">円弧すべり面</text>
+  <circle cx="355" cy="262" r="8" fill="#172033"/>
+  <text x="372" y="253" class="math">O</text>
+  <path d="M128 274 C222 565 496 603 590 274" fill="#f4e7c5" fill-opacity="0.72" stroke="#8b7355" stroke-width="2"/>
+  <path d="M128 274 C222 565 496 603 590 274" fill="none" stroke="#586174" stroke-width="6"/>
+  <line x1="208" y1="456" x2="328" y2="293" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="355" y1="535" x2="355" y2="301" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="500" y1="452" x2="383" y2="292" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="355" y1="262" x2="208" y2="456" stroke="#64748b" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="265" y="347" class="math">R</text>
+  <text x="208" y="486" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">1</tspan></text>
+  <text x="355" y="565" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">2</tspan></text>
+  <text x="500" y="482" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">3</tspan></text>
+  <rect x="145" y="579" width="420" height="62" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="355" y="617" text-anchor="middle" class="math">r<tspan baseline-shift="sub" font-size="14">i</tspan> × N<tspan baseline-shift="sub" font-size="14">i</tspan> = 0　（中心 O まわり）</text>
+
+  <rect x="735" y="88" width="620" height="590" rx="18" class="panel"/>
+  <text x="1045" y="132" text-anchor="middle" class="head">楕円・複合・任意形状のすべり面</text>
+  <circle cx="1000" cy="235" r="8" fill="#172033"/>
+  <text x="1017" y="227" class="math">O</text>
+  <path d="M785 280 C842 470 930 567 1040 535 C1133 508 1186 410 1300 292" fill="#f4e7c5" fill-opacity="0.72" stroke="#8b7355" stroke-width="2"/>
+  <path d="M785 280 C842 470 930 567 1040 535 C1133 508 1186 410 1300 292" fill="none" stroke="#586174" stroke-width="6"/>
+  <line x1="846" y1="432" x2="817" y2="338" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="984" y1="540" x2="965" y2="426" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="1175" y1="432" x2="1244" y2="356" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
+  <line x1="1000" y1="235" x2="846" y2="432" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="1000" y1="235" x2="984" y2="540" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
+  <line x1="1000" y1="235" x2="1175" y2="432" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
+  <path d="M968 326 A115 115 0 0 1 1013 347" fill="none" stroke="#d97706" stroke-width="4" marker-end="url(#orange)"/>
+  <text x="1020" y="332" class="math" fill="#d97706">M<tspan baseline-shift="sub" font-size="14">O</tspan>(N<tspan baseline-shift="sub" font-size="14">i</tspan>)</text>
+  <text x="846" y="462" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">1</tspan></text>
+  <text x="984" y="570" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">2</tspan></text>
+  <text x="1175" y="462" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">3</tspan></text>
+  <rect x="835" y="579" width="420" height="62" rx="10" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="1045" y="617" text-anchor="middle" class="math">r<tspan baseline-shift="sub" font-size="14">i</tspan> × N<tspan baseline-shift="sub" font-size="14">i</tspan> ≠ 0　（一般に）</text>
+
+  <line x1="684" y1="150" x2="684" y2="642" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="355" y="709" text-anchor="middle" class="small">共通中心と共通半径により，モーメント式を単純化できる</text>
+  <text x="1045" y="709" text-anchor="middle" class="small">各底面の法線力とモーメント腕を個別に扱う</text>
+</svg>

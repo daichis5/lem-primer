@@ -1,0 +1,18 @@
+[project]
+name = "lem-primer"
+version = "0.1.0"
+description = "A primer on the limit equilibrium method: from continuum mechanics to practical slope-stability analysis."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+# Documentation sources only; there is nothing to build or install.
+package = false
+
+[dependency-groups]
+docs = [
+    "sphinx>=8.0",
+    "myst-parser>=4.0",
+    "sphinx-design>=0.7.0",
+    "furo>=2024.1",
+]
