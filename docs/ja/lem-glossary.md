@@ -94,6 +94,6 @@ Mohr–Coulomb則
 
 | 資料 | 中心となる問い |
 |---|---|
-| 1. [連続体力学から極限平衡法のスタート地点まで](./continuum_mechanics_to_lem_start.md) | 応力と破壊規準は，底面の力へどう変換されるか |
-| 2. [極限平衡法とは何か](./what_is_limit_equilibrium_method.md) | 残った未知量を，各手法はどの仮定で決めるか |
-| 3. [極限平衡法を実際に使うとき](./lem_in_practice_mechanical_perspective.md) | 任意形状，すべり方向，離散化をどう解釈するか |
+| 1. [連続体力学から極限平衡法のスタート地点まで](./continuum-mechanics-to-lem-start.md) | 応力と破壊規準は，底面の力へどう変換されるか |
+| 2. [極限平衡法とは何か](./what-is-limit-equilibrium-method.md) | 残った未知量を，各手法はどの仮定で決めるか |
+| 3. [極限平衡法を実際に使うとき](./lem-in-practice-mechanical-perspective.md) | 任意形状，すべり方向，離散化をどう解釈するか |

@@ -16,21 +16,21 @@ lang: ja
 ```{toctree}
 :maxdepth: 1
 
-continuum_mechanics_to_lem_start
-what_is_limit_equilibrium_method
-lem_in_practice_mechanical_perspective
-lem_glossary
+continuum-mechanics-to-lem-start
+what-is-limit-equilibrium-method
+lem-in-practice-mechanical-perspective
+lem-glossary
 ```
 
 ## 各資料の役割
 
 | 資料 | 中心となる問い |
 |---|---|
-| 1. [連続体力学から極限平衡法のスタート地点まで](continuum_mechanics_to_lem_start.md) | 応力と破壊規準は，底面の力へどう変換されるか |
-| 2. [極限平衡法とは何か](what_is_limit_equilibrium_method.md) | 残った未知量を，各手法はどの仮定で決めるか |
-| 3. [極限平衡法を実際に使うとき](lem_in_practice_mechanical_perspective.md) | 任意形状，すべり方向，離散化をどう解釈するか |
+| 1. [連続体力学から極限平衡法のスタート地点まで](continuum-mechanics-to-lem-start.md) | 応力と破壊規準は，底面の力へどう変換されるか |
+| 2. [極限平衡法とは何か](what-is-limit-equilibrium-method.md) | 残った未知量を，各手法はどの仮定で決めるか |
+| 3. [極限平衡法を実際に使うとき](lem-in-practice-mechanical-perspective.md) | 任意形状，すべり方向，離散化をどう解釈するか |
 
-用語と記号の定義は[用語集](lem_glossary.md)にまとめている．
+用語と記号の定義は[用語集](lem-glossary.md)にまとめている．
 
 ## 読み方
 
