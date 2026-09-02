@@ -1,0 +1,34 @@
+/* Related links at the foot of the sidebar (see ``_templates/sidebar/links.html``). */
+
+.sidebar-links {
+  margin-top: auto;
+  padding: 1rem var(--sidebar-item-spacing-horizontal, 1rem) 0;
+  border-top: 1px solid var(--color-sidebar-background-border);
+}
+
+.sidebar-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-links li + li {
+  margin-top: 0.25rem;
+}
+
+.sidebar-links a {
+  color: var(--color-sidebar-link-text);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+
+.sidebar-links a:hover {
+  color: var(--color-sidebar-link-text--top-level);
+  text-decoration: underline;
+}
+
+.sidebar-links__arrow {
+  margin-left: 0.25em;
+  font-size: 0.75em;
+  opacity: 0.7;
+}

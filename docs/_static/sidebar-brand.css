@@ -1,0 +1,6 @@
+/* Furo sets the sidebar brand to 1.5rem but leaves its weight at the body
+   default, so the site name reads lighter than the navigation under it. */
+
+.sidebar-brand-text {
+  font-weight: 700;
+}

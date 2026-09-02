@@ -1,0 +1,54 @@
+/* Sidebar language switcher (see ``_templates/sidebar/language.html``).
+   Colours come from Furo's own variables so the control follows the theme. */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 var(--sidebar-item-spacing-horizontal, 1rem);
+  margin-bottom: 1rem;
+}
+
+/* Stands in for a caption: any word would be readable in only one of the two
+   editions. */
+.lang-switch__icon {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--color-sidebar-caption-text);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.lang-switch__options {
+  display: flex;
+  flex: 1;
+  border: 1px solid var(--color-sidebar-search-border);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.lang-switch__option {
+  flex: 1;
+  padding: 0.3125rem 0.5rem;
+  color: var(--color-sidebar-link-text);
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.lang-switch__option + .lang-switch__option {
+  border-left: 1px solid var(--color-sidebar-search-border);
+}
+
+.lang-switch__option:hover {
+  background: var(--color-sidebar-item-background--hover);
+}
+
+.lang-switch__option--current {
+  background: var(--color-sidebar-item-background--current);
+  color: var(--color-sidebar-link-text--top-level);
+  font-weight: 700;
+  cursor: default;
+}

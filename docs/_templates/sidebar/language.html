@@ -1,0 +1,44 @@
+{#-
+
+Language switcher for the sidebar.
+
+``language_editions`` is built per page by ``_shared_conf.setup``: the current
+edition is a plain ``<span>``, the other one a link to the counterpart page,
+falling back to that edition's top page when the page has no counterpart yet.
+
+The control carries no visible caption: a word in either language is opaque to
+readers of the other one, so the globe stands in for it and the options name
+themselves in their own language. ``language_caption`` remains as the
+accessible name, which assistive tech announces in the page's language.
+
+A link that falls back to the other edition's top page carries only a ``title``.
+It gets no visible marker: the landing page says it is under construction, so
+warning about it beforehand would cost a glyph nobody has a legend for.
+
+-#}
+{%- if language_editions %}
+<div class="lang-switch" role="navigation" aria-label="{{ language_caption }}">
+  <svg class="lang-switch__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="12" r="9" />
+    <ellipse cx="12" cy="12" rx="4" ry="9" />
+    <path d="M3.2 9h17.6M3.2 15h17.6" />
+  </svg>
+  <div class="lang-switch__options">
+    {%- for edition in language_editions %}
+    {%- if edition.url %}
+    <a class="lang-switch__option"
+       href="{{ edition.url }}"
+       hreflang="{{ edition.code }}"
+       lang="{{ edition.code }}"
+       {%- if not edition.exact %} title="{{ edition.fallback_hint }}"{% endif %}>
+      {{ edition.label }}
+    </a>
+    {%- else %}
+    <span class="lang-switch__option lang-switch__option--current"
+          aria-current="true"
+          lang="{{ edition.code }}">{{ edition.label }}</span>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}

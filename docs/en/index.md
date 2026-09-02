@@ -7,8 +7,6 @@ lang: en
 
 ## The limit equilibrium method, from first principles to reading real results
 
-<a href="../ja/index.html">日本語</a>
-
 ```{admonition} Under construction
 :class: warning
 
