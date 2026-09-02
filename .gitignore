@@ -4,3 +4,6 @@ _build/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Sphinx compiles docs/_locale/**/sphinx.po to .mo on each build.
+*.mo

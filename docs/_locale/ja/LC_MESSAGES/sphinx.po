@@ -1,0 +1,48 @@
+# Overrides for Sphinx's own Japanese UI strings.
+#
+# Only the admonition labels are overridden, and only to leave them in English.
+# Sphinx translates them to 注釈 / 警告 / ヒント, which reads heavier than the
+# surrounding prose; English labels are the convention in Japanese technical
+# writing and keep these boxes visually quiet. Every other Sphinx string
+# (search, navigation, index) keeps its Japanese translation.
+#
+# Sphinx compiles this to sphinx.mo automatically when it is out of date, so
+# there is nothing to run by hand.
+msgid ""
+msgstr ""
+"Project-Id-Version: LEM Primer\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Attention"
+msgstr "Attention"
+
+msgid "Caution"
+msgstr "Caution"
+
+msgid "Danger"
+msgstr "Danger"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Hint"
+msgstr "Hint"
+
+msgid "Important"
+msgstr "Important"
+
+msgid "Note"
+msgstr "Note"
+
+msgid "See also"
+msgstr "See also"
+
+msgid "Tip"
+msgstr "Tip"
+
+msgid "Warning"
+msgstr "Warning"

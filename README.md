@@ -27,11 +27,23 @@ independent of any particular analysis software.
 ```bash
 uv sync --group docs      # or: pip install -e '.[docs]'
 make all                  # builds _site/ja and _site/en
+make preview              # builds both, then opens the Japanese edition
+make serve                # builds, then serves it at http://localhost:8000/
 ```
 
-`make ja` and `make en` build a single edition. Each language is a separate
-Sphinx project under `docs/`, because Sphinx resolves `language` once per build;
-settings that do not depend on the language live in `docs/_shared_conf.py`.
+`make ja` and `make en` build a single edition, and goals chain, so `make ja
+open` builds just that edition and opens it. `make preview` is `all` plus
+`open` in one word (`EDITION=en` on either one opens the English edition
+instead).
+
+Both open the edition's page directly rather than `_site/index.html`, because
+that root page redirects to `./ja/` and only a web server resolves that to an
+index page. `make serve` is therefore the faithful check before pushing: over
+HTTP the redirect, the clean URLs, and search all behave as they will on Pages.
+
+Each language is a separate Sphinx project under `docs/`, because Sphinx
+resolves `language` once per build; settings that do not depend on the language
+live in `docs/_shared_conf.py`.
 
 ## Related
 

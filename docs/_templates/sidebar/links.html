@@ -1,0 +1,22 @@
+{#-
+
+Related links at the foot of the sidebar.
+
+``sidebar_links`` is built per page by ``_shared_conf.setup`` so the labels
+follow the edition's language. Every entry is external, hence the arrow and
+``rel="noopener"``.
+
+-#}
+{%- if sidebar_links %}
+<div class="sidebar-links">
+  <ul>
+    {%- for link in sidebar_links %}
+    <li>
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+        {{ link.label }}<span class="sidebar-links__arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endif %}
