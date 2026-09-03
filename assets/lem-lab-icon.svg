@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>LEM Lab</title>
+  <desc>Mountain pictogram with an ellipsoidal slip surface (dashed), representing slope stability analysis with the Limit Equilibrium Method.</desc>
+
+  <defs>
+    <linearGradient id="mountain-grad" gradientUnits="userSpaceOnUse" x1="180" y1="140" x2="380" y2="400">
+      <stop offset="0" stop-color="#78A98F"/>
+      <stop offset="1" stop-color="#356F68"/>
+    </linearGradient>
+    <clipPath id="squircle-clip">
+      <path d="M488,120 L488,392 C488,444.984 444.984,488 392,488 L120,488 C67.016,488 24,444.984 24,392 L24,120 C24,67.016 67.016,24 120,24 L392,24 C444.984,24 488,67.016 488,120 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background squircle -->
+  <path d="M488,120 L488,392 C488,444.984 444.984,488 392,488 L120,488 C67.016,488 24,444.984 24,392 L24,120 C24,67.016 67.016,24 120,24 L392,24 C444.984,24 488,67.016 488,120 Z"
+        fill="#EDF1EC"/>
+
+  <g clip-path="url(#squircle-clip)">
+    <!-- 1. Mountain fill -->
+    <path d="M96,400 L192,220 L256,290 L320,130 L424,400 Z"
+          fill="url(#mountain-grad)"/>
+
+    <!-- 2. Slip surface: cream halo + dashed red top -->
+    <path d="M340,182 Q 310,380 415,377"
+          fill="none" stroke="#FDF7ED" stroke-width="20" stroke-linecap="round"/>
+    <path d="M340,182 Q 310,380 415,377"
+          fill="none" stroke="#D94F45" stroke-width="10" stroke-linecap="round"
+          stroke-dasharray="22 14"/>
+
+    <!-- 3. Mountain stroke last, so the navy outline covers the slip surface ends
+         and the slip surface reads as an interior cross-section. -->
+    <path d="M96,400 L192,220 L256,290 L320,130 L424,400 Z"
+          fill="none" stroke="#123047" stroke-width="28"
+          stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>

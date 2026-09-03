@@ -45,6 +45,9 @@ en:
 	$(SPHINXBUILD) -b html docs/en "$(SITEDIR)/en" $(SPHINXOPTS)
 
 # The site root redirects to the Japanese edition, which is the source language.
+# Files under assets/ are published verbatim at $(SITEDIR)/assets/. They belong to
+# neither edition -- they are brand assets that other services fetch by URL -- so
+# they bypass both Sphinx projects rather than riding along in html_static_path.
 all: ja en
 	@printf '%s\n' \
 	  '<!doctype html>' \
@@ -57,6 +60,7 @@ all: ja en
 	  '</head>' \
 	  '<body><p><a href="./ja/">日本語</a> / <a href="./en/">English</a></p></body>' \
 	  '</html>' > "$(SITEDIR)/index.html"
+	@mkdir -p "$(SITEDIR)/assets" && cp assets/* "$(SITEDIR)/assets/"
 	@echo "Site built in $(SITEDIR)/"
 
 # Opens the edition's page file itself rather than $(SITEDIR)/index.html: that
