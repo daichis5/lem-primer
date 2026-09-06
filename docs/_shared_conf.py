@@ -165,7 +165,7 @@ templates_path = ["../_templates"]
 html_static_path = ["../_static"]
 html_css_files = [
     "language-switch.css",
-    "sidebar-brand.css",
+    "brand.css",
     "sidebar-links.css",
 ]
 

@@ -1,0 +1,67 @@
+/* The site name and its mark, in the two places Furo shows them: the sidebar,
+   and the mobile header that replaces it at narrow widths.
+
+   Sidebar. Furo stacks the logo above the name once ``html_logo`` is set. The
+   mark is a square, so at the sidebar's full width it would tower over the
+   navigation; sitting it beside the name instead keeps the block the height it
+   was before the logo existed.
+
+   The theme's own ``centered`` class is not a reliable hook for this: its
+   template adds the class on the ``logo`` context variable but renders the
+   image on ``logo_url``, and Sphinx no longer passes the former, so the class
+   never appears. Hence the plain ``.sidebar-brand``, with ``text-align`` reset
+   in case a future Furo/Sphinx pairing starts adding ``centered`` again. */
+
+.sidebar-brand {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625rem;
+  text-align: left;
+}
+
+.sidebar-brand .sidebar-logo-container {
+  flex: none;
+  margin: var(--sidebar-item-spacing-vertical) 0;
+}
+
+.sidebar-brand .sidebar-logo {
+  width: 2.25rem;
+}
+
+/* Furo sets the sidebar brand to 1.5rem but leaves its weight at the body
+   default, so the site name reads lighter than the navigation under it. */
+
+.sidebar-brand-text {
+  font-weight: 700;
+}
+
+/* Mobile header. Below the sidebar's breakpoint Furo swaps it for a 3rem bar
+   whose centre is a bare, unstyled ``<div class="brand">`` -- no mark, and the
+   body's regular weight. Same two corrections as above, scaled to the bar: the
+   mark rides at 1.5rem, which clears the 3rem height, and the name takes the
+   weight it has in the sidebar. Its size is left alone; 1.5rem would crowd the
+   bar between the menu and theme buttons.
+
+   The mark is drawn with ``background-image`` rather than an ``<img>`` because
+   the markup comes from the theme's ``page.html``. Overriding a whole template
+   to insert one element would pin us to its internals; this rides on the class
+   names alone. The URL resolves against this stylesheet, so it holds at every
+   page depth -- both files sit in ``_static/``. */
+
+.mobile-header .header-center a {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.mobile-header .header-center a:before {
+  content: "";
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("lem-primer-icon.svg") center / contain no-repeat;
+}
+
+.mobile-header .brand {
+  font-weight: 700;
+}
