@@ -42,6 +42,124 @@ html_theme = "furo"
 # language, and every page title is written in its own language anyway.
 html_title = "LEM Primer"
 
+# The mark is the LEM Lab icon with its values inverted -- same mountain, same
+# dashed slip surface, sand on navy instead of green on cream. The shape says
+# "same family", the inversion says "not the same repository", and the contrast
+# survives being scaled down to a favicon. Both icons live in ``assets/`` rather
+# than ``_static/`` because they are one set of brand assets; Sphinx resolves
+# these paths against each edition's source directory and copies the file into
+# the build's ``_static/``.
+html_logo = "../../assets/lem-primer-icon.svg"
+html_favicon = "../../assets/lem-primer-icon.svg"
+
+# Palette. Two rules drive the choices below.
+#
+# First, the figures use colour to carry meaning: red is the driving side
+# (weight), green the resisting shear, blue the base normal force. Furo's
+# default brand colour is a saturated blue, which invites the reader to connect
+# "the blue of a link" with "the blue of N_i". So the site's own accents avoid
+# those three hues: the primary is the deep navy that the figures already use
+# for ink and for the slip surface itself -- a colour that stands for structure
+# rather than for any force -- and the secondary is the teal of the LEM Lab
+# mark.
+#
+# Second, body text, muted text and borders take the exact values the figures
+# use for the same roles, so a figure sits on the page as part of it rather than
+# as a pasted-in image.
+_INK = "#172033"  # figure body text, and the slip surface
+_TEAL = "#356F68"  # the dark stop of the LEM Lab mountain gradient
+
+html_theme_options = {
+    "light_css_variables": {
+        "color-brand-primary": "#1A5678",
+        "color-brand-content": "#17527A",
+        "color-brand-visited": "#7A5AA6",
+        "color-foreground-primary": _INK,
+        "color-foreground-secondary": "#475569",
+        "color-foreground-muted": "#64748B",
+        "color-foreground-border": "#94A3B8",
+        "color-background-secondary": "#F1F4F6",
+        "color-background-hover": "#E7EDF2",
+        "color-background-hover--transparent": "#E7EDF200",
+        "color-background-border": "#E2E8F0",
+        # Where a cross-reference lands. Furo's default is a highlighter
+        # yellow; equations and figures are cited by label throughout, so this
+        # flashes often enough to be worth keeping in the palette.
+        "color-highlight-on-target": "#E3EDEA",
+        "color-highlighted-background": "#DCE9F2",
+        # Furo's admonition titles are saturated material-design hues. Note is
+        # by far the most used directive here, so it takes the quiet teal;
+        # everything else is muted to the same degree.
+        "color-admonition-title--note": _TEAL,
+        "color-admonition-title-background--note": "rgba(53, 111, 104, .16)",
+        "color-admonition-title--important": _TEAL,
+        "color-admonition-title-background--important": "rgba(53, 111, 104, .16)",
+        "color-admonition-title--tip": "#2F7D5F",
+        "color-admonition-title-background--tip": "rgba(47, 125, 95, .16)",
+        "color-admonition-title--hint": "#2F7D5F",
+        "color-admonition-title-background--hint": "rgba(47, 125, 95, .16)",
+        "color-admonition-title--seealso": "#1A5678",
+        "color-admonition-title-background--seealso": "rgba(26, 86, 120, .16)",
+        "color-admonition-title--warning": "#B45309",
+        "color-admonition-title-background--warning": "rgba(180, 83, 9, .16)",
+        "color-admonition-title--caution": "#B45309",
+        "color-admonition-title-background--caution": "rgba(180, 83, 9, .16)",
+        "color-admonition-title--danger": "#B3352C",
+        "color-admonition-title-background--danger": "rgba(179, 53, 44, .16)",
+        "color-admonition-title--attention": "#B3352C",
+        "color-admonition-title-background--attention": "rgba(179, 53, 44, .16)",
+        "color-admonition-title--error": "#B3352C",
+        "color-admonition-title-background--error": "rgba(179, 53, 44, .16)",
+        # The title of a bare ``{admonition}`` with a custom heading.
+        "color-admonition-title": "#1A5678",
+        "color-admonition-title-background": "rgba(26, 86, 120, .16)",
+        "color-topic-title": _TEAL,
+        "color-topic-title-background": "rgba(53, 111, 104, .16)",
+    },
+    "dark_css_variables": {
+        "color-brand-primary": "#6FB3E0",
+        "color-brand-content": "#7CBCE6",
+        "color-brand-visited": "#B9A3DC",
+        "color-foreground-primary": "#CFD5DB",
+        "color-foreground-secondary": "#9AA5B1",
+        "color-foreground-muted": "#7C8894",
+        "color-foreground-border": "#5A6672",
+        "color-background-primary": "#12171B",
+        "color-background-secondary": "#171D22",
+        "color-background-hover": "#1C242A",
+        "color-background-hover--transparent": "#1C242A00",
+        "color-background-border": "#2C363E",
+        "color-highlight-on-target": "#1E3A36",
+        "color-highlighted-background": "#103048",
+        "color-admonition-background": "#171D22",
+        "color-card-background": "#171D22",
+        "color-admonition-title--note": "#7FBCAE",
+        "color-admonition-title-background--note": "rgba(127, 188, 174, .16)",
+        "color-admonition-title--important": "#7FBCAE",
+        "color-admonition-title-background--important": "rgba(127, 188, 174, .16)",
+        "color-admonition-title--tip": "#6FC69B",
+        "color-admonition-title-background--tip": "rgba(111, 198, 155, .16)",
+        "color-admonition-title--hint": "#6FC69B",
+        "color-admonition-title-background--hint": "rgba(111, 198, 155, .16)",
+        "color-admonition-title--seealso": "#6FB3E0",
+        "color-admonition-title-background--seealso": "rgba(111, 179, 224, .16)",
+        "color-admonition-title--warning": "#E0A458",
+        "color-admonition-title-background--warning": "rgba(224, 164, 88, .16)",
+        "color-admonition-title--caution": "#E0A458",
+        "color-admonition-title-background--caution": "rgba(224, 164, 88, .16)",
+        "color-admonition-title--danger": "#E88178",
+        "color-admonition-title-background--danger": "rgba(232, 129, 120, .16)",
+        "color-admonition-title--attention": "#E88178",
+        "color-admonition-title-background--attention": "rgba(232, 129, 120, .16)",
+        "color-admonition-title--error": "#E88178",
+        "color-admonition-title-background--error": "rgba(232, 129, 120, .16)",
+        "color-admonition-title": "#6FB3E0",
+        "color-admonition-title-background": "rgba(111, 179, 224, .16)",
+        "color-topic-title": "#7FBCAE",
+        "color-topic-title-background": "rgba(127, 188, 174, .16)",
+    },
+}
+
 # Both editions share the templates and stylesheet one level up.
 templates_path = ["../_templates"]
 html_static_path = ["../_static"]

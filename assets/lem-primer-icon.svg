@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>LEM Primer</title>
+  <desc>The LEM Lab mark with its values inverted: the same mountain and dashed slip surface, drawn in ochre on a navy squircle, marking the primer as part of the same family.</desc>
+
+  <defs>
+    <linearGradient id="mountain-grad" gradientUnits="userSpaceOnUse" x1="180" y1="140" x2="380" y2="400">
+      <stop offset="0" stop-color="#C8A470"/>
+      <stop offset="1" stop-color="#8E6F42"/>
+    </linearGradient>
+    <clipPath id="squircle-clip">
+      <path d="M488,120 L488,392 C488,444.984 444.984,488 392,488 L120,488 C67.016,488 24,444.984 24,392 L24,120 C24,67.016 67.016,24 120,24 L392,24 C444.984,24 488,67.016 488,120 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background squircle -->
+  <path d="M488,120 L488,392 C488,444.984 444.984,488 392,488 L120,488 C67.016,488 24,444.984 24,392 L24,120 C24,67.016 67.016,24 120,24 L392,24 C444.984,24 488,67.016 488,120 Z"
+        fill="#123047"/>
+
+  <g clip-path="url(#squircle-clip)">
+    <!-- 1. Mountain fill. Mid-tone, not the pale sand of the figures: the
+         outline below it is now the light colour, so the fill has to sit
+         between it and the navy background the way the Lab mark's green sits
+         between its navy outline and its cream background. -->
+    <path d="M96,400 L192,220 L256,290 L320,130 L424,400 Z"
+          fill="url(#mountain-grad)"/>
+
+    <!-- 2. Slip surface: the halo takes the background colour, as in the Lab
+         mark, so here it is navy rather than cream. -->
+    <path d="M340,182 Q 310,380 415,377"
+          fill="none" stroke="#123047" stroke-width="20" stroke-linecap="round"/>
+    <path d="M340,182 Q 310,380 415,377"
+          fill="none" stroke="#E8635A" stroke-width="10" stroke-linecap="round"
+          stroke-dasharray="22 14"/>
+
+    <!-- 3. Mountain stroke last, so the outline covers the slip surface ends
+         and the slip surface reads as an interior cross-section. -->
+    <path d="M96,400 L192,220 L256,290 L320,130 L424,400 Z"
+          fill="none" stroke="#EDF1EC" stroke-width="28"
+          stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>
