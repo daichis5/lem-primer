@@ -1,3 +1,32 @@
+/* Sidebar brand: the LEM Primer mark next to the site name.
+
+   Furo stacks the logo above the name once ``html_logo`` is set. The mark is a
+   square, so at the sidebar's full width it would tower over the navigation;
+   sitting it beside the name instead keeps the block the height it was before
+   the logo existed.
+
+   The theme's own ``centered`` class is not a reliable hook for this: its
+   template adds the class on the ``logo`` context variable but renders the
+   image on ``logo_url``, and Sphinx no longer passes the former, so the class
+   never appears. Hence the plain ``.sidebar-brand``, with ``text-align`` reset
+   in case a future Furo/Sphinx pairing starts adding ``centered`` again. */
+
+.sidebar-brand {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.625rem;
+  text-align: left;
+}
+
+.sidebar-brand .sidebar-logo-container {
+  flex: none;
+  margin: var(--sidebar-item-spacing-vertical) 0;
+}
+
+.sidebar-brand .sidebar-logo {
+  width: 2.25rem;
+}
+
 /* Furo sets the sidebar brand to 1.5rem but leaves its weight at the body
    default, so the site name reads lighter than the navigation under it. */
 
