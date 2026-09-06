@@ -45,6 +45,9 @@ en:
 	$(SPHINXBUILD) -b html docs/en "$(SITEDIR)/en" $(SPHINXOPTS)
 
 # The site root redirects to the Japanese edition, which is the source language.
+# Sphinx writes the favicon link into the pages it generates, but this page is
+# written here, so it needs its own -- otherwise a bookmark of the site root is
+# the one entry point without the mark.
 # Files under assets/ are published verbatim at $(SITEDIR)/assets/. They belong to
 # neither edition -- they are brand assets that other services fetch by URL -- so
 # they bypass both Sphinx projects rather than riding along in html_static_path.
@@ -57,6 +60,7 @@ all: ja en
 	  '<title>LEM Primer</title>' \
 	  '<meta http-equiv="refresh" content="0; url=./ja/">' \
 	  '<link rel="canonical" href="./ja/">' \
+	  '<link rel="icon" type="image/svg+xml" href="./assets/lem-primer-icon.svg">' \
 	  '</head>' \
 	  '<body><p><a href="./ja/">日本語</a> / <a href="./en/">English</a></p></body>' \
 	  '</html>' > "$(SITEDIR)/index.html"
