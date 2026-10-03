@@ -77,7 +77,7 @@ fig.text(add(v.p((10.0, s.slip(10.0))), (0, 30)), "すべり面（仮定する�
 pa = v.p((s.x0 + 4.6, s.slip(s.x0 + 4.6) + 0.5))
 pb = v.p((s.x0 + 2.0, s.slip(s.x0 + 2.0) + 0.5))
 fig.arrow(pa, pb, UNIT, width=2, dash="5 4")
-fig.text(add(pb, (-8, -10)), "すべる向き", SMALL, MUTED, "end")
+fig.text(add(pb, (-12, -14)), "すべる向き", SMALL, MUTED, "end")
 
 if __name__ == "__main__":
     fig.save()

@@ -9,7 +9,7 @@ read off the curve. Spencer is the case f(x) = 1.
 
 import math
 
-from figlib import (FAINT, GROUND, INK, INTER, MUTED, SMALL, SOIL, SOIL_EDGE, Figure, Slope, View, add)
+from figlib import FAINT, GROUND, INK, INTER, MUTED, SOIL, SOIL_EDGE, Figure, Slope, View, add
 
 s = Slope(n=8)
 THETA_SPENCER = math.radians(25)

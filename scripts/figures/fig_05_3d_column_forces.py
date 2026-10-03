@@ -41,7 +41,7 @@ m = unit3(sub3(d, mul3(n, dot3(d, n))))  # d projected onto the base plane
 e2 = cross3(n, m)
 P = (A / 2, A / 2, base_z(A / 2, A / 2))
 # Lengths in metres of drawing. W is chosen; N and T are W's components normal
-# to the base and along m, as for a column with no interslice forces.
+# to the base and along m.
 W_LEN = 1.3
 N_LEN = W_LEN * -n[2]
 T_LEN = W_LEN * -m[2]
@@ -71,8 +71,8 @@ circle = [pr.p(add3(P, add3(mul3(m, T_LEN * math.cos(t)), mul3(e2, T_LEN * math.
 fig.polyline(circle, MUTED, 1.2, "2 4")
 fig.unit_vector(pr.p(P), pr.p(add3(P, mul3(n, 0.9))))
 fig.math(pr.p(add3(P, mul3(n, 0.9))), r"  \v{n}_i", 16, UNIT)
-fig.unit_vector(pr.p(P), pr.p(add3(P, mul3(m, 0.8))))
-fig.math(add(pr.p(add3(P, mul3(m, 0.8))), (-6, 16)), r"\v{m}_i", 16, UNIT, "end")
+fig.unit_vector(pr.p(P), pr.p(add3(P, mul3(m, 0.9))))
+fig.math(add(pr.p(add3(P, mul3(m, 0.9))), (-6, 16)), r"\v{m}_i", 16, UNIT, "end")
 fig.arrow(pr.p(P), pr.p(add3(P, mul3(n, -N_LEN))), NORMAL)
 fig.math(add(pr.p(add3(P, mul3(n, -N_LEN))), (-8, -6)), "N_i", 17, NORMAL, "end")
 fig.arrow(pr.p(P), pr.p(add3(P, mul3(m, -T_LEN))), RESIST)

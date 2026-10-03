@@ -85,7 +85,7 @@ shear_sum = sum(0.33 * sigma(k) * SCALE for k in range(POINTS))
 # Right: LEM's model, one plane and one direction for the base.
 pc = (668, 214)
 chord = unit(sub(on_arc(90 - SPAN / 2), on_arc(90 + SPAN / 2)))
-a, b = sub(pc, mul(chord, 82)), add(pc, mul(chord, 82))
+a, b = sub(pc, mul(chord, 88)), add(pc, mul(chord, 88))
 fig.polygon([a, b, (b[0], 40), (a[0], 40)], fill=SOIL)
 fig.polygon([a, b, (b[0], 312), (a[0], 312)], fill=GROUND)
 fig.line(a, b, INK, 3)

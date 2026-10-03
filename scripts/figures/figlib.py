@@ -56,8 +56,6 @@ def mul(a, k):
     return (a[0] * k, a[1] * k)
 
 
-
-
 def norm(a):
     return math.hypot(a[0], a[1])
 
@@ -67,12 +65,8 @@ def unit(a):
     return (a[0] / n, a[1] / n)
 
 
-
-
 def lerp(a, b, t):
     return (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
-
-
 
 
 class Slope:
@@ -248,7 +242,7 @@ def text_width(s, size):
 #   \v{n}                   a vector: bold italic, as \boldsymbol in the text
 #   \r{tan}                 upright text inside a formula
 #   \t{方向}                 words in the label font, for a Japanese label
-#                           with symbols in it ("x\t{ 方向}")
+#                           with symbols in it (r"x\t{ 方向}")
 # Latin and Greek letters are italic; digits and signs are upright.
 
 _TOKEN = re.compile(r"\\([vrt])\{([^{}]*)\}|([_^])(\{(?:[^{}]|\{[^{}]*\})*\}|.)|(.)", re.S)
@@ -368,7 +362,7 @@ class Figure:
         y = p[1] + (0.33 * size if vcenter else 0)
         out = []
         current = 0.0
-        for c, bold, italic, level in _merge(_runs(src)):
+        for c, style, italic, level in _merge(_runs(src)):
             fs = size * (0.7 if level else 1.0)
             shift = {0: 0.0, 1: 0.28 * size, 2: -0.42 * size}[level]
             dy = shift - current
@@ -379,11 +373,11 @@ class Figure:
             if level:
                 attrs.append(f'font-size="{fmt(fs)}"')
             attrs.append(f'font-style="{"italic" if italic else "normal"}"')
-            if bold == "t":
+            if style == "t":
                 attrs.append('class="t"')
                 if not level:
                     attrs.append(f'font-size="{fmt(LABEL if size >= LABEL else size)}"')
-            elif bold:
+            elif style:
                 attrs.append('font-weight="bold"')
             out.append(f"<tspan {' '.join(attrs)}>{_esc(c)}</tspan>")
         self.add(

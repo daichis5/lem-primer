@@ -36,6 +36,7 @@ jobs:
         run: |
           rm -f docs/ja/figures/*.svg
           make figures
+          git status --porcelain -- docs/ja/figures
           test -z "$(git status --porcelain -- docs/ja/figures)"
       # -W turns warnings into errors: both editions currently build clean, and
       # this keeps broken directives or unresolved references from landing.
