@@ -1,57 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="800" viewBox="0 0 1300 800" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" role="img" aria-labelledby="title desc">
   <title id="title">3次元のカラムに働く力</title>
-  <desc id="desc">傾いた底面をもつ3次元のカラムに，自重，底面垂直力，すべりに抵抗するせん断力，4つの側面のカラム間力が働く．外向きの法線と局所すべり方向も示す．</desc>
-  <defs>
-    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
-    <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
-    <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
-    <marker id="black" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#172033"/></marker>
-    <style>
-      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 18px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}
-    </style>
-  </defs>
-  <rect width="1300" height="800" fill="#fff"/>
-  <text x="650" y="48" text-anchor="middle" class="title">3次元のカラムでは，底面の接平面内に向きの自由度が加わる</text>
-
-  <polygon points="410,190 695,145 890,258 600,310" fill="#fef3c7" stroke="#8b7355" stroke-width="3"/>
-  <polygon points="410,190 600,310 600,570 420,455" fill="#f4e7c5" fill-opacity="0.9" stroke="#8b7355" stroke-width="3"/>
-  <polygon points="600,310 890,258 870,500 600,570" fill="#ead7ad" fill-opacity="0.9" stroke="#8b7355" stroke-width="3"/>
-  <polygon points="410,190 695,145 690,404 420,455" fill="#f8e9c6" fill-opacity="0.46" stroke="#8b7355" stroke-width="2" stroke-dasharray="7 6"/>
-  <polygon points="420,455 690,404 870,500 600,570" fill="#dbeafe" fill-opacity="0.75" stroke="#586174" stroke-width="5"/>
-  <text x="648" y="230" text-anchor="middle" class="label">第 i カラム</text>
-
-  <line x1="650" y1="230" x2="650" y2="384" stroke="#172033" stroke-width="7" marker-end="url(#black)"/>
-  <text x="667" y="318" class="math">W<tspan baseline-shift="sub" font-size="15">i</tspan></text>
-
-  <circle cx="645" cy="477" r="7" fill="#172033"/>
-  <line x1="645" y1="477" x2="592" y2="327" stroke="#2563eb" stroke-width="8" marker-end="url(#blue)"/>
-  <text x="517" y="315" class="math" fill="#2563eb">−N<tspan baseline-shift="sub" font-size="15">i</tspan> n<tspan baseline-shift="sub" font-size="15">i</tspan></text>
-  <line x1="645" y1="477" x2="807" y2="449" stroke="#d64545" stroke-width="8" marker-end="url(#red)"/>
-  <text x="807" y="426" class="math" fill="#d64545">T<tspan baseline-shift="sub" font-size="15">i</tspan> = −T<tspan baseline-shift="sub" font-size="15">i</tspan>m<tspan baseline-shift="sub" font-size="15">i</tspan></text>
-  <line x1="645" y1="477" x2="707" y2="638" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#blue)"/>
-  <text x="716" y="659" class="math" fill="#2563eb">n<tspan baseline-shift="sub" font-size="15">i</tspan></text>
-  <line x1="645" y1="477" x2="502" y2="501" stroke="#d64545" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#red)"/>
-  <text x="468" y="515" class="math" fill="#d64545">m<tspan baseline-shift="sub" font-size="15">i</tspan></text>
-
-  <line x1="420" y1="340" x2="525" y2="357" stroke="#14916a" stroke-width="7" marker-end="url(#green)"/>
-  <text x="328" y="333" class="label" fill="#14916a">x面の内力</text>
-  <line x1="875" y1="366" x2="768" y2="386" stroke="#14916a" stroke-width="7" marker-end="url(#green)"/>
-  <text x="907" y="354" class="label" fill="#14916a">x面の内力</text>
-  <line x1="540" y1="247" x2="603" y2="290" stroke="#14916a" stroke-width="7" marker-end="url(#green)"/>
-  <text x="405" y="232" class="label" fill="#14916a">y面の内力</text>
-  <line x1="735" y1="478" x2="680" y2="445" stroke="#14916a" stroke-width="7" marker-end="url(#green)"/>
-  <text x="822" y="548" class="label" fill="#14916a">y面の内力</text>
-
-  <g transform="translate(1010 574)">
-    <line x1="0" y1="95" x2="94" y2="95" stroke="#172033" stroke-width="4" marker-end="url(#black)"/><text x="103" y="101" class="math">x</text>
-    <line x1="0" y1="95" x2="-56" y2="40" stroke="#172033" stroke-width="4" marker-end="url(#black)"/><text x="-74" y="35" class="math">y</text>
-    <line x1="0" y1="95" x2="0" y2="0" stroke="#172033" stroke-width="4" marker-end="url(#black)"/><text x="11" y="6" class="math">z</text>
-  </g>
-
-  <rect x="72" y="620" width="444" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
-  <text x="94" y="653" class="small">底面せん断力の大きさ：</text>
-  <text x="278" y="653" class="math">‖T<tspan baseline-shift="sub" font-size="14">i</tspan>‖</text>
-  <text x="94" y="688" class="small">接平面内の向き：</text>
-  <text x="278" y="688" class="math">m<tspan baseline-shift="sub" font-size="14">i</tspan></text>
-  <text x="324" y="688" class="small">を別に決める</text>
+  <desc id="desc">傾いた底面をもつ3次元のカラムに，自重，底面の垂直力とせん断力，側面のカラム間力が働く．底面のせん断力は接平面の中のベクトルで，その向きは強度の式からは決まらない．点線の円は，接平面の中で向きがとりうる範囲を示す．</desc>
+  <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="470" fill="#fff"/>
+  <polygon points="69.1,443.4 350.7,316.7 483.7,193.8 202.1,320.5" fill="#ece4d0" stroke="#c9b88f" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="353.9" y="332.7" class="t" font-size="13" fill="#475569" text-anchor="start">底面の接平面</text>
+  <line x1="236.5" y1="316.1" x2="150" y2="396" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="236.5" y1="316.1" x2="402.9" y2="241.2" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="236.5" y1="316.1" x2="236.5" y2="128.5" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <polygon points="150,396 316.4,321.1 316.4,145.1 150,178.4" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="316.4,321.1 402.9,241.2 402.9,95.2 316.4,145.1" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="150,178.4 316.4,145.1 402.9,95.2 236.5,128.5" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polyline points="225.1,345.4 226,343.9 227.3,342.2 229,340.4 231,338.4 233.4,336.3 236.1,334 239.1,331.6 242.4,329.1 245.9,326.5 249.7,323.9 253.7,321.2 257.9,318.5 262.2,315.8 266.6,313.1 271.1,310.5 275.6,307.9 280.1,305.4 284.6,303 289.1,300.8 293.4,298.6 297.6,296.7 301.7,294.8 305.6,293.2 309.2,291.8 312.6,290.5 315.7,289.5 318.5,288.7 321,288.1 323.2,287.8 325,287.7 326.4,287.8 327.5,288.2 328.1,288.8 328.4,289.6 328.3,290.6 327.8,291.9 326.9,293.3 325.6,295 323.9,296.8 321.9,298.8 319.5,301 316.8,303.3 313.8,305.7 310.5,308.2 306.9,310.7 303.1,313.4 299.2,316.1 295,318.7 290.7,321.4 286.3,324.1 281.8,326.8 277.3,329.3 272.7,331.8 268.2,334.2 263.8,336.5 259.4,338.6 255.2,340.6 251.2,342.4 247.3,344 243.7,345.5 240.3,346.7 237.2,347.7 234.3,348.5 231.8,349.1 229.7,349.5 227.9,349.6 226.4,349.4 225.4,349.1 224.7,348.5 224.5,347.7 224.6,346.6 225.1,345.4" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="2 4" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="276.4" y1="318.6" x2="303" y2="364.8" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="304.6,367.7 297,362.5 303.9,358.5" fill="#64748b" stroke-linejoin="round"/>
+  <text x="304.6" y="367.7" class="m" font-size="16" fill="#64748b" text-anchor="start"><tspan font-style="normal">  </tspan><tspan font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="228" y2="343.8" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="225.1,345.4 230.6,338 234.3,345.1" fill="#64748b" stroke-linejoin="round"/>
+  <text x="219.1" y="361.4" class="m" font-size="16" fill="#64748b" text-anchor="end"><tspan font-style="italic" font-weight="bold">m</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="219.7" y2="219.9" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="217,215.1 229.5,223.9 218.2,230.3" fill="#2563eb" stroke-linejoin="round"/>
+  <text x="209" y="209.1" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="322.9" y2="294.4" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="327.8,291.9 318.5,304 312.5,292.5" fill="#14916a" stroke-linejoin="round"/>
+  <text x="335.8" y="305.9" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <circle cx="276.4" cy="318.6" r="3" fill="#172033"/>
+  <line x1="276.4" y1="227.7" x2="276.4" y2="305.4" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="276.4,310.9 269.9,297.1 282.9,297.1" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="276.4" cy="227.7" r="3" fill="#d64545"/>
+  <text x="286.4" y="278.9" class="m" font-size="17" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="417.2" y1="220" x2="365.2" y2="220" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="359.6,220 373.5,213.5 373.5,226.5" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="359.6" y1="220" x2="359.6" y2="263.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="359.6,268 354.6,257.4 364.6,257.4" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="359.6" y1="220" x2="382.6" y2="206.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="386.2,204.6 379.6,214.3 374.5,205.6" fill="#7c3aed" stroke-linejoin="round"/>
+  <circle cx="359.6" cy="220" r="3" fill="#7c3aed"/>
+  <text x="425.2" y="225" class="t" font-size="13" fill="#7c3aed" text-anchor="start">垂直成分</text>
+  <text x="392.2" y="194.6" class="t" font-size="13" fill="#7c3aed" text-anchor="start">水平のせん断成分</text>
+  <text x="367.6" y="280" class="t" font-size="13" fill="#7c3aed" text-anchor="start">鉛直のせん断成分</text>
+  <text x="328.4" y="137.1" class="t" font-size="13" fill="#475569" text-anchor="start">x方向の隣との境界</text>
+  <line x1="326.4" y1="133.1" x2="314.4" y2="175.1" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="136" y="168.4" class="t" font-size="13" fill="#475569" text-anchor="end">y方向の隣との境界</text>
+  <line x1="138" y1="164.4" x2="174" y2="208.4" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="604" y1="446" x2="636.5" y2="446" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="639.2,446 632.4,449.3 632.4,442.7" fill="#475569" stroke-linejoin="round"/>
+  <text x="643.2" y="444" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan></text>
+  <line x1="604" y1="446" x2="619.9" y2="436.8" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="622.3,435.4 618,441.7 614.7,436" fill="#475569" stroke-linejoin="round"/>
+  <text x="626.3" y="433.4" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">y</tspan></text>
+  <line x1="604" y1="446" x2="604" y2="413.5" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="604,410.8 607.3,417.6 600.7,417.6" fill="#475569" stroke-linejoin="round"/>
+  <text x="608" y="408.8" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">z</tspan></text>
+  <text x="470" y="330" class="t" font-size="13" fill="#475569" text-anchor="start">点線の円：底面のせん断力が</text>
+  <text x="470" y="350" class="t" font-size="13" fill="#475569" text-anchor="start">接平面の中でとりうる向き</text>
 </svg>

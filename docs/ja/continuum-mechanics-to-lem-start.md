@@ -18,9 +18,9 @@ series: "1 of 3"
 
 ```{figure} ./figures/fig_c00_slope_overview.svg
 :name: fig-c00-slope-overview
-:alt: 斜面に仮定したすべり面，すべり土塊，スライスへの分割と，1つのスライスの底面に働く自重・垂直力・すべりに抵抗するせん断力
+:alt: 斜面に仮定した円弧のすべり面，すべり土塊，6つのスライスと，1つのスライスに働く自重・垂直力・せん断力
 
-LEMが対象とする場面．斜面の中にすべり面を仮定し，その上の土塊をスライスに分けて，各底面に働く力を扱う
+LEMが対象とする場面．斜面の中にすべり面を仮定し，その上の土塊をスライスに分けて，各底面に働く力を扱う．スライス間力は省いた
 ```
 
 1. 斜面の中に，崩れるかもしれない曲面（**すべり面**）を1つ仮定する
@@ -174,9 +174,9 @@ $$ (eq-start-cauchy)
 
 ```{figure} ./figures/fig_c01_stress_to_traction.svg
 :name: fig-c01-stress-to-traction
-:alt: 応力テンソルから，ある面に働く表面力を取り出すCauchyの公式の模式図
+:alt: 1つの点の応力を表す要素と，同じ点を向きの違う2つの面で切ったときに，それぞれの面に働く表面力
 
-点の応力テンソルと，法線が $\boldsymbol{n}$ の面に働く表面力 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ の関係
+点の応力テンソルと，向きの違う2つの面に働く表面力 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$．面の向きが変わると，表面力の向きと大きさも変わる
 ```
 
 ---
@@ -383,9 +383,9 @@ $$
 
 ```{figure} ./figures/fig_c02_normal_shear_effective.svg
 :name: fig-c02-normal-shear-effective
-:alt: 表面力を法線成分とせん断成分に分け，間隙水圧で有効垂直応力が下がることを示す模式図
+:alt: 表面力を法線成分とせん断成分の和に分けた図と，垂直応力が有効垂直応力と間隙水圧の和になることを示す図
 
-表面力の法線成分とせん断成分への分解と，$\sigma_n'=\sigma_n-u$ で表す有効垂直応力の関係
+左：表面力 $\boldsymbol{t}$ は，法線成分 $-\sigma_n\boldsymbol{n}$ とせん断成分 $\boldsymbol{\tau}$ の和．右：垂直応力 $\sigma_n$ は，有効垂直応力 $\sigma_n'$ と間隙水圧 $u$ の和．数値は6節の例
 ```
 
 ---
@@ -456,9 +456,9 @@ $$ (eq-start-mobilized-vector)
 
 ```{figure} ./figures/fig_c03_strength_mobilization.svg
 :name: fig-c03-strength-mobilization
-:alt: Mohr–Coulomb則によるせん断強度と，安全率で割った動員せん断応力の関係
+:alt: 有効垂直応力とせん断応力の図に，Mohr–Coulomb則の直線と，6節の数値例の2つの状態を示した図
 
-発揮できる強度 $\tau_f$ と，つり合いに必要な動員せん断応力 $\tau_m=\tau_f/F_s$ の違い
+Mohr–Coulomb則の直線と，6節の数値例．水位が上がって $\sigma_n'$ が60 kPaから40 kPaに下がると，$\tau_f$ は44.6 kPaから33.1 kPaに，$F_s=\tau_f/\tau_m$ は1.49から1.10に下がる
 ```
 
 ```{admonition} 数値でたどる
@@ -588,9 +588,9 @@ $$
 
 ```{figure} ./figures/fig_c04_surface_integration.svg
 :name: fig-c04-surface-integration
-:alt: 曲面の底面に分布する応力を面積分して，底面の垂直力とせん断力の合力を求める模式図
+:alt: 曲面の底面に分布する表面力，その垂直成分をベクトルとして足した図，底面を1つの平面で表すLEMのモデル
 
-点ごとの表面力の分布を面積分して，底面のベクトルの合力 $\boldsymbol{N}_i$，$\boldsymbol{T}_i$ を求める
+左：曲面の底面に分布する表面力．中：各点の垂直力をベクトルとして足した合力 $\boldsymbol{N}_i$ は，大きさだけを足した $\int_{S_i}\sigma_n\,dA$ より短い．右：LEMは，底面を1つの平面と1つの向きで表す
 ```
 
 ---
@@ -810,13 +810,6 @@ $$
 「応力が分からないので，細かく分ければ自動的に求まる」のではない．未知の連続分布を有限個の未知量に置き換えてから，つり合い式，強度の動員を表す式，加えた仮定を連立させて，$F_s$ と合力を求める．
 ```
 :::
-
-```{figure} ./figures/fig_c05_discrete_forces_closure.svg
-:name: fig-c05-discrete-forces-closure
-:alt: 連続な応力の分布をスライスやカラムの底面の合力に離散化し，加えた仮定で未知量を決める流れ
-
-未知の連続な応力分布を離散化することと，LEMに固有の未知量の決め方は，別の操作である
-```
 
 ここまでの流れをまとめると，次のようになる．
 
