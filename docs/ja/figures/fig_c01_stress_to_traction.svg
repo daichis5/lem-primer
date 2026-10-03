@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">応力テンソルから任意面のtractionを取り出す関係</title>
-  <desc id="desc">点の応力テンソル，法線を持つ切断面，Cauchy公式で得られるtractionを左から右へ示す．</desc>
+  <title id="title">応力テンソルから，任意の面の表面力を取り出す関係</title>
+  <desc id="desc">点の応力テンソル，法線をもつ切断面，Cauchyの公式で得られる表面力を，左から右へ示す．</desc>
   <defs>
     <marker id="arrow-blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/></marker>
     <marker id="arrow-red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#d64545"/></marker>
@@ -15,11 +15,11 @@
     </style>
   </defs>
   <rect width="1200" height="700" fill="#ffffff"/>
-  <text x="600" y="48" text-anchor="middle" class="title">応力テンソルから面に作用する力を取り出す</text>
+  <text x="600" y="48" text-anchor="middle" class="title">応力テンソルから，面に働く力を取り出す</text>
 
   <rect x="48" y="92" width="340" height="510" rx="18" class="panel"/>
   <text x="218" y="132" text-anchor="middle" class="label">点の応力状態</text>
-  <text x="218" y="162" text-anchor="middle" class="small">Cauchy応力テンソル</text>
+  <text x="218" y="162" text-anchor="middle" class="small">Cauchyの応力テンソル</text>
   <polygon points="142,278 264,236 326,280 203,324" fill="#eef2ff" stroke="#586174" stroke-width="2"/>
   <polygon points="142,278 203,324 203,454 142,408" fill="#e0e7ff" stroke="#586174" stroke-width="2"/>
   <polygon points="203,324 326,280 326,410 203,454" fill="#dbeafe" stroke="#586174" stroke-width="2"/>
@@ -38,7 +38,7 @@
   <text x="472" y="326" text-anchor="middle" class="small">面の向きを指定</text>
 
   <rect x="550" y="92" width="602" height="510" rx="18" class="panel"/>
-  <text x="851" y="132" text-anchor="middle" class="label">法線 n をもつ面に作用するtraction</text>
+  <text x="851" y="132" text-anchor="middle" class="label">法線 n をもつ面に働く表面力</text>
   <path d="M650 475 C720 386 833 296 1005 219 L1060 338 C894 407 787 492 714 565 Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="2"/>
   <path d="M714 565 C787 492 894 407 1060 338" fill="none" stroke="#586174" stroke-width="6"/>
   <ellipse cx="856" cy="442" rx="112" ry="48" transform="rotate(-29 856 442)" fill="#e0f2fe" fill-opacity="0.78" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 7"/>

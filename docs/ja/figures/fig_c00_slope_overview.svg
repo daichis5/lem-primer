@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="510" viewBox="0 0 1060 510" role="img" aria-labelledby="title desc">
   <title id="title">LEMが対象とする斜面・すべり面・スライスの全体像</title>
-  <desc id="desc">斜面の中に仮定したすべり面と，その上のすべり土塊，鉛直に分割したスライス，および1つのスライス底面に作用する自重，法線力，抵抗せん断力を示す．</desc>
+  <desc id="desc">斜面の中に仮定したすべり面と，その上のすべり土塊，鉛直に分けたスライス，1つのスライスの底面に働く自重，垂直力，すべりに抵抗するせん断力を示す．</desc>
   <defs>
     <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
     <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
@@ -37,7 +37,7 @@
   <text x="666" y="238" class="math" fill="#d64545">W<tspan font-size="15">i</tspan></text>
   <text x="666" y="257" class="small" fill="#d64545">自重</text>
   <text x="588" y="272" text-anchor="end" class="math" fill="#2563eb">N<tspan font-size="15">i</tspan></text>
-  <text x="588" y="291" text-anchor="end" class="small" fill="#2563eb">底面法線力</text>
+  <text x="588" y="291" text-anchor="end" class="small" fill="#2563eb">底面垂直力</text>
   <text x="764" y="332" class="math" fill="#14916a">T<tspan font-size="15">i</tspan></text>
   <text x="764" y="351" class="small" fill="#14916a">底面せん断力（抵抗）</text>
 
@@ -51,5 +51,5 @@
   <text x="498" y="186" text-anchor="end" class="small">斜面</text>
   <line x1="506" y1="180" x2="556" y2="222" stroke="#586174" stroke-width="1.6"/>
 
-  <text x="530" y="486" text-anchor="middle" class="small">安全率は「すべりに抵抗する力」÷「すべらせようとする力」として定義される</text>
+  <text x="530" y="486" text-anchor="middle" class="small">安全率は，直感的には「すべりに抵抗する力」÷「すべらせようとする力」と説明される</text>
 </svg>

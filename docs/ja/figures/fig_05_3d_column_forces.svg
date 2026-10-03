@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1300" height="800" viewBox="0 0 1300 800" role="img" aria-labelledby="title desc">
-  <title id="title">一般的な3Dカラムに作用する力</title>
-  <desc id="desc">傾斜した底面を持つ三次元カラムに，自重，底面法線力，抵抗せん断力，外向き法線，局所すべり方向，四側面のカラム間力が作用する．</desc>
+  <title id="title">3次元のカラムに働く力</title>
+  <desc id="desc">傾いた底面をもつ3次元のカラムに，自重，底面垂直力，すべりに抵抗するせん断力，4つの側面のカラム間力が働く．外向きの法線と局所すべり方向も示す．</desc>
   <defs>
     <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
     <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
@@ -11,7 +11,7 @@
     </style>
   </defs>
   <rect width="1300" height="800" fill="#fff"/>
-  <text x="650" y="48" text-anchor="middle" class="title">3次元カラムでは，底面接平面内に方向の自由度が増える</text>
+  <text x="650" y="48" text-anchor="middle" class="title">3次元のカラムでは，底面の接平面内に向きの自由度が加わる</text>
 
   <polygon points="410,190 695,145 890,258 600,310" fill="#fef3c7" stroke="#8b7355" stroke-width="3"/>
   <polygon points="410,190 600,310 600,570 420,455" fill="#f4e7c5" fill-opacity="0.9" stroke="#8b7355" stroke-width="3"/>
@@ -51,7 +51,7 @@
   <rect x="72" y="620" width="444" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
   <text x="94" y="653" class="small">底面せん断力の大きさ：</text>
   <text x="278" y="653" class="math">‖T<tspan baseline-shift="sub" font-size="14">i</tspan>‖</text>
-  <text x="94" y="688" class="small">接平面内の方向：</text>
+  <text x="94" y="688" class="small">接平面内の向き：</text>
   <text x="278" y="688" class="math">m<tspan baseline-shift="sub" font-size="14">i</tspan></text>
-  <text x="324" y="688" class="small">を別に定める必要がある</text>
+  <text x="324" y="688" class="small">を別に決める</text>
 </svg>

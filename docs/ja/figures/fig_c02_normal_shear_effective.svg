@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
-  <title id="title">tractionの分解と有効法線応力</title>
-  <desc id="desc">面に作用するtractionを圧縮法線成分とせん断成分へ分解し，間隙水圧が有効法線応力を低下させる一方でせん断成分を直接変えないことを示す．</desc>
+  <title id="title">表面力の分解と有効垂直応力</title>
+  <desc id="desc">面に働く表面力を圧縮の法線成分とせん断成分に分け，間隙水圧が有効垂直応力を下げる一方で，せん断成分は直接変えないことを示す．</desc>
   <defs>
     <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
     <marker id="cyan" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#0891b2"/></marker>
@@ -12,10 +12,10 @@
     </style>
   </defs>
   <rect width="1400" height="760" fill="#fff"/>
-  <text x="700" y="48" text-anchor="middle" class="title">全tractionを分解し，法線成分に間隙水圧を反映する</text>
+  <text x="700" y="48" text-anchor="middle" class="title">表面力を分解し，法線成分に間隙水圧を反映する</text>
 
   <rect x="45" y="86" width="570" height="590" rx="18" class="panel"/>
-  <text x="330" y="128" text-anchor="middle" class="head">1　tractionの法線・せん断分解</text>
+  <text x="330" y="128" text-anchor="middle" class="head">1　表面力の法線・せん断分解</text>
   <polygon points="145,455 410,300 535,370 268,529" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
   <circle cx="330" cy="414" r="6" fill="#172033"/>
   <line x1="330" y1="414" x2="480" y2="321" stroke="#7c3aed" stroke-width="7" marker-end="url(#purple)"/>
@@ -34,7 +34,7 @@
   <text x="678" y="350" text-anchor="middle" class="small">有効応力へ</text>
 
   <rect x="742" y="86" width="613" height="590" rx="18" class="panel"/>
-  <text x="1048" y="128" text-anchor="middle" class="head">2　間隙水圧は法線拘束を低下させる</text>
+  <text x="1048" y="128" text-anchor="middle" class="head">2　間隙水圧は有効垂直応力を下げる</text>
   <polygon points="820,490 1093,360 1264,430 990,566" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
   <circle cx="1030" cy="465" r="6" fill="#172033"/>
   <line x1="1030" y1="465" x2="963" y2="316" stroke="#2563eb" stroke-width="8" marker-end="url(#blue)"/>
@@ -47,7 +47,7 @@
   <text x="1188" y="386" class="math" fill="#d64545">t<tspan baseline-shift="sub" font-size="14">∥</tspan></text>
   <rect x="808" y="168" width="480" height="92" rx="11" fill="#fff" stroke="#cbd5e1"/>
   <text x="1048" y="205" text-anchor="middle" class="math">σ′<tspan baseline-shift="sub" font-size="14">n</tspan> = σ<tspan baseline-shift="sub" font-size="14">n</tspan> − u</text>
-  <text x="1048" y="239" text-anchor="middle" class="small">間隙水圧は等方的に作用する</text>
+  <text x="1048" y="239" text-anchor="middle" class="small">間隙水圧は等方的に働く</text>
   <rect x="836" y="592" width="424" height="52" rx="10" fill="#fff1f2" stroke="#fda4af"/>
-  <text x="1048" y="625" text-anchor="middle" class="label" fill="#d64545">せん断成分 t<tspan baseline-shift="sub" font-size="12">∥</tspan> は直接は変化しない</text>
+  <text x="1048" y="625" text-anchor="middle" class="label" fill="#d64545">せん断成分 t<tspan baseline-shift="sub" font-size="12">∥</tspan> は直接は変わらない</text>
 </svg>

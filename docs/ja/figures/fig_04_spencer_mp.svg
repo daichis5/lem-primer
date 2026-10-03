@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
-  <title id="title">Spencer法とMorgenstern–Price法の内力方向仮定</title>
-  <desc id="desc">Spencer法では全スライス境界の合力方向を一定とし，Morgenstern–Price法ではせん断力と法線力の比を位置関数で変化させることを比較する．</desc>
+  <title id="title">Spencer法とMorgenstern–Price法での，内力の向きの仮定</title>
+  <desc id="desc">Spencer法ではすべてのスライス境界で合力の向きを一定とし，Morgenstern–Price法ではせん断力と垂直力の比を位置の関数で変える．この2つを比べる．</desc>
   <defs>
     <marker id="green" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#14916a"/></marker>
     <marker id="gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
@@ -9,7 +9,7 @@
     </style>
   </defs>
   <rect width="1400" height="760" fill="#fff"/>
-  <text x="700" y="48" text-anchor="middle" class="title">内力を消すのではなく，方向関係を仮定して力とモーメントを満足させる</text>
+  <text x="700" y="48" text-anchor="middle" class="title">内力を消すのではなく，向きの関係を仮定して，力とモーメントのつり合いを満たす</text>
 
   <rect x="45" y="86" width="620" height="600" rx="18" class="panel"/>
   <text x="355" y="128" text-anchor="middle" class="head">Spencer法：一定の内力傾斜</text>
@@ -22,7 +22,7 @@
   <line x1="175" y1="425" x2="262" y2="425" stroke="#64748b" stroke-width="2"/><path d="M235 425 A60 60 0 0 0 224 391" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#gray)"/>
   <text x="244" y="405" class="math">θ</text>
   <rect x="120" y="160" width="470" height="70" rx="11" fill="#fff" stroke="#cbd5e1"/>
-  <text x="355" y="204" text-anchor="middle" class="math">X<tspan baseline-shift="sub" font-size="14">i</tspan> / E<tspan baseline-shift="sub" font-size="14">i</tspan> = tanθ = constant</text>
+  <text x="355" y="204" text-anchor="middle" class="math">X<tspan baseline-shift="sub" font-size="14">i</tspan> / E<tspan baseline-shift="sub" font-size="14">i</tspan> = tanθ = <tspan font-style="normal" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif">一定</tspan></text>
   <text x="355" y="586" text-anchor="middle" class="small">すべての境界合力が互いに平行</text>
   <rect x="130" y="615" width="450" height="44" rx="9" fill="#ecfdf5" stroke="#86efac"/>
   <text x="355" y="643" text-anchor="middle" class="label" fill="#14916a">全体の力つり合い ✓　＋　モーメントつり合い ✓</text>
@@ -45,5 +45,5 @@
   </g>
   <rect x="820" y="615" width="450" height="44" rx="9" fill="#ecfdf5" stroke="#86efac"/>
   <text x="1045" y="643" text-anchor="middle" class="label" fill="#14916a">全体の力つり合い ✓　＋　モーメントつり合い ✓</text>
-  <text x="700" y="728" text-anchor="middle" class="small">静力学的に完全でも，仮定した内力方向が唯一の連続体解であることまでは保証しない</text>
+  <text x="700" y="728" text-anchor="middle" class="small">静力学的に完全でも，仮定した内力の向きが，連続体として唯一の解だとは限らない</text>
 </svg>

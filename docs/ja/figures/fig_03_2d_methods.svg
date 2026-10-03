@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="790" viewBox="0 0 1500 790" role="img" aria-labelledby="title desc">
-  <title id="title">Fellenius法，Bishop簡便法，Janbu簡便法の比較</title>
-  <desc id="desc">三つの二次元簡便法について，スライス間力の扱いと，採用または残されるつり合い条件を同じ自由物体図で比較する．</desc>
+  <title id="title">Fellenius法，簡易Bishop法，簡易Janbu法の比較</title>
+  <desc id="desc">3つの2次元の簡便法について，スライス間力の扱いと，使うつり合い条件と残るつり合い条件を，同じ自由物体図で比べる．</desc>
   <defs>
     <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
     <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
@@ -32,7 +32,7 @@
 
   <g transform="translate(525 88)">
     <rect width="450" height="620" rx="18" class="panel"/>
-    <text x="225" y="45" text-anchor="middle" class="head">Bishop簡便法</text>
+    <text x="225" y="45" text-anchor="middle" class="head">簡易Bishop法</text>
     <text x="225" y="75" text-anchor="middle" class="small">Eを残し，Xを簡略化</text>
     <path d="M125 170 Q225 125 325 165 L320 370 L140 415Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
     <line x1="140" y1="415" x2="320" y2="370" stroke="#586174" stroke-width="5"/>
@@ -50,7 +50,7 @@
 
   <g transform="translate(1015 88)">
     <rect width="450" height="620" rx="18" class="panel"/>
-    <text x="225" y="45" text-anchor="middle" class="head">Janbu簡便法</text>
+    <text x="225" y="45" text-anchor="middle" class="head">簡易Janbu法</text>
     <text x="225" y="75" text-anchor="middle" class="small">Xを簡略化し，力つり合いを重視</text>
     <path d="M125 170 Q225 125 325 165 L320 370 L140 415Z" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
     <line x1="140" y1="415" x2="320" y2="370" stroke="#586174" stroke-width="5"/>

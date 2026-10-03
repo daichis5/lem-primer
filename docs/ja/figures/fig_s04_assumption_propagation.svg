@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="680" viewBox="0 0 1500 680" role="img" aria-labelledby="title desc">
   <title id="title">全体すべり方向の仮定が安全率へ伝わる経路</title>
-  <desc id="desc">全体すべり方向から局所底面方向，抵抗せん断力の成分，力とモーメントつり合いを経て，底面法線力，カラム間力，安全率と収束経路が変化する流れ．</desc>
+  <desc id="desc">全体すべり方向から，底面の局所の方向，すべりに抵抗するせん断力の成分，力とモーメントのつり合いを経て，底面垂直力，カラム間力，安全率と収束経路が変化する流れ．</desc>
   <defs>
     <marker id="gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
     <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
@@ -9,12 +9,12 @@
     </style>
   </defs>
   <rect width="1500" height="680" fill="#fff"/>
-  <text x="750" y="48" text-anchor="middle" class="title">全体すべり方向は，結果表示用の矢印ではなく定式化上の入力・未知量である</text>
+  <text x="750" y="48" text-anchor="middle" class="title">全体すべり方向は，結果を見せるための矢印ではなく，定式化の入力や未知量である</text>
 
   <rect x="40" y="95" width="260" height="110" rx="14" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
   <text x="170" y="126" text-anchor="middle" class="head">方向の決め方</text>
-  <text x="170" y="154" text-anchor="middle" class="small">対称面／利用者指定</text>
-  <text x="170" y="179" text-anchor="middle" class="small">方位探索／つり合いから解く</text>
+  <text x="170" y="154" text-anchor="middle" class="small">対称面・使う人の指定</text>
+  <text x="170" y="179" text-anchor="middle" class="small">方位の探索・つり合いから解く</text>
   <line x1="170" y1="207" x2="170" y2="254" stroke="#64748b" stroke-width="4" marker-end="url(#gray)"/>
 
   <rect x="40" y="270" width="260" height="180" rx="16" class="node"/>
@@ -25,11 +25,11 @@
 
   <line x1="312" y1="360" x2="382" y2="360" stroke="#64748b" stroke-width="5" marker-end="url(#gray)"/>
   <rect x="400" y="270" width="260" height="180" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
-  <text x="530" y="307" text-anchor="middle" class="head">2　局所底面方向</text>
+  <text x="530" y="307" text-anchor="middle" class="head">2　底面の局所の方向</text>
   <polygon points="450,392 535,338 614,376 528,430" fill="#dbeafe" stroke="#586174" stroke-width="2"/>
   <line x1="530" y1="383" x2="598" y2="397" stroke="#d64545" stroke-width="6" marker-end="url(#red)"/>
   <text x="604" y="409" class="math" fill="#d64545">m<tspan baseline-shift="sub" font-size="13">i</tspan></text>
-  <text x="530" y="425" text-anchor="middle" class="small">dを接平面へ投影</text>
+  <text x="530" y="425" text-anchor="middle" class="small">dを接平面へ射影</text>
 
   <line x1="672" y1="360" x2="742" y2="360" stroke="#64748b" stroke-width="5" marker-end="url(#gray)"/>
   <rect x="760" y="270" width="260" height="180" rx="16" fill="#fff1f2" stroke="#fda4af" stroke-width="2"/>
@@ -52,6 +52,6 @@
   <path d="M745 566 H318" stroke="#d97706" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#gray)"/>
   <rect x="40" y="515" width="640" height="100" rx="15" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
   <text x="360" y="550" text-anchor="middle" class="head">不適切な方向仮定</text>
-  <text x="360" y="582" text-anchor="middle" class="label">抵抗の方向配分を誤り，F<tspan baseline-shift="sub" font-size="11">s</tspan>を過大・過小評価し得る</text>
-  <text x="750" y="652" text-anchor="middle" class="small">曲面上では，全体方向dが一つでも局所方向m<tspan baseline-shift="sub" font-size="10">i</tspan>はカラムごとに異なる</text>
+  <text x="360" y="582" text-anchor="middle" class="label">抵抗の向きの配分を誤り，F<tspan baseline-shift="sub" font-size="11">s</tspan>を過大・過小に評価することがある</text>
+  <text x="750" y="652" text-anchor="middle" class="small">曲面では，全体の方向dが1つでも，局所の方向m<tspan baseline-shift="sub" font-size="10">i</tspan>はカラムごとに違う</text>
 </svg>
