@@ -1,0 +1,135 @@
+# AGENTS.md
+
+Instructions for agents (and people) editing this repository. The Japanese
+phrasing rules are the lab handbook's (`lab-handbook`, AGENTS.md, Japanese
+phrasing), applied to a primer with equations.
+
+## Quick Commands
+
+- `make all SPHINXOPTS="-W --keep-going"`: the build CI runs; any warning fails it
+- `make serve`: build both editions and serve them at http://localhost:8000/
+
+## Scope
+
+Readers are civil-engineering students who have not studied LEM before: they
+know 土質力学 and 材料力学 (垂直応力，せん断応力，有効応力，Mohr–Coulomb則)
+but not stress tensors or LEM. The series depends on no analysis software.
+
+The Japanese edition (`docs/ja/`) is the source; the English edition
+(`docs/en/`) is under construction.
+
+## Structure of a document
+
+- A document opens with its title (H1), its subtitle as one bold line (not a
+  heading), a lead paragraph saying what the document does, and one line
+  naming the documents it builds on:
+  「この資料は，[第1資料](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．」
+- The table of the three documents and their questions lives on the home
+  page (`index.md`) only. Documents do not repeat it, and a part (第1部 …)
+  opens with its first section, not with a list of what it covers.
+- The first and second documents end with 読み終えたら答えられること and
+  次に読む; the second and third end with 参考文献.
+- Headings are Japanese. Parts are 第1部, 第2部, …; sections keep their
+  numbers, and the text refers to one as 6節. Reference entries keep the
+  language of the work; where there is no DOI, the link text is 書誌情報.
+- Keep labels (`(section-6)=`) and equation labels as they are: they are
+  link targets.
+
+## Japanese phrasing
+
+Write Japanese for the reader. The first drafts came from English, so
+translationese crept in: English sentence structure in Japanese words.
+`docs/ja/continuum-mechanics-to-lem-start.md` follows the rules below;
+compare a document with it.
+
+- Write in the である style with full-width `，．`. End a body sentence with
+  a predicate (である, a verb, or an adjective such as ない or よい), and vary
+  the endings: follow a である． with a different ending, and where three
+  sentences in a row end in a verb, join two of them or open one with a
+  connective or a linking phrase (そのため，, つまり，, 円弧では，). Noun
+  endings (体言止め) are for tables, captions, glossary entries and list
+  items.
+- A list item and a caption have no closing ．; a sentence inside one that
+  another follows keeps its ．.
+- Link each sentence to the one before when the link is a cause, a
+  condition, a contrast or the next step:
+  「…滑動力とつり合っている．つまり，両者の大きさは等しい．」
+- Give each sentence one topic. Where the topic changes after 〜であり，,
+  〜で， or a verb stem, end the sentence:
+  「Cauchyの公式は（式）である．表面力の法線成分は，符号を含めて（式）になる．」
+  (from 「Cauchyの公式は（式）であり，符号付き法線成分は（式）である．」).
+- In body text, end a cause with 〜からである and a purpose with
+  〜ためである. Keep a cause and a purpose in separate sentences.
+  Neighbouring sentences take turns with ので，, ため， and そのため，.
+- A parenthesis may stay mid-sentence when it is short and holds no ． and
+  no link: a term (「単位面積あたりの力を，**表面力**（traction）という」)
+  or a brief aside. A remark with its own ．, or a link, goes at the end of
+  its clause or sentence, or in a sentence of its own.
+- Write the Japanese phrase, not the English one read through:
+  この資料 (not 本資料，本稿), 使う (not 用いる), 満たす (not 満足する),
+  違う (not 異なる), 確かめる (not 確認する), できる (not 可能である),
+  とき (not 場合，際), 次の (not 以下の), と・や (not および),
+  つまり (not すなわち), 〜のもとで・〜とき (not 〜の下で),
+  〜での・〜の (not 〜における), 〜ことがある (not 〜し得る),
+  決める (not 決定する). A cleft sentence (「重要なのは，…ことである」)
+  becomes the plain statement.
+- Between equations, say what was done (「これを $\tau_m$ について解くと」
+  「式 {eq}`eq-start-mohr-coulomb` を入れると」) rather than したがって.
+  A consequence in prose takes そのため， or つまり，.
+- Unpack a 漢語 compound made by translating an English phrase
+  (幾何学的入力可能性 → 形を入力できるか, 強度動員式 → 強度の動員を表す
+  式), unless it is in the term table below.
+- Leave human actions to people, who may stay unnamed:
+  「手法名だけでは，定式化は分からない」 (from 「手法名は定式化を特定しない」).
+  A method or a solver doing its own job stays the subject:
+  「Spencer法は，力とモーメントのつり合いをすべて満たす」.
+- Use the terms readers meet in Japanese textbooks and standards (the
+  table below), and explain each where it first appears in a document.
+- Name what each word points to: which section (5節で見た, not 前節の),
+  which force, which document (第1資料, not 前資料).
+- Split a sentence past about 100 characters, not counting inline math, or
+  one with a remark in parentheses inside a modifier, into two joined by a
+  connective.
+- Say each thing once.
+
+### Notation
+
+- Numbers are Arabic: 1つ, 2本, 3次元, 6つの層, 2階のテンソル. Kanji stay
+  inside words: 一定, 一般, 一意, 一致, 一部, 一方, 唯一, 一次文献,
+  二重計上.
+- A half-width space separates inline math and an equation reference from
+  Japanese text: 「底面 $S_i$ の」「式 {eq}`eq-start-goal` の分子」. No space
+  goes before full-width punctuation or brackets (「$F_s$，」), or between a
+  Latin word and Japanese (「LEMでは」「Spencer法」).
+- Join items with ・ or a word (と, や, または), not ／.
+- A display equation ends without punctuation; the sentence around it
+  carries the ．or ，. Commas between equations on one line stay.
+
+### Terms
+
+| Use | Not | Note |
+|---|---|---|
+| 2次元，3次元 | 2D，3D | also in names: 3次元のSpencer法, 3次元のLEM |
+| Fellenius法（簡便分割法） | 通常分割法 | the parenthesis at its first use |
+| 簡易Bishop法，簡易Janbu法 | Bishop簡便法，Janbu簡便法 | as in 鵜飼・細堀 (1988) |
+| Spencer法，Morgenstern–Price法，Mohr–Coulomb則，Cauchyの公式 | カタカナ | person names stay in Latin letters |
+| 垂直応力，有効垂直応力，全垂直応力 | 法線応力 | $\sigma_n$, $\sigma_n'$ |
+| 底面垂直力，垂直力 | 底面法線力，法線力 | $N_i$; also スライス間の垂直力 $E$, said at its first use to be normal to the boundary |
+| 法線ベクトル，法線方向，法線成分 | | the vector $\boldsymbol{n}$ and components along it keep 法線 |
+| 滑動力 | 駆動力 | the pair of 抵抗力: $F_s$＝抵抗力／滑動力 |
+| 内力 | 内部力 | |
+| 簡便分割法 | 簡易分割法 | as in the Japanese title of Ugai et al. (1986) |
+| テンションクラック（引張亀裂） | 張力亀裂 | |
+| 表面力 | traction | gloss （traction） at its first use |
+| 不静定性の解消 | closure, 力学的な未知量の決定 | gloss （closure） at its first use |
+| 第1資料，この資料，このシリーズ | 本資料，本稿，前資料，本シリーズ | |
+| LEMの各手法 | 各LEM | |
+| 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
+| 元の手法 | 原法 | |
+| 射影 | 投影 | projecting onto a plane, as in 補足C |
+
+## Figures
+
+The text in `docs/ja/figures/*.svg` (labels, `<title>`, `<desc>`) follows the
+same terms and notation as the body. After changing a label, open the SVG in
+a browser and check that it still fits its box.

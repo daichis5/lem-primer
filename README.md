@@ -14,7 +14,7 @@ independent of any particular analysis software.
 
 ## Contents
 
-1. **連続体力学から極限平衡法のスタート地点まで** — how stress and a failure
+1. **連続体力学から極限平衡法の出発点まで** — how stress and a failure
    criterion become the forces $N_i$, $U_i$, $T_i$ on a slice base
 2. **極限平衡法とは何か** — which assumption each method uses to close the
    remaining static indeterminacy
