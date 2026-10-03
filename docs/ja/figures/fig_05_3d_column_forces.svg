@@ -11,19 +11,19 @@
   <polygon points="150,396 316.4,321.1 316.4,145.1 150,178.4" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
   <polygon points="316.4,321.1 402.9,241.2 402.9,95.2 316.4,145.1" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
   <polygon points="150,178.4 316.4,145.1 402.9,95.2 236.5,128.5" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
-  <polyline points="225.1,345.4 226,343.9 227.3,342.2 229,340.4 231,338.4 233.4,336.3 236.1,334 239.1,331.6 242.4,329.1 245.9,326.5 249.7,323.9 253.7,321.2 257.9,318.5 262.2,315.8 266.6,313.1 271.1,310.5 275.6,307.9 280.1,305.4 284.6,303 289.1,300.8 293.4,298.6 297.6,296.7 301.7,294.8 305.6,293.2 309.2,291.8 312.6,290.5 315.7,289.5 318.5,288.7 321,288.1 323.2,287.8 325,287.7 326.4,287.8 327.5,288.2 328.1,288.8 328.4,289.6 328.3,290.6 327.8,291.9 326.9,293.3 325.6,295 323.9,296.8 321.9,298.8 319.5,301 316.8,303.3 313.8,305.7 310.5,308.2 306.9,310.7 303.1,313.4 299.2,316.1 295,318.7 290.7,321.4 286.3,324.1 281.8,326.8 277.3,329.3 272.7,331.8 268.2,334.2 263.8,336.5 259.4,338.6 255.2,340.6 251.2,342.4 247.3,344 243.7,345.5 240.3,346.7 237.2,347.7 234.3,348.5 231.8,349.1 229.7,349.5 227.9,349.6 226.4,349.4 225.4,349.1 224.7,348.5 224.5,347.7 224.6,346.6 225.1,345.4" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="2 4" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="240.1,337.6 240.7,336.5 241.7,335.3 242.8,334.1 244.3,332.6 246,331.1 247.9,329.5 250,327.8 252.3,326 254.8,324.2 257.5,322.3 260.3,320.4 263.3,318.5 266.3,316.6 269.5,314.7 272.6,312.9 275.8,311 279,309.3 282.2,307.6 285.4,306 288.5,304.5 291.4,303.1 294.3,301.8 297,300.6 299.6,299.6 302,298.7 304.2,298 306.2,297.4 308,297 309.5,296.8 310.8,296.7 311.8,296.8 312.6,297.1 313,297.5 313.2,298.1 313.1,298.8 312.8,299.7 312.1,300.7 311.2,301.9 310,303.2 308.6,304.6 306.9,306.1 305,307.7 302.9,309.4 300.5,311.2 298,313 295.3,314.9 292.5,316.8 289.6,318.7 286.5,320.6 283.4,322.5 280.2,324.4 277,326.2 273.8,328 270.6,329.7 267.5,331.3 264.4,332.8 261.4,334.2 258.6,335.5 255.8,336.6 253.2,337.6 250.8,338.5 248.6,339.2 246.6,339.8 244.9,340.2 243.3,340.5 242.1,340.5 241,340.4 240.3,340.2 239.8,339.8 239.6,339.2 239.7,338.4 240.1,337.6" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="2 4" stroke-linejoin="round" stroke-linecap="round"/>
   <line x1="276.4" y1="318.6" x2="303" y2="364.8" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
   <polygon points="304.6,367.7 297,362.5 303.9,358.5" fill="#64748b" stroke-linejoin="round"/>
   <text x="304.6" y="367.7" class="m" font-size="16" fill="#64748b" text-anchor="start"><tspan font-style="normal">  </tspan><tspan font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
   <line x1="276.4" y1="318.6" x2="228" y2="343.8" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
   <polygon points="225.1,345.4 230.6,338 234.3,345.1" fill="#64748b" stroke-linejoin="round"/>
   <text x="219.1" y="361.4" class="m" font-size="16" fill="#64748b" text-anchor="end"><tspan font-style="italic" font-weight="bold">m</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
-  <line x1="276.4" y1="318.6" x2="219.7" y2="219.9" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="217,215.1 229.5,223.9 218.2,230.3" fill="#2563eb" stroke-linejoin="round"/>
-  <text x="209" y="209.1" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
-  <line x1="276.4" y1="318.6" x2="322.9" y2="294.4" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="327.8,291.9 318.5,304 312.5,292.5" fill="#14916a" stroke-linejoin="round"/>
-  <text x="335.8" y="305.9" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="242.6" y2="259.7" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="239.8,254.9 252.3,263.7 241.1,270.1" fill="#2563eb" stroke-linejoin="round"/>
+  <text x="231.8" y="248.9" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="307.9" y2="302.3" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="312.8,299.7 303.5,311.9 297.5,300.3" fill="#14916a" stroke-linejoin="round"/>
+  <text x="320.8" y="313.7" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
   <circle cx="276.4" cy="318.6" r="3" fill="#172033"/>
   <line x1="276.4" y1="227.7" x2="276.4" y2="305.4" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
   <polygon points="276.4,310.9 269.9,297.1 282.9,297.1" fill="#d64545" stroke-linejoin="round"/>
@@ -39,10 +39,10 @@
   <text x="425.2" y="225" class="t" font-size="13" fill="#7c3aed" text-anchor="start">垂直成分</text>
   <text x="392.2" y="194.6" class="t" font-size="13" fill="#7c3aed" text-anchor="start">水平のせん断成分</text>
   <text x="367.6" y="280" class="t" font-size="13" fill="#7c3aed" text-anchor="start">鉛直のせん断成分</text>
-  <text x="328.4" y="137.1" class="t" font-size="13" fill="#475569" text-anchor="start">x方向の隣との境界</text>
-  <line x1="326.4" y1="133.1" x2="314.4" y2="175.1" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-  <text x="136" y="168.4" class="t" font-size="13" fill="#475569" text-anchor="end">y方向の隣との境界</text>
-  <line x1="138" y1="164.4" x2="174" y2="208.4" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="414.9" y1="85.2" x2="364" y2="140.1" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="418.9" y="81.2" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan><tspan font-style="normal" class="t" font-size="14"> 方向の隣との境界</tspan></text>
+  <line x1="140" y1="166.4" x2="191.6" y2="192.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="136" y="162.4" class="m" font-size="15" fill="#475569" text-anchor="end"><tspan font-style="italic">y</tspan><tspan font-style="normal" class="t" font-size="14"> 方向の隣との境界</tspan></text>
   <line x1="604" y1="446" x2="636.5" y2="446" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
   <polygon points="639.2,446 632.4,449.3 632.4,442.7" fill="#475569" stroke-linejoin="round"/>
   <text x="643.2" y="444" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan></text>

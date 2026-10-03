@@ -4,13 +4,15 @@ Left: normal and shear tractions along a curved base, both acting on the
 soil above (normal ones point into it). Middle: the normal forces added
 head to tail; the resultant is shorter than the sum of their sizes, which
 is 7節's inequality. Right: LEM's model of the base, one plane with N_i and
-T_i. The middle panel adds the left panel's own vectors.
+T_i, whose sizes are the sums of sizes (N_i = ∫σ_n dA, as 8節 defines it),
+so the model's N_i is longer than the curved base's true resultant. The
+middle panel adds the left panel's own vectors.
 """
 
 import math
 
-from figlib import (FAINT, GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, mul,
-                    norm, sub, unit)
+from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, mul, norm, sub,
+                    unit)
 
 LIGHT = "#93c5fd"  # each point's share, before adding
 SPAN = 100.0  # degrees of arc covered by the base (strongly curved, to show 7節's point)
@@ -19,9 +21,9 @@ fig = Figure(
     "fig_c04_surface_integration",
     330,
     "曲面の底面に働く表面力から，底面の合力へ",
-    "左は，曲面の底面に沿って分布する表面力の垂直成分とせん断成分．中は，各点の垂直力をベクトルとして"
-    "つないだ図で，向きを考えて足した合力は，大きさだけを足した値より短い．"
-    "右は，LEMが底面を1つの平面と1つの向きで表し，合力 Ni と Ti を置いたモデル．",
+    "左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとして"
+    "つないだ図．向きを考えて足した合力は，大きさだけを足した値より短い．"
+    "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを足した Ni と Ti を置いたモデル．",
 )
 
 # Left: the curved base. Screen coordinates, y down; the centre is above.
@@ -77,11 +79,8 @@ fig.line((bx, by + 18), (bx + resultant, by + 18), NORMAL, 6, cap="butt")
 fig.math((bx + resultant + 8, by + 23), r"‖\v{N}_i‖", 15, NORMAL)
 fig.text((462, 30), "ベクトルとして足す", SMALL, MUTED, "middle")
 
-# The shear forces add the same way.
-shear = (0.0, 0.0)
-for k, th in enumerate(ths):
-    t_res = (math.sin(math.radians(th)), -math.cos(math.radians(th)))
-    shear = add(shear, mul(t_res, 0.33 * sigma(k) * SCALE))
+# In LEM's model the base forces are sums of sizes: N_i = ∫σ_n dA, and T_i alike.
+shear_sum = sum(0.33 * sigma(k) * SCALE for k in range(POINTS))
 
 # Right: LEM's model, one plane and one direction for the base.
 pc = (668, 214)
@@ -90,9 +89,9 @@ a, b = sub(pc, mul(chord, 82)), add(pc, mul(chord, 82))
 fig.polygon([a, b, (b[0], 40), (a[0], 40)], fill=SOIL)
 fig.polygon([a, b, (b[0], 312), (a[0], 312)], fill=GROUND)
 fig.line(a, b, INK, 3)
-n_tip = add(pc, (0, -resultant))
+n_tip = add(pc, (0, -chain))
 fig.arrow(pc, n_tip, NORMAL, 2.6)
-t_tip = add(pc, mul(chord, norm(shear)))
+t_tip = add(pc, mul(chord, shear_sum))
 fig.arrow(pc, t_tip, RESIST, 2.6)
 fig.unit_vector(pc, add(pc, (0, 40)))
 fig.math((n_tip[0] - 10, n_tip[1] + 14), r"\v{N}_i = −N_i\v{n}_i", 16, NORMAL, "end")

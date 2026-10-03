@@ -11,16 +11,16 @@ depends on F_s, which the methods find from different equations.
 import math
 
 from figlib import (FAINT, INK, INTER, MUTED, NORMAL, RESIST, SMALL, SOIL, SOIL_EDGE, WEIGHT, Figure,
-                    SliceModel, View, add, mul, text_width, unit)
+                    SliceModel, View, add, mul, unit)
 
 FORCE = 0.34  # px per kN
 sm = SliceModel()
 s, c = math.sin(sm.alpha), math.cos(sm.alpha)
 T = sm.T
 METHODS = [
-    ("Fellenius法", False, sm.W * c, ["—", "—", "✓"], "スライス間力 E，X を無視"),
-    ("簡易Bishop法", True, (sm.W - T * s) / c, ["✓", "—", "✓"], "スライス間のせん断力 X を無視"),
-    ("簡易Janbu法", True, (sm.W - T * s) / c, ["✓", "✓", "—"], "スライス間のせん断力 X を無視"),
+    ("Fellenius法", False, sm.W * c, ["—", "—", "✓"], r"\t{スライス間力 }E\t{，}X\t{ を無視}"),
+    ("簡易Bishop法", True, (sm.W - T * s) / c, ["✓", "—", "✓"], r"\t{スライス間のせん断力 }X\t{ を無視}"),
+    ("簡易Janbu法", True, (sm.W - T * s) / c, ["✓", "✓", "—"], r"\t{スライス間のせん断力 }X\t{ を無視}"),
 ]
 ROWS = ["各スライスの鉛直方向の力", "全体の水平方向の力", "全体のモーメント"]
 
@@ -60,12 +60,12 @@ def panel(x0, name, keep_e, N, checks, note):
     fig.math(add(g, (8, 0.62 * sm.W * FORCE)), "W", 15, WEIGHT)
     fig.math(add(mid, add(mul(unit(v.d((-s, c))), N * FORCE), (-8, 0))), "N", 15, NORMAL, "end")
     fig.math(add(mid, add(mul(unit(v.d((c, s))), T * FORCE), (6, 16))), "T", 15, RESIST)
-    fig.text((x0 + 120, 300), note, SMALL, MUTED, "middle")
+    fig.math((x0 + 120, 300), note, 15, MUTED, "middle")
     for k, (row, mark) in enumerate(zip(ROWS, checks)):
         y = 334 + 24 * k
         fig.text((x0 + 12, y), row, SMALL, INK)
         ok = mark == "✓"
-        fig.text((x0 + 228, y), mark, 15, RESIST if ok else FAINT, "end", weight="bold" if ok else None)
+        fig.text((x0 + 228, y), mark, 15, INK if ok else FAINT, "end", weight="bold" if ok else None)
 
 
 for i, method in enumerate(METHODS):

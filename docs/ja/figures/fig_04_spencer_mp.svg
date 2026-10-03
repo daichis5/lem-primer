@@ -4,7 +4,7 @@
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="360" fill="#fff"/>
   <text x="190" y="26" class="t" font-size="15" fill="#172033" text-anchor="middle" font-weight="bold">Spencer法</text>
-  <text x="190" y="50" class="m" font-size="16" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">X</tspan><tspan font-style="normal">/</tspan><tspan font-style="italic">E</tspan><tspan font-style="normal"> = tan </tspan><tspan font-style="italic">θ</tspan><tspan font-style="normal">（一定）</tspan></text>
+  <text x="190" y="50" class="m" font-size="16" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">X</tspan><tspan font-style="normal">/</tspan><tspan font-style="italic">E</tspan><tspan font-style="normal"> = tan </tspan><tspan font-style="italic">θ</tspan><tspan font-style="normal" class="t" font-size="14">（一定）</tspan></text>
   <polygon points="10.6,214 32,214 233,80 364.3,80 364.3,240.8 10.6,240.8" fill="#ece4d0" stroke-linejoin="round"/>
   <polygon points="18.6,214 32,214 233,80 348,80 348,80 342.5,91.3 337,101.4 331.5,110.6 326,118.9 320.5,126.6 315,133.8 309.5,140.5 304,146.7 298.5,152.6 293.1,158.1 287.6,163.3 282.1,168.2 276.6,172.8 271.1,177.2 265.6,181.4 260.1,185.3 254.6,189 249.1,192.5 243.7,195.8 238.2,199 232.7,201.9 227.2,204.7 221.7,207.4 216.2,209.9 210.7,212.2 205.2,214.4 199.7,216.4 194.3,218.3 188.8,220.1 183.3,221.7 177.8,223.2 172.3,224.6 166.8,225.8 161.3,226.9 155.8,227.9 150.3,228.8 144.9,229.6 139.4,230.2 133.9,230.7 128.4,231.1 122.9,231.4 117.4,231.5 111.9,231.6 106.4,231.5 100.9,231.3 95.4,231 90,230.6 84.5,230.1 79,229.4 73.5,228.7 68,227.8 62.5,226.7 57,225.6 51.5,224.3 46,222.9 40.6,221.4 35.1,219.8 29.6,218 24.1,216.1 18.6,214" fill="#f4e7c5" stroke-linejoin="round"/>
   <line x1="59.8" y1="226.2" x2="59.8" y2="195.5" stroke="#8b7355" stroke-width="1.2" stroke-linecap="round"/>
@@ -60,7 +60,7 @@
   <circle cx="306.8" cy="276" r="2.6" fill="#7c3aed"/>
   <text x="10.6" y="280" class="m" font-size="13" fill="#475569" text-anchor="end"><tspan font-style="normal">1</tspan></text>
   <text x="362" y="327" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan></text>
-  <text x="26.6" y="262" class="t" font-size="13" fill="#475569" text-anchor="start">f(x) = 1（一定）</text>
+  <text x="26.6" y="262" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">f</tspan><tspan font-style="normal">(</tspan><tspan font-style="italic">x</tspan><tspan font-style="normal">) = 1</tspan><tspan font-style="normal" class="t" font-size="14">（一定）</tspan></text>
   <text x="570" y="26" class="t" font-size="15" fill="#172033" text-anchor="middle" font-weight="bold">Morgenstern–Price法</text>
   <text x="570" y="50" class="m" font-size="16" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">X</tspan><tspan font-style="normal">/</tspan><tspan font-style="italic">E</tspan><tspan font-style="normal"> = </tspan><tspan font-style="italic">λ</tspan><tspan font-style="normal"> </tspan><tspan font-style="italic">f</tspan><tspan font-style="normal">(</tspan><tspan font-style="italic">x</tspan><tspan font-style="normal">)</tspan></text>
   <polygon points="390.6,214 412,214 613,80 744.3,80 744.3,240.8 390.6,240.8" fill="#ece4d0" stroke-linejoin="round"/>
@@ -118,6 +118,6 @@
   <circle cx="686.8" cy="304.4" r="2.6" fill="#7c3aed"/>
   <text x="390.6" y="280" class="m" font-size="13" fill="#475569" text-anchor="end"><tspan font-style="normal">1</tspan></text>
   <text x="742" y="327" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan></text>
-  <text x="406.6" y="262" class="t" font-size="13" fill="#475569" text-anchor="start">f(x)：正弦の半波</text>
+  <text x="406.6" y="262" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">f</tspan><tspan font-style="normal">(</tspan><tspan font-style="italic">x</tspan><tspan font-style="normal">)</tspan><tspan font-style="normal" class="t" font-size="14">：正弦の半波</tspan></text>
   <line x1="380" y1="16" x2="380" y2="345" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 </svg>

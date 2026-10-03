@@ -7,7 +7,7 @@ share one scale, so the line is drawn at its true angle phi'.
 
 import math
 
-from figlib import (FAINT, INK, MUTED, NORMAL, RESIST, SMALL, WATER, Figure, fmt, text_width)
+from figlib import FAINT, INK, MUTED, NORMAL, RESIST, SMALL, WATER, Figure
 
 C, PHI = 10.0, math.radians(30)
 TAU_M = 30.0
@@ -55,15 +55,15 @@ fig.text((O[0] + 24, P(0, YMAX + 3)[1] + 6), "[kPa]", SMALL, MUTED)
 S_END = (YMAX - 2 - C) / math.tan(PHI)
 fig.line(P(0, C), P(S_END, tau_f(S_END)), INK, 2.6)
 fig.math((P(S_END, tau_f(S_END))[0] + 10, P(S_END, tau_f(S_END))[1] + 6),
-         r"τ_f = c′ + σ′_n \r{tan} φ′", 16, INK)
+         r"τ_f = c′ + σ′_n \r{tan} ϕ′", 16, INK)
 fig.line(P(0, TAU_M), P(XMAX - 4, TAU_M), RESIST, 1.8, "7 5")
 fig.math((P(XMAX - 4, TAU_M)[0], P(XMAX - 4, TAU_M)[1] - 8), "τ_m = 30", 16, RESIST, "end")
 fig.math((O[0] + 8, P(0, C)[1] + 18), "c′ = 10", 15, MUTED)
-# phi' drawn at the right, against a horizontal guide.
+# phi' drawn near the intercept, against a horizontal guide.
 a0 = P(8, tau_f(8))
 fig.line(a0, (a0[0] + 70, a0[1]), FAINT, 1.1, "4 3")
 fig.angle_arc(a0, 58, 0, math.degrees(PHI), MUTED)
-fig.math((a0[0] + 64, a0[1] - 8), "φ′ = 30°", 15, MUTED)
+fig.math((a0[0] + 64, a0[1] - 8), "ϕ′ = 30°", 15, MUTED)
 
 # The two states.
 for s, name in STATES:
@@ -85,8 +85,7 @@ for s, name in STATES:
 # The change: u rises, so sigma_n' falls from 60 to 40 and tau_f with it.
 a, b = P(58, 4.5), P(42, 4.5)
 fig.arrow(a, b, WATER, 2.4)
-fig.text((P(50, 0)[0], P(0, 7.6)[1]), "u が40→60 kPaに上がる", SMALL, WATER, "middle")
-fig.line(P(60, tau_f(60)), P(40, tau_f(40)), INK, 1.2, "3 4")
+fig.math((P(60, 0)[0] + 8, a[1] + 5), r"u\t{ が上がる}", 15, WATER)
 
 if __name__ == "__main__":
     fig.save()

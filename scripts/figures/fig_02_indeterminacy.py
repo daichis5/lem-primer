@@ -12,6 +12,7 @@ from figlib import (GROUND, INK, INTER, LABEL, MUTED, NORMAL, SMALL, SOIL, SOIL_
                     add, mul, unit)
 
 s = Slope(n=5)
+L = 22  # px: every unknown's arrow, since only its place is known
 v = View(24.5, (100, 290))
 fig = Figure(
     "fig_02_indeterminacy",
@@ -35,9 +36,9 @@ fig.polyline([v.p(p) for p in s.arc_pts(s.x0, s.x1)], INK, 3)
 for k in range(s.n):
     mid, alpha = s.chord(k)
     d = unit(v.d((-math.sin(alpha), math.cos(alpha))))
-    fig.arrow(v.p(mid), add(v.p(mid), mul(d, 24)), NORMAL, 2.4)
+    fig.arrow(v.p(mid), add(v.p(mid), mul(d, L)), NORMAL, 2.4)
     out = add(v.p(mid), mul(d, -20))
-    fig.math((out[0], out[1] + 8), f"N_{k + 1}", 15, NORMAL, "middle")
+    fig.math((out[0], out[1] + 8), f"N_{k + 1}", 16, NORMAL, "middle")
 
 # E, X and h on each boundary between slices, and the line through the h's.
 thrust = [v.p((s.x0, s.slip(s.x0)))]
@@ -46,14 +47,14 @@ for k in range(1, s.n):
     h = 0.45 * (s.ground(x) - s.slip(x))
     p = v.p((x, s.slip(x) + h))
     thrust.append(p)
-    fig.arrow(p, add(p, (22, 0)), INTER, 2.2, head=0.8)
-    fig.arrow(p, add(p, (0, -18)), INTER, 2.2, head=0.8)
+    fig.arrow(p, add(p, (L, 0)), INTER, 2.2, head=0.8)
+    fig.arrow(p, add(p, (0, -L)), INTER, 2.2, head=0.8)
     fig.circle(p, 3.2, INTER)
-    fig.math(add(p, (27, 5)), f"E_{k}", 14, INTER)
-    fig.math(add(p, (5, -14)), f"X_{k}", 14, INTER)
+    fig.math(add(p, (L + 5, 6)), f"E_{k}", 15, INTER)
+    fig.math(add(p, (-5, -12)), f"X_{k}", 15, INTER, "end")
     base = v.p((x, s.slip(x)))
     fig.line(add(base, (-6, 0)), add(p, (-6, 0)), MUTED, 1)
-    fig.math(add(base, (-10, (p[1] - base[1]) / 2 + 5)), f"h_{k}", 13, MUTED, "end")
+    fig.math(add(base, (-10, (p[1] - base[1]) / 2 + 5)), f"h_{k}", 15, MUTED, "end")
 thrust.append(v.p((s.x1, s.slip(s.x1))))
 fig.polyline(thrust, INTER, 1.2, "4 4")
 
@@ -61,8 +62,8 @@ fig.math(add(v.p((s.x1, s.h)), (-104, -12)), "F_s", 17, INK)
 fig.text(add(v.p((s.x1, s.h)), (-82, -12)), "は全体で1つ", SMALL, INK)
 
 # The count, in the open space above the slope.
-fig.text((28, 52), "未知量　5 + 4 + 4 + 4 + 1 = 18 個", LABEL, INK)
-fig.text((28, 76), "つり合い式　3 × 5 = 15 本", LABEL, INK)
+fig.text((28, 52), "未知量　5 + 4 + 4 + 4 + 1 = 18個", LABEL, INK)
+fig.text((28, 76), "つり合い式　3 × 5 = 15本", LABEL, INK)
 
 if __name__ == "__main__":
     fig.save()

@@ -7,8 +7,8 @@ shear components, and the normal stress as the sum of sigma_n' and u.
 
 import math
 
-from figlib import (FAINT, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, SOIL_EDGE, GROUND, UNIT, WATER,
-                    Figure, add, mul, sub, unit)
+from figlib import (FAINT, GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, WATER, Figure, add, lerp,
+                    mul)
 
 SIGMA_N, U, TAU = 100.0, 40.0, 30.0  # kPa
 K = 1.45  # px per kPa
@@ -18,8 +18,8 @@ fig = Figure(
     "fig_c02_normal_shear_effective",
     380,
     "表面力の分解と有効垂直応力",
-    "左は，面に働く表面力を，面に垂直な成分とせん断成分の和に分けた図．"
-    "右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和であり，間隙水圧はせん断成分を変えないことを示す図．",
+    "左は，面に働く表面力を，法線成分とせん断成分の和に分けた図．"
+    "右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．",
 )
 
 t_hat = (math.cos(TILT), -math.sin(TILT))  # along the surface, screen coordinates
@@ -70,8 +70,8 @@ def panel_right(c):
     fig.line(b0, mid, NORMAL, 2.6)
     fig.arrow(mid, add(b0, total), WATER)
     fig.circle(mid, 2.6, NORMAL)
-    fig.math(add(lerp_pt(b0, mid, 0.5), (10, 6)), "σ′_n = 60", 15, NORMAL)
-    fig.math(add(lerp_pt(mid, add(b0, total), 0.5), (10, 6)), "u = 40", 15, WATER)
+    fig.math(add(lerp(b0, mid, 0.5), (10, 6)), "σ′_n = 60", 15, NORMAL)
+    fig.math(add(lerp(mid, add(b0, total), 0.5), (10, 6)), "u = 40", 15, WATER)
     shear = mul(t_hat, TAU * K)
     s0 = add(c, mul(t_hat, 40))
     fig.arrow(s0, add(s0, shear), RESIST)
@@ -79,12 +79,8 @@ def panel_right(c):
     fig.text((c[0], 360), "垂直応力 = 有効垂直応力 + 間隙水圧", SMALL, MUTED, "middle")
 
 
-def lerp_pt(a, b, t):
-    return (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
-
-
 panel_left((190, 252))
-panel_right((560, 252))
+panel_right((585, 252))
 
 if __name__ == "__main__":
     fig.save()

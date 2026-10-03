@@ -35,7 +35,7 @@ def ell(t):
 fig.polygon([ell(2 * math.pi * k / 90) for k in range(90)], fill=SOIL, color=INK, width=2)
 ax = (math.cos(AXIS), -math.sin(AXIS))
 fig.line(add(C, mul(ax, -150)), add(C, mul(ax, 150)), INK, 1.3, "8 5")
-fig.text(add(C, add(mul(ax, 150), (-36, -12))), "長軸", SMALL, INK)
+fig.text(add(C, add(mul(ax, 150), (-8, -12))), "長軸", SMALL, INK)
 d2 = (math.cos(THETA), -math.sin(THETA))
 fig.arrow(C, add(C, mul(d2, 104)), UNIT, 2.2, "6 4")
 fig.math(add(C, add(mul(d2, 104), (6, 14))), r"\v{d}", 17, UNIT)
@@ -74,7 +74,6 @@ fig.arrow(pr.p(P), pr.p(add3(P, mul3(m, -1.25))), RESIST, 2.6)
 fig.math(add(pr.p(add3(P, mul3(m, -1.25))), (-8, -6)), r"\v{T}_i", 17, RESIST, "end")
 fig.circle(pr.p(P), 3, INK)
 fig.math((560, 322), r"\v{p}_i = (\v{I} − \v{n}_i\v{n}_i^{\r{T}})\v{d}，　\v{m}_i = \v{p}_i / ‖\v{p}_i‖", 16, INK, "middle")
-fig.text((560, 352), "局所すべり方向 m は p の向き．T はその逆向き", SMALL, MUTED, "middle")
 fig.line((350, 20), (350, 360), "#e2e8f0", 1)
 
 if __name__ == "__main__":

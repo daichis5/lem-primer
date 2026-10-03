@@ -10,21 +10,17 @@ velocity of a rotation about O'.
 
 import math
 
-from figlib import (FAINT, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, View, add, mul, norm,
+from figlib import (FAINT, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, View, add, lerp, mul,
                     sub, unit)
 
 fig = Figure(
     "fig_s02_circle_general_surface",
     350,
     "円弧のすべり面と楕円のすべり面での，底面垂直力の向き",
-    "左の円弧では，底面垂直力の作用線がすべて中心 O を通り，O まわりのモーメントが0になる．"
-    "底面のせん断力の腕は，どれも半径 R である．右の楕円では，作用線が中心 O′ を通らず，"
-    "底面垂直力は O′ まわりに腕 d をもつ．また，接線の向きが，O′ まわりの回転の速度の向きと一致しない．",
+    "左の円弧では，底面垂直力の作用線がすべて中心 O を通るので，O まわりのモーメントは0になる．"
+    "底面のせん断力の腕は，どれも半径 R である．右の楕円では，作用線が中心 O′ を通らない．"
+    "そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の向きが，O′ まわりの回転の速度の向きと一致しない．",
 )
-
-
-def lerp(a, b):
-    return ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
 
 
 def right_angle(p, u, w, size=9):
@@ -60,9 +56,9 @@ fig.circle(O, 4, INK)
 fig.math(add(O, (8, -6)), "O", 17, INK)
 fig.math(add(vl.p((R * math.cos(math.radians(300)), R * math.sin(math.radians(300)))), (-34, -62)), "R", 16, MUTED)
 fig.math(add(vl.p((R * math.cos(math.radians(212)), R * math.sin(math.radians(212)))), (-6, 22)), "N_i", 16, NORMAL, "end")
-fig.text((186, 282), "作用線はすべて O を通る", SMALL, INK, "middle")
+fig.math((186, 282), r"\t{作用線はすべて }O\t{ を通る}", 15, INK, "middle")
 fig.math((186, 305), "M_O(N_i) = 0", 15, INK, "middle")
-fig.text((186, 328), "せん断力の腕は，どれも R", SMALL, INK, "middle")
+fig.math((186, 328), r"\t{せん断力の腕は，どれも }R", 15, INK, "middle")
 
 # Right: an ellipse with semi-axes AX, BY about O'.
 AX, BY = 11.0, 6.0
@@ -82,7 +78,7 @@ arc2 = [vr.p(ell(t)) for t in range(200, 341, 2)]
 fig.polygon(arc2, fill=SOIL)
 fig.polyline(arc2, INK, 3)
 O2 = vr.p((0, 0))
-for k, t in enumerate([214, 240, 260, 294, 322]):
+for k, t in enumerate([214, 240, 260, 294]):
     p = vr.p(ell(t))
     u = unit(vr.d(inward(t)))
     tip = add(p, mul(u, 50))
@@ -94,7 +90,7 @@ for k, t in enumerate([214, 240, 260, 294, 322]):
         foot = add(p, mul(u, (O2[0] - p[0]) * u[0] + (O2[1] - p[1]) * u[1]))
         fig.line(O2, foot, INK, 1.4)
         right_angle(foot, unit(sub(O2, foot)), (-u[0], -u[1]))
-        fig.math(add(lerp(O2, foot), (-4, -8)), "d", 16, INK, "end")
+        fig.math(add(lerp(O2, foot, 0.5), (-4, -8)), "d", 16, INK, "end")
         fig.math(add(p, (-8, 20)), "N_i", 16, NORMAL, "end")
     if k == 3:
         # Tangent (dashed) against the velocity of a rotation about O' (grey).
@@ -114,9 +110,9 @@ for k, t in enumerate([214, 240, 260, 294, 322]):
 
 fig.circle(O2, 4, INK)
 fig.math(add(O2, (8, -6)), "O′", 17, INK)
-fig.text((574, 282), "作用線は O′ を通らない", SMALL, INK, "middle")
+fig.math((574, 282), r"\t{作用線は }O′\t{ を通らない}", 15, INK, "middle")
 fig.math((574, 305), "M_{O′}(N_i) = N_i d ≠ 0", 15, INK, "middle")
-fig.text((574, 328), "接線と，回転の速度の向きが違う", SMALL, INK, "middle")
+fig.math((574, 328), r"\t{接線と，}O′\t{ まわりの回転の速度の向きが違う}", 15, INK, "middle")
 fig.line((380, 20), (380, 330), "#e2e8f0", 1)
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" role="img" aria-labelledby="title desc">
   <title id="title">表面力の分解と有効垂直応力</title>
-  <desc id="desc">左は，面に働く表面力を，面に垂直な成分とせん断成分の和に分けた図．右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和であり，間隙水圧はせん断成分を変えないことを示す図．</desc>
+  <desc id="desc">左は，面に働く表面力を，法線成分とせん断成分の和に分けた図．右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="380" fill="#fff"/>
   <polygon points="20,307.2 360,196.8 360,40 20,40" fill="#f4e7c5" stroke-linejoin="round"/>
@@ -22,20 +22,20 @@
   <text x="237.4" y="260.6" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">τ</tspan></text>
   <circle cx="190" cy="252" r="3.4" fill="#172033"/>
   <text x="190" y="360" class="t" font-size="13" fill="#475569" text-anchor="middle">表面力 = 法線成分 + せん断成分</text>
-  <polygon points="400,304 740,193.5 740,40 400,40" fill="#f4e7c5" stroke-linejoin="round"/>
-  <polygon points="400,304 740,193.5 740,330 400,330" fill="#ece4d0" stroke-linejoin="round"/>
-  <line x1="400" y1="304" x2="740" y2="193.5" stroke="#172033" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="535.3" y1="260" x2="492.2" y2="127.4" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="490.5,122.1 500.9,133.3 488.6,137.3" fill="#2563eb" stroke-linejoin="round"/>
-  <text x="482.5" y="124.1" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">σ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal"> = 100 kPa</tspan></text>
-  <line x1="563.8" y1="250.8" x2="536.9" y2="168" stroke="#2563eb" stroke-width="2.6" stroke-linecap="round"/>
-  <line x1="536.9" y1="168" x2="520.7" y2="118.1" stroke="#0891b2" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="519,112.9 529.5,124 517.1,128" fill="#0891b2" stroke-linejoin="round"/>
-  <circle cx="536.9" cy="168" r="2.6" fill="#2563eb"/>
-  <text x="560.4" y="215.4" class="m" font-size="15" fill="#2563eb" text-anchor="start"><tspan font-style="italic">σ</tspan><tspan font-style="normal">′</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">n</tspan><tspan dy="-4.2" font-style="normal"> = 60</tspan></text>
-  <text x="538" y="146.4" class="m" font-size="15" fill="#0891b2" text-anchor="start"><tspan font-style="italic">u</tspan><tspan font-style="normal"> = 40</tspan></text>
-  <line x1="598" y1="239.6" x2="634.1" y2="227.9" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="639.4,226.2 628.3,236.7 624.2,224.3" fill="#14916a" stroke-linejoin="round"/>
-  <text x="645.4" y="246.2" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">τ</tspan></text>
-  <text x="560" y="360" class="t" font-size="13" fill="#475569" text-anchor="middle">垂直応力 = 有効垂直応力 + 間隙水圧</text>
+  <polygon points="400,312.1 740,201.6 740,40 400,40" fill="#f4e7c5" stroke-linejoin="round"/>
+  <polygon points="400,312.1 740,201.6 740,330 400,330" fill="#ece4d0" stroke-linejoin="round"/>
+  <line x1="400" y1="312.1" x2="740" y2="201.6" stroke="#172033" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="560.3" y1="260" x2="517.2" y2="127.4" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="515.5,122.1 525.9,133.3 513.6,137.3" fill="#2563eb" stroke-linejoin="round"/>
+  <text x="507.5" y="124.1" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">σ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal"> = 100 kPa</tspan></text>
+  <line x1="588.8" y1="250.8" x2="561.9" y2="168" stroke="#2563eb" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="561.9" y1="168" x2="545.7" y2="118.1" stroke="#0891b2" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="544,112.9 554.5,124 542.1,128" fill="#0891b2" stroke-linejoin="round"/>
+  <circle cx="561.9" cy="168" r="2.6" fill="#2563eb"/>
+  <text x="585.4" y="215.4" class="m" font-size="15" fill="#2563eb" text-anchor="start"><tspan font-style="italic">σ</tspan><tspan font-style="normal">′</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">n</tspan><tspan dy="-4.2" font-style="normal"> = 60</tspan></text>
+  <text x="563" y="146.4" class="m" font-size="15" fill="#0891b2" text-anchor="start"><tspan font-style="italic">u</tspan><tspan font-style="normal"> = 40</tspan></text>
+  <line x1="623" y1="239.6" x2="659.1" y2="227.9" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="664.4,226.2 653.3,236.7 649.2,224.3" fill="#14916a" stroke-linejoin="round"/>
+  <text x="670.4" y="246.2" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">τ</tspan></text>
+  <text x="585" y="360" class="t" font-size="13" fill="#475569" text-anchor="middle">垂直応力 = 有効垂直応力 + 間隙水圧</text>
 </svg>

@@ -75,15 +75,15 @@ def panel(x_off, title, formula, f, label_f):
         fig.circle((px, y0 - amp * f(x)), 2.6, INTER)
     fig.math((xa - 8, y0 - amp + 4), "1", 13, MUTED, "end")
     fig.math((xb + 14, y0 + 5), "x", 15, MUTED)
-    fig.text((xa + 8, y0 - amp - 14), label_f, SMALL, MUTED)
+    fig.math((xa + 8, y0 - amp - 14), label_f, 15, MUTED)
 
 
 def ONE(x):
     return 1.0
 
 
-panel(10, "Spencer法", r"X/E = \r{tan} θ（一定）", ONE, "f(x) = 1（一定）")
-panel(390, "Morgenstern–Price法", "X/E = λ f(x)", f_half_sine, "f(x)：正弦の半波")
+panel(10, "Spencer法", r"X/E = \r{tan} θ\t{（一定）}", ONE, r"f(x) = 1\t{（一定）}")
+panel(390, "Morgenstern–Price法", "X/E = λ f(x)", f_half_sine, r"f(x)\t{：正弦の半波}")
 fig.line((380, 16), (380, 345), "#e2e8f0", 1)
 
 if __name__ == "__main__":

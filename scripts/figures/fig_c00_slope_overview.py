@@ -65,7 +65,7 @@ fig.text(add(tl, (24, -1)), "せん断力", SMALL, RESIST)
 xa, xb = s.edges(PICK)
 top_mid = v.p(((xa + xb) / 2, s.ground((xa + xb) / 2)))
 fig.line(add(top_mid, (0, -6)), add(top_mid, (0, -30)), MUTED, 1)
-fig.text(add(top_mid, (0, -36)), "スライス i", SMALL, INK, "middle")
+fig.math(add(top_mid, (0, -36)), r"\t{スライス }i", 15, INK, "middle")
 fig.line(v.p((21.2, 8.8)), v.p((22.4, 11.2)), MUTED, 1)
 fig.text(add(v.p((22.4, 11.2)), (0, -6)), "すべり土塊", SMALL, INK, "middle")
 fig.text(v.p((5.0, 7.3)), "斜面", SMALL, MUTED, "middle")
@@ -74,10 +74,10 @@ fig.text(v.p((21.5, -1.9)), "地盤", SMALL, MUTED, "middle")
 fig.text(add(v.p((10.0, s.slip(10.0))), (0, 30)), "すべり面（仮定する曲面）", SMALL, INK, "middle")
 
 # The direction the mass slides, beside the slip surface near the toe.
-pa = v.p((s.x0 + 4.4, s.slip(s.x0 + 4.4) + 1.3))
-pb = v.p((s.x0 + 1.4, s.slip(s.x0 + 1.4) + 1.3))
+pa = v.p((s.x0 + 4.6, s.slip(s.x0 + 4.6) + 0.5))
+pb = v.p((s.x0 + 2.0, s.slip(s.x0 + 2.0) + 0.5))
 fig.arrow(pa, pb, UNIT, width=2, dash="5 4")
-fig.text(add(pb, (-6, -12)), "すべる向き", SMALL, MUTED, "end")
+fig.text(add(pb, (-8, -10)), "すべる向き", SMALL, MUTED, "end")
 
 if __name__ == "__main__":
     fig.save()

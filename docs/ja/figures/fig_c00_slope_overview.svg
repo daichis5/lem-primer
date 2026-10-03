@@ -27,14 +27,14 @@
   <text x="468.4" y="244.6" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
   <text x="492.4" y="243.6" class="t" font-size="13" fill="#14916a" text-anchor="start">せん断力</text>
   <line x1="438.1" y1="88.6" x2="438.1" y2="64.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-  <text x="438.1" y="58.6" class="t" font-size="13" fill="#172033" text-anchor="middle">スライス i</text>
+  <text x="438.1" y="58.6" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">スライス </tspan><tspan font-style="italic">i</tspan></text>
   <line x1="591.4" y1="96.4" x2="614.8" y2="49.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
   <text x="614.8" y="43.6" class="t" font-size="13" fill="#172033" text-anchor="middle">すべり土塊</text>
   <text x="275.5" y="125.7" class="t" font-size="13" fill="#475569" text-anchor="middle">斜面</text>
   <line x1="298.9" y1="139.3" x2="341.8" y2="166.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
   <text x="597.2" y="305.1" class="t" font-size="13" fill="#475569" text-anchor="middle">地盤</text>
   <text x="373" y="315.4" class="t" font-size="13" fill="#172033" text-anchor="middle">すべり面（仮定する曲面）</text>
-  <line x1="244.3" y1="264.8" x2="190.4" y2="253.1" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="butt"/>
-  <polygon points="185.8,252.1 198.5,249.1 196.1,260.1" fill="#64748b" stroke-linejoin="round"/>
-  <text x="179.8" y="240.1" class="t" font-size="13" fill="#475569" text-anchor="end">すべる向き</text>
+  <line x1="248.2" y1="280.9" x2="202.1" y2="271.9" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="197.5,271 210.2,267.8 208,278.8" fill="#64748b" stroke-linejoin="round"/>
+  <text x="189.5" y="261" class="t" font-size="13" fill="#475569" text-anchor="end">すべる向き</text>
 </svg>

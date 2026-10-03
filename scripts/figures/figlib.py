@@ -56,8 +56,6 @@ def mul(a, k):
     return (a[0] * k, a[1] * k)
 
 
-def dot(a, b):
-    return a[0] * b[0] + a[1] * b[1]
 
 
 def norm(a):
@@ -69,17 +67,12 @@ def unit(a):
     return (a[0] / n, a[1] / n)
 
 
-def rot90(a):
-    """Rotate by +90 degrees in a y-up frame (counter-clockwise)."""
-    return (-a[1], a[0])
 
 
 def lerp(a, b, t):
     return (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
 
 
-def polar(r, deg):
-    return (r * math.cos(math.radians(deg)), r * math.sin(math.radians(deg)))
 
 
 class Slope:
@@ -254,16 +247,20 @@ def text_width(s, size):
 #   N_i, T_{f,i}, x^2       subscript and superscript (one character or {...})
 #   \v{n}                   a vector: bold italic, as \boldsymbol in the text
 #   \r{tan}                 upright text inside a formula
+#   \t{方向}                 words in the label font, for a Japanese label
+#                           with symbols in it ("x\t{ 方向}")
 # Latin and Greek letters are italic; digits and signs are upright.
 
-_TOKEN = re.compile(r"\\([vr])\{([^{}]*)\}|([_^])(\{(?:[^{}]|\{[^{}]*\})*\}|.)|(.)", re.S)
+_TOKEN = re.compile(r"\\([vrt])\{([^{}]*)\}|([_^])(\{(?:[^{}]|\{[^{}]*\})*\}|.)|(.)", re.S)
 
 
 def _runs(src, level=0):
     runs = []
     for m in _TOKEN.finditer(src):
         kind, body, script, arg, ch = m.groups()
-        if kind:
+        if kind == "t":
+            runs.extend((c, "t", False, level) for c in body)
+        elif kind:
             for c in body:
                 runs.append((c, kind == "v", kind != "r" and _italic(c), level))
         elif script:
@@ -279,20 +276,14 @@ def _italic(c):
     return c.isalpha() and ord(c) < 0x2E80
 
 
-def math_width(src, size):
-    w = 0.0
-    for c, _, _, level in _runs(src):
-        w += text_width(c, size * (0.7 if level else 1.0))
-    return w
-
-
 def _esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def fmt(x):
     s = f"{x:.1f}"
-    return s[:-2] if s.endswith(".0") else ("0" if s == "-0" else s)
+    s = s[:-2] if s.endswith(".0") else s
+    return "0" if s == "-0" else s
 
 
 class Figure:
@@ -388,7 +379,11 @@ class Figure:
             if level:
                 attrs.append(f'font-size="{fmt(fs)}"')
             attrs.append(f'font-style="{"italic" if italic else "normal"}"')
-            if bold:
+            if bold == "t":
+                attrs.append('class="t"')
+                if not level:
+                    attrs.append(f'font-size="{fmt(LABEL if size >= LABEL else size)}"')
+            elif bold:
                 attrs.append('font-weight="bold"')
             out.append(f"<tspan {' '.join(attrs)}>{_esc(c)}</tspan>")
         self.add(
@@ -397,17 +392,6 @@ class Figure:
         )
 
     # composites -------------------------------------------------------------
-
-    def label_at_tip(self, p, q, src, color, gap=8, size=MATH, japanese=None):
-        """Put a symbol (and an optional Japanese gloss under it) past q,
-        on the side the arrow points to."""
-        u = unit(sub(q, p))
-        at = add(q, mul(u, gap + 0.35 * size))
-        anchor = "start" if u[0] > 0.35 else ("end" if u[0] < -0.35 else "middle")
-        dy = 0.35 * size if abs(u[0]) > 0.35 else (0.9 * size if u[1] > 0 else -0.15 * size)
-        self.math((at[0], at[1] + dy), src, size, color, anchor)
-        if japanese:
-            self.text((at[0], at[1] + dy + LABEL + 3), japanese, SMALL, color, anchor)
 
     def angle_arc(self, c, r, a0, a1, color=INK, width=1.3):
         """An arc around c (pixels) from screen angle a0 to a1, in degrees

@@ -40,8 +40,8 @@ mid = sm.mid
 fig.unit_vector(v.p(mid), add(v.p(mid), mul(v.d(sm.n), 0.9)))
 fig.math(add(v.p(add(mid, mul(sm.n, 0.9))), (8, 10)), r"\v{n}_i", color=UNIT)
 m_from = add(mid, mul(sm.n, 0.18))
-fig.unit_vector(v.p(m_from), v.p(add(m_from, sm.m)))
-fig.math(add(v.p(add(m_from, sm.m)), (-6, 18)), r"\v{m}_i", color=UNIT, anchor="end")
+fig.unit_vector(v.p(m_from), v.p(add(m_from, mul(sm.m, 0.9))))
+fig.math(add(v.p(add(m_from, mul(sm.m, 0.9))), (-6, 18)), r"\v{m}_i", color=UNIT, anchor="end")
 
 # Base forces: N along -n, T up the base (against sliding along m).
 s, c = math.sin(sm.alpha), math.cos(sm.alpha)

@@ -7,8 +7,7 @@ tractions really differ in direction and size.
 
 import math
 
-from figlib import (FAINT, GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, fmt,
-                    mul, norm, sub)
+from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, mul, norm)
 
 SXX, SZZ, TXZ = -60.0, -100.0, -35.0  # kPa, tension positive (the soil is in compression)
 KE = 0.6  # px per kPa on the element
@@ -52,10 +51,10 @@ fig.math((c[0] + h + 8 - SXX * KE, c[1] - 8), "σ_{xx}", 16, NORMAL)
 fig.math((c[0] + 10, c[1] - h - 8 + SZZ * KE + 18), "σ_{zz}", 16, NORMAL)
 fig.math((c[0] + h + 16, c[1] - 30), "τ_{xz}", 16, RESIST)
 fig.text((c[0], 300), "点の応力の状態", SMALL, MUTED, "middle")
-fig.text((c[0] - 70, 50), "z", SMALL, MUTED)
 fig.arrow((c[0] - 96, 92), (c[0] - 96, 56), MUTED, 1.4, head=0.7)
+fig.math((c[0] - 96, 50), "z", 15, MUTED, "middle")
 fig.arrow((c[0] - 96, 92), (c[0] - 60, 92), MUTED, 1.4, head=0.7)
-fig.text((c[0] - 52, 97), "x", SMALL, MUTED)
+fig.math((c[0] - 54, 97), "x", 15, MUTED)
 
 
 def plane_panel(center, deg, label, name):
@@ -66,7 +65,7 @@ def plane_panel(center, deg, label, name):
     half = 112
     p0 = add(center, S(mul(t_hat, -half)))
     p1 = add(center, S(mul(t_hat, half)))
-    top, bottom = center[1] - 130, center[1] + 40
+    top, bottom = center[1] - 130, center[1] + 70
     fig.polygon([p0, p1, (p1[0], top), (p0[0], top)], fill=SOIL)
     fig.polygon([p0, p1, (p1[0], bottom), (p0[0], bottom)], fill=GROUND)
     fig.line(p0, p1, "#172033", 2.4)
