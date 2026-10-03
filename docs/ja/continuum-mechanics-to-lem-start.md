@@ -862,7 +862,7 @@ $$ (eq-start-summary)
 :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が違うか
 :icon: question
 
-応力テンソル $\boldsymbol{\sigma}$ は，1つの点の応力の状態を表す2階のテンソルで，面を決めなくても定まる．表面力 $\boldsymbol{t}$ は，法線が $\boldsymbol{n}$ の面に働く単位面積あたりの力のベクトルで，$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ のように，面の向きを決めて初めて求まる．同じ点でも，面の向きが変われば，表面力も変わる．（→[2節](#section-2)）
+応力テンソル $\boldsymbol{\sigma}$ は，1つの点の応力の状態を表す2階のテンソルで，面を決めなくても定まる．一方，表面力 $\boldsymbol{t}$ は，法線が $\boldsymbol{n}$ の面に働く単位面積あたりの力のベクトルで，$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ のように，面の向きを決めて初めて求まる．同じ点でも，面の向きが変われば，表面力も変わる．（→[2節](#section-2)）
 :::
 
 :::{dropdown} 問2　有効垂直応力 $\sigma_n'$ は，全垂直応力と間隙水圧からどう決まるか
@@ -874,7 +874,7 @@ $$ (eq-start-summary)
 :::{dropdown} 問3　Mohr–Coulomb則が与える $\tau_f$ は，今働いているせん断応力か，それとも別のものか
 :icon: question
 
-別のものである．$\tau_f$ は，今の有効垂直応力のもとで，破壊するときに発揮できるせん断抵抗の上限を表す．今働いているのは動員せん断応力 $\tau_m$ で，安定な斜面では $\tau_f$ より小さい．（→[5節](#section-5)）
+別のものである．$\tau_f$ は，今の有効垂直応力のもとで，破壊するときに発揮できるせん断抵抗の上限を表す．今働いているのは動員せん断応力 $\tau_m$ で，安定な斜面では $\tau_f$ より小さい．（→[5節](#section-5)，[6節](#section-6)）
 :::
 
 :::{dropdown} 問4　安全率 $F_s$ は，何と何の比として導入したか
@@ -886,19 +886,19 @@ $$ (eq-start-summary)
 :::{dropdown} 問5　$N_i$，$U_i$，$T_i$ は，点ごとの応力にどのような操作をして作ったか
 :icon: question
 
-底面 $S_i$ にわたって面積分した．$N_i$ は全垂直応力 $\sigma_n$ を，$U_i$ は間隙水圧 $u$ を，面積分した値である．$T_i$ は，$c_i'$ と $\phi_i'$ を底面で一定としてMohr–Coulomb則を面積分し，共通の安全率 $F_s$ で割って求めた．（→[8節](#section-8)）
+底面 $S_i$ にわたって面積分した．$N_i$ は全垂直応力 $\sigma_n$ を，$U_i$ は間隙水圧 $u$ を，面積分した値である．$T_i$ は，$c_i'$ と $\phi_i'$ を底面で一定としてMohr–Coulomb則を面積分し，共通の安全率 $F_s$ で割って求めた．（→[7節](#section-7)，[8節](#section-8)）
 :::
 
 :::{dropdown} 問6　底面 $S_i$ で一定と仮定しなければならないのはどの量で，一定でなくてよいのはどの量か
 :icon: question
 
-スカラーの式 $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ を得るには，材料定数 $c_i'$ と $\phi_i'$ を一定と仮定する．$\sigma_n$ と $u$ は，底面の中で分布していてよい．ベクトルの式 $\boldsymbol{T}_i=-T_i\boldsymbol{m}_i$ まで簡単にするには，向き $\boldsymbol{n}$ と $\boldsymbol{m}$ も一定と仮定する．（→[8節](#section-8)）
+スカラーの式 $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ を得るには，材料定数 $c_i'$ と $\phi_i'$ を一定と仮定する．一方，$\sigma_n$ と $u$ は，底面の中で分布していてよい．$T_i=T_{f,i}/F_s$ には，$F_s$ が底面で共通だという仮定も要る．ベクトルの式 $\boldsymbol{N}_i=-N_i\boldsymbol{n}_i$ と $\boldsymbol{T}_i=-T_i\boldsymbol{m}_i$ にするには，それぞれ $\boldsymbol{n}$ と $\boldsymbol{m}$ も一定と仮定する．（→[8節](#section-8)）
 :::
 
 :::{dropdown} 問7　8節の $T_i$ の式を得ても，まだ分からないものは何か
 :icon: question
 
-底面垂直力 $N_i$，安全率 $F_s$，スライス間力やカラム間力とその作用位置である．$T_i$ は，$N_i$ と $F_s$ が決まれば求まる．これらを決めるには，つり合い式に加えて，手法ごとの仮定が要る．（→[9節](#section-9)）
+底面垂直力 $N_i$，安全率 $F_s$，スライス間力やカラム間力である．$T_i$ は，$N_i$ と $F_s$ が決まれば求まる．これらを決めるには，つり合い式に加えて，手法ごとの仮定が要る．（→[9節](#section-9)）
 :::
 
 :::{dropdown} 問8（計算してみよう）　6節の「数値でたどる」の底面で，間隙水圧が $u=20$ kPa に下がったとする．せん断強度 $\tau_f$ と安全率 $F_s$ を求めよ

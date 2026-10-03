@@ -47,8 +47,8 @@ compare a document with it.
   the endings: follow a である． with a different ending, and where three
   sentences in a row end in a verb, join two of them or open one with a
   connective or a linking phrase (そのため，, つまり，, 円弧では，). Noun
-  endings (体言止め) are for tables, captions, glossary entries and list
-  items.
+  endings (体言止め) are for tables, captions, glossary entries, list items,
+  and review answers (see Review questions).
 - A list item and a caption have no closing ．; a sentence inside one that
   another follows keeps its ．.
 - Link each sentence to the one before when the link is a cause, a
