@@ -130,6 +130,23 @@ compare a document with it.
 
 ## Figures
 
-The text in `docs/ja/figures/*.svg` (labels, `<title>`, `<desc>`) follows the
-same terms and notation as the body. After changing a label, open the SVG in
-a browser and check that it still fits its box.
+Each SVG in `docs/ja/figures/` is written by a script in `scripts/figures/`.
+Edit the script and run `make figures`; never edit an SVG by hand. CI writes
+the figures again and fails if they differ from the committed files.
+
+- `scripts/figures/figlib.py` holds what the figures share: the colours, type
+  sizes, arrowheads and math labels, plus the slope with its slip circle, the
+  slice of 第2資料 and a 3D projection.
+- Compute geometry rather than place it by eye. A normal is perpendicular to
+  its surface, a vector sum is drawn as one, and an arrow's length is
+  proportional to its force. Where only the place of an unknown matters, as
+  in fig_02, every arrow gets the same length.
+- Colours carry meaning: red for weight, green for shear resisting sliding,
+  blue for normal forces, purple for interslice forces, cyan for pore
+  pressure, and grey dashes for unit vectors (n, m, d).
+- A figure is 760 px wide, the width of the text column, so labels show at
+  their set size (14 px, 13 px for secondary text). It has no title inside;
+  the caption carries it.
+- Labels, `<title>` and `<desc>` follow the terms and notation of the body.
+  After a change, look at the figure in a browser: no label may cross an
+  arrow or leave its panel.
