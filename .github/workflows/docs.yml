@@ -29,6 +29,10 @@ jobs:
           enable-cache: true
       - name: Install documentation dependencies
         run: uv sync --group docs
+      # The figures are written by scripts/figures; this fails when an SVG was
+      # edited by hand, or a script changed without `make figures`.
+      - name: Check that the figures match their scripts
+        run: make figures && git diff --exit-code -- docs/ja/figures
       # -W turns warnings into errors: both editions currently build clean, and
       # this keeps broken directives or unresolved references from landing.
       - name: Build both editions
