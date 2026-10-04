@@ -199,10 +199,10 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   captions or dropdowns. A use is the term itself, its abbreviation, a
   name its entry gives, or another form of the same words (LEM,
   任意形状のすべり面, 回転軸; 離散化, 不静定性を解消, 局所的なすべり方向);
-  for these, name the entry, as in `` {term}`LEM <極限平衡法>` ``. A word
-  inside another term is not a use (間隙水圧 in 間隙水圧の合力), and
-  neither is a common word that stands for the term only in context (土塊,
-  強度, 基準点).
+  for all but the term itself, name the entry, as in
+  `` {term}`LEM <極限平衡法>` ``. A word inside a use of another term is
+  not a use (間隙水圧 in 間隙水圧の合力), and neither is a common word
+  that stands for the term only in context (土塊, 強度, 基準点).
 - A term gets an entry when readers may meet it away from the section that
   explains it: another document uses it, the same document uses it far
   from that section, or LEM uses it more narrowly than 土質力学 or
