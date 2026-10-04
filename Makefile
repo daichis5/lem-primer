@@ -109,10 +109,10 @@ figures:
 	@for f in scripts/figures/fig_*.py; do python3 "$$f" >/dev/null || exit 1; done
 	@echo "Figures written to docs/ja/figures/ and docs/en/figures/"
 
-# The practice pages include what each run_*.py prints, from $(EXAMPLES)/output,
-# so a page cannot show numbers its code no longer produces. Warnings are
-# errors: a reader would see them in the output. Run this before `make figures`,
-# which reads some of these outputs. Needs `uv sync --group examples`.
+# The practice pages include what each run_*.py prints, from output/ in each of
+# $(EXAMPLES), so a page cannot show numbers its code no longer produces.
+# Warnings are errors: a reader would see them in the output. Run this before
+# `make figures`, which reads some of these outputs. Needs `uv sync --group examples`.
 examples:
 	@for d in $(EXAMPLES); do \
 	  for f in $$d/run_*.py; do \

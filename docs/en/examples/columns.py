@@ -96,7 +96,7 @@ class Plane:
 class Columns:
     """The column table. Each quantity is an array in the order of the columns."""
 
-    # base point: where the vertical through the column center meets the slip surface
+    # base point on the central vertical and the slip surface; shape (columns, 3)
     base: np.ndarray
     top: np.ndarray  # where the same vertical meets the ground
     n: np.ndarray  # outward unit normal of the base
@@ -123,8 +123,8 @@ def make_columns(
 
     A square becomes a column where the slip surface at its center is below the ground.
     The point on the central vertical and the tangent plane there represent each base.
-    A water table water_level [m] makes the base pore pressure hydrostatic, the depth
-    measured vertically from it. A water table above the ground is cut to the ground.
+    A water table water_level [m] makes the base pore pressure hydrostatic, measured
+    vertically. A water table above the ground is cut to it; the soil weighs gamma.
     """
     x0, x1, y0, y1 = surface.bounds
     X, Y = np.meshgrid(centres(x0, x1, h), centres(y0, y1, h))

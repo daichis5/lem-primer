@@ -18,7 +18,7 @@ sigma_n, tau = base_stresses(30.0, column_weight(5.0, GAMMA))
 fs = factor_of_safety(sigma_n, tau, 0.0, C, PHI)
 print(f"   sigma_n = {sigma_n:.2f} kPa, tau = {tau:.2f} kPa, Fs = {fs:.3f}")
 
-print("2. the base of section 6, document 1")
+print("2. the base of Chapter 1, Section 6")
 beta = math.degrees(math.atan(0.3))
 w = 100.0 / math.cos(math.radians(beta)) ** 2
 sigma_n, tau = base_stresses(beta, w)

@@ -38,9 +38,9 @@ make serve                # builds, then serves it at http://localhost:8000/
 
 The practice pages include the code under `docs/ja/examples` (and its English
 copy, `docs/en/examples`) and what its `run_*.py` scripts print, from
-`output/` beside it. `make examples`
-writes those outputs and runs the tests; run it after changing the code, and
-before `make figures`, which plots one of the outputs.
+`output/` beside it. `make examples` writes those outputs and runs the tests;
+run it after changing the code, and before `make figures`, which plots one of
+the outputs.
 
 `make ja` and `make en` build a single edition, and goals chain, so `make ja
 open` builds just that edition and opens it. `make preview` is `all` plus

@@ -56,7 +56,8 @@ def panel_left(c):
     fig.math(add(tip_n, (-10, 4)), r"−σ_n\v{n}", color=NORMAL, anchor="end")
     fig.math(add(tip_s, (6, 22)), r"\v{τ}", color=RESIST)
     fig.circle(c, 3.4, INK)
-    fig.text((c[0], 360), L("表面力 = 法線成分 + せん断成分", "traction = normal component + shear component"), SMALL, MUTED, "middle")
+    fig.text((c[0], 360), L("表面力 = 法線成分 + せん断成分", "traction = normal component + shear component"),
+             SMALL, MUTED, "middle")
 
 
 def panel_right(c):
@@ -79,7 +80,10 @@ def panel_right(c):
     s0 = add(c, mul(t_hat, 40))
     fig.arrow(s0, add(s0, shear), RESIST)
     fig.math(add(add(s0, shear), (6, 20)), r"\v{τ}", color=RESIST)
-    fig.text((c[0], 360), L("垂直応力 = 有効垂直応力 + 間隙水圧", "normal stress = effective stress + pore pressure"), SMALL, MUTED, "middle")
+    # English takes two lines to stay inside the panel.
+    fig.text(L((c[0], 360), (c[0], 350)),
+             L("垂直応力 = 有効垂直応力 + 間隙水圧", "normal stress = effective normal stress"), SMALL, MUTED, "middle")
+    fig.text((c[0], 370), L("", "+ pore water pressure"), SMALL, MUTED, "middle")
 
 
 panel_left((190, 252))

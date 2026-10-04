@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of a circular slip with the method of slices: implement four methods and check equilibrium in one framework"
 lang: en
 series: "practice 2 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -104,7 +104,7 @@ With the six slices of Figure 1, the table is as follows. The output shown in th
 
 Check the third slice by hand. With one more digit than the table, the width is $b=4.0964$ m and the middle of the width is at $x=9.241$ m. The ground is at height $9.241\times10/15=6.161$ m and the circle at $-1.039$ m, so $W=18\times4.0964\times(6.161+1.039)=530.9$ kN/m. The inclination follows from $\tan\alpha=(9.241-6)/(18+1.039)=0.170$ as $9.66^\circ$.
 
-The last line shows that, on every base, the magnitude of the cross product of the normal $\boldsymbol{n}_i$ and the position vector $\boldsymbol{r}_i$ from the center of the circle to the base point is below $10^{-12}$ m. This is only the size of rounding error, so the line of action of every {term}`base normal force` passes through the center. This is the property peculiar to a circle that [Chapter 3, Section 2](#practice-section-2) described. Write these two checks as tests. Create `test_slices.py` and write the following.
+The last line shows that, on every base, the magnitude of the cross product of the position vector $\boldsymbol{r}_i$ from the center of the circle to the base point and the normal $\boldsymbol{n}_i$ is below $10^{-12}$ m. This is only the size of rounding error, so the line of action of every {term}`base normal force` passes through the center. This is the property peculiar to a circle that [Chapter 3, Section 2](#practice-section-2) described. Write these two checks as tests. Create `test_slices.py` and write the following.
 
 ```{literalinclude} examples/test_slices.py
 :language: python
@@ -217,7 +217,7 @@ The table of Section 5 collects the values for other numbers of slices. With $n=
 
 ## 3. Put the methods in one framework, with the inclination of the interslice forces as a variable
 
-The three formulas of Section 2 look as if each method were derived on its own. As [Chapter 2, Section 3.3](#what-section-3-3) showed, however, the methods differ only in how they achieve {term}`closure`. Fredlund and Krahn (1977) used this view to put the 2D methods in one framework and compare them. This practice, too, takes the assumption of the Spencer method from [Chapter 2, Section 5.1](#what-section-5-1) and keeps it as a variable. The resultant $Q_i$ of the interslice forces on each slice is assumed to have the same direction on every slice:
+The three formulas of Section 2 look as if each method were derived on its own. As [Chapter 2, Section 3.3](#what-section-3-3) showed, however, the methods differ in how they achieve {term}`closure`. Fredlund and Krahn (1977) used this view to put the 2D methods in one framework and compare them. This practice, too, takes the assumption of the Spencer method from [Chapter 2, Section 5.1](#what-section-5-1) and keeps it as a variable. The resultant $Q_i$ of the interslice forces on each slice is assumed to have the same direction on every slice:
 
 $$
 \boldsymbol{d}=
@@ -250,7 +250,7 @@ D_i=-\boldsymbol{n}_i\cdot\boldsymbol{p}
 +\frac{\tan\phi_i'}{F_s}\,\boldsymbol{e}_i\cdot\boldsymbol{p}
 $$ (eq-slices-normal)
 
-When $\theta=0$, $\boldsymbol{p}$ points vertically upward, and $D_i$ equals $m_{\alpha,i}$ of Equation {eq}`eq-slices-bishop`. In other words, Equation {eq}`eq-slices-normal` extends the $N_i$ of the simplified Bishop method to inclined interslice forces. On the other hand, if $\boldsymbol{d}$ of each slice is taken parallel to its base ($\theta$ set to $\alpha_i$ slice by slice), then $D_i=1$ and $N_i=W_i\cos\alpha_i$. This is the $N_i$ of the Fellenius method. Since its $\theta$ differs from slice to slice, the Fellenius method does not fit this framework, which fixes a single $\theta$.
+When $\theta=0$, $\boldsymbol{p}$ points vertically upward, and $D_i$ equals $m_{\alpha,i}$ of Eq. {eq}`eq-slices-bishop`. In other words, Eq. {eq}`eq-slices-normal` extends the $N_i$ of the simplified Bishop method to inclined interslice forces. On the other hand, if $\boldsymbol{d}$ of each slice is taken parallel to its base ($\theta$ set to $\alpha_i$ slice by slice), then $D_i=1$ and $N_i=W_i\cos\alpha_i$. This is the $N_i$ of the Fellenius method. Since its $\theta$ differs from slice to slice, the Fellenius method does not fit this framework, which fixes a single $\theta$.
 
 ```{literalinclude} examples/slices.py
 :language: python
@@ -367,7 +367,7 @@ Finally, as in [Chapter 3, Section 5.2](#practice-section-5-2), check the effect
 :end-before: 7. a plane
 ```
 
-Every negative value is on the rightmost slice. This slice has a steep base and a short column. For this reason, in the numerator of Equation {eq}`eq-slices-normal`, the term of the shear force due to cohesion outweighs the term of the weight. In the simplified Bishop method at $\theta=0$, its vertical component $c_i'l_i\sin\alpha_i/F_s$ is larger than the weight $W_i$, as the last line of the output shows. The $N_i=W_i\cos\alpha_i$ of the Fellenius method has no such term. This code uses the negative values as they are. However, as [Practice 1, Section 5](#infinite-section-5) showed, a negative effective normal force means that the soil is in tension. Its treatment, such as adding a tension crack or cutting the contact, must therefore be decided separately ([Chapter 3, Section 12.1](#practice-section-12-1)).
+Every negative value is on the rightmost slice. This slice has a steep base and a short column. For this reason, in the numerator of Eq. {eq}`eq-slices-normal`, the term of the shear force due to cohesion outweighs the term of the weight. In the simplified Bishop method at $\theta=0$, its vertical component $c_i'l_i\sin\alpha_i/F_s$ is larger than the weight $W_i$, as the last line of the output shows. The $N_i=W_i\cos\alpha_i$ of the Fellenius method has no such term. This code uses the negative values as they are. However, as [Practice 1, Section 5](#infinite-section-5) showed, a negative effective normal force means that the soil is in tension. Its treatment, such as adding a tension crack or cutting the contact, must therefore be decided separately ([Chapter 3, Section 12.1](#practice-section-12-1)).
 
 ---
 
@@ -414,14 +414,14 @@ Consider an elliptical slip surface through the same exit, $x=-1$. Its center is
 :end-before: 9. moving
 ```
 
-The first line is Equation {eq}`eq-slices-bishop` with the base angles of the ellipse put in. The second line, by contrast, makes the moment residual about the center $(6, 18)$ zero in the framework of Equation {eq}`eq-slices-normal`. The two correspond to the two readings of "computed a non-circular surface with Bishop" in [Chapter 3, Section 5.1](#practice-section-5-1), and they differ by 4%, 1.994 against 1.922. The circle formula is derived from three facts: the line of action of each base normal force passes through the center, every shear force has the radius $R$ as its lever arm, and the lever arm of the weight is $R\sin\alpha_i$. On an ellipse, none of the three holds. The first two are as [Chapter 3, Section 3](#practice-section-3) showed. For the Fellenius method, too, Equation {eq}`eq-slices-fellenius` gives 1.733, and going back to moments about the center gives 1.803. The latter, `fellenius_about`, also includes the moment of the base normal force $N_i=W_i\cos\alpha_i$.
+The first line is Eq. {eq}`eq-slices-bishop` with the base angles of the ellipse put in. The second line, by contrast, makes the moment residual about the center $(6, 18)$ zero in the framework of Eq. {eq}`eq-slices-normal`. The two correspond to the two readings of "computed a non-circular surface with Bishop" in [Chapter 3, Section 5.1](#practice-section-5-1), and they differ by 4%, 1.994 against 1.922. The circle formula is derived from three facts: the line of action of each base normal force passes through the center, every shear force has the radius $R$ as its lever arm, and the lever arm of the weight is $R\sin\alpha_i$. On an ellipse, none of the three holds. The first two are as [Chapter 3, Section 3](#practice-section-3) showed. For the Fellenius method, too, Eq. {eq}`eq-slices-fellenius` gives 1.733, and going back to moments about the center gives 1.803. The latter, `fellenius_about`, also includes the moment of the base normal force $N_i=W_i\cos\alpha_i$.
 
 ```{literalinclude} examples/slices.py
 :language: python
 :pyobject: fellenius_about
 ```
 
-Add a test that `fellenius_about`, taken about the center of a circle, reduces to Equation {eq}`eq-slices-fellenius`.
+Add a test that `fellenius_about`, taken about the center of a circle, reduces to Eq. {eq}`eq-slices-fellenius`.
 
 ```{literalinclude} examples/test_slices.py
 :language: python
@@ -485,12 +485,12 @@ If it prints the same values as the output shown in this practice, your function
 
 ## Review questions
 
-Click a question to see its answer. Work through the (Try it) questions in `lem-practice`.
+Click a question to see its answer. Do the (Try it) questions in `lem-practice`.
 
 :::{dropdown} Q1. How did the code check that the base normal forces do not appear in the equation of moments about the center of a circle?
 :icon: question
 
-It checked that, on every slice, the cross product of the base normal $\boldsymbol{n}_i$ and the position vector $\boldsymbol{r}_i$ from the center of the circle to the base point is only the size of rounding error. Since the cross product is zero, the line of action of each base normal force passes through the center and has no moment about it. (→[Section 1](#slices-section-1))
+It checked that, on every slice, the cross product of the position vector $\boldsymbol{r}_i$ from the center of the circle to the base point and the base normal $\boldsymbol{n}_i$ is only the size of rounding error. Since the cross product is zero, the line of action of each base normal force passes through the center and has no moment about it. (→[Section 1](#slices-section-1))
 :::
 
 :::{dropdown} Q2. (Try it) For the six slices of Figure 1, find $m_{\alpha,i}$ of each slice at the solution of the simplified Bishop method. Which slice has the smallest?

@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of a 3D slip surface with the method of columns: build a column table and check it against the infinite slope and the 2D values"
 lang: en
 series: "practice 3 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -12,7 +12,7 @@ translated_on: 2026-10-04
 
 In this practice, you extend the slope of Practice 2 in the depth direction and write code that computes the factor of safety of an ellipsoidal slip surface with the 3D method of columns. You build a column table and implement the Hovland method and the 3D simplified Bishop method. First, you check that a plane slip surface gives the infinite slope of Practice 1, and that a cylindrical slip surface gives the 2D values of Practice 2. Then, on spheres and ellipsoids, you look at the effect of the quantities that 3D newly requires you to choose, such as the local direction of sliding and the direction of sliding.
 
-This practice assumes that you have read [Chapter 2](what-is-limit-equilibrium-method.md) and [Chapter 3](lem-in-practice-mechanical-perspective.md), and finished [Practice 1](practice-infinite-slope.md) and [Practice 2](practice-slices-2d.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
+This practice assumes that you have read [Chapter 2](what-is-limit-equilibrium-method.md) and [Chapter 3](lem-in-practice-mechanical-perspective.md) and finished [Practice 1](practice-infinite-slope.md) and [Practice 2](practice-slices-2d.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 (columns-goal)=
 
@@ -172,7 +172,7 @@ Here $U_i=u_iA_i$ is the {term}`pore water force on the base`. On a column whose
 ```
 :::
 
-Section 5 writes the tests together.
+You write its tests in Section 5, with the others.
 
 ---
 
@@ -274,7 +274,7 @@ Items 1. and 2. of the output are the checks of this section.
 :end-before: 3. ellipsoids
 ```
 
-For the plane, all three values match the {term}`infinite slope` value of Practice 1, 1.2566. This is because every column has the same shape, and each column is in equilibrium on its own, like the prism of Practice 1. Every base faces the same way, so the sum of the moments of the weight and the base normal force is $W_i\sin\beta\,\ell_{t,i}$. The arm of the shear force $\ell_{t,i}$ is also the same for every column (the distance from $O$ to the plane). So the ratio of moments equals the ratio of forces.
+For the plane, all three values match the {term}`infinite slope` value of Practice 1, 1.2566. This is because every column has the same shape, and each column is in equilibrium on its own, like the column of Practice 1. Every base faces the same way, so the sum of the moments of the weight and the base normal force is $W_i\sin\beta\,\ell_{t,i}$. The arm of the shear force $\ell_{t,i}$ is also the same for every column (the distance from $O$ to the plane). So the ratio of moments equals the ratio of forces.
 
 For the cylinder, the bases are not tilted sideways, so every strip in the depth direction is the 2D problem of Practice 2. The Hovland method therefore matches the Fellenius method of Practice 2, and the 3D simplified Bishop method matches the simplified Bishop method of Practice 2, to within about 0.1%. A difference remains because the square columns do not fit exactly at the exit and entry of the arc. Add these two to the tests.
 
@@ -402,7 +402,7 @@ You can pass the saved table to the solver of another implementation and compare
 
 1. What the quantities in the table mean: is the base area the area of the inclined base or the area in plan? Is the pore water pressure a pressure or a resultant force?
 2. The direction of the normal: outward from the sliding mass (as in this practice), or upward?
-3. The local direction of sliding: derived from the axis of rotation, or the projection of the direction of sliding? Does it point in the direction of sliding, or in the direction that resists sliding?
+3. The local direction of sliding: derived from the axis of rotation, or the projection of the direction of sliding? Does it point the way the mass slides, or against it?
 4. The pore water pressure term: is the resultant $U_i=u_iA_i$ subtracted (as in this practice), or is the effective normal force found from the effective weight, as in $(W_i-u_ib_i)\cos\alpha_i$ of [Practice 2, Section 5](#slices-section-5)?
 5. The reference point for moments and the axis of rotation: where are they, and which sense of rotation is positive? Do they move with the size of the slip surface?
 6. What is returned when there is no solution: some implementations return a special value, such as infinity, when the iteration does not converge. That does not mean "very safe" ([Chapter 3, Section 11.4](#practice-section-11-4))
@@ -426,69 +426,69 @@ Run `uv run pytest` and check that all the tests of Practices 1 to 3 pass.
 
 | What you see | Cause and fix |
 |---|---|
-| `ModuleNotFoundError: No module named 'slices'` | `slices.py` of Practice 2 is not in the same folder. (→ [Setup](#columns-setup)) |
-| `ModuleNotFoundError: No module named 'infinite_slope'` | `infinite_slope.py` of Practice 1 is not in the same folder. The tests and `run_columns.py` read it. (→ [Setup](#columns-setup)) |
-| `RuntimeWarning: invalid value encountered in sqrt` | `Ellipsoid.z` computes the square root even for vertical lines that do not meet the ellipsoid. `np.where` computes both values first, so use `np.sqrt(np.abs(q))`. (→ [Section 1](#columns-section-1)) |
-| `ValueError: m_alpha is zero or negative for some column` | In the iteration of the 3D simplified Bishop method, $F_s$ became too small, or some columns have bases that rise steeply or are tilted steeply sideways. Raise the initial value `fs`, or review the slip surface. (→ [Section 4](#columns-section-4)) |
-| The computation takes a long time | The number of columns grows in inverse proportion to $h^2$. The sphere with $h=0.25$ m has about 9200 columns. While checking, try $h=0.5$ m or 1 m. (→ [Section 7](#columns-section-7)) |
-| The values differ slightly from the table | Check $h$ and the grid of columns (`centres`). If the grid is not symmetric, the values for directions of sliding rotated left and right also drift apart. (→ [Section 1](#columns-section-1)) |
+| `ModuleNotFoundError: No module named 'slices'` | `slices.py` of Practice 2 is not in the same folder. (→[Setup](#columns-setup)) |
+| `ModuleNotFoundError: No module named 'infinite_slope'` | `infinite_slope.py` of Practice 1 is not in the same folder. The tests and `run_columns.py` read it. (→[Setup](#columns-setup)) |
+| `RuntimeWarning: invalid value encountered in sqrt` | `Ellipsoid.z` computes the square root even for vertical lines that do not meet the ellipsoid. `np.where` computes both values first, so use `np.sqrt(np.abs(q))`. (→[Section 1](#columns-section-1)) |
+| `ValueError: m_alpha is zero or negative for some column` | In the iteration of the 3D simplified Bishop method, $F_s$ became too small, or some columns have bases that rise steeply or are tilted steeply sideways. Raise the initial value `fs`, or review the slip surface. (→[Section 4](#columns-section-4)) |
+| The computation takes a long time | The number of columns grows in inverse proportion to $h^2$. The sphere with $h=0.25$ m has about 9200 columns. While checking, try $h=0.5$ m or 1 m. (→[Section 7](#columns-section-7)) |
+| The values differ slightly from the table | Check $h$ and the grid of columns (`centres`). If the grid is not symmetric, the values for directions of sliding rotated left and right also drift apart. (→[Section 1](#columns-section-1)) |
 
 ## Summary
 
-- The column table consists of each base's representative point, normal, base area, weight, pore water pressure and strength. The base area is $h^2/|n_z|$, which corresponds to $b/\cos\alpha$ in 2D (→ [Section 1](#columns-section-1))
-- In 3D, the local direction of sliding is assumed separately. The direction in the vertical plane and the projection onto the tangent plane differ on bases tilted sideways (→ [Section 2](#columns-section-2))
-- The Hovland method ignores the intercolumn forces and sums the resisting and driving forces of the columns. The 3D simplified Bishop method finds $N_i$ from the vertical equilibrium of each column and takes the ratio of moments about the axis of rotation (→ [Section 3](#columns-section-3), [Section 4](#columns-section-4))
-- A plane slip surface gives the infinite slope value, and a cylindrical slip surface gives the 2D values. A new method is checked by reducing it to the model before it (→ [Section 5](#columns-section-5))
-- On the sphere, the Hovland value is smaller than that of the 2D middle section, and the 3D simplified Bishop value is larger. Which of 3D and 2D is larger can reverse with the shape of the slip surface and the method. In the simplified Bishop method, the effective normal force becomes negative on the thin columns at the edge of the slip surface (→ [Section 6](#columns-section-6))
-- Even with the same table, the way the local direction of sliding is chosen changes the factor of safety by 17%. On the sphere, among the directions of sliding tried, the factor of safety was smallest straight down the slope (→ [Section 7](#columns-section-7))
-- Before comparing with another implementation, check what the quantities in the table mean, the direction of the normal, the local direction of sliding, the pore water pressure term, the axis of rotation and what is returned when there is no solution (→ [Section 8](#columns-section-8))
+- The column table consists of each base's representative point, normal, base area, weight, pore water pressure and strength. The base area is $h^2/|n_z|$, which corresponds to $b/\cos\alpha$ in 2D (→[Section 1](#columns-section-1))
+- In 3D, the local direction of sliding is assumed separately. The direction in the vertical plane and the projection onto the tangent plane differ on bases tilted sideways (→[Section 2](#columns-section-2))
+- The Hovland method ignores the intercolumn forces and sums the resisting and driving forces of the columns. The 3D simplified Bishop method finds $N_i$ from the vertical equilibrium of each column and takes the ratio of moments about the axis of rotation (→[Section 3](#columns-section-3), [Section 4](#columns-section-4))
+- A plane slip surface gives the infinite slope value, and a cylindrical slip surface gives the 2D values. A new method is checked by reducing it to the model before it (→[Section 5](#columns-section-5))
+- On the sphere, the Hovland value is smaller than that of the 2D middle section, and the 3D simplified Bishop value is larger. Which of 3D and 2D is larger can reverse with the shape of the slip surface and the method. In the simplified Bishop method, the effective normal force becomes negative on the thin columns at the edge of the slip surface (→[Section 6](#columns-section-6))
+- Even with the same table, the way the local direction of sliding is chosen changes the factor of safety by 17%. On the sphere, among the directions of sliding tried, the factor of safety was smallest straight down the slope (→[Section 7](#columns-section-7))
+- Before comparing with another implementation, check what the quantities in the table mean, the direction of the normal, the local direction of sliding, the pore water pressure term, the axis of rotation and what is returned when there is no solution (→[Section 8](#columns-section-8))
 
 ---
 
 ## Review questions
 
-Click a question to see its answer. Work on the (Try it) questions in `lem-practice`.
+Click a question to see its answer. Do the (Try it) questions in `lem-practice`.
 
 :::{dropdown} Q1. Why does the 3D method of columns need the local direction of sliding to be chosen separately?
 :icon: question
 
-Because the strength equation from the Mohr–Coulomb failure criterion determines only the size of the base shear force, not its direction in the tangent plane. In 2D, the direction is limited to the two along the tangent in the section, and it is set to the side that opposes sliding. The tangent plane in 3D has infinitely many directions, so one has to be assumed. (→ [Section 2](#columns-section-2))
+Because the strength equation from the Mohr–Coulomb failure criterion determines only the size of the base shear force, not its direction in the tangent plane. In 2D, the direction is limited to the two along the tangent in the section, and it is set to the side that opposes sliding. The tangent plane in 3D has infinitely many directions, so one has to be assumed. (→[Section 2](#columns-section-2))
 :::
 
 :::{dropdown} Q2. (Calculate) The base of a column with side $h=0.25$ m is inclined at 30° from the horizontal. What is its base area?
 :icon: question
 
-$|n_z|=\cos 30^\circ$, so $A=0.25^2/\cos 30^\circ=0.0722$ m². It is larger than the area of the horizontal square, 0.0625 m², by the effect of the inclination. (→ [Section 1](#columns-section-1))
+$|n_z|=\cos 30^\circ$, so $A=0.25^2/\cos 30^\circ=0.0722$ m². It is larger than the area of the horizontal square, 0.0625 m², by the effect of the inclination. (→[Section 1](#columns-section-1))
 :::
 
 :::{dropdown} Q3. Why, on a plane slip surface, do the Hovland method, its moment form and the 3D simplified Bishop method all match the infinite slope value?
 :icon: question
 
-Because every column has the same shape, and each column is in equilibrium on its own, like the prism of the infinite slope. In each column, the weight and the base forces cancel on the same vertical line, so their moment about any axis is zero. So differences in the intercolumn forces or in the choice of the axis of rotation do not appear in the values. (→ [Section 5](#columns-section-5))
+Because every column has the same shape, and each column is in equilibrium on its own, like the column of the infinite slope. In each column, the weight and the base forces cancel on the same vertical line, so their moment about any axis is zero. So differences in the intercolumn forces or in the choice of the axis of rotation do not appear in the values. (→[Section 5](#columns-section-5))
 :::
 
 :::{dropdown} Q4. Why was the Hovland value on the spherical slip surface smaller than the value for the 2D middle section? Can you say that "the 3D factor of safety is larger than the 2D one"?
 :icon: question
 
-Because the shape of the sections and the sideways tilt of the bases both lower the value. Sections away from $y=0$ are shallower arcs, and just treating each column as a slice of its section lowers the value from 1.888 to 1.858. On bases tilted sideways, the base area grows, which raises the cohesive resistance. But $N_i=W_i|n_{z,i}|$ shrinks, and the loss of frictional resistance is larger, so the value becomes 1.816. On the same sphere, on the other hand, the 3D simplified Bishop value is larger than the middle section's. So which of 3D and 2D is larger can reverse with the shape of the slip surface and the method, and you cannot say it is "always larger". (→ [Section 6](#columns-section-6))
+Because the shape of the sections and the sideways tilt of the bases both lower the value. Sections away from $y=0$ are shallower arcs, and just treating each column as a slice of its section lowers the value from 1.888 to 1.858. On bases tilted sideways, the base area grows, which raises the cohesive resistance. But $N_i=W_i|n_{z,i}|$ shrinks, and the loss of frictional resistance is larger, so the value becomes 1.816. On the same sphere, on the other hand, the 3D simplified Bishop value is larger than the middle section's. So which of 3D and 2D is larger can reverse with the shape of the slip surface and the method, and you cannot say it is "always larger." (→[Section 6](#columns-section-6))
 :::
 
 :::{dropdown} Q5. Why did changing how the local direction of sliding is chosen change the factor of safety on the sphere by as much as 17%?
 :icon: question
 
-Because on bases tilted sideways, the projection of the direction of sliding onto the tangent plane has a sideways component, and its downhill component is smaller than that of the direction in the vertical plane. The driving force from the weight shrinks by that amount, and the factor of safety grows. On bases not tilted sideways, the two directions coincide. (→ [Section 2](#columns-section-2), [Section 7](#columns-section-7))
+Because on bases tilted sideways, the projection of the direction of sliding onto the tangent plane has a sideways component, and its downhill component is smaller than that of the direction in the vertical plane. The driving force from the weight shrinks by that amount, and the factor of safety grows. On bases not tilted sideways, the two directions coincide. (→[Section 2](#columns-section-2), [Section 7](#columns-section-7))
 :::
 
 :::{dropdown} Q6. (Try it) Put the water table at the horizontal line $z=4$ m, and find the values of the Hovland method and the 3D simplified Bishop method on the sphere. How do they compare with the values of Practice 2 with a water table?
 :icon: question
 
-Build the table with `columns.make_columns(columns.Ellipsoid(centre, (R, R, R)), 0.25, water_level=4.0)`. As in Practice 2, Section 5, the soil below the water table keeps $\gamma=18$ kN/m³. The Hovland method gives 1.418, and the 3D simplified Bishop method gives 1.699. The values of Practice 2 with the same water table were 1.402 by the Fellenius method and 1.540 by the simplified Bishop method. With the Hovland method, unlike the dry case, the 3D value is larger than the 2D one. With the simplified Bishop method, the difference widens from 0.079 in the dry case to 0.159. This is because sections away from $y=0$ are shallow, less of their base lies below the water table, and they are less affected by the pore water pressure. The sum of the pore water forces divided by the sum of the weights is 0.25 for the sphere, smaller than 0.28 for the arc of Practice 2. (→ [Section 6](#columns-section-6), [Practice 2, Section 5](#slices-section-5))
+Build the table with `columns.make_columns(columns.Ellipsoid(centre, (R, R, R)), 0.25, water_level=4.0)`. As in Practice 2, Section 5, the soil below the water table keeps $\gamma=18$ kN/m³. The Hovland method gives 1.418, and the 3D simplified Bishop method gives 1.699. The values of Practice 2 with the same water table were 1.402 by the Fellenius method and 1.540 by the simplified Bishop method. With the Hovland method, unlike the dry case, the 3D value is larger than the 2D one. With the simplified Bishop method, the difference widens from 0.079 in the dry case to 0.159. This is because sections away from $y=0$ are shallow, less of their base lies below the water table, and they are less affected by the pore water pressure. The sum of the pore water forces divided by the sum of the weights is 0.25 for the sphere, smaller than 0.28 for the arc of Practice 2. (→[Section 6](#columns-section-6), [Practice 2, Section 5](#slices-section-5))
 :::
 
 :::{dropdown} Q7. (Try it) On the sphere, how do the values of the Hovland method, its moment form and the 3D simplified Bishop method change when the reference point $O$ of the axis of rotation is moved 2 m up?
 :icon: question
 
-Compute with the reference point `centre + np.array([0.0, 0.0, 2.0])`. The Hovland method, which takes the ratio of sums of forces, does not use the reference point, so it stays at 1.816. The moment form changes from 1.816 to 1.849, and the 3D simplified Bishop method from 2.142 to 2.122. This is because neither satisfies horizontal force equilibrium. As in Practice 2, Section 7, moving the reference point by $\boldsymbol{s}$ changes the moment about the axis $\boldsymbol{a}$ by $-(\boldsymbol{s}\times\sum\boldsymbol{F})\cdot\boldsymbol{a}$. Since $\boldsymbol{s}$ is vertical, only the horizontal component of $\sum\boldsymbol{F}$ matters. In an implementation whose reference point moves with the size of the slip surface, this effect can appear in the values. (→ [Section 4](#columns-section-4), [Practice 2, Section 7](#slices-section-7))
+Compute with the reference point `centre + np.array([0.0, 0.0, 2.0])`. The Hovland method, which takes the ratio of sums of forces, does not use the reference point, so it stays at 1.816. The moment form changes from 1.816 to 1.849, and the 3D simplified Bishop method from 2.142 to 2.122. This is because neither satisfies horizontal force equilibrium. As in Practice 2, Section 7, moving the reference point by $\boldsymbol{s}$ changes the moment about the axis $\boldsymbol{a}$ by $-(\boldsymbol{s}\times\sum\boldsymbol{F})\cdot\boldsymbol{a}$. Since $\boldsymbol{s}$ is vertical, only the horizontal component of $\sum\boldsymbol{F}$ matters. In an implementation whose reference point moves with the size of the slip surface, this effect can appear in the values. (→[Section 4](#columns-section-4), [Practice 2, Section 7](#slices-section-7))
 :::
 
 :::{dropdown} Q8. When you pass a saved column table to the solver of another implementation, what do you check before comparing factors of safety?
@@ -496,12 +496,12 @@ Compute with the reference point `centre + np.array([0.0, 0.0, 2.0])`. The Hovla
 
 - What the quantities in the table mean (is the base area that of the inclined base or of the plan, is the pore water pressure a pressure or a resultant force)
 - The direction of the normal (outward from the sliding mass, or upward)
-- How the local direction of sliding is chosen, and which way it points (the direction of sliding, or the direction that resists it)
+- How the local direction of sliding is chosen, and which way it points (the way the mass slides, or the way that resists it)
 - How the pore water pressure term is taken (subtract the resultant force, or derive it from the effective weight)
 - How the reference point for moments and the axis of rotation are chosen, and which sense of rotation is positive
 - The value returned when the iteration does not converge
 
-(→ [Section 8](#columns-section-8))
+(→[Section 8](#columns-section-8))
 :::
 
 ---

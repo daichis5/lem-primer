@@ -296,16 +296,20 @@ to the Japanese edition: a page is brought in line only when someone asks
 for it.
 
 - Each page's front matter records the Japanese commit it was translated
-  from and the date, and the page shows them under its title:
+  from and the date, and the page shows them above its title, linking the
+  Japanese page at that commit. Quote the commit: YAML reads an all-digit
+  hash as a number.
 
   ```text
-  translated_from: 56298d2
+  translated_from: "56298d2"
   translated_on: 2026-10-04
   ```
 
   To bring a page in line, read `git diff <translated_from>..HEAD --
   docs/ja/<page>.md`, change the English to match, and record the new
-  commit and date.
+  commit and date. The commit must stay on `main`, so merge a PR that
+  records one with a merge commit, not a squash; after a squash, record
+  the squashed commit instead.
 - A page keeps its Japanese counterpart's file name, labels, equation
   labels and figure names: the language switcher pairs pages by file name,
   and the same labels keep the diff readable.
@@ -324,7 +328,7 @@ for it.
   |---|---|
   | 第1章，この章 | Chapter 1, this chapter |
   | この資料，このシリーズ | this primer |
-  | 6節，第1章 6節 | Section 6, Chapter 1, Section 6 |
+  | 6節；第1章 6節 | Section 6; Chapter 1, Section 6 |
   | 理論編，実践編，付録 | Theory, Practice, Appendix |
   | 実践1，この実践 | Practice 1, this practice |
   | 用語集 | Glossary |
@@ -335,25 +339,34 @@ for it.
 - Terms are the glossary's English terms (the first paragraph of each entry
   in `docs/ja/lem-glossary.md`), in American spelling. The English
   glossary names each entry by its term, lower case but for proper names
-  (`factor of safety`, `Mohr–Coulomb failure criterion`), and `{term}` roles use
-  those names. Method names follow the English literature: Fellenius method
+  (`factor of safety`, `Mohr–Coulomb failure criterion`), and `{term}`
+  roles use those names. An entry's first paragraph is the symbol, a
+  full-width space, the English term and the Japanese term in full-width
+  parentheses: `$F_s$　factor of safety（安全率）`. Method names follow the English literature: Fellenius method
   (ordinary method of slices), simplified Bishop method, simplified Janbu
   method, Spencer method, Morgenstern–Price method.
 - The structure rules above hold in English too: the opening (title, bold
-  subtitle, lead, the line naming the chapters it builds on), the review
-  questions (opened by "Click a question to see its answer."), the glossary
-  links on first use, and the link texts (Chapter 1, Section 6).
+  subtitle, lead, the line naming the chapters it builds on: "This chapter
+  assumes that you have read [Chapter 1](…)."), the review questions, the
+  glossary links on first use, and the link texts (Chapter 1, Section 6).
+  - A review question reads `Q1. …`, or `Q2. (Calculate) …`, and the
+    questions open with "Click a question to see its answer.".
+  - An answer and a glossary definition end with `(→[Section 6](#section-6))`.
+  - An equation is cited as Eq. {eq}`…`, or Eqs. for two.
 
 ## Figures
 
-Each SVG in `docs/ja/figures/` and `docs/en/figures/` is written by a script
-in `scripts/figures/`.
-Edit the script and run `make figures`; never edit an SVG by hand. CI writes
-the figures again and fails if they differ from the committed files.
+Each SVG in `docs/ja/figures/` and `docs/en/figures/` is written by a
+script in `scripts/figures/`. Edit the script and run `make figures`; never
+edit an SVG by hand. CI writes the figures again and fails if they differ
+from the committed files.
 
 - `scripts/figures/figlib.py` holds what the figures share: the colours, type
   sizes, arrowheads and math labels, plus the slope with its slip circle, the
   slice of 第2章 and a 3D projection.
+- Text that differs by language is `L(ja, en)`; a position or anchor may be
+  one too, where English needs another place. English labels use the
+  glossary's English terms in American spelling.
 - Compute geometry rather than place it by eye. A normal is perpendicular to
   its surface, a vector sum is drawn as one, and an arrow's length is
   proportional to its force. Where only the place of an unknown matters, as
@@ -365,5 +378,5 @@ the figures again and fails if they differ from the committed files.
   their set size (14 px, 13 px for secondary text). It has no title inside;
   the caption carries it.
 - Labels, `<title>` and `<desc>` follow the terms and notation of the body.
-  After a change, look at the figure in a browser: no label may cross an
-  arrow or leave its panel.
+  After a change, look at the figure in both languages in a browser: no
+  label may cross an arrow or leave its panel.

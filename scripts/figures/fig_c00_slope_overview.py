@@ -73,13 +73,14 @@ fig.text(add(v.p((22.4, 11.2)), (0, -6)), L("すべり土塊", "sliding mass"), 
 fig.text(v.p((5.0, 7.3)), L("斜面", "slope"), SMALL, MUTED, "middle")
 fig.line(v.p((6.2, 6.6)), v.p((8.4, 5.2)), MUTED, 1)
 fig.text(v.p((21.5, -1.9)), L("地盤", "ground"), SMALL, MUTED, "middle")
-fig.text(add(v.p((10.0, s.slip(10.0))), (0, 30)), L("すべり面（仮定する曲面）", "slip surface (an assumed surface)"), SMALL, INK, "middle")
+fig.text(add(v.p((10.0, s.slip(10.0))), (0, 30)),
+         L("すべり面（仮定する曲面）", "slip surface (an assumed surface)"), SMALL, INK, "middle")
 
 # The direction the mass slides, beside the slip surface near the toe.
 pa = v.p((s.x0 + 4.6, s.slip(s.x0 + 4.6) + 0.5))
 pb = v.p((s.x0 + 2.0, s.slip(s.x0 + 2.0) + 0.5))
 fig.arrow(pa, pb, UNIT, width=2, dash="5 4")
-fig.text(add(pb, (-12, -14)), L("すべる向き", "direction of sliding"), SMALL, MUTED, "end")
+fig.text(add(pb, (-12, -14)), L("すべる向き", "direction the mass slides"), SMALL, MUTED, "end")
 
 if __name__ == "__main__":
     fig.save()

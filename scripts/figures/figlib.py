@@ -8,7 +8,8 @@ View converts model coordinates (y up) into them.
 A figure is drawn once and saved in both languages. Text that differs by
 language is written L("垂直力", "base normal force"); any other argument to a
 drawing method, such as a label's position, may be an L too, for English that
-needs more room. Figure.save() writes docs/ja/figures/<name>.svg and
+needs more room. text() draws nothing for an empty string, so L("…", "") is a
+label in Japanese only. Figure.save() writes docs/ja/figures/<name>.svg and
 docs/en/figures/<name>.svg.
 
 Figures are drawn 760 px wide, about the width of the text column, so a
@@ -405,6 +406,8 @@ class Figure:
 
     @_each_language
     def text(self, p, s, size=LABEL, color=INK, anchor="start", weight=None, vcenter=False):
+        if not s:  # a label in one language only: L("…", "")
+            return
         y = p[1] + (0.36 * size if vcenter else 0)
         wt = f' font-weight="{weight}"' if weight else ""
         self.add(

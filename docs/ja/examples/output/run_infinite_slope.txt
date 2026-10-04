@@ -1,6 +1,6 @@
 1. dry slope, beta = 30 deg, z = 5 m
    sigma_n = 67.50 kPa, tau = 38.97 kPa, Fs = 1.257
-2. the base of section 6, document 1
+2. the base of Chapter 1, Section 6
    beta = 16.70 deg, w = 109.0 kPa: sigma_n = 100.00 kPa, tau = 30.00 kPa
    u = 40 kPa: Fs = 1.488
    u = 60 kPa: Fs = 1.103

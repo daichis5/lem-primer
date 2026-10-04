@@ -60,7 +60,8 @@ for k, th in enumerate(ths):
     fig.arrow(p, add(p, mul(n_in, sigma(k) * K)), NORMAL, 2.2, head=0.85)
     fig.arrow(p, add(p, mul(t_res, 0.33 * sigma(k) * K)), RESIST, 2.2, head=0.85)
 fig.math((arc[30][0], arc[30][1] + 30), "S_i", 16, INK, "middle")
-fig.text((C[0], 30), L("曲面の底面に分布する表面力", "traction distributed on a curved base"), SMALL, MUTED, "middle")
+fig.text((C[0], 30),
+         L("曲面の底面に分布する表面力", "traction distributed on a curved base"), SMALL, MUTED, "middle")
 
 # Middle: the same normal forces head to tail (equal area per point), at a
 # force scale shared with the right panel.

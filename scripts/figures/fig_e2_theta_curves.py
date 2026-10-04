@@ -70,16 +70,21 @@ for theta in range(0, 31, 5):
     fig.text((x, Y0 + 22), f"{theta}", SMALL, MUTED, "middle")
 fig.line((X0, Y0), (X1, Y0), INK, 1.4)
 fig.line((X0, Y0), (X0, Y1), INK, 1.4)
-fig.math((X0 + (X1 - X0) / 2, Y0 + 48), L(r"\t{スライス間力の合力の傾き }θ\t{ [°]}", r"\t{inclination of the interslice resultant }θ\t{ [°]}"), 15, MUTED, anchor="middle")
+fig.math((X0 + (X1 - X0) / 2, Y0 + 48),
+         L(r"\t{スライス間力の合力の傾き }θ\t{ [°]}", r"\t{inclination of the interslice resultant }θ\t{ [°]}"),
+         15, MUTED, anchor="middle")
 fig.math((X0 - 52, Y1 - 12), "F_s", 15, MUTED)
 
 fig.polyline([px(t, fm) for t, fm, _ in rows], INK, 2.4)
 fig.polyline([px(t, ff) for t, _, ff in rows], INK, 2.4, dash="9 6")
 last = rows[-1]
-fig.math((px(last[0], last[1])[0] - 6, px(last[0], last[1])[1] + 26), L(r"F_m\t{：モーメントのつり合い}", "F_m\\t{\u200a: moment equilibrium}"),
+# A hair space keeps the colon off the italic subscript.
+fig.math((px(last[0], last[1])[0] - 6, px(last[0], last[1])[1] + 26),
+         L(r"F_m\t{：モーメントのつり合い}", r"F_m\t{" "\u200a" r": moment equilibrium}"),
          15, INK, anchor="end")
-fig.math((px(last[0], last[2])[0] - 6, px(last[0], last[2])[1] - 14), L(r"F_f\t{：力のつり合い}", "F_f\\t{\u200a: force equilibrium}"), 15, INK,
-         anchor="end")
+fig.math((px(last[0], last[2])[0] - 6, px(last[0], last[2])[1] - 14),
+         L(r"F_f\t{：力のつり合い}", r"F_f\t{" "\u200a" r": force equilibrium}"),
+         15, INK, anchor="end")
 
 first = rows[0]
 for (theta, fs), label, dx, dy, anchor in (

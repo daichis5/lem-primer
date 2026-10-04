@@ -2,7 +2,7 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -10,12 +10,12 @@ translated_on: 2026-10-04
 
 **What assumptions does each method use to determine the remaining unknowns?**
 
-Chapter 1 derived the equation for the forces on a slice base. That equation alone, however, determines neither the size of the base forces nor the factor of safety. This chapter compares 2D and 3D limit equilibrium methods (LEM) by asking which assumption each method uses to supply the missing conditions. The aim is not to memorize each method's formula. Instead, the chapter sets each method against the full statics problem, with all its forces, and sorts out what the method satisfies, what it simplifies and what it leaves unsolved.
+Chapter 1 derived the equation for the forces on a slice base. That equation alone, however, determines neither the magnitude of the base forces nor the factor of safety. This chapter compares 2D and 3D limit equilibrium methods (LEM) by asking which assumption each method uses to supply the missing conditions. The aim is not to memorize each method's formula. Instead, the chapter sets each method against the full statics problem, with all its forces, and sorts out what the method satisfies, what it simplifies and what it leaves unsolved.
 
 This chapter assumes that you have read [Chapter 1](continuum-mechanics-to-lem-start.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 ```{admonition} Key points of this chapter
-LEM methods do not differ only in the form of their formulas. Once a continuum is divided into slices or columns, the equilibrium equations alone cannot determine the internal forces. This state is called **static indeterminacy**. The methods differ in **which assumption about the internal forces, and which equilibrium conditions, they use to resolve this indeterminacy**.
+Limit equilibrium methods do not differ only in the form of their formulas. Once a continuum is divided into slices or columns, the equilibrium equations alone cannot determine the internal forces. This state is called **static indeterminacy**. The methods differ in **which assumption about the internal forces, and which equilibrium conditions, they use to resolve this indeterminacy**.
 ```
 
 ---
@@ -26,7 +26,7 @@ LEM methods do not differ only in the form of their formulas. Once a continuum i
 
 This chapter uses the word "rigorous" in two separate senses.
 
-1. **Rigor as continuum mechanics**: solving a boundary value problem that satisfies the stress field, the displacement field, the constitutive law, compatibility and the boundary conditions all at once
+1. **Rigor as continuum mechanics**: solving a boundary value problem for the stress and displacement fields that satisfies the constitutive law, compatibility and the boundary conditions all at once
 2. **Static rigor within LEM**: satisfying all the required force and moment equilibrium conditions under the assumed {term}`slip surface`, the assumed way strength is mobilized, and the assumed model of interslice or intercolumn forces
 
 The Spencer and Morgenstern–Price methods are sometimes called "rigorous methods." Here "rigorous" mostly has the second sense. These methods are not continuum analyses either: they do not solve for displacement compatibility or for the stress–strain relation of the soil.
@@ -72,7 +72,7 @@ c_{m,i}'=\frac{c_i'}{F_s},
 \tan\phi_{m,i}'=\frac{\tan\phi_i'}{F_s}
 $$ (eq-what-mobilized-parameters)
 
-By Equation {eq}`eq-what-base-shear`, $T_i$ is not an independent unknown: it follows once $N_i$ and $F_s$ are known. That alone, however, does not solve the problem.
+By Eq. {eq}`eq-what-base-shear`, $T_i$ is not an independent unknown: it follows once $N_i$ and $F_s$ are known. That alone, however, does not solve the problem.
 
 #### Known quantities
 
@@ -91,7 +91,7 @@ By Equation {eq}`eq-what-base-shear`, $T_i$ is not an independent unknown: it fo
 
 Of these, forces that neighboring slices exert on each other across their boundary, such as the interslice forces, are called **internal forces**.
 
-So the real starting point of LEM is not Equation {eq}`eq-what-base-shear` itself, but the following question.
+So the real starting point of LEM is not Eq. {eq}`eq-what-base-shear` itself, but the following question.
 
 > **What assumptions turn a statics problem with unknown internal forces into one with a unique solution?**
 
@@ -152,7 +152,7 @@ The unknowns left for $n=5$ slices. Each base has $N$, each boundary between sli
 
 #### 3.1 Counting the unknowns
 
-For $n$ slices, even after Equation {eq}`eq-what-base-shear` expresses the base shear force $T_i$ in terms of $N_i$ and $F_s$, a typical formulation still has the following unknowns.
+For $n$ slices, even after Eq. {eq}`eq-what-base-shear` expresses the base shear force $T_i$ in terms of $N_i$ and $F_s$, a typical formulation still has the following unknowns.
 
 | Unknown | Count |
 |---|---:|
@@ -163,7 +163,7 @@ For $n$ slices, even after Equation {eq}`eq-what-base-shear` expresses the base 
 | Factor of safety $F_s$ | $1$ |
 | **Total** | **$4n-2$** |
 
-Applying Equation {eq}`eq-what-2d-equilibrium` to each slice, on the other hand, gives $3n$ equations. The count of unknowns changes with how the resultants and their positions are represented, and with whether global equilibrium is counted separately. Every count, however, leads to the same conclusion.
+Applying Eq. {eq}`eq-what-2d-equilibrium` to each slice, on the other hand, gives $3n$ equations. The count of unknowns changes with how the resultants and their positions are represented, and with whether global equilibrium is counted separately. Every count, however, leads to the same conclusion.
 
 $$
 \boxed{
@@ -199,7 +199,7 @@ This chapter calls the step that makes an indeterminate problem solvable **closu
 2. Assume the direction of the internal forces, or the ratio of their components
 3. Use only part of the equilibrium conditions, and leave the rest unsatisfied
 
-Each LEM method can be classified by its combination of these three. [Fredlund and Krahn (1977)](https://doi.org/10.1139/t77-045) compares the 2D methods within a single framework.
+Each method can be classified by its combination of these three. [Fredlund and Krahn (1977)](https://doi.org/10.1139/t77-045) compares the 2D methods within a single framework.
 
 ---
 
@@ -223,11 +223,11 @@ The rest of this part compares the methods from four viewpoints.
 3. What constraints it puts on the shape of the slip surface
 4. As a result, what becomes easy to compute, and what is no longer guaranteed
 
-The three methods in Sections 4.1 to 4.3 all ignore some or all of the internal forces and satisfy only part of the equilibrium conditions. This primer groups them as **methods that satisfy only part of equilibrium**, and sets them apart from the complete equilibrium methods of Section 5.
+The three methods in Sections 4.1 to 4.3 all ignore some or all of the internal forces and satisfy only part of the equilibrium conditions. This primer groups them as **simplified methods** (methods that satisfy only part of equilibrium), and sets them apart from the complete equilibrium methods of Section 5.
 
 #### 4.1 Fellenius method (ordinary method of slices)
 
-The Fellenius method (ordinary method of slices) ignores the effect of the normal and shear forces from neighboring slices when it finds the base normal force. It then finds the factor of safety from global moment equilibrium for a circular slip surface. In English it is also called the Ordinary Method of Slices or the Swedish Circle Method. Japanese standards and practice documents often call it simply the "simplified method" (*kanben-hō*).
+The Fellenius method (ordinary method of slices) ignores the effect of the normal and shear forces from neighboring slices when it finds the base normal force. It then finds the factor of safety from global moment equilibrium for a circular slip surface. In English it is also called the Ordinary Method of Slices or the Swedish Circle Method. Japanese standards and practice documents often call it simply *kanben-hō* (簡便法, "simplified method"), using the word for this one method only.
 
 For a unit depth and a circular slip surface, with the horizontal slice width $b_i$, the base length $l_i$ and the base inclination $\alpha_i$, a typical form of the equation is the following.
 
@@ -366,7 +366,7 @@ With $F_s$ and $\theta$ as unknowns, it satisfies both global force equilibrium 
 
 ##### What "rigorous" means
 
-Under the assumed direction of the internal forces, the Spencer method satisfies all force and moment equilibrium. A method that satisfies all equilibrium in this way is called a **complete equilibrium method**. The constant angle $\theta$, however, is an assumption; it is not derived from the actual stress field of the continuum. So even a complete equilibrium method does not necessarily give the one physical distribution of internal forces.
+Under the assumed direction of the internal forces, the Spencer method satisfies all force and moment equilibrium. A method that satisfies all equilibrium in this way is called a **complete equilibrium method**. The constant angle $\theta$, however, is an assumption; it is not derived from the actual stress field of the continuum. So even for a complete equilibrium method, the distribution of internal forces it gives is not necessarily the unique physical solution.
 
 **Original paper**: [E. Spencer (1967), “A method of analysis of the stability of embankments assuming parallel inter-slice forces,” *Géotechnique*, 17(1), 11–26. DOI: 10.1680/geot.1967.17.1.11](https://doi.org/10.1680/geot.1967.17.1.11)
 
@@ -395,7 +395,7 @@ $f(x)$ is chosen from shapes such as half-sine, trapezoidal and constant, and $\
 
 ##### Relation to the Spencer method
 
-With $f(x)=1$, $X/E=\lambda$ is constant. In other words, the Spencer method can be seen as the special case of the Morgenstern–Price method whose internal force function is constant.
+With $f(x)=1$, $X/E=\lambda$ is constant. In other words, the Spencer method can be seen as the special case of the Morgenstern–Price method whose internal-force function is constant.
 
 ##### What remains
 
@@ -417,7 +417,7 @@ Even if several reasonable choices of $f(x)$ give similar factors of safety, the
 | Simplified Bishop method | Mainly circular | Normal force kept, shear force simplified | Vertical force of each slice + global moment | Global horizontal force | Emphasizes moment equilibrium |
 | Simplified Janbu method | Arbitrary shape | Shear force simplified | Global force | Global moment | Emphasizes force equilibrium |
 | Spencer method | Circular; extends to general shapes | Direction of the resultant assumed constant | Force + moment | Constant direction of internal forces | Complete equilibrium LEM |
-| Morgenstern–Price method | Arbitrary shape | $X/E=\lambda f(x)$ | Force + moment | Internal force function $f(x)$ | Generalized LEM |
+| Morgenstern–Price method | Arbitrary shape | $X/E=\lambda f(x)$ | Force + moment | Internal-force function $f(x)$ | Generalized LEM |
 
 ```{note}
 "Equilibrium mainly satisfied" summarizes the standard formulations. Software implementations of a method with the same name differ in details: extended equations, and the treatment of seismic loads, reinforcement and non-circular surfaces. Before using a program, check the equations and the convergence criteria given in its manual.
@@ -462,7 +462,7 @@ $$ (eq-what-column-base-force)
 
 $\boldsymbol{T}_i$ is a vector in the tangent plane of the base, and in general it has two independent components.
 
-The Mohr–Coulomb criterion gives directly only its **magnitude**.
+The Mohr–Coulomb failure criterion gives directly only its **magnitude**.
 
 $$
 \|\boldsymbol{T}_i\|
@@ -472,7 +472,7 @@ c_i'A_i+(N_i-U_i)\tan\phi_i'
 }{F_s}
 $$ (eq-what-column-shear)
 
-Equation {eq}`eq-what-column-shear` alone, however, does not fix the **direction** in the tangent plane. 3D LEM therefore needs at least one of the following.
+Eq. {eq}`eq-what-column-shear` alone, however, does not fix the **direction** in the tangent plane. 3D LEM therefore needs at least one of the following.
 
 - Assume a direction of sliding that is common to all columns, or that follows a rule
 - Use the direction of steepest slope at each point
@@ -492,7 +492,7 @@ When columns are laid out along the orthogonal $x$ and $y$ directions, the inter
 - The horizontal component of the shear force in the face
 - The point where each resultant acts
 
-So it is not enough to have more copies of the 2D $E$ and $X$. The resultant internal forces gain freedom in their direction, and they contribute more to the moments.
+So it is not enough to have more copies of the 2D $E$ and $X$. The resultant internal forces gain freedom in their direction, and their contributions to the moment equations increase.
 
 #### 7.3 There are six equilibrium equations, but even more unknowns
 
@@ -530,10 +530,10 @@ A 3D extension must deal at once with the extra internal boundaries, the freedom
 
 ### 8. How was LEM extended to 3D?
 
-Most 3D LEM methods were not built separately from scratch. The typical line of thought is the following.
+Most 3D methods were not built separately from scratch. The typical line of thought is the following.
 
 1. Replace slices with columns
-2. Extend the internal force assumptions made in 2D to the column boundaries in two directions
+2. Extend the internal-force assumptions made in 2D to the column boundaries in two directions
 3. Replace the moment about the center of the circle with the moment about a 3D axis of rotation
 4. Add the direction of sliding, implicit in 2D, as a plane of symmetry, a main direction of sliding, or an unknown parameter
 
@@ -545,7 +545,7 @@ The rest of this section follows the development of the main methods from this v
 
 #### 8.1 Hovland method: a direct extension of the Fellenius type
 
-The Hovland method is an early general 3D LEM method. It divides the sliding mass into vertical columns, and it can handle a 3D base shape and the effect of the lateral ends. Its mechanical framework can be seen as an extension of the Fellenius type that ignores the intercolumn forces.
+The Hovland method is an early general 3D method. It divides the sliding mass into vertical columns, and it can handle a 3D base shape and the effect of the lateral ends. Its mechanical framework can be seen as an extension of the Fellenius type that ignores the intercolumn forces.
 
 ##### How it extends 2D
 
@@ -636,7 +636,7 @@ The actual symbols for the components and the way the functions are set up diffe
 - Searches for the factor of safety and scale factors that satisfy force and moment equilibrium together
 - Models the slope, the soil layers, the slip surface and the pore water pressure in 3D space
 
-This approach makes 3D LEM more general. On the other hand, it adds internal force functions that must be assumed, unknown scale factors and iterative calculation. With more freedom, the effect of the input assumptions on the results needs careful checking.
+This approach makes 3D LEM more general. On the other hand, it adds internal-force functions that must be assumed, unknown scale factors and iterative calculation. With more freedom, the effect of the input assumptions on the results needs careful checking.
 
 **Original paper**: [L. Lam and D. G. Fredlund (1993), “A general limit equilibrium model for three-dimensional slope stability analysis,” *Canadian Geotechnical Journal*, 30(6), 905–919. DOI: 10.1139/t93-089](https://doi.org/10.1139/t93-089)
 
@@ -644,16 +644,16 @@ This approach makes 3D LEM more general. On the other hand, it adds internal for
 
 #### 8.5 Cheng–Yip: generalization to asymmetric 3D slopes
 
-Many early 3D LEM methods implicitly assumed a plane of symmetry or a known main direction of sliding. Cheng and Yip extended the ideas of the simplified Bishop, simplified Janbu and Morgenstern–Price methods to asymmetric 3D slopes.
+Many early 3D methods implicitly assumed a plane of symmetry or a known main direction of sliding. Cheng and Yip extended the ideas of the simplified Bishop, simplified Janbu and Morgenstern–Price methods to asymmetric 3D slopes.
 
 ##### Key ideas
 
 - Does not presume that the plan shape and the slip surface are symmetric
 - Writes out the base forces and intercolumn forces explicitly for two horizontal axis directions
 - Maps each 2D method's choice of "what to ignore and what to balance" onto 3D
-- In the Morgenstern–Price type, adds internal force functions and coefficients for two directions
+- In the Morgenstern–Price type, adds internal-force functions and coefficients for two directions
 
-This work shows that the key to a 3D extension is not only making the shape solid. It lies in **redefining in space the internal force assumption and the direction of sliding, which had only one direction in 2D**.
+This work shows that the key to a 3D extension is not only making the shape solid. It lies in **redefining in space the internal-force assumption and the direction of sliding, both of which were one-directional in 2D**.
 
 **Original paper**: [Y. M. Cheng and C. J. Yip (2007), “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques,” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. DOI: 10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
 
@@ -684,7 +684,7 @@ A 3D analysis adds the resistance of the lateral ends, so in many cases it gives
 - Whether the 3D distributions of soil layers, pore water pressure and external loads agree with the 2D analysis
 
 ```{warning}
-So this tendency must not be used as a rule that "the 3D factor of safety is always larger than the 2D one." Any difference must be explained in terms of shape, strength, internal force assumptions and the failure mechanisms searched.
+So this tendency must not be used as a rule that "the 3D factor of safety is always larger than the 2D one." Any difference must be explained in terms of shape, strength, internal-force assumptions and the failure mechanisms searched.
 ```
 
 ---
@@ -693,7 +693,7 @@ So this tendency must not be used as a rule that "the 3D factor of safety is alw
 
 (what-section-10)=
 
-### 10. Approximation is not only in the internal force assumptions
+### 10. Approximation is not only in the internal-force assumptions
 
 The approximations in LEM are easier to see when arranged as layers stacked from the bottom up.
 
@@ -734,7 +734,7 @@ This assumption does not directly represent differences in strain from place to 
 - Assume, as a function, how the ratio of the internal forces varies with position
 - Assume or compute the points where the internal forces act
 
-The names of the LEM methods mostly describe this layer.
+The names of the methods mostly describe this layer.
 
 #### Layer 5: the 3D direction of sliding and axis of rotation
 
@@ -742,7 +742,7 @@ In 3D, the direction of the base shear force vector, the direction of sliding an
 
 #### Layer 6: numerical solution and search
 
-- How $F_s$, the internal force scale factor and the internal force angle are solved by iteration
+- How $F_s$, the internal-force scale factor and the internal-force angle are solved by iteration
 - The search for the critical slip surface
 - Convergence criteria and local solutions
 - Handling of unreasonable base normal forces, negative effective normal forces, and a line of thrust (the line through the points where the interslice forces act) that leaves the slices
@@ -758,7 +758,7 @@ Even with the same theoretical equations, different numerical implementations or
 | Global factor of safety | Well suited | Found by strength reduction and similar methods |
 | Resisting and driving forces on an assumed slip surface | Found directly | Found from the stress field in post-processing |
 | Magnitude of displacement | In principle not found | Found |
-| Stress redistribution | Represented indirectly through the internal force assumptions | Found through the constitutive law |
+| Stress redistribution | Represented indirectly through the internal-force assumptions | Found through the constitutive law |
 | Progressive failure | In principle not represented directly | Needs softening laws, nonlocal regularization and the like |
 | 3D end effects | Found with 3D LEM | Found with a 3D model |
 | Effort for input and computation | Relatively small | Generally large |
@@ -808,7 +808,7 @@ $$ (eq-what-summary-shear)
 - Each slice carries its base forces and the interslice forces on its left and right
 - Force and moment equilibrium alone do not determine the distribution of internal forces uniquely
 - The Fellenius, simplified Bishop, simplified Janbu, Spencer and Morgenstern–Price methods differ in how they close the indeterminacy
-- "Methods that satisfy only part of equilibrium" (the Fellenius, simplified Bishop and simplified Janbu methods) ignore some or all of the internal forces
+- "Simplified methods" (the Fellenius, simplified Bishop and simplified Janbu methods) ignore some or all of the internal forces
 - "Complete equilibrium methods" assume the direction of the internal forces and then satisfy all force and moment equilibrium
 
 #### 13.3 What 3D adds
@@ -822,9 +822,9 @@ $$ (eq-what-summary-shear)
 #### 13.4 How LEM was extended to 3D
 
 - Hovland extended the Fellenius-type simplification to the column method
-- Hungr and Ugai et al. carried 2D assumptions such as the simplified Bishop method's over to 3D
+- Hungr and Ugai et al. carried the 2D assumptions of the simplified Bishop method and others over to 3D
 - 3D Spencer-type methods extended the idea of parallel internal forces into space
-- Lam–Fredlund generalized the internal force functions of the Morgenstern–Price method and GLE to column boundaries in two directions
+- Lam–Fredlund generalized the internal-force functions of the Morgenstern–Price method and GLE to column boundaries in two directions
 - Cheng–Yip extended the ideas of the simplified Bishop, simplified Janbu and Morgenstern–Price methods to asymmetric 3D slopes
 
 (what-section-13-5)=
@@ -867,7 +867,7 @@ Because there are more unknowns than independent equilibrium equations. For $n$ 
 :::{dropdown} Q2. What three operations does "closing the indeterminacy" mean in concrete terms?
 :icon: question
 
-Ignoring part of the internal forces; assuming the direction of the internal forces or the ratio of their components; and using only part of the equilibrium conditions. Each LEM method can be classified by its combination of these. (→[Section 3.3](#what-section-3-3))
+Ignoring part of the internal forces; assuming the direction of the internal forces or the ratio of their components; and using only part of the equilibrium conditions. Each method can be classified by its combination of these. (→[Section 3.3](#what-section-3-3))
 :::
 
 :::{dropdown} Q3. What does each of the Fellenius, simplified Bishop and simplified Janbu methods ignore, and which equilibrium does it use?
@@ -880,10 +880,10 @@ Ignoring part of the internal forces; assuming the direction of the internal for
 (→[Section 6](#what-section-6))
 :::
 
-:::{dropdown} Q4. In what sense is the Spencer method called "statically complete"?
+:::{dropdown} Q4. In what sense is the Spencer method called a "complete equilibrium method"?
 :icon: question
 
-In the sense that, under the assumed direction of the internal forces (the same angle $\theta$ on every boundary), it satisfies all force and moment equilibrium. The Spencer method's solution, however, is not an exact continuum solution. Nor is the distribution of internal forces it gives necessarily the one physical solution. (→[Section 5.1](#what-section-5-1))
+In the sense that, under the assumed direction of the internal forces (the same angle $\theta$ on every boundary), it satisfies all force and moment equilibrium. The Spencer method's solution, however, is not an exact continuum solution. Nor is the distribution of internal forces it gives necessarily the unique physical solution. (→[Section 5.1](#what-section-5-1))
 :::
 
 :::{dropdown} Q5. What quantities must newly be chosen in 3D? Why are six equilibrium equations still not enough?
@@ -892,7 +892,7 @@ In the sense that, under the assumed direction of the internal forces (the same 
 The direction of the base shear force in the tangent plane, the direction of sliding and the axis of rotation must newly be chosen. The equilibrium equations rise to six, but the unknowns rise by more. Because the internal boundaries run in two directions, there are more components and points of action of intercolumn forces. The direction of the base shear force is also added to the unknowns. (→[Section 7](#what-section-7))
 :::
 
-:::{dropdown} Q6. Why can one not state that "the 3D factor of safety is larger than the 2D one"?
+:::{dropdown} Q6. Why can't one say outright that "the 3D factor of safety is larger than the 2D one"?
 :icon: question
 
 Because the conditions being compared in 2D and 3D are not necessarily the same. If they differ on points such as whether the slip surfaces found represent the same failure mechanism, whether the direction of sliding is appropriate, how far the intercolumn forces were considered, and whether the strength on the sides was counted twice, the two cannot simply be compared. (→[Section 9](#what-section-9))
@@ -901,7 +901,7 @@ Because the conditions being compared in 2D and 3D are not necessarily the same.
 :::{dropdown} Q7. What does the name of a method not tell you?
 :icon: question
 
-The assumed slip surface and how it was searched; how strength and the factor of safety were defined; which internal force components were ignored or expressed as functions; which equilibrium was satisfied; in 3D, how the direction of sliding and the axis of rotation were chosen; and whether the converged solution is physically reasonable. Of the layers of approximation in Section 10, a method's name mainly describes the layer of how the internal forces are determined. Even within that layer, the details of methods with the same name differ between implementations. (→[Section 10](#what-section-10), [Section 13.5](#what-section-13-5))
+The assumed slip surface and how it was searched; how strength and the factor of safety were defined; which internal-force components were ignored or expressed as functions; which equilibrium was satisfied; in 3D, how the direction of sliding and the axis of rotation were chosen; and whether the converged solution is physically reasonable. Of the layers of approximation in Section 10, a method's name mainly describes the layer of how the internal forces are determined. Even within that layer, the details of methods with the same name differ between implementations. (→[Section 10](#what-section-10), [Section 13.5](#what-section-13-5))
 :::
 
 :::{dropdown} Q8. (Calculate) If the sliding mass is divided into $n=10$ slices, how many unknowns and equations are there, counted as in the table of Section 3.1? How many conditions are missing?
@@ -914,7 +914,7 @@ There are $4n-2=38$ unknowns. There are $3n=30$ equilibrium equations, so $n-2=8
 
 ## What to read next
 
-This chapter sorted out how each LEM method closes the static indeterminacy. In actual analyses, however, the shape of the slip surface, the direction of sliding, the way of discretizing and the search range also affect what the results mean. [Chapter 3, "Using the limit equilibrium method in practice"](lem-in-practice-mechanical-perspective.md) covers how to read these mechanically.
+This chapter sorted out how each method closes the static indeterminacy. In actual analyses, however, the shape of the slip surface, the direction of sliding, the way of discretizing and the search range also affect what the results mean. [Chapter 3, "Using the limit equilibrium method in practice"](lem-in-practice-mechanical-perspective.md) covers how to read these mechanically.
 
 ## References
 

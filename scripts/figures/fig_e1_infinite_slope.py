@@ -118,8 +118,8 @@ def panel_forces(v):
     fig.angle_arc(corner, 44, 0, 30)
     fig.math(add(corner, (50, -9)), "β", vcenter=True)
     # English is wider: end it where the Japanese label sits, so the ground line falls away below it.
-    fig.text(L(v.p((2.9, 2.9 * TAN + 0.45)), v.p((3.7, 3.7 * TAN + 0.45))), L("地表", "ground surface"), SMALL,
-             MUTED, L("middle", "end"))
+    fig.text(L(v.p((2.9, 2.9 * TAN + 0.45)), v.p((3.7, 3.7 * TAN + 0.45))),
+             L("地表", "ground surface"), SMALL, MUTED, L("middle", "end"))
     # English does not fit in the band: set it past the end of the slip plane.
     fig.text(L(v.p((4.0, 4.0 * TAN - Z - BAND / 2)), add(v.p((X1, X1 * TAN - Z)), (8, 0))),
              L("すべり面", "slip surface"), SMALL, MUTED, L("middle", "start"), vcenter=True)
@@ -150,11 +150,13 @@ def panel_water(v):
 
     a = v.p((-1.4, -1.4 * TAN - Z + 0.8))
     fig.arrow(a, add(a, mul(screen(m_dir), 34)), WATER, width=1.6)
-    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.9)), L("地下水位", "water table"), SMALL, WATER, "middle", vcenter=True)
+    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.9)),
+             L("地下水位", "water table"), SMALL, WATER, "middle", vcenter=True)
 
     fig.math((404, 32), L(r"\t{斜面に平行な浸透：}u = γ_w h_w \r{cos}^2β",
                           r"\t{Parallel seepage: }u = γ_w h_w \r{cos}^2β"), 15, INK)
-    fig.math((404, 56), L(r"\t{鉛直の静水圧：}u = γ_w h_w", r"\t{Hydrostatic (vertical): }u = γ_w h_w"), 15, INK)
+    fig.math((404, 56),
+             L(r"\t{鉛直の静水圧：}u = γ_w h_w", r"\t{Hydrostatic (vertical): }u = γ_w h_w"), 15, INK)
 
 
 panel_forces(View(K, (138, 112)))

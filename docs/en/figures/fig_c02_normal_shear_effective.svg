@@ -37,5 +37,6 @@
   <line x1="623" y1="239.6" x2="659.1" y2="227.9" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
   <polygon points="664.4,226.2 653.3,236.7 649.2,224.3" fill="#14916a" stroke-linejoin="round"/>
   <text x="670.4" y="246.2" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">τ</tspan></text>
-  <text x="585" y="360" class="t" font-size="13" fill="#475569" text-anchor="middle">normal stress = effective stress + pore pressure</text>
+  <text x="585" y="350" class="t" font-size="13" fill="#475569" text-anchor="middle">normal stress = effective normal stress</text>
+  <text x="585" y="370" class="t" font-size="13" fill="#475569" text-anchor="middle">+ pore water pressure</text>
 </svg>

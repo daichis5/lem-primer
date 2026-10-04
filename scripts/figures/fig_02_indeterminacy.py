@@ -63,8 +63,9 @@ thrust.append(v.p((s.x1, s.slip(s.x1))))
 fig.polyline(thrust, INTER, 1.2, "4 4")
 
 top = v.p((s.x1, s.h))
-fig.math(L(add(top, (-104, -12)), add(top, (-200, -12))), "F_s", 17, INK)
-fig.text(L(add(top, (-82, -12)), add(top, (-178, -12))), L("は全体で1つ", "is one for the whole surface"), SMALL, INK)
+fig.math(L(add(top, (-104, -12)), add(top, (-200, -12))),
+         L("F_s", r"\t{One }F_s\t{ for the whole surface}"), 17, INK)
+fig.text(add(top, (-82, -12)), L("は全体で1つ", ""), SMALL, INK)
 
 # The count, in the open space above the slope.
 fig.text((28, 52), L("未知量　5 + 4 + 4 + 4 + 1 = 18個", "Unknowns: 5 + 4 + 4 + 4 + 1 = 18"), LABEL, INK)

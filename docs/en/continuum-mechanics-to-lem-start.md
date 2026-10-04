@@ -2,7 +2,7 @@
 title: "From continuum mechanics to where the limit equilibrium method begins: deriving the forces on a slice base from stress"
 lang: en
 series: "1 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -12,7 +12,7 @@ translated_on: 2026-10-04
 
 This chapter starts from the stress tensor of continuum mechanics and derives the forces $N_i$, $U_i$ and $T_i$ that the limit equilibrium method (LEM) uses on the base of a slice. Along the way, it splits the force on the slip surface into a normal component and a shear component, then brings in effective stress and the shear strength given by the Mohr–Coulomb failure criterion.
 
-Terms and symbols are collected in the [Glossary](lem-glossary.md).
+The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 (overview)=
 
@@ -266,7 +266,7 @@ $$
 holds, $\boldsymbol{\tau}$ lies in the tangent plane. Under the tension-positive convention, $\boldsymbol{t}_n=t_n\boldsymbol{n}=-\sigma_n\boldsymbol{n}$.
 :::
 
-In 2D, the tangent direction is unique up to its sense (sign). In 3D, by contrast, the tangent plane contains infinitely many directions. For this reason, the basis of the tangent plane must be kept apart from the local direction of sliding that is actually assumed. This chapter assumes as the local direction of sliding a vector $\boldsymbol{m}$ that satisfies
+In 2D, the tangent direction is unique up to its sense (sign). In 3D, by contrast, the tangent plane contains infinitely many directions. For this reason, the basis of the tangent plane must be kept apart from the local direction of sliding that is actually assumed. This chapter takes the local direction of sliding to be a vector $\boldsymbol{m}$ that satisfies
 
 $$
 \|\boldsymbol{m}\|=1,
@@ -488,7 +488,7 @@ $$
 F_s=\frac{33.1}{30}=1.10
 $$
 
-The strength parameters $c'$ and $\phi'$ of the soil have not changed at all, yet the factor of safety drops from 1.49 to 1.10. In other words, this confirms with numbers the relation $u\uparrow\Rightarrow\tau_f\downarrow$ from Section 5.
+The strength parameters $c'$ and $\phi'$ of the soil have not changed at all, yet the factor of safety drops from 1.49 to 1.10. In other words, this checks numerically the relation $u\uparrow\Rightarrow\tau_f\downarrow$ from Section 5.
 ```
 
 ---
@@ -708,7 +708,7 @@ To simplify all the way to the vector equation $\boldsymbol{T}_i=-T_i\boldsymbol
 :::
 
 ```{note}
-In LEM practice, $A_i$ is not necessarily small. For this reason, the explanation "each base holds its directions and material parameters constant at representative values, and represents the stress by integrated values" fits practice better than the numerical-integration explanation "$S_i$ is small enough to be treated as constant". This assumption also includes a geometric approximation: a curved base is represented by one plane and one direction.
+In LEM practice, $A_i$ is not necessarily small. For this reason, the explanation "each base holds its directions and material parameters constant at representative values, and represents the stress by integrated values" fits practice better than the numerical-integration explanation "$S_i$ is small enough to be treated as constant." This assumption also includes a geometric approximation: a curved base is represented by one plane and one direction.
 ```
 
 :::{dropdown} Supplement G: "the base is small enough" versus "constant at representative values"
@@ -803,7 +803,7 @@ Discretization alone, however, does not determine $N_i$ or the interslice forces
 - **Closure**: adding method-specific assumptions about the direction or ratio of the interslice forces, the components to ignore and so on, so that the unknown resultants can be determined. Chapter 2 covers this in detail
 
 ```{note}
-It is not that "the stresses are unknown, so dividing finely will find them automatically". The unknown continuous distribution is first replaced with a finite number of unknowns, and then the equilibrium equations, the equation for strength mobilization and the added assumptions are solved together for $F_s$ and the resultant forces.
+It is not that "the stresses are unknown, so dividing finely will find them automatically." The unknown continuous distribution is first replaced with a finite number of unknowns, and then the equilibrium equations, the equation for strength mobilization and the added assumptions are solved together for $F_s$ and the resultant forces.
 ```
 :::
 
@@ -890,7 +890,7 @@ The scalar equation $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ requires the material
 The base normal force $N_i$, the factor of safety $F_s$, and the interslice and intercolumn forces. $T_i$ follows once $N_i$ and $F_s$ are known. Determining them takes the equilibrium equations plus method-specific assumptions. (→[Section 9](#section-9))
 :::
 
-:::{dropdown} Q8. (Calculate) On the base of "Working through the numbers" in Section 6, suppose the pore water pressure drops to $u=20$ kPa. Find the shear strength $\tau_f$ and the factor of safety $F_s$
+:::{dropdown} Q8. (Calculate) On the base of "Working through the numbers" in Section 6, suppose the pore water pressure drops to $u=20$ kPa. Find the shear strength $\tau_f$ and the factor of safety $F_s$.
 :icon: question
 
 $\sigma_n'=100-20=80$ kPa, so $\tau_f=10+80\tan 30^\circ=56.2$ kPa. If $\tau_m=30$ kPa stays the same, $F_s=56.2/30=1.87$. When the pore water pressure drops, the effective normal stress rises, and so does the factor of safety. (→[Section 6](#section-6))

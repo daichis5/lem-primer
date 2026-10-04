@@ -61,9 +61,11 @@ fig.circle(O, 4, INK)
 fig.math(add(O, (8, -6)), "O", 17, INK)
 fig.math(add(vl.p((R * math.cos(math.radians(300)), R * math.sin(math.radians(300)))), (-34, -62)), "R", 16, MUTED)
 fig.math(add(vl.p((R * math.cos(math.radians(212)), R * math.sin(math.radians(212)))), (-6, 22)), "N_i", 16, NORMAL, "end")
-fig.math((186, 282), L(r"\t{作用線はすべて }O\t{ を通る}", r"\t{All lines of action pass through }O"), 15, INK, "middle")
+fig.math((186, 282),
+         L(r"\t{作用線はすべて }O\t{ を通る}", r"\t{All lines of action pass through }O"), 15, INK, "middle")
 fig.math((186, 305), "M_O(N_i) = 0", 15, INK, "middle")
-fig.math((186, 328), L(r"\t{せん断力の腕は，どれも }R", r"\t{Every shear force has the arm }R"), 15, INK, "middle")
+fig.math((186, 328),
+         L(r"\t{せん断力の腕は，どれも }R", r"\t{Every shear force has the arm }R"), 15, INK, "middle")
 
 # Right: an ellipse with semi-axes AX, BY about O'.
 AX, BY = 11.0, 6.0
@@ -110,15 +112,19 @@ for k, t in enumerate([214, 240, 260, 294]):
         fig.arrow(p, add(p, mul(vel, 50)), MUTED, 2)
         tv, tt = add(p, mul(vel, 50)), add(p, mul(tg, 60))
         # English is wider: higher and further right, clear of the dashed normal and the arc.
-        fig.text(L(add(tv, (-4, -8)), add(tv, (14, -30))), L("回転の速度", "velocity of rotation"), SMALL, MUTED, "middle")
+        fig.text(L(add(tv, (-4, -8)), add(tv, (14, -30))),
+                 L("回転の速度", "velocity of rotation"), SMALL, MUTED, "middle")
         fig.text(add(tt, (4, 16)), L("接線", "tangent"), SMALL, UNIT)
 
 
 fig.circle(O2, 4, INK)
 fig.math(add(O2, (8, -6)), "O′", 17, INK)
-fig.math((574, 282), L(r"\t{作用線は }O′\t{ を通らない}", r"\t{The lines of action miss }O′"), 15, INK, "middle")
+fig.math((574, 282),
+         L(r"\t{作用線は }O′\t{ を通らない}", r"\t{The lines of action miss }O′"), 15, INK, "middle")
 fig.math((574, 305), "M_{O′}(N_i) = N_i d ≠ 0", 15, INK, "middle")
-fig.math((574, 328), L(r"\t{接線と，}O′\t{ まわりの回転の速度の向きが違う}", r"\t{Tangent and velocity of rotation about }O′\t{ differ}"), 15, INK, "middle")
+fig.math((574, 328),
+         L(r"\t{接線と，}O′\t{ まわりの回転の速度の向きが違う}", r"\t{Tangent and velocity of rotation about }O′\t{ differ}"),
+         15, INK, "middle")
 fig.line((380, 20), (380, 330), "#e2e8f0", 1)
 
 if __name__ == "__main__":

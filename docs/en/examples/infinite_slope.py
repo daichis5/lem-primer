@@ -13,7 +13,7 @@ GAMMA_W = 9.81  # unit weight of water [kN/m³]
 
 
 def plane_vectors(beta_deg: float) -> tuple[np.ndarray, np.ndarray]:
-    """Return the outward unit normal n and the sliding direction m of a plane."""
+    """Return the outward unit normal n and sliding direction m of a plane at beta."""
     b = math.radians(beta_deg)
     n = np.array([math.sin(b), -math.cos(b)])
     m = np.array([-math.cos(b), -math.sin(b)])
@@ -23,7 +23,7 @@ def plane_vectors(beta_deg: float) -> tuple[np.ndarray, np.ndarray]:
 def split_traction(t: np.ndarray, n: np.ndarray) -> tuple[float, np.ndarray]:
     """Split the traction t on a plane with the outward unit normal n.
 
-    Return the normal stress sigma_n = -n·t (compression positive) and (I - n nᵀ) t.
+    Return sigma_n = -n·t (compression positive) and the shear part (I - n nᵀ) t.
     """
     t_n = float(n @ t)
     return -t_n, t - t_n * n

@@ -53,7 +53,8 @@ T_LEN = W_LEN * -m[2]
 # The base plane around the column, then the column's hidden edges.
 patch = [(-0.9, -0.7), (A + 0.9, -0.7), (A + 0.9, A + 0.7), (-0.9, A + 0.7)]
 fig.polygon([pr.p((x, y, base_z(x, y))) for x, y in patch], fill="#ece4d0", color="#c9b88f", width=1.2)
-fig.text(pr.p((A + 0.95, -0.7, base_z(A + 0.9, -0.7) - 0.25)), L("底面の接平面", "tangent plane of the base"), SMALL, MUTED)
+fig.text(pr.p((A + 0.95, -0.7, base_z(A + 0.9, -0.7) - 0.25)),
+         L("底面の接平面", "tangent plane of the base"), SMALL, MUTED)
 corners = [(0, 0), (A, 0), (A, A), (0, A)]
 B = {c: (c[0], c[1], base_z(*c)) for c in corners}
 T = {c: (c[0], c[1], top_z(*c)) for c in corners}
@@ -107,8 +108,8 @@ y_face = pr.p((0.25 * A, 0.0, top_z(0.25 * A, 0) - 0.35))
 y_lab = add(pr.p(T[(0, 0)]), (-14, -16))
 # English is too wide to end left of the column: set it above, its leader from under its middle.
 fig.line(L(add(y_lab, (4, 4)), (110, 124)), y_face, MUTED, 1)
-fig.math(L(y_lab, (20, 118)), L(r"y\t{ 方向の隣との境界}", r"\t{boundary with the neighbor in }y"), 15, MUTED,
-         L("end", "start"))
+fig.math(L(y_lab, (20, 118)),
+         L(r"y\t{ 方向の隣との境界}", r"\t{boundary with the neighbor in }y"), 15, MUTED, L("end", "start"))
 
 # Axes.
 o = (604, 446)
@@ -119,8 +120,10 @@ for vec, name in (((1, 0, 0), "x"), ((0, 1, 0), "y"), ((0, 0, 1), "z")):
     fig.math(add(tip, (4, -2)), name, 15, MUTED)
 
 # English: lower, clear of the wider label of the tangent plane.
-fig.text(L((470, 330), (470, 362)), L("点線の円：底面のせん断力が", "Dotted circle: directions the base shear"), SMALL, MUTED)
-fig.text(L((470, 350), (470, 382)), L("接平面の中でとりうる向き", "force can take in the tangent plane"), SMALL, MUTED)
+fig.text(L((470, 330), (470, 362)),
+         L("点線の円：底面のせん断力が", "Dotted circle: directions the base shear"), SMALL, MUTED)
+fig.text(L((470, 350), (470, 382)),
+         L("接平面の中でとりうる向き", "force can take in the tangent plane"), SMALL, MUTED)
 
 if __name__ == "__main__":
     fig.save()

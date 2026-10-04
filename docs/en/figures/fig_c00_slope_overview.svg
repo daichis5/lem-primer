@@ -36,5 +36,5 @@
   <text x="373" y="315.4" class="t" font-size="13" fill="#172033" text-anchor="middle">slip surface (an assumed surface)</text>
   <line x1="248.2" y1="280.9" x2="202.1" y2="271.9" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="butt"/>
   <polygon points="197.5,271 210.2,267.8 208,278.8" fill="#64748b" stroke-linejoin="round"/>
-  <text x="185.5" y="257" class="t" font-size="13" fill="#475569" text-anchor="end">direction of sliding</text>
+  <text x="185.5" y="257" class="t" font-size="13" fill="#475569" text-anchor="end">direction the mass slides</text>
 </svg>

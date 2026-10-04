@@ -2,7 +2,7 @@
 title: "Using the limit equilibrium method in practice: slip surfaces other than circles, the direction of sliding, and checking results"
 lang: en
 series: "3 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -10,9 +10,9 @@ translated_on: 2026-10-04
 
 **Slip surfaces other than circles, the direction of sliding, and checking results**
 
-By the end of Chapter 2, the sliding mass was discretized into slices or columns, and a strength equation and assumptions on the internal forces turned equilibrium at the limit state into a problem that can be solved. This chapter takes up the questions that arise when that theory is used in actual calculations. In particular, it looks at what inputs such as the shape of the slip surface, the direction of sliding and the discretization determine mechanically, and what they approximate. It keeps this apart from the impression that a method's name gives.
+By the end of Chapter 2, the sliding mass had been discretized into slices or columns, and a strength equation and assumptions on the internal forces turned equilibrium at the limit state into a problem that can be solved. This chapter takes up the questions that arise when that theory is used in actual calculations. In particular, it looks at what inputs such as the shape of the slip surface, the direction of sliding and the discretization determine mechanically, and what they approximate. It keeps this apart from the impression that a method's name gives.
 
-This chapter assumes that [Chapter 1](continuum-mechanics-to-lem-start.md) and [Chapter 2](what-is-limit-equilibrium-method.md) have been read. Terms and symbols are collected in the [Glossary](lem-glossary.md).
+This chapter assumes that you have read [Chapter 1](continuum-mechanics-to-lem-start.md) and [Chapter 2](what-is-limit-equilibrium-method.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 ```{admonition} Key points of this chapter
 Even when an {term}`LEM <limit equilibrium method>` was derived for circular slips, its assumptions on the {term}`internal forces <internal force>` and its equilibrium equations can be applied to a general slip surface, and the {term}`factor of safety` can be computed numerically.
@@ -116,7 +116,7 @@ In this sense, **the operation of computing a factor of safety is not itself lim
 In a generalized LEM framework, the differences between methods such as Fellenius, Bishop, Janbu, Spencer and Morgenstern–Price can be expressed mainly by a combination of the following.
 
 1. How the {term}`interslice forces <interslice force>` are assumed
-2. Whether force equilibrium, moment equilibrium or both are used
+2. Which of force equilibrium and moment equilibrium is used
 3. Which unknowns are found by iteration
 
 In other words, the mechanical character of a method is not determined by "the input shape of a circle" alone. It is determined by **the assumptions on the internal forces and the equilibrium conditions used**. [Zhu, Lee and Jiang (2003)](https://doi.org/10.1680/geot.2003.53.4.377) give a formulation that treats general slip surfaces in a unified way.
@@ -166,7 +166,7 @@ Because of these properties, on a circular surface the moment equilibrium is oft
 
 It is worth being clear here about what a term "missing" from the factor-of-safety equation means. About the center of a circle, $M_O(N_i)=0$, so the moment terms of the base normal forces drop out of the equilibrium equation. As a result, they may not appear as separate moment terms in the final factor-of-safety equation either. This does not mean that the base normal forces do not physically exist, or that they do not affect the factor of safety. Through the {term}`shear strength` $c_i'A_i+(N_i-U_i)\tan\phi_i'$, $N_i$ governs how large the resistance is. What is zero is only their contribution to the moment about the center, and that comes from geometry specific to circles: their lines of action pass through a common center.
 
-So care is needed when a final factor-of-safety equation from a paper or a textbook is used for a slip surface of a different shape. It has to be checked whether a term left out of the equation is unnecessary under general mechanical assumptions, or whether it dropped out during the derivation because of a property specific to circles. If only the local angles and coordinates of an ellipse, a composite surface or a surface of any shape are substituted into an equation of the second kind, it may lose the moments of the base normal forces, the moment arms that differ from base to base, and the link to a motion about one center of rotation. To extend it to general shapes, the original equation cannot simply be reused. The formulation has to be rebuilt from force and moment equilibrium, including the lost terms.
+So care is needed when a final factor-of-safety equation from a paper or a textbook is used for a slip surface of a different shape. It has to be checked whether a term left out of the equation is unnecessary under general mechanical assumptions, or whether it dropped out during the derivation because of a property specific to circles. If only the local angles and coordinates of an ellipse, a composite surface or a surface of any shape are substituted into an equation of the latter kind, it may lose the moments of the base normal forces, the moment arms that differ from base to base, and the link to a motion about one center of rotation. To extend it to general shapes, the original equation cannot simply be reused. The formulation has to be rebuilt from force and moment equilibrium, including the lost terms.
 
 ---
 
@@ -368,7 +368,7 @@ $$ (eq-practice-shear-vector)
 
 ### 8. Three meanings of "direction of sliding"
 
-This chapter calls the representative direction of the whole soil mass the **direction of sliding**, and the direction at the base of each column the **local direction of sliding**.
+This chapter calls the representative direction of the whole soil mass the **direction of sliding** (the overall direction), and the direction at the base of each column the **local direction of sliding**.
 
 (practice-section-8-1)=
 
@@ -414,7 +414,7 @@ So even with a single direction of sliding, the local direction of shear on a cu
 
 These include the direction of the long axis of an ellipsoid or a NURBS surface, the orientation of the search range, and the axis of rotation. They are related to the direction of sliding, but do not necessarily coincide with it.
 
-For example, the direction of the long axis describes the shape of the sliding mass in plan. The direction of sliding, on the other hand, is the azimuth in which the mass moves, determined by equilibrium. Fixing the two as the same thing may narrow the search range more than necessary.
+For example, the direction of the long axis describes the shape of the sliding mass in plan. The direction of sliding, on the other hand, is the azimuth in which the mass moves, determined by force equilibrium. Fixing the two as the same thing may narrow the search range more than necessary.
 
 ---
 
@@ -488,7 +488,7 @@ This improves consistency with equilibrium. However, a separate assumption for {
 
 #### 11.1 Formulation
 
-- Is the method name the classical original method, or a generalized "type"?
+- Does the method name refer to the classical original method, or to a generalized "type"?
 - Which components of the interslice or intercolumn forces are ignored?
 - In which directions is force equilibrium satisfied?
 - About which points or axes is moment equilibrium satisfied?
@@ -595,7 +595,7 @@ Even a method derived for circles can compute the factor of safety for ellipses,
 
 #### 14.3 A method name alone does not reveal the formulation
 
-Even when "Bishop", "Spencer" or "3D Bishop" is displayed, it has to be checked whether it is the classical original method or a generalized implementation that inherits only its internal-force assumption.
+Even when "Bishop," "Spencer" or "3D Bishop" is displayed, it has to be checked whether it is the classical original method or a generalized implementation that inherits only its internal-force assumption.
 
 #### 14.4 The direction of sliding decides how forces are distributed
 

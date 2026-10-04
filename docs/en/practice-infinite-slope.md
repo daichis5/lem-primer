@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of an infinite slope: from splitting the traction to the factor of safety, in code"
 lang: en
 series: "practice 1 of 3"
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -12,7 +12,7 @@ translated_on: 2026-10-04
 
 In this practice, you write Python code that computes the factor of safety of an infinite slope. An infinite slope is the simplest model of a slope: it treats a slope of one inclination as continuing without end. The equation for its factor of safety is well known. Here, though, it is built along the path of Chapter 1, starting from splitting the traction on the slip surface into a normal component and a shear component. The functions you write are used again to check the answers in Practice 2 and Practice 3.
 
-This practice assumes that [Chapter 1](continuum-mechanics-to-lem-start.md) has been read. Terms and symbols are collected in the [Glossary](lem-glossary.md).
+This practice assumes that you have read [Chapter 1](continuum-mechanics-to-lem-start.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 (infinite-goal)=
 
@@ -91,7 +91,7 @@ $\boldsymbol{n}$ points down to the right, toward the ground below the slip surf
 :end-at: GAMMA_W =
 ```
 
-Next, turn Equation {eq}`eq-infinite-vectors` into a function. It takes the angle in degrees and converts it to radians with `math.radians`.
+Next, turn Eq. {eq}`eq-infinite-vectors` into a function. It takes the angle in degrees and converts it to radians with `math.radians`.
 
 ```{literalinclude} examples/infinite_slope.py
 :language: python
@@ -138,7 +138,7 @@ $$
 \tau=w\sin\beta\cos\beta
 $$ (eq-infinite-stresses)
 
-The code follows Equation {eq}`eq-infinite-traction`: it writes the column's weight as a vector, then divides by the area.
+The code follows Eq. {eq}`eq-infinite-traction`: it writes the column's weight as a vector, then divides by the area.
 
 ```{literalinclude} examples/infinite_slope.py
 :language: python
@@ -152,7 +152,7 @@ Check what you have so far with tests. Create `test_infinite_slope.py`, and writ
 :end-at: import infinite_slope
 ```
 
-Then write two tests. The first checks that a traction built from a pushing component and a resisting component splits back into those two components. The second compares the code with Equation {eq}`eq-infinite-stresses`.
+Then write two tests. The first checks that a traction built from a pushing component and a resisting component splits back into those two components. The second compares the code with Eq. {eq}`eq-infinite-stresses`.
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -187,9 +187,9 @@ $$ (eq-infinite-fs)
 :pyobject: factor_of_safety
 ```
 
-Compute a dry slope ($u=0$) with $\beta=30^\circ$ and $z=5$ m. Since $w=\gamma z=90$ kPa, Equation {eq}`eq-infinite-stresses` gives $\sigma_n=67.50$ kPa and $\tau=38.97$ kPa. When $\beta=\phi'$, the frictional resistance $\sigma_n\tan\phi'$ exactly equals $\tau$. So $F_s$ is 1 plus the share of cohesion: $1+10/38.97=1.257$.
+Compute a dry slope ($u=0$) with $\beta=30^\circ$ and $z=5$ m. Since $w=\gamma z=90$ kPa, Eq. {eq}`eq-infinite-stresses` gives $\sigma_n=67.50$ kPa and $\tau=38.97$ kPa. When $\beta=\phi'$, the frictional resistance $\sigma_n\tan\phi'$ exactly equals $\tau$. So $F_s$ is 1 plus the share of cohesion: $1+10/38.97=1.257$.
 
-The base in "Following the numbers" in [Chapter 1, Section 6](#section-6) can also be read as the base of an infinite slope. There, $\sigma_n=100$ kPa and $\tau_m=30$ kPa, so the ratio $\tau/\sigma_n=\tan\beta$ from Equation {eq}`eq-infinite-stresses` gives an inclination of $\beta=16.70^\circ$. With $w=\sigma_n/\cos^2\beta=109.0$ kPa, the values $F_s=1.49$ ($u=40$ kPa) and 1.10 ($u=60$ kPa) found there come out directly. Add these two values to the tests, together with the fact that dry sand without cohesion has exactly $F_s=1$ at $\beta=\phi'$.
+The base in "Working through the numbers" in [Chapter 1, Section 6](#section-6) can also be read as the base of an infinite slope. There, $\sigma_n=100$ kPa and $\tau_m=30$ kPa, so the ratio $\tau/\sigma_n=\tan\beta$ from Eq. {eq}`eq-infinite-stresses` gives an inclination of $\beta=16.70^\circ$. With $w=\sigma_n/\cos^2\beta=109.0$ kPa, the values $F_s=1.49$ ($u=40$ kPa) and 1.10 ($u=60$ kPa) found there come out directly. Add these two values to the tests, together with the fact that dry sand without cohesion has exactly $F_s=1$ at $\beta=\phi'$.
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -237,7 +237,7 @@ Compare the two with the water table at the ground surface ($h_w=z=5$ m, $\beta=
 
 ## 5. When the effective normal stress is negative
 
-With the water table at the ground surface, Equation {eq}`eq-infinite-stresses` gives the following {term}`effective normal stress` $\sigma_n-u$ for the two rules.
+With the water table at the ground surface, Eq. {eq}`eq-infinite-stresses` gives the following {term}`effective normal stress` $\sigma_n-u$ for the two rules.
 
 $$
 \text{parallel seepage: }
@@ -249,7 +249,7 @@ $$ (eq-infinite-effective)
 
 The first is positive at any inclination. The second is negative when $\cos^2\beta<\gamma_w/\gamma_{sat}$. With $\gamma_{sat}=20$ kN/m³, this happens for $\beta>45.5^\circ$.
 
-A negative effective normal stress means the soil skeleton on the slip surface is in tension. Soil carries almost no tension, so calculating on as if nothing happened has no mechanical meaning. `factor_of_safety` follows Equation {eq}`eq-infinite-fs` as written, so the friction term turns negative and works against the resistance from cohesion. On a steep slope, the factor of safety itself can become negative. As [Chapter 3, Section 12.1](#practice-section-12-1) notes, how to treat this, for example by taking negative values as zero or by placing a tension crack, has to be decided separately. Add a test that the value is negative only for vertical hydrostatic pressure.
+A negative effective normal stress means the soil skeleton on the slip surface is in tension. Soil carries almost no tension, so calculating on as if nothing happened has no mechanical meaning. `factor_of_safety` follows Eq. {eq}`eq-infinite-fs` as written, so the friction term turns negative and works against the resistance from cohesion. On a steep slope, the factor of safety itself can become negative. As [Chapter 3, Section 12.1](#practice-section-12-1) notes, how to treat this, for example by taking negative values as zero or by placing a tension crack, has to be decided separately. Add a test that the value is negative only for vertical hydrostatic pressure.
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python

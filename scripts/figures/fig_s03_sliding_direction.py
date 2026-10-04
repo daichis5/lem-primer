@@ -40,7 +40,10 @@ def ell(t):
 fig.polygon([ell(2 * math.pi * k / 90) for k in range(90)], fill=SOIL, color=INK, width=2)
 ax = (math.cos(AXIS), -math.sin(AXIS))
 fig.line(add(C, mul(ax, -150)), add(C, mul(ax, 150)), INK, 1.3, "8 5")
-fig.text(add(C, add(mul(ax, 150), (-8, -12))), L("長軸", "long axis"), SMALL, INK)
+# English ends where 長軸 ends, above the ellipse's outline and left of the divider.
+tip = add(C, mul(ax, 150))
+fig.text(L(add(tip, (-8, -12)), add(tip, (18, -26))), L("長軸", "long axis"), SMALL, INK,
+         L("start", "end"))
 d2 = (math.cos(THETA), -math.sin(THETA))
 fig.arrow(C, add(C, mul(d2, 104)), UNIT, 2.2, "6 4")
 fig.math(add(C, add(mul(d2, 104), (6, 14))), r"\v{d}", 17, UNIT)
@@ -48,7 +51,8 @@ fig.line(C, add(C, (70, 0)), FAINT, 1.1, "3 3")
 fig.angle_arc(C, 52, math.degrees(THETA), 0, MUTED)
 fig.math(add(C, (58, 24)), "θ", 15, MUTED)
 fig.circle(C, 3, INK)
-fig.text((C[0], 336), L("平面図：長軸と全体すべり方向", "plan: long axis and direction of sliding"), SMALL, MUTED, "middle")
+fig.text((C[0], 336), L("平面図：長軸と全体すべり方向", "plan: long axis and direction of sliding"),
+         SMALL, MUTED, "middle")
 
 # Right: one column's base plane z = -0.5 x + 0.15 y around P, in 3D.
 pr = Oblique(92, (548, 196), depth=0.62)
@@ -66,7 +70,8 @@ m = unit3(p)
 LEN = 1.5
 patch = [(-1.5, -1.0), (1.5, -1.0), (1.5, 1.0), (-1.5, 1.0)]
 fig.polygon([pr.p((x, y, plane_z(x, y))) for x, y in patch], fill="#ece4d0", color="#c9b88f", width=1.3)
-fig.text(pr.p((-1.5, -1.0, plane_z(-1.5, -1.0) - 0.15)), L("底面の接平面", "tangent plane of the base"), SMALL, MUTED)
+fig.text(pr.p((-1.5, -1.0, plane_z(-1.5, -1.0) - 0.15)), L("底面の接平面", "tangent plane of the base"),
+         SMALL, MUTED)
 d_tip, p_tip = add3(P, mul3(d, LEN)), add3(P, mul3(p, LEN))
 fig.unit_vector(pr.p(P), pr.p(add3(P, mul3(n, 0.9))))
 fig.math(add(pr.p(add3(P, mul3(n, 0.9))), (8, 8)), r"\v{n}_i", 16, UNIT)
@@ -78,8 +83,10 @@ fig.math(add(pr.p(p_tip), (8, 14)), r"\v{p}_i", 17, MUTED)
 fig.arrow(pr.p(P), pr.p(add3(P, mul3(m, -1.25))), RESIST, 2.6)
 fig.math(add(pr.p(add3(P, mul3(m, -1.25))), (-8, -6)), r"\v{T}_i", 17, RESIST, "end")
 fig.circle(pr.p(P), 3, INK)
-P_M = r"\v{p}_i = (\v{I} − \v{n}_i\v{n}_i^{\r{T}})\v{d}{sep}\v{m}_i = \v{p}_i / ‖\v{p}_i‖"
-fig.math((560, 322), L(P_M.replace("{sep}", "，　"), P_M.replace("{sep}", ",\u2003")), 16, INK, "middle")
+fig.math((560, 322),
+         L(r"\v{p}_i = (\v{I} − \v{n}_i\v{n}_i^{\r{T}})\v{d}，　\v{m}_i = \v{p}_i / ‖\v{p}_i‖",
+           r"\v{p}_i = (\v{I} − \v{n}_i\v{n}_i^{\r{T}})\v{d}," "\u2003" r"\v{m}_i = \v{p}_i / ‖\v{p}_i‖"),
+         16, INK, "middle")
 fig.line((350, 20), (350, 360), "#e2e8f0", 1)
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 ---
 title: "LEM Primer"
 lang: en
-translated_from: 56298d2
+translated_from: "56298d2"
 translated_on: 2026-10-04
 ---
 
@@ -69,7 +69,7 @@ How should slip surfaces other than circles, the direction of sliding, and discr
 
 ::::
 
-The theory is meant to be read in order, from Chapter 1. Each chapter has a main text and collapsed supplements, which hold the details of derivations and sign conventions. Terms and symbols are collected in the [Glossary](lem-glossary.md).
+The theory is meant to be read in order, from Chapter 1. Each chapter has a main text and collapsed supplements, which hold the details of derivations and sign conventions. The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 ## Practice
 
