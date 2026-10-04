@@ -440,6 +440,8 @@ $f(x)=1$ とすれば，$X/E=\lambda$ は一定になる．つまり，Spencer�
 
 2次元では，{term}`すべり土塊`を1方向にだけ分け，各要素を「スライス」と呼ぶ．3次元では，平面上の2方向に分けるため，各要素は柱の形の「カラム」になる．
 
+(what-section-7-1)=
+
 #### 7.1 底面の力がベクトルになる
 
 第 $i$ カラムの底面に，すべり土塊の外向きの単位法線ベクトル $\boldsymbol{n}_i$ をとる．また，仮定した{term}`局所的なすべり方向 <局所すべり方向>`の単位ベクトルを $\boldsymbol{m}_i$ とし，すべりに抵抗する底面のせん断力のベクトルを，次のように定める．
@@ -539,6 +541,8 @@ $$ (eq-what-3d-not-extrusion)
 
 ---
 
+(what-section-8-1)=
+
 #### 8.1 Hovland法：Fellenius型の直接の拡張
 
 Hovland法は，すべり土塊を鉛直なカラムに分け，3次元の底面の形と，側方の端部の効果を扱えるようにした，初期の一般的な3次元のLEMである．力学的な骨組みは，カラム間力を無視する，Fellenius型の拡張とみなせる．
@@ -557,6 +561,8 @@ Hovland法は，すべり土塊を鉛直なカラムに分け，3次元の底面
 **原著論文**：[H. J. Hovland (1977), “Three-Dimensional Slope Stability Analysis Method,” *Journal of the Geotechnical Engineering Division*, 103(9), 971–986. DOI: 10.1061/AJGEB6.0000493](https://doi.org/10.1061/AJGEB6.0000493)
 
 ---
+
+(what-section-8-2)=
 
 #### 8.2 HungrとUgai：簡易Bishop法などをカラム法に拡張する
 

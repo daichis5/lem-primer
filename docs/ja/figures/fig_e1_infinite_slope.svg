@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
+  <title id="title">無限斜面の柱に働く力と，すべり面の間隙水圧</title>
+  <desc id="desc">左は，無限斜面から取り出した柱に働く力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，両側の面に働く力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，すべり面の点 P の間隙水圧の2つの決め方．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，P の圧力水頭は h_w cos²β になる．</desc>
+  <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="330" fill="#fff"/>
+  <polygon points="54,283.7 278,154.4 278,196.4 54,325.7" fill="#ece4d0" stroke-linejoin="round"/>
+  <polygon points="54,160.5 278,31.2 278,154.4 54,283.7" fill="#f4e7c5" stroke-linejoin="round"/>
+  <line x1="54" y1="160.5" x2="278" y2="31.2" stroke="#172033" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="54" y1="283.7" x2="278" y2="154.4" stroke="#172033" stroke-width="2.6" stroke-dasharray="9 5" stroke-linecap="round"/>
+  <polygon points="138,112 205.2,73.2 205.2,196.4 138,235.2" fill="#ead6a6" stroke="#8b7355" stroke-width="1.4" stroke-linejoin="round"/>
+  <line x1="103.4" y1="193.6" x2="131.1" y2="177.6" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="135.4,175.1 127.5,186.4 121.6,176.2" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="239.8" y1="114.8" x2="212.1" y2="130.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="207.8,133.3 215.7,122 221.6,132.2" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="171.6" y1="154.2" x2="171.6" y2="200.7" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="171.6,206.2 165.1,192.4 178.1,192.4" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="171.6" cy="154.2" r="3" fill="#d64545"/>
+  <text x="179.6" y="184.2" class="m" font-size="17" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan></text>
+  <line x1="149.1" y1="176.8" x2="171.6" y2="163.8" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="194.1" y1="202.8" x2="171.6" y2="163.8" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="171.6" y1="215.8" x2="151.9" y2="181.6" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="149.1,176.8 161.6,185.5 150.4,192" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="171.6" y1="215.8" x2="189.3" y2="205.6" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="194.1,202.8 185.4,215.4 178.9,204.1" fill="#14916a" stroke-linejoin="round"/>
+  <text x="145.1" y="180.8" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan></text>
+  <text x="198.1" y="218.8" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan></text>
+  <line x1="171.6" y1="215.8" x2="186.9" y2="242.4" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="188.6,245.2 181,240.1 187.9,236.1" fill="#64748b" stroke-linejoin="round"/>
+  <line x1="171.6" y1="215.8" x2="145" y2="231.1" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="142.2,232.8 147.3,225.2 151.3,232.1" fill="#64748b" stroke-linejoin="round"/>
+  <text x="194.6" y="253.2" class="m" font-size="17" fill="#64748b" text-anchor="start"><tspan font-style="italic" font-weight="bold">n</tspan></text>
+  <text x="140.2" y="250.8" class="m" font-size="17" fill="#64748b" text-anchor="end"><tspan font-style="italic" font-weight="bold">m</tspan></text>
+  <circle cx="171.6" cy="215.8" r="3" fill="#172033"/>
+  <line x1="258.4" y1="42.5" x2="258.4" y2="165.7" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="254.4" y1="42.5" x2="262.4" y2="42.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="254.4" y1="165.7" x2="262.4" y2="165.7" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="265.4" y="109.7" class="m" font-size="17" fill="#475569" text-anchor="start"><tspan font-style="italic">z</tspan></text>
+  <line x1="54" y1="160.5" x2="116" y2="160.5" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M98 160.5 A44 44 0 0 0 92.1 138.5" fill="none" stroke="#172033" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="104" y="157.1" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">β</tspan></text>
+  <text x="219.2" y="52.5" class="t" font-size="13" fill="#475569" text-anchor="middle">地表</text>
+  <text x="250" y="196.2" class="t" font-size="13" fill="#475569" text-anchor="middle">すべり面</text>
+  <text x="206" y="282" class="t" font-size="13" fill="#7c3aed" text-anchor="start">両側の面の力（紫）は</text>
+  <text x="206" y="302" class="t" font-size="13" fill="#7c3aed" text-anchor="start">大きさが同じで打ち消し合う</text>
+  <polygon points="436,283.7 660,154.4 660,196.4 436,325.7" fill="#ece4d0" stroke-linejoin="round"/>
+  <polygon points="436,160.5 660,31.2 660,154.4 436,283.7" fill="#f4e7c5" stroke-linejoin="round"/>
+  <polygon points="436,210.9 660,81.6 660,154.4 436,283.7" fill="#0891b2" fill-opacity="0.1" stroke-linejoin="round"/>
+  <line x1="436" y1="210.9" x2="660" y2="81.6" stroke="#0891b2" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="436" y1="160.5" x2="660" y2="31.2" stroke="#172033" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="436" y1="283.7" x2="660" y2="154.4" stroke="#172033" stroke-width="2.6" stroke-dasharray="9 5" stroke-linecap="round"/>
+  <line x1="592.8" y1="193.2" x2="561.3" y2="138.6" stroke="#0891b2" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <line x1="592.8" y1="193.2" x2="592.8" y2="120.4" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="588.8" y1="193.2" x2="596.8" y2="193.2" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="588.8" y1="120.4" x2="596.8" y2="120.4" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="599.8" y="162.4" class="m" font-size="17" fill="#475569" text-anchor="start"><tspan font-style="italic">h</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">w</tspan></text>
+  <line x1="561.3" y1="138.6" x2="545.3" y2="138.6" stroke="#0891b2" stroke-width="1.2" stroke-dasharray="2 3" stroke-linecap="round"/>
+  <line x1="592.8" y1="193.2" x2="545.3" y2="193.2" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round"/>
+  <line x1="549.3" y1="193.2" x2="549.3" y2="138.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="545.3" y1="193.2" x2="553.3" y2="193.2" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <line x1="545.3" y1="138.6" x2="553.3" y2="138.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="543.3" y="170.8" class="m" font-size="15" fill="#475569" text-anchor="end"><tspan font-style="italic">h</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">w</tspan><tspan dy="-4.2" font-style="normal"> cos</tspan><tspan dy="-6.3" font-size="10.5" font-style="normal">2</tspan><tspan dy="6.3" font-style="italic">β</tspan></text>
+  <circle cx="592.8" cy="193.2" r="3" fill="#172033"/>
+  <circle cx="561.3" cy="138.6" r="2.6" fill="#0891b2"/>
+  <text x="599.8" y="210.2" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">P</tspan></text>
+  <line x1="480.8" y1="235.4" x2="455" y2="250.3" stroke="#0891b2" stroke-width="1.6" stroke-linecap="butt"/>
+  <polygon points="451.4,252.4 457.9,242.9 462.9,251.5" fill="#0891b2" stroke-linejoin="round"/>
+  <text x="464" y="212" class="t" font-size="13" fill="#0891b2" text-anchor="middle">地下水位</text>
+  <text x="404" y="32" class="m" font-size="15" fill="#172033" text-anchor="start"><tspan font-style="normal" class="t" font-size="14">斜面に平行な浸透：</tspan><tspan font-style="italic">u</tspan><tspan font-style="normal"> = </tspan><tspan font-style="italic">γ</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">w</tspan><tspan dy="-4.2" font-style="normal"> </tspan><tspan font-style="italic">h</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">w</tspan><tspan dy="-4.2" font-style="normal"> cos</tspan><tspan dy="-6.3" font-size="10.5" font-style="normal">2</tspan><tspan dy="6.3" font-style="italic">β</tspan></text>
+  <text x="404" y="56" class="m" font-size="15" fill="#172033" text-anchor="start"><tspan font-style="normal" class="t" font-size="14">鉛直の静水圧：</tspan><tspan font-style="italic">u</tspan><tspan font-style="normal"> = </tspan><tspan font-style="italic">γ</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">w</tspan><tspan dy="-4.2" font-style="normal"> </tspan><tspan font-style="italic">h</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">w</tspan></text>
+</svg>
