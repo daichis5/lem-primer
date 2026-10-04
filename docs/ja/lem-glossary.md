@@ -81,15 +81,15 @@ lang: ja
 
   {term}`全垂直応力 <垂直応力>`から{term}`間隙水圧`を引いた値 $\sigma_n'=\sigma_n-u$．土粒子の骨格が実際に受け持つ垂直応力で，{term}`せん断強度`を左右する（→[第1資料 4節](#section-4)）
 
-Mohr–Coulomb則
-  Mohr–Coulomb failure criterion
-
-  今の{term}`有効垂直応力`のもとで発揮できる{term}`せん断強度`を，$\tau_f=c'+\sigma_n'\tan\phi'$ で与える破壊規準．$c'$ は有効粘着力，$\phi'$ は有効内部摩擦角（→[第1資料 5節](#section-5)）
-
 せん断強度
   $\tau_f$　shear strength
 
   破壊するときに発揮できるせん断抵抗の上限．今働いているせん断応力ではない（→[第1資料 5節](#section-5)）
+
+Mohr–Coulomb則
+  Mohr–Coulomb failure criterion
+
+  今の{term}`有効垂直応力`のもとで発揮できる{term}`せん断強度`を，$\tau_f=c'+\sigma_n'\tan\phi'$ で与える破壊規準．$c'$ は有効粘着力，$\phi'$ は有効内部摩擦角（→[第1資料 5節](#section-5)）
 
 動員せん断応力
   $\tau_m$　mobilized shear stress
@@ -108,7 +108,7 @@ Mohr–Coulomb則
 抵抗力
   resisting force
 
-  すべり面が発揮できる最大のせん断力．{term}`安全率`を「抵抗力÷滑動力」と説明するときの分子で，{term}`滑動力`と対にして使う（→[第1資料「LEMの全体像」](#overview)）
+  すべり面が発揮できる最大のせん断力．{term}`安全率`を「抵抗力÷{term}`滑動力`」と説明するときの分子（→[第1資料「LEMの全体像」](#overview)）
 
 滑動力
   driving force
@@ -137,7 +137,7 @@ Mohr–Coulomb則
 内力
   internal force
 
-  材料力学と同じく，物体を仮想的に切った面で，両側が互いに及ぼし合う力．LEMでは，スライスやカラムの境界に働く{term}`スライス間力`とカラム間力だけを指す．各要素の中の応力は扱わない（→[第2資料 2節](#what-section-2)）
+  材料力学と同じく，物体を仮想的に切った面で，両側が互いに及ぼし合う力．LEMでは，スライスやカラムの境界に働く{term}`スライス間力`とカラム間力だけを指す．各要素の中の応力は扱わない（→[第2資料 1節](#what-section-1)）
 
 スライス間力
   $E$，$X$　interslice force
@@ -147,7 +147,7 @@ Mohr–Coulomb則
 内力線
   line of thrust
 
-  {term}`スライス間力`の作用点を結んだ線．数値解が得られても，この線がスライスの外にはみ出すときは，{term}`内力`の分布が力学的に妥当でない（→[第3資料 0節](#practice-section-0)，[5.2節](#practice-section-5-2)）
+  {term}`スライス間力`の作用点を結んだ線．数値解が得られても，この線がスライスの外にはみ出すときは，{term}`内力`の分布が力学的に妥当でない（→[第2資料 10節](#what-section-10)，[第3資料 0節](#practice-section-0)，[5.2節](#practice-section-5-2)）
 ```
 
 ## 不静定性と手法
