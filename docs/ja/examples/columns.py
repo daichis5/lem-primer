@@ -27,16 +27,16 @@ class Ellipsoid:
         self.center = np.array(center, dtype=float)
         self.radii = np.array(radii, dtype=float)
         cx, cy, _ = self.center
-        a, b, _ = self.radii
+        rx, ry, _ = self.radii
         # 平面図で，すべり面がありうる範囲
-        self.bounds = (cx - a, cx + a, cy - b, cy + b)
+        self.bounds = (cx - rx, cx + rx, cy - ry, cy + ry)
 
     def z(self, x, y):
         """鉛直線と，楕円体の下の面との交点の高さ．交わらないところは nan．"""
         cx, cy, cz = self.center
-        a, b, c = self.radii
-        q = 1.0 - ((x - cx) / a) ** 2 - ((y - cy) / b) ** 2
-        return np.where(q > 0.0, cz - c * np.sqrt(np.abs(q)), np.nan)
+        rx, ry, rz = self.radii
+        q = 1.0 - ((x - cx) / rx) ** 2 - ((y - cy) / ry) ** 2
+        return np.where(q > 0.0, cz - rz * np.sqrt(np.abs(q)), np.nan)
 
     def normal(self, x, y, z):
         """楕円体の外向き（すべり土塊の外向き）の単位法線ベクトル．
@@ -158,8 +158,8 @@ def rotation_directions(col, axis):
     return m / np.linalg.norm(m, axis=1, keepdims=True)
 
 
-def dip_directions(col, d):
-    """全体すべり方向 d を含む鉛直面の中で，各底面が下る向き．
+def section_directions(col, d):
+    """全体すべり方向 d を含む鉛直面の中で，各底面に沿って d の側へ進む向き．
 
     Hovland (1977) の取り方で，d に直交する水平な軸のまわりの回転の向きと
     同じになる．

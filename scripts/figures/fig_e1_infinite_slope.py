@@ -70,10 +70,11 @@ def panel_forces(v):
     bot_l, bot_r = (0.0, -Z), (B, B * TAN - Z)
     fig.polygon([v.p(top_l), v.p(top_r), v.p(bot_r), v.p(bot_l)], fill="#ead6a6", color=SOIL_EDGE, width=1.4)
 
-    # Side forces: equal and opposite, so they cancel.
+    # Side forces: equal and opposite, so they cancel. Each acts a third of the way up
+    # its face, where the resultant of a stress growing linearly with depth acts.
     along = screen((math.cos(BETA), math.sin(BETA)))
     for face, sign in ((0.0, 1.0), (B, -1.0)):
-        mid = v.p((face, face * TAN - Z / 2))
+        mid = v.p((face, face * TAN - 2 * Z / 3))
         fig.arrow(add(mid, mul(along, -sign * 40.0)), add(mid, mul(along, -sign * 3.0)), INTER, width=2.2)
 
     centroid = v.p((B / 2, B / 2 * TAN - Z / 2))

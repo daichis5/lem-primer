@@ -64,7 +64,7 @@ def test_fellenius_about_the_centre_of_a_circle_is_the_formula():
 def test_the_moment_centre_matters_only_where_force_equilibrium_is_missing():
     s = slices.make_slices(slices.Ellipse(), 50)
     o, up, right = (6.0, 18.0), (6.0, 25.0), (10.0, 18.0)
-    # 力のつり合いを満たさない Fellenius法は，中心をどちらに動かしても値が変わる
+    # 全体の力のつり合いを満たさない Fellenius法は，上にも右にも動かすと値が変わる
     assert slices.fellenius_about(s, up) != pytest.approx(
         slices.fellenius_about(s, o), abs=1e-3
     )

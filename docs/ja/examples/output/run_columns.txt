@@ -21,15 +21,15 @@
    30 - 90       2258  1.632
    columns with N - U < 0: Bishop 168, all at most 0.51 m tall; Hovland 0
 6. local direction of sliding on the sphere (Hovland)
-   dip in the vertical plane through d  1.8161
-   d projected onto each base           2.1223
+   in the vertical plane through d  1.8161
+   d projected onto each base       2.1223
 7. azimuth of d on the sphere (Hovland)
-   azimuth [deg]   dip  projected
-             -30  2.1088  2.4285
-             -15  1.8825  2.1917
-              +0  1.8161  2.1223
-             +15  1.8825  2.1917
-             +30  2.1088  2.4285
+   azimuth [deg]  section  projected
+             -30   2.1088     2.4285
+             -15   1.8825     2.1917
+              +0   1.8161     2.1223
+             +15   1.8825     2.1917
+             +30   2.1088     2.4285
 8. column size on the sphere
    h [m]  columns  Hovland   Bishop
     1.00      574   1.8145  2.1432

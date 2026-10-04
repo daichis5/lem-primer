@@ -16,7 +16,7 @@ R = slices.Circle().radius
 
 def methods(col, centre):
     return (
-        columns.hovland(col, columns.dip_directions(col, D)),
+        columns.hovland(col, columns.section_directions(col, D)),
         columns.hovland_moment(col, centre, AXIS),
         columns.bishop(col, centre, AXIS),
     )
@@ -80,19 +80,19 @@ print(f"all at most {height.max():.2f} m tall;", end=" ")
 print(f"Hovland {np.sum(N - sphere.u * sphere.A < 0.0)}")
 
 print("6. local direction of sliding on the sphere (Hovland)")
-dip = columns.hovland(sphere, columns.dip_directions(sphere, D))
+section = columns.hovland(sphere, columns.section_directions(sphere, D))
 projected = columns.hovland(sphere, columns.projected_directions(sphere, D))
-print(f"   dip in the vertical plane through d  {dip:.4f}")
-print(f"   d projected onto each base           {projected:.4f}")
+print(f"   in the vertical plane through d  {section:.4f}")
+print(f"   d projected onto each base       {projected:.4f}")
 
 print("7. azimuth of d on the sphere (Hovland)")
-print("   azimuth [deg]   dip  projected")
+print("   azimuth [deg]  section  projected")
 for deg in (-30, -15, 0, 15, 30):
     t = math.radians(deg)
     d = np.array([-math.cos(t), math.sin(t), 0.0])
-    dip = columns.hovland(sphere, columns.dip_directions(sphere, d))
+    section = columns.hovland(sphere, columns.section_directions(sphere, d))
     projected = columns.hovland(sphere, columns.projected_directions(sphere, d))
-    print(f"   {deg:+13d}  {dip:.4f}  {projected:.4f}")
+    print(f"   {deg:+13d}  {section:7.4f}  {projected:9.4f}")
 
 print("8. column size on the sphere")
 print("   h [m]  columns  Hovland   Bishop")

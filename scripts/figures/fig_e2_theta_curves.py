@@ -21,13 +21,21 @@ def read():
     start = lines.index("theta_deg,F_m,F_f") + 1
     rows = []
     for line in lines[start:]:
-        if not re.fullmatch(r"[0-9.]+,[0-9.]+,[0-9.]+", line):
+        if not re.fullmatch(r"-?[0-9.]+,-?[0-9.]+,-?[0-9.]+", line):
             break
         rows.append(tuple(float(v) for v in line.split(",")))
-    meet = re.search(r"theta = ([0-9.]+) deg, Fs = ([0-9.]+) \(Spencer\)", SOURCE.read_text(encoding="utf-8"))
+    meet = re.search(r"theta = (-?[0-9.]+) deg, Fs = (-?[0-9.]+) \(Spencer\)", SOURCE.read_text(encoding="utf-8"))
     if meet is None:
         raise SystemExit(f"{SOURCE} has no Spencer line: run `make examples` first")
-    return rows, (float(meet.group(1)), float(meet.group(2)))
+    spencer = (float(meet.group(1)), float(meet.group(2)))
+    # The axes are fixed, so stop rather than draw outside them if the output changes.
+    thetas = [r[0] for r in rows] + [spencer[0]]
+    values = [f for r in rows for f in r[1:]] + [spencer[1]]
+    if not rows or rows[0][0] != T0 or rows[-1][0] != T1 or not (
+        min(thetas) >= T0 and max(thetas) <= T1 and min(values) >= F0 and max(values) <= F1
+    ):
+        raise SystemExit(f"{SOURCE}: the values leave the axes (theta {T0}-{T1}, F_s {F0}-{F1})")
+    return rows, spencer
 
 
 def px(theta, fs):
@@ -39,10 +47,10 @@ rows, (theta_s, fs_s) = read()
 fig = Figure(
     "fig_e2_theta_curves",
     360,
-    "スライス間力の傾きと，2つのつり合いから求めた安全率",
+    "スライス間力の合力の傾きと，2つのつり合いから求めた安全率",
     "第1資料の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，"
     "力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，"
-    "2本の曲線が交わる点が Spencer法の解である．",
+    "2本の曲線が交わる点がSpencer法の解である．",
 )
 
 for k in range(6):
@@ -70,7 +78,7 @@ fig.math((px(last[0], last[2])[0] - 6, px(last[0], last[2])[1] - 14), r"F_f\t{�
 first = rows[0]
 for (theta, fs), label, dx, dy, anchor in (
     ((first[0], first[1]), "簡易Bishop法", 12, -14, "start"),
-    ((first[0], first[2]), "簡易Janbu法", 12, 5, "start"),
+    ((first[0], first[2]), "簡易Janbu法", 12, 20, "start"),
     ((theta_s, fs_s), "Spencer法", -10, -16, "end"),
 ):
     p = px(theta, fs)

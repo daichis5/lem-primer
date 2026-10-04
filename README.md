@@ -20,16 +20,16 @@ independent of any particular analysis software.
    remaining static indeterminacy
 3. **極限平衡法を実際に使うとき** — general slip surfaces, sliding direction,
    discretization, and how to read a result
-4. **実践編** — three practice pages that write the methods in Python and
-   check each against the one before: the infinite slope, slices on one
-   circle (Fellenius, simplified Bishop and Janbu, Spencer), and columns on
-   one ellipsoid (Hovland, 3D simplified Bishop)
+4. **実践編** — three practice pages that write the methods in Python: the
+   infinite slope, slices on one circle (Fellenius, simplified Bishop and
+   Janbu, Spencer), and columns on one ellipsoid (Hovland, 3D simplified
+   Bishop); the second and third check their values against the one before
 5. **用語集** — shared glossary of terms and symbols
 
 ## Building locally
 
 ```bash
-uv sync --group docs --group examples   # or: pip install -e '.[docs]'
+uv sync --group docs --group examples   # or, with pip 25.1+: pip install --group docs --group examples
 make examples             # runs the practice code: outputs and tests
 make all                  # builds _site/ja and _site/en
 make preview              # builds both, then opens the Japanese edition

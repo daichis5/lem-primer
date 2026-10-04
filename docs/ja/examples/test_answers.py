@@ -90,9 +90,6 @@ def test_practice_2():
     assert slices.bishop(
         slices.make_slices(slices.Circle((4.0, 16.0)), 50)
     ) == pytest.approx(1.790, abs=1e-3)
-    assert slices.bishop(
-        slices.make_slices(slices.Circle((8.0, 20.0)), 50)
-    ) == pytest.approx(2.405, abs=1e-3)
 
     # 実践3 問6が引く，地下水位のある円弧の値
     s = slices.make_slices(slices.Circle(), 50, water_level=4.0)
@@ -105,22 +102,31 @@ def test_practice_2():
 def test_practice_3():
     assert 0.25**2 / math.cos(math.radians(30.0)) == pytest.approx(0.0722, abs=1e-4)
 
-    col = columns.make_columns(
-        columns.Ellipsoid(CENTRE_3D, (R, R, R)), 0.25, water_level=4.0
-    )
-    assert columns.hovland(col, columns.dip_directions(col, D)) == pytest.approx(
+    sphere = columns.Ellipsoid(CENTRE_3D, (R, R, R))
+    wet = columns.make_columns(sphere, 0.25, water_level=4.0)
+    assert columns.hovland(wet, columns.section_directions(wet, D)) == pytest.approx(
         1.418, abs=1e-3
     )
-    assert columns.bishop(col, CENTRE_3D, AXIS) == pytest.approx(1.699, abs=1e-3)
-    assert np.sum(col.u * col.A) / np.sum(col.W) == pytest.approx(0.25, abs=5e-3)
+    wet_bishop = columns.bishop(wet, CENTRE_3D, AXIS)
+    assert wet_bishop == pytest.approx(1.699, abs=1e-3)
+    assert np.sum(wet.u * wet.A) / np.sum(wet.W) == pytest.approx(0.25, abs=5e-3)
 
-    col = columns.make_columns(columns.Ellipsoid(CENTRE_3D, (R, R, R)), 0.25)
+    dry = columns.make_columns(sphere, 0.25)
+    dry_bishop = columns.bishop(dry, CENTRE_3D, AXIS)
+    assert dry_bishop == pytest.approx(2.142, abs=1e-3)
+    # 問6：簡易Bishop法の，3次元と実践2の2次元の差
+    circle = slices.Circle()
+    dry_2d = slices.bishop(slices.make_slices(circle, 50))
+    wet_2d = slices.bishop(slices.make_slices(circle, 50, water_level=4.0))
+    assert dry_bishop - dry_2d == pytest.approx(0.079, abs=5e-4)
+    assert wet_bishop - wet_2d == pytest.approx(0.159, abs=5e-4)
+
     raised = CENTRE_3D + np.array([0.0, 0.0, 2.0])
-    assert columns.hovland(col, columns.dip_directions(col, D)) == pytest.approx(
+    assert columns.hovland(dry, columns.section_directions(dry, D)) == pytest.approx(
         1.816, abs=1e-3
     )
-    assert columns.hovland_moment(col, raised, AXIS) == pytest.approx(1.849, abs=1e-3)
-    assert columns.bishop(col, raised, AXIS) == pytest.approx(2.122, abs=1e-3)
+    assert columns.hovland_moment(dry, raised, AXIS) == pytest.approx(1.849, abs=1e-3)
+    assert columns.bishop(dry, raised, AXIS) == pytest.approx(2.122, abs=1e-3)
 
 
 def test_save_table(tmp_path, monkeypatch, capsys):

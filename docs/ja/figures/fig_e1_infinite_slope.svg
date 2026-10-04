@@ -8,10 +8,10 @@
   <line x1="54" y1="160.5" x2="278" y2="31.2" stroke="#172033" stroke-width="2.2" stroke-linecap="round"/>
   <line x1="54" y1="283.7" x2="278" y2="154.4" stroke="#172033" stroke-width="2.6" stroke-dasharray="9 5" stroke-linecap="round"/>
   <polygon points="138,112 205.2,73.2 205.2,196.4 138,235.2" fill="#ead6a6" stroke="#8b7355" stroke-width="1.4" stroke-linejoin="round"/>
-  <line x1="103.4" y1="193.6" x2="131.1" y2="177.6" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
-  <polygon points="135.4,175.1 127.5,186.4 121.6,176.2" fill="#7c3aed" stroke-linejoin="round"/>
-  <line x1="239.8" y1="114.8" x2="212.1" y2="130.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
-  <polygon points="207.8,133.3 215.7,122 221.6,132.2" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="103.4" y1="214.1" x2="131.1" y2="198.1" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="135.4,195.6 127.5,207 121.6,196.8" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="239.8" y1="135.3" x2="212.1" y2="151.3" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="207.8,153.8 215.7,142.5 221.6,152.7" fill="#7c3aed" stroke-linejoin="round"/>
   <line x1="171.6" y1="154.2" x2="171.6" y2="200.7" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
   <polygon points="171.6,206.2 165.1,192.4 178.1,192.4" fill="#d64545" stroke-linejoin="round"/>
   <circle cx="171.6" cy="154.2" r="3" fill="#d64545"/>
