@@ -15,12 +15,12 @@ lang: ja
 極限平衡法
   limit equilibrium method (LEM)
 
-  仮定した破壊の機構を離散化し，強度の動員の仕方と{term}`内力`の決め方を与えて，極限状態での静力学的なつり合いから，{term}`安全率`を求める方法．このシリーズでは，LEMと略す（→[第1資料「LEMの全体像」](#overview)，[第2資料 13.5節](#what-section-13-5)）
+  仮定した破壊の機構を離散化し，強度の動員の仕方と{term}`内力`の決め方を定めて，極限状態での静力学的なつり合いから，{term}`安全率`を求める方法．このシリーズでは，LEMと略す（→[第1資料「LEMの全体像」](#overview)，[第2資料 13.5節](#what-section-13-5)）
 
 すべり面
   slip surface
 
-  崩れるときにすべると仮定した，斜面の中の曲面．円弧，楕円体，複合面，自由曲面など，表し方は手法や実装によって違う．LEMは，この面を与えられたものとして，{term}`安全率`を計算する（→[第1資料「LEMの全体像」](#overview)）
+  崩れるときにすべると仮定した，斜面の中の曲面．円弧，楕円体，複合面，自由曲面など，表し方は手法や実装によって違う．LEMでは，この面を先に決めてから，{term}`安全率`を計算する（→[第1資料「LEMの全体像」](#overview)）
 
 すべり土塊
   sliding mass
@@ -94,7 +94,7 @@ lang: ja
 Mohr–Coulomb則
   Mohr–Coulomb failure criterion
 
-  今の{term}`有効垂直応力`のもとで発揮できる{term}`せん断強度`を，$\tau_f=c'+\sigma_n'\tan\phi'$ で与える破壊規準．$c'$ は有効粘着力，$\phi'$ は有効内部摩擦角（→[第1資料 5節](#section-5)）
+  今の{term}`有効垂直応力`のもとで発揮できる{term}`せん断強度`を，$\tau_f=c'+\sigma_n'\tan\phi'$ で表す破壊規準．$c'$ は有効粘着力，$\phi'$ は有効内部摩擦角（→[第1資料 5節](#section-5)）
 
 動員せん断応力
   $\tau_m$　mobilized shear stress
@@ -195,7 +195,7 @@ GLE
 全体すべり方向
   $\boldsymbol{d}$　direction of sliding
 
-  3次元で，すべり土塊全体が動くと仮定した代表の向き．{term}`安全率`を左右する，定式化の中の変数で，結果を見せるための矢印ではない（→[第3資料 8節](#practice-section-8)，[9節](#practice-section-9)）
+  3次元で，すべり土塊全体が動くと仮定した代表の向き．図に添えるだけの目印ではなく，{term}`安全率`を左右する，定式化の中の変数である（→[第3資料 8節](#practice-section-8)，[9節](#practice-section-9)）
 
 局所すべり方向
   $\boldsymbol{m}_i$　local direction of sliding
