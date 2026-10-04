@@ -2,7 +2,7 @@
 title: "Using the limit equilibrium method in practice: slip surfaces other than circles, the direction of sliding, and checking results"
 lang: en
 series: "3 of 3"
-translated_from: "56298d2"
+translated_from: "9b11256"
 translated_on: 2026-10-04
 ---
 

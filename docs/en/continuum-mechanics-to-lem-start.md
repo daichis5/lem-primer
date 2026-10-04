@@ -2,7 +2,7 @@
 title: "From continuum mechanics to where the limit equilibrium method begins: deriving the forces on a slice base from stress"
 lang: en
 series: "1 of 3"
-translated_from: "56298d2"
+translated_from: "9b11256"
 translated_on: 2026-10-04
 ---
 

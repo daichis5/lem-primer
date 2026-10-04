@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of a 3D slip surface with the method of columns: build a column table and check it against the infinite slope and the 2D values"
 lang: en
 series: "practice 3 of 3"
-translated_from: "56298d2"
+translated_from: "9b11256"
 translated_on: 2026-10-04
 ---
 

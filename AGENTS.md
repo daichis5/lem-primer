@@ -301,15 +301,14 @@ for it.
   hash as a number.
 
   ```text
-  translated_from: "56298d2"
+  translated_from: "9b11256"
   translated_on: 2026-10-04
   ```
 
   To bring a page in line, read `git diff <translated_from>..HEAD --
   docs/ja/<page>.md`, change the English to match, and record the new
-  commit and date. The commit must stay on `main`, so merge a PR that
-  records one with a merge commit, not a squash; after a squash, record
-  the squashed commit instead.
+  commit and date. Record a commit that is already on `main`, so it
+  survives a squash merge of the PR that records it.
 - A page keeps its Japanese counterpart's file name, labels, equation
   labels and figure names: the language switcher pairs pages by file name,
   and the same labels keep the diff readable.
