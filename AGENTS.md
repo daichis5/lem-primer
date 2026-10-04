@@ -7,6 +7,8 @@ phrasing), applied to a primer with equations.
 ## Quick Commands
 
 - `make all SPHINXOPTS="-W --keep-going"`: the build CI runs; any warning fails it
+- `make examples`: run the practice pages' code, write its outputs and run its
+  tests (needs `uv sync --group examples`); CI fails if an output changes
 - `make serve`: build both editions and serve them at http://localhost:8000/
 
 ## Scope
@@ -18,22 +20,82 @@ but not stress tensors or LEM. The series depends on no analysis software.
 The Japanese edition (`docs/ja/`) is the source; the English edition
 (`docs/en/`) is under construction.
 
+After the three documents come three practice pages (実践編), where readers
+write the methods in Python with NumPy and check them with pytest. The code
+depends on no analysis software either; how a particular program such as LEM
+Lab maps onto it belongs in that program's documentation.
+
 ## Structure of a document
 
 - A document opens with its title (H1), its subtitle as one bold line (not a
   heading), a lead paragraph saying what the document does, and one line
   naming the documents it builds on:
   「この資料は，[第1資料](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．」
-- The table of the three documents and their questions lives on the home
-  page (`index.md`) only. Documents do not repeat it, and a part (第1部 …)
-  opens with its first section, not with a list of what it covers.
-- A document ends with 確認問題 (see Review questions), then 次に読む in the
-  first and second, then 参考文献 in the second and third.
+- The table of the three documents and their questions, and the table of
+  the practice pages, live on the home page (`index.md`) only. Documents do
+  not repeat them, and a part (第1部 …) opens with its first section, not
+  with a list of what it covers.
+- A document ends with 確認問題 (see Review questions), then 次に読む, then
+  参考文献 in the second and third. The third document's 次に読む points to
+  実践1.
 - Headings are Japanese. Parts are 第1部, 第2部, …; sections keep their
   numbers, and the text refers to one as 6節. Reference entries keep the
   language of the work; where there is no DOI, the link text is 書誌情報.
 - Keep labels (`(section-6)=`) and equation labels as they are: they are
   link targets.
+
+## Practice pages
+
+`practice-infinite-slope.md`, `practice-slices-2d.md` and
+`practice-columns-3d.md` are 実践1, 実践2 and 実践3, listed under the
+toctree caption 実践編. Each builds one model's code: the infinite slope,
+2D slices on one circle, 3D columns on one ellipsoid; one slope, one slip
+surface, one factor of safety.
+
+- A practice page opens like a document: title, subtitle, lead, a line
+  naming the documents and earlier practice pages it builds on
+  (「この実践は，[第1資料](…)を読んだ前提で進める．」), and the glossary line.
+- The body runs 作るもの (the problem and its numbers, and a table of the
+  functions with the sections that write them), 準備 (the folder
+  `lem-practice`, the commands, the downloads), numbered sections, 困ったとき
+  (a table 表示や様子 | 原因と対処, each row ending with the sections it
+  draws on), まとめ (3 to 7 bullets, each ending with a link), 確認問題,
+  次に読む (the next practice page; none after 実践3), and 参考文献 when
+  the page cites works.
+- Each practice checks its model against the one before: a plane slip
+  surface gives the infinite slope, a cylinder gives the 2D values. Keep
+  these checks when changing the code; they are what the pages teach.
+- Labels take the page's prefix: `infinite-`, `slices-`, `columns-`
+  (`slices-section-3`).
+- Link each section of a document a practice page relies on, with the
+  glossary's link text: `[第1資料 3節](#section-3)`. Give the target heading
+  a label if it has none.
+- Restate an equation from a document on the practice page, with its own
+  label, rather than citing it with `{eq}`: equation numbers restart in each
+  document.
+
+## Example code
+
+The practice pages' code lives in `docs/ja/examples`: one module
+(`infinite_slope.py`, `slices.py`, `columns.py`), one test file and one run
+script (`run_*.py`) per page. `test_answers.py` pins the numbers that review
+answers quote; readers do not download it.
+
+- Pages never paste code or output. They include it with `literalinclude`:
+  a function with `:pyobject:`, a file's head with `:end-at:`, and a run
+  script's output from `docs/ja/examples/output` with `:start-at:` and
+  `:end-before:` on its numbered headings.
+- `make examples` runs every `run_*.py` with warnings as errors, writes what
+  it prints to `docs/ja/examples/output`, and runs the tests. CI runs it and
+  fails if an output differs from the committed file. Run it before
+  `make figures`: `fig_e2` reads `output/run_slices.txt`.
+- Python 3.11 or later with NumPy, and pytest for the tests. Docstrings and
+  comments are Japanese; names follow the text's symbols (`W`, `N`, `alpha`,
+  `l`, `m_alpha`), and vectors follow its conventions: `n` outward from the
+  sliding mass, `m` the direction of sliding, compression positive.
+- Keep lines within 88 display columns, a Japanese character counting as two,
+  so code blocks on the page do not scroll. `ruff format --line-length 88`
+  counts that way.
 
 ## Japanese phrasing
 
@@ -128,6 +190,7 @@ compare a document with it.
 | 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
 | 元の手法 | 原法 | |
 | 射影 | 投影 | projecting onto a plane, as in 補足C |
+| 実践1，実践2，実践3，この実践 | 演習，課題 | the practice pages, and a practice page referring to itself |
 
 ## Review questions
 
@@ -153,6 +216,10 @@ Every document ends its body with `## 確認問題`, opened by the line
   (`what-section-3-1`, `practice-section-6`).
 - In an answer, a reason ends 〜ため．, and a list of items may end without
   a predicate.
+- On a practice page, a task done in code is marked （やってみよう）, and
+  the opening line goes on 「（やってみよう）は，`lem-practice` で取り組む．」.
+  Run each answer's code and pin the numbers it quotes in
+  `docs/ja/examples/test_answers.py`.
 
 ## Glossary
 
@@ -179,10 +246,11 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
     （定義）（→[第1資料「LEMの全体像」](#overview)，[6節](#section-6)）
   ```
 - Link text names the document, then the section: 第1資料 6節, or the
-  heading in 「」 for a section without a number. A second section of the
-  same document drops the document's name. Give each target heading a
-  label, as for review questions. A linked section explains the term; where
-  none does, add the explanation to the text.
+  heading in 「」 for a section without a number, and 実践1 2節 for a
+  practice page. A second section of the same document drops the document's
+  name. Give each target heading a label, as for review questions. A linked
+  section explains the term; where none does, add the explanation to the
+  text.
 - The English term is the one the English literature uses (slip surface,
   interslice force, direction of sliding), in Oxford spelling (mobilized,
   centre).
@@ -192,8 +260,8 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   `{term}`, except the terms of the first group, LEMの枠組み: すべり面 and
   スライス come up in almost every entry. Where the wording differs, name
   the entry: `` {term}`全垂直応力 <垂直応力>` ``.
-- In each document, the first use of a term the document does not explain
-  (its entry links only to other documents) links to the entry with
+- In each document and practice page, the first use of a term the page does
+  not explain (its entry links only to other pages) links to the entry with
   `{term}`; later uses stay plain. Count only the main text: not the lead
   (up to the line that links the glossary), headings, tables, equations,
   captions or dropdowns. A use is the term itself, its abbreviation, a
