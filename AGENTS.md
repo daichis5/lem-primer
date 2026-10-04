@@ -95,9 +95,8 @@ quote and runs `save_table.py`; readers do not download it.
   `:end-before:` on its numbered headings.
 - `make examples` runs every `run_*.py` of both copies with warnings as
   errors, writes what it prints to each copy's `output/`, and runs the
-  tests. CI runs it and
-  fails if an output differs from the committed file. Run it before
-  `make figures`: `fig_e2` reads `output/run_slices.txt`.
+  tests. CI runs it and fails if an output differs from the committed file.
+  Run it before `make figures`: `fig_e2` reads `output/run_slices.txt`.
 - Python 3.11 or later with NumPy, and pytest for the tests. Docstrings and
   comments are Japanese; names follow the text's symbols (`W`, `N`, `alpha`,
   `l`, `m_alpha`), and vectors follow its conventions: `n` outward from the

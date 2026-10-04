@@ -99,7 +99,7 @@ Builds a column table for an ellipsoidal slip surface and computes the 3D factor
 
 ::::
 
-The practice pages write the code in Python and NumPy, and check the equations and ideas of the theory with numbers. The values of Practice 2 and Practice 3 are checked against the values of the practice before them, for example by reducing a plane slip surface to the infinite slope. Practice 1 can be started after Chapter 1; Practice 2 and Practice 3 are best taken after Chapter 3.
+The practice pages write the code in Python and NumPy, and check the equations and ideas of the theory with numbers. The values of Practice 2 and Practice 3 are each checked against the values of the practice before it, for example by reducing a plane slip surface to the infinite slope. Practice 1 can be started after Chapter 1; Practice 2 and Practice 3 are best taken after Chapter 3.
 
 ## About this primer
 

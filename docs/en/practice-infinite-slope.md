@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of an infinite slope: from splitting the traction to the factor of safety, in code"
 lang: en
 series: "practice 1 of 3"
-translated_from: "56298d2"
+translated_from: "a7de38f"
 translated_on: 2026-10-04
 ---
 
