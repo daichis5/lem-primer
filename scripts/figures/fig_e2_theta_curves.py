@@ -1,4 +1,4 @@
-"""実践2: F_m(theta) and F_f(theta) for the circle of 第1資料's figure 1.
+"""実践2: F_m(theta) and F_f(theta) for the circle of 第1章's figure 1.
 
 The values are read from docs/ja/examples/output/run_slices.txt, which
 `make examples` writes from the practice code, so this figure and the table on
@@ -48,7 +48,7 @@ fig = Figure(
     "fig_e2_theta_curves",
     360,
     "スライス間力の合力の傾きと，2つのつり合いから求めた安全率",
-    "第1資料の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，"
+    "第1章の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，"
     "力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，"
     "2本の曲線が交わる点がSpencer法の解である．",
 )

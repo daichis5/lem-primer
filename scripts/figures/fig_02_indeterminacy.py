@@ -1,4 +1,4 @@
-"""第2資料 3.1節: where the unknowns live, for n = 5 slices.
+"""第2章 3.1節: where the unknowns live, for n = 5 slices.
 
 N on every base, E, X and the height h on every boundary between two
 slices, and one F_s for the whole surface. The arrows only mark where an

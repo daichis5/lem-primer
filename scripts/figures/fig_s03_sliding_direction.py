@@ -1,4 +1,4 @@
-"""第3資料 7節・8節: the global sliding direction and its projection onto a
+"""第3章 7節・8節: the global sliding direction and its projection onto a
 column's base.
 
 Left, in plan: the long axis of the slip surface and the global sliding

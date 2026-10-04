@@ -1,4 +1,4 @@
-"""第2資料 2節: the free-body diagram of one 2D slice.
+"""第2章 2節: the free-body diagram of one 2D slice.
 
 The slice has vertical sides and a straight base inclined at alpha. W, E
 and X are chosen; N and T follow from the slice's force balance (see

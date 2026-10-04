@@ -1,4 +1,4 @@
-"""第1資料 5節・6節: the Mohr–Coulomb line and the worked example of 6節.
+"""第1章 5節・6節: the Mohr–Coulomb line and the worked example of 6節.
 
 c' = 10 kPa, phi' = 30 deg. Before: sigma_n' = 60 kPa (u = 40); after the
 water rises: sigma_n' = 40 kPa (u = 60). tau_m = 30 kPa in both. The axes

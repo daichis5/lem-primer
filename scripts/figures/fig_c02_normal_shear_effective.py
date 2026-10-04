@@ -1,4 +1,4 @@
-"""第1資料 3節・4節: splitting the traction, and the effective normal stress.
+"""第1章 3節・4節: splitting the traction, and the effective normal stress.
 
 Uses the numbers of 6節's worked example: sigma_n = 100 kPa, u = 40 kPa,
 tau = 30 kPa. The traction is drawn as the vector sum of its normal and

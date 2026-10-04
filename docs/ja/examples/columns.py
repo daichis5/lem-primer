@@ -168,7 +168,7 @@ def section_directions(col, d):
 
 
 def projected_directions(col, d):
-    """全体すべり方向 d を，各底面の接平面に射影した向き（第3資料 8.2節）．"""
+    """全体すべり方向 d を，各底面の接平面に射影した向き（第3章 8.2節）．"""
     p = d - (col.n @ d)[:, None] * col.n
     return p / np.linalg.norm(p, axis=1, keepdims=True)
 

@@ -1,4 +1,4 @@
-"""第2資料 4節: what Fellenius, simplified Bishop and simplified Janbu keep.
+"""第2章 4節: what Fellenius, simplified Bishop and simplified Janbu keep.
 
 The same slice as fig_01 in all three panels. Forces a method ignores are
 drawn faint and dashed. N follows from the balance each method uses:

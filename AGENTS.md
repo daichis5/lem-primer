@@ -20,29 +20,33 @@ but not stress tensors or LEM. The series depends on no analysis software.
 The Japanese edition (`docs/ja/`) is the source; the English edition
 (`docs/en/`) is under construction.
 
-After the three documents come three practice pages (実践編), where readers
-write the methods in Python with NumPy and check them with pytest. The code
-depends on no analysis software either; how a particular program such as LEM
-Lab maps onto it belongs in that program's documentation.
+The three documents are 第1章, 第2章 and 第3章, under the caption 理論編;
+the site as a whole is この資料 or このシリーズ. After them come three
+practice pages (実践編), where readers write the methods in Python with
+NumPy and check them with pytest. The code depends on no analysis software
+either; how a particular program such as LEM Lab maps onto it belongs in
+that program's documentation.
 
 ## Structure of a document
 
 - A document opens with its title (H1), its subtitle as one bold line (not a
   heading), a lead paragraph saying what the document does, and one line
   naming the documents it builds on:
-  「この資料は，[第1資料](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．」
-- The cards of the three documents and their questions, and the cards of
-  the practice pages, live on the home page (`index.md`) only: one
-  `grid-item-card` each, titled 第1資料　… or 実践1　…, with the question
-  or what the page's code computes (ending 〜を求める) as its text. Documents do not repeat them, and a
-  part (第1部 …) opens with its first section, not with a list of what it
-  covers.
+  「この章は，[第1章](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．」
+- The cards of the three documents and their questions, under 理論編, and
+  the cards of the practice pages, under 実践編, live on the home page
+  (`index.md`) only: one `grid-item-card` each, titled 第1章　… or
+  実践1　…, with the question or what the page's code computes (ending
+  〜を求める) as its text. Documents do not repeat them, and a part
+  opens with its first section, not with a list of what it covers.
 - A document ends with 確認問題 (see Review questions), then 次に読む, then
   参考文献 in the second and third. The third document's 次に読む points to
   実践1.
-- Headings are Japanese. Parts are 第1部, 第2部, …; sections keep their
-  numbers, and the text refers to one as 6節. Reference entries keep the
-  language of the work; where there is no DOI, the link text is 書誌情報.
+- Headings are Japanese. A part is an unnumbered `##` heading over numbered
+  sections: a 章 ranks below a 部 in Japanese books, so 第1部 inside 第2章
+  would read upside down. Sections keep their numbers, and the text refers
+  to one as 6節. Reference entries keep the language of the work; where
+  there is no DOI, the link text is 書誌情報.
 - Keep labels (`(section-6)=`) and equation labels as they are: they are
   link targets.
 
@@ -56,7 +60,7 @@ surface, one factor of safety.
 
 - A practice page opens like a document: title, subtitle, lead, a line
   naming the documents and earlier practice pages it builds on
-  (「この実践は，[第1資料](…)を読んだ前提で進める．」), and the glossary line.
+  (「この実践は，[第1章](…)を読んだ前提で進める．」), and the glossary line.
 - The body runs 作るもの (the problem and its numbers, and a table of the
   functions with the sections that write them), 準備 (the folder
   `lem-practice`, the commands, the downloads), numbered sections, 困ったとき
@@ -70,7 +74,7 @@ surface, one factor of safety.
 - Labels take the page's prefix: `infinite-`, `slices-`, `columns-`
   (`slices-section-3`).
 - Link each section of a document a practice page relies on, with the
-  glossary's link text: `[第1資料 3節](#section-3)`. Give the target heading
+  glossary's link text: `[第1章 3節](#section-3)`. Give the target heading
   a label if it has none.
 - Restate an equation from a document on the practice page, with its own
   label, rather than citing it with `{eq}`: equation numbers restart in each
@@ -126,18 +130,23 @@ compare a document with it.
 - In body text, end a cause with 〜からである and a purpose with
   〜ためである. Keep a cause and a purpose in separate sentences.
   Neighbouring sentences take turns with ので，, ため， and そのため，.
+- Where a document says how it is written or where something is in the
+  series, write the present, as Japanese textbooks do:
+  「用語と記号は，用語集にまとめている．」「補足には，…を書いている．」
+  (not まとめた，書いた). The past stays for what an earlier section or
+  document did (「第1章では，…を導いた」), and for a document's closing
+  look back at its own sections (「この章では，…を整理した」).
 - A parenthesis may stay mid-sentence when it is short and holds no ． and
   no link: a term (「単位面積あたりの力を，**表面力**（traction）という」)
   or a brief aside. A remark with its own ．, or a link, goes at the end of
   its clause or sentence, or in a sentence of its own.
 - Write the Japanese phrase, not the English one read through:
-  この資料 (not 本資料，本稿), 使う (not 用いる), 満たす (not 満足する),
-  違う (not 異なる), 確かめる (not 確認する), できる (not 可能である),
-  とき (not 場合，際), 次の (not 以下の), と・や (not および),
-  つまり (not すなわち), 〜のもとで・〜とき (not 〜の下で),
-  〜での・〜の (not 〜における), 〜ことがある (not 〜し得る),
-  決める (not 決定する). A cleft sentence (「重要なのは，…ことである」)
-  becomes the plain statement.
+  この章 (not 本章，本稿), 満たす (not 満足する), 違う (not 異なる),
+  確かめる (not 確認する), できる (not 可能である), とき (not 場合，際),
+  次の (not 以下の), と・や (not および), つまり (not すなわち),
+  〜のもとで・〜とき (not 〜の下で), 〜での・〜の (not 〜における),
+  〜ことがある (not 〜し得る), 決める (not 決定する). A cleft sentence
+  (「重要なのは，…ことである」) becomes the plain statement.
 - Between equations, say what was done (「これを $\tau_m$ について解くと」
   「式 {eq}`eq-start-mohr-coulomb` を入れると」) rather than したがって.
   A consequence in prose takes そのため， or つまり，.
@@ -151,7 +160,7 @@ compare a document with it.
 - Use the terms readers meet in Japanese textbooks and standards (the
   table below), and explain each where it first appears in a document.
 - Name what each word points to: which section (5節で見た, not 前節の),
-  which force, which document (第1資料, not 前資料).
+  which force, which document (第1章, not 前章).
 - Split a sentence past about 100 characters, not counting inline math, or
   one with a remark in parentheses inside a modifier, into two joined by a
   connective.
@@ -184,11 +193,11 @@ compare a document with it.
 | 滑動力 | 駆動力 | the pair of 抵抗力: $F_s$＝抵抗力／滑動力 |
 | 内力 | 内部力 | |
 | 簡便分割法 | 簡易分割法 | as in the Japanese title of Ugai et al. (1986) |
-| つり合いの一部だけを満たす方法 | 簡便法 | the class of Fellenius法, 簡易Bishop法 and 簡易Janbu法, set against 静力学的に完全な方法; Japanese standards use 簡便法 for Fellenius法 alone, so the word appears only where the text reports that usage (第2資料 4.1節, the glossary entry) |
+| つり合いの一部だけを満たす方法 | 簡便法 | the class of Fellenius法, 簡易Bishop法 and 簡易Janbu法, set against 静力学的に完全な方法; Japanese standards use 簡便法 for Fellenius法 alone, so the word appears only where the text reports that usage (第2章 4.1節, the glossary entry) |
 | テンションクラック（引張亀裂） | 張力亀裂 | |
 | 表面力 | traction | gloss （traction） at its first use |
 | 不静定性の解消 | closure, 力学的な未知量の決定 | gloss （closure） at its first use |
-| 第1資料，この資料，このシリーズ | 本資料，本稿，前資料，本シリーズ | |
+| 第1章，この章，この資料，このシリーズ | 本章，本稿，前章，本資料，本シリーズ | この章 is one document; この資料 and このシリーズ are the whole site |
 | LEMの各手法 | 各LEM | |
 | 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
 | 元の手法 | 原法 | |
@@ -246,9 +255,9 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   安全率
     $F_s$　factor of safety
 
-    （定義）（→[第1資料「LEMの全体像」](#overview)，[6節](#section-6)）
+    （定義）（→[第1章「LEMの全体像」](#overview)，[6節](#section-6)）
   ```
-- Link text names the document, then the section: 第1資料 6節, or the
+- Link text names the document, then the section: 第1章 6節, or the
   heading in 「」 for a section without a number, and 実践1 2節 for a
   practice page. A second section of the same document drops the document's
   name. Give each target heading a label, as for review questions. A linked
@@ -287,7 +296,7 @@ the figures again and fails if they differ from the committed files.
 
 - `scripts/figures/figlib.py` holds what the figures share: the colours, type
   sizes, arrowheads and math labels, plus the slope with its slip circle, the
-  slice of 第2資料 and a 3D projection.
+  slice of 第2章 and a 3D projection.
 - Compute geometry rather than place it by eye. A normal is perpendicular to
   its surface, a vector sum is drawn as one, and an arrow's length is
   proportional to its force. Where only the place of an unknown matters, as

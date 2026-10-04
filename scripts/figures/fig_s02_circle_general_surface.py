@@ -1,4 +1,4 @@
-"""第3資料 2節・3節: normals on a circle meet at its centre; on an ellipse
+"""第3章 2節・3節: normals on a circle meet at its centre; on an ellipse
 they do not.
 
 Left: a circular arc. Every base normal force N acts along the radius, so

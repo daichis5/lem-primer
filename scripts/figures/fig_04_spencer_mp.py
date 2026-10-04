@@ -1,4 +1,4 @@
-"""第2資料 5節: the interslice resultants of Spencer and Morgenstern–Price.
+"""第2章 5節: the interslice resultants of Spencer and Morgenstern–Price.
 
 Both panels use the same slices and the same E on each boundary. The
 resultant on boundary k leans at theta_k with tan(theta_k) = X/E: constant

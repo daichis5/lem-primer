@@ -34,7 +34,7 @@ dl.glossary > dd > p {
   margin: 0;
 }
 
-/* A link never breaks between 第1資料 and 6節. */
+/* A link never breaks between 第1章 and 6節. */
 dl.glossary > dd a {
   white-space: nowrap;
 }
