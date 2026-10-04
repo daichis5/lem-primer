@@ -17,8 +17,9 @@ Readers are civil-engineering students who have not studied LEM before: they
 know 土質力学 and 材料力学 (垂直応力，せん断応力，有効応力，Mohr–Coulomb則)
 but not stress tensors or LEM. The series depends on no analysis software.
 
-The Japanese edition (`docs/ja/`) is the source; the English edition
-(`docs/en/`) is under construction.
+The Japanese edition (`docs/ja/`) is the source. The English edition
+(`docs/en/`) is a translation of it at a recorded commit, and does not
+follow it; see English edition.
 
 The three documents are 第1章, 第2章 and 第3章, under the caption 理論編;
 the site as a whole is この資料 or このシリーズ. After them come three
@@ -264,8 +265,8 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   section explains the term; where none does, add the explanation to the
   text.
 - The English term is the one the English literature uses (slip surface,
-  interslice force, direction of sliding), in Oxford spelling (mobilized,
-  centre).
+  interslice force, direction of sliding), in American spelling
+  (mobilized, center), as in the English edition.
 - Keep the equations in a definition short: in the narrow column a long
   one breaks across lines. Link to the section that derives it instead.
 - In a definition, link each other term at its first mention with
@@ -288,9 +289,65 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   from that section, or LEM uses it more narrowly than 土質力学 or
   材料力学 do (内力).
 
+## English edition
+
+`docs/en/` translates `docs/ja/` page for page. It does not follow changes
+to the Japanese edition: a page is brought in line only when someone asks
+for it.
+
+- Each page's front matter records the Japanese commit it was translated
+  from and the date, and the page shows them under its title:
+
+  ```text
+  translated_from: f0982e4
+  translated_on: 2026-10-04
+  ```
+
+  To bring a page in line, read `git diff <translated_from>..HEAD --
+  docs/ja/<page>.md`, change the English to match, and record the new
+  commit and date.
+- A page keeps its Japanese counterpart's file name, labels, equation
+  labels and figure names: the language switcher pairs pages by file name,
+  and the same labels keep the diff readable.
+- The figures are not translations: `make figures` writes both
+  `docs/ja/figures/` and `docs/en/figures/` from the same scripts, so a
+  change to a figure reaches both editions at once. The practice code is a
+  copy: `docs/en/examples/` has English docstrings, comments and printed
+  text, and the Japanese code's names (`centres`, `fellenius`), so the two
+  copies diff cleanly. `make examples` runs both.
+- Write plain American English for the same readers: present tense, no
+  "we", short sentences. Spell in American English (center, analyze,
+  modeling, behavior, color) in prose; code keeps its names.
+- Names of the parts:
+
+  | Japanese | English |
+  |---|---|
+  | 第1章，この章 | Chapter 1, this chapter |
+  | この資料，このシリーズ | this primer |
+  | 6節，第1章 6節 | Section 6, Chapter 1, Section 6 |
+  | 理論編，実践編，付録 | Theory, Practice, Appendix |
+  | 実践1，この実践 | Practice 1, this practice |
+  | 用語集 | Glossary |
+  | 確認問題，次に読む，参考文献 | Review questions, What to read next, References |
+  | （計算してみよう），（やってみよう） | (Calculate), (Try it) |
+  | 補足A | Supplement A |
+
+- Terms are the glossary's English terms (the first paragraph of each entry
+  in `docs/ja/lem-glossary.md`), in American spelling. The English
+  glossary names each entry by its term, lower case but for proper names
+  (`factor of safety`, `Mohr–Coulomb criterion`), and `{term}` roles use
+  those names. Method names follow the English literature: Fellenius method
+  (ordinary method of slices), simplified Bishop method, simplified Janbu
+  method, Spencer method, Morgenstern–Price method.
+- The structure rules above hold in English too: the opening (title, bold
+  subtitle, lead, the line naming the chapters it builds on), the review
+  questions (opened by "Click a question to see its answer."), the glossary
+  links on first use, and the link texts (Chapter 1, Section 6).
+
 ## Figures
 
-Each SVG in `docs/ja/figures/` is written by a script in `scripts/figures/`.
+Each SVG in `docs/ja/figures/` and `docs/en/figures/` is written by a script
+in `scripts/figures/`.
 Edit the script and run `make figures`; never edit an SVG by hand. CI writes
 the figures again and fails if they differ from the committed files.
 
