@@ -126,17 +126,21 @@ compare a document with it.
 - In body text, end a cause with 〜からである and a purpose with
   〜ためである. Keep a cause and a purpose in separate sentences.
   Neighbouring sentences take turns with ので，, ため， and そのため，.
+- Where a document says how it is written or where something is in the
+  series, write the present, as Japanese textbooks do:
+  「用語と記号は，用語集にまとめている．」「補足には，…を書いている．」
+  (not まとめた，書いた). The past stays for what an earlier section or
+  document did: 「第1資料では，…を導いた」.
 - A parenthesis may stay mid-sentence when it is short and holds no ． and
   no link: a term (「単位面積あたりの力を，**表面力**（traction）という」)
   or a brief aside. A remark with its own ．, or a link, goes at the end of
   its clause or sentence, or in a sentence of its own.
 - Write the Japanese phrase, not the English one read through:
-  この資料 (not 本資料，本稿), 使う (not 用いる), 満たす (not 満足する),
-  違う (not 異なる), 確かめる (not 確認する), できる (not 可能である),
-  とき (not 場合，際), 次の (not 以下の), と・や (not および),
-  つまり (not すなわち), 〜のもとで・〜とき (not 〜の下で),
-  〜での・〜の (not 〜における), 〜ことがある (not 〜し得る),
-  決める (not 決定する). A cleft sentence (「重要なのは，…ことである」)
+  この資料 (not 本資料，本稿), 満たす (not 満足する), 違う (not 異なる),
+  確かめる (not 確認する), できる (not 可能である), とき (not 場合，際),
+  次の (not 以下の), と・や (not および), つまり (not すなわち),
+  〜のもとで・〜とき (not 〜の下で), 〜での・〜の (not 〜における),
+  〜ことがある (not 〜し得る), 決める (not 決定する). A cleft sentence (「重要なのは，…ことである」)
   becomes the plain statement.
 - Between equations, say what was done (「これを $\tau_m$ について解くと」
   「式 {eq}`eq-start-mohr-coulomb` を入れると」) rather than したがって.
