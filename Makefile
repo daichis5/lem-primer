@@ -21,7 +21,7 @@ PORT ?= 8000
 # Which edition ``make open`` shows; ``make open EDITION=en`` for the other one.
 EDITION ?= ja
 
-.PHONY: help ja en all clean linkcheck open preview serve
+.PHONY: help ja en all clean linkcheck open preview serve figures
 
 help:
 	@echo "Usage:"
@@ -32,6 +32,7 @@ help:
 	@echo "  make preview    # Build both, then open $(SITEDIR)/$(EDITION)/ (no server)"
 	@echo "  make serve      # Build, serve on http://localhost:$(PORT)/, and open it"
 	@echo "  make linkcheck  # Check external links in both editions"
+	@echo "  make figures    # Write docs/ja/figures/*.svg from scripts/figures/"
 	@echo "  make clean      # Remove built files"
 	@echo ""
 	@echo "Chain goals to build and look in one step, e.g. 'make ja open'."
@@ -93,6 +94,12 @@ serve: all
 	@echo "Serving $(SITEDIR) at http://localhost:$(PORT)/ - Ctrl-C to stop"
 	@( sleep 1; $(BROWSER) "http://localhost:$(PORT)/" >/dev/null 2>&1 & )
 	@python3 -m http.server $(PORT) --directory "$(SITEDIR)" --bind 127.0.0.1
+
+# Every SVG under docs/ja/figures is written by a script under scripts/figures;
+# the scripts use only the standard library, so any python3 will do.
+figures:
+	@for f in scripts/figures/fig_*.py; do python3 "$$f" >/dev/null || exit 1; done
+	@echo "Figures written to docs/ja/figures/"
 
 linkcheck:
 	$(SPHINXBUILD) -b linkcheck docs/ja "$(SITEDIR)/../_build/linkcheck-ja" $(SPHINXOPTS)

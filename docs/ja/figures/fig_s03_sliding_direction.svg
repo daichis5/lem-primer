@@ -1,52 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="790" viewBox="0 0 1400 790" role="img" aria-labelledby="title desc">
-  <title id="title">3次元のLEMでの，全体すべり方向と底面の局所すべり方向</title>
-  <desc id="desc">平面上のすべり面主軸と全体すべり方向を区別し，全体の方向をカラムの底面の接平面へ射影して局所すべり方向を求め，抵抗せん断力をその反対向きに定める．</desc>
-  <defs>
-    <marker id="red" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d64545"/></marker>
-    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
-    <marker id="purple" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7c3aed"/></marker>
-    <marker id="gray" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
-    <style>
-      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 21px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 17px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
-    </style>
-  </defs>
-  <rect width="1400" height="790" fill="#fff"/>
-  <text x="700" y="48" text-anchor="middle" class="title">全体すべり方向の仮定は，底面せん断力ベクトルの方向を決める</text>
-
-  <rect x="45" y="88" width="520" height="610" rx="18" class="panel"/>
-  <text x="305" y="132" text-anchor="middle" class="head">1　平面上で全体方向を定める</text>
-  <ellipse cx="305" cy="380" rx="190" ry="112" transform="rotate(-18 305 380)" fill="#f4e7c5" stroke="#8b7355" stroke-width="3"/>
-  <ellipse cx="305" cy="380" rx="148" ry="80" transform="rotate(-18 305 380)" fill="none" stroke="#586174" stroke-width="3" stroke-dasharray="9 7"/>
-  <line x1="155" y1="430" x2="453" y2="331" stroke="#7c3aed" stroke-width="4" marker-end="url(#purple)"/>
-  <text x="420" y="312" class="label" fill="#7c3aed">すべり面の主軸</text>
-  <line x1="305" y1="380" x2="490" y2="425" stroke="#d64545" stroke-width="7" marker-end="url(#red)"/>
-  <text x="466" y="462" class="math" fill="#d64545">d</text>
-  <text x="305" y="555" text-anchor="middle" class="small">主軸方向と全体すべり方向 d は，</text>
-  <text x="305" y="581" text-anchor="middle" class="small">関係はあっても，同じとは限らない</text>
-  <g transform="translate(122 168)"><line x1="0" y1="55" x2="74" y2="55" stroke="#172033" stroke-width="3" marker-end="url(#gray)"/><text x="83" y="61" class="math">x</text><line x1="0" y1="55" x2="0" y2="0" stroke="#172033" stroke-width="3" marker-end="url(#gray)"/><text x="10" y="9" class="math">y</text></g>
-
-  <line x1="590" y1="390" x2="678" y2="390" stroke="#64748b" stroke-width="5" marker-end="url(#gray)"/>
-  <text x="634" y="360" text-anchor="middle" class="small">底面へ射影</text>
-
-  <rect x="702" y="88" width="653" height="610" rx="18" class="panel"/>
-  <text x="1028" y="132" text-anchor="middle" class="head">2　各カラム底面で局所方向を作る</text>
-  <polygon points="820,475 1065,357 1240,447 995,570" fill="#dbeafe" fill-opacity="0.72" stroke="#586174" stroke-width="4"/>
-  <circle cx="1025" cy="456" r="7" fill="#172033"/>
-  <line x1="1025" y1="456" x2="1102" y2="257" stroke="#2563eb" stroke-width="6" marker-end="url(#blue)"/>
-  <text x="1110" y="250" class="math" fill="#2563eb">n<tspan baseline-shift="sub" font-size="14">i</tspan></text>
-  <line x1="1025" y1="456" x2="1202" y2="430" stroke="#d64545" stroke-width="4" stroke-dasharray="9 7" marker-end="url(#red)"/>
-  <text x="1194" y="408" class="math" fill="#d64545">d</text>
-  <line x1="1025" y1="456" x2="1168" y2="493" stroke="#d64545" stroke-width="8" marker-end="url(#red)"/>
-  <text x="1168" y="526" class="math" fill="#d64545">m<tspan baseline-shift="sub" font-size="14">i</tspan></text>
-  <line x1="1025" y1="456" x2="885" y2="420" stroke="#7c3aed" stroke-width="8" marker-end="url(#purple)"/>
-  <text x="770" y="408" class="math" fill="#7c3aed">T<tspan baseline-shift="sub" font-size="14">i</tspan> = −‖T<tspan baseline-shift="sub" font-size="14">i</tspan>‖m<tspan baseline-shift="sub" font-size="14">i</tspan></text>
-  <path d="M1202 430 Q1190 468 1168 493" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="1227" y="477" class="small">接平面への射影</text>
-
-  <rect x="773" y="568" width="510" height="88" rx="12" fill="#fff" stroke="#cbd5e1"/>
-  <text x="1028" y="602" text-anchor="middle" class="math">p<tspan baseline-shift="sub" font-size="14">i</tspan> = (I − n<tspan baseline-shift="sub" font-size="14">i</tspan>n<tspan baseline-shift="sub" font-size="14">i</tspan><tspan baseline-shift="super" font-size="14">T</tspan>)d</text>
-  <text x="1028" y="636" text-anchor="middle" class="math">m<tspan baseline-shift="sub" font-size="14">i</tspan> = p<tspan baseline-shift="sub" font-size="14">i</tspan> / ‖p<tspan baseline-shift="sub" font-size="14">i</tspan>‖</text>
-
-  <rect x="190" y="722" width="1020" height="44" rx="10" fill="#fff7ed" stroke="#fdba74"/>
-  <text x="700" y="750" text-anchor="middle" class="label">m<tspan baseline-shift="sub" font-size="12">i</tspan> を変えると，T<tspan baseline-shift="sub" font-size="12">i</tspan> の各成分，N<tspan baseline-shift="sub" font-size="12">i</tspan>，カラム間力，モーメント，安全率も変わる</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" role="img" aria-labelledby="title desc">
+  <title id="title">全体すべり方向と，カラムの底面での局所すべり方向</title>
+  <desc id="desc">左は平面図で，すべり面の長軸と全体すべり方向 d が一致するとは限らないことを示す．右は1つのカラムの底面の接平面で，d を接平面に射影したベクトル p を計算して描く．局所すべり方向 m は p の向きの単位ベクトルで，底面のせん断力 T はその逆向きに働く．</desc>
+  <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="380" fill="#fff"/>
+  <polygon points="294.2,141 292.6,135.8 290.4,130.8 287.6,126 284.2,121.4 280.3,117 275.8,112.9 270.8,109.1 265.3,105.6 259.4,102.5 253,99.6 246.2,97.2 239.1,95 231.6,93.3 223.8,91.9 215.8,91 207.5,90.4 199,90.2 190.4,90.5 181.7,91.1 173,92.1 164.2,93.5 155.5,95.3 146.8,97.4 138.3,100 129.9,102.8 121.6,106.1 113.7,109.6 106,113.4 98.6,117.6 91.6,121.9 84.9,126.6 78.7,131.4 72.9,136.5 67.6,141.7 62.7,147.1 58.4,152.6 54.7,158.2 51.5,163.8 48.9,169.5 46.8,175.2 45.4,180.9 44.6,186.6 44.4,192.1 44.8,197.6 45.8,203 47.4,208.2 49.6,213.2 52.4,218 55.8,222.6 59.7,227 64.2,231.1 69.2,234.9 74.7,238.4 80.6,241.5 87,244.4 93.8,246.8 100.9,249 108.4,250.7 116.2,252.1 124.2,253 132.5,253.6 141,253.8 149.6,253.5 158.3,252.9 167,251.9 175.8,250.5 184.5,248.7 193.2,246.6 201.7,244 210.1,241.2 218.4,237.9 226.3,234.4 234,230.6 241.4,226.4 248.4,222.1 255.1,217.4 261.3,212.6 267.1,207.5 272.4,202.3 277.3,196.9 281.6,191.4 285.3,185.8 288.5,180.2 291.1,174.5 293.2,168.8 294.6,163.1 295.4,157.4 295.6,151.9 295.2,146.4" fill="#f4e7c5" stroke="#172033" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="24.5" y1="208.3" x2="315.5" y2="135.7" stroke="#172033" stroke-width="1.3" stroke-dasharray="8 5" stroke-linecap="round"/>
+  <text x="307.5" y="123.7" class="t" font-size="13" fill="#172033" text-anchor="start">長軸</text>
+  <line x1="170" y1="172" x2="260.4" y2="212.3" stroke="#64748b" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="butt"/>
+  <polygon points="265,214.3 251.2,214.6 256,203.8" fill="#64748b" stroke-linejoin="round"/>
+  <text x="271" y="228.3" class="m" font-size="17" fill="#64748b" text-anchor="start"><tspan font-style="italic" font-weight="bold">d</tspan></text>
+  <line x1="170" y1="172" x2="240" y2="172" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 3" stroke-linecap="round"/>
+  <path d="M217.5 193.2 A52 52 0 0 0 222 172" fill="none" stroke="#475569" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="228" y="196" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">θ</tspan></text>
+  <circle cx="170" cy="172" r="3" fill="#172033"/>
+  <text x="170" y="336" class="t" font-size="13" fill="#475569" text-anchor="middle">平面図：長軸と全体すべり方向</text>
+  <polygon points="360.6,169.3 636.6,307.3 735.4,222.7 459.4,84.7" fill="#ece4d0" stroke="#c9b88f" stroke-width="1.3" stroke-linejoin="round"/>
+  <text x="360.6" y="183.1" class="t" font-size="13" fill="#475569" text-anchor="start">底面の接平面</text>
+  <line x1="548" y1="196" x2="518.5" y2="263" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="517.2,266 516.9,256.8 524.2,260" fill="#64748b" stroke-linejoin="round"/>
+  <text x="525.2" y="274" class="m" font-size="16" fill="#64748b" text-anchor="start"><tspan font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="643.9" y1="213.4" x2="620.4" y2="266.9" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="2 3" stroke-linecap="round"/>
+  <line x1="548" y1="196" x2="639.3" y2="212.6" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="butt"/>
+  <polygon points="643.9,213.4 631.3,216.8 633.3,205.8" fill="#64748b" stroke-linejoin="round"/>
+  <text x="651.9" y="211.4" class="m" font-size="17" fill="#64748b" text-anchor="start"><tspan font-style="italic" font-weight="bold">d</tspan></text>
+  <line x1="548" y1="196" x2="616.6" y2="263.3" stroke="#475569" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="620.4,266.9 606.6,262.2 615.3,253.3" fill="#475569" stroke-linejoin="round"/>
+  <text x="628.4" y="280.9" class="m" font-size="17" fill="#475569" text-anchor="start"><tspan font-style="italic" font-weight="bold">p</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="548" y1="196" x2="484.1" y2="133.3" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="480.1,129.5 494.5,134.5 485.4,143.8" fill="#14916a" stroke-linejoin="round"/>
+  <text x="472.1" y="123.5" class="m" font-size="17" fill="#14916a" text-anchor="end"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <circle cx="548" cy="196" r="3" fill="#172033"/>
+  <text x="560" y="322" class="m" font-size="16" fill="#172033" text-anchor="middle"><tspan font-style="italic" font-weight="bold">p</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-4.5" font-style="normal"> = (</tspan><tspan font-style="italic" font-weight="bold">I</tspan><tspan font-style="normal"> − </tspan><tspan font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-4.5" font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-11.2" font-size="11.2" font-style="normal">T</tspan><tspan dy="6.7" font-style="normal">)</tspan><tspan font-style="italic" font-weight="bold">d</tspan><tspan font-style="normal">，　</tspan><tspan font-style="italic" font-weight="bold">m</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-4.5" font-style="normal"> = </tspan><tspan font-style="italic" font-weight="bold">p</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-4.5" font-style="normal"> / ‖</tspan><tspan font-style="italic" font-weight="bold">p</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan><tspan dy="-4.5" font-style="normal">‖</tspan></text>
+  <line x1="350" y1="20" x2="350" y2="360" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 </svg>

@@ -1,54 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
-  <title id="title">円弧面と一般形状の面での，底面垂直力の違い</title>
-  <desc id="desc">円弧面では，底面垂直力の作用線が共通の中心に集まる．楕円や複合面では一般に1点に集まらないので，垂直力のモーメントを考えなければならない．</desc>
-  <defs>
-    <marker id="blue" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
-    <marker id="orange" viewBox="0 0 10 10" markerWidth="3" markerHeight="3" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d97706"/></marker>
-    <style>
-      .title{font:700 28px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.head{font:700 22px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.label{font:600 17px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#172033}.small{font:500 15px "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#475569}.math{font:italic 22px Georgia,"Times New Roman",serif;fill:#172033}.panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}
-    </style>
-  </defs>
-  <rect width="1400" height="760" fill="#fff"/>
-  <text x="700" y="48" text-anchor="middle" class="title">一般形状でも計算できるが，円弧に固有の単純化は失われる</text>
-
-  <rect x="45" y="88" width="620" height="590" rx="18" class="panel"/>
-  <text x="355" y="132" text-anchor="middle" class="head">円弧すべり面</text>
-  <circle cx="355" cy="262" r="8" fill="#172033"/>
-  <text x="372" y="253" class="math">O</text>
-  <path d="M128 274 C222 565 496 603 590 274" fill="#f4e7c5" fill-opacity="0.72" stroke="#8b7355" stroke-width="2"/>
-  <path d="M128 274 C222 565 496 603 590 274" fill="none" stroke="#586174" stroke-width="6"/>
-  <line x1="208" y1="456" x2="328" y2="293" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="355" y1="535" x2="355" y2="301" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="500" y1="452" x2="383" y2="292" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="355" y1="262" x2="208" y2="456" stroke="#64748b" stroke-width="2" stroke-dasharray="7 6"/>
-  <text x="265" y="347" class="math">R</text>
-  <text x="208" y="486" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">1</tspan></text>
-  <text x="355" y="565" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">2</tspan></text>
-  <text x="500" y="482" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">3</tspan></text>
-  <rect x="145" y="579" width="420" height="62" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
-  <text x="355" y="617" text-anchor="middle" class="math">r<tspan baseline-shift="sub" font-size="14">i</tspan> × N<tspan baseline-shift="sub" font-size="14">i</tspan> = 0　（中心 O まわり）</text>
-
-  <rect x="735" y="88" width="620" height="590" rx="18" class="panel"/>
-  <text x="1045" y="132" text-anchor="middle" class="head">楕円・複合・任意形状のすべり面</text>
-  <circle cx="1000" cy="235" r="8" fill="#172033"/>
-  <text x="1017" y="227" class="math">O</text>
-  <path d="M785 280 C842 470 930 567 1040 535 C1133 508 1186 410 1300 292" fill="#f4e7c5" fill-opacity="0.72" stroke="#8b7355" stroke-width="2"/>
-  <path d="M785 280 C842 470 930 567 1040 535 C1133 508 1186 410 1300 292" fill="none" stroke="#586174" stroke-width="6"/>
-  <line x1="846" y1="432" x2="817" y2="338" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="984" y1="540" x2="965" y2="426" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="1175" y1="432" x2="1244" y2="356" stroke="#2563eb" stroke-width="5" marker-end="url(#blue)"/>
-  <line x1="1000" y1="235" x2="846" y2="432" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
-  <line x1="1000" y1="235" x2="984" y2="540" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
-  <line x1="1000" y1="235" x2="1175" y2="432" stroke="#d97706" stroke-width="2" stroke-dasharray="7 6"/>
-  <path d="M968 326 A115 115 0 0 1 1013 347" fill="none" stroke="#d97706" stroke-width="4" marker-end="url(#orange)"/>
-  <text x="1020" y="332" class="math" fill="#d97706">M<tspan baseline-shift="sub" font-size="14">O</tspan>(N<tspan baseline-shift="sub" font-size="14">i</tspan>)</text>
-  <text x="846" y="462" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">1</tspan></text>
-  <text x="984" y="570" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">2</tspan></text>
-  <text x="1175" y="462" text-anchor="middle" class="math" fill="#2563eb">N<tspan baseline-shift="sub" font-size="14">3</tspan></text>
-  <rect x="835" y="579" width="420" height="62" rx="10" fill="#fff7ed" stroke="#fdba74"/>
-  <text x="1045" y="617" text-anchor="middle" class="math">r<tspan baseline-shift="sub" font-size="14">i</tspan> × N<tspan baseline-shift="sub" font-size="14">i</tspan> ≠ 0　（一般に）</text>
-
-  <line x1="684" y1="150" x2="684" y2="642" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8"/>
-  <text x="355" y="709" text-anchor="middle" class="small">共通中心と共通半径により，モーメント式を単純化できる</text>
-  <text x="1045" y="709" text-anchor="middle" class="small">各底面の垂直力とモーメントの腕を個別に扱う</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="title desc">
+  <title id="title">円弧のすべり面と楕円のすべり面での，底面垂直力の向き</title>
+  <desc id="desc">左の円弧では，底面垂直力の作用線がすべて中心 O を通るので，O まわりのモーメントは0になる．底面のせん断力の腕は，どれも半径 R である．右の楕円では，作用線が中心 O′ を通らない．そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の向きが，O′ まわりの回転の速度の向きと一致しない．</desc>
+  <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="350" fill="#fff"/>
+  <polygon points="55.5,126.9 57.7,131.4 60.1,135.8 62.6,140.2 65.2,144.4 68,148.6 71,152.7 74.1,156.6 77.3,160.5 80.7,164.2 84.2,167.8 87.8,171.3 91.5,174.7 95.4,177.9 99.3,181 103.4,184 107.6,186.8 111.8,189.4 116.2,191.9 120.6,194.3 125.1,196.5 129.7,198.6 134.4,200.4 139.1,202.2 143.9,203.7 148.7,205.1 153.6,206.3 158.5,207.4 163.5,208.2 168.5,208.9 173.4,209.5 178.5,209.8 183.5,210 188.5,210 193.5,209.8 198.6,209.5 203.5,208.9 208.5,208.2 213.5,207.4 218.4,206.3 223.3,205.1 228.1,203.7 232.9,202.2 237.6,200.4 242.3,198.6 246.9,196.5 251.4,194.3 255.8,191.9 260.2,189.4 264.4,186.8 268.6,184 272.7,181 276.6,177.9 280.5,174.7 284.2,171.3 287.8,167.8 291.3,164.2 294.7,160.5 297.9,156.6 301,152.7 304,148.6 306.8,144.4 309.4,140.2 311.9,135.8 314.3,131.4 316.5,126.9" fill="#f4e7c5" stroke-linejoin="round"/>
+  <polyline points="55.5,126.9 57.7,131.4 60.1,135.8 62.6,140.2 65.2,144.4 68,148.6 71,152.7 74.1,156.6 77.3,160.5 80.7,164.2 84.2,167.8 87.8,171.3 91.5,174.7 95.4,177.9 99.3,181 103.4,184 107.6,186.8 111.8,189.4 116.2,191.9 120.6,194.3 125.1,196.5 129.7,198.6 134.4,200.4 139.1,202.2 143.9,203.7 148.7,205.1 153.6,206.3 158.5,207.4 163.5,208.2 168.5,208.9 173.4,209.5 178.5,209.8 183.5,210 188.5,210 193.5,209.8 198.6,209.5 203.5,208.9 208.5,208.2 213.5,207.4 218.4,206.3 223.3,205.1 228.1,203.7 232.9,202.2 237.6,200.4 242.3,198.6 246.9,196.5 251.4,194.3 255.8,191.9 260.2,189.4 264.4,186.8 268.6,184 272.7,181 276.6,177.9 280.5,174.7 284.2,171.3 287.8,167.8 291.3,164.2 294.7,160.5 297.9,156.6 301,152.7 304,148.6 306.8,144.4 309.4,140.2 311.9,135.8 314.3,131.4 316.5,126.9" fill="none" stroke="#172033" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="106.3" y1="115.8" x2="186" y2="66" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="63.9" y1="142.3" x2="101.8" y2="118.6" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="106.3,115.8 98.4,128 91.8,117.5" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="136.2" y1="145.7" x2="186" y2="66" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="109.7" y1="188.1" x2="133.4" y2="150.2" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="136.2,145.7 134.5,160.2 124,153.6" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="182.7" y1="159.9" x2="186" y2="66" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="181" y1="209.9" x2="182.5" y2="165.2" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="182.7,159.9 188.5,173.3 176.1,172.9" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="233" y1="147.4" x2="186" y2="66" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="258" y1="190.7" x2="235.6" y2="152" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="233,147.4 244.9,155.7 234.2,161.9" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="258" y1="190.7" x2="293.3" y2="170.3" stroke="#14916a" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="297.8,167.7 289.5,179.7 283.3,168.9" fill="#14916a" stroke-linejoin="round"/>
+  <text x="298" y="216.7" class="m" font-size="16" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <polyline points="253.5,182.9 261.3,178.4 265.8,186.2" fill="none" stroke="#475569" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="263.9" y1="118.6" x2="186" y2="66" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="305.4" y1="146.5" x2="268.3" y2="121.5" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="263.9,118.6 278.3,120.8 271.4,131.1" fill="#2563eb" stroke-linejoin="round"/>
+  <circle cx="186" cy="66" r="4" fill="#172033"/>
+  <text x="194" y="60" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">O</tspan></text>
+  <text x="224" y="128.7" class="m" font-size="16" fill="#475569" text-anchor="start"><tspan font-style="italic">R</tspan></text>
+  <text x="57.9" y="164.3" class="m" font-size="16" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <text x="186" y="282" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">作用線はすべて </tspan><tspan font-style="italic">O</tspan><tspan font-style="normal" class="t" font-size="14"> を通る</tspan></text>
+  <text x="186" y="305" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="italic">M</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">O</tspan><tspan dy="-4.2" font-style="normal">(</tspan><tspan font-style="italic">N</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">i</tspan><tspan dy="-4.2" font-style="normal">) = 0</tspan></text>
+  <text x="186" y="328" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">せん断力の腕は，どれも </tspan><tspan font-style="italic">R</tspan></text>
+  <polygon points="424.1,99.8 426.1,102.6 428.3,105.4 430.6,108.1 433.2,110.8 435.9,113.5 438.7,116.1 441.8,118.6 445,121.1 448.3,123.6 451.8,125.9 455.5,128.2 459.3,130.4 463.2,132.6 467.3,134.7 471.5,136.6 475.8,138.6 480.2,140.4 484.8,142.1 489.5,143.8 494.2,145.3 499.1,146.8 504.1,148.2 509.1,149.5 514.3,150.7 519.4,151.8 524.7,152.7 530,153.6 535.4,154.4 540.8,155.1 546.3,155.7 551.8,156.2 557.3,156.5 562.9,156.8 568.4,156.9 574,157 579.6,156.9 585.1,156.8 590.7,156.5 596.2,156.2 601.7,155.7 607.2,155.1 612.6,154.4 618,153.6 623.3,152.7 628.6,151.8 633.7,150.7 638.9,149.5 643.9,148.2 648.9,146.8 653.8,145.3 658.5,143.8 663.2,142.1 667.8,140.4 672.2,138.6 676.5,136.6 680.7,134.7 684.8,132.6 688.7,130.4 692.5,128.2 696.2,125.9 699.7,123.6 703,121.1 706.2,118.6 709.3,116.1 712.1,113.5 714.8,110.8 717.4,108.1 719.7,105.4 721.9,102.6 723.9,99.8" fill="#f4e7c5" stroke-linejoin="round"/>
+  <polyline points="424.1,99.8 426.1,102.6 428.3,105.4 430.6,108.1 433.2,110.8 435.9,113.5 438.7,116.1 441.8,118.6 445,121.1 448.3,123.6 451.8,125.9 455.5,128.2 459.3,130.4 463.2,132.6 467.3,134.7 471.5,136.6 475.8,138.6 480.2,140.4 484.8,142.1 489.5,143.8 494.2,145.3 499.1,146.8 504.1,148.2 509.1,149.5 514.3,150.7 519.4,151.8 524.7,152.7 530,153.6 535.4,154.4 540.8,155.1 546.3,155.7 551.8,156.2 557.3,156.5 562.9,156.8 568.4,156.9 574,157 579.6,156.9 585.1,156.8 590.7,156.5 596.2,156.2 601.7,155.7 607.2,155.1 612.6,154.4 618,153.6 623.3,152.7 628.6,151.8 633.7,150.7 638.9,149.5 643.9,148.2 648.9,146.8 653.8,145.3 658.5,143.8 663.2,142.1 667.8,140.4 672.2,138.6 676.5,136.6 680.7,134.7 684.8,132.6 688.7,130.4 692.5,128.2 696.2,125.9 699.7,123.6 703,121.1 706.2,118.6 709.3,116.1 712.1,113.5 714.8,110.8 717.4,108.1 719.7,105.4 721.9,102.6 723.9,99.8" fill="none" stroke="#172033" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="473.2" y1="79.8" x2="498.9" y2="48" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="441.8" y1="118.6" x2="469.9" y2="83.9" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="473.2,79.8 469.8,93.9 460.1,86.1" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="509.3" y1="97.7" x2="524.9" y2="48" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="494.2" y1="145.3" x2="507.7" y2="102.7" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="509.3,97.7 511.2,112.1 499.4,108.3" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="574" y1="70" x2="523" y2="53.9" stroke="#172033" stroke-width="1.4" stroke-linecap="round"/>
+  <polyline points="531.6,56.7 528.9,65.2 520.3,62.5" fill="none" stroke="#475569" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="544.5" y="54" class="m" font-size="16" fill="#172033" text-anchor="end"><tspan font-style="italic">d</tspan></text>
+  <text x="486.2" y="165.3" class="m" font-size="16" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="551.1" y1="105.9" x2="556.7" y2="48" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="546.3" y1="155.7" x2="550.6" y2="111.1" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="551.1,105.9 556,119.6 543.7,118.4" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="627.1" y1="100.9" x2="614.2" y2="48" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round"/>
+  <line x1="638.9" y1="149.5" x2="628.3" y2="106" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="627.1,100.9 636.2,112.2 624.2,115.1" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="619.4" y1="154.2" x2="697.2" y2="135.3" stroke="#64748b" stroke-width="1.3" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <line x1="638.9" y1="149.5" x2="674" y2="120.8" stroke="#475569" stroke-width="2" stroke-linecap="butt"/>
+  <polygon points="677.6,117.9 672,129.7 664.9,121" fill="#475569" stroke-linejoin="round"/>
+  <text x="673.6" y="109.9" class="t" font-size="13" fill="#475569" text-anchor="middle">回転の速度</text>
+  <text x="701.2" y="151.3" class="t" font-size="13" fill="#64748b" text-anchor="start">接線</text>
+  <circle cx="574" cy="70" r="4" fill="#172033"/>
+  <text x="582" y="64" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">O</tspan><tspan font-style="normal">′</tspan></text>
+  <text x="574" y="282" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">作用線は </tspan><tspan font-style="italic">O</tspan><tspan font-style="normal">′</tspan><tspan font-style="normal" class="t" font-size="14"> を通らない</tspan></text>
+  <text x="574" y="305" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="italic">M</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">O</tspan><tspan font-size="10.5" font-style="normal">′</tspan><tspan dy="-4.2" font-style="normal">(</tspan><tspan font-style="italic">N</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">i</tspan><tspan dy="-4.2" font-style="normal">) = </tspan><tspan font-style="italic">N</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">i</tspan><tspan dy="-4.2" font-style="normal"> </tspan><tspan font-style="italic">d</tspan><tspan font-style="normal"> ≠ 0</tspan></text>
+  <text x="574" y="328" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">接線と，</tspan><tspan font-style="italic">O</tspan><tspan font-style="normal">′</tspan><tspan font-style="normal" class="t" font-size="14"> まわりの回転の速度の向きが違う</tspan></text>
+  <line x1="380" y1="20" x2="380" y2="330" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 </svg>
