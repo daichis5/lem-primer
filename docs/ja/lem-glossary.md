@@ -166,7 +166,7 @@ Mohr–Coulomb則
 つり合いの一部だけを満たす方法
   simplified method
 
-  {term}`内力`の一部を無視し，つり合い条件の一部だけを満たす手法の総称．Fellenius法，簡易Bishop法，簡易Janbu法など．日本の基準や実務の資料でいう簡便法は，このうちのFellenius法（簡便分割法）だけを指すことが多い（→[第2資料 4節](#what-section-4)，[6節](#what-section-6)）
+  {term}`内力`の一部またはすべてを無視し，つり合い条件の一部だけを満たす手法の総称．Fellenius法，簡易Bishop法，簡易Janbu法など．日本の基準や実務の資料でいう簡便法は，このうちのFellenius法（簡便分割法）だけを指すことが多い（→[第2資料 4節](#what-section-4)，[6節](#what-section-6)）
 
 静力学的に完全な方法
   complete equilibrium method
