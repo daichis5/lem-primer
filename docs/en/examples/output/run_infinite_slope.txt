@@ -1,0 +1,25 @@
+1. dry slope, beta = 30 deg, z = 5 m
+   sigma_n = 67.50 kPa, tau = 38.97 kPa, Fs = 1.257
+2. the base of section 6, document 1
+   beta = 16.70 deg, w = 109.0 kPa: sigma_n = 100.00 kPa, tau = 30.00 kPa
+   u = 40 kPa: Fs = 1.488
+   u = 60 kPa: Fs = 1.103
+3. water table at the ground surface, beta = 30 deg, z = 5 m
+   sigma_n = 75.00 kPa, tau = 43.30 kPa
+   parallel: u = 36.79 kPa, sigma_n - u =  38.21 kPa, Fs = 0.740
+   vertical: u = 49.05 kPa, sigma_n - u =  25.95 kPa, Fs = 0.577
+4. effective normal stress with the water table at the surface, z = 5 m [kPa]
+   beta  parallel  vertical
+     30     38.21     25.95
+     40     29.90      9.63
+     45     25.47      0.95
+     50     21.05     -7.73
+   vertical rule: sigma_n - u = 0 at beta = 45.5 deg
+5. depth of the slip plane, beta = 30 deg, water table 2 m below the surface
+   z [m]   dry   parallel  vertical
+     1.0  2.283     2.283     2.283
+     2.0  1.642     1.642     1.642
+     3.0  1.428     1.237     1.179
+     5.0  1.257     0.934     0.832
+     7.0  1.183     0.809     0.689
+    10.0  1.128     0.717     0.584

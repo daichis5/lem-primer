@@ -21,9 +21,10 @@ PORT ?= 8000
 # Which edition ``make open`` shows; ``make open EDITION=en`` for the other one.
 EDITION ?= ja
 
-# The practice pages' example code. The interpreter is an absolute path because
-# the scripts run from inside $(EXAMPLES), where they import each other.
-EXAMPLES := docs/ja/examples
+# The practice pages' example code, one copy per edition (the English one with
+# English comments and output). The interpreter is an absolute path because the
+# scripts run from inside each directory, where they import each other.
+EXAMPLES := docs/ja/examples docs/en/examples
 PYTHON ?= $(firstword $(abspath $(wildcard .venv/bin/python)) python3)
 
 .PHONY: help ja en all clean linkcheck open preview serve figures examples
@@ -37,7 +38,7 @@ help:
 	@echo "  make preview    # Build both, then open $(SITEDIR)/$(EDITION)/ (no server)"
 	@echo "  make serve      # Build, serve on http://localhost:$(PORT)/, and open it"
 	@echo "  make linkcheck  # Check external links in both editions"
-	@echo "  make figures    # Write docs/ja/figures/*.svg from scripts/figures/"
+	@echo "  make figures    # Write docs/{ja,en}/figures/*.svg from scripts/figures/"
 	@echo "  make examples   # Run the practice pages' code: write its outputs, run its tests"
 	@echo "  make clean      # Remove built files"
 	@echo ""
@@ -101,23 +102,26 @@ serve: all
 	@( sleep 1; $(BROWSER) "http://localhost:$(PORT)/" >/dev/null 2>&1 & )
 	@python3 -m http.server $(PORT) --directory "$(SITEDIR)" --bind 127.0.0.1
 
-# Every SVG under docs/ja/figures is written by a script under scripts/figures;
-# the scripts use only the standard library, so any python3 will do.
+# Every SVG under docs/ja/figures and docs/en/figures is written by a script
+# under scripts/figures, which writes both languages; the scripts use only the
+# standard library, so any python3 will do.
 figures:
 	@for f in scripts/figures/fig_*.py; do python3 "$$f" >/dev/null || exit 1; done
-	@echo "Figures written to docs/ja/figures/"
+	@echo "Figures written to docs/ja/figures/ and docs/en/figures/"
 
 # The practice pages include what each run_*.py prints, from $(EXAMPLES)/output,
 # so a page cannot show numbers its code no longer produces. Warnings are
 # errors: a reader would see them in the output. Run this before `make figures`,
 # which reads some of these outputs. Needs `uv sync --group examples`.
 examples:
-	@for f in $(EXAMPLES)/run_*.py; do \
-	  name=$$(basename "$$f" .py); \
-	  (cd $(EXAMPLES) && "$(PYTHON)" -W error "$$name.py") > "$(EXAMPLES)/output/$$name.txt" || exit 1; \
+	@for d in $(EXAMPLES); do \
+	  for f in $$d/run_*.py; do \
+	    name=$$(basename "$$f" .py); \
+	    (cd $$d && "$(PYTHON)" -W error "$$name.py") > "$$d/output/$$name.txt" || exit 1; \
+	  done; \
+	  (cd $$d && "$(PYTHON)" -W error -m pytest -q -p no:cacheprovider) || exit 1; \
+	  echo "Example outputs written to $$d/output/"; \
 	done
-	@cd $(EXAMPLES) && "$(PYTHON)" -W error -m pytest -q -p no:cacheprovider
-	@echo "Example outputs written to $(EXAMPLES)/output/"
 
 linkcheck:
 	$(SPHINXBUILD) -b linkcheck docs/ja "$(SITEDIR)/../_build/linkcheck-ja" $(SPHINXOPTS)

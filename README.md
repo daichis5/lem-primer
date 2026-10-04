@@ -9,8 +9,8 @@ independent of any particular analysis software.
 
 | Edition | Status |
 |---|---|
-| 日本語 | Complete (3 documents + 3 practice pages + glossary) |
-| English | Under construction |
+| 日本語 | Complete (3 chapters + 3 practice pages + glossary); the source |
+| English | A translation of the Japanese at the commit each page records; brought in line on request |
 
 ## Contents
 
@@ -36,8 +36,9 @@ make preview              # builds both, then opens the Japanese edition
 make serve                # builds, then serves it at http://localhost:8000/
 ```
 
-The practice pages include the code under `docs/ja/examples` and what its
-`run_*.py` scripts print, from `docs/ja/examples/output`. `make examples`
+The practice pages include the code under `docs/ja/examples` (and its English
+copy, `docs/en/examples`) and what its `run_*.py` scripts print, from
+`output/` beside it. `make examples`
 writes those outputs and runs the tests; run it after changing the code, and
 before `make figures`, which plots one of the outputs.
 
