@@ -16,7 +16,7 @@ series: "practice 1 of 3"
 
 ## 作るもの
 
-傾き $\beta$ の地表の下に，地表に平行な{term}`すべり面`を仮定し，その{term}`安全率` $F_s$ を求める．すべり面は，地表から鉛直に測って深さ $z$ にある．土の定数は，[第1資料 6節](#section-6)と同じ $c'=10$ kPa，$\phi'=30^\circ$ とし，単位体積重量を $\gamma=18$ kN/m³ とする．地下水位より下の土は，$\gamma_{sat}=20$ kN/m³ とする．実践2と実践3も，同じ土を使う．
+傾き $\beta$ の地表から鉛直に深さ $z$ のところに，地表に平行な{term}`すべり面`を仮定し，その{term}`安全率` $F_s$ を求める．土の定数は，[第1資料 6節](#section-6)と同じ $c'=10$ kPa，$\phi'=30^\circ$ とする．単位体積重量は $\gamma=18$ kN/m³ で，地下水位より下の土では $\gamma_{sat}=20$ kN/m³ である．実践2と実践3も，同じ土を使う．
 
 ```{figure} ./figures/fig_e1_infinite_slope.svg
 :name: fig-e1-infinite-slope
@@ -25,7 +25,7 @@ series: "practice 1 of 3"
 左：無限斜面の柱に働く力．両側の面の力は打ち消し合うので，自重 $W$ を，すべり面の垂直力 $N$ とせん断力 $T$ が支える．右：地下水位がすべり面から鉛直に $h_w$ の高さにあるときの，すべり面の点 P の間隙水圧．斜面に平行に浸透するときは，P を通る等ポテンシャル線が斜面に直交する
 ```
 
-座標は，$x$ を水平右向き，$z$ を鉛直上向きにとる．地表は右に上がり，土塊は左下へすべる．すべり面の単位法線ベクトル $\boldsymbol{n}$ は，第1資料と同じく{term}`すべり土塊`の外向き，つまりすべり面より下の地盤の側にとる．すべる向きの単位ベクトルは $\boldsymbol{m}$ とする．
+座標は，$x$ を水平右向き，$z$ を鉛直上向きにとる．この座標で，地表は右に上がり，土塊は左下へすべる．すべり面の単位法線ベクトル $\boldsymbol{n}$ は，第1資料と同じく{term}`すべり土塊`の外向きで，すべり面より下の地盤の側を向く．すべる向きの単位ベクトルが $\boldsymbol{m}$ である．
 
 作る関数は，次の6つである．
 
@@ -102,14 +102,14 @@ $\boldsymbol{n}$ は右下を向き，すべり面より下の地盤を指す．
 
 ## 2. すべり面の表面力を分ける
 
-[第1資料 3節](#section-3)で見たように，外向きの単位法線ベクトルが $\boldsymbol{n}$ の面に働く{term}`表面力`（traction） $\boldsymbol{t}$ は，2つの成分に分けられる．1つは，圧縮を正とする{term}`垂直応力` $\sigma_n=-\boldsymbol{n}\cdot\boldsymbol{t}$ である．もう1つは，接平面内のせん断成分 $(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n}^{\mathsf T})\boldsymbol{t}$ である．これを関数にする．
+[第1資料 3節](#section-3)で見たように，外向きの単位法線ベクトルが $\boldsymbol{n}$ の面に働く{term}`表面力`（traction） $\boldsymbol{t}$ は，圧縮を正とする{term}`垂直応力` $\sigma_n=-\boldsymbol{n}\cdot\boldsymbol{t}$ と，接平面内のせん断成分 $(\boldsymbol{I}-\boldsymbol{n}\boldsymbol{n}^{\mathsf T})\boldsymbol{t}$ に分けられる．これを関数にする．
 
 ```{literalinclude} examples/infinite_slope.py
 :language: python
 :pyobject: split_traction
 ```
 
-次に，すべり面に働く表面力を求める．無限斜面から，幅1 m，奥行き1 mの柱を1本取り出す．柱の両側の面には，隣の柱から力が働く．しかし，斜面はどこまでも同じなので，左右の面の力は大きさが同じで，向きが逆になる．そのため，2つの力は打ち消し合い，柱の重さはすべて，すべり面より下の地盤が支える（図の左）．つまり，無限斜面では，{term}`スライス間力`を仮定しなくても，つり合いだけで底面の力が決まる．[第2資料 3.1節](#what-section-3-1)で見た{term}`静力学的不静定性`は，ここには現れない．
+次に，すべり面に働く表面力を求める．無限斜面から幅1 m，奥行き1 mの柱を1本取り出すと，柱の両側の面には，隣の柱から力が働く．しかし，斜面はどこまでも同じなので，左右の面の力は大きさが同じで，向きが逆になる．そのため，2つの力は打ち消し合い，柱の重さはすべて，すべり面より下の地盤が支える（図の左）．つまり，無限斜面では，{term}`スライス間力`を仮定しなくても，つり合いだけで底面の力が決まる．[第2資料 3.1節](#what-section-3-1)で見た{term}`静力学的不静定性`は，ここには現れない．
 
 柱の水平面積あたりの重さを $w$ とする．乾いた土なら $w=\gamma z$ である．柱の重さは $w$ [kN] で，その下のすべり面の面積は $1/\cos\beta$ [m²] なので，地盤が柱を支える表面力は次のようになる．
 
@@ -136,7 +136,7 @@ $$
 \tau=w\sin\beta\cos\beta
 $$ (eq-infinite-stresses)
 
-コードでは，式 {eq}`eq-infinite-traction` の通りに，柱の重さをベクトルで書いてから面積で割る．
+コードでは，式 {eq}`eq-infinite-traction` のとおりに，柱の重さをベクトルで書いてから面積で割る．
 
 ```{literalinclude} examples/infinite_slope.py
 :language: python
@@ -150,7 +150,7 @@ $$ (eq-infinite-stresses)
 :end-at: import infinite_slope
 ```
 
-続けて，2つのテストを書く．1つ目は，押す成分と抵抗する成分を組み合わせた表面力を，元の2つに分け戻せることを確かめる．2つ目は，式 {eq}`eq-infinite-stresses` と比べる．
+続けて，2つのテストを書く．1つ目は，押す成分と抵抗する成分を組み合わせた表面力を，元の2つに分け戻せることを確かめる．2つ目は，式 {eq}`eq-infinite-stresses` と比べるテストである．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -174,7 +174,7 @@ uv run pytest
 
 ## 3. 安全率を求める
 
-{term}`せん断強度`は，{term}`Mohr–Coulomb則`から $\tau_f=c'+(\sigma_n-u)\tan\phi'$ である．安全率は，[第1資料 6節](#section-6)のとおり，$\tau_f$ と{term}`動員せん断応力` $\tau_m$ の比で，無限斜面では2節の $\tau$ が $\tau_m$ にあたる．
+{term}`せん断強度`は，{term}`Mohr–Coulomb則`から $\tau_f=c'+(\sigma_n-u)\tan\phi'$ と書ける．安全率は，[第1資料 6節](#section-6)のとおり，$\tau_f$ と{term}`動員せん断応力` $\tau_m$ の比である．無限斜面では，2節の $\tau$ が $\tau_m$ にあたる．
 
 $$
 F_s=\frac{c'+(\sigma_n-u)\tan\phi'}{\tau}
@@ -187,7 +187,7 @@ $$ (eq-infinite-fs)
 
 乾いた斜面（$u=0$）で，$\beta=30^\circ$，$z=5$ mのときを計算する．$w=\gamma z=90$ kPa なので，式 {eq}`eq-infinite-stresses` から $\sigma_n=67.50$ kPa，$\tau=38.97$ kPa である．$\beta=\phi'$ なので，摩擦による抵抗 $\sigma_n\tan\phi'$ は $\tau$ とちょうど等しい．そのため，$F_s$ は1に粘着力の分を足した $1+10/38.97=1.257$ になる．
 
-[第1資料 6節](#section-6)の「数値でたどる」の底面も，無限斜面の底面とみなせる．そこでは $\sigma_n=100$ kPa，$\tau_m=30$ kPa だったので，式 {eq}`eq-infinite-stresses` の比 $\tau/\sigma_n=\tan\beta$ から $\beta=16.70^\circ$ になる．$w=\sigma_n/\cos^2\beta=109.0$ kPa とすれば，6節の $F_s=1.49$（$u=40$ kPa）と1.10（$u=60$ kPa）が，そのまま出る．この2つと，粘着力のない乾いた砂が $\beta=\phi'$ でちょうど $F_s=1$ になることを，テストに足す．
+[第1資料 6節](#section-6)の「数値でたどる」の底面も，無限斜面の底面とみなせる．そこでは $\sigma_n=100$ kPa，$\tau_m=30$ kPa だったので，式 {eq}`eq-infinite-stresses` の比 $\tau/\sigma_n=\tan\beta$ から，傾きは $\beta=16.70^\circ$ である．$w=\sigma_n/\cos^2\beta=109.0$ kPa とすれば，6節の $F_s=1.49$（$u=40$ kPa）と1.10（$u=60$ kPa）が，そのまま出る．この2つの値と，粘着力のない乾いた砂が $\beta=\phi'$ でちょうど $F_s=1$ になることを，テストに足す．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -222,7 +222,7 @@ $$ (eq-infinite-fs)
 :pyobject: pore_pressure
 ```
 
-地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比べる．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．同じ地下水位でも，間隙水圧の決め方だけで，安全率が2割以上違う．2つの決め方の比が $\cos^2\beta$ になることを，テストで確かめる．
+地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比べる．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．つまり，同じ地下水位でも，間隙水圧の決め方だけで，安全率が2割以上違う．2つの決め方の比が $\cos^2\beta$ になることを，テストで確かめる．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
