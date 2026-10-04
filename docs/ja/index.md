@@ -46,7 +46,6 @@ lem-glossary
 :::{grid-item-card} 第1資料　連続体力学から極限平衡法の出発点まで
 :link: continuum-mechanics-to-lem-start
 :link-type: doc
-:shadow: none
 
 応力と破壊規準は，底面の力にどう変わるか
 :::
@@ -54,7 +53,6 @@ lem-glossary
 :::{grid-item-card} 第2資料　極限平衡法とは何か
 :link: what-is-limit-equilibrium-method
 :link-type: doc
-:shadow: none
 
 残った未知量を，各手法はどの仮定で決めるか
 :::
@@ -62,7 +60,6 @@ lem-glossary
 :::{grid-item-card} 第3資料　極限平衡法を実際に使うとき
 :link: lem-in-practice-mechanical-perspective
 :link-type: doc
-:shadow: none
 
 円弧以外のすべり面，すべり方向，離散化をどう読み解くか
 :::
@@ -79,7 +76,6 @@ lem-glossary
 :::{grid-item-card} 実践1　無限斜面の安全率を計算する
 :link: practice-infinite-slope
 :link-type: doc
-:shadow: none
 
 表面力の分解から，無限斜面の安全率までを求めるコード
 :::
@@ -87,7 +83,6 @@ lem-glossary
 :::{grid-item-card} 実践2　スライス法で円弧すべりの安全率を計算する
 :link: practice-slices-2d
 :link-type: doc
-:shadow: none
 
 1つの円弧について，4つの手法の安全率と，つり合いの残差を求めるコード
 :::
@@ -95,7 +90,6 @@ lem-glossary
 :::{grid-item-card} 実践3　カラム法で3次元のすべり面の安全率を計算する
 :link: practice-columns-3d
 :link-type: doc
-:shadow: none
 
 楕円体のすべり面について，カラムの表を作り，3次元の安全率を求めるコード
 :::

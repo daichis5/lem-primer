@@ -11,11 +11,13 @@ and everything else is Furo's. The search form is Furo's ``sidebar/search.html``
 without its ``#searchbox``, whose id the sidebar copy already uses. The toggle is
 Furo's button; Furo's script handles every ``.theme-toggle`` on the page.
 The script at the end points Sphinx's search shortcut at whichever search box
-is shown.
+is shown. Furo's link that skips to the content comes after the header, so a
+copy of it goes first.
 
 -#}
 {% extends "!page.html" %}
 {% block body -%}
+<a class="skip-to-content muted-link" href="#furo-main-content">{{ _("Skip to content") }}</a>
 <header class="site-header">
   <div class="site-header__start">
     <a class="site-header__brand" href="{{ pathto(master_doc) }}">

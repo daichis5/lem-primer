@@ -26,7 +26,9 @@
    right; the content is 46em with 3em of padding on each side, and the table
    of contents 15em with 1rem of padding on the right. Below 82em the table of
    contents leaves the page and the drawer narrows to calc(50% - 18.5em);
-   below 67em the content's padding shrinks to 1em. */
+   below 67em the content's padding shrinks to 1em, and the content is centred
+   in the 48em beside the drawer's 15em. The brand's 15em is written 15rem: it
+   is Furo's width at the root font size, and the brand's own is larger. */
 
 .site-header__start {
   display: flex;
@@ -42,7 +44,7 @@
   align-items: center;
   gap: 0.625rem;
   box-sizing: border-box;
-  width: 15em;
+  width: 15rem;
   padding: 0 var(--sidebar-item-spacing-horizontal);
   color: var(--color-foreground-primary);
   font-size: 1.25rem;
@@ -85,7 +87,7 @@
   .site-header__end {
     flex: 1;
     width: auto;
-    padding-right: 1em;
+    padding-right: calc((100% - 63em) / 2 + 1em);
   }
 }
 
@@ -155,12 +157,26 @@
     display: none;
   }
 
-  /* Furo pins both sidebars to the top of the window; pin them under the
-     header instead, so their last items stay reachable. */
-  .sidebar-sticky,
-  .toc-sticky {
+  /* The sidebar on the page itself, as in the lab handbook: no rule between
+     it and the text. The drawer of narrow screens keeps Furo's. */
+  .sidebar-drawer {
+    border-right: 0;
+  }
+
+  /* Furo pins the sidebar to the top of the window; pin it under the header
+     instead, so its last items stay reachable. */
+  .sidebar-sticky {
     top: var(--site-header-height);
     height: calc(100vh - var(--site-header-height));
+  }
+
+  /* After a search, Sphinx puts a link that hides the highlights in
+     ``#searchbox``, under the sidebar's search box. With that box in the
+     header, the link heads the sidebar; Furo centres it, so set it as one of
+     the sidebar's items. */
+  .sidebar-drawer #searchbox .highlight-link {
+    padding-bottom: var(--sidebar-item-spacing-vertical);
+    text-align: left;
   }
 
   .sidebar-scroll {
@@ -181,6 +197,16 @@
 
   .back-to-top {
     top: calc(var(--site-header-height) + 0.5rem);
+  }
+}
+
+/* The same for the table of contents, where it is a column of the page.
+   Below 82em it is a drawer over the header, and keeps Furo's place. */
+
+@media not all and (max-width: 82em) {
+  .toc-sticky {
+    top: var(--site-header-height);
+    height: calc(100vh - var(--site-header-height));
   }
 }
 
