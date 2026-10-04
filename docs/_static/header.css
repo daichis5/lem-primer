@@ -12,7 +12,10 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  /* Above Furo's sidebar drawer (30), which would otherwise cover the brand
+     once the page scrolls; below the table of contents drawer and its
+     overlay (50, 40). */
+  z-index: 35;
   display: flex;
   box-sizing: border-box;
   height: var(--site-header-height);
