@@ -39,7 +39,8 @@ html_theme = "furo"
 
 # Furo shows this as the sidebar brand and Sphinx puts it in the browser tab.
 # It carries no edition suffix: the switcher under it already names the
-# language, and every page title is written in its own language anyway.
+# language, and every page title is written in its own language anyway. The
+# Japanese edition goes by its own name, LEM入門 (see ``ja/conf.py``).
 html_title = "LEM Primer"
 
 # The mark is the LEM Lab icon with its values inverted -- same mountain, same

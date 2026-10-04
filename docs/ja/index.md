@@ -1,9 +1,9 @@
 ---
-title: "LEM Primer（日本語）"
+title: "LEM入門"
 lang: ja
 ---
 
-# LEM Primer
+# LEM入門
 
 **極限平衡法の基礎から実際の使われ方まで**
 

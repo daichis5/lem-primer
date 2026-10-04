@@ -9,8 +9,8 @@ independent of any particular analysis software.
 
 | Edition | Status |
 |---|---|
-| [Japanese (日本語)](https://ibaraki-kozo-lab.github.io/lem-primer/ja/) | Complete, and the source (`docs/ja/`) |
-| [English](https://ibaraki-kozo-lab.github.io/lem-primer/en/) | A translation of the Japanese at the commit each page records (`docs/en/`); brought in line on request |
+| [Japanese: LEM入門](https://ibaraki-kozo-lab.github.io/lem-primer/ja/) | Complete, and the source (`docs/ja/`) |
+| [English: LEM Primer](https://ibaraki-kozo-lab.github.io/lem-primer/en/) | A translation of the Japanese at the commit each page records (`docs/en/`); brought in line on request |
 
 ## Contents
 
