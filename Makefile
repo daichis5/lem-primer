@@ -21,7 +21,12 @@ PORT ?= 8000
 # Which edition ``make open`` shows; ``make open EDITION=en`` for the other one.
 EDITION ?= ja
 
-.PHONY: help ja en all clean linkcheck open preview serve figures
+# The practice pages' example code. The interpreter is an absolute path because
+# the scripts run from inside $(EXAMPLES), where they import each other.
+EXAMPLES := docs/ja/examples
+PYTHON ?= $(firstword $(abspath $(wildcard .venv/bin/python)) python3)
+
+.PHONY: help ja en all clean linkcheck open preview serve figures examples
 
 help:
 	@echo "Usage:"
@@ -33,6 +38,7 @@ help:
 	@echo "  make serve      # Build, serve on http://localhost:$(PORT)/, and open it"
 	@echo "  make linkcheck  # Check external links in both editions"
 	@echo "  make figures    # Write docs/ja/figures/*.svg from scripts/figures/"
+	@echo "  make examples   # Run the practice pages' code: write its outputs, run its tests"
 	@echo "  make clean      # Remove built files"
 	@echo ""
 	@echo "Chain goals to build and look in one step, e.g. 'make ja open'."
@@ -100,6 +106,18 @@ serve: all
 figures:
 	@for f in scripts/figures/fig_*.py; do python3 "$$f" >/dev/null || exit 1; done
 	@echo "Figures written to docs/ja/figures/"
+
+# The practice pages include what each run_*.py prints, from $(EXAMPLES)/output,
+# so a page cannot show numbers its code no longer produces. Warnings are
+# errors: a reader would see them in the output. Run this before `make figures`,
+# which reads some of these outputs. Needs `uv sync --group examples`.
+examples:
+	@for f in $(EXAMPLES)/run_*.py; do \
+	  name=$$(basename "$$f" .py); \
+	  (cd $(EXAMPLES) && "$(PYTHON)" -W error "$$name.py") > "$(EXAMPLES)/output/$$name.txt" || exit 1; \
+	done
+	@cd $(EXAMPLES) && "$(PYTHON)" -W error -m pytest -q -p no:cacheprovider
+	@echo "Example outputs written to $(EXAMPLES)/output/"
 
 linkcheck:
 	$(SPHINXBUILD) -b linkcheck docs/ja "$(SITEDIR)/../_build/linkcheck-ja" $(SPHINXOPTS)

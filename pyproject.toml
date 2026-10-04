@@ -16,3 +16,8 @@ docs = [
     "sphinx-design>=0.7.0",
     "furo>=2024.1",
 ]
+# The practice pages' example code under docs/ja/examples, and its tests.
+examples = [
+    "numpy>=2.3",
+    "pytest>=8.0",
+]

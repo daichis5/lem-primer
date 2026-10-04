@@ -1,0 +1,85 @@
+"""実践3の数値を表示する．"""
+
+import math
+
+import numpy as np
+
+import columns
+import slices
+from infinite_slope import base_stresses, factor_of_safety
+
+D = np.array([-1.0, 0.0, 0.0])  # 全体すべり方向：斜面を下る向き
+AXIS = np.cross(D, [0.0, 0.0, 1.0])  # 回転軸：d に直交する水平な軸（y 方向）
+CENTRE = np.array([6.0, 0.0, 18.0])  # 実践2の円の中心を，y = 0 に置く
+R = slices.Circle().radius
+
+
+def methods(col, centre):
+    return (
+        columns.hovland(col, columns.dip_directions(col, D)),
+        columns.hovland_moment(col, centre, AXIS),
+        columns.bishop(col, centre, AXIS),
+    )
+
+
+print("1. a plane 5 m under a planar slope of 30 deg (h = 0.5 m)")
+plane = columns.Plane(30.0, 5.0)
+col = columns.make_columns(plane, 0.5, ground=plane.ground)
+fs = methods(col, np.array([10.0, 10.0, 30.0]))
+expected = factor_of_safety(*base_stresses(30.0, 18.0 * 5.0), 0.0, 10.0, 30.0)
+print(f"   {len(col.W)} columns:", end=" ")
+print(f"Hovland {fs[0]:.4f}, moment form {fs[1]:.4f}, Bishop {fs[2]:.4f}")
+print(f"   infinite slope (practice 1) {expected:.4f}")
+
+print("2. the circle of practice 2 as a cylinder 10 m long (h = 0.25 m)")
+col = columns.make_columns(columns.Cylinder(10.0), 0.25)
+fs = methods(col, CENTRE)
+s = slices.make_slices(slices.Circle(), 200)
+print(f"   {len(col.W)} columns:", end=" ")
+print(f"Hovland {fs[0]:.4f}, moment form {fs[1]:.4f}, Bishop {fs[2]:.4f}")
+print(f"   2D, n = 200: Fellenius {slices.fellenius(s):.4f},", end=" ")
+print(f"Bishop {slices.bishop(s):.4f}")
+
+print("3. ellipsoids with semi-axes (R, B, R) and centre (6, 0, 18) (h = 0.25 m)")
+print("      B  columns  Hovland  moment   Bishop")
+for k in (1, 2, 5):
+    col = columns.make_columns(columns.Ellipsoid(CENTRE, (R, k * R, R)), 0.25)
+    fs = methods(col, CENTRE)
+    print(f"   {k:2d} R  {len(col.W):7d}   {fs[0]:.4f}  {fs[1]:.4f}  {fs[2]:.4f}")
+
+sphere = columns.make_columns(columns.Ellipsoid(CENTRE, (R, R, R)), 0.25)
+
+print("4. local direction of sliding on the sphere (Hovland)")
+dip = columns.hovland(sphere, columns.dip_directions(sphere, D))
+projected = columns.hovland(sphere, columns.projected_directions(sphere, D))
+print(f"   dip in the vertical plane through d  {dip:.4f}")
+print(f"   d projected onto each base           {projected:.4f}")
+
+print("5. azimuth of d on the sphere (Hovland)")
+print("   azimuth [deg]   dip  projected")
+for deg in (-30, -15, 0, 15, 30):
+    t = math.radians(deg)
+    d = np.array([-math.cos(t), math.sin(t), 0.0])
+    dip = columns.hovland(sphere, columns.dip_directions(sphere, d))
+    projected = columns.hovland(sphere, columns.projected_directions(sphere, d))
+    print(f"   {deg:+13d}  {dip:.4f}  {projected:.4f}")
+
+print("6. column size on the sphere")
+print("   h [m]  columns  Hovland   Bishop")
+for h in (1.0, 0.5, 0.25):
+    col = columns.make_columns(columns.Ellipsoid(CENTRE, (R, R, R)), h)
+    fs = methods(col, CENTRE)
+    print(f"   {h:5.2f}  {len(col.W):7d}   {fs[0]:.4f}  {fs[2]:.4f}")
+
+print("7. base normal force on the sphere by lateral tilt of the base")
+m = columns.rotation_directions(sphere, AXIS)
+n_bishop = columns.vertical_normal_force(
+    sphere, m, columns.bishop(sphere, CENTRE, AXIS)
+)
+n_hovland = sphere.W * (sphere.n @ columns.GRAVITY)
+tilt = np.degrees(np.arcsin(np.abs(sphere.n[:, 1])))
+print("   tilt [deg]  columns  sum N, Bishop / Hovland")
+for lo, hi in ((0, 10), (10, 30), (30, 50)):
+    k = (tilt >= lo) & (tilt < hi)
+    ratio = n_bishop[k].sum() / n_hovland[k].sum()
+    print(f"   {lo:2d} - {hi:2d}    {k.sum():7d}  {ratio:.3f}")
