@@ -1,0 +1,61 @@
+/* Numbers of ordered lists.
+
+   Furo indents a list's items by 1.2rem and leaves the numbers to the browser,
+   which hangs each one outside its item at a gap of its own choosing. Chrome
+   leaves only the space after the period, Safari a few pixels more, so
+   one-digit numbers start just inside the text column's left edge in Chrome
+   but stick out past it in Safari, and two-digit numbers stick out in both.
+   Drawing the numbers ourselves, from the list's left edge, puts them on that
+   edge in every browser.
+
+   The number is drawn at the start of the item's first paragraph, so it sits
+   on that line's baseline even when inline math makes the line taller.
+   ponytail: an item that does not open with a paragraph gets no number; draw
+   one for it too if such an item ever appears.
+
+   The browser's own number stays, made transparent, because screen readers
+   announce it. The drawn one is hidden from them by the empty alternative text
+   after the slash. A browser that does not know that syntax keeps the first
+   ``content``, and its screen reader reads the number twice. */
+
+article ol.arabic {
+  --number-width: 1.2rem;
+  padding-left: var(--number-width);
+}
+
+/* Furo's 1.2rem holds one digit and its period. A list that starts at 10 or
+   later, such as a continued reference list, needs room for one digit more.
+   ponytail: a list that runs from 9 into 10 is not widened, so its two-digit
+   numbers would touch the text; widen it with :has() on its item count if one
+   ever appears. */
+
+article ol.arabic[start]:not([start="2"], [start="3"], [start="4"], [start="5"],
+                             [start="6"], [start="7"], [start="8"], [start="9"]) {
+  --number-width: calc(1.2rem + 1ch);
+}
+
+article ol.arabic > li::marker {
+  color: transparent;
+}
+
+article ol.arabic > li > p:first-child::before {
+  content: counter(list-item) ".";
+  content: counter(list-item) "." / "";
+  display: inline-block;
+  width: var(--number-width);
+  margin-left: calc(-1 * var(--number-width));
+}
+
+/* Forced colours (Windows high contrast) may override the transparent colour
+   and draw the browser's own number over the drawn one. There, keep only the
+   browser's number. */
+
+@media (forced-colors: active) {
+  article ol.arabic > li::marker {
+    color: inherit;
+  }
+
+  article ol.arabic > li > p:first-child::before {
+    content: none;
+  }
+}

@@ -372,13 +372,13 @@ $$
 \end{aligned}
 $$
 
-また，$u\boldsymbol{I}$ による表面力は
+また，補足Aのとおり，実際の表面力は $\boldsymbol{t}=-\boldsymbol{\sigma}^{(c)}\boldsymbol{n}$ である．これに $\boldsymbol{\sigma}^{(c)}=\boldsymbol{\sigma}'^{(c)}+u\boldsymbol{I}$ を入れると，$u\boldsymbol{I}$ の部分による表面力は
 
 $$
-u\boldsymbol{I}\boldsymbol{n}=u\boldsymbol{n}
+-u\boldsymbol{I}\boldsymbol{n}=-u\boldsymbol{n}
 $$
 
-で，いつも法線方向を向く．そのため，等方的な間隙水圧は，接平面内のせん断成分をもたない．
+になる．この表面力は，いつも $-\boldsymbol{n}$ の向き，つまりすべり土塊を押す向きに働く．そのため，等方的な間隙水圧は，接平面内のせん断成分をもたない．
 :::
 
 ```{figure} ./figures/fig_c02_normal_shear_effective.svg

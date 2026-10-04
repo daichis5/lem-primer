@@ -167,6 +167,7 @@ html_css_files = [
     "language-switch.css",
     "brand.css",
     "sidebar-links.css",
+    "lists.css",
 ]
 
 # Furo's default sidebar (see its ``theme.conf``) with the language switcher

@@ -182,7 +182,7 @@ $$ (eq-practice-general-normal-moment)
 
 となる．
 
-一般形状を扱う実装では，この垂直力のモーメントを式に含めるか，すべり面を近似する円の中心をモーメントの中心にするか，別の一般化した式を使わなければならない．
+すべり面を近似する円の中心を，モーメントの中心に選ぶ実装もある．しかし，非円弧面のまま計算する限り，各底面の法線はその中心にも集まらない．そのため，一般形状でモーメントのつり合いを使う実装では，どの点を中心に選んでも，各垂直力の腕を求めて，そのモーメントを式に含めなければならない．
 
 (practice-section-3-2)=
 
@@ -311,7 +311,7 @@ $$
 \sum\boldsymbol{F}\neq\boldsymbol{0}
 $$ (eq-practice-unbalanced-force)
 
-となることがある．そのときは，モーメントの中心を変えると，モーメントの残差も変わる．
+となることがある．そのときは，$\boldsymbol{a}$ が $\sum\boldsymbol{F}$ と平行でない限り，モーメントの中心を変えると，モーメントの残差も変わる．
 
 円弧には，円弧の中心という自然な基準点がある．一般形状ではこの基準点がなくなるので，次のことを確かめなければならない．
 
@@ -627,10 +627,10 @@ LEMを実際に使うときは，安全率の桁数より，**すべり面の形
 古典的な円弧の式に非円弧面の角度を代入しただけのときと，Bishopの内力の仮定を保ったまま一般形状の式に広げたときがあるため．注意が要るのは前者である．円弧に特有の性質で消えた項（底面垂直力のモーメントなど）を，落としていることがある．（→[2節](#practice-section-2)，[5.1節](#practice-section-5-1)）
 :::
 
-:::{dropdown} 問4　力のつり合いをすべては満たさない方法で，モーメントの中心を変えると結果が変わるのはなぜか
+:::{dropdown} 問4　力のつり合いをすべては満たさない方法で，モーメントの中心を変えると結果が変わることがあるのはなぜか
 :icon: question
 
-中心を $\boldsymbol{a}$ だけ移すと $\boldsymbol{M}_{O'}=\boldsymbol{M}_O-\boldsymbol{a}\times\sum\boldsymbol{F}$ となり，$\sum\boldsymbol{F}\neq\boldsymbol{0}$ なら，モーメントの残差が $\boldsymbol{a}\times\sum\boldsymbol{F}$ だけ変わるため．（→[6節](#practice-section-6)）
+これらの方法では，$\sum\boldsymbol{F}\neq\boldsymbol{0}$ になることがある．そのとき，中心を $\boldsymbol{a}$ だけ移すと，モーメントの残差が $-\boldsymbol{a}\times\sum\boldsymbol{F}$ だけ変わるため．ただし，$\boldsymbol{a}$ が $\sum\boldsymbol{F}$ と平行なら，この変化は0になる．（→[6節](#practice-section-6)）
 :::
 
 :::{dropdown} 問5　3次元で全体すべり方向を決めると，計算の中で何が決まるか．3つ挙げよ
