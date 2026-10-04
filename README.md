@@ -4,27 +4,50 @@ A primer on the **limit equilibrium method** (LEM) for slope stability: from the
 stress tensor of continuum mechanics through to reading the numbers a solver
 reports.
 
-The series is written for readers who have not studied LEM before, and is
+The primer is written for readers who have not studied LEM before, and is
 independent of any particular analysis software.
 
 | Edition | Status |
 |---|---|
-| 日本語 | Complete (3 chapters + 3 practice pages + glossary); the source |
-| English | A translation of the Japanese at the commit each page records; brought in line on request |
+| [Japanese (日本語)](https://ibaraki-kozo-lab.github.io/lem-primer/ja/) | Complete, and the source (`docs/ja/`) |
+| [English](https://ibaraki-kozo-lab.github.io/lem-primer/en/) | A translation of the Japanese at the commit each page records (`docs/en/`); brought in line on request |
 
 ## Contents
 
-1. **連続体力学から極限平衡法の出発点まで** — how stress and a failure
-   criterion become the forces $N_i$, $U_i$, $T_i$ on a slice base
-2. **極限平衡法とは何か** — which assumption each method uses to close the
-   remaining static indeterminacy
-3. **極限平衡法を実際に使うとき** — general slip surfaces, sliding direction,
-   discretization, and how to read a result
-4. **実践編** — three practice pages that write the methods in Python: the
-   infinite slope, slices on one circle (Fellenius, simplified Bishop and
-   Janbu, Spencer), and columns on one ellipsoid (Hovland, 3D simplified
-   Bishop); the second and third check their values against the one before
-5. **用語集** — shared glossary of terms and symbols
+Each title is the English edition's, with the Japanese edition's in
+parentheses.
+
+**Theory**
+
+1. **Chapter 1: From continuum mechanics to where the limit equilibrium
+   method begins** (第1章　連続体力学から極限平衡法の出発点まで) — how
+   stress and a failure criterion become the forces $N_i$, $U_i$, $T_i$ on a
+   slice base
+2. **Chapter 2: What is the limit equilibrium method?**
+   (第2章　極限平衡法とは何か) — what assumptions each method uses to
+   determine the unknowns that equilibrium leaves
+3. **Chapter 3: Using the limit equilibrium method in practice**
+   (第3章　極限平衡法を実際に使うとき) — general slip surfaces, the
+   direction of sliding, discretization, and how to read a result
+
+**Practice**
+
+1. **Practice 1: Computing the factor of safety of an infinite slope**
+   (実践1　無限斜面の安全率を計算する) — from splitting the traction to the
+   factor of safety
+2. **Practice 2: Computing the factor of safety of a circular slip with the
+   method of slices** (実践2　スライス法で円弧すべりの安全率を計算する) —
+   Fellenius, simplified Bishop, simplified Janbu and Spencer on one circle
+3. **Practice 3: Computing the factor of safety of a 3D slip surface with
+   the method of columns** (実践3　カラム法で3次元のすべり面の安全率を計算する)
+   — Hovland and 3D simplified Bishop on one ellipsoid
+
+The practice pages write the methods in Python; Practices 2 and 3 check
+their values against the earlier practices.
+
+**Appendix**
+
+- **Glossary** (用語集) — the terms and symbols the pages share
 
 ## Building locally
 
