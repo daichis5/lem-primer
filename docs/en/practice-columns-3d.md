@@ -455,7 +455,7 @@ Click a question to see its answer. Do the (Try it) questions in `lem-practice`.
 Because the strength equation from the Mohr–Coulomb failure criterion determines only the size of the base shear force, not its direction in the tangent plane. In 2D, the direction is limited to the two along the tangent in the section, and it is set to the side that opposes sliding. The tangent plane in 3D has infinitely many directions, so one has to be assumed. (→[Section 2](#columns-section-2))
 :::
 
-:::{dropdown} Q2. (Calculate) The base of a column with side $h=0.25$ m is inclined at 30° from the horizontal. What is its base area?
+:::{dropdown} Q2. The base of a column with side $h=0.25$ m is inclined at 30° from the horizontal. What is its base area?
 :icon: question
 
 $|n_z|=\cos 30^\circ$, so $A=0.25^2/\cos 30^\circ=0.0722$ m². It is larger than the area of the horizontal square, 0.0625 m², by the effect of the inclination. (→[Section 1](#columns-section-1))

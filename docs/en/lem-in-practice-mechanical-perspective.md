@@ -209,6 +209,8 @@ The tangent directions of an ellipse do not match the directions of velocity of 
 
 LEM can still assign shear resistance to each base and compute a factor of safety, because it does not solve displacement compatibility. However, a factor of safety does not mean that the soil mass can actually move along that surface as one rigid body.
 
+(practice-section-3-4)=
+
 #### 3.4 The sensitivity to the interslice shear forces changes
 
 On circular surfaces, the simplified Bishop method and {term}`complete equilibrium methods <complete equilibrium method>` often give close factors of safety. On planar, composite and block-shaped surfaces, on the other hand, force equilibrium and moment equilibrium differ in their sensitivity to the interslice shear forces.
@@ -409,6 +411,8 @@ $$
 $$ (eq-practice-local-direction)
 
 So even with a single direction of sliding, the local direction of shear on a curved surface differs from column to column.
+
+(practice-section-8-3)=
 
 #### 8.3 Directions and principal axes used when searching for slip surfaces
 
@@ -623,37 +627,61 @@ When LEM is used in practice, the fine value of the factor of safety matters les
 
 Click a question to see its answer.
 
-:::{dropdown} Q1. Why can a method derived for circles compute the factor of safety of an elliptical slip surface or one of any shape?
+:::{dropdown} Q1. A Bishop-type factor of safety has converged for a non-circular surface. Of the four stages in Section 0, how far does this alone go?
+:icon: question
+
+Only the first two: the shape can be entered, and it can be computed. A Bishop-type method may not satisfy horizontal force equilibrium for the whole mass, so the third stage, satisfying equilibrium, is not shown yet. The fourth, being mechanically sound, needs separate checks of the line of thrust, the base normal forces, and whether the mass can move along that surface. (→[Section 0](#practice-section-0))
+:::
+
+:::{dropdown} Q2. Why can a method derived for circles compute the factor of safety of an elliptical slip surface or one of any shape?
 :icon: question
 
 Once the normal, the tangent and the moment arm of each base can be computed, the forces and moments can be summed whatever the shape of the surface. The mechanical character of a method is not determined by the input shape of a circle alone, but by the internal-force assumptions and the equilibrium conditions used. (→[Section 1](#practice-section-1))
 :::
 
-:::{dropdown} Q2. Why do the base normal forces not appear directly in the moment equation about the center of a circle? Does this mean that they do not affect the factor of safety?
+:::{dropdown} Q3. Why do the base normal forces not appear directly in the moment equation about the center of a circle? Does this mean that they do not affect the factor of safety?
 :icon: question
 
 Because the lines of action of the base normal forces pass through the center $O$ of the circle, so their moments about $O$ are zero. This does not mean they do not affect the factor of safety. Through the shear strength $c_i'A_i+(N_i-U_i)\tan\phi_i'$, $N_i$ governs how large the resistance is. (→[Section 2](#practice-section-2))
 :::
 
-:::{dropdown} Q3. Why can the phrase "computed a non-circular surface with Bishop" be read in two ways? Which reading needs care?
+:::{dropdown} Q4. For a circular slip with radius $R=20$ m, the base shear forces of the slices sum to $\sum_i T_i=300$ kN/m. What is the moment of the base shear forces about the center of the circle?
+:icon: question
+
+The arm of the shear force on every base is the radius $R$. So $M_O=R\sum_i T_i=20\times 300=6000$ kN·m/m. On a surface other than a circle, the arms differ from base to base, so they cannot be gathered under one $R$ like this. (→[Section 2.2](#practice-section-2-2), [Section 3.2](#practice-section-3-2))
+:::
+
+:::{dropdown} Q5. On a general surface, is the factor of safety of a simplified method on the safe side of that of a complete equilibrium method?
+:icon: question
+
+No. On planar, composite and block-shaped surfaces, force equilibrium and moment equilibrium differ in their sensitivity to the interslice shear forces. As a result, whether the simplified Bishop method and the like give a larger or a smaller value than the Spencer or Morgenstern–Price method cannot be decided once and for all. (→[Section 3.4](#practice-section-3-4))
+:::
+
+:::{dropdown} Q6. Why can the phrase "computed a non-circular surface with Bishop" be read in two ways? Which reading needs care?
 :icon: question
 
 Because it may mean that the angles of a non-circular surface were simply substituted into the classical equation for circles, or that Bishop's internal-force assumption was kept and extended to equations for general shapes. The first needs care. It may drop terms that vanished because of properties specific to circles, such as the moments of the base normal forces. (→[Section 2](#practice-section-2), [Section 5.1](#practice-section-5-1))
 :::
 
-:::{dropdown} Q4. In a method that does not satisfy all of force equilibrium, why can changing the center of moments change the result?
+:::{dropdown} Q7. In a method that does not satisfy all of force equilibrium, why can changing the center of moments change the result?
 :icon: question
 
 In such methods, $\sum\boldsymbol{F}\neq\boldsymbol{0}$ may hold. Then moving the center by $\boldsymbol{a}$ changes the moment residual by $-\boldsymbol{a}\times\sum\boldsymbol{F}$. If $\boldsymbol{a}$ is parallel to $\sum\boldsymbol{F}$, however, this change is zero. (→[Section 6](#practice-section-6))
 :::
 
-:::{dropdown} Q5. In 3D, what does setting the direction of sliding decide in the calculation? Name three things.
+:::{dropdown} Q8. Even with a single direction of sliding $\boldsymbol{d}$, the local direction of sliding $\boldsymbol{m}_i$ differs from column to column. Why? And can the direction of the long axis of the slip surface be taken as the direction of sliding as it is?
+:icon: question
+
+In a formulation that finds $\boldsymbol{m}_i$ by projecting $\boldsymbol{d}$ onto the tangent plane of each base, the base normal $\boldsymbol{n}_i$ of a curved surface differs from column to column, and so do the tangent planes and the directions projected onto them. The long axis cannot be taken as the direction of sliding as it is. It describes the shape of the sliding mass in plan, while the direction of sliding is the azimuth in which the mass moves, determined by force equilibrium, so the two need not coincide. Fixing them as the same thing may narrow the search range more than necessary. (→[Section 8.2](#practice-section-8-2), [Section 8.3](#practice-section-8-3))
+:::
+
+:::{dropdown} Q9. In 3D, what does setting the direction of sliding decide in the calculation? Name three things.
 :icon: question
 
 For example, the $x,y,z$ components of the base shear forces, the moments of the base shear forces about each axis, and the base normal forces found from force equilibrium. It also decides the resisting and driving forces along each horizontal axis, the magnitude and direction of the intercolumn forces, the factor of safety, and how the iteration converges. (→[Section 9](#practice-section-9))
 :::
 
-:::{dropdown} Q6. When the iteration converges and gives $F_s$, what should be checked besides the factor of safety?
+:::{dropdown} Q10. When the iteration converges and gives $F_s$, what should be checked besides the factor of safety?
 :icon: question
 
 - The force and moment residuals
@@ -665,16 +693,10 @@ For example, the $x,y,z$ components of the base shear forces, the moments of the
 (→[Section 5.2](#practice-section-5-2))
 :::
 
-:::{dropdown} Q7. $F_s$ has converged for a given slip surface. Can it be taken as the factor of safety of the slope?
+:::{dropdown} Q11. $F_s$ has converged for a given slip surface. Can it be taken as the factor of safety of the slope?
 :icon: question
 
 Not as it is. The converged $F_s$ is the value for the given slip surface, and is not necessarily the minimum factor of safety for the whole slope. The critical slip surface is searched for separately from computing the factor of safety. (→[Section 12.4](#practice-section-12-4))
-:::
-
-:::{dropdown} Q8. (Calculate) For a circular slip with radius $R=20$ m, the base shear forces of the slices sum to $\sum_i T_i=300$ kN/m. What is the moment of the base shear forces about the center of the circle?
-:icon: question
-
-The arm of the shear force on every base is the radius $R$. So $M_O=R\sum_i T_i=20\times 300=6000$ kN·m/m. On a surface other than a circle, the arms differ from base to base, so they cannot be gathered under one $R$ like this. (→[Section 2.2](#practice-section-2-2), [Section 3.2](#practice-section-3-2))
 :::
 
 ---

@@ -854,46 +854,70 @@ Click a question to see its answer.
 The stress tensor $\boldsymbol{\sigma}$ is a second-order tensor that describes the state of stress at a point, and it is defined without choosing a surface. The traction $\boldsymbol{t}$, by contrast, is the force vector per unit area on a surface with normal $\boldsymbol{n}$; it is found only once the orientation of the surface is chosen, as $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$. At the same point, a different surface orientation gives a different traction. (→[Section 2](#section-2))
 :::
 
-:::{dropdown} Q2. How is the effective normal stress $\sigma_n'$ determined from the total normal stress and the pore water pressure?
+:::{dropdown} Q2. In 2D, take $x$ horizontal and $z$ vertically upward. At a point on the slip surface, the components of the stress tensor, with tension positive, are $\sigma_{xx}=-60$ kPa, $\sigma_{zz}=-100$ kPa and $\sigma_{xz}=0$, and the outward unit normal vector is $\boldsymbol{n}=(0.6,\,-0.8)$. Find the traction $\boldsymbol{t}$, the normal stress $\sigma_n$ and the magnitude of the shear component $\|\boldsymbol{\tau}\|$.
+:icon: question
+
+$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa. The normal component is $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa, so $\sigma_n=-t_n=85.6$ kPa. The shear component is $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa, and $\|\boldsymbol{\tau}\|=19.2$ kPa. The surface is inclined at 36.9° from the horizontal. Mohr's circle of stress from mechanics of materials gives the same values from the principal stresses of 100 kPa and 60 kPa, taken compression positive. (→[Section 2](#section-2), [Section 3](#section-3))
+:::
+
+:::{dropdown} Q3. How is the effective normal stress $\sigma_n'$ determined from the total normal stress and the pore water pressure?
 :icon: question
 
 It is the total normal stress minus the pore water pressure, $\sigma_n'=\sigma_n-u$. It follows from projecting the effective stress tensor $\boldsymbol{\sigma}'^{(c)}=\boldsymbol{\sigma}^{(c)}-u\boldsymbol{I}$ onto the normal direction of the surface. (→[Section 4](#section-4))
 :::
 
-:::{dropdown} Q3. Is the $\tau_f$ given by the Mohr–Coulomb failure criterion the shear stress acting now, or something else?
+:::{dropdown} Q4. Is the $\tau_f$ given by the Mohr–Coulomb failure criterion the shear stress acting now, or something else?
 :icon: question
 
 Something else. $\tau_f$ is the upper limit of the shear resistance that can be developed at failure under the current effective normal stress. The stress acting now is the mobilized shear stress $\tau_m$, which is smaller than $\tau_f$ in a stable slope. (→[Section 5](#section-5), [Section 6](#section-6))
 :::
 
-:::{dropdown} Q4. The factor of safety $F_s$ was introduced as the ratio of what to what?
+:::{dropdown} Q5. The factor of safety $F_s$ was introduced as the ratio of what to what?
 :icon: question
 
-The ratio of the available shear strength $\tau_f$ to the shear stress $\tau_m$ mobilized to maintain equilibrium, $F_s=\tau_f/\tau_m$. Textbooks sometimes describe it as the ratio of resisting force to driving force, but what the ratio is taken between differs from method to method. For example, the simplified Bishop method takes a ratio of moments about the center of the circle. (→[Section 6](#section-6))
+The ratio of the available shear strength $\tau_f$ to the shear stress $\tau_m$ mobilized to maintain equilibrium, $F_s=\tau_f/\tau_m$. Textbooks sometimes describe it as the ratio of resisting force to driving force, but what the ratio is taken between differs from method to method. For example, the simplified Bishop method takes a ratio of moments about the center of the circle. (→["Overview of LEM"](#overview), [Section 6](#section-6))
 :::
 
-:::{dropdown} Q5. What operation on the pointwise stress produced $N_i$, $U_i$ and $T_i$?
+:::{dropdown} Q6. On the base of "Working through the numbers" in Section 6, suppose the pore water pressure drops to $u=20$ kPa. Find the shear strength $\tau_f$ and the factor of safety $F_s$.
+:icon: question
+
+$\sigma_n'=100-20=80$ kPa, so $\tau_f=10+80\tan 30^\circ=56.2$ kPa. If $\tau_m=30$ kPa stays the same, $F_s=56.2/30=1.87$. When the pore water pressure drops, the effective normal stress rises, and so does the factor of safety. (→[Section 6](#section-6))
+:::
+
+:::{dropdown} Q7. In "Working through the numbers" in Section 6, $\tau_m=30$ kPa is given and $F_s$ is found from it. Does an actual LEM analysis also find $\tau_m$ on each base first and then compute $F_s$ as a ratio?
+:icon: question
+
+No. The $\tau_m$ on each base is not known until equilibrium is solved. LEM expresses the mobilized shear stress in terms of the unknown $F_s$, as $\tau_m=\tau_f/F_s$. Then it finds $F_s$ and the other unknown forces together so that the mass loaded by this traction satisfies force and moment equilibrium. (→[Section 6](#section-6))
+:::
+
+:::{dropdown} Q8. What operation on the pointwise stress produced $N_i$, $U_i$ and $T_i$?
 :icon: question
 
 Integration over the base $S_i$. $N_i$ is the surface integral of the total normal stress $\sigma_n$, and $U_i$ is that of the pore water pressure $u$. $T_i$ was found by integrating the Mohr–Coulomb failure criterion with $c_i'$ and $\phi_i'$ constant over the base, then dividing by the common factor of safety $F_s$. (→[Section 7](#section-7), [Section 8](#section-8))
 :::
 
-:::{dropdown} Q6. Which quantities must be assumed constant over the base $S_i$, and which need not be?
+:::{dropdown} Q9. On a curved base, which is larger: the magnitude $\|\boldsymbol{N}_i\|$ of the resultant that adds the normal forces at each point as vectors, or $\int_{S_i}\sigma_n\,dA$, which adds only their magnitudes? Which of the two is LEM's $N_i$?
+:icon: question
+
+$\int_{S_i}\sigma_n\,dA$, which adds only the magnitudes, is larger. On a curved surface, the direction of the normal varies from place to place, so adding the forces as vectors cancels part of them. The two are equal only in cases such as when the normal has the same direction over the whole base. LEM's $N_i$, on the other hand, is the sum of the magnitudes. LEM applies it along a representative normal $\boldsymbol{n}_i$ and so represents the curved base by one plane and one direction. (→[Section 7](#section-7), [Section 8](#section-8))
+:::
+
+:::{dropdown} Q10. Which quantities must be assumed constant over the base $S_i$, and which need not be?
 :icon: question
 
 The scalar equation $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ requires the material parameters $c_i'$ and $\phi_i'$ to be constant. On the other hand, $\sigma_n$ and $u$ may vary over the base. $T_i=T_{f,i}/F_s$ also requires the assumption that $F_s$ is common over the base. The vector equations $\boldsymbol{N}_i=-N_i\boldsymbol{n}_i$ and $\boldsymbol{T}_i=-T_i\boldsymbol{m}_i$ also require $\boldsymbol{n}$ and $\boldsymbol{m}$, respectively, to be constant. (→[Section 8](#section-8))
 :::
 
-:::{dropdown} Q7. What is still unknown after obtaining the equation for $T_i$ in Section 8?
+:::{dropdown} Q11. What is still unknown after obtaining the equation for $T_i$ in Section 8?
 :icon: question
 
 The base normal force $N_i$, the factor of safety $F_s$, and the interslice and intercolumn forces. $T_i$ follows once $N_i$ and $F_s$ are known. Determining them takes the equilibrium equations plus method-specific assumptions. (→[Section 9](#section-9))
 :::
 
-:::{dropdown} Q8. (Calculate) On the base of "Working through the numbers" in Section 6, suppose the pore water pressure drops to $u=20$ kPa. Find the shear strength $\tau_f$ and the factor of safety $F_s$.
+:::{dropdown} Q12. If the slices or columns are made finer and finer, do the assumptions about the interslice forces go away?
 :icon: question
 
-$\sigma_n'=100-20=80$ kPa, so $\tau_f=10+80\tan 30^\circ=56.2$ kPa. If $\tau_m=30$ kPa stays the same, $F_s=56.2/30=1.87$. When the pore water pressure drops, the effective normal stress rises, and so does the factor of safety. (→[Section 6](#section-6))
+No. Finer division can improve the approximation of the geometry and the integrals. Discretization, however, replaces the unknown continuous stress distribution with a finite number of unknown resultant forces. Dividing more finely does not change the fact that there are more unknowns than equilibrium equations. So the method-specific assumptions that determine the unknowns are needed apart from discretization. (→[Section 8](#section-8), [Section 9](#section-9))
 :::
 
 ---

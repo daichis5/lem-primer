@@ -858,19 +858,31 @@ $$ (eq-what-summary)
 
 Click a question to see its answer.
 
-:::{dropdown} Q1. Why can equilibrium and the base strength equation alone not determine the distribution of internal forces?
+:::{dropdown} Q1. On the base of "Working through the numbers" in Chapter 1, Section 6, $c'=10$ kPa, $\phi'=30^\circ$, $\sigma_n'=60$ kPa and $\tau_m=30$ kPa, which give $F_s=1.49$. Reduce the strength by $F_s$ and find $c_m'$ and $\phi_m'$. What does the Mohr–Coulomb failure criterion give on this base with these $c_m'$ and $\phi_m'$?
+:icon: question
+
+$c_m'=10/1.49=6.71$ kPa and $\tan\phi_m'=\tan 30^\circ/1.49=0.3875$, so $\phi_m'=21.2^\circ$. $F_s$ divides $\tan\phi'$, not $\phi'$, so $\phi_m'$ is not $\phi'/F_s=20.1^\circ$. In the Mohr–Coulomb failure criterion, they give $c_m'+\sigma_n'\tan\phi_m'=6.71+60\times0.3875=30.0$ kPa, equal to the mobilized shear stress $\tau_m$. In other words, reducing the strength by $F_s$ puts this base exactly at the limit state. (→[Section 1](#what-section-1), [Chapter 1, Section 6](#section-6))
+:::
+
+:::{dropdown} Q2. Why can equilibrium and the base strength equation alone not determine the distribution of internal forces?
 :icon: question
 
 Because there are more unknowns than independent equilibrium equations. For $n$ slices, there are $4n-2$ unknowns but only $3n$ equilibrium equations, three per slice. (→[Section 3.1](#what-section-3-1))
 :::
 
-:::{dropdown} Q2. What three operations does "closing the indeterminacy" mean in concrete terms?
+:::{dropdown} Q3. If the sliding mass is divided into $n=10$ slices, how many unknowns and equations are there, counted as in the table of Section 3.1? How many conditions are missing?
+:icon: question
+
+There are $4n-2=38$ unknowns. There are $3n=30$ equilibrium equations, so $n-2=8$ conditions are missing. The finer the division into slices, the more conditions are missing. (→[Section 3.1](#what-section-3-1))
+:::
+
+:::{dropdown} Q4. What three operations does "closing the indeterminacy" mean in concrete terms?
 :icon: question
 
 Ignoring part of the internal forces; assuming the direction of the internal forces or the ratio of their components; and using only part of the equilibrium conditions. Each method can be classified by its combination of these. (→[Section 3.3](#what-section-3-3))
 :::
 
-:::{dropdown} Q3. What does each of the Fellenius, simplified Bishop and simplified Janbu methods ignore, and which equilibrium does it use?
+:::{dropdown} Q5. What does each of the Fellenius, simplified Bishop and simplified Janbu methods ignore, and which equilibrium does it use?
 :icon: question
 
 - Fellenius method: ignores the effect of the interslice forces and uses global moment equilibrium about the center of the circle
@@ -880,34 +892,46 @@ Ignoring part of the internal forces; assuming the direction of the internal for
 (→[Section 6](#what-section-6))
 :::
 
-:::{dropdown} Q4. In what sense is the Spencer method called a "complete equilibrium method"?
+:::{dropdown} Q6. In what sense is the Spencer method called a "complete equilibrium method"?
 :icon: question
 
 In the sense that, under the assumed direction of the internal forces (the same angle $\theta$ on every boundary), it satisfies all force and moment equilibrium. The Spencer method's solution, however, is not an exact continuum solution. Nor is the distribution of internal forces it gives necessarily the unique physical solution. (→[Section 5.1](#what-section-5-1))
 :::
 
-:::{dropdown} Q5. What quantities must newly be chosen in 3D? Why are six equilibrium equations still not enough?
+:::{dropdown} Q7. In $X/E=\lambda f(x)$ of the Morgenstern–Price method, how is each of $f(x)$ and $\lambda$ determined? If several choices of $f(x)$ give nearly the same factor of safety, is the distribution of internal forces then pinned down?
+:icon: question
+
+$f(x)$ is a function that describes how the direction of the internal forces varies with position. It is assumed, chosen from shapes such as half-sine and trapezoidal. $\lambda$, on the other hand, is the scale factor that sets the size of $X/E$. It is solved for together with $F_s$ from force and moment equilibrium. Nearly the same factor of safety does not pin down the distribution of internal forces, because a different $f(x)$ can give different distributions of interslice forces and base normal forces. With $f(x)=1$, the method becomes the Spencer method. (→[Section 5.2](#what-section-5-2))
+:::
+
+:::{dropdown} Q8. What quantities must newly be chosen in 3D? Why are six equilibrium equations still not enough?
 :icon: question
 
 The direction of the base shear force in the tangent plane, the direction of sliding and the axis of rotation must newly be chosen. The equilibrium equations rise to six, but the unknowns rise by more. Because the internal boundaries run in two directions, there are more components and points of action of intercolumn forces. The direction of the base shear force is also added to the unknowns. (→[Section 7](#what-section-7))
 :::
 
-:::{dropdown} Q6. Why can't one say outright that "the 3D factor of safety is larger than the 2D one"?
+:::{dropdown} Q9. Is the 3D Hovland method statically more rigorous than the 2D Spencer method?
+:icon: question
+
+No. The Hovland method is an extension of the Fellenius type that ignores the intercolumn forces, so it in general does not fully satisfy force equilibrium in three directions or moment equilibrium. The 2D Spencer method, by contrast, assumes the direction of the internal forces and then satisfies all force and moment equilibrium. In other words, static rigor depends not on whether the analysis is 2D or 3D, but on how it treats the internal forces and which equilibrium it satisfies. (→[Section 5.1](#what-section-5-1), [Section 8.1](#what-section-8-1))
+:::
+
+:::{dropdown} Q10. Why can't one say outright that "the 3D factor of safety is larger than the 2D one"?
 :icon: question
 
 Because the conditions being compared in 2D and 3D are not necessarily the same. If they differ on points such as whether the slip surfaces found represent the same failure mechanism, whether the direction of sliding is appropriate, how far the intercolumn forces were considered, and whether the strength on the sides was counted twice, the two cannot simply be compared. (→[Section 9](#what-section-9))
 :::
 
-:::{dropdown} Q7. What does the name of a method not tell you?
+:::{dropdown} Q11. What does using a single factor of safety $F_s$ for the whole slip surface assume about strength? What can that assumption not represent?
+:icon: question
+
+It assumes that strength is mobilized everywhere on the slip surface at the same time and in the same proportion. So it does not directly represent differences in strain from place to place, softening from peak to residual strength, or progressive failure. (→[Section 10](#what-section-10))
+:::
+
+:::{dropdown} Q12. What does the name of a method not tell you?
 :icon: question
 
 The assumed slip surface and how it was searched; how strength and the factor of safety were defined; which internal-force components were ignored or expressed as functions; which equilibrium was satisfied; in 3D, how the direction of sliding and the axis of rotation were chosen; and whether the converged solution is physically reasonable. Of the layers of approximation in Section 10, a method's name mainly describes the layer of how the internal forces are determined. Even within that layer, the details of methods with the same name differ between implementations. (→[Section 10](#what-section-10), [Section 13.5](#what-section-13-5))
-:::
-
-:::{dropdown} Q8. (Calculate) If the sliding mass is divided into $n=10$ slices, how many unknowns and equations are there, counted as in the table of Section 3.1? How many conditions are missing?
-:icon: question
-
-There are $4n-2=38$ unknowns. There are $3n=30$ equilibrium equations, so $n-2=8$ conditions are missing. The finer the division into slices, the more conditions are missing. (→[Section 3.1](#what-section-3-1))
 :::
 
 ---
