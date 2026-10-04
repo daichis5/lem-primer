@@ -119,6 +119,7 @@ compare a document with it.
 | 滑動力 | 駆動力 | the pair of 抵抗力: $F_s$＝抵抗力／滑動力 |
 | 内力 | 内部力 | |
 | 簡便分割法 | 簡易分割法 | as in the Japanese title of Ugai et al. (1986) |
+| 簡便法 | | the class of methods that drop part of the internal forces or of the equilibrium conditions; Japanese standards often mean Fellenius法 alone, so say so where the series defines it (第2資料 4節) |
 | テンションクラック（引張亀裂） | 張力亀裂 | |
 | 表面力 | traction | gloss （traction） at its first use |
 | 不静定性の解消 | closure, 力学的な未知量の決定 | gloss （closure） at its first use |
@@ -152,6 +153,49 @@ Every document ends its body with `## 確認問題`, opened by the line
   (`what-section-3-1`, `practice-section-6`).
 - In an answer, a reason ends 〜ため．, and a list of items may end without
   a predicate.
+
+## Glossary
+
+`docs/ja/lem-glossary.md` collects the terms the documents share. It is a
+Sphinx glossary, not a Markdown table, so every term is a target for
+`{term}`; `docs/_static/glossary.css` lays it out as a table. It is not one
+of the documents: it has no subtitle, builds-on line or 確認問題.
+
+- Terms sit in groups under `##` headings, one `{glossary}` block per group.
+  Within a group, a term follows the terms its definition builds on
+  (静力学的不静定性 before 不静定性の解消, 全体すべり方向 before
+  局所すべり方向).
+- One term per entry: the stylesheet pairs each term with one definition,
+  so name a synonym in the definition (任意形状のすべり面ともいう).
+- An entry has two paragraphs. The first gives the symbol and the English
+  term, split by a full-width space, or the English term alone; the
+  stylesheet sets it small and grey. The second is the definition, which
+  ends in links to the sections that explain the term, with no ．:
+
+  ```text
+  安全率
+    $F_s$　factor of safety
+
+    （定義）（→[第1資料「LEMの全体像」](#overview)，[6節](#section-6)）
+  ```
+- Link text names the document, then the section: 第1資料 6節, or the
+  heading in 「」 for a section without a number. A second section of the
+  same document drops the document's name. Give each target heading a
+  label, as for review questions. A linked section explains the term; where
+  none does, add the explanation to the text.
+- The English term is the one the English literature uses (slip surface,
+  interslice force, direction of sliding), in Oxford spelling (mobilized,
+  centre).
+- Keep the equations in a definition short: in the narrow column a long
+  one breaks across lines. Link to the section that derives it instead.
+- In a definition, link each other term at its first mention with
+  `{term}`, except the terms of the first group, LEMの枠組み: すべり面 and
+  スライス come up in almost every entry. Where the wording differs, name
+  the entry: `` {term}`全垂直応力 <垂直応力>` ``.
+- A term gets an entry when readers may meet it away from the section that
+  explains it: another document uses it, the same document uses it far
+  from that section, or LEM uses it more narrowly than 土質力学 or
+  材料力学 do (内力).
 
 ## Figures
 
