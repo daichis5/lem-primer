@@ -29,7 +29,7 @@ series: "practice 2 of 3"
 
 | 関数とクラス | 求めるもの | 節 |
 |---|---|---|
-| `ground`，`Circle`，`make_slices` | 地表，円弧のすべり面，スライスの表 | 1節 |
+| `ground`，`Circle`，`Slices`，`make_slices` | 地表，円弧のすべり面，スライスの表 | 1節 |
 | `cross` | 2次元のベクトルの外積 | 1節 |
 | `fellenius`，`bishop`，`janbu` | 3つの手法の，教科書の式による安全率 | 2節 |
 | `base_forces`，`residuals` | 傾き $\theta$ のスライス間力のもとでの底面の力と，つり合いの残差 | 3節 |
@@ -42,7 +42,7 @@ series: "practice 2 of 3"
 
 ## 準備
 
-[実践1](practice-infinite-slope.md)で作ったフォルダ `lem-practice` を使う．この実践のコードは，{download}`slices.py <examples/slices.py>` と {download}`test_slices.py <examples/test_slices.py>` にまとめてある．テストと6節では実践1の `infinite_slope.py` を読み込むので，実践1から始めていないときは，{download}`infinite_slope.py <examples/infinite_slope.py>` も同じフォルダに置く．
+[実践1](practice-infinite-slope.md)で作ったフォルダ `lem-practice` を使う．この実践のコードは，{download}`slices.py <examples/slices.py>` と {download}`test_slices.py <examples/test_slices.py>` にまとめてある．なお，テストと6節では実践1の `infinite_slope.py` を読み込むので，実践1から始めていないときは，{download}`infinite_slope.py <examples/infinite_slope.py>` も同じフォルダに置く．
 
 ---
 
@@ -215,7 +215,7 @@ $$ (eq-slices-janbu)
 
 ## 3. スライス間力の傾きを変数にして，1つの枠組みにまとめる
 
-2節の3つの式は，手法ごとに別々に導かれたように見える．しかし，[第2資料 3.3節](#what-section-3-3)で見たように，手法の違いは{term}`不静定性の解消`（closure）の仕方の違いである．Fredlund and Krahn (1977) は，この見方で2次元の各手法を1つの枠組みにまとめ，比べた．そこで，この実践でも，[第2資料 5.1節](#what-section-5-1)のSpencer法の仮定を，変数のまま使う．各スライスに働くスライス間力の合力 $Q_i$ が，どのスライスでも同じ向き
+2節の3つの式は，手法ごとに別々に導かれたように見える．しかし，[第2資料 3.3節](#what-section-3-3)で見たように，手法の違いは{term}`不静定性の解消`（closure）の仕方の違いである．Fredlund and Krahn (1977)は，この見方で2次元の各手法を1つの枠組みにまとめ，比べた．そこで，この実践でも，[第2資料 5.1節](#what-section-5-1)のSpencer法の仮定を，変数のまま使う．各スライスに働くスライス間力の合力 $Q_i$ が，どのスライスでも同じ向き
 
 $$
 \boldsymbol{d}=
@@ -412,7 +412,7 @@ $\theta$ を変えながら，$F_m(\theta)$ と $F_f(\theta)$ を求める．
 :end-before: 9. moving
 ```
 
-1行目は，式 {eq}`eq-slices-bishop` に，楕円の底面の角度を代入した値である．一方，2行目では，式 {eq}`eq-slices-normal` の枠組みで，中心 $(6, 18)$ まわりのモーメントの残差を0にした．2つは，[第3資料 5.1節](#practice-section-5-1)で見た「Bishopで非円弧を計算した」の2つの読み方にあたり，1.994と1.922で4%違う．円弧の式は，底面垂直力の作用線が中心を通ること，せん断力の腕がどれも半径 $R$ であること，自重の腕が $R\sin\alpha_i$ であることを使って導いたものである．[第3資料 3節](#practice-section-3)のとおり，楕円では，この3つが成り立たない．Fellenius法でも，式 {eq}`eq-slices-fellenius` は1.733，中心まわりのモーメントに戻ると1.803になる．後者の `fellenius_about` は，底面垂直力 $N_i=W_i\cos\alpha_i$ のモーメントも含める．
+1行目は，式 {eq}`eq-slices-bishop` に，楕円の底面の角度を代入した値である．一方，2行目では，式 {eq}`eq-slices-normal` の枠組みで，中心 $(6, 18)$ まわりのモーメントの残差を0にした．2つは，[第3資料 5.1節](#practice-section-5-1)で見た「Bishopで非円弧を計算した」の2つの読み方にあたり，1.994と1.922で4%違う．円弧の式は，底面垂直力の作用線が中心を通ること，せん断力の腕がどれも半径 $R$ であること，自重の腕が $R\sin\alpha_i$ であることを使って導いたものである．楕円では，この3つが成り立たない．前の2つは，[第3資料 3節](#practice-section-3)で見たとおりである．Fellenius法でも，式 {eq}`eq-slices-fellenius` は1.733，中心まわりのモーメントに戻ると1.803になる．後者の `fellenius_about` は，底面垂直力 $N_i=W_i\cos\alpha_i$ のモーメントも含める．
 
 ```{literalinclude} examples/slices.py
 :language: python
@@ -494,7 +494,7 @@ uv run python run_slices.py
 :::{dropdown} 問2（やってみよう）　図1の6本のスライスで，簡易Bishop法の解での $m_{\alpha,i}$ をスライスごとに求めよ．最も小さいのはどのスライスか
 :icon: question
 
-`s = make_slices(Circle(), 6)` と `fs = bishop(s)` から，`np.cos(s.alpha) + np.sin(s.alpha) * s.tan_phi / fs` を計算する．左から順に0.894，0.987，1.033，1.032，0.973，0.822で，最も小さいのは，底面が最も急な6本目（$\alpha=53.5^\circ$）である．出口側の1本目は，$\alpha=-14.9^\circ$ と緩いので0.894にとどまる．$m_{\alpha,i}$ が0に近づくのは，出口の近くで底面が急に上るとき（$\alpha_i$ が大きな負の値のとき）である．（→[2節](#slices-section-2)）
+`s = make_slices(Circle(), 6)` と `fs = bishop(s)` を求める．そのうえで，`np.cos(s.alpha) + np.sin(s.alpha) * s.tan_phi / fs` を計算する．左から順に0.894，0.987，1.033，1.032，0.973，0.822で，最も小さいのは，底面が最も急な6本目（$\alpha=53.5^\circ$）である．出口側の1本目は，$\alpha=-14.9^\circ$ と緩いので0.894にとどまる．$m_{\alpha,i}$ が0に近づくのは，出口の近くで底面が急に上るとき（$\alpha_i$ が大きな負の値のとき）である．（→[2節](#slices-section-2)）
 :::
 
 :::{dropdown} 問3　$\theta=0$ の枠組みで，モーメントの残差を0にすると，簡易Bishop法と同じ値になるのはなぜか

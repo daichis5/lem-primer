@@ -45,7 +45,7 @@ series: "practice 3 of 3"
 
 ## 準備
 
-[実践1](practice-infinite-slope.md)と[実践2](practice-slices-2d.md)で使ったフォルダ `lem-practice` を使う．この実践のコードは，{download}`columns.py <examples/columns.py>` と {download}`test_columns.py <examples/test_columns.py>` にまとめてある．このコードは，実践2の `slices.py` から斜面の形を読み込む．そのため，ここから始めるときは，{download}`infinite_slope.py <examples/infinite_slope.py>` と {download}`slices.py <examples/slices.py>` も，同じフォルダに置く．
+[実践1](practice-infinite-slope.md)と[実践2](practice-slices-2d.md)で使ったフォルダ `lem-practice` を使う．この実践のコードは，{download}`columns.py <examples/columns.py>` と {download}`test_columns.py <examples/test_columns.py>` にまとめてある．なお，このコードは，実践2の `slices.py` から斜面の形を読み込む．また，テストと `run_columns.py` は，実践1の `infinite_slope.py` も使う．そのため，ここから始めるときは，{download}`infinite_slope.py <examples/infinite_slope.py>` と {download}`slices.py <examples/slices.py>` も，同じフォルダに置く．
 
 ---
 
@@ -80,7 +80,7 @@ $\boldsymbol{n}$ は楕円体の外向きで，底面では下を向き，{term}
 :pyobject: Ellipsoid
 ```
 
-カラムの表は，次の量からなる．底面積 $A_i$ は，一辺 $h$ の正方形の上にある接平面の面積で，$h^2/|n_{z,i}|$ である．これは，実践2の $l_i=b_i/\cos\alpha_i$ にあたる．重さは，中心で測った柱の高さを使い，$W_i=\gamma h^2(z_g-z_s)$ とする．
+カラムの表は，次の量からなる．底面積 $A_i$ は，一辺 $h$ の正方形の上にある接平面の面積で，$h^2/|n_{z,i}|$ である．これは，実践2の $l_i=b_i/\cos\alpha_i$ にあたる．重さは，中心で測った柱の高さを使い，$W_i=\gamma h^2(z_g-z_s)$ とする．$z_g$ は，カラムの中心での地表の高さである．
 
 ```{literalinclude} examples/columns.py
 :language: python
@@ -117,7 +117,7 @@ $\boldsymbol{n}$ は楕円体の外向きで，底面では下を向き，{term}
 
 [第2資料 7.1節](#what-section-7-1)で見たように，3次元では，強度の式が決めるのは{term}`底面せん断力`の大きさだけで，向きは決めない．そのため，各底面の{term}`局所すべり方向` $\boldsymbol{m}_i$ を，別に仮定しなければならない．この実践では，2つの決め方を作る．
 
-- **鉛直面の中の向き**：全体すべり方向 $\boldsymbol{d}$ を含む鉛直面と底面が交わる線に沿い，$\boldsymbol{d}$ の側へ進む向きをとる．Hovland (1977) の取り方である．この向きは，$\boldsymbol{d}$ に直交する水平な軸 $\boldsymbol{a}$ のまわりに土塊が回るときの向きと同じで，$\boldsymbol{m}_i\propto\boldsymbol{a}\times\boldsymbol{n}_i$ になる．のり尻に近い底面では，上りの向きになる
+- **鉛直面の中の向き**：全体すべり方向 $\boldsymbol{d}$ を含む鉛直面と底面が交わる線に沿い，$\boldsymbol{d}$ の側へ進む向きをとる．Hovland (1977)の取り方である．この向きは，$\boldsymbol{d}$ に直交する水平な軸 $\boldsymbol{a}$ のまわりに土塊が回るときの向きと同じで，$\boldsymbol{m}_i\propto\boldsymbol{a}\times\boldsymbol{n}_i$ になる．のり尻に近い底面では，上りの向きになる
 - **接平面への射影**：$\boldsymbol{d}$ を各底面の接平面に射影し，$\boldsymbol{m}_i\propto(\boldsymbol{I}-\boldsymbol{n}_i\boldsymbol{n}_i^{\mathsf T})\boldsymbol{d}$ とする．[第3資料 8.2節](#practice-section-8-2)の決め方である
 
 ```{literalinclude} examples/columns.py
@@ -324,7 +324,7 @@ Hovland法の値が小さくなる理由は，2つに分けられる．1つは�
 
 最後の行は，$N_i-U_i$ が負になるカラムの数である．3次元の簡易Bishop法では，9198本のうち168本で負になる．どれも柱の高さが0.51 m以下の，すべり面の縁にあるカラムである．そこでは，[実践2 5節](#slices-section-5)の右端のスライスと同じく，粘着力によるせん断力の鉛直成分が自重を上回る．一方，Hovland法の $N_i=W_i|n_{z,i}|$ は，乾いた斜面では負にならない．
 
-$B$ を大きくすると，底面の横の傾きは小さくなる．そのため，Hovland法の値は，横に傾いていない断面のスライスとみなした1.858に近づき，中央断面の値には近づかない．楕円体を奥行き方向に長くしても，$y=0$ から離れた断面が浅い円弧になることは変わらないからである．中央断面の2次元の値と比べたいときは，5節の円柱を使う．球の値を，テストに足す．
+$B$ を大きくすると，底面の横の傾きは小さくなる．そのため，Hovland法の値は，各カラムを横に傾いていない断面のスライスとみなした値に近づく．楕円体を奥行き方向に延ばしても，同じ形の断面が $B$ に比例して長く並ぶだけなので，この値は $B$ によらず1.86ほどである．つまり，Hovland法の値は，中央断面の1.888には近づかない．中央断面の2次元の値と比べたいときは，5節の円柱を使う．球の値を，テストに足す．
 
 ```{literalinclude} examples/test_columns.py
 :language: python
@@ -439,7 +439,7 @@ uv run python save_table.py
 - 平面のすべり面では無限斜面の値に，円柱のすべり面では2次元の値に一致する．新しい手法は，1つ前のモデルに戻ることで確かめる（→[5節](#columns-section-5)）
 - 球では，Hovland法の値が2次元の中央断面より小さく，3次元の簡易Bishop法の値は大きい．3次元と2次元の大小は，すべり面の形と手法で逆にもなる．簡易Bishop法では，すべり面の縁の薄いカラムで有効垂直力が負になる（→[6節](#columns-section-6)）
 - 同じ表でも，局所すべり方向の決め方で安全率が17%変わる．球では，試した全体すべり方向のうち，斜面を真っすぐ下る向きで安全率が最小になった（→[7節](#columns-section-7)）
-- ほかの実装と比べるときは，法線の向き，局所すべり方向，間隙水圧の項，回転軸，求まらないときの返し方を，先に確かめる（→[8節](#columns-section-8)）
+- ほかの実装と比べるときは，表の量の意味，法線の向き，局所すべり方向，間隙水圧の項，回転軸，求まらないときの返し方を，先に確かめる（→[8節](#columns-section-8)）
 
 ---
 

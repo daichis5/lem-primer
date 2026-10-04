@@ -80,7 +80,7 @@ def panel_forces(v):
     centroid = v.p((B / 2, B / 2 * TAN - Z / 2))
     fig.arrow(centroid, add(centroid, (0.0, W_PX)), WEIGHT)
     fig.circle(centroid, 3.0, WEIGHT)
-    fig.math(add(centroid, (8, 30)), "W", color=WEIGHT)
+    fig.math(add(centroid, (14, 30)), "W", color=WEIGHT)
 
     base = v.p((B / 2, B / 2 * TAN - Z))
     tip_n = add(base, mul(screen((-n_out[0], -n_out[1])), W_PX * math.cos(BETA)))
@@ -132,14 +132,15 @@ def panel_water(v):
     fig.line(q, (x_left - 4, q[1]), WATER, 1.2, "2 3")
     fig.line(p, (x_left - 4, p[1]), RULE, 1.0)
     dimension((x_left, p[1]), (x_left, q[1]))
-    fig.math((x_left - 6, (p[1] + q[1]) / 2), r"h_w \r{cos}^2β", 15, MUTED, anchor="end", vcenter=True)
+    # Set low, at P's end of the dimension, so the water table above clears the label.
+    fig.math((x_left - 6, p[1] + 4), r"h_w \r{cos}^2β", 15, MUTED, anchor="end")
     fig.circle(p, 3.0, INK)
     fig.circle(q, 2.6, WATER)
     fig.math(add(p, (7, 17)), "P")
 
     a = v.p((-1.4, -1.4 * TAN - Z + 0.8))
     fig.arrow(a, add(a, mul(screen(m_dir), 34)), WATER, width=1.6)
-    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.45)), "地下水位", SMALL, WATER, "middle", vcenter=True)
+    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.9)), "地下水位", SMALL, WATER, "middle", vcenter=True)
 
     fig.math((404, 32), r"\t{斜面に平行な浸透：}u = γ_w h_w \r{cos}^2β", 15, INK)
     fig.math((404, 56), r"\t{鉛直の静水圧：}u = γ_w h_w", 15, INK)

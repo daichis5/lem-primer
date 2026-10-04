@@ -58,7 +58,7 @@ uv add --dev pytest
 4. 計算に使うNumPyを追加する
 5. テストに使うpytestを追加する．`--dev` は，開発のときだけ使う道具として分けて記録する指定
 
-uvを使わないときは，フォルダ `lem-practice` を作って移り，Python 3.11以上で `pip install numpy pytest` を実行する．そのうえで，この後のコマンドから `uv run` を外す．この実践のコードは，{download}`infinite_slope.py <examples/infinite_slope.py>` と {download}`test_infinite_slope.py <examples/test_infinite_slope.py>` にまとめてある．自分で書いたコードが動かないときは，見比べるとよい．
+uvを使わないときは，フォルダ `lem-practice` を作って移り，Python 3.11以上で仮想環境（`python3 -m venv .venv`）を作って有効にする．そのうえで `pip install numpy pytest` を実行し，この後のコマンドから `uv run` を外す．この実践のコードは，{download}`infinite_slope.py <examples/infinite_slope.py>` と {download}`test_infinite_slope.py <examples/test_infinite_slope.py>` にまとめてある．自分で書いたコードが動かないときは，見比べるとよい．
 
 ---
 
@@ -214,7 +214,7 @@ $$ (eq-infinite-fs)
 
 すべり面の{term}`間隙水圧` $u$ は，地下水の流れをどう仮定するかで決め方が違う．
 
-- **斜面に平行な浸透**：地下水が斜面に平行に流れるとき，流れに直交する等ポテンシャル線は，斜面に直交する．等ポテンシャル線の上では，全水頭が等しい．すべり面の点 P を通る等ポテンシャル線が地下水位と交わる点では，水圧が0なので，全水頭はその点の高さになる．P からその点までの，斜面に直交する距離は $h_w\cos\beta$ で，その鉛直成分は $h_w\cos^2\beta$ である．そのため，P の圧力水頭は $h_w\cos^2\beta$ になり，$u=\gamma_w h_w\cos^2\beta$ である
+- **斜面に平行な浸透**：地下水が斜面に平行に流れるとき，流れに直交する等ポテンシャル線は，斜面に直交する．等ポテンシャル線の上では，全水頭が等しい．すべり面の点 P を通る等ポテンシャル線が地下水位と交わる点では，水圧が0なので，全水頭はその点の高さになる．P からその点までの，斜面に直交する距離は $h_w\cos\beta$ で，その鉛直成分は $h_w\cos^2\beta$ になる．これが P の圧力水頭なので，$u=\gamma_w h_w\cos^2\beta$ である
 - **鉛直の静水圧**：地下水位から鉛直に測った深さで，静水圧とする．$u=\gamma_w h_w$ である．これは，等ポテンシャル線を鉛直とみなすことにあたる．地下水位を線で与える{term}`LEM <極限平衡法>`のプログラムには，この決め方を使うものがある．地下水位が傾いていれば実際には水が流れるので，斜面に平行な浸透の $1/\cos^2\beta$ 倍の $u$ を与えることになる
 
 ```{literalinclude} examples/infinite_slope.py
@@ -247,7 +247,7 @@ $$ (eq-infinite-effective)
 
 前者は，どの傾きでも正である．後者は，$\cos^2\beta<\gamma_w/\gamma_{sat}$ のとき負になる．$\gamma_{sat}=20$ kN/m³ では，$\beta>45.5^\circ$ がそれにあたる．
 
-有効垂直応力が負になるのは，すべり面の土の骨格が引張を受けている状態である．土は引張をほとんど伝えないので，このまま計算しても力学的な意味はない．`factor_of_safety` は式 {eq}`eq-infinite-fs` のとおりに計算するため，摩擦の項が負になり，粘着力による抵抗の一部を打ち消す．[第3資料 12.1節](#practice-section-12-1)にあるように，負の値を0とみなすか，テンションクラック（引張亀裂）を設けるかといった扱いは，別に決めなければならない．鉛直の静水圧のときだけ負になることを，テストに足す．
+有効垂直応力が負になるのは，すべり面の土の骨格が引張を受けている状態である．土は引張をほとんど伝えないので，このまま計算しても力学的な意味はない．`factor_of_safety` は式 {eq}`eq-infinite-fs` のとおりに計算するため，摩擦の項が負になり，粘着力による抵抗を打ち消す向きに働く．急な斜面では，安全率そのものが負になることがある．[第3資料 12.1節](#practice-section-12-1)にあるように，負の値を0とみなすか，テンションクラック（引張亀裂）を設けるかといった扱いは，別に決めなければならない．鉛直の静水圧のときだけ負になることを，テストに足す．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -293,7 +293,7 @@ uv run python run_infinite_slope.py
 | `ModuleNotFoundError: No module named 'numpy'` | `uv run` を付けずに，NumPyのない環境のPythonで実行している．`uv run python …` や `uv run pytest` のように実行する．（→[準備](#infinite-setup)） |
 | `AttributeError: module 'infinite_slope' has no attribute …` | テストが使う関数を，まだ `infinite_slope.py` に書いていない．関数の名前の綴りも確かめる．（→[1節](#infinite-section-1)から[4節](#infinite-section-4)） |
 | `ValueError: h_w は 0 以上 z 以下にする` | `column_weight` に，すべり面より下か，地表より上の地下水位を渡している．（→[4節](#infinite-section-4)） |
-| 安全率が負になる，または表の値と大きく違う | 角度を度のまま `math.sin` や `math.cos` に渡していないかを確かめる．`math.radians` でラジアンに直す．（→[1節](#infinite-section-1)） |
+| 安全率が負になる，または表の値と大きく違う | 角度を度のまま `math.sin`，`math.cos`，`math.tan` に渡していないかを確かめる．`math.radians` でラジアンに直す．（→[1節](#infinite-section-1)） |
 | 安全率が表の値と少し違う | 水の単位体積重量 `GAMMA_W` を，9.81 kN/m³にしているかを確かめる．（→[1節](#infinite-section-1)，[4節](#infinite-section-4)） |
 
 ## まとめ
@@ -339,7 +339,7 @@ $w=18\times3=54$ kPa なので，$\sigma_n=54\cos^2 25^\circ=44.36$ kPa，$\tau=
 :::{dropdown} 問4　同じ地下水位でも，斜面に平行な浸透と鉛直の静水圧で，間隙水圧が違うのはなぜか
 :icon: question
 
-等ポテンシャル線の向きの仮定が違うため．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交する．そのため，すべり面の点の圧力水頭は，その点を通る等ポテンシャル線が地下水位と交わる点との高さの差 $h_w\cos^2\beta$ になる．鉛直の静水圧は，等ポテンシャル線を鉛直とみなすことにあたり，地下水位までの鉛直の距離 $h_w$ が，そのまま圧力水頭になる．（→[4節](#infinite-section-4)）
+等ポテンシャル線の向きの仮定が違うため．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交する．そのため，すべり面の点の圧力水頭は，その点を通る等ポテンシャル線が地下水位と交わる点との高さの差 $h_w\cos^2\beta$ になる．鉛直の静水圧は，等ポテンシャル線を鉛直とみなすことにあたる．つまり，地下水位までの鉛直の距離 $h_w$ が，そのまま圧力水頭になる．（→[4節](#infinite-section-4)）
 :::
 
 :::{dropdown} 問5（やってみよう）　有効垂直応力が負のとき0とみなすと，地下水位が地表にある $\beta=50^\circ$，$z=5$ mの斜面で，鉛直の静水圧の $F_s$ はどう変わるか

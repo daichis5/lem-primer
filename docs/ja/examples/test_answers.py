@@ -86,6 +86,14 @@ def test_practice_2():
         fs,
     ) == pytest.approx((1.594, 1.734, 1.575, 1.731), abs=1e-3)
     assert math.degrees(theta) == pytest.approx(17.9, abs=0.1)
+    # 問5：φ' = 30° のときとの比は0.84ほどで，tan φ' の比0.81より大きい
+    base = slices.make_slices(slices.Circle(), 50)
+    for method in (slices.fellenius, slices.bishop, slices.janbu):
+        assert method(s) / method(base) == pytest.approx(0.84, abs=5e-3)
+    assert fs / slices.spencer(base, (6.0, 18.0))[0] == pytest.approx(0.84, abs=5e-3)
+    assert math.tan(math.radians(25.0)) / math.tan(math.radians(30.0)) == pytest.approx(
+        0.81, abs=5e-3
+    )
 
     assert slices.bishop(
         slices.make_slices(slices.Circle((4.0, 16.0)), 50)
