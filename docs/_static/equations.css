@@ -1,0 +1,66 @@
+/* Display equations and their numbers.
+
+   Furo centres an equation and lays its number over the right end of the line
+   (``position: absolute``). On a narrow screen, an equation that comes near
+   the number, or is wider than the column, runs under it. Once MathJax has
+   typeset an equation, lay its line out as three columns instead: the equation
+   stays centred while it fits, and moves left to clear the number when it does
+   not. When even that is not enough, the line grows past the column and
+   Furo's wrapper scrolls it. On Furo's narrow layout the number gets a row of
+   its own (the last rule).
+
+   The third column is never narrower than the number, and an equation without
+   one keeps the whole width. Before MathJax has run, Furo's layout stays. */
+
+div.math:has(> mjx-container) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content minmax(max-content, 1fr);
+  align-items: center;
+}
+
+/* The number comes first in the markup, so the equation is put on its row
+   explicitly. */
+
+div.math > mjx-container {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Keep Furo's 0.5rem inset from the column's edge inside the number's box,
+   where the ¶ link below sits, and leave at least 0.5em between the equation
+   and the number. ``inset: auto`` drops Furo's offsets, which would otherwise
+   move the number now that it is positioned relatively. */
+
+div.math:has(> mjx-container) > span.eqno {
+  grid-column: 3;
+  justify-self: end;
+  position: relative;
+  inset: auto;
+  transform: none;
+  padding: 0 0.5rem 0 0.5em;
+}
+
+/* Furo shows the number's ¶ link on hover. Pinned in the inset, out of the
+   flow, it does not widen the number, which would move the equation. */
+
+div.math:has(> mjx-container) > span.eqno > .headerlink {
+  position: absolute;
+  right: 0;
+}
+
+/* On Furo's narrow layout, a line that has to scroll would cut its number off
+   at the screen's edge, where "(33)" can read as "(3". Give each number a row
+   of its own instead, under the right end of its equation as LaTeX does with
+   a line that is too long: the equation gets the whole width, and the number
+   sticks to the right of the visible column while the line scrolls. The
+   negative margin tucks the number into the equation's bottom margin. */
+
+@media (max-width: 46em) {
+  div.math:has(> mjx-container) > span.eqno {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    position: sticky;
+    right: 0;
+    margin-top: -1em;
+  }
+}

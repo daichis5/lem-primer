@@ -169,6 +169,7 @@ html_css_files = [
     "glossary.css",
     "sidebar-links.css",
     "lists.css",
+    "equations.css",
 ]
 
 # Furo's default sidebar (see its ``theme.conf``) with the language switcher
