@@ -858,10 +858,10 @@ $$ (eq-what-summary)
 
 Click a question to see its answer.
 
-:::{dropdown} Q1. On the base of "Working through the numbers" in Chapter 1, Section 6, $c'=10$ kPa, $\phi'=30^\circ$, $\sigma_n'=60$ kPa and $\tau_m=30$ kPa, which give $F_s=1.49$. Reduce the strength by $F_s$ and find $c_m'$ and $\phi_m'$. What does the Mohr–Coulomb failure criterion give on this base with these $c_m'$ and $\phi_m'$?
+:::{dropdown} Q1. The base of "Working through the numbers" in Chapter 1, Section 6 has $c'=10$ kPa, $\phi'=30^\circ$, $\sigma_n'=60$ kPa and $\tau_m=30$ kPa, which give $F_s=1.49$. Reduce the strength by the factor $F_s$ and find $c_m'$ and $\phi_m'$. What does the Mohr–Coulomb failure criterion give on this base with these $c_m'$ and $\phi_m'$?
 :icon: question
 
-$c_m'=10/1.49=6.71$ kPa and $\tan\phi_m'=\tan 30^\circ/1.49=0.3875$, so $\phi_m'=21.2^\circ$. $F_s$ divides $\tan\phi'$, not $\phi'$, so $\phi_m'$ is not $\phi'/F_s=20.1^\circ$. In the Mohr–Coulomb failure criterion, they give $c_m'+\sigma_n'\tan\phi_m'=6.71+60\times0.3875=30.0$ kPa, equal to the mobilized shear stress $\tau_m$. In other words, reducing the strength by $F_s$ puts this base exactly at the limit state. (→[Section 1](#what-section-1), [Chapter 1, Section 6](#section-6))
+$c_m'=10/1.49=6.71$ kPa and $\tan\phi_m'=\tan 30^\circ/1.49=0.3875$, so $\phi_m'=21.2^\circ$. $F_s$ divides $\tan\phi'$, not $\phi'$, so $\phi_m'$ is not $\phi'/F_s=20.1^\circ$. Put into the Mohr–Coulomb failure criterion, they give $c_m'+\sigma_n'\tan\phi_m'=6.71+60\times0.3875=30.0$ kPa, equal to the mobilized shear stress $\tau_m$. In other words, reducing the strength by the factor $F_s$ puts this base exactly at the limit state. (→[Section 1](#what-section-1), [Chapter 1, Section 6](#section-6))
 :::
 
 :::{dropdown} Q2. Why can equilibrium and the base strength equation alone not determine the distribution of internal forces?
@@ -889,7 +889,7 @@ Ignoring part of the internal forces; assuming the direction of the internal for
 - Simplified Bishop method: keeps the interslice normal force and simplifies the shear force ($X_i=0$ in implementations). It uses vertical force equilibrium of each slice and global moment equilibrium
 - Simplified Janbu method: ignores or simplifies the interslice shear force and uses force equilibrium
 
-(→[Section 6](#what-section-6))
+(→[Section 4](#what-section-4), [Section 6](#what-section-6))
 :::
 
 :::{dropdown} Q6. In what sense is the Spencer method called a "complete equilibrium method"?
@@ -898,7 +898,7 @@ Ignoring part of the internal forces; assuming the direction of the internal for
 In the sense that, under the assumed direction of the internal forces (the same angle $\theta$ on every boundary), it satisfies all force and moment equilibrium. The Spencer method's solution, however, is not an exact continuum solution. Nor is the distribution of internal forces it gives necessarily the unique physical solution. (→[Section 5.1](#what-section-5-1))
 :::
 
-:::{dropdown} Q7. In $X/E=\lambda f(x)$ of the Morgenstern–Price method, how is each of $f(x)$ and $\lambda$ determined? If several choices of $f(x)$ give nearly the same factor of safety, is the distribution of internal forces then pinned down?
+:::{dropdown} Q7. In the Morgenstern–Price method's $X/E=\lambda f(x)$, how are $f(x)$ and $\lambda$ each determined? If several choices of $f(x)$ give nearly the same factor of safety, is the distribution of internal forces then pinned down?
 :icon: question
 
 $f(x)$ is a function that describes how the direction of the internal forces varies with position. It is assumed, chosen from shapes such as half-sine and trapezoidal. $\lambda$, on the other hand, is the scale factor that sets the size of $X/E$. It is solved for together with $F_s$ from force and moment equilibrium. Nearly the same factor of safety does not pin down the distribution of internal forces, because a different $f(x)$ can give different distributions of interslice forces and base normal forces. With $f(x)=1$, the method becomes the Spencer method. (→[Section 5.2](#what-section-5-2))
@@ -922,7 +922,7 @@ No. The Hovland method is an extension of the Fellenius type that ignores the in
 Because the conditions being compared in 2D and 3D are not necessarily the same. If they differ on points such as whether the slip surfaces found represent the same failure mechanism, whether the direction of sliding is appropriate, how far the intercolumn forces were considered, and whether the strength on the sides was counted twice, the two cannot simply be compared. (→[Section 9](#what-section-9))
 :::
 
-:::{dropdown} Q11. What does using a single factor of safety $F_s$ for the whole slip surface assume about strength? What can that assumption not represent?
+:::{dropdown} Q11. What does using a single factor of safety $F_s$ for the whole slip surface assume about strength? What can that assumption not represent directly?
 :icon: question
 
 It assumes that strength is mobilized everywhere on the slip surface at the same time and in the same proportion. So it does not directly represent differences in strain from place to place, softening from peak to residual strength, or progressive failure. (→[Section 10](#what-section-10))

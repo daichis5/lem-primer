@@ -854,10 +854,10 @@ Click a question to see its answer.
 The stress tensor $\boldsymbol{\sigma}$ is a second-order tensor that describes the state of stress at a point, and it is defined without choosing a surface. The traction $\boldsymbol{t}$, by contrast, is the force vector per unit area on a surface with normal $\boldsymbol{n}$; it is found only once the orientation of the surface is chosen, as $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$. At the same point, a different surface orientation gives a different traction. (→[Section 2](#section-2))
 :::
 
-:::{dropdown} Q2. In 2D, take $x$ horizontal and $z$ vertically upward. At a point on the slip surface, the components of the stress tensor, with tension positive, are $\sigma_{xx}=-60$ kPa, $\sigma_{zz}=-100$ kPa and $\sigma_{xz}=0$, and the outward unit normal vector is $\boldsymbol{n}=(0.6,\,-0.8)$. Find the traction $\boldsymbol{t}$, the normal stress $\sigma_n$ and the magnitude of the shear component $\|\boldsymbol{\tau}\|$.
+:::{dropdown} Q2. In 2D, take $x$ horizontal and $z$ vertically upward. At a point on the slip surface, the components of the stress tensor, with tension positive and in the notation of the figure in Section 2, are $\sigma_{xx}=-60$ kPa, $\sigma_{zz}=-100$ kPa and $\tau_{xz}=0$. The outward unit normal vector at the point is $\boldsymbol{n}=(0.6,\,-0.8)$. Find the traction $\boldsymbol{t}$, the normal stress $\sigma_n$ and the magnitude of the shear component $\|\boldsymbol{\tau}\|$.
 :icon: question
 
-$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa. The normal component is $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa, so $\sigma_n=-t_n=85.6$ kPa. The shear component is $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa, and $\|\boldsymbol{\tau}\|=19.2$ kPa. The surface is inclined at 36.9° from the horizontal. Mohr's circle of stress from mechanics of materials gives the same values from the principal stresses of 100 kPa and 60 kPa, taken compression positive. (→[Section 2](#section-2), [Section 3](#section-3))
+With $\boldsymbol{\sigma}=\begin{bmatrix}-60&0\\0&-100\end{bmatrix}$ kPa, $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa. The normal component is $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa, so $\sigma_n=-t_n=85.6$ kPa. The shear component is $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa, and $\|\boldsymbol{\tau}\|=19.2$ kPa. The surface is inclined at 36.9° from the horizontal. Mohr's circle from mechanics of materials, drawn with the principal stresses of 100 kPa and 60 kPa (compression positive), gives the same values. (→[Section 2](#section-2), [Section 3](#section-3))
 :::
 
 :::{dropdown} Q3. How is the effective normal stress $\sigma_n'$ determined from the total normal stress and the pore water pressure?
@@ -887,7 +887,7 @@ $\sigma_n'=100-20=80$ kPa, so $\tau_f=10+80\tan 30^\circ=56.2$ kPa. If $\tau_m=3
 :::{dropdown} Q7. In "Working through the numbers" in Section 6, $\tau_m=30$ kPa is given and $F_s$ is found from it. Does an actual LEM analysis also find $\tau_m$ on each base first and then compute $F_s$ as a ratio?
 :icon: question
 
-No. The $\tau_m$ on each base is not known until equilibrium is solved. LEM expresses the mobilized shear stress in terms of the unknown $F_s$, as $\tau_m=\tau_f/F_s$. Then it finds $F_s$ and the other unknown forces together so that the mass loaded by this traction satisfies force and moment equilibrium. (→[Section 6](#section-6))
+Not in general. Once the mass is divided into slices or columns, the equilibrium equations alone do not determine the $\tau_m$ on each base. So LEM expresses the mobilized shear stress in terms of the unknown $F_s$, as $\tau_m=\tau_f/F_s$. Then it finds $F_s$ and the other unknown forces together so that the mass loaded by this traction satisfies force and moment equilibrium. In a simple model where equilibrium alone determines $\tau_m$, such as the infinite slope, the ratio can be taken with a $\tau_m$ found first. (→[Section 6](#section-6), [Section 9](#section-9), [Practice 1, Section 2](#infinite-section-2))
 :::
 
 :::{dropdown} Q8. What operation on the pointwise stress produced $N_i$, $U_i$ and $T_i$?
@@ -896,7 +896,7 @@ No. The $\tau_m$ on each base is not known until equilibrium is solved. LEM expr
 Integration over the base $S_i$. $N_i$ is the surface integral of the total normal stress $\sigma_n$, and $U_i$ is that of the pore water pressure $u$. $T_i$ was found by integrating the Mohr–Coulomb failure criterion with $c_i'$ and $\phi_i'$ constant over the base, then dividing by the common factor of safety $F_s$. (→[Section 7](#section-7), [Section 8](#section-8))
 :::
 
-:::{dropdown} Q9. On a curved base, which is larger: the magnitude $\|\boldsymbol{N}_i\|$ of the resultant that adds the normal forces at each point as vectors, or $\int_{S_i}\sigma_n\,dA$, which adds only their magnitudes? Which of the two is LEM's $N_i$?
+:::{dropdown} Q9. On a curved base, which is larger: the magnitude $\|\boldsymbol{N}_i\|$ of the resultant of the normal forces at each point, added as vectors, or $\int_{S_i}\sigma_n\,dA$, which adds only their magnitudes? Which of the two is LEM's $N_i$?
 :icon: question
 
 $\int_{S_i}\sigma_n\,dA$, which adds only the magnitudes, is larger. On a curved surface, the direction of the normal varies from place to place, so adding the forces as vectors cancels part of them. The two are equal only in cases such as when the normal has the same direction over the whole base. LEM's $N_i$, on the other hand, is the sum of the magnitudes. LEM applies it along a representative normal $\boldsymbol{n}_i$ and so represents the curved base by one plane and one direction. (→[Section 7](#section-7), [Section 8](#section-8))
@@ -917,7 +917,7 @@ The base normal force $N_i$, the factor of safety $F_s$, and the interslice and 
 :::{dropdown} Q12. If the slices or columns are made finer and finer, do the assumptions about the interslice forces go away?
 :icon: question
 
-No. Finer division can improve the approximation of the geometry and the integrals. Discretization, however, replaces the unknown continuous stress distribution with a finite number of unknown resultant forces. Dividing more finely does not change the fact that there are more unknowns than equilibrium equations. So the method-specific assumptions that determine the unknowns are needed apart from discretization. (→[Section 8](#section-8), [Section 9](#section-9))
+No. Finer division can improve the approximation of the geometry and the integrals. Discretization, however, replaces the unknown continuous stress distribution with a finite number of unknown resultant forces. Dividing more finely does not change the fact that there are more unknowns than equilibrium equations. So the method-specific assumptions that determine the unknowns are needed separately from discretization. (→[Section 8](#section-8), [Section 9](#section-9))
 :::
 
 ---

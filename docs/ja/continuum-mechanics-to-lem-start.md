@@ -860,10 +860,10 @@ $$ (eq-start-summary)
 応力テンソル $\boldsymbol{\sigma}$ は，1つの点の応力の状態を表す2階のテンソルで，面を決めなくても定まる．一方，表面力 $\boldsymbol{t}$ は，法線が $\boldsymbol{n}$ の面に働く単位面積あたりの力のベクトルで，$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ のように，面の向きを決めて初めて求まる．同じ点でも，面の向きが変われば，表面力も変わる．（→[2節](#section-2)）
 :::
 
-:::{dropdown} 問2　2次元で，$x$ を水平，$z$ を鉛直上向きにとる．すべり面上の点で，引張を正とする応力テンソルの成分が $\sigma_{xx}=-60$ kPa，$\sigma_{zz}=-100$ kPa，$\sigma_{xz}=0$，外向きの単位法線ベクトルが $\boldsymbol{n}=(0.6,\,-0.8)$ である．表面力 $\boldsymbol{t}$，垂直応力 $\sigma_n$，せん断成分の大きさ $\|\boldsymbol{\tau}\|$ を求めよ
+:::{dropdown} 問2　2次元で，$x$ を水平，$z$ を鉛直上向きにとる．すべり面上の点で，引張を正とする応力テンソルの成分が，2節の図の記号で $\sigma_{xx}=-60$ kPa，$\sigma_{zz}=-100$ kPa，$\tau_{xz}=0$ である．この点の外向きの単位法線ベクトルを $\boldsymbol{n}=(0.6,\,-0.8)$ とする．表面力 $\boldsymbol{t}$，垂直応力 $\sigma_n$，せん断成分の大きさ $\|\boldsymbol{\tau}\|$ を求めよ
 :icon: question
 
-$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa である．法線成分は $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa なので，$\sigma_n=-t_n=85.6$ kPa になる．せん断成分は $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa で，$\|\boldsymbol{\tau}\|=19.2$ kPa である．この面は，水平から36.9°傾いている．圧縮を正とする主応力100 kPaと60 kPaから，材料力学のMohrの応力円で求めても，同じ値になる．（→[2節](#section-2)，[3節](#section-3)）
+$\boldsymbol{\sigma}=\begin{bmatrix}-60&0\\0&-100\end{bmatrix}$ kPa なので，$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa である．法線成分は $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa なので，$\sigma_n=-t_n=85.6$ kPa になる．せん断成分は $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa で，$\|\boldsymbol{\tau}\|=19.2$ kPa である．この面は，水平から36.9°傾いている．圧縮を正とする主応力100 kPaと60 kPaから，材料力学のMohrの応力円で求めても，同じ値になる．（→[2節](#section-2)，[3節](#section-3)）
 :::
 
 :::{dropdown} 問3　有効垂直応力 $\sigma_n'$ は，全垂直応力と間隙水圧からどう決まるか
@@ -893,7 +893,7 @@ $\sigma_n'=100-20=80$ kPa なので，$\tau_f=10+80\tan 30^\circ=56.2$ kPa で�
 :::{dropdown} 問7　6節の「数値でたどる」では，$\tau_m=30$ kPa を与えて $F_s$ を求めた．実際のLEMでも，各底面の $\tau_m$ を先に求めてから，比として $F_s$ を計算するのか
 :icon: question
 
-そうではない．各底面の $\tau_m$ は，つり合いを解くまで分からないため．LEMでは，動員されているせん断応力を，未知の $F_s$ で $\tau_m=\tau_f/F_s$ と表す．そのうえで，この表面力を受けた土塊が力とモーメントのつり合いを満たすように，$F_s$ とほかの未知の力を同時に求める．（→[6節](#section-6)）
+一般には，そうではない．スライスやカラムに分けると，つり合い式だけでは各底面の $\tau_m$ が決まらないため．そこでLEMでは，動員されているせん断応力を，未知の $F_s$ で $\tau_m=\tau_f/F_s$ と表す．そのうえで，この表面力を受けた土塊が力とモーメントのつり合いを満たすように，$F_s$ とほかの未知の力を同時に求める．ただし，無限斜面のように，つり合いだけで $\tau_m$ が決まる単純なモデルでは，先に求めた $\tau_m$ で比をとれる．（→[6節](#section-6)，[9節](#section-9)，[実践1 2節](#infinite-section-2)）
 :::
 
 :::{dropdown} 問8　$N_i$，$U_i$，$T_i$ は，点ごとの応力にどのような操作をして作ったか
@@ -905,7 +905,7 @@ $\sigma_n'=100-20=80$ kPa なので，$\tau_f=10+80\tan 30^\circ=56.2$ kPa で�
 :::{dropdown} 問9　曲面の底面で，各点の垂直力をベクトルとして足した合力の大きさ $\|\boldsymbol{N}_i\|$ と，大きさだけを足した $\int_{S_i}\sigma_n\,dA$ は，どちらが大きいか．LEMの $N_i$ は，どちらにあたるか
 :icon: question
 
-大きさだけを足した $\int_{S_i}\sigma_n\,dA$ のほうが大きい．曲面では法線の向きが場所によって変わり，ベクトルとして足すと一部が打ち消し合うため．両者が等しくなるのは，底面全体で法線の方向が同じときなどに限られる．一方，LEMの $N_i$ は，大きさだけを足したほうにあたる．LEMは，これを代表の法線 $\boldsymbol{n}_i$ に沿って働かせて，曲面の底面を1つの平面と1つの向きで表す．（→[7節](#section-7)，[8節](#section-8)）
+大きさだけを足した $\int_{S_i}\sigma_n\,dA$ のほうが大きい．曲面では法線の向きが場所によって変わるので，ベクトルとして足すと一部が打ち消し合うため．両者が等しくなるのは，底面全体で法線の方向が同じときなどに限られる．一方，LEMの $N_i$ は，大きさだけを足したほうにあたる．LEMは，これを代表の法線 $\boldsymbol{n}_i$ に沿って働かせて，曲面の底面を1つの平面と1つの向きで表す．（→[7節](#section-7)，[8節](#section-8)）
 :::
 
 :::{dropdown} 問10　底面 $S_i$ で一定と仮定しなければならないのはどの量で，一定でなくてよいのはどの量か

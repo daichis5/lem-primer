@@ -627,10 +627,10 @@ When LEM is used in practice, the fine value of the factor of safety matters les
 
 Click a question to see its answer.
 
-:::{dropdown} Q1. A Bishop-type factor of safety has converged for a non-circular surface. Of the four stages in Section 0, how far does this alone go?
+:::{dropdown} Q1. A Bishop-type factor of safety has converged for a non-circular surface. Of the four stages in Section 0, which does this alone show?
 :icon: question
 
-Only the first two: the shape can be entered, and it can be computed. A Bishop-type method may not satisfy horizontal force equilibrium for the whole mass, so the third stage, satisfying equilibrium, is not shown yet. The fourth, being mechanically sound, needs separate checks of the line of thrust, the base normal forces, and whether the mass can move along that surface. (→[Section 0](#practice-section-0))
+Only the first two, "The shape can be entered" and "It can be computed." A Bishop-type method may not satisfy horizontal force equilibrium for the whole mass, so the third, "It satisfies equilibrium," is not shown yet. Nor is the fourth, "It is mechanically sound," shown until a separate check finds the assumed internal forces and mechanism of deformation realistic. (→[Section 0](#practice-section-0))
 :::
 
 :::{dropdown} Q2. Why can a method derived for circles compute the factor of safety of an elliptical slip surface or one of any shape?
@@ -651,10 +651,10 @@ Because the lines of action of the base normal forces pass through the center $O
 The arm of the shear force on every base is the radius $R$. So $M_O=R\sum_i T_i=20\times 300=6000$ kN·m/m. On a surface other than a circle, the arms differ from base to base, so they cannot be gathered under one $R$ like this. (→[Section 2.2](#practice-section-2-2), [Section 3.2](#practice-section-3-2))
 :::
 
-:::{dropdown} Q5. On a general surface, is the factor of safety of a simplified method on the safe side of that of a complete equilibrium method?
+:::{dropdown} Q5. On a general surface, is the factor of safety of a simplified method always on the safe side of that of a complete equilibrium method?
 :icon: question
 
-No. On planar, composite and block-shaped surfaces, force equilibrium and moment equilibrium differ in their sensitivity to the interslice shear forces. As a result, whether the simplified Bishop method and the like give a larger or a smaller value than the Spencer or Morgenstern–Price method cannot be decided once and for all. (→[Section 3.4](#practice-section-3-4))
+No. On planar, composite and block-shaped surfaces, force equilibrium and moment equilibrium differ in their sensitivity to the interslice shear forces. As a result, it cannot be decided once and for all whether the simplified Bishop method and the like give a larger or a smaller value than the Spencer or Morgenstern–Price method. (→[Section 3.4](#practice-section-3-4))
 :::
 
 :::{dropdown} Q6. Why can the phrase "computed a non-circular surface with Bishop" be read in two ways? Which reading needs care?
@@ -663,25 +663,7 @@ No. On planar, composite and block-shaped surfaces, force equilibrium and moment
 Because it may mean that the angles of a non-circular surface were simply substituted into the classical equation for circles, or that Bishop's internal-force assumption was kept and extended to equations for general shapes. The first needs care. It may drop terms that vanished because of properties specific to circles, such as the moments of the base normal forces. (→[Section 2](#practice-section-2), [Section 5.1](#practice-section-5-1))
 :::
 
-:::{dropdown} Q7. In a method that does not satisfy all of force equilibrium, why can changing the center of moments change the result?
-:icon: question
-
-In such methods, $\sum\boldsymbol{F}\neq\boldsymbol{0}$ may hold. Then moving the center by $\boldsymbol{a}$ changes the moment residual by $-\boldsymbol{a}\times\sum\boldsymbol{F}$. If $\boldsymbol{a}$ is parallel to $\sum\boldsymbol{F}$, however, this change is zero. (→[Section 6](#practice-section-6))
-:::
-
-:::{dropdown} Q8. Even with a single direction of sliding $\boldsymbol{d}$, the local direction of sliding $\boldsymbol{m}_i$ differs from column to column. Why? And can the direction of the long axis of the slip surface be taken as the direction of sliding as it is?
-:icon: question
-
-In a formulation that finds $\boldsymbol{m}_i$ by projecting $\boldsymbol{d}$ onto the tangent plane of each base, the base normal $\boldsymbol{n}_i$ of a curved surface differs from column to column, and so do the tangent planes and the directions projected onto them. The long axis cannot be taken as the direction of sliding as it is. It describes the shape of the sliding mass in plan, while the direction of sliding is the azimuth in which the mass moves, determined by force equilibrium, so the two need not coincide. Fixing them as the same thing may narrow the search range more than necessary. (→[Section 8.2](#practice-section-8-2), [Section 8.3](#practice-section-8-3))
-:::
-
-:::{dropdown} Q9. In 3D, what does setting the direction of sliding decide in the calculation? Name three things.
-:icon: question
-
-For example, the $x,y,z$ components of the base shear forces, the moments of the base shear forces about each axis, and the base normal forces found from force equilibrium. It also decides the resisting and driving forces along each horizontal axis, the magnitude and direction of the intercolumn forces, the factor of safety, and how the iteration converges. (→[Section 9](#practice-section-9))
-:::
-
-:::{dropdown} Q10. When the iteration converges and gives $F_s$, what should be checked besides the factor of safety?
+:::{dropdown} Q7. When the iteration converges and gives $F_s$, what should be checked besides the factor of safety?
 :icon: question
 
 - The force and moment residuals
@@ -691,6 +673,24 @@ For example, the $x,y,z$ components of the base shear forces, the moments of the
 - Whether the factor of safety differs greatly from that of methods with other internal-force assumptions
 
 (→[Section 5.2](#practice-section-5-2))
+:::
+
+:::{dropdown} Q8. In a method that does not satisfy all of force equilibrium, why can changing the center of moments change the result?
+:icon: question
+
+In such methods, $\sum\boldsymbol{F}\neq\boldsymbol{0}$ may hold. Then moving the center by $\boldsymbol{a}$ changes the moment residual by $-\boldsymbol{a}\times\sum\boldsymbol{F}$. If $\boldsymbol{a}$ is parallel to $\sum\boldsymbol{F}$, however, this change is zero. (→[Section 6](#practice-section-6))
+:::
+
+:::{dropdown} Q9. On a curved slip surface, even with a single direction of sliding $\boldsymbol{d}$, the local direction of sliding $\boldsymbol{m}_i$ differs from column to column. Why? And can the direction of the long axis of the slip surface simply be used as the direction of sliding?
+:icon: question
+
+In a formulation that finds $\boldsymbol{m}_i$ by projecting $\boldsymbol{d}$ onto the tangent plane of each base, the base normal $\boldsymbol{n}_i$ of a curved surface differs from column to column, and so do the tangent planes and the directions projected onto them. The long axis should not simply be used as the direction of sliding. It describes the shape of the sliding mass in plan. The direction of sliding, on the other hand, is the representative direction in which the whole sliding mass moves, so the two need not coincide. Fixing the two as the same thing may narrow the search range more than necessary. (→[Section 8.1](#practice-section-8-1), [Section 8.2](#practice-section-8-2), [Section 8.3](#practice-section-8-3))
+:::
+
+:::{dropdown} Q10. In 3D, what does setting the direction of sliding decide in the calculation? Name three things.
+:icon: question
+
+For example, the $x,y,z$ components of the base shear forces, the moments of the base shear forces about each axis, and the base normal forces found from force equilibrium. It also decides the resisting and driving forces along each horizontal axis, the magnitude and direction of the intercolumn forces, the factor of safety, and how the iteration converges. (→[Section 9](#practice-section-9))
 :::
 
 :::{dropdown} Q11. $F_s$ has converged for a given slip surface. Can it be taken as the factor of safety of the slope?
