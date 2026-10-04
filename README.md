@@ -30,17 +30,20 @@ parentheses.
    (第3章　極限平衡法を実際に使うとき) — general slip surfaces, the
    direction of sliding, discretization, and how to read a result
 
-**Practice**, where readers write the methods in Python; Practices 2 and 3
-check their values against the practice before them
+**Practice**
 
 1. **Practice 1: Computing the factor of safety of an infinite slope**
-   (実践1　無限斜面の安全率を計算する)
+   (実践1　無限斜面の安全率を計算する) — from splitting the traction to the
+   factor of safety
 2. **Practice 2: Computing the factor of safety of a circular slip with the
    method of slices** (実践2　スライス法で円弧すべりの安全率を計算する) —
-   Fellenius, simplified Bishop and Janbu, and Spencer on one circle
+   Fellenius, simplified Bishop, simplified Janbu and Spencer on one circle
 3. **Practice 3: Computing the factor of safety of a 3D slip surface with
    the method of columns** (実践3　カラム法で3次元のすべり面の安全率を計算する)
    — Hovland and 3D simplified Bishop on one ellipsoid
+
+The practice pages write the methods in Python; Practices 2 and 3 check
+their values against the earlier practices.
 
 **Appendix**
 
