@@ -1,4 +1,4 @@
-"""第2章 4節: what Fellenius, simplified Bishop and simplified Janbu keep.
+"""Chapter 2, Section 4: what Fellenius, simplified Bishop and simplified Janbu keep.
 
 The same slice as fig_01 in all three panels. Forces a method ignores are
 drawn faint and dashed. N follows from the balance each method uses:
@@ -11,33 +11,44 @@ depends on F_s, which the methods find from different equations.
 import math
 
 from figlib import (FAINT, INK, INTER, MUTED, NORMAL, RESIST, SMALL, SOIL, SOIL_EDGE, WEIGHT, Figure,
-                    SliceModel, View, add, mul, unit)
+                    L, SliceModel, View, add, mul, unit)
 
 FORCE = 0.34  # px per kN
 sm = SliceModel()
 s, c = math.sin(sm.alpha), math.cos(sm.alpha)
 T = sm.T
+IGNORE_E = L(r"\t{スライス間力 }E\t{，}X\t{ を無視}", r"\t{Ignores interslice forces }E\t{, }X")
+IGNORE_X = L(r"\t{スライス間のせん断力 }X\t{ を無視}", r"\t{Ignores interslice shear }X")
 METHODS = [
-    ("Fellenius法", False, sm.W * c, ["—", "—", "✓"], r"\t{スライス間力 }E\t{，}X\t{ を無視}"),
-    ("簡易Bishop法", True, (sm.W - T * s) / c, ["✓", "—", "✓"], r"\t{スライス間のせん断力 }X\t{ を無視}"),
-    ("簡易Janbu法", True, (sm.W - T * s) / c, ["✓", "✓", "—"], r"\t{スライス間のせん断力 }X\t{ を無視}"),
+    (L("Fellenius法", "Fellenius"), False, sm.W * c, ["—", "—", "✓"], IGNORE_E),
+    (L("簡易Bishop法", "Simplified Bishop"), True, (sm.W - T * s) / c, ["✓", "—", "✓"], IGNORE_X),
+    (L("簡易Janbu法", "Simplified Janbu"), True, (sm.W - T * s) / c, ["✓", "✓", "—"], IGNORE_X),
 ]
-ROWS = ["各スライスの鉛直方向の力", "全体の水平方向の力", "全体のモーメント"]
+ROWS = [L("各スライスの鉛直方向の力", "Vertical forces on each slice"),
+        L("全体の水平方向の力", "Overall horizontal forces"), L("全体のモーメント", "Overall moments")]
 
 fig = Figure(
     "fig_03_2d_methods",
     420,
-    "Fellenius法，簡易Bishop法，簡易Janbu法の比較",
-    "同じスライスで，3つの手法が無視する内力と，使うつり合いを比べる．無視する力は薄い破線で示す．"
-    "Fellenius法はスライス間力を無視し，全体のモーメントのつり合いを使う．"
-    "簡易Bishop法はスライス間のせん断力を無視し，各スライスの鉛直方向の力と全体のモーメントのつり合いを使う．"
-    "簡易Janbu法はスライス間のせん断力を無視し，力のつり合いを使う．",
+    L("Fellenius法，簡易Bishop法，簡易Janbu法の比較",
+      "The Fellenius, simplified Bishop and simplified Janbu methods compared"),
+    L("同じスライスで，3つの手法が無視する内力と，使うつり合いを比べる．無視する力は薄い破線で示す．"
+      "Fellenius法はスライス間力を無視し，全体のモーメントのつり合いを使う．"
+      "簡易Bishop法はスライス間のせん断力を無視し，各スライスの鉛直方向の力と全体のモーメントのつり合いを使う．"
+      "簡易Janbu法はスライス間のせん断力を無視し，力のつり合いを使う．",
+      "The same slice under three methods, comparing the internal forces each ignores and the "
+      "equilibrium each uses. Ignored forces are drawn faint and dashed. The Fellenius method ignores "
+      "the interslice forces and uses overall moment equilibrium. The simplified Bishop method ignores "
+      "the interslice shear forces and uses vertical force equilibrium of each slice and overall "
+      "moment equilibrium. The simplified Janbu method ignores the interslice shear forces and uses "
+      "force equilibrium."),
 )
 
 
 def panel(x0, name, keep_e, N, checks, note):
     v = View(40, (x0 + 60, 262))
-    fig.text((x0 + 120, 28), name, 15, INK, "middle", weight="bold")
+    # English names are wider: set them flush left, clear of the slice's top corner.
+    fig.text(L((x0 + 120, 28), (x0 + 12, 28)), name, 15, INK, L("middle", "start"), weight="bold")
     fig.polygon([v.p(p) for p in sm.pts], fill=SOIL, color=SOIL_EDGE, width=1.6)
     ta = math.tan(sm.alpha)
     fig.line(v.p((-0.9, -0.9 * ta)), v.p((sm.b + 0.9, (sm.b + 0.9) * ta)), INK, 2.6)
@@ -77,4 +88,4 @@ for i, method in enumerate(METHODS):
 if __name__ == "__main__":
     fig.save()
     for name, _, N, _, _ in METHODS:
-        print(name, round(N, 1))
+        print(name.ja, round(N, 1))

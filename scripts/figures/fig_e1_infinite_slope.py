@@ -1,4 +1,4 @@
-"""実践1: the forces on a column of an infinite slope, and the two rules for
+"""Practice 1: the forces on a column of an infinite slope, and the two rules for
 the pore pressure on its slip plane.
 
 The slope rises to the right at beta and the soil slides down to the left, as
@@ -11,7 +11,7 @@ normal to the slope when the water flows parallel to it.
 import math
 
 from figlib import (FAINT, GROUND, INK, INTER, MUTED, NORMAL, RESIST, RULE, SMALL, SOIL, SOIL_EDGE, UNIT, WATER,
-                    WEIGHT, Figure, View, add, mul, sub)
+                    WEIGHT, Figure, L, View, add, mul, sub)
 
 BETA = math.radians(30.0)
 Z = 4.4  # vertical depth of the slip plane [m]
@@ -34,11 +34,17 @@ def screen(vec):
 fig = Figure(
     "fig_e1_infinite_slope",
     330,
-    "無限斜面の柱に働く力と，すべり面の間隙水圧",
-    "左は，無限斜面から取り出した柱に働く力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，"
-    "両側の面に働く力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，"
-    "すべり面の点 P の間隙水圧の2つの決め方．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，"
-    "P の圧力水頭は h_w cos²β になる．",
+    L("無限斜面の柱に働く力と，すべり面の間隙水圧",
+      "Forces on a column of an infinite slope, and the pore water pressure on the slip surface"),
+    L("左は，無限斜面から取り出した柱に働く力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，"
+      "両側の面に働く力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，"
+      "すべり面の点 P の間隙水圧の2つの決め方．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，"
+      "P の圧力水頭は h_w cos²β になる．",
+      "Left: the forces on a column taken from an infinite slope. The normal force N and the shear "
+      "force T on the slip surface carry the weight W, and the forces on the two sides cancel. Right: "
+      "two ways to find the pore water pressure at point P on the slip surface when the water table "
+      "stands h_w above it, measured vertically. When the water seeps parallel to the slope, the "
+      "equipotential lines are normal to the slope, so the pressure head at P is h_w cos²β."),
 )
 
 
@@ -111,10 +117,14 @@ def panel_forces(v):
     fig.line(corner, add(corner, (62, 0)), RULE, 1.2)
     fig.angle_arc(corner, 44, 0, 30)
     fig.math(add(corner, (50, -9)), "β", vcenter=True)
-    fig.text(v.p((2.9, 2.9 * TAN + 0.45)), "地表", SMALL, MUTED, "middle")
-    fig.text(v.p((4.0, 4.0 * TAN - Z - BAND / 2)), "すべり面", SMALL, MUTED, "middle", vcenter=True)
-    fig.text((206, 282), "両側の面の力（紫）は", SMALL, INTER)
-    fig.text((206, 302), "大きさが同じで打ち消し合う", SMALL, INTER)
+    # English is wider: end it where the Japanese label sits, so the ground line falls away below it.
+    fig.text(L(v.p((2.9, 2.9 * TAN + 0.45)), v.p((3.7, 3.7 * TAN + 0.45))), L("地表", "ground surface"), SMALL,
+             MUTED, L("middle", "end"))
+    # English does not fit in the band: set it past the end of the slip plane.
+    fig.text(L(v.p((4.0, 4.0 * TAN - Z - BAND / 2)), add(v.p((X1, X1 * TAN - Z)), (8, 0))),
+             L("すべり面", "slip surface"), SMALL, MUTED, L("middle", "start"), vcenter=True)
+    fig.text((206, 282), L("両側の面の力（紫）は", "The side forces (purple) are"), SMALL, INTER)
+    fig.text((206, 302), L("大きさが同じで打ち消し合う", "equal in size and cancel"), SMALL, INTER)
 
 
 def panel_water(v):
@@ -140,10 +150,11 @@ def panel_water(v):
 
     a = v.p((-1.4, -1.4 * TAN - Z + 0.8))
     fig.arrow(a, add(a, mul(screen(m_dir), 34)), WATER, width=1.6)
-    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.9)), "地下水位", SMALL, WATER, "middle", vcenter=True)
+    fig.text(v.p((-2.0, -2.0 * TAN - Z + H_W - 0.9)), L("地下水位", "water table"), SMALL, WATER, "middle", vcenter=True)
 
-    fig.math((404, 32), r"\t{斜面に平行な浸透：}u = γ_w h_w \r{cos}^2β", 15, INK)
-    fig.math((404, 56), r"\t{鉛直の静水圧：}u = γ_w h_w", 15, INK)
+    fig.math((404, 32), L(r"\t{斜面に平行な浸透：}u = γ_w h_w \r{cos}^2β",
+                          r"\t{Parallel seepage: }u = γ_w h_w \r{cos}^2β"), 15, INK)
+    fig.math((404, 56), L(r"\t{鉛直の静水圧：}u = γ_w h_w", r"\t{Hydrostatic (vertical): }u = γ_w h_w"), 15, INK)
 
 
 panel_forces(View(K, (138, 112)))

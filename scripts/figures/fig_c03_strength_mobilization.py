@@ -1,4 +1,5 @@
-"""第1章 5節・6節: the Mohr–Coulomb line and the worked example of 6節.
+"""Chapter 1, Sections 5 and 6: the Mohr–Coulomb line and the worked example
+of Section 6.
 
 c' = 10 kPa, phi' = 30 deg. Before: sigma_n' = 60 kPa (u = 40); after the
 water rises: sigma_n' = 40 kPa (u = 60). tau_m = 30 kPa in both. The axes
@@ -7,11 +8,11 @@ share one scale, so the line is drawn at its true angle phi'.
 
 import math
 
-from figlib import FAINT, INK, MUTED, NORMAL, RESIST, SMALL, WATER, Figure
+from figlib import FAINT, INK, MUTED, NORMAL, RESIST, SMALL, WATER, Figure, L
 
 C, PHI = 10.0, math.radians(30)
 TAU_M = 30.0
-STATES = [(60.0, "変化の前"), (40.0, "水位が上がった後")]
+STATES = [60.0, 40.0]  # sigma_n' before and after the water rises
 K = 5.4  # px per kPa, on both axes
 O = (92, 330)  # origin of the plot
 XMAX, YMAX = 105.0, 55.0
@@ -28,11 +29,17 @@ def tau_f(s):
 fig = Figure(
     "fig_c03_strength_mobilization",
     390,
-    "Mohr–Coulomb則によるせん断強度と，動員せん断応力",
-    "有効垂直応力とせん断応力の図に，c′=10 kPa，ϕ′=30° のMohr–Coulomb則の直線を引く．"
-    "6節の数値例の2つの状態について，発揮できるせん断強度 τf と，動員せん断応力 τm=30 kPa を示す．"
-    "水位が上がって有効垂直応力が60 kPaから40 kPaに下がると，τf は44.6 kPaから33.1 kPaに下がり，"
-    "安全率は1.49から1.10に下がる．",
+    L("Mohr–Coulomb則によるせん断強度と，動員せん断応力",
+      "Shear strength by the Mohr–Coulomb failure criterion, and the mobilized shear stress"),
+    L("有効垂直応力とせん断応力の図に，c′=10 kPa，ϕ′=30° のMohr–Coulomb則の直線を引く．"
+      "6節の数値例の2つの状態について，発揮できるせん断強度 τf と，動員せん断応力 τm=30 kPa を示す．"
+      "水位が上がって有効垂直応力が60 kPaから40 kPaに下がると，τf は44.6 kPaから33.1 kPaに下がり，"
+      "安全率は1.49から1.10に下がる．",
+      "The Mohr–Coulomb line for c′=10 kPa, ϕ′=30°, on a plot of shear stress against effective normal "
+      "stress. For the two states of the worked example in Section 6, it shows the available shear "
+      "strength τf and the mobilized shear stress τm=30 kPa. When the water table rises and the "
+      "effective normal stress falls from 60 kPa to 40 kPa, τf falls from 44.6 kPa to 33.1 kPa, and "
+      "the factor of safety falls from 1.49 to 1.10."),
 )
 
 # Axes with ticks.
@@ -66,7 +73,7 @@ fig.angle_arc(a0, 58, 0, math.degrees(PHI), MUTED)
 fig.math((a0[0] + 64, a0[1] - 8), "ϕ′ = 30°", 15, MUTED)
 
 # The two states.
-for s, name in STATES:
+for s in STATES:
     tf = tau_f(s)
     fs = tf / TAU_M
     base, top, mid = P(s, 0), P(s, tf), P(s, TAU_M)
@@ -85,9 +92,9 @@ for s, name in STATES:
 # The change: u rises, so sigma_n' falls from 60 to 40 and tau_f with it.
 a, b = P(58, 4.5), P(42, 4.5)
 fig.arrow(a, b, WATER, 2.4)
-fig.math((P(60, 0)[0] + 8, a[1] + 5), r"u\t{ が上がる}", 15, WATER)
+fig.math((P(60, 0)[0] + 8, a[1] + 5), L(r"u\t{ が上がる}", r"u\t{ rises}"), 15, WATER)
 
 if __name__ == "__main__":
     fig.save()
-    for s, _ in STATES:
+    for s in STATES:
         print(s, round(tau_f(s), 2), round(tau_f(s) / TAU_M, 3))

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
+  <title id="title">The slope, slip surface and slices that LEM deals with</title>
+  <desc id="desc">A circular slip surface is assumed in the slope, and the sliding mass above it is cut into vertical slices. One slice shows its weight and the normal and shear forces on its base.</desc>
+  <style>.t{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="330" fill="#fff"/>
+  <polygon points="2.5,268 178,268 470.5,73 753.2,73 753.2,326.5 2.5,326.5" fill="#ece4d0" stroke-linejoin="round"/>
+  <polygon points="158.5,268 178,268 470.5,73 637.8,73 637.8,73 629.8,89.5 621.8,104.2 613.8,117.5 605.8,129.6 597.8,140.9 589.9,151.3 581.9,161 573.9,170.1 565.9,178.6 557.9,186.7 549.9,194.2 541.9,201.4 533.9,208.1 525.9,214.5 518,220.5 510,226.2 502,231.6 494,236.7 486,241.6 478,246.1 470,250.5 462,254.5 454.1,258.4 446.1,262 438.1,265.4 430.1,268.5 422.1,271.5 414.1,274.3 406.1,276.8 398.1,279.2 390.2,281.4 382.2,283.4 374.2,285.2 366.2,286.8 358.2,288.3 350.2,289.5 342.2,290.6 334.2,291.6 326.2,292.3 318.3,292.9 310.3,293.3 302.3,293.5 294.3,293.6 286.3,293.5 278.3,293.2 270.3,292.8 262.3,292.2 254.4,291.4 246.4,290.5 238.4,289.3 230.4,288 222.4,286.5 214.4,284.9 206.4,283 198.4,281 190.5,278.8 182.5,276.4 174.5,273.8 166.5,271 158.5,268" fill="#f4e7c5" stroke-linejoin="round"/>
+  <line x1="238.4" y1="289.3" x2="238.4" y2="227.7" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="318.3" y1="292.9" x2="318.3" y2="174.5" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="398.1" y1="279.2" x2="398.1" y2="121.2" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="478" y1="246.1" x2="478" y2="73" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="557.9" y1="186.7" x2="557.9" y2="73" stroke="#8b7355" stroke-width="1" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <polygon points="398.1,279.2 478,246.1 478,73 470.5,73 398.1,121.2" fill="#ead39c" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polyline points="2.5,268 178,268 470.5,73 753.2,73" fill="none" stroke="#8b7355" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="158.5,268 166.5,271 174.5,273.8 182.5,276.4 190.5,278.8 198.4,281 206.4,283 214.4,284.9 222.4,286.5 230.4,288 238.4,289.3 246.4,290.5 254.4,291.4 262.3,292.2 270.3,292.8 278.3,293.2 286.3,293.5 294.3,293.6 302.3,293.5 310.3,293.3 318.3,292.9 326.2,292.3 334.2,291.6 342.2,290.6 350.2,289.5 358.2,288.3 366.2,286.8 374.2,285.2 382.2,283.4 390.2,281.4 398.1,279.2 406.1,276.8 414.1,274.3 422.1,271.5 430.1,268.5 438.1,265.4 446.1,262 454.1,258.4 462,254.5 470,250.5 478,246.1 486,241.6 494,236.7 502,231.6 510,226.2 518,220.5 525.9,214.5 533.9,208.1 541.9,201.4 549.9,194.2 557.9,186.7 565.9,178.6 573.9,170.1 581.9,161 589.9,151.3 597.8,140.9 605.8,129.6 613.8,117.5 621.8,104.2 629.8,89.5 637.8,73" fill="none" stroke="#172033" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="438.8" y1="178.4" x2="438.8" y2="241.7" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="438.8,247.2 432.3,233.4 445.3,233.4" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="438.8" cy="178.4" r="3" fill="#d64545"/>
+  <line x1="438.1" y1="262.7" x2="415.9" y2="209" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="413.7,203.9 425,214.2 413,219.1" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="438.1" y1="262.7" x2="457.3" y2="254.7" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="462.4,252.6 452.1,263.9 447.1,251.9" fill="#14916a" stroke-linejoin="round"/>
+  <text x="446.8" y="203.2" class="m" font-size="17" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <text x="446.8" y="220.2" class="t" font-size="13" fill="#d64545" text-anchor="start">weight</text>
+  <text x="401.7" y="197.9" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <text x="393.7" y="215.9" class="t" font-size="13" fill="#2563eb" text-anchor="end">normal force</text>
+  <text x="468.4" y="244.6" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <text x="492.4" y="243.6" class="t" font-size="13" fill="#14916a" text-anchor="start">shear force</text>
+  <line x1="438.1" y1="88.6" x2="438.1" y2="64.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="438.1" y="58.6" class="m" font-size="15" fill="#172033" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">slice </tspan><tspan font-style="italic">i</tspan></text>
+  <line x1="591.4" y1="96.4" x2="614.8" y2="49.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="614.8" y="43.6" class="t" font-size="13" fill="#172033" text-anchor="middle">sliding mass</text>
+  <text x="275.5" y="125.7" class="t" font-size="13" fill="#475569" text-anchor="middle">slope</text>
+  <line x1="298.9" y1="139.3" x2="341.8" y2="166.6" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="597.2" y="305.1" class="t" font-size="13" fill="#475569" text-anchor="middle">ground</text>
+  <text x="373" y="315.4" class="t" font-size="13" fill="#172033" text-anchor="middle">slip surface (an assumed surface)</text>
+  <line x1="248.2" y1="280.9" x2="202.1" y2="271.9" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="197.5,271 210.2,267.8 208,278.8" fill="#64748b" stroke-linejoin="round"/>
+  <text x="185.5" y="257" class="t" font-size="13" fill="#475569" text-anchor="end">direction of sliding</text>
+</svg>

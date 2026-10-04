@@ -1,15 +1,16 @@
-"""実践2: F_m(theta) and F_f(theta) for the circle of 第1章's figure 1.
+"""Practice 2: F_m(theta) and F_f(theta) for the circle of Chapter 1's Figure 1.
 
 The values are read from docs/ja/examples/output/run_slices.txt, which
 `make examples` writes from the practice code, so this figure and the table on
-the page come from one computation. Run `make examples` first.
+the page come from one computation. Both languages read the Japanese output: the
+numbers are the same. Run `make examples` first.
 """
 
 import re
 
-from figlib import INK, MUTED, RULE, SMALL, Figure, OUT
+from figlib import DOCS, INK, MUTED, RULE, SMALL, Figure, L
 
-SOURCE = OUT.parent / "examples" / "output" / "run_slices.txt"
+SOURCE = DOCS / "ja" / "examples" / "output" / "run_slices.txt"
 T0, T1 = 0.0, 30.0  # theta [deg]
 F0, F1 = 1.8, 2.3  # F_s
 X0, X1 = 92.0, 700.0  # plot area [px]
@@ -47,10 +48,15 @@ rows, (theta_s, fs_s) = read()
 fig = Figure(
     "fig_e2_theta_curves",
     360,
-    "スライス間力の合力の傾きと，2つのつり合いから求めた安全率",
-    "第1章の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，"
-    "力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，"
-    "2本の曲線が交わる点がSpencer法の解である．",
+    L("スライス間力の合力の傾きと，2つのつり合いから求めた安全率",
+      "The inclination of the interslice resultant, and the factors of safety from two equilibria"),
+    L("第1章の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，"
+      "力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，"
+      "2本の曲線が交わる点がSpencer法の解である．",
+      "For the circle of Figure 1 in Chapter 1, the inclination θ of the resultant interslice force is "
+      "fixed, and the factor of safety F_m from moment equilibrium and F_f from force equilibrium are "
+      "plotted against it. At θ = 0, F_m is the value of the simplified Bishop method and F_f that of "
+      "the simplified Janbu method. The point where the two curves cross is the Spencer solution."),
 )
 
 for k in range(6):
@@ -64,22 +70,22 @@ for theta in range(0, 31, 5):
     fig.text((x, Y0 + 22), f"{theta}", SMALL, MUTED, "middle")
 fig.line((X0, Y0), (X1, Y0), INK, 1.4)
 fig.line((X0, Y0), (X0, Y1), INK, 1.4)
-fig.math((X0 + (X1 - X0) / 2, Y0 + 48), r"\t{スライス間力の合力の傾き }θ\t{ [°]}", 15, MUTED, anchor="middle")
+fig.math((X0 + (X1 - X0) / 2, Y0 + 48), L(r"\t{スライス間力の合力の傾き }θ\t{ [°]}", r"\t{inclination of the interslice resultant }θ\t{ [°]}"), 15, MUTED, anchor="middle")
 fig.math((X0 - 52, Y1 - 12), "F_s", 15, MUTED)
 
 fig.polyline([px(t, fm) for t, fm, _ in rows], INK, 2.4)
 fig.polyline([px(t, ff) for t, _, ff in rows], INK, 2.4, dash="9 6")
 last = rows[-1]
-fig.math((px(last[0], last[1])[0] - 6, px(last[0], last[1])[1] + 26), r"F_m\t{：モーメントのつり合い}",
+fig.math((px(last[0], last[1])[0] - 6, px(last[0], last[1])[1] + 26), L(r"F_m\t{：モーメントのつり合い}", "F_m\\t{\u200a: moment equilibrium}"),
          15, INK, anchor="end")
-fig.math((px(last[0], last[2])[0] - 6, px(last[0], last[2])[1] - 14), r"F_f\t{：力のつり合い}", 15, INK,
+fig.math((px(last[0], last[2])[0] - 6, px(last[0], last[2])[1] - 14), L(r"F_f\t{：力のつり合い}", "F_f\\t{\u200a: force equilibrium}"), 15, INK,
          anchor="end")
 
 first = rows[0]
 for (theta, fs), label, dx, dy, anchor in (
-    ((first[0], first[1]), "簡易Bishop法", 12, -14, "start"),
-    ((first[0], first[2]), "簡易Janbu法", 12, 20, "start"),
-    ((theta_s, fs_s), "Spencer法", -10, -16, "end"),
+    ((first[0], first[1]), L("簡易Bishop法", "simplified Bishop method"), 12, -14, "start"),
+    ((first[0], first[2]), L("簡易Janbu法", "simplified Janbu method"), 12, 20, "start"),
+    ((theta_s, fs_s), L("Spencer法", "Spencer method"), -10, -16, "end"),
 ):
     p = px(theta, fs)
     fig.circle(p, 5.0, "#fff", INK, 2.0)

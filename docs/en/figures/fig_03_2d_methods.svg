@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
+  <title id="title">The Fellenius, simplified Bishop and simplified Janbu methods compared</title>
+  <desc id="desc">The same slice under three methods, comparing the internal forces each ignores and the equilibrium each uses. Ignored forces are drawn faint and dashed. The Fellenius method ignores the interslice forces and uses overall moment equilibrium. The simplified Bishop method ignores the interslice shear forces and uses vertical force equilibrium of each slice and overall moment equilibrium. The simplified Janbu method ignores the interslice shear forces and uses force equilibrium.</desc>
+  <style>.t{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="420" fill="#fff"/>
+  <text x="22" y="28" class="t" font-size="15" fill="#172033" text-anchor="start" font-weight="bold">Fellenius</text>
+  <polygon points="70,262 190,206 190,22 70,102" fill="#f4e7c5" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <line x1="34" y1="278.8" x2="226" y2="189.3" stroke="#172033" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="131.4" y1="147.2" x2="131.4" y2="220.9" stroke="#d64545" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="131.4,226.2 125.2,213 137.6,213" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="131.4" cy="147.2" r="2.6" fill="#d64545"/>
+  <line x1="130" y1="234" x2="102" y2="173.9" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="99.8,169.2 110.9,178.5 99.7,183.7" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="130" y1="234" x2="146.9" y2="226.1" stroke="#14916a" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="151.7,223.9 142.4,235.1 137.2,223.8" fill="#14916a" stroke-linejoin="round"/>
+  <line x1="74" y1="222" x2="106.4" y2="222" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="111.4,222 98.9,227.9 98.9,216.1" fill="#94a3b8" stroke-linejoin="round"/>
+  <line x1="186" y1="142" x2="162.1" y2="142" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="157.1,142 169.6,136.1 169.6,147.9" fill="#94a3b8" stroke-linejoin="round"/>
+  <line x1="74" y1="222" x2="74" y2="205.6" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="74,201.6 78.7,211.6 69.3,211.6" fill="#94a3b8" stroke-linejoin="round"/>
+  <line x1="186" y1="142" x2="186" y2="154.4" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="186,158.4 181.3,148.4 190.7,148.4" fill="#94a3b8" stroke-linejoin="round"/>
+  <text x="92.7" y="242" class="m" font-size="15" fill="#94a3b8" text-anchor="middle"><tspan font-style="italic">E</tspan></text>
+  <text x="153.1" y="147" class="m" font-size="15" fill="#94a3b8" text-anchor="end"><tspan font-style="italic">E</tspan></text>
+  <text x="64" y="216" class="m" font-size="15" fill="#94a3b8" text-anchor="end"><tspan font-style="italic">X</tspan></text>
+  <text x="196" y="156" class="m" font-size="15" fill="#94a3b8" text-anchor="start"><tspan font-style="italic">X</tspan></text>
+  <text x="139.4" y="196.2" class="m" font-size="15" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan></text>
+  <text x="91.8" y="169.2" class="m" font-size="15" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan></text>
+  <text x="157.7" y="239.9" class="m" font-size="15" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan></text>
+  <text x="130" y="300" class="m" font-size="15" fill="#475569" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">Ignores interslice forces </tspan><tspan font-style="italic">E</tspan><tspan font-style="normal" class="t" font-size="14">, </tspan><tspan font-style="italic">X</tspan></text>
+  <text x="22" y="334" class="t" font-size="13" fill="#172033" text-anchor="start">Vertical forces on each slice</text>
+  <text x="238" y="334" class="t" font-size="15" fill="#94a3b8" text-anchor="end">—</text>
+  <text x="22" y="358" class="t" font-size="13" fill="#172033" text-anchor="start">Overall horizontal forces</text>
+  <text x="238" y="358" class="t" font-size="15" fill="#94a3b8" text-anchor="end">—</text>
+  <text x="22" y="382" class="t" font-size="13" fill="#172033" text-anchor="start">Overall moments</text>
+  <text x="238" y="382" class="t" font-size="15" fill="#172033" text-anchor="end" font-weight="bold">✓</text>
+  <line x1="255" y1="20" x2="255" y2="400" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+  <text x="272" y="28" class="t" font-size="15" fill="#172033" text-anchor="start" font-weight="bold">Simplified Bishop</text>
+  <polygon points="320,262 440,206 440,22 320,102" fill="#f4e7c5" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <line x1="284" y1="278.8" x2="476" y2="189.3" stroke="#172033" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="381.4" y1="147.2" x2="381.4" y2="220.9" stroke="#d64545" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="381.4,226.2 375.2,213 387.6,213" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="381.4" cy="147.2" r="2.6" fill="#d64545"/>
+  <line x1="380" y1="234" x2="350.1" y2="170" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="347.9,165.2 359.1,174.5 347.8,179.7" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="380" y1="234" x2="396.9" y2="226.1" stroke="#14916a" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="401.7,223.9 392.4,235.1 387.2,223.8" fill="#14916a" stroke-linejoin="round"/>
+  <line x1="324" y1="222" x2="356.4" y2="222" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="361.4,222 348.9,227.9 348.9,216.1" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="436" y1="142" x2="412.1" y2="142" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="407.1,142 419.6,136.1 419.6,147.9" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="324" y1="222" x2="324" y2="205.6" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="324,201.6 328.7,211.6 319.3,211.6" fill="#94a3b8" stroke-linejoin="round"/>
+  <line x1="436" y1="142" x2="436" y2="154.4" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="436,158.4 431.3,148.4 440.7,148.4" fill="#94a3b8" stroke-linejoin="round"/>
+  <text x="342.7" y="242" class="m" font-size="15" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">E</tspan></text>
+  <text x="403.1" y="147" class="m" font-size="15" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">E</tspan></text>
+  <text x="314" y="216" class="m" font-size="15" fill="#94a3b8" text-anchor="end"><tspan font-style="italic">X</tspan></text>
+  <text x="446" y="156" class="m" font-size="15" fill="#94a3b8" text-anchor="start"><tspan font-style="italic">X</tspan></text>
+  <text x="389.4" y="196.2" class="m" font-size="15" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan></text>
+  <text x="339.9" y="165.2" class="m" font-size="15" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan></text>
+  <text x="407.7" y="239.9" class="m" font-size="15" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan></text>
+  <text x="380" y="300" class="m" font-size="15" fill="#475569" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">Ignores interslice shear </tspan><tspan font-style="italic">X</tspan></text>
+  <text x="272" y="334" class="t" font-size="13" fill="#172033" text-anchor="start">Vertical forces on each slice</text>
+  <text x="488" y="334" class="t" font-size="15" fill="#172033" text-anchor="end" font-weight="bold">✓</text>
+  <text x="272" y="358" class="t" font-size="13" fill="#172033" text-anchor="start">Overall horizontal forces</text>
+  <text x="488" y="358" class="t" font-size="15" fill="#94a3b8" text-anchor="end">—</text>
+  <text x="272" y="382" class="t" font-size="13" fill="#172033" text-anchor="start">Overall moments</text>
+  <text x="488" y="382" class="t" font-size="15" fill="#172033" text-anchor="end" font-weight="bold">✓</text>
+  <line x1="505" y1="20" x2="505" y2="400" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+  <text x="522" y="28" class="t" font-size="15" fill="#172033" text-anchor="start" font-weight="bold">Simplified Janbu</text>
+  <polygon points="570,262 690,206 690,22 570,102" fill="#f4e7c5" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <line x1="534" y1="278.8" x2="726" y2="189.3" stroke="#172033" stroke-width="2.6" stroke-linecap="round"/>
+  <line x1="631.4" y1="147.2" x2="631.4" y2="220.9" stroke="#d64545" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="631.4,226.2 625.2,213 637.6,213" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="631.4" cy="147.2" r="2.6" fill="#d64545"/>
+  <line x1="630" y1="234" x2="600.1" y2="170" stroke="#2563eb" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="597.9,165.2 609.1,174.5 597.8,179.7" fill="#2563eb" stroke-linejoin="round"/>
+  <line x1="630" y1="234" x2="646.9" y2="226.1" stroke="#14916a" stroke-width="2.4" stroke-linecap="butt"/>
+  <polygon points="651.7,223.9 642.4,235.1 637.2,223.8" fill="#14916a" stroke-linejoin="round"/>
+  <line x1="574" y1="222" x2="606.4" y2="222" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="611.4,222 598.9,227.9 598.9,216.1" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="686" y1="142" x2="662.1" y2="142" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="657.1,142 669.6,136.1 669.6,147.9" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="574" y1="222" x2="574" y2="205.6" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="574,201.6 578.7,211.6 569.3,211.6" fill="#94a3b8" stroke-linejoin="round"/>
+  <line x1="686" y1="142" x2="686" y2="154.4" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="4 3" stroke-linecap="butt"/>
+  <polygon points="686,158.4 681.3,148.4 690.7,148.4" fill="#94a3b8" stroke-linejoin="round"/>
+  <text x="592.7" y="242" class="m" font-size="15" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">E</tspan></text>
+  <text x="653.1" y="147" class="m" font-size="15" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">E</tspan></text>
+  <text x="564" y="216" class="m" font-size="15" fill="#94a3b8" text-anchor="end"><tspan font-style="italic">X</tspan></text>
+  <text x="696" y="156" class="m" font-size="15" fill="#94a3b8" text-anchor="start"><tspan font-style="italic">X</tspan></text>
+  <text x="639.4" y="196.2" class="m" font-size="15" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan></text>
+  <text x="589.9" y="165.2" class="m" font-size="15" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan></text>
+  <text x="657.7" y="239.9" class="m" font-size="15" fill="#14916a" text-anchor="start"><tspan font-style="italic">T</tspan></text>
+  <text x="630" y="300" class="m" font-size="15" fill="#475569" text-anchor="middle"><tspan font-style="normal" class="t" font-size="14">Ignores interslice shear </tspan><tspan font-style="italic">X</tspan></text>
+  <text x="522" y="334" class="t" font-size="13" fill="#172033" text-anchor="start">Vertical forces on each slice</text>
+  <text x="738" y="334" class="t" font-size="15" fill="#172033" text-anchor="end" font-weight="bold">✓</text>
+  <text x="522" y="358" class="t" font-size="13" fill="#172033" text-anchor="start">Overall horizontal forces</text>
+  <text x="738" y="358" class="t" font-size="15" fill="#172033" text-anchor="end" font-weight="bold">✓</text>
+  <text x="522" y="382" class="t" font-size="13" fill="#172033" text-anchor="start">Overall moments</text>
+  <text x="738" y="382" class="t" font-size="15" fill="#94a3b8" text-anchor="end">—</text>
+</svg>
