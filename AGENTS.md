@@ -299,7 +299,7 @@ for it.
   from and the date, and the page shows them under its title:
 
   ```text
-  translated_from: f0982e4
+  translated_from: 56298d2
   translated_on: 2026-10-04
   ```
 
@@ -335,7 +335,7 @@ for it.
 - Terms are the glossary's English terms (the first paragraph of each entry
   in `docs/ja/lem-glossary.md`), in American spelling. The English
   glossary names each entry by its term, lower case but for proper names
-  (`factor of safety`, `Mohr–Coulomb criterion`), and `{term}` roles use
+  (`factor of safety`, `Mohr–Coulomb failure criterion`), and `{term}` roles use
   those names. Method names follow the English literature: Fellenius method
   (ordinary method of slices), simplified Bishop method, simplified Janbu
   method, Spencer method, Morgenstern–Price method.
