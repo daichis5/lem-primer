@@ -22,10 +22,10 @@ The Japanese edition (`docs/ja/`) is the source; the English edition
 
 The three documents are 第1章, 第2章 and 第3章, under the caption 理論編;
 the site as a whole is この資料 or このシリーズ. After them come three
-practice pages (実践編), where readers
-write the methods in Python with NumPy and check them with pytest. The code
-depends on no analysis software either; how a particular program such as LEM
-Lab maps onto it belongs in that program's documentation.
+practice pages (実践編), where readers write the methods in Python with
+NumPy and check them with pytest. The code depends on no analysis software
+either; how a particular program such as LEM Lab maps onto it belongs in
+that program's documentation.
 
 ## Structure of a document
 
@@ -38,14 +38,15 @@ Lab maps onto it belongs in that program's documentation.
   (`index.md`) only: one `grid-item-card` each, titled 第1章　… or
   実践1　…, with the question or what the page's code computes (ending
   〜を求める) as its text. Documents do not repeat them, and a part
-  (第1部 …) opens with its first section, not with a list of what it
-  covers.
+  opens with its first section, not with a list of what it covers.
 - A document ends with 確認問題 (see Review questions), then 次に読む, then
   参考文献 in the second and third. The third document's 次に読む points to
   実践1.
-- Headings are Japanese. Parts are 第1部, 第2部, …; sections keep their
-  numbers, and the text refers to one as 6節. Reference entries keep the
-  language of the work; where there is no DOI, the link text is 書誌情報.
+- Headings are Japanese. A part is an unnumbered `##` heading over numbered
+  sections: a 章 ranks below a 部 in Japanese books, so 第1部 inside 第2章
+  would read upside down. Sections keep their numbers, and the text refers
+  to one as 6節. Reference entries keep the language of the work; where
+  there is no DOI, the link text is 書誌情報.
 - Keep labels (`(section-6)=`) and equation labels as they are: they are
   link targets.
 
