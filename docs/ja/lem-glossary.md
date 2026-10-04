@@ -20,7 +20,7 @@ lang: ja
 すべり面
   slip surface
 
-  崩れるときにすべると仮定した，斜面の中の曲面．円弧，楕円体，複合面，自由曲面など，表し方は手法や実装によって違う．LEMでは，この面を先に仮定してから，{term}`安全率`を計算する（→[第1資料「LEMの全体像」](#overview)）
+  崩れるときにすべると仮定した，斜面の中の曲面．円弧，楕円体，複合面，自由曲面など，表し方は手法や実装によって違う．LEMでは，この面を先に決めてから，{term}`安全率`を計算する（→[第1資料「LEMの全体像」](#overview)）
 
 すべり土塊
   sliding mass
@@ -190,7 +190,7 @@ GLE
 全体すべり方向
   $\boldsymbol{d}$　direction of sliding
 
-  3次元で，すべり土塊全体が動くと仮定した代表の向き．図に添える目印ではなく，{term}`安全率`を左右する，定式化の中の変数である（→[第3資料 8節](#practice-section-8)，[9節](#practice-section-9)）
+  3次元で，すべり土塊全体が動くと仮定した代表の向き．図に添えるだけの目印ではなく，{term}`安全率`を左右する，定式化の中の変数である（→[第3資料 8節](#practice-section-8)，[9節](#practice-section-9)）
 
 局所すべり方向
   $\boldsymbol{m}_i$　local direction of sliding
