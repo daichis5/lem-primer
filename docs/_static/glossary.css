@@ -7,8 +7,7 @@
 
 dl.glossary {
   display: grid;
-  grid-template-columns: 10em minmax(0, 1fr);
-  column-gap: 1.5rem;
+  grid-template-columns: 11.5em minmax(0, 1fr);
   border-top: 1px solid var(--color-background-border);
 }
 
@@ -19,8 +18,11 @@ dl.glossary > dd {
   border-bottom: 1px solid var(--color-background-border);
 }
 
+/* The gap between the columns is the term's own padding, so that the rule
+   under each row runs unbroken across it. */
 dl.glossary > dt {
   grid-column: 1;
+  padding-right: 1.5rem;
   font-weight: 700;
 }
 
@@ -30,6 +32,11 @@ dl.glossary > dd {
 
 dl.glossary > dd > p {
   margin: 0;
+}
+
+/* A link never breaks between 第1資料 and 6節. */
+dl.glossary > dd a {
+  white-space: nowrap;
 }
 
 /* The first paragraph of every entry: its symbol and English term. */
