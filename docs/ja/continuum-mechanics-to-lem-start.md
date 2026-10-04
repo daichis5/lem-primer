@@ -10,7 +10,7 @@ series: "1 of 3"
 
 この資料では，連続体力学の応力テンソルから出発して，極限平衡法（limit equilibrium method，LEM）がスライスの底面で扱う力 $N_i$，$U_i$，$T_i$ を導く．途中で，すべり面に働く力を法線成分とせん断成分に分け，有効応力とMohr–Coulomb則によるせん断強度を順に組み込む．
 
-用語と記号は，[用語集](lem-glossary.md)にまとめた．
+用語と記号は，[用語集](lem-glossary.md)にまとめている．
 
 (overview)=
 
@@ -78,7 +78,7 @@ $$ (eq-start-goal)
 - $c'$，$\phi'$：有効応力で表した粘着力と内部摩擦角
 - $F_s$：安全率
 
-この符号規約では，すべり土塊に働く表面力のうち，圧縮の法線成分は $-\sigma_n\boldsymbol{n}$，すべりに抵抗するせん断成分は $-\tau_m\boldsymbol{m}$ になる．符号規約を変えたときの対応は，次の補足にまとめた．
+この符号規約では，すべり土塊に働く表面力のうち，圧縮の法線成分は $-\sigma_n\boldsymbol{n}$，すべりに抵抗するせん断成分は $-\tau_m\boldsymbol{m}$ になる．符号規約を変えたときの対応は，次の補足にまとめている．
 
 :::{dropdown} 補足A：引張を正とする符号と，圧縮を正とする符号
 連続体力学で標準的な，引張を正とする符号では，Cauchyの公式は
@@ -153,7 +153,7 @@ $$
 
 と書ける．ここで $\rho\boldsymbol{b}$ は単位体積あたりの物体力で，重力だけなら $\boldsymbol{b}=\boldsymbol{g}$ である．また，偶力を考えないふつうの連続体では，角運動量のつり合いから $\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$ が成り立つ．
 
-ただし，この資料でこの後に使うのは，次の節のCauchyの公式 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ だけである．上の2つの式は，この資料の出発点が，連続体力学のどこにつながっているかを示すために書いた．
+ただし，この資料でこの後に使うのは，次の節のCauchyの公式 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ だけである．上の2つの式は，この資料の出発点が，連続体力学のどこにつながっているかを示すために載せている．
 ```
 
 ---

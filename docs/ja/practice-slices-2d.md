@@ -10,7 +10,7 @@ series: "practice 2 of 3"
 
 この実践では，第1資料の図1の斜面と円弧について，2次元のスライス法で安全率を求めるコードを書く．まずスライスの表を作り，Fellenius法，簡易Bishop法，簡易Janbu法を，教科書の式のとおりに実装する．続いて，スライス間力の傾きを変数にした1つの枠組みを作る．この枠組みで，簡易Bishop法と簡易Janbu法がその特別な場合になることと，Spencer法が力とモーメントのつり合いをともに満たすことを，残差で確かめる．最後に，円弧以外のすべり面で，モーメントの中心の選び方が安全率を変えることを見る．
 
-この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめた．
+この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめている．
 
 (slices-goal)=
 

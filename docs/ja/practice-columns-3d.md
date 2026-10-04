@@ -10,7 +10,7 @@ series: "practice 3 of 3"
 
 この実践では，実践2の斜面を奥行き方向に延ばし，楕円体のすべり面について，3次元のカラム法で安全率を求めるコードを書く．カラムの表を作り，Hovland法と3次元の簡易Bishop法を実装する．まず，平面のすべり面では実践1の無限斜面に，円柱のすべり面では実践2の2次元の値に一致することを確かめる．そのうえで，球や楕円体のすべり面で，局所すべり方向と全体すべり方向といった，3次元で新しく決めなければならない量の影響を見る．
 
-この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)と[実践2](practice-slices-2d.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめた．
+この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)と[実践2](practice-slices-2d.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめている．
 
 (columns-goal)=
 
