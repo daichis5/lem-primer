@@ -210,8 +210,8 @@ compare a document with it.
 Every document ends its body with `## 確認問題`, opened by the line
 「答えは問題をクリックすると開く．」.
 
-- 3 to 8 questions, about one per main section. Each is a collapsed dropdown
-  with the answer inside, so readers try before they look:
+- At least 3 questions, about one per main section. Each is a collapsed
+  dropdown with the answer inside, so readers try before they look:
 
   ```text
   :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が違うか

@@ -896,7 +896,13 @@ $$ (eq-start-summary)
 底面垂直力 $N_i$，安全率 $F_s$，スライス間力やカラム間力である．$T_i$ は，$N_i$ と $F_s$ が決まれば求まる．これらを決めるには，つり合い式に加えて，手法ごとの仮定が要る．（→[9節](#section-9)）
 :::
 
-:::{dropdown} 問8（計算してみよう）　6節の「数値でたどる」の底面で，間隙水圧が $u=20$ kPa に下がったとする．せん断強度 $\tau_f$ と安全率 $F_s$ を求めよ
+:::{dropdown} 問8（計算してみよう）　2次元で，$x$ を水平，$z$ を鉛直上向きにとる．すべり面上の点で，引張を正とする応力テンソルの成分が $\sigma_{xx}=-60$ kPa，$\sigma_{zz}=-100$ kPa，$\sigma_{xz}=0$，外向きの単位法線ベクトルが $\boldsymbol{n}=(0.6,\,-0.8)$ である．表面力 $\boldsymbol{t}$，垂直応力 $\sigma_n$，せん断成分の大きさ $\|\boldsymbol{\tau}\|$ を求めよ
+:icon: question
+
+$\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}=(-60\times0.6,\ -100\times(-0.8))=(-36,\ 80)$ kPa である．法線成分は $t_n=\boldsymbol{n}^{\mathsf T}\boldsymbol{t}=0.6\times(-36)+(-0.8)\times80=-85.6$ kPa なので，$\sigma_n=-t_n=85.6$ kPa になる．せん断成分は $\boldsymbol{\tau}=\boldsymbol{t}+\sigma_n\boldsymbol{n}=(15.36,\ 11.52)$ kPa で，$\|\boldsymbol{\tau}\|=19.2$ kPa である．この面は，水平から36.9°傾いている．圧縮を正とする主応力100 kPaと60 kPaから，材料力学のMohrの応力円で求めても，同じ値になる．（→[2節](#section-2)，[3節](#section-3)）
+:::
+
+:::{dropdown} 問9（計算してみよう）　6節の「数値でたどる」の底面で，間隙水圧が $u=20$ kPa に下がったとする．せん断強度 $\tau_f$ と安全率 $F_s$ を求めよ
 :icon: question
 
 $\sigma_n'=100-20=80$ kPa なので，$\tau_f=10+80\tan 30^\circ=56.2$ kPa である．$\tau_m=30$ kPa はそのままとすると，$F_s=56.2/30=1.87$ になる．間隙水圧が下がると，有効垂直応力が増え，安全率も上がる．（→[6節](#section-6)）
