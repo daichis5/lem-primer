@@ -1,4 +1,4 @@
-"""第1資料 7節・8節: from the traction on a curved base to its resultants.
+"""第1章 7節・8節: from the traction on a curved base to its resultants.
 
 Left: normal and shear tractions along a curved base, both acting on the
 soil above (normal ones point into it). Middle: the normal forces added

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
   <title id="title">スライス間力の合力の傾きと，2つのつり合いから求めた安全率</title>
-  <desc id="desc">第1資料の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，2本の曲線が交わる点がSpencer法の解である．</desc>
+  <desc id="desc">第1章の図1の円弧で，スライス間力の合力の傾き θ を決めて，モーメントのつり合いから求めた安全率 F_m と，力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，2本の曲線が交わる点がSpencer法の解である．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="360" fill="#fff"/>
   <line x1="92" y1="300" x2="700" y2="300" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round"/>

@@ -1,4 +1,4 @@
-"""第1資料 2節: the stress tensor at a point, and the traction on two planes.
+"""第1章 2節: the stress tensor at a point, and the traction on two planes.
 
 One stress state (tension positive, kPa) is cut by two planes through the
 same point. t = sigma n is computed for each, so the figure shows the two

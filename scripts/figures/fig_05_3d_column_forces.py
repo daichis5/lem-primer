@@ -1,4 +1,4 @@
-"""第2資料 7節: the forces on one 3D column.
+"""第2章 7節: the forces on one 3D column.
 
 The column has vertical sides over a square footprint and a base plane
 z = GX x + GY y, inclined in both directions. n is the base's outward

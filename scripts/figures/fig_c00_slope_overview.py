@@ -1,4 +1,4 @@
-"""第1資料 LEMの全体像: a slope, a circular slip surface, slices, and the
+"""第1章 LEMの全体像: a slope, a circular slip surface, slices, and the
 forces on one slice.
 
 The slip surface is a true circle. The highlighted slice carries W at its

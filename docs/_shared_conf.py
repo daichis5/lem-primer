@@ -245,12 +245,12 @@ EDITIONS = {
 SIDEBAR_LINKS = {
     "ja": [
         ("LEM Lab（実装例）", "https://github.com/ibaraki-kozo-lab/lem-lab"),
-        ("このサイトのソース", "https://github.com/ibaraki-kozo-lab/lem-primer"),
+        ("ソース（GitHub）", "https://github.com/ibaraki-kozo-lab/lem-primer"),
         ("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"),
     ],
     "en": [
         ("LEM Lab (implementation)", "https://github.com/ibaraki-kozo-lab/lem-lab"),
-        ("Source of this site", "https://github.com/ibaraki-kozo-lab/lem-primer"),
+        ("Source (GitHub)", "https://github.com/ibaraki-kozo-lab/lem-primer"),
         ("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"),
     ],
 }
