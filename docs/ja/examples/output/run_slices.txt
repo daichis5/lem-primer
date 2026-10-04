@@ -1,0 +1,59 @@
+1. slice table of figure 1 (n = 6)
+    i       x       z       b   alpha       W       l
+    1    1.05   -0.67   4.096  -14.86   100.8   4.238
+    2    5.14   -1.29   4.096   -2.54   348.3   4.100
+    3    9.24   -1.04   4.096    9.66   530.9   4.155
+    4   13.34    0.13   4.096   22.33   645.7   4.428
+    5   17.43    2.44   4.096   36.30   557.8   5.083
+    6   21.53    6.52   4.096   53.53   256.7   6.891
+   every |r x n| about the centre is below 1e-12 m: True
+2. factor of safety on the circle, dry
+     n  Fellenius  Bishop   Janbu  Spencer  theta [deg]
+     6     1.8568  2.0448  1.8293  2.0400   18.98
+    12     1.8723  2.0494  1.8485  2.0453   18.70
+    25     1.8863  2.0622  1.8654  2.0586   18.33
+    50     1.8878  2.0628  1.8677  2.0594   18.27
+   100     1.8883  2.0631  1.8683  2.0597   18.25
+   200     1.8884  2.0631  1.8685  2.0597   18.25
+3. one framework, theta = 0 (n = 50)
+   Bishop by its formula 2.062795, F_m(theta = 0) 2.062795
+   Janbu by its formula  1.867652, F_f(theta = 0) 1.867652
+4. F_m and F_f against theta (n = 50)
+theta_deg,F_m,F_f
+0.0,2.0628,1.8677
+2.5,2.0596,1.8911
+5.0,2.0573,1.9152
+7.5,2.0559,1.9400
+10.0,2.0553,1.9657
+12.5,2.0555,1.9925
+15.0,2.0566,2.0205
+17.5,2.0586,2.0500
+20.0,2.0615,2.0812
+22.5,2.0653,2.1144
+25.0,2.0702,2.1499
+27.5,2.0764,2.1883
+30.0,2.0839,2.2300
+   the two meet at theta = 18.27 deg, Fs = 2.0594 (Spencer)
+5. water table at z = 4 m (n = 50)
+   Fellenius, N' = W cos(a) - u l     1.402
+   Fellenius, N' = (W - u b) cos(a)   1.442
+   Bishop                             1.540
+   Janbu                              1.427
+   Spencer                            1.544 (theta = 17.0 deg)
+6. slices with a negative effective normal force N - U (n = 50)
+   dry: Fellenius none; Bishop x = 23.33; Spencer none
+   water at z = 4 m: Fellenius none; Bishop x = 23.33; Spencer x = 23.33
+   the last slice, dry: alpha = 63.8 deg, W = 4.6, c l sin(alpha) / F = 4.8 [kN/m]
+7. a plane 5 m under a planar slope of 30 deg (n = 8)
+   Fellenius 1.2566, Bishop 1.2566, Janbu 1.2566
+   infinite slope (practice 1) 1.2566
+8. an ellipse through the same exit (n = 50)
+   Bishop's circle formula with the ellipse's angles  1.994
+   Bishop, moments about the centre (6, 18)           1.922
+   Fellenius's circle formula                         1.733
+   Fellenius, moments about the centre (6, 18)        1.803
+9. moving the moment centre on the ellipse (n = 50)
+   centre       Fellenius  Bishop  Spencer
+   (6, 18)        1.803   1.922    2.025
+   (6, 25)        1.850   1.863    2.025
+   (10, 18)       1.971   1.922    2.025
