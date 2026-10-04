@@ -36,6 +36,7 @@ jobs:
       - name: Check that the example outputs match their code
         run: |
           make examples
+          git diff -- docs/ja/examples
           git status --porcelain -- docs/ja/examples
           test -z "$(git status --porcelain -- docs/ja/examples)"
       # The figures are written by scripts/figures. Writing them all afresh

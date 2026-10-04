@@ -6,7 +6,7 @@
     4   13.34    0.13   4.096   22.33   645.7   4.428
     5   17.43    2.44   4.096   36.30   557.8   5.083
     6   21.53    6.52   4.096   53.53   256.7   6.891
-   largest |r x n| about the centre: 3.6e-15 m
+   every |r x n| about the centre is below 1e-12 m: True
 2. factor of safety on the circle, dry
      n  Fellenius  Bishop   Janbu  Spencer  theta [deg]
      6     1.8568  2.0448  1.8293  2.0400   18.98
