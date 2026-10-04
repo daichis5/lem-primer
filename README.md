@@ -48,7 +48,7 @@ live in `docs/_shared_conf.py`.
 ## Related
 
 One implementation of the method described here is the slope-stability
-codebase [LEM Lab](https://github.com/daichis5/lem-lab).
+codebase [LEM Lab](https://github.com/ibaraki-kozo-lab/lem-lab).
 
 ## License
 
