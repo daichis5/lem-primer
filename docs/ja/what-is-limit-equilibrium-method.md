@@ -91,6 +91,8 @@ $$ (eq-what-mobilized-parameters)
 
 ---
 
+(what-section-2)=
+
 ### 2. 2次元で本来考えなければならない力
 
 ```{figure} ./figures/fig_01_2d_slice_forces.svg
@@ -196,6 +198,8 @@ LEMの各手法は，この3つの組み合わせで分類できる．2次元の
 ---
 
 ## 第2部　2次元のLEMは何を簡略化しているのか
+
+(what-section-4)=
 
 ### 4. 2次元の手法を比べる観点
 
@@ -360,6 +364,8 @@ Spencer法は，仮定した内力の向きのもとで，力とモーメント�
 
 ---
 
+(what-section-5-2)=
+
 #### 5.2 Morgenstern–Price法
 
 Morgenstern–Price法は，スライス間のせん断力と垂直力の比を，位置 $x$ の既知の形の関数 $f(x)$ と，未知の倍率 $\lambda$ で表す．
@@ -464,6 +470,8 @@ $$ (eq-what-column-shear)
 - 速度場や，運動学的な機構から向きを与える
 
 2次元では，せん断力の向きが断面内で事実上決まっているので，この問題は目立たない．3次元では，安全率だけでなく，**どちら向きにすべると仮定したか**も，定式化の一部になる．
+
+(what-section-7-2)=
 
 #### 7.2 内部境界が2組になる
 
@@ -586,6 +594,8 @@ Jiang and Yamagamiは，2次元のSpencer法の安全率の式をカラム法に
 **代表的な一次論文**：[J.-C. Jiang and T. Yamagami (2004), “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method,” *Soils and Foundations*, 44(4), 127–135. DOI: 10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 
 ---
+
+(what-section-8-4)=
 
 #### 8.4 Lam–Fredlundの3次元のGLE：Morgenstern–Price型の一般化
 

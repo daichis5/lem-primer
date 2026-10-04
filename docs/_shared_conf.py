@@ -166,6 +166,7 @@ html_static_path = ["../_static"]
 html_css_files = [
     "language-switch.css",
     "brand.css",
+    "glossary.css",
     "sidebar-links.css",
 ]
 

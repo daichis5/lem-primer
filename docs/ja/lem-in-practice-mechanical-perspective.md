@@ -168,6 +168,8 @@ $$ (eq-practice-circle-shear-moment)
 
 ---
 
+(practice-section-3)=
+
 ### 3. 楕円・複合面・任意形状に広げると，何が変わるか
 
 円弧以外の面でも，式 {eq}`eq-practice-base-force` から式 {eq}`eq-practice-moment-balance` までは計算できる．しかし，円弧がもっていた特別な性質は，一般には失われる．
@@ -222,6 +224,8 @@ $$ (eq-practice-method-difference)
 のどちらになるかを，一律には決められない．簡便法がいつも安全側になるとも，いつも危険側になるとも限らない．
 
 ---
+
+(practice-section-4)=
 
 ### 4. 「任意形状で計算できる」の正確な意味
 
@@ -361,6 +365,8 @@ $$ (eq-practice-shear-vector)
 を作るための単位方向ベクトル $\boldsymbol{m}_i$ が要る．
 
 ---
+
+(practice-section-8)=
 
 ### 8. 「すべり方向」の3つの意味
 
