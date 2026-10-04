@@ -1,0 +1,37 @@
+/* Cards on the home page (sphinx-design's grid-item-card), as in the lab
+   handbook: a thin border, the title in the link colour over a rule, and an
+   outline in the link colour, not a shadow, on hover, so it shows in the dark
+   theme too. */
+
+/* sphinx-design pads its grid by a gutter more than the cards' own spacing
+   takes back, which sets the cards in from the text column. */
+
+article .sd-container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+article .sd-card {
+  box-shadow: none;
+  background: var(--color-background-primary);
+  border: 1px solid var(--color-background-border);
+  border-radius: 6px;
+}
+
+article .sd-card:hover,
+article .sd-card:focus-within {
+  border-color: var(--color-brand-content);
+  box-shadow: 0 0 0 1px var(--color-brand-content);
+}
+
+article .sd-card-title {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-background-border);
+  color: var(--color-brand-content);
+  font-weight: 600;
+}
+
+article .sd-card-text {
+  color: var(--color-foreground-secondary);
+}

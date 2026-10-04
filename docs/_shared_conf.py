@@ -71,6 +71,18 @@ _TEAL = "#356F68"  # the dark stop of the LEM Lab mountain gradient
 
 html_theme_options = {
     "light_css_variables": {
+        # The lab handbook's system fonts: Hiragino on macOS, Yu Gothic or
+        # Meiryo on Windows. Furo's stack names no Japanese font, which leaves
+        # the choice to the browser. Set here, it holds in both themes.
+        "font-stack": '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", '
+        '"Hiragino Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", '
+        '"Segoe UI Emoji"',
+        # The sidebar on the page's own background, as in the lab handbook;
+        # the header above it takes the secondary background instead.
+        "color-sidebar-background": "#FFFFFF",
+        # A page link's background on hover and on the current page
+        # (header.css); the lab handbook's value.
+        "site-nav-hover": "rgba(129, 139, 152, .12)",
         "color-brand-primary": "#1A5678",
         "color-brand-content": "#17527A",
         "color-brand-visited": "#7A5AA6",
@@ -125,6 +137,8 @@ html_theme_options = {
         "color-foreground-muted": "#7C8894",
         "color-foreground-border": "#5A6672",
         "color-background-primary": "#12171B",
+        "color-sidebar-background": "#12171B",
+        "site-nav-hover": "rgba(101, 108, 118, .2)",
         "color-background-secondary": "#171D22",
         "color-background-hover": "#1C242A",
         "color-background-hover--transparent": "#1C242A00",
@@ -170,6 +184,9 @@ html_css_files = [
     "sidebar-links.css",
     "lists.css",
     "equations.css",
+    "header.css",
+    "headings.css",
+    "cards.css",
 ]
 
 # Furo's default sidebar (see its ``theme.conf``) with the language switcher
