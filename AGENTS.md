@@ -27,8 +27,8 @@ The Japanese edition (`docs/ja/`) is the source; the English edition
 - The table of the three documents and their questions lives on the home
   page (`index.md`) only. Documents do not repeat it, and a part (第1部 …)
   opens with its first section, not with a list of what it covers.
-- The first and second documents end with 読み終えたら答えられること and
-  次に読む; the second and third end with 参考文献.
+- A document ends with 確認問題 (see Review questions), then 次に読む in the
+  first and second, then 参考文献 in the second and third.
 - Headings are Japanese. Parts are 第1部, 第2部, …; sections keep their
   numbers, and the text refers to one as 6節. Reference entries keep the
   language of the work; where there is no DOI, the link text is 書誌情報.
@@ -47,8 +47,8 @@ compare a document with it.
   the endings: follow a である． with a different ending, and where three
   sentences in a row end in a verb, join two of them or open one with a
   connective or a linking phrase (そのため，, つまり，, 円弧では，). Noun
-  endings (体言止め) are for tables, captions, glossary entries and list
-  items.
+  endings (体言止め) are for tables, captions, glossary entries, list items,
+  and review answers (see Review questions).
 - A list item and a caption have no closing ．; a sentence inside one that
   another follows keeps its ．.
 - Link each sentence to the one before when the link is a cause, a
@@ -127,6 +127,31 @@ compare a document with it.
 | 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
 | 元の手法 | 原法 | |
 | 射影 | 投影 | projecting onto a plane, as in 補足C |
+
+## Review questions
+
+Every document ends its body with `## 確認問題`, opened by the line
+「答えは問題をクリックすると開く．」.
+
+- 3 to 8 questions, about one per main section. Each is a collapsed dropdown
+  with the answer inside, so readers try before they look:
+
+  ```text
+  :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が違うか
+  :icon: question
+
+  （答え）（→[2節](#section-2)）
+  :::
+  ```
+- Mix questions that check understanding (why something holds) with small
+  calculations marked （計算してみよう）, using numbers like those in the
+  text. Work each one through before printing its answer.
+- End an answer with a link to the section it draws on:
+  （→[6節](#section-6)）. Give that heading an explicit label. Labels are
+  shared by the whole site, so the second and third documents prefix theirs
+  (`what-section-3-1`, `practice-section-6`).
+- In an answer, a reason ends 〜ため．, and a list of items may end without
+  a predicate.
 
 ## Figures
 
