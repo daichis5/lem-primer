@@ -14,7 +14,8 @@
   top: 0;
   /* Above Furo's sidebar drawer (30), which would otherwise cover the brand
      once the page scrolls; below the table of contents drawer and its
-     overlay (50, 40). */
+     overlay (50, 40), which open over the page below 82em. Above 82em it
+     is 55; see the table of contents below. */
   z-index: 35;
   display: flex;
   box-sizing: border-box;
@@ -160,6 +161,12 @@
   display: none;
 }
 
+/* The skip link shows only while it has focus, at the top of the window;
+   Furo's z-index for it (40) is below the header's on wide screens. */
+.skip-to-content {
+  z-index: 60;
+}
+
 @media not all and (max-width: 63em) {
   /* Furo sets the body to the window's height, and a sticky element sticks
      only within its parent, so the header would scroll away after one
@@ -225,9 +232,15 @@
 }
 
 /* The same for the table of contents, where it is a column of the page.
-   Below 82em it is a drawer over the header, and keeps Furo's place. */
+   Below 82em it is a drawer over the header, and keeps Furo's place. As a
+   column it keeps Furo's z-index of 50 too, so the header goes above it, or
+   the column would cover the header's right end once the page scrolls. */
 
 @media not all and (max-width: 82em) {
+  .site-header {
+    z-index: 55;
+  }
+
   .toc-sticky {
     top: var(--site-header-height);
     height: calc(100vh - var(--site-header-height));
