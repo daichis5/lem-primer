@@ -192,13 +192,17 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   `{term}`, except the terms of the first group, LEMの枠組み: すべり面 and
   スライス come up in almost every entry. Where the wording differs, name
   the entry: `` {term}`全垂直応力 <垂直応力>` ``.
-- In each document, the first use of a term that the document does not
-  explain, because its entry links only to other documents, links to the
-  entry with `{term}`; later uses stay plain. Count only the main text:
-  not the lead (up to the line that links the glossary), headings, tables,
-  equations, captions or dropdowns. A word inside a longer term is not a
-  use (間隙水圧 in 間隙水圧の合力), but another wording is: name the entry,
-  as in `` {term}`LEM <極限平衡法>` ``.
+- In each document, the first use of a term the document does not explain
+  (its entry links only to other documents) links to the entry with
+  `{term}`; later uses stay plain. Count only the main text: not the lead
+  (up to the line that links the glossary), headings, tables, equations,
+  captions or dropdowns. A use is the term itself, its abbreviation, a
+  name its entry gives, or another form of the same words (LEM,
+  任意形状のすべり面, 回転軸; 離散化, 不静定性を解消, 局所的なすべり方向);
+  for these, name the entry, as in `` {term}`LEM <極限平衡法>` ``. A word
+  inside another term is not a use (間隙水圧 in 間隙水圧の合力), and
+  neither is a common word that stands for the term only in context (土塊,
+  強度, 基準点).
 - A term gets an entry when readers may meet it away from the section that
   explains it: another document uses it, the same document uses it far
   from that section, or LEM uses it more narrowly than 土質力学 or

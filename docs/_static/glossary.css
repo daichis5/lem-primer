@@ -69,3 +69,9 @@ a:has(> .std-term) {
   text-decoration-style: dotted;
   text-decoration-color: var(--color-foreground-border);
 }
+
+/* That is already the hover colour, so on hover the dots take the link's
+   own colour instead. */
+a:has(> .std-term):hover {
+  text-decoration-color: currentColor;
+}
