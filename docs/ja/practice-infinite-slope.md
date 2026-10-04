@@ -317,7 +317,7 @@ uv run python run_infinite_slope.py
 柱の両側の面に働く力が，大きさが同じで向きが逆になり，打ち消し合うため．斜面がどこまでも同じなので，左右の面の状態も同じになる．そのため，柱の重さはすべてすべり面が支え，つり合いだけで $\sigma_n$ と $\tau$ が決まる．（→[2節](#infinite-section-2)）
 :::
 
-:::{dropdown} 問2（計算してみよう）　乾いた斜面で $\beta=25^\circ$，$z=3$ mのとき，$\sigma_n$，$\tau$，$F_s$ を求めよ．ほかの条件は3節と同じとする
+:::{dropdown} 問2　乾いた斜面で $\beta=25^\circ$，$z=3$ mのとき，$\sigma_n$，$\tau$，$F_s$ を求めよ．ほかの条件は3節と同じとする
 :icon: question
 
 $w=18\times3=54$ kPa なので，$\sigma_n=54\cos^2 25^\circ=44.36$ kPa，$\tau=54\sin 25^\circ\cos 25^\circ=20.68$ kPa である．$F_s=(10+44.36\tan 30^\circ)/20.68=1.722$ になる．`base_stresses(25.0, 54.0)` を `factor_of_safety` に渡しても，同じ値が出る．（→[2節](#infinite-section-2)，[3節](#infinite-section-3)）
