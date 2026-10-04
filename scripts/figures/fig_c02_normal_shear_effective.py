@@ -1,13 +1,13 @@
-"""第1章 3節・4節: splitting the traction, and the effective normal stress.
+"""Chapter 1, Sections 3 and 4: splitting the traction, and the effective normal stress.
 
-Uses the numbers of 6節's worked example: sigma_n = 100 kPa, u = 40 kPa,
+Uses the numbers of Section 6's worked example: sigma_n = 100 kPa, u = 40 kPa,
 tau = 30 kPa. The traction is drawn as the vector sum of its normal and
 shear components, and the normal stress as the sum of sigma_n' and u.
 """
 
 import math
 
-from figlib import (FAINT, GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, WATER, Figure, add, lerp,
+from figlib import (FAINT, GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, WATER, Figure, L, add, lerp,
                     mul)
 
 SIGMA_N, U, TAU = 100.0, 40.0, 30.0  # kPa
@@ -17,9 +17,12 @@ TILT = math.radians(18)  # the surface rises to the right
 fig = Figure(
     "fig_c02_normal_shear_effective",
     380,
-    "表面力の分解と有効垂直応力",
-    "左は，面に働く表面力を，法線成分とせん断成分の和に分けた図．"
-    "右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．",
+    L("表面力の分解と有効垂直応力", "Splitting the traction, and the effective normal stress"),
+    L("左は，面に働く表面力を，法線成分とせん断成分の和に分けた図．"
+      "右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．",
+      "Left: the traction on a plane, split into the sum of its normal and shear components. Right: on "
+      "the same plane, the normal stress is the sum of the effective normal stress and the pore water "
+      "pressure, and the pore water pressure does not change the shear component."),
 )
 
 t_hat = (math.cos(TILT), -math.sin(TILT))  # along the surface, screen coordinates
@@ -53,7 +56,8 @@ def panel_left(c):
     fig.math(add(tip_n, (-10, 4)), r"−σ_n\v{n}", color=NORMAL, anchor="end")
     fig.math(add(tip_s, (6, 22)), r"\v{τ}", color=RESIST)
     fig.circle(c, 3.4, INK)
-    fig.text((c[0], 360), "表面力 = 法線成分 + せん断成分", SMALL, MUTED, "middle")
+    fig.text((c[0], 360), L("表面力 = 法線成分 + せん断成分", "traction = normal component + shear component"),
+             SMALL, MUTED, "middle")
 
 
 def panel_right(c):
@@ -76,7 +80,10 @@ def panel_right(c):
     s0 = add(c, mul(t_hat, 40))
     fig.arrow(s0, add(s0, shear), RESIST)
     fig.math(add(add(s0, shear), (6, 20)), r"\v{τ}", color=RESIST)
-    fig.text((c[0], 360), "垂直応力 = 有効垂直応力 + 間隙水圧", SMALL, MUTED, "middle")
+    # English takes two lines to stay inside the panel.
+    fig.text(L((c[0], 360), (c[0], 350)),
+             L("垂直応力 = 有効垂直応力 + 間隙水圧", "normal stress = effective normal stress"), SMALL, MUTED, "middle")
+    fig.text((c[0], 370), L("", "+ pore water pressure"), SMALL, MUTED, "middle")
 
 
 panel_left((190, 252))

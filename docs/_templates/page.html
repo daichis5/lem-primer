@@ -58,3 +58,18 @@ copy of it goes first.
   });
 </script>
 {%- endblock %}
+
+{#- A translated page says which Japanese commit it was translated from: the
+    English edition follows the Japanese only on request (AGENTS.md, English
+    edition), so a reader can tell how old the translation is. -#}
+{% block content -%}
+{%- if meta and meta.translated_from %}
+<p class="translation-note">
+  Translated from the Japanese edition as of
+  <time>{{ meta.translated_on }}</time>
+  (<a href="https://github.com/ibaraki-kozo-lab/lem-primer/blob/{{ meta.translated_from }}/docs/ja/{{ pagename }}.md">{{ meta.translated_from }}</a>).
+  The Japanese edition may have changed since.
+</p>
+{%- endif %}
+{{ super() }}
+{%- endblock %}

@@ -196,7 +196,7 @@ $$ (eq-infinite-fs)
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
-:pyobject: test_the_base_of_section_6_of_document_1
+:pyobject: test_the_base_of_section_6_of_chapter_1
 ```
 
 ---

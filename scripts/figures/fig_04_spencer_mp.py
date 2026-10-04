@@ -1,4 +1,4 @@
-"""第2章 5節: the interslice resultants of Spencer and Morgenstern–Price.
+"""Chapter 2, Section 5: the interslice resultants of Spencer and Morgenstern–Price.
 
 Both panels use the same slices and the same E on each boundary. The
 resultant on boundary k leans at theta_k with tan(theta_k) = X/E: constant
@@ -9,7 +9,7 @@ read off the curve. Spencer is the case f(x) = 1.
 
 import math
 
-from figlib import FAINT, GROUND, INK, INTER, MUTED, SOIL, SOIL_EDGE, Figure, Slope, View, add
+from figlib import FAINT, GROUND, INK, INTER, MUTED, SOIL, SOIL_EDGE, Figure, L, Slope, View, add
 
 s = Slope(n=8)
 THETA_SPENCER = math.radians(25)
@@ -24,10 +24,15 @@ def f_half_sine(x):
 fig = Figure(
     "fig_04_spencer_mp",
     360,
-    "Spencer法とMorgenstern–Price法の，スライス間力の向きの仮定",
-    "同じスライスの境界に働くスライス間力の合力を，2つの手法で比べる．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．"
-    "Morgenstern–Price法では，合力の傾き X/E が λf(x) に従って場所ごとに変わる．"
-    "下のグラフは，それぞれの f(x) を同じ横軸で示す．Spencer法は f(x)=1 の場合にあたる．",
+    L("Spencer法とMorgenstern–Price法の，スライス間力の向きの仮定",
+      "The direction of the interslice forces assumed by the Spencer and Morgenstern–Price methods"),
+    L("同じスライスの境界に働くスライス間力の合力を，2つの手法で比べる．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．"
+      "Morgenstern–Price法では，合力の傾き X/E が λf(x) に従って場所ごとに変わる．"
+      "下のグラフは，それぞれの f(x) を同じ横軸で示す．Spencer法は f(x)=1 の場合にあたる．",
+      "The resultant interslice forces on the same slice boundaries under two methods. In the Spencer "
+      "method, the resultant leans at the same angle θ on every boundary. In the Morgenstern–Price "
+      "method, its inclination X/E varies from place to place as λf(x). The graphs below show each "
+      "f(x) on the same horizontal axis. The Spencer method is the case f(x)=1."),
 )
 
 
@@ -82,8 +87,11 @@ def ONE(x):
     return 1.0
 
 
-panel(10, "Spencer法", r"X/E = \r{tan} θ\t{（一定）}", ONE, r"f(x) = 1\t{（一定）}")
-panel(390, "Morgenstern–Price法", "X/E = λ f(x)", f_half_sine, r"f(x)\t{：正弦の半波}")
+panel(10, L("Spencer法", "Spencer method"),
+      L(r"X/E = \r{tan} θ\t{（一定）}", r"X/E = \r{tan} θ\t{ (constant)}"), ONE,
+      L(r"f(x) = 1\t{（一定）}", r"f(x) = 1\t{ (constant)}"))
+panel(390, L("Morgenstern–Price法", "Morgenstern–Price method"), "X/E = λ f(x)", f_half_sine,
+      L(r"f(x)\t{：正弦の半波}", r"f(x)\t{: half sine wave}"))
 fig.line((380, 16), (380, 345), "#e2e8f0", 1)
 
 if __name__ == "__main__":

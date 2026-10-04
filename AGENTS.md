@@ -17,8 +17,9 @@ Readers are civil-engineering students who have not studied LEM before: they
 know 土質力学 and 材料力学 (垂直応力，せん断応力，有効応力，Mohr–Coulomb則)
 but not stress tensors or LEM. The series depends on no analysis software.
 
-The Japanese edition (`docs/ja/`) is the source; the English edition
-(`docs/en/`) is under construction.
+The Japanese edition (`docs/ja/`) is the source. The English edition
+(`docs/en/`) is a translation of it at a recorded commit, and does not
+follow it; see English edition.
 
 The three documents are 第1章, 第2章 and 第3章, under the caption 理論編;
 the site as a whole is この資料 or このシリーズ. After them come three
@@ -90,12 +91,12 @@ quote and runs `save_table.py`; readers do not download it.
 
 - Pages never paste code or output. They include it with `literalinclude`:
   a function with `:pyobject:`, a file's head with `:end-at:`, and a run
-  script's output from `docs/ja/examples/output` with `:start-at:` and
+  script's output from `output/` beside the code with `:start-at:` and
   `:end-before:` on its numbered headings.
-- `make examples` runs every `run_*.py` with warnings as errors, writes what
-  it prints to `docs/ja/examples/output`, and runs the tests. CI runs it and
-  fails if an output differs from the committed file. Run it before
-  `make figures`: `fig_e2` reads `output/run_slices.txt`.
+- `make examples` runs every `run_*.py` of both copies with warnings as
+  errors, writes what it prints to each copy's `output/`, and runs the
+  tests. CI runs it and fails if an output differs from the committed file.
+  Run it before `make figures`: `fig_e2` reads `output/run_slices.txt`.
 - Python 3.11 or later with NumPy, and pytest for the tests. Docstrings and
   comments are Japanese; names follow the text's symbols (`W`, `N`, `alpha`,
   `l`, `m_alpha`), and vectors follow its conventions: `n` outward from the
@@ -264,8 +265,8 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   section explains the term; where none does, add the explanation to the
   text.
 - The English term is the one the English literature uses (slip surface,
-  interslice force, direction of sliding), in Oxford spelling (mobilized,
-  centre).
+  interslice force, direction of sliding), in American spelling
+  (mobilized, center), as in the English edition.
 - Keep the equations in a definition short: in the narrow column a long
   one breaks across lines. Link to the section that derives it instead.
 - In a definition, link each other term at its first mention with
@@ -288,15 +289,89 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   from that section, or LEM uses it more narrowly than 土質力学 or
   材料力学 do (内力).
 
+## English edition
+
+`docs/en/` translates `docs/ja/` page for page. It does not follow changes
+to the Japanese edition: a page is brought in line only when someone asks
+for it.
+
+- Each page's front matter records the Japanese commit it was translated
+  from and the date, and the page shows them above its title, linking the
+  Japanese page at that commit. Quote the commit: YAML reads an all-digit
+  hash as a number.
+
+  ```text
+  translated_from: "9b11256"
+  translated_on: 2026-10-04
+  ```
+
+  To bring a page in line, read `git diff <translated_from>..HEAD --
+  docs/ja/<page>.md`, change the English to match, and record the new
+  commit and date. Record a commit that is already on `main`, so it
+  survives a squash merge of the PR that records it.
+- A page keeps its Japanese counterpart's file name, labels, equation
+  labels and figure names: the language switcher pairs pages by file name,
+  and the same labels keep the diff readable.
+- The figures are not translations: `make figures` writes both
+  `docs/ja/figures/` and `docs/en/figures/` from the same scripts, so a
+  change to a figure reaches both editions at once. The practice code is a
+  copy: `docs/en/examples/` has English docstrings and comments, and the
+  Japanese code's names (`centres`, `fellenius`) and printed text, which is
+  English in both, so the two copies diff cleanly and print the same output.
+  `make examples` runs both.
+- Write plain American English for the same readers: present tense, no
+  "we", short sentences. Spell in American English (center, analyze,
+  modeling, behavior, color) in prose; code keeps its names.
+- Names of the parts:
+
+  | Japanese | English |
+  |---|---|
+  | 第1章，この章 | Chapter 1, this chapter |
+  | この資料，このシリーズ | this primer |
+  | 6節；第1章 6節 | Section 6; Chapter 1, Section 6 |
+  | 理論編，実践編，付録 | Theory, Practice, Appendix |
+  | 実践1，この実践 | Practice 1, this practice |
+  | 用語集 | Glossary |
+  | 確認問題，次に読む，参考文献 | Review questions, What to read next, References |
+  | （計算してみよう），（やってみよう） | (Calculate), (Try it) |
+  | 補足A | Supplement A |
+
+- Terms are the glossary's English terms (the first paragraph of each entry
+  in `docs/ja/lem-glossary.md`), in American spelling. The English
+  glossary names each entry by its term, lower case but for proper names
+  (`factor of safety`, `Mohr–Coulomb failure criterion`), and `{term}`
+  roles use those names. An entry's first paragraph is the symbol, a
+  full-width space, the English term and the Japanese term in full-width
+  parentheses: `$F_s$　factor of safety（安全率）`. Method names follow
+  the English literature: Fellenius method (ordinary method of slices),
+  simplified Bishop method, simplified Janbu method, Spencer method,
+  Morgenstern–Price method.
+- The structure rules above hold in English too: the opening (title, bold
+  subtitle, lead, the line naming the pages it builds on: "This chapter
+  assumes that you have read [Chapter 1](…)." or "This practice assumes
+  that you have read […] and finished [Practice 1](…)."), the review
+  questions, the glossary links on first use, and the link texts
+  (Chapter 1, Section 6).
+  - On a practice page, the questions' opening line goes on "Do the
+    (Try it) questions in `lem-practice`."
+  - A review question reads `Q1. …`, or `Q2. (Calculate) …`, and the
+    questions open with "Click a question to see its answer.".
+  - An answer and a glossary definition end with `(→[Section 6](#section-6))`.
+  - An equation is cited as Eq. {eq}`…`, or Eqs. for two.
+
 ## Figures
 
-Each SVG in `docs/ja/figures/` is written by a script in `scripts/figures/`.
-Edit the script and run `make figures`; never edit an SVG by hand. CI writes
-the figures again and fails if they differ from the committed files.
+Each SVG in `docs/ja/figures/` and `docs/en/figures/` is written by a
+script in `scripts/figures/`. Edit the script and run `make figures`; never
+edit an SVG by hand. CI writes the figures again and fails if they differ
+from the committed files.
 
 - `scripts/figures/figlib.py` holds what the figures share: the colours, type
   sizes, arrowheads and math labels, plus the slope with its slip circle, the
   slice of 第2章 and a 3D projection.
+- Text that differs by language is `L(ja, en)`; a position or anchor may be
+  one too, where English needs another place. English labels use the
+  glossary's English terms in American spelling.
 - Compute geometry rather than place it by eye. A normal is perpendicular to
   its surface, a vector sum is drawn as one, and an arrow's length is
   proportional to its force. Where only the place of an unknown matters, as
@@ -308,5 +383,5 @@ the figures again and fails if they differ from the committed files.
   their set size (14 px, 13 px for secondary text). It has no title inside;
   the caption carries it.
 - Labels, `<title>` and `<desc>` follow the terms and notation of the body.
-  After a change, look at the figure in a browser: no label may cross an
-  arrow or leave its panel.
+  After a change, look at the figure in both languages in a browser: no
+  label may cross an arrow or leave its panel.

@@ -1,29 +1,33 @@
-"""第1章 7節・8節: from the traction on a curved base to its resultants.
+"""Chapter 1, Sections 7 and 8: from the traction on a curved base to its resultants.
 
 Left: normal and shear tractions along a curved base, both acting on the
 soil above (normal ones point into it). Middle: the normal forces added
 head to tail; the resultant is shorter than the sum of their sizes, which
-is 7節's inequality. Right: LEM's model of the base, one plane with N_i and
-T_i, whose sizes are the sums of sizes (N_i = ∫σ_n dA, as 8節 defines it),
+is Section 7's inequality. Right: LEM's model of the base, one plane with N_i and
+T_i, whose sizes are the sums of sizes (N_i = ∫σ_n dA, as Section 8 defines it),
 so the model's N_i is longer than the curved base's true resultant. The
 middle panel adds the left panel's own vectors.
 """
 
 import math
 
-from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, mul, norm, sub,
+from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, L, add, mul, norm, sub,
                     unit)
 
 LIGHT = "#93c5fd"  # each point's share, before adding
-SPAN = 100.0  # degrees of arc covered by the base (strongly curved, to show 7節's point)
+SPAN = 100.0  # degrees of arc covered by the base (strongly curved, to show Section 7's point)
 POINTS = 7
 fig = Figure(
     "fig_c04_surface_integration",
     330,
-    "曲面の底面に働く表面力から，底面の合力へ",
-    "左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとして"
-    "つないだ図．向きを考えて足した合力は，大きさだけを足した値より短い．"
-    "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを足した Ni と Ti を置いたモデル．",
+    L("曲面の底面に働く表面力から，底面の合力へ", "From the traction on a curved base to the base resultants"),
+    L("左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとして"
+      "つないだ図．向きを考えて足した合力は，大きさだけを足した値より短い．"
+      "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを足した Ni と Ti を置いたモデル．",
+      "Left: the normal and shear components of the traction distributed along a curved base. Middle: "
+      "the normal force at each point joined head to tail as vectors. The resultant, added with their "
+      "directions, is shorter than the sum of their sizes alone. Right: LEM's model, which represents "
+      "the base by one plane and one direction and places on it Ni and Ti, the sums of the sizes."),
 )
 
 # Left: the curved base. Screen coordinates, y down; the centre is above.
@@ -56,7 +60,8 @@ for k, th in enumerate(ths):
     fig.arrow(p, add(p, mul(n_in, sigma(k) * K)), NORMAL, 2.2, head=0.85)
     fig.arrow(p, add(p, mul(t_res, 0.33 * sigma(k) * K)), RESIST, 2.2, head=0.85)
 fig.math((arc[30][0], arc[30][1] + 30), "S_i", 16, INK, "middle")
-fig.text((C[0], 30), "曲面の底面に分布する表面力", SMALL, MUTED, "middle")
+fig.text((C[0], 30),
+         L("曲面の底面に分布する表面力", "traction distributed on a curved base"), SMALL, MUTED, "middle")
 
 # Middle: the same normal forces head to tail (equal area per point), at a
 # force scale shared with the right panel.
@@ -77,7 +82,7 @@ fig.line((bx, by), (bx + chain, by), LIGHT, 6, cap="butt")
 fig.math((bx + chain + 8, by + 5), "∫σ_n dA", 15, "#3b82f6")
 fig.line((bx, by + 18), (bx + resultant, by + 18), NORMAL, 6, cap="butt")
 fig.math((bx + resultant + 8, by + 23), r"‖\v{N}_i‖", 15, NORMAL)
-fig.text((462, 30), "ベクトルとして足す", SMALL, MUTED, "middle")
+fig.text((462, 30), L("ベクトルとして足す", "added as vectors"), SMALL, MUTED, "middle")
 
 # In LEM's model the base forces are sums of sizes: N_i = ∫σ_n dA, and T_i alike.
 shear_sum = sum(0.33 * sigma(k) * SCALE for k in range(POINTS))
@@ -97,7 +102,7 @@ fig.unit_vector(pc, add(pc, (0, 40)))
 fig.math((n_tip[0] - 10, n_tip[1] + 14), r"\v{N}_i = −N_i\v{n}_i", 16, NORMAL, "end")
 fig.math((t_tip[0] + 2, t_tip[1] + 22), r"\v{T}_i", 16, RESIST)
 fig.math((pc[0] + 8, pc[1] + 52), r"\v{n}_i", 16, UNIT)
-fig.text((pc[0], 30), "LEMのモデル：1つの平面", SMALL, MUTED, "middle")
+fig.text((pc[0], 30), L("LEMのモデル：1つの平面", "LEM's model: one plane"), SMALL, MUTED, "middle")
 
 if __name__ == "__main__":
     fig.save()

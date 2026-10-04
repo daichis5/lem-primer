@@ -1,4 +1,4 @@
-"""第1章 2節: the stress tensor at a point, and the traction on two planes.
+"""Chapter 1, Section 2: the stress tensor at a point, and the traction on two planes.
 
 One stress state (tension positive, kPa) is cut by two planes through the
 same point. t = sigma n is computed for each, so the figure shows the two
@@ -7,7 +7,7 @@ tractions really differ in direction and size.
 
 import math
 
-from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, add, mul, norm)
+from figlib import (GROUND, INK, MUTED, NORMAL, RESIST, SMALL, SOIL, UNIT, Figure, L, add, mul, norm)
 
 SXX, SZZ, TXZ = -60.0, -100.0, -35.0  # kPa, tension positive (the soil is in compression)
 KE = 0.6  # px per kPa on the element
@@ -21,10 +21,14 @@ def traction(n):
 fig = Figure(
     "fig_c01_stress_to_traction",
     330,
-    "応力テンソルと，面に働く表面力",
-    "左は，1つの点の応力の状態を，小さな要素の面に働く応力の成分で表した図．"
-    "中と右は，同じ点を向きの違う2つの面で切り，それぞれの面に働く表面力を同じ応力から計算して描いた図．"
-    "面の向きが変わると，表面力の向きと大きさも変わる．",
+    L("応力テンソルと，面に働く表面力", "The stress tensor and the traction on a plane"),
+    L("左は，1つの点の応力の状態を，小さな要素の面に働く応力の成分で表した図．"
+      "中と右は，同じ点を向きの違う2つの面で切り，それぞれの面に働く表面力を同じ応力から計算して描いた図．"
+      "面の向きが変わると，表面力の向きと大きさも変わる．",
+      "Left: the state of stress at a point, shown by the stress components on the faces of a small "
+      "element. Middle and right: the same point cut by two planes of different orientation, with the "
+      "traction on each plane computed from the same stress. When the plane turns, the traction changes "
+      "in direction and size."),
 )
 
 
@@ -50,7 +54,7 @@ for sign in (1, -1):
 fig.math((c[0] + h + 8 - SXX * KE, c[1] - 8), "σ_{xx}", 16, NORMAL)
 fig.math((c[0] + 10, c[1] - h - 8 + SZZ * KE + 18), "σ_{zz}", 16, NORMAL)
 fig.math((c[0] + h + 16, c[1] - 30), "τ_{xz}", 16, RESIST)
-fig.text((c[0], 300), "点の応力の状態", SMALL, MUTED, "middle")
+fig.text((c[0], 300), L("点の応力の状態", "state of stress at a point"), SMALL, MUTED, "middle")
 fig.arrow((c[0] - 96, 92), (c[0] - 96, 56), MUTED, 1.4, head=0.7)
 fig.math((c[0] - 96, 50), "z", 15, MUTED, "middle")
 fig.arrow((c[0] - 96, 92), (c[0] - 60, 92), MUTED, 1.4, head=0.7)
@@ -82,8 +86,8 @@ def plane_panel(center, deg, label, name):
     fig.text((center[0], 300), name, SMALL, MUTED, "middle")
 
 
-plane_panel((375, 210), 0, "1", "面1：水平な面")
-plane_panel((610, 210), 32, "2", "面2：傾いた面")
+plane_panel((375, 210), 0, "1", L("面1：水平な面", "plane 1: horizontal"))
+plane_panel((610, 210), 32, "2", L("面2：傾いた面", "plane 2: inclined"))
 
 if __name__ == "__main__":
     fig.save()

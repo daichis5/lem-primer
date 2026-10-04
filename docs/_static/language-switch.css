@@ -52,3 +52,16 @@
   font-weight: 700;
   cursor: default;
 }
+
+/* The note on a translated page (see ``_templates/page.html``): which
+   Japanese commit it was translated from. */
+
+.translation-note {
+  margin: 0 0 1rem;
+  color: var(--color-foreground-muted);
+  font-size: var(--font-size--small);
+}
+
+.translation-note time {
+  white-space: nowrap;
+}

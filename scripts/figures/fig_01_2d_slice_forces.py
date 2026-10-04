@@ -1,4 +1,4 @@
-"""第2章 2節: the free-body diagram of one 2D slice.
+"""Chapter 2, Section 2: the free-body diagram of one 2D slice.
 
 The slice has vertical sides and a straight base inclined at alpha. W, E
 and X are chosen; N and T follow from the slice's force balance (see
@@ -8,7 +8,7 @@ SliceModel), so the arrows drawn here close into a force polygon.
 import math
 
 from figlib import (FAINT, GROUND, INK, INTER, MUTED, NORMAL, RESIST, SMALL, SOIL, SOIL_EDGE, UNIT,
-                    WEIGHT, Figure, SliceModel, View, add, mul, unit)
+                    WEIGHT, Figure, L, SliceModel, View, add, mul, unit)
 
 FORCE = 0.5  # px per kN
 sm = SliceModel()
@@ -16,9 +16,13 @@ v = View(66, (300, 470))
 fig = Figure(
     "fig_01_2d_slice_forces",
     600,
-    "2次元のスライスに働く力の自由物体図",
-    "側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力が働く．"
-    "底面の傾き，スライスの幅，スライス間力が働く高さ，外向きの法線と仮定したすべり方向も示す．",
+    L("2次元のスライスに働く力の自由物体図", "Free-body diagram of a 2D slice"),
+    L("側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力が働く．"
+      "底面の傾き，スライスの幅，スライス間力が働く高さ，外向きの法線と仮定したすべり方向も示す．",
+      "A slice with vertical sides and an inclined base carries its weight, the normal and shear forces "
+      "on its base, and the interslice forces on its two sides. The figure also shows the inclination of "
+      "the base, the width of the slice, the heights at which the interslice forces act, the outward "
+      "normal and the assumed direction of sliding."),
 )
 
 # Ground under the slip surface, the neighbouring slices, and the slice itself.
@@ -33,7 +37,7 @@ for x0, x1 in ((-ext, 0.0), (sm.b, sm.b + ext)):
     fig.polygon([v.p(p) for p in pts], fill="#faf6ea")
 fig.polygon([v.p(p) for p in sm.pts], fill=SOIL, color=SOIL_EDGE, width=2)
 fig.line(v.p(slip_l), v.p(slip_r), INK, 3.2)
-fig.text(add(v.p(slip_r), (6, 4)), "すべり面", SMALL, MUTED)
+fig.text(add(v.p(slip_r), (6, 4)), L("すべり面", "slip surface"), SMALL, MUTED)
 
 # Unit vectors at the base midpoint: n outward (into the ground), m along the base.
 mid = sm.mid
@@ -100,10 +104,11 @@ fig.angle_arc(corner, 64, 180, 180 + math.degrees(sm.alpha), MUTED)
 fig.math(add(corner, (-74, 22)), "α_i", 15, MUTED, anchor="end")
 
 fig.legend(
-    40,
+    L(40, 20),  # English is wider
     575,
-    [(WEIGHT, False, "自重"), (NORMAL, False, "垂直力"), (RESIST, False, "すべりに抵抗するせん断力"),
-     (INTER, False, "スライス間力"), (UNIT, True, "単位ベクトル")],
+    [(WEIGHT, False, L("自重", "weight")), (NORMAL, False, L("垂直力", "normal force")),
+     (RESIST, False, L("すべりに抵抗するせん断力", "shear resisting sliding")),
+     (INTER, False, L("スライス間力", "interslice force")), (UNIT, True, L("単位ベクトル", "unit vector"))],
     gap=18,
 )
 

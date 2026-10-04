@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" role="img" aria-labelledby="title desc">
+  <title id="title">Forces on a 3D column</title>
+  <desc id="desc">A 3D column with an inclined base carries its weight, the normal and shear forces on its base, and the intercolumn forces on its sides. The base shear force is a vector in the tangent plane, and the strength equation does not fix its direction. The dotted circle shows the directions it can take in the tangent plane.</desc>
+  <style>.t{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="470" fill="#fff"/>
+  <polygon points="69.1,443.4 350.7,316.7 483.7,193.8 202.1,320.5" fill="#ece4d0" stroke="#c9b88f" stroke-width="1.2" stroke-linejoin="round"/>
+  <text x="353.9" y="332.7" class="t" font-size="13" fill="#475569" text-anchor="start">tangent plane of the base</text>
+  <line x1="236.5" y1="316.1" x2="150" y2="396" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="236.5" y1="316.1" x2="402.9" y2="241.2" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <line x1="236.5" y1="316.1" x2="236.5" y2="128.5" stroke="#8b7355" stroke-width="1.2" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <polygon points="150,396 316.4,321.1 316.4,145.1 150,178.4" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="316.4,321.1 402.9,241.2 402.9,95.2 316.4,145.1" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polygon points="150,178.4 316.4,145.1 402.9,95.2 236.5,128.5" fill="#f4e7c5" fill-opacity="0.42" stroke="#8b7355" stroke-width="1.6" stroke-linejoin="round"/>
+  <polyline points="240.1,337.6 240.7,336.5 241.7,335.3 242.8,334.1 244.3,332.6 246,331.1 247.9,329.5 250,327.8 252.3,326 254.8,324.2 257.5,322.3 260.3,320.4 263.3,318.5 266.3,316.6 269.5,314.7 272.6,312.9 275.8,311 279,309.3 282.2,307.6 285.4,306 288.5,304.5 291.4,303.1 294.3,301.8 297,300.6 299.6,299.6 302,298.7 304.2,298 306.2,297.4 308,297 309.5,296.8 310.8,296.7 311.8,296.8 312.6,297.1 313,297.5 313.2,298.1 313.1,298.8 312.8,299.7 312.1,300.7 311.2,301.9 310,303.2 308.6,304.6 306.9,306.1 305,307.7 302.9,309.4 300.5,311.2 298,313 295.3,314.9 292.5,316.8 289.6,318.7 286.5,320.6 283.4,322.5 280.2,324.4 277,326.2 273.8,328 270.6,329.7 267.5,331.3 264.4,332.8 261.4,334.2 258.6,335.5 255.8,336.6 253.2,337.6 250.8,338.5 248.6,339.2 246.6,339.8 244.9,340.2 243.3,340.5 242.1,340.5 241,340.4 240.3,340.2 239.8,339.8 239.6,339.2 239.7,338.4 240.1,337.6" fill="none" stroke="#475569" stroke-width="1.2" stroke-dasharray="2 4" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="276.4" y1="318.6" x2="303" y2="364.8" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="304.6,367.7 297,362.5 303.9,358.5" fill="#64748b" stroke-linejoin="round"/>
+  <text x="304.6" y="367.7" class="m" font-size="16" fill="#64748b" text-anchor="start"><tspan font-style="normal">  </tspan><tspan font-style="italic" font-weight="bold">n</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="221.6" y2="347.2" stroke="#64748b" stroke-width="1.4" stroke-dasharray="5 4" stroke-linecap="butt"/>
+  <polygon points="218.7,348.7 224.2,341.3 227.9,348.4" fill="#64748b" stroke-linejoin="round"/>
+  <text x="208.7" y="358.7" class="m" font-size="16" fill="#64748b" text-anchor="end"><tspan font-style="italic" font-weight="bold">m</tspan><tspan dy="4.5" font-size="11.2" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="242.6" y2="259.7" stroke="#2563eb" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="239.8,254.9 252.3,263.7 241.1,270.1" fill="#2563eb" stroke-linejoin="round"/>
+  <text x="231.8" y="248.9" class="m" font-size="17" fill="#2563eb" text-anchor="end"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="276.4" y1="318.6" x2="307.9" y2="302.3" stroke="#14916a" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="312.8,299.7 303.5,311.9 297.5,300.3" fill="#14916a" stroke-linejoin="round"/>
+  <text x="320.8" y="313.7" class="m" font-size="17" fill="#14916a" text-anchor="start"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <circle cx="276.4" cy="318.6" r="3" fill="#172033"/>
+  <line x1="276.4" y1="227.7" x2="276.4" y2="305.4" stroke="#d64545" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="276.4,310.9 269.9,297.1 282.9,297.1" fill="#d64545" stroke-linejoin="round"/>
+  <circle cx="276.4" cy="227.7" r="3" fill="#d64545"/>
+  <text x="286.4" y="278.9" class="m" font-size="17" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="417.2" y1="220" x2="365.2" y2="220" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="359.6,220 373.5,213.5 373.5,226.5" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="359.6" y1="220" x2="359.6" y2="263.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="359.6,268 354.6,257.4 364.6,257.4" fill="#7c3aed" stroke-linejoin="round"/>
+  <line x1="359.6" y1="220" x2="382.6" y2="206.8" stroke="#7c3aed" stroke-width="2.2" stroke-linecap="butt"/>
+  <polygon points="386.2,204.6 379.6,214.3 374.5,205.6" fill="#7c3aed" stroke-linejoin="round"/>
+  <circle cx="359.6" cy="220" r="3" fill="#7c3aed"/>
+  <text x="425.2" y="225" class="t" font-size="13" fill="#7c3aed" text-anchor="start">normal component</text>
+  <text x="392.2" y="194.6" class="t" font-size="13" fill="#7c3aed" text-anchor="start">horizontal shear</text>
+  <text x="367.6" y="280" class="t" font-size="13" fill="#7c3aed" text-anchor="start">vertical shear</text>
+  <line x1="414.9" y1="85.2" x2="364" y2="140.1" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="418.9" y="81.2" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="14">boundary with the neighbor in </tspan><tspan font-style="italic">x</tspan></text>
+  <line x1="110" y1="124" x2="191.6" y2="192.5" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
+  <text x="20" y="118" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="14">boundary with the neighbor in </tspan><tspan font-style="italic">y</tspan></text>
+  <line x1="604" y1="446" x2="636.5" y2="446" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="639.2,446 632.4,449.3 632.4,442.7" fill="#475569" stroke-linejoin="round"/>
+  <text x="643.2" y="444" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">x</tspan></text>
+  <line x1="604" y1="446" x2="619.9" y2="436.8" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="622.3,435.4 618,441.7 614.7,436" fill="#475569" stroke-linejoin="round"/>
+  <text x="626.3" y="433.4" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">y</tspan></text>
+  <line x1="604" y1="446" x2="604" y2="413.5" stroke="#475569" stroke-width="1.4" stroke-linecap="butt"/>
+  <polygon points="604,410.8 607.3,417.6 600.7,417.6" fill="#475569" stroke-linejoin="round"/>
+  <text x="608" y="408.8" class="m" font-size="15" fill="#475569" text-anchor="start"><tspan font-style="italic">z</tspan></text>
+  <text x="470" y="362" class="t" font-size="13" fill="#475569" text-anchor="start">Dotted circle: directions the base shear</text>
+  <text x="470" y="382" class="t" font-size="13" fill="#475569" text-anchor="start">force can take in the tangent plane</text>
+</svg>

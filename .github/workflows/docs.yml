@@ -29,25 +29,25 @@ jobs:
           enable-cache: true
       - name: Install documentation dependencies
         run: uv sync --group docs --group examples
-      # The practice pages include the code under docs/ja/examples and what its
-      # run scripts print. Running them afresh fails this when the code no
+      # The practice pages include the code under docs/{ja,en}/examples and what
+      # its run scripts print. Running them afresh fails this when the code no
       # longer prints the committed outputs, or when a test fails. It runs
       # before the figures, one of which plots an output.
       - name: Check that the example outputs match their code
         run: |
           make examples
-          git diff -- docs/ja/examples
-          git status --porcelain -- docs/ja/examples
-          test -z "$(git status --porcelain -- docs/ja/examples)"
+          git diff -- docs/ja/examples docs/en/examples
+          git status --porcelain -- docs/ja/examples docs/en/examples
+          test -z "$(git status --porcelain -- docs/ja/examples docs/en/examples)"
       # The figures are written by scripts/figures. Writing them all afresh
       # fails this when an SVG was edited by hand, has no script, or was left
       # out of the commit, or when a script changed without `make figures`.
       - name: Check that the figures match their scripts
         run: |
-          rm -f docs/ja/figures/*.svg
+          rm -f docs/ja/figures/*.svg docs/en/figures/*.svg
           make figures
-          git status --porcelain -- docs/ja/figures
-          test -z "$(git status --porcelain -- docs/ja/figures)"
+          git status --porcelain -- docs/ja/figures docs/en/figures
+          test -z "$(git status --porcelain -- docs/ja/figures docs/en/figures)"
       # -W turns warnings into errors: both editions currently build clean, and
       # this keeps broken directives or unresolved references from landing.
       - name: Build both editions
