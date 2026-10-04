@@ -1,0 +1,260 @@
+/* The header across the top of the page (see ``_templates/page.html``) and the
+   sidebar under it, laid out as in the lab handbook.
+
+   Above Furo's 63em breakpoint the header takes over the mark, the language
+   switcher and the search box, so the sidebar holds only the navigation. Below
+   it Furo's own mobile header returns, and the drawer keeps all three. */
+
+:root {
+  --site-header-height: 3.5rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  box-sizing: border-box;
+  height: var(--site-header-height);
+  background: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-background-border);
+}
+
+/* The brand sits over the sidebar's column, and the controls end where the
+   text column ends, or the table of contents when it is shown, so the header
+   lines up with the columns under it. The widths are Furo's: the sidebar
+   drawer is calc(50% - 26em), at least 15em, with its 15em of content at its
+   right; the content is 46em with 3em of padding on each side, and the table
+   of contents 15em with 1rem of padding on the right. Below 82em the table of
+   contents leaves the page and the drawer narrows to calc(50% - 18.5em);
+   below 67em the content's padding shrinks to 1em, and the content is centred
+   in the 48em beside the drawer's 15em. The brand's 15em is written 15rem: it
+   is Furo's width at the root font size, and the brand's own is larger. */
+
+.site-header__start {
+  display: flex;
+  flex: none;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: calc(50% - 26em);
+  min-width: 15em;
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  box-sizing: border-box;
+  width: 15rem;
+  padding: 0 var(--sidebar-item-spacing-horizontal);
+  color: var(--color-foreground-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header__brand:hover {
+  color: var(--color-foreground-primary);
+}
+
+.site-header__logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.site-header__end {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  box-sizing: border-box;
+  width: 67em;
+  padding-right: 1rem;
+}
+
+@media (max-width: 82em) {
+  .site-header__start {
+    width: calc(50% - 18.5em);
+  }
+
+  .site-header__end {
+    width: 52em;
+    padding-right: 3em;
+  }
+}
+
+@media (max-width: 67em) {
+  .site-header__end {
+    flex: 1;
+    width: auto;
+    padding-right: calc((100% - 63em) / 2 + 1em);
+  }
+}
+
+/* The switcher as a compact control; ``language-switch.css`` sizes it for the
+   sidebar. */
+
+.site-header .lang-switch {
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .lang-switch__option {
+  padding: 0.25rem 0.75rem;
+}
+
+/* The search box as on GitHub: the page's background inside a rounded border.
+   Furo's sidebar box spans the sidebar edge to edge, with rules above and
+   below; here it is a field of its own. */
+
+.site-header__search {
+  width: 13rem;
+  margin: 0;
+  background: var(--color-background-primary);
+  border: 1px solid var(--color-sidebar-search-border);
+  border-radius: 6px;
+}
+
+/* Furo drops the input's outline and marks focus by a change of background,
+   which this box already has; mark it with the border instead. */
+.site-header__search:focus-within {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 1px var(--color-brand-primary);
+}
+
+.site-header__search:before {
+  left: 0.625rem;
+}
+
+.site-header__search .sidebar-search {
+  padding: 0.375rem 0.625rem 0.375rem 2.125rem;
+  border: none;
+  border-radius: 6px;
+}
+
+.site-header .theme-toggle {
+  display: flex;
+  padding: 0.25rem;
+  color: var(--color-foreground-secondary);
+}
+
+.site-header .theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (max-width: 63em), print {
+  .site-header {
+    display: none;
+  }
+}
+
+/* The copy of Furo's skip link in page.html comes before the header; Furo's
+   own, after it, would be a second stop for the same jump. */
+
+.site-header ~ .skip-to-content {
+  display: none;
+}
+
+@media not all and (max-width: 63em) {
+  /* Furo sets the body to the window's height, and a sticky element sticks
+     only within its parent, so the header would scroll away after one
+     window. Let the body take the page's height, and keep the page at least
+     the window's height under the header, as Furo had it. */
+  body {
+    height: auto;
+  }
+
+  .page {
+    min-height: calc(100vh - var(--site-header-height));
+  }
+
+  .sidebar-drawer .sidebar-brand,
+  .sidebar-drawer .lang-switch,
+  .sidebar-drawer .sidebar-search-container,
+  .content-icon-container .theme-toggle-content {
+    display: none;
+  }
+
+  /* The sidebar on the page itself, as in the lab handbook: no rule between
+     it and the text. The drawer of narrow screens keeps Furo's. */
+  .sidebar-drawer {
+    border-right: 0;
+  }
+
+  /* Furo pins the sidebar to the top of the window; pin it under the header
+     instead, so its last items stay reachable. */
+  .sidebar-sticky {
+    top: var(--site-header-height);
+    height: calc(100vh - var(--site-header-height));
+  }
+
+  /* After a search, Sphinx puts a link that hides the highlights in
+     ``#searchbox``, under the sidebar's search box. With that box in the
+     header, the link heads the sidebar; Furo centres it, so set it as one of
+     the sidebar's items. */
+  .sidebar-drawer #searchbox .highlight-link {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  .sidebar-scroll {
+    padding-top: 1rem;
+  }
+
+  /* Furo leaves 2.5rem above a link's target on wide screens, where it has no
+     header, and drops its back-to-top button 1rem from the top; both would
+     sit under this header. Furo's narrow-screen values, with this header's
+     height. */
+  :target {
+    scroll-margin-top: calc(var(--site-header-height) + 2.5rem);
+  }
+
+  section > span:target {
+    scroll-margin-top: calc(var(--site-header-height) + 2.8rem);
+  }
+
+  .back-to-top {
+    top: calc(var(--site-header-height) + 0.5rem);
+  }
+}
+
+/* The same for the table of contents, where it is a column of the page.
+   Below 82em it is a drawer over the header, and keeps Furo's place. */
+
+@media not all and (max-width: 82em) {
+  .toc-sticky {
+    top: var(--site-header-height);
+    height: calc(100vh - var(--site-header-height));
+  }
+}
+
+/* Navigation, as in GitHub's side navigation: captions are small muted
+   headings, and a page link gets a rounded background on hover and keeps one
+   while it is the current page. */
+
+.sidebar-tree .caption {
+  color: var(--color-foreground-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.sidebar-tree .toctree-l1 > .reference {
+  width: calc(100% - 1rem);
+  margin: 1px 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 6px;
+}
+
+.sidebar-tree .reference:hover,
+.sidebar-tree .current-page > .reference {
+  background: var(--site-nav-hover);
+  color: var(--color-foreground-primary);
+}
+
+.sidebar-tree .current-page > .reference {
+  font-weight: 600;
+}

@@ -10,7 +10,7 @@ series: "practice 2 of 3"
 
 この実践では，第1資料の図1の斜面と円弧について，2次元のスライス法で安全率を求めるコードを書く．まずスライスの表を作り，Fellenius法，簡易Bishop法，簡易Janbu法を，教科書の式のとおりに実装する．続いて，スライス間力の傾きを変数にした1つの枠組みを作る．この枠組みで，簡易Bishop法と簡易Janbu法がその特別な場合になることと，Spencer法が力とモーメントのつり合いをともに満たすことを，残差で確かめる．最後に，円弧以外のすべり面で，モーメントの中心の選び方が安全率を変えることを見る．
 
-この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめた．
+この実践は，[第2資料](what-is-limit-equilibrium-method.md)と[第3資料](lem-in-practice-mechanical-perspective.md)を読み，[実践1](practice-infinite-slope.md)を終えた前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめている．
 
 (slices-goal)=
 
@@ -92,7 +92,7 @@ $$ (eq-slices-vectors)
 
 地下水位 `water_level` を与えたときは，底面の{term}`間隙水圧`を，地下水位から鉛直に測った深さの静水圧とする．これは，実践1の `pore_pressure` の `"vertical"` と同じ決め方である．地下水位が地表より高いところでは，地下水位を地表に合わせ，地表の上の水は考えない．土の単位体積重量は，地下水位より下でも $\gamma$ のままとする．5節で，間隙水圧の影響だけを取り出すためである．
 
-図1の6本で表を作ると，次のようになる．この実践に載せた出力は，7節の終わりで実行する `run_slices.py` のものである．
+図1の6本で表を作ると，次のようになる．この実践に載せている出力は，7節の終わりで実行する `run_slices.py` のものである．
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
@@ -452,7 +452,7 @@ Fellenius法は，どちらに動かしても値が変わる．簡易Bishop法�
 uv run python run_slices.py
 ```
 
-この実践に載せた出力と同じ値が表示されれば，ここまでの関数が正しく書けている．最後に，`uv run pytest` で，この実践のテストと実践1のテストが，すべて通ることを確かめる．
+この実践に載せている出力と同じ値が表示されれば，ここまでの関数が正しく書けている．最後に，`uv run pytest` で，この実践のテストと実践1のテストが，すべて通ることを確かめる．
 
 ---
 

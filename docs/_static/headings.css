@@ -1,0 +1,36 @@
+/* Headings as in the lab handbook and on GitHub: weight 600 and GitHub's
+   sizes. Furo sets them at 2.5em, 2em and 1.5em in bold, which in Hiragino
+   reads heavier than the text needs.
+
+   Only the page title gets a rule under it. The documents already separate
+   their sections with a rule (``---``) above each ``##``, so a rule under the
+   heading as well would box it in. */
+
+article h1,
+article h2,
+article h3 {
+  font-weight: 600;
+}
+
+/* Furo hangs every heading 0.5rem out on each side, padded back in and with
+   rounded corners, so the background of a heading that is a link's target
+   reaches past its text. The rule under the page title would then run past
+   the text column and curl up at its ends; the title is not a link target,
+   so it keeps to the column, square. */
+
+article h1 {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 0 0.3em;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color-background-border);
+  font-size: 2em;
+}
+
+article h2 {
+  font-size: 1.5em;
+}
+
+article h3 {
+  font-size: 1.25em;
+}

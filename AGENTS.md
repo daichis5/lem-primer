@@ -31,10 +31,12 @@ Lab maps onto it belongs in that program's documentation.
   heading), a lead paragraph saying what the document does, and one line
   naming the documents it builds on:
   「この資料は，[第1資料](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．」
-- The table of the three documents and their questions, and the table of
-  the practice pages, live on the home page (`index.md`) only. Documents do
-  not repeat them, and a part (第1部 …) opens with its first section, not
-  with a list of what it covers.
+- The cards of the three documents and their questions, and the cards of
+  the practice pages, live on the home page (`index.md`) only: one
+  `grid-item-card` each, titled 第1資料　… or 実践1　…, with the question
+  or what the page's code computes (ending 〜を求める) as its text. Documents do not repeat them, and a
+  part (第1部 …) opens with its first section, not with a list of what it
+  covers.
 - A document ends with 確認問題 (see Review questions), then 次に読む, then
   参考文献 in the second and third. The third document's 次に読む points to
   実践1.

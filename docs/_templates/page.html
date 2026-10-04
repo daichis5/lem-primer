@@ -1,0 +1,60 @@
+{#-
+
+A header across the top of the page on wide screens, as in the lab handbook:
+the mark and the site name on the left, the language switcher, the search box
+and the theme toggle on the right. ``header.css`` hides the sidebar's own copies
+of these on wide screens, and hides this header where Furo shows its mobile
+header instead.
+
+Furo's page template is extended, not copied: the header goes before the page,
+and everything else is Furo's. The search form is Furo's ``sidebar/search.html``
+without its ``#searchbox``, whose id the sidebar copy already uses. The toggle is
+Furo's button; Furo's script handles every ``.theme-toggle`` on the page.
+The script at the end points Sphinx's search shortcut at whichever search box
+is shown. Furo's link that skips to the content comes after the header, so a
+copy of it goes first.
+
+-#}
+{% extends "!page.html" %}
+{% block body -%}
+<a class="skip-to-content muted-link" href="#furo-main-content">{{ _("Skip to content") }}</a>
+<header class="site-header">
+  <div class="site-header__start">
+    <a class="site-header__brand" href="{{ pathto(master_doc) }}">
+      {%- if logo_url %}<img class="site-header__logo" src="{{ logo_url }}" alt="">{% endif -%}
+      <span>{{ docstitle if docstitle else project }}</span>
+    </a>
+  </div>
+  <div class="site-header__end">
+    {%- include "sidebar/language.html" %}
+    <form class="sidebar-search-container site-header__search" method="get" action="{{ pathto('search') }}" role="search">
+      <input class="sidebar-search" placeholder="{{ _("Search") }}" name="q" aria-label="{{ _("Search") }}">
+      <input type="hidden" name="check_keywords" value="yes">
+      <input type="hidden" name="area" value="default">
+    </form>
+    <div class="theme-toggle-container">
+      <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+        <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+        <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+        <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+        <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+{{ super() }}
+<script>
+  // Sphinx's "/" shortcut focuses the first search box on the page, which is
+  // the header's even on narrow screens, where header.css hides it. Focus the
+  // first one that is shown instead. doctools.js loads after this script, so
+  // its ``Documentation`` exists only once the document has loaded.
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof Documentation === "undefined") return;
+    Documentation.focusSearchBar = () => {
+      for (const input of document.querySelectorAll("input[name=q]")) {
+        if (input.getClientRects().length) return input.focus();
+      }
+    };
+  });
+</script>
+{%- endblock %}
