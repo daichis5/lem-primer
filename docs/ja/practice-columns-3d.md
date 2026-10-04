@@ -146,7 +146,7 @@ $\boldsymbol{n}$ は楕円体の外向きで，底面では下を向き，{term}
 
 ## 3. Hovland法
 
-[第2資料 8.1節](#what-section-8-1)のHovland法は，Fellenius法を3次元に広げた方法である．カラム間力の効果を無視し，{term}`底面垂直力`を，自重の法線方向の成分 $N_i=W_i\,(\boldsymbol{g}\cdot\boldsymbol{n}_i)$ とする．$\boldsymbol{g}=(0, 0, -1)$ は重力の向きである．そのうえで，各カラムの{term}`抵抗力`と，自重の $\boldsymbol{m}_i$ 方向の成分（{term}`滑動力`）を，それぞれ足し合わせて比をとる．
+[第2資料 8.1節](#what-section-8-1)のHovland法は，Fellenius法（簡便分割法）を3次元に広げた方法である．{term}`カラム間力 <スライス間力>`の効果を無視し，{term}`底面垂直力`を，自重の法線方向の成分 $N_i=W_i\,(\boldsymbol{g}\cdot\boldsymbol{n}_i)$ とする．$\boldsymbol{g}=(0, 0, -1)$ は重力の向きである．そのうえで，各カラムの{term}`抵抗力`と，自重の $\boldsymbol{m}_i$ 方向の成分（{term}`滑動力`）を，それぞれ足し合わせて比をとる．
 
 $$
 F_s=
@@ -159,7 +159,7 @@ F_s=
 N_i=W_i\,(\boldsymbol{g}\cdot\boldsymbol{n}_i)
 $$ (eq-columns-hovland)
 
-ここで $U_i=u_iA_i$ である．底面が横に傾いていないカラムでは，$\boldsymbol{g}\cdot\boldsymbol{n}_i=\cos\alpha_i$，$\boldsymbol{g}\cdot\boldsymbol{m}_i=\sin\alpha_i$ になり，実践2の式 {eq}`eq-slices-fellenius` と同じ形になる．`hovland(col, m)` を書く．`m` は，2節のどちらかの局所すべり方向である．
+ここで $U_i=u_iA_i$ である．底面が横に傾いていないカラムでは，$\boldsymbol{g}\cdot\boldsymbol{n}_i=\cos\alpha_i$，$\boldsymbol{g}\cdot\boldsymbol{m}_i=\sin\alpha_i$ になり，[実践2 2節](#slices-section-2)のFellenius法の式と同じ形になる．`hovland(col, m)` を書く．`m` は，2節のどちらかの局所すべり方向である．
 
 :::{dropdown} 実装の例
 ```{literalinclude} examples/columns.py
@@ -222,7 +222,7 @@ m_{\alpha,i}
 m_{\alpha,i}=-n_{z,i}-\frac{m_{z,i}\tan\phi_i'}{F_s}
 $$ (eq-columns-bishop-normal)
 
-横に傾いていない底面では $-n_{z,i}=\cos\alpha_i$，$m_{z,i}=-\sin\alpha_i$ なので，$m_{\alpha,i}$ は実践2の式 {eq}`eq-slices-bishop` の $m_{\alpha,i}$ と同じになる．
+横に傾いていない底面では $-n_{z,i}=\cos\alpha_i$，$m_{z,i}=-\sin\alpha_i$ なので，$m_{\alpha,i}$ は，[実践2 2節](#slices-section-2)の簡易Bishop法の $m_{\alpha,i}=\cos\alpha_i+\sin\alpha_i\tan\phi_i'/F_s$ と同じになる．
 
 ```{literalinclude} examples/columns.py
 :language: python
@@ -295,19 +295,32 @@ uv run python run_columns.py
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
 :start-at: 3. ellipsoids
-:end-before: 4. local direction
+:end-before: 4. Hovland on the sphere
 ```
 
 実践2の中央断面の値は，Fellenius法が1.888，簡易Bishop法が2.063だった．球（$B=R$）では，Hovland法が1.816で中央断面より小さく，3次元の簡易Bishop法は2.142で大きい．同じすべり面で，3次元の値と2次元の値の大小が，手法によって逆になっている．
 
-Hovland法の値が小さくなるのは，球の奥の断面が，中心の高さが同じで半径の小さい円弧になるからである．そうした浅い円弧は，この斜面では中央断面より安全率が小さく，Hovland法の値は，それらを足し合わせたものになる．一方，3次元の簡易Bishop法では，横に傾いた底面ほど，鉛直方向のつり合いから求まる $N_i$ が大きくなる．Hovland法の $N_i$ と比べると，次のようになる．
+Hovland法の値が小さくなる理由は，2つに分けられる．1つは，断面の形である．球の奥の断面は，中心の高さが同じで半径の小さい，浅い円弧になる．もう1つは，底面の横の傾きである．$y$ 一定の断面で見た底面の傾きを $\alpha_i$ とすると，横に傾いた底面では，$|n_{z,i}|$ が $\cos\alpha_i$ より小さい．そのため，底面積 $A_i=h^2/|n_{z,i}|$ は大きくなり，$N_i=W_i|n_{z,i}|$ は小さくなる．滑動力 $W_i\,(\boldsymbol{g}\cdot\boldsymbol{m}_i)$ は，鉛直面の中で下る向きなら横の傾きによらず，$W_i\sin\alpha_i$ に等しい．2つの効果を分けて，球のHovland法の値を求める．
 
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
-:start-at: 7. base normal force
+:start-at: 4. Hovland on the sphere
+:end-before: 5. base normal force
+```
+
+1行目は，各カラムを，横に傾いていない，その断面のスライスとみなした値である．断面の形だけで，値は中央断面の1.888から1.858に下がる．横の傾きを入れると，底面積が増える分だけ粘着力による抵抗が増え，$N_i$ が減る分だけ摩擦による抵抗が減る．この例では後者が勝ち，値は1.816まで下がる．
+
+一方，3次元の簡易Bishop法では，横に傾いた底面ほど，鉛直方向のつり合いから求まる $N_i$ が大きくなる．Hovland法の $N_i$ と比べると，次のようになる．
+
+```{literalinclude} examples/output/run_columns.txt
+:language: text
+:start-at: 5. base normal force
+:end-before: 6. local direction
 ```
 
 横の傾きが30°を超えるカラムでは，$N_i$ がHovland法の1.6倍になり，摩擦による抵抗が増える．[第2資料 9節](#what-section-9)で見たように，「3次元の安全率は，必ず2次元より大きい」という決まりはない．この例のように，大小はすべり面の形と手法によって逆にもなる．
+
+最後の行は，$N_i-U_i$ が負になるカラムの数である．3次元の簡易Bishop法では，9198本のうち168本で負になる．どれも柱の高さが0.51 m以下の，すべり面の縁にあるカラムである．そこでは，[実践2 5節](#slices-section-5)の右端のスライスと同じく，粘着力によるせん断力の鉛直成分が自重を上回る．一方，Hovland法の $N_i=W_i|n_{z,i}|$ は，乾いた斜面では負にならない．
 
 $B$ を大きくしても，値は中央断面の値には近づかない．楕円体を奥行き方向に長くしても，断面が奥ほど浅い円弧になることは変わらないからである．中央断面の2次元の値と比べたいときは，5節の円柱を使う．球の値を，テストに足す．
 
@@ -326,8 +339,8 @@ $B$ を大きくしても，値は中央断面の値には近づかない．楕�
 
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
-:start-at: 4. local direction
-:end-before: 5. azimuth
+:start-at: 6. local direction
+:end-before: 7. azimuth
 ```
 
 同じカラムの表，同じ全体すべり方向で，局所すべり方向の決め方だけを変えると，安全率が1.816から2.122へ17%変わる．横に傾いた底面では，$\boldsymbol{d}$ を接平面に射影した向きが横の成分をもち，下る成分が小さくなる．例えば，$\boldsymbol{n}=(0.3, 0.6, -0.742)$ の底面では，$\boldsymbol{g}\cdot\boldsymbol{m}$ が，鉛直面の中で下る向きで0.375，射影で0.233になる．そのため，射影を使うと滑動力が小さくなり，安全率が大きくなる．[第3資料 9節](#practice-section-9)で見たように，局所すべり方向は，結果を見せるための矢印ではなく，安全率を決める定式化の一部である．
@@ -336,23 +349,22 @@ $B$ を大きくしても，値は中央断面の値には近づかない．楕�
 
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
-:start-at: 5. azimuth
-:end-before: 6. column size
+:start-at: 7. azimuth
+:end-before: 8. column size
 ```
 
-どちらの決め方でも，斜面を真っすぐ下る向き（0°）で安全率が最小になり，値は左右に対称になる．すべり面が $y=0$ について対称だからである．[第3資料 8.1節](#practice-section-8-1)のとおり，対称な斜面では，対称面から全体すべり方向の候補が決まる．非対称な斜面では，いくつかの方位を試して最小を探すか，つり合いから方向を解かなければならない．このことを，テストに足す．
+どちらの決め方でも，試した方位の中では，斜面を真っすぐ下る向き（0°）で安全率が最小になる．左右に同じ角度だけ回した値は，等しい．これは，すべり面が $y=0$ について対称だからである．ただし，対称性だけでは，0°で最小になるとは限らない．[第3資料 8.1節](#practice-section-8-1)のとおり，対称な斜面では，対称面から全体すべり方向の候補が決まる．非対称な斜面では，いくつかの方位を試して最小を探すか，つり合いから方向を解かなければならない．このことを，テストに足す．
 
 ```{literalinclude} examples/test_columns.py
 :language: python
-:pyobject: test_a_symmetric_slip_surface_is_least_stable_straight_down_the_slope
+:pyobject: test_the_sphere_is_least_stable_straight_down_the_slope
 ```
 
 最後に，カラムの大きさ $h$ を変える．
 
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
-:start-at: 6. column size
-:end-before: 7. base normal force
+:start-at: 8. column size
 ```
 
 $h$ を1 mから0.25 mにしても，値の変化は0.2%ほどである．[第3資料 11.5節](#practice-section-11-5)で見たように，分割を変えて値が落ち着くことを確かめてから，ほかの条件の影響を比べる．
@@ -370,23 +382,23 @@ $h$ を1 mから0.25 mにしても，値の変化は0.2%ほどである．[第3�
 :pyobject: save_columns
 ```
 
-```python
-import numpy as np
+{download}`save_table.py <examples/save_table.py>` は，6節の $B=2R$ の楕円体について，一辺0.5 mのカラムの表を作り，`columns.npz` に保存する．
 
-import columns
-import slices
+```{literalinclude} examples/save_table.py
+:language: python
+```
 
-R = slices.Circle().radius
-centre = np.array([6.0, 0.0, 18.0])
-col = columns.make_columns(columns.Ellipsoid(centre, (R, 2 * R, R)), 0.5)
-columns.save_columns("columns.npz", col, centre, np.array([0.0, 1.0, 0.0]))
+`lem-practice` に置いて実行すると，保存したカラムの数（4596本）が表示される．
+
+```bash
+uv run python save_table.py
 ```
 
 保存した表は，ほかの実装のソルバーに渡して，同じすべり面の安全率を比べるのに使える．[第3資料 1節](#practice-section-1)で見たように，底面の面積，法線，重さ，{term}`間隙水圧`，強度，位置ベクトルがあれば，力とモーメントを足し合わせられるからである．ただし，値を比べる前に，次の取り決めを確かめる．
 
 1. 法線の向き：すべり土塊の外向き（この実践）か，上向きか
 2. 局所すべり方向：回転軸から決めるか，全体すべり方向の射影か．すべる向きにとるか，すべりに抵抗する向きにとるか
-3. 間隙水圧の合力：$U_i=u_iA_i$（この実践）か，[実践2 5節](#slices-section-5)の $u_ib_i\cos\alpha_i$ のような別の形か
+3. 間隙水圧の項：合力 $U_i=u_iA_i$ を引くか（この実践），[実践2 5節](#slices-section-5)の $(W_i-u_ib_i)\cos\alpha_i$ のように，有効重量から有効垂直力を求めるか
 4. モーメントの基準点と回転軸：どこにとり，すべり面の大きさに合わせて動くか
 5. 求まらないときの返し方：反復が収束しないときに，無限大などの特別な値を返す実装がある．それは「非常に安全」という意味ではない（[第3資料 11.4節](#practice-section-11-4)）
 
@@ -418,9 +430,9 @@ columns.save_columns("columns.npz", col, centre, np.array([0.0, 1.0, 0.0]))
 - 3次元では，局所すべり方向を別に仮定する．鉛直面の中で下る向きと，接平面への射影は，横に傾いた底面で違う（→[2節](#columns-section-2)）
 - Hovland法は，カラム間力を無視し，各カラムの抵抗力と滑動力を足し合わせる．3次元の簡易Bishop法は，各カラムの鉛直方向のつり合いから $N_i$ を求め，回転軸まわりのモーメントの比をとる（→[3節](#columns-section-3)，[4節](#columns-section-4)）
 - 平面のすべり面では無限斜面の値に，円柱のすべり面では2次元の値に一致する．新しい手法は，1つ前の模型に戻ることで確かめる（→[5節](#columns-section-5)）
-- 球では，Hovland法の値が2次元の中央断面より小さく，3次元の簡易Bishop法の値は大きい．3次元と2次元の大小は，すべり面の形と手法で逆にもなる（→[6節](#columns-section-6)）
-- 同じ表でも，局所すべり方向の決め方で安全率が17%変わる．対称なすべり面では，斜面を真っすぐ下る全体すべり方向で安全率が最小になる（→[7節](#columns-section-7)）
-- ほかの実装と比べるときは，法線の向き，局所すべり方向，間隙水圧の合力，回転軸，求まらないときの返し方を，先に確かめる（→[8節](#columns-section-8)）
+- 球では，Hovland法の値が2次元の中央断面より小さく，3次元の簡易Bishop法の値は大きい．3次元と2次元の大小は，すべり面の形と手法で逆にもなる．簡易Bishop法では，すべり面の縁の薄いカラムで有効垂直力が負になる（→[6節](#columns-section-6)）
+- 同じ表でも，局所すべり方向の決め方で安全率が17%変わる．球では，試した全体すべり方向のうち，斜面を真っすぐ下る向きで安全率が最小になった（→[7節](#columns-section-7)）
+- ほかの実装と比べるときは，法線の向き，局所すべり方向，間隙水圧の項，回転軸，求まらないときの返し方を，先に確かめる（→[8節](#columns-section-8)）
 
 ---
 
@@ -449,7 +461,7 @@ $|n_z|=\cos 30^\circ$ なので，$A=0.25^2/\cos 30^\circ=0.0722$ m² である�
 :::{dropdown} 問4　球のすべり面で，Hovland法の値が2次元の中央断面の値より小さくなったのはなぜか．「3次元の安全率は2次元より大きい」といえるか
 :icon: question
 
-球の奥の断面が，中心の高さが同じで半径の小さい，浅い円弧になり，この斜面ではその安全率が中央断面より小さいため．Hovland法の値は，それらを足し合わせたものになる．一方，同じ球で，3次元の簡易Bishop法の値は中央断面より大きい．そのため，3次元と2次元の大小は，すべり面の形と手法によって逆にもなり，「必ず大きい」とはいえない．（→[6節](#columns-section-6)）
+断面の形と，底面の横の傾きが，ともに値を下げるため．球の奥の断面は浅い円弧で，各カラムをその断面のスライスとみなすだけで，値は1.888から1.858に下がる．横に傾いた底面では，底面積が増えて粘着力による抵抗が増える．しかし，$N_i=W_i|n_{z,i}|$ が小さくなって摩擦による抵抗が減る分が大きく，値は1.816になる．一方，同じ球で，3次元の簡易Bishop法の値は中央断面より大きい．そのため，3次元と2次元の大小は，すべり面の形と手法によって逆にもなり，「必ず大きい」とはいえない．（→[6節](#columns-section-6)）
 :::
 
 :::{dropdown} 問5　球で，局所すべり方向の決め方を変えると，安全率が17%も変わったのはなぜか
@@ -461,7 +473,7 @@ $|n_z|=\cos 30^\circ$ なので，$A=0.25^2/\cos 30^\circ=0.0722$ m² である�
 :::{dropdown} 問6（やってみよう）　地下水位を $z=4$ mの水平な線に置き，球のHovland法と3次元の簡易Bishop法の値を求めよ．実践2の地下水位のある値と比べるとどうか
 :icon: question
 
-`make_columns(columns.Ellipsoid(centre, (R, R, R)), 0.25, water_level=4.0)` で表を作る．Hovland法は1.336，3次元の簡易Bishop法は1.590になる．実践2の同じ地下水位の値は，Fellenius法が1.287，簡易Bishop法が1.388だった．Hovland法では，乾いたときと逆に，3次元の値が2次元より大きくなる．簡易Bishop法では，差が乾いたときの0.079から0.202に広がる．球の奥の断面は浅く，底面のうち地下水位より下にある部分が少ないので，間隙水圧の影響を受けにくいため．（→[6節](#columns-section-6)，[実践2 5節](#slices-section-5)）
+`make_columns(columns.Ellipsoid(centre, (R, R, R)), 0.25, water_level=4.0)` で表を作る．実践2 5節と同じく，地下水位より下の土も $\gamma=18$ kN/m³ のままである．Hovland法は1.418，3次元の簡易Bishop法は1.699になる．実践2の同じ地下水位の値は，Fellenius法が1.402，簡易Bishop法が1.540だった．Hovland法では，乾いたときと逆に，3次元の値が2次元より大きくなる．簡易Bishop法では，差が乾いたときの0.079から0.159に広がる．球の奥の断面は浅く，底面のうち地下水位より下にある部分が少ないので，間隙水圧の影響を受けにくいため．間隙水圧の合力の和を重さの和で割ると，球は0.25で，実践2の円弧の0.28より小さい．（→[6節](#columns-section-6)，[実践2 5節](#slices-section-5)）
 :::
 
 :::{dropdown} 問7（やってみよう）　球で，回転軸の基準点 $O$ を2 m上に動かすと，Hovland法，そのモーメントの形，3次元の簡易Bishop法の値はどう変わるか
@@ -475,7 +487,7 @@ $|n_z|=\cos 30^\circ$ なので，$A=0.25^2/\cos 30^\circ=0.0722$ m² である�
 
 - 法線の向き（すべり土塊の外向きか，上向きか）
 - 局所すべり方向の決め方と，その向き（すべる向きか，抵抗する向きか）
-- 間隙水圧の合力の書き方
+- 間隙水圧の項の取り方（合力を引くか，有効重量から求めるか）
 - モーメントの基準点と回転軸の取り方
 - 反復が収束しないときに返す値
 

@@ -16,7 +16,7 @@ series: "practice 1 of 3"
 
 ## 作るもの
 
-傾き $\beta$ の地表から鉛直に深さ $z$ のところに，地表に平行な{term}`すべり面`を仮定し，その{term}`安全率` $F_s$ を求める．土の定数は，[第1資料 6節](#section-6)と同じ $c'=10$ kPa，$\phi'=30^\circ$ とする．単位体積重量は $\gamma=18$ kN/m³ で，地下水位より下の土では $\gamma_{sat}=20$ kN/m³ である．実践2と実践3も，同じ土を使う．
+傾き $\beta$ の地表から鉛直に深さ $z$ のところに，地表に平行な{term}`すべり面`を仮定し，その{term}`安全率` $F_s$ を求める．土の定数は，[第1資料 6節](#section-6)と同じ $c'=10$ kPa，$\phi'=30^\circ$ とする．単位体積重量は $\gamma=18$ kN/m³ で，地下水位より下の土では $\gamma_{sat}=20$ kN/m³ である．実践2と実践3も，同じ $c'$，$\phi'$，$\gamma$ を使う．
 
 ```{figure} ./figures/fig_e1_infinite_slope.svg
 :name: fig-e1-infinite-slope

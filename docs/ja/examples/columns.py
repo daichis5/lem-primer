@@ -124,6 +124,7 @@ def make_columns(
     中心ですべり面が地表より下にある正方形を，カラムにする．各底面は，中心の
     鉛直線上の点と，そこでの接平面で代表させる．地下水位 water_level [m] を
     与えると，底面の間隙水圧を，地下水位から鉛直に測った深さの静水圧とする．
+    地表より高い地下水位は地表に合わせ，土の重さは gamma のままとする．
     """
     x0, x1, y0, y1 = surface.bounds
     X, Y = np.meshgrid(centres(x0, x1, h), centres(y0, y1, h))
@@ -135,7 +136,7 @@ def make_columns(
     if water_level is None:
         u = np.zeros(len(x))
     else:
-        u = slices.GAMMA_W * np.clip(water_level - z, 0.0, None)
+        u = slices.GAMMA_W * np.clip(np.minimum(water_level, zg) - z, 0.0, None)
     return Columns(
         base=np.stack([x, y, z], axis=1),
         top=np.stack([x, y, zg], axis=1),

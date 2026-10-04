@@ -67,14 +67,16 @@ def test_the_sphere():
     assert columns.bishop(col, CENTRE, AXIS) == pytest.approx(2.142, abs=1e-3)
 
 
-def test_a_symmetric_slip_surface_is_least_stable_straight_down_the_slope():
+def test_the_sphere_is_least_stable_straight_down_the_slope():
     col = columns.make_columns(columns.Ellipsoid(CENTRE, (R, R, R)), 0.5)
     fs = []
     for deg in (-15.0, 0.0, 15.0):
         t = np.radians(deg)
         d = np.array([-np.cos(t), np.sin(t), 0.0])
         fs.append(columns.hovland(col, columns.dip_directions(col, d)))
+    # 試した3つの方位の中では，斜面を真っすぐ下る向きで最小になる
     assert fs[1] < fs[0] and fs[1] < fs[2]
+    # すべり面が y = 0 について対称なので，左右に同じ角度だけ回すと同じ値になる
     assert fs[0] == pytest.approx(fs[2])
 
 

@@ -49,13 +49,43 @@ for k in (1, 2, 5):
 
 sphere = columns.make_columns(columns.Ellipsoid(CENTRE, (R, R, R)), 0.25)
 
-print("4. local direction of sliding on the sphere (Hovland)")
+print("4. Hovland on the sphere, with and without the lateral tilt of the bases")
+hyp = np.hypot(sphere.n[:, 0], sphere.n[:, 2])  # 横に傾いていない底面では 1
+N = sphere.W * (sphere.n @ columns.GRAVITY)
+driving = np.sum(sphere.W * sphere.n[:, 0] / hyp)
+for label, A, N_i in (
+    ("A and N of the untilted section", sphere.A * hyp, N / hyp),
+    ("only A of the tilted base", sphere.A, N / hyp),
+    ("only N of the tilted base", sphere.A * hyp, N),
+    ("both (Hovland)", sphere.A, N),
+):
+    resisting = np.sum(sphere.c * A + N_i * sphere.tan_phi)
+    print(f"   {label:31s}  {resisting / driving:.4f}")
+
+print("5. base normal force on the sphere by lateral tilt of the base")
+m = columns.rotation_directions(sphere, AXIS)
+n_bishop = columns.vertical_normal_force(
+    sphere, m, columns.bishop(sphere, CENTRE, AXIS)
+)
+tilt = np.degrees(np.arcsin(np.abs(sphere.n[:, 1])))
+print("   tilt [deg]  columns  sum N, Bishop / Hovland")
+for lo, hi in ((0, 10), (10, 30), (30, 90)):
+    k = (tilt >= lo) & (tilt < hi)
+    ratio = n_bishop[k].sum() / N[k].sum()
+    print(f"   {lo:2d} - {hi:2d}    {k.sum():7d}  {ratio:.3f}")
+negative = n_bishop - sphere.u * sphere.A < 0.0
+height = sphere.top[negative, 2] - sphere.base[negative, 2]
+print(f"   columns with N - U < 0: Bishop {negative.sum()},", end=" ")
+print(f"all at most {height.max():.2f} m tall;", end=" ")
+print(f"Hovland {np.sum(N - sphere.u * sphere.A < 0.0)}")
+
+print("6. local direction of sliding on the sphere (Hovland)")
 dip = columns.hovland(sphere, columns.dip_directions(sphere, D))
 projected = columns.hovland(sphere, columns.projected_directions(sphere, D))
 print(f"   dip in the vertical plane through d  {dip:.4f}")
 print(f"   d projected onto each base           {projected:.4f}")
 
-print("5. azimuth of d on the sphere (Hovland)")
+print("7. azimuth of d on the sphere (Hovland)")
 print("   azimuth [deg]   dip  projected")
 for deg in (-30, -15, 0, 15, 30):
     t = math.radians(deg)
@@ -64,22 +94,9 @@ for deg in (-30, -15, 0, 15, 30):
     projected = columns.hovland(sphere, columns.projected_directions(sphere, d))
     print(f"   {deg:+13d}  {dip:.4f}  {projected:.4f}")
 
-print("6. column size on the sphere")
+print("8. column size on the sphere")
 print("   h [m]  columns  Hovland   Bishop")
 for h in (1.0, 0.5, 0.25):
     col = columns.make_columns(columns.Ellipsoid(CENTRE, (R, R, R)), h)
     fs = methods(col, CENTRE)
     print(f"   {h:5.2f}  {len(col.W):7d}   {fs[0]:.4f}  {fs[2]:.4f}")
-
-print("7. base normal force on the sphere by lateral tilt of the base")
-m = columns.rotation_directions(sphere, AXIS)
-n_bishop = columns.vertical_normal_force(
-    sphere, m, columns.bishop(sphere, CENTRE, AXIS)
-)
-n_hovland = sphere.W * (sphere.n @ columns.GRAVITY)
-tilt = np.degrees(np.arcsin(np.abs(sphere.n[:, 1])))
-print("   tilt [deg]  columns  sum N, Bishop / Hovland")
-for lo, hi in ((0, 10), (10, 30), (30, 50)):
-    k = (tilt >= lo) & (tilt < hi)
-    ratio = n_bishop[k].sum() / n_hovland[k].sum()
-    print(f"   {lo:2d} - {hi:2d}    {k.sum():7d}  {ratio:.3f}")

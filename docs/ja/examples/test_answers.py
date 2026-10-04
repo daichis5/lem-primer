@@ -5,6 +5,8 @@ CIで実行する．
 """
 
 import math
+import runpy
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -92,6 +94,13 @@ def test_practice_2():
         slices.make_slices(slices.Circle((8.0, 20.0)), 50)
     ) == pytest.approx(2.405, abs=1e-3)
 
+    # 実践3 問6が引く，地下水位のある円弧の値
+    s = slices.make_slices(slices.Circle(), 50, water_level=4.0)
+    assert (slices.fellenius(s), slices.bishop(s)) == pytest.approx(
+        (1.402, 1.540), abs=1e-3
+    )
+    assert np.sum(s.u * s.l) / np.sum(s.W) == pytest.approx(0.28, abs=5e-3)
+
 
 def test_practice_3():
     assert 0.25**2 / math.cos(math.radians(30.0)) == pytest.approx(0.0722, abs=1e-4)
@@ -100,9 +109,10 @@ def test_practice_3():
         columns.Ellipsoid(CENTRE_3D, (R, R, R)), 0.25, water_level=4.0
     )
     assert columns.hovland(col, columns.dip_directions(col, D)) == pytest.approx(
-        1.336, abs=1e-3
+        1.418, abs=1e-3
     )
-    assert columns.bishop(col, CENTRE_3D, AXIS) == pytest.approx(1.590, abs=1e-3)
+    assert columns.bishop(col, CENTRE_3D, AXIS) == pytest.approx(1.699, abs=1e-3)
+    assert np.sum(col.u * col.A) / np.sum(col.W) == pytest.approx(0.25, abs=5e-3)
 
     col = columns.make_columns(columns.Ellipsoid(CENTRE_3D, (R, R, R)), 0.25)
     raised = CENTRE_3D + np.array([0.0, 0.0, 2.0])
@@ -111,3 +121,13 @@ def test_practice_3():
     )
     assert columns.hovland_moment(col, raised, AXIS) == pytest.approx(1.849, abs=1e-3)
     assert columns.bishop(col, raised, AXIS) == pytest.approx(2.122, abs=1e-3)
+
+
+def test_save_table(tmp_path, monkeypatch, capsys):
+    """実践3 8節の save_table.py が，楕円体のカラムの表を保存する．"""
+    monkeypatch.chdir(tmp_path)
+    runpy.run_path(str(Path(__file__).with_name("save_table.py")))
+    assert capsys.readouterr().out == "4596 columns saved to columns.npz\n"
+    saved = np.load(tmp_path / "columns.npz")
+    assert len(saved["weight"]) == 4596
+    assert np.array_equal(saved["axis"], AXIS)

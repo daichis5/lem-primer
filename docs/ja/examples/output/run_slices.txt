@@ -35,20 +35,24 @@ theta_deg,F_m,F_f
 30.0,2.0839,2.2300
    the two meet at theta = 18.27 deg, Fs = 2.0594 (Spencer)
 5. water table at z = 4 m (n = 50)
-   Fellenius, U = u l          1.287
-   Fellenius, U = u b cos(a)   1.335
-   Bishop                      1.388
-   Janbu                       1.298
-   Spencer                     1.390 (theta = 20.7 deg)
-6. a plane 5 m under a planar slope of 30 deg (n = 8)
+   Fellenius, N' = W cos(a) - u l     1.402
+   Fellenius, N' = (W - u b) cos(a)   1.442
+   Bishop                             1.540
+   Janbu                              1.427
+   Spencer                            1.544 (theta = 17.0 deg)
+6. slices with a negative effective normal force N - U (n = 50)
+   dry: Fellenius none; Bishop x = 23.33; Spencer none
+   water at z = 4 m: Fellenius none; Bishop x = 23.33; Spencer x = 23.33
+   the last slice, dry: alpha = 63.8 deg, W = 4.6, c l sin(alpha) / F = 4.8 [kN/m]
+7. a plane 5 m under a planar slope of 30 deg (n = 8)
    Fellenius 1.2566, Bishop 1.2566, Janbu 1.2566
    infinite slope (practice 1) 1.2566
-7. an ellipse through the same exit (n = 50)
+8. an ellipse through the same exit (n = 50)
    Bishop's circle formula with the ellipse's angles  1.994
    Bishop, moments about the centre (6, 18)           1.922
    Fellenius's circle formula                         1.733
    Fellenius, moments about the centre (6, 18)        1.803
-8. moving the moment centre on the ellipse (n = 50)
+9. moving the moment centre on the ellipse (n = 50)
    centre       Fellenius  Bishop  Spencer
    (6, 18)        1.803   1.922    2.025
    (6, 25)        1.850   1.863    2.025

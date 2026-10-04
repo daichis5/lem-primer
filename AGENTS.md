@@ -78,8 +78,9 @@ surface, one factor of safety.
 
 The practice pages' code lives in `docs/ja/examples`: one module
 (`infinite_slope.py`, `slices.py`, `columns.py`), one test file and one run
-script (`run_*.py`) per page. `test_answers.py` pins the numbers that review
-answers quote; readers do not download it.
+script (`run_*.py`) per page, and `save_table.py`, which 実践3 8節 runs to
+save a column table. `test_answers.py` pins the numbers that review answers
+quote and runs `save_table.py`; readers do not download it.
 
 - Pages never paste code or output. They include it with `literalinclude`:
   a function with `:pyobject:`, a file's head with `:end-at:`, and a run

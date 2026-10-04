@@ -112,7 +112,8 @@ def make_slices(
 
     各底面は，幅の中央の点と，そこでの接線で代表させる．地下水位
     water_level [m] を与えると，底面の間隙水圧を，地下水位から鉛直に
-    測った深さの静水圧とする．
+    測った深さの静水圧とする．地表より高い地下水位は地表に合わせ，地表の
+    上に水はためない．土の重さは，地下水位の上でも下でも gamma のままとする．
     """
     edges = np.linspace(surface.x0, surface.x1, n + 1)
     x = 0.5 * (edges[:-1] + edges[1:])
@@ -123,7 +124,8 @@ def make_slices(
     if water_level is None:
         u = np.zeros(n)
     else:
-        u = GAMMA_W * np.clip(water_level - z, 0.0, None)
+        level = np.minimum(water_level, ground(x))
+        u = GAMMA_W * np.clip(level - z, 0.0, None)
     return Slices(
         x=x,
         z=z,
@@ -139,19 +141,18 @@ def make_slices(
     )
 
 
-def fellenius(s, *, pore_force="ul"):
+def fellenius(s, *, effective_weight=False):
     """Fellenius法（簡便分割法）の安全率．
 
-    円弧の中心まわりのモーメントの比をとる．pore_force は底面の間隙水圧の
-    合力 U の書き方で，"ul" なら U = u l，"ub" なら U = u b cos(alpha) とする．
+    円弧の中心まわりのモーメントの比をとる．底面の有効垂直力は，既定では
+    W cos(alpha) - u l とする．effective_weight=True なら，有効重量 W - u b を
+    底面の法線方向に分けた (W - u b) cos(alpha) とする．
     """
-    if pore_force == "ul":
-        U = s.u * s.l
-    elif pore_force == "ub":
-        U = s.u * s.b * np.cos(s.alpha)
+    if effective_weight:
+        n_eff = (s.W - s.u * s.b) * np.cos(s.alpha)
     else:
-        raise ValueError(f"pore_force は 'ul' か 'ub' にする: {pore_force!r}")
-    resisting = np.sum(s.c * s.l + (s.W * np.cos(s.alpha) - U) * s.tan_phi)
+        n_eff = s.W * np.cos(s.alpha) - s.u * s.l
+    resisting = np.sum(s.c * s.l + n_eff * s.tan_phi)
     return resisting / np.sum(s.W * np.sin(s.alpha))
 
 

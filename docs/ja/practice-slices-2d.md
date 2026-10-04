@@ -48,7 +48,7 @@ series: "practice 2 of 3"
 
 ## 1. スライスの表を作る
 
-すべり面を $n$ 本の等幅の{term}`スライス`に分け，各スライスの底面を，幅の中央の点と，そこでの接線で代表させる．第1資料8節の言い方なら，底面ごとに向きを代表の値で一定とする仮定である．底面の傾き $\alpha_i$ は右上がりを正とし，正の $\alpha_i$ の底面は，土塊を左へすべらせる．このとき，法線とすべる向きは，実践1の式と同じ形になる．
+すべり面を $n$ 本の等幅の{term}`スライス`に分け，各スライスの底面を，幅の中央の点と，そこでの接線で代表させる．[第1資料 8節](#section-8)の言い方なら，底面ごとに向きを代表の値で一定とする仮定である．底面の傾き $\alpha_i$ は右上がりを正とし，正の $\alpha_i$ の底面は，土塊を左へすべらせる．このとき，法線とすべる向きは，実践1の式と同じ形になる．
 
 $$
 \boldsymbol{n}_i=
@@ -88,7 +88,9 @@ $$ (eq-slices-vectors)
 :pyobject: make_slices
 ```
 
-地下水位 `water_level` を与えたときは，底面の{term}`間隙水圧`を，地下水位から鉛直に測った深さの静水圧とする．これは，実践1の `pore_pressure` の `"vertical"` と同じ決め方である．図1の6本で，表を表示する．
+地下水位 `water_level` を与えたときは，底面の{term}`間隙水圧`を，地下水位から鉛直に測った深さの静水圧とする．これは，実践1の `pore_pressure` の `"vertical"` と同じ決め方である．地下水位が地表より高いところでは，地下水位を地表に合わせ，地表の上の水は考えない．土の単位体積重量は，地下水位より下でも $\gamma$ のままとする．5節で，間隙水圧の影響だけを取り出すためである．
+
+図1の6本で表を作ると，次のようになる．このページに載せた出力は，7節の終わりで実行する `run_slices.py` のものである．
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
@@ -223,7 +225,7 @@ $$ (eq-slices-direction)
 
 をもつとする．$\theta$ は，水平からはかった合力の傾きである．
 
-スライス $i$ に働く力は，自重 $W_i$，底面の垂直力 $-N_i\boldsymbol{n}_i$，底面のせん断力 $T_i\boldsymbol{e}_i$，スライス間力の合力 $Q_i\boldsymbol{d}$ である．ここで $\boldsymbol{e}_i=-\boldsymbol{m}_i$ は，すべりに抵抗する向きを表す．$T_i$ は，第1資料8節の強度の動員を表す式で $N_i$ と結び付く．
+スライス $i$ に働く力は，自重 $W_i$，底面の垂直力 $-N_i\boldsymbol{n}_i$，{term}`底面のせん断力 <底面せん断力>` $T_i\boldsymbol{e}_i$，スライス間力の合力 $Q_i\boldsymbol{d}$ である．ここで $\boldsymbol{e}_i=-\boldsymbol{m}_i$ は，すべりに抵抗する向きを表す．$T_i$ は，[第1資料 8節](#section-8)の強度の動員を表す式で $N_i$ と結び付く．
 
 $$
 T_i=\frac{c_i'l_i+(N_i-U_i)\tan\phi_i'}{F_s}
@@ -333,13 +335,7 @@ $\theta$ を変えながら，$F_m(\theta)$ と $F_f(\theta)$ を求める．
 
 ## 5. 分割数と地下水位を変える
 
-{download}`run_slices.py <examples/run_slices.py>` をダウンロードして `lem-practice` に置き，実行する．
-
-```bash
-uv run python run_slices.py
-```
-
-出力の2.は，分割数 $n$ を変えたときの4つの手法の値である．
+分割数 $n$ を変えると，4つの手法の値は次のようになる．
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
@@ -349,15 +345,25 @@ uv run python run_slices.py
 
 どの手法も，$n=50$ を超えると3桁目までほとんど変わらない．図1の6本でも，値の違いは1%ほどである．[第3資料 11.5節](#practice-section-11-5)で見たように，分割数を変えて値が落ち着くことを確かめてから，手法どうしを比べる．
 
-出力の5.は，地下水位を $z=4$ m の水平な線に置いたときの値である．
+次に，地下水位を $z=4$ m の水平な線に置く．1節で決めたとおり，地下水位より下の土も $\gamma=18$ kN/m³ のままとする．
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
 :start-at: 5. water table
-:end-before: 6. a plane
+:end-before: 6. slices with
 ```
 
-Fellenius法の2つの値は，$U_i$ の書き方だけが違う．$U_i=u_il_i$ とすると1.287，$U_i=u_ib_i\cos\alpha_i$ とすると1.335である．後者は $u_il_i\cos^2\alpha_i$ と同じなので，急な底面ほど $U_i$ を小さく見積もり，有効垂直力 $W_i\cos\alpha_i-U_i$ を大きくする．第2資料の注のとおり，水圧の項の書き方は記号の決め方によって変わる．そのため，ほかの実装と比べるときは，どちらの形かを確かめなければならない．
+どの手法の値も，乾いたときより25%ほど下がる．Fellenius法の2つの値は，底面の有効垂直力 $N_i'$ の近似が違う．1つ目は，自重の法線成分から間隙水圧の合力 $U_i=u_il_i$ を引いた $W_i\cos\alpha_i-u_il_i$ である．2つ目は，自重から $u_ib_i$ を引いた有効重量を，底面の法線方向に分けた $(W_i-u_ib_i)\cos\alpha_i$ を使う．後者は $W_i\cos\alpha_i-u_il_i\cos^2\alpha_i$ と同じで，合力 $U_i$ の代わりに $U_i\cos^2\alpha_i$ を引いている．そのため，急な底面ほど間隙水圧の効果を小さく見積もり，値が大きくなる．2つは，同じ量の書き方の違いではなく，違う近似である．ほかの実装と比べるときは，どちらの近似かを確かめなければならない．
+
+最後に，[第3資料 5.2節](#practice-section-5-2)のとおり，安全率のほかに，底面の有効垂直力 $N_i-U_i$ を確かめる．それが負になるスライスの $x$ を，乾いた斜面と地下水位のある斜面で表示する．
+
+```{literalinclude} examples/output/run_slices.txt
+:language: text
+:start-at: 6. slices with
+:end-before: 7. a plane
+```
+
+負になるのは，どれも右端のスライスである．このスライスは底面が急で，柱が低い．そのため，式 {eq}`eq-slices-normal` の分子で，粘着力によるせん断力の項が自重の項を上回る．$\theta=0$ の簡易Bishop法では，出力の最後の行のとおり，その鉛直成分 $c_i'l_i\sin\alpha_i/F_s$ が自重 $W_i$ より大きい．Fellenius法の $N_i=W_i\cos\alpha_i$ には，この項がない．このコードは，負の値をそのまま使っている．しかし，[実践1 5節](#infinite-section-5)で見たように，有効垂直力が負になるのは，土が引張を受けている状態である．そのため，テンションクラック（引張亀裂）を設けるか，接触を切るかといった扱いを，別に決めなければならない（[第3資料 12.1節](#practice-section-12-1)）．
 
 ---
 
@@ -374,8 +380,8 @@ Fellenius法の2つの値は，$U_i$ の書き方だけが違う．$U_i=u_il_i$ 
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
-:start-at: 6. a plane
-:end-before: 7. an ellipse
+:start-at: 7. a plane
+:end-before: 8. an ellipse
 ```
 
 3つの手法がすべて，実践1の{term}`無限斜面`の値1.2566に一致する．どのスライスも同じ形なので，各スライスが，実践1の柱と同じように単独でつり合う．つまり，どのスライスでも $Q_i=0$ で，スライス間力をどう仮定しても値が変わらない．同じ理由で，この面ではSpencer法の $\theta$ が決まらない．どの $\theta$ でも，$F_s=1.2566$ で2つの残差がともに0になるからである．この一致を，テストに足す．
@@ -400,8 +406,8 @@ Fellenius法の2つの値は，$U_i$ の書き方だけが違う．$U_i=u_il_i$ 
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
-:start-at: 7. an ellipse
-:end-before: 8. moving
+:start-at: 8. an ellipse
+:end-before: 9. moving
 ```
 
 1行目は，式 {eq}`eq-slices-bishop` に，楕円の底面の角度を代入した値である．一方，2行目では，式 {eq}`eq-slices-normal` の枠組みで，中心 $(6, 18)$ まわりのモーメントの残差を0にした．2つは，[第3資料 5.1節](#practice-section-5-1)で見た「Bishopで非円弧を計算した」の2つの読み方にあたり，1.994と1.922で4%違う．円弧の式は，底面垂直力の作用線が中心を通ることと，せん断力の腕がどれも半径であることを使って導いたものなので，その2つが成り立たない楕円には合わない．Fellenius法でも，式 {eq}`eq-slices-fellenius` は1.733，中心まわりのモーメントに戻ると1.803になる．後者の `fellenius_about` は，底面垂直力 $N_i=W_i\cos\alpha_i$ のモーメントも含める．
@@ -415,7 +421,7 @@ Fellenius法の2つの値は，$U_i$ の書き方だけが違う．$U_i=u_il_i$ 
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
-:start-at: 8. moving
+:start-at: 9. moving
 ```
 
 Fellenius法は，どちらに動かしても値が変わる．簡易Bishop法は，上に動かすと変わるが，右に動かしても変わらない．Spencer法は，どちらに動かしても変わらない．この違いは，[第3資料 6節](#practice-section-6)の式で説明できる．中心を $\boldsymbol{a}$ だけ動かすと，モーメントは $-\boldsymbol{a}\times\sum\boldsymbol{F}$ だけ変わる．ここで $\sum\boldsymbol{F}$ は，土塊全体で残った力である．
@@ -431,7 +437,13 @@ Fellenius法は，どちらに動かしても値が変わる．簡易Bishop法�
 :pyobject: test_the_moment_centre_matters_only_where_force_equilibrium_is_missing
 ```
 
-`uv run pytest` で，このページのテストと実践1のテストが，すべて通ることを確かめる．
+ここまでで，`run_slices.py` が使う関数がそろった．{download}`run_slices.py <examples/run_slices.py>` をダウンロードして `lem-practice` に置き，実行する．
+
+```bash
+uv run python run_slices.py
+```
+
+このページに載せた出力と同じ値が表示されれば，ここまでの関数が正しく書けている．最後に，`uv run pytest` で，このページのテストと実践1のテストが，すべて通ることを確かめる．
 
 ---
 
@@ -453,7 +465,7 @@ Fellenius法は，どちらに動かしても値が変わる．簡易Bishop法�
 - Fellenius法，簡易Bishop法，簡易Janbu法は，教科書の式のとおりに実装できる．後の2つは右辺にも $F_s$ が現れるので，反復して求める（→[2節](#slices-section-2)）
 - スライス間力の合力の傾き $\theta$ を変数にすると，各スライスの $N_i$ が1本の式で決まる．$\theta=0$ でモーメントの残差を0にすると簡易Bishop法に，力の残差を0にすると簡易Janbu法になる（→[3節](#slices-section-3)）
 - $F_m(\theta)$ と $F_f(\theta)$ の交点がSpencer法の解で，力とモーメントの残差がともに0になる．円弧では $F_m$ が $\theta$ にほとんどよらないので，簡易Bishop法とSpencer法が近い（→[4節](#slices-section-4)）
-- 分割数を増やして値が落ち着くことを確かめてから，手法を比べる．間隙水圧の合力の書き方でも，値は変わる（→[5節](#slices-section-5)）
+- 分割数を増やして値が落ち着くことを確かめてから，手法を比べる．安全率のほかに，有効垂直力が負になる底面がないかも確かめる．Fellenius法の値は，地下水位があるとき，有効垂直力の近似の仕方でも変わる（→[5節](#slices-section-5)）
 - 平面のすべり面では，どの手法も無限斜面の値に一致する．どのスライスも単独でつり合うからである（→[6節](#slices-section-6)）
 - 円弧以外の面では，力のつり合いを満たさない方法ほど，モーメントの中心の選び方が値に表れる（→[7節](#slices-section-7)）
 
