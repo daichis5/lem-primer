@@ -68,7 +68,7 @@ $$
 \end{bmatrix}
 $$ (eq-slices-vectors)
 
-With width $b_i$, the length of the base is $l_i=b_i/\cos\alpha_i$. The weight $W_i$ is the height of the column measured at the middle of the width, times $\gamma b_i$. Create `slices.py`, and first write the ground surface of the slope and the circular slip surface.
+With width $b_i$, the length of the base is $l_i=b_i/\cos\alpha_i$. The weight $W_i$ is the height of the slice at the middle of its width, times $\gamma b_i$. Create `slices.py`, and first write the ground surface of the slope and the circular slip surface.
 
 ```{literalinclude} examples/slices.py
 :language: python
@@ -367,7 +367,7 @@ Finally, as in [Chapter 3, Section 5.2](#practice-section-5-2), check the effect
 :end-before: 7. a plane
 ```
 
-Every negative value is on the rightmost slice. This slice has a steep base and a short column. For this reason, in the numerator of Eq. {eq}`eq-slices-normal`, the term of the shear force due to cohesion outweighs the term of the weight. In the simplified Bishop method at $\theta=0$, its vertical component $c_i'l_i\sin\alpha_i/F_s$ is larger than the weight $W_i$, as the last line of the output shows. The $N_i=W_i\cos\alpha_i$ of the Fellenius method has no such term. This code uses the negative values as they are. However, as [Practice 1, Section 5](#infinite-section-5) showed, a negative effective normal force means that the soil is in tension. Its treatment, such as adding a tension crack or cutting the contact, must therefore be decided separately ([Chapter 3, Section 12.1](#practice-section-12-1)).
+Every negative value is on the rightmost slice. This slice has a steep base and little soil above it. For this reason, in the numerator of Eq. {eq}`eq-slices-normal`, the term of the shear force due to cohesion outweighs the term of the weight. In the simplified Bishop method at $\theta=0$, its vertical component $c_i'l_i\sin\alpha_i/F_s$ is larger than the weight $W_i$, as the last line of the output shows. The $N_i=W_i\cos\alpha_i$ of the Fellenius method has no such term. This code uses the negative values as they are. However, as [Practice 1, Section 5](#infinite-section-5) showed, a negative effective normal force means that the soil is in tension. Its treatment, such as adding a tension crack or cutting the contact, must therefore be decided separately ([Chapter 3, Section 12.1](#practice-section-12-1)).
 
 ---
 

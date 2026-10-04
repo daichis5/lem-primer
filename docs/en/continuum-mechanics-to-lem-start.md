@@ -48,7 +48,7 @@ $$ (eq-start-fs-definition-mod)
 Strictly speaking, the mobilized shear force in the denominator is not the driving force itself. It is a force that **resists** movement along the slip surface. However, consider the **force equilibrium** of a sliding mass at rest: the shear force mobilized on the slip surface balances the driving force from the weight and other loads. So the two are equal in magnitude, and treating the denominator as the driving force does not change the value of the factor of safety. For this reason, Eq. {eq}`eq-start-fs-definition-mod` is often used as the more intuitive form.
 
 ```{note}
-"Force" in Eq. {eq}`eq-start-fs-definition` and Eq. {eq}`eq-start-fs-definition-mod` is a loose way of speaking, because some methods take a ratio of quantities that are not forces. For example, the simplified Bishop method finds the factor of safety as a ratio of **moments** about the center of the circle. This chapter, too, rewrites the definition in Section 6 as the ratio of the available shear strength to the shear stress needed to maintain equilibrium.
+"Force" in Eqs. {eq}`eq-start-fs-definition` and {eq}`eq-start-fs-definition-mod` is a loose way of speaking, because some methods take a ratio of quantities that are not forces. For example, the simplified Bishop method finds the factor of safety as a ratio of **moments** about the center of the circle. This chapter, too, rewrites the definition in Section 6 as the ratio of the available shear strength to the shear stress needed to maintain equilibrium.
 ```
 
 The rest of this chapter explains how $N_i$ and $T_i$ in the figure are built from the stress at each point in the ground. It also traces where the Mohr–Coulomb failure criterion, which describes the strength of the soil itself, turns into $T_i$ on the base. The end point is the following equation.
@@ -453,7 +453,7 @@ $$
 $$ (eq-start-mobilized-vector)
 
 ```{note}
-Eq. {eq}`eq-start-mobilized-stress` and Eq. {eq}`eq-start-mobilized-vector` do not mean that the current $\tau_m$ is measured first and the ratio taken afterward. First, how much of the shear strength is mobilized is expressed in terms of the unknown $F_s$. Then $F_s$ and the other unknown forces are found together so that the mass loaded by this traction satisfies force and moment equilibrium.
+Eqs. {eq}`eq-start-mobilized-stress` and {eq}`eq-start-mobilized-vector` do not mean that the current $\tau_m$ is measured first and the ratio taken afterward. First, how much of the shear strength is mobilized is expressed in terms of the unknown $F_s$. Then $F_s$ and the other unknown forces are found together so that the mass loaded by this traction satisfies force and moment equilibrium.
 ```
 
 ```{figure} ./figures/fig_c03_strength_mobilization.svg

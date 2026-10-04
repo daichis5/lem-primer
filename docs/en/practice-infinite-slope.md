@@ -198,7 +198,7 @@ The base in "Working through the numbers" in [Chapter 1, Section 6](#section-6) 
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
-:pyobject: test_the_base_of_section_6_of_document_1
+:pyobject: test_the_base_of_section_6_of_chapter_1
 ```
 
 ---
@@ -272,7 +272,7 @@ uv run python run_infinite_slope.py
 :language: text
 ```
 
-Items 1. to 4. are the values from Sections 3 to 5. Item 5. puts the water table 2 m below the ground surface and varies the depth $z$ of the slip surface. In every column, the deeper the slip surface, the smaller the factor of safety. This is because $\sigma_n$ and $\tau$ both grow with $z$, while the resistance from cohesion $c'$ does not depend on depth. Below the water table, the pore water pressure adds to this, so the factor of safety drops further.
+Items 1. to 4. are the values from Sections 3 to 5. Item 5. puts the water table 2 m below the ground surface and varies the depth $z$ of the slip surface. In every column of the table, the deeper the slip surface, the smaller the factor of safety. This is because $\sigma_n$ and $\tau$ both grow with $z$, while the resistance from cohesion $c'$ does not depend on depth. Below the water table, the pore water pressure adds to this, so the factor of safety drops further.
 
 In other words, in the infinite slope model, the factor of safety keeps falling as the slip surface goes deeper. An upper limit on the depth of the slip surface, such as the thickness of soil above bedrock, therefore has to be given separately. Searching over depth for the smallest factor of safety is the simplest search for the {term}`critical slip surface`. As [Chapter 3, Section 12.4](#practice-section-12-4) notes, computing the factor of safety and searching for the critical slip surface are separate problems. Finally, add a test that a deeper slip surface has a smaller factor of safety.
 

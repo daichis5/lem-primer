@@ -91,10 +91,11 @@ quote and runs `save_table.py`; readers do not download it.
 
 - Pages never paste code or output. They include it with `literalinclude`:
   a function with `:pyobject:`, a file's head with `:end-at:`, and a run
-  script's output from `docs/ja/examples/output` with `:start-at:` and
+  script's output from `output/` beside the code with `:start-at:` and
   `:end-before:` on its numbered headings.
-- `make examples` runs every `run_*.py` with warnings as errors, writes what
-  it prints to `docs/ja/examples/output`, and runs the tests. CI runs it and
+- `make examples` runs every `run_*.py` of both copies with warnings as
+  errors, writes what it prints to each copy's `output/`, and runs the
+  tests. CI runs it and
   fails if an output differs from the committed file. Run it before
   `make figures`: `fig_e2` reads `output/run_slices.txt`.
 - Python 3.11 or later with NumPy, and pytest for the tests. Docstrings and
@@ -316,9 +317,10 @@ for it.
 - The figures are not translations: `make figures` writes both
   `docs/ja/figures/` and `docs/en/figures/` from the same scripts, so a
   change to a figure reaches both editions at once. The practice code is a
-  copy: `docs/en/examples/` has English docstrings, comments and printed
-  text, and the Japanese code's names (`centres`, `fellenius`), so the two
-  copies diff cleanly. `make examples` runs both.
+  copy: `docs/en/examples/` has English docstrings and comments, and the
+  Japanese code's names (`centres`, `fellenius`) and printed text, which is
+  English in both, so the two copies diff cleanly and print the same output.
+  `make examples` runs both.
 - Write plain American English for the same readers: present tense, no
   "we", short sentences. Spell in American English (center, analyze,
   modeling, behavior, color) in prose; code keeps its names.
@@ -342,13 +344,18 @@ for it.
   (`factor of safety`, `Mohr–Coulomb failure criterion`), and `{term}`
   roles use those names. An entry's first paragraph is the symbol, a
   full-width space, the English term and the Japanese term in full-width
-  parentheses: `$F_s$　factor of safety（安全率）`. Method names follow the English literature: Fellenius method
-  (ordinary method of slices), simplified Bishop method, simplified Janbu
-  method, Spencer method, Morgenstern–Price method.
+  parentheses: `$F_s$　factor of safety（安全率）`. Method names follow
+  the English literature: Fellenius method (ordinary method of slices),
+  simplified Bishop method, simplified Janbu method, Spencer method,
+  Morgenstern–Price method.
 - The structure rules above hold in English too: the opening (title, bold
-  subtitle, lead, the line naming the chapters it builds on: "This chapter
-  assumes that you have read [Chapter 1](…)."), the review questions, the
-  glossary links on first use, and the link texts (Chapter 1, Section 6).
+  subtitle, lead, the line naming the pages it builds on: "This chapter
+  assumes that you have read [Chapter 1](…)." or "This practice assumes
+  that you have read […] and finished [Practice 1](…)."), the review
+  questions, the glossary links on first use, and the link texts
+  (Chapter 1, Section 6).
+  - On a practice page, the questions' opening line goes on "Do the
+    (Try it) questions in `lem-practice`."
   - A review question reads `Q1. …`, or `Q2. (Calculate) …`, and the
     questions open with "Click a question to see its answer.".
   - An answer and a glossary definition end with `(→[Section 6](#section-6))`.

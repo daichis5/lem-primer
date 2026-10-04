@@ -261,9 +261,9 @@ def _add_language_editions(app, pagename, templatename, context, doctree):
 
     Editions are separate Sphinx projects, so no cross-project resolution is
     available: the counterpart is found by looking for a source file with the
-    same docname under ``docs/<code>/``. Pages that do not exist yet fall back
-    to that edition's top page rather than a 404, which is what the
-    under-construction English edition needs.
+    same docname under ``docs/<code>/``. A page that does not exist there falls
+    back to that edition's top page rather than a 404. Sphinx's own search and
+    index pages have no source file but exist in every edition.
     """
     docs_root = Path(app.confdir).parent
     this_language = app.config.language
@@ -275,7 +275,7 @@ def _add_language_editions(app, pagename, templatename, context, doctree):
         if code == this_language:
             editions.append({"code": code, "label": edition["label"], "url": None})
             continue
-        exact = any(
+        exact = pagename in ("search", "genindex") or any(
             (docs_root / code / f"{pagename}{suffix}").exists()
             for suffix in (".md", ".rst")
         )

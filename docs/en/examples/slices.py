@@ -43,7 +43,7 @@ class Circle:
 
 
 class Ellipse:
-    """An elliptical slip surface with center center and radii a across and b down.
+    """An elliptical slip surface with center `center` and radii a across and b down.
 
     It exits the ground on the left at x = exit_x and enters it right of the crest.
     """
@@ -67,7 +67,7 @@ class Ellipse:
 
 
 class Line:
-    """A plane slip surface a vertical depth depth below the ground z = x tan(beta).
+    """A plane slip surface a vertical depth `depth` below the ground z = x tan(beta).
 
     Give beta_deg in degrees; the plane runs from x0 to x1. Pass line.ground as ground.
     """

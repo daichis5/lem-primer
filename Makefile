@@ -22,7 +22,7 @@ PORT ?= 8000
 EDITION ?= ja
 
 # The practice pages' example code, one copy per edition (the English one with
-# English comments and output). The interpreter is an absolute path because the
+# English comments; both print the same English output). The interpreter is an absolute path because the
 # scripts run from inside each directory, where they import each other.
 EXAMPLES := docs/ja/examples docs/en/examples
 PYTHON ?= $(firstword $(abspath $(wildcard .venv/bin/python)) python3)

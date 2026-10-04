@@ -7,7 +7,7 @@ translated_on: 2026-10-04
 
 # Glossary
 
-This page collects the terms and symbols that the three chapters of Theory and the practices share. Each definition gives the meaning this primer uses. Some references write a term differently or use other sign conventions.
+This page collects the terms and symbols that the three chapters of Theory and the practice pages share. Each definition gives the meaning this primer uses. Some references write a term differently or use other sign conventions.
 
 Before its definition, each entry gives the symbol (when there is one), the English term and the Japanese term. The (→) at the end links to the sections of the text that explain the term.
 
@@ -57,7 +57,7 @@ critical slip surface
 infinite slope
   infinite slope（無限斜面）
 
-  A model of a slope with the same inclination that extends without end. The slip surface is a plane parallel to the ground surface. The forces on the two sides of a column cancel, so equilibrium alone fixes the forces on the base, with no assumption about the {term}`interslice forces <interslice force>` (→[Practice 1, Section 2](#infinite-section-2))
+  A model of a slope with the same inclination that extends without end. The slip surface is a plane parallel to the ground surface. The forces on the two sides of a vertical strip cancel, so equilibrium alone fixes the forces on the base, with no assumption about the {term}`interslice forces <interslice force>` (→[Practice 1, Section 2](#infinite-section-2))
 ```
 
 ## Stress and strength

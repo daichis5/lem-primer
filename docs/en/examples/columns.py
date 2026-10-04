@@ -48,7 +48,7 @@ class Ellipsoid:
 
 
 class Cylinder:
-    """The circle of Practice 2 extended a length length in y, as a slip surface.
+    """The circle of Practice 2 extended a length `length` in y, as a slip surface.
 
     Vertical planes cut its two ends.
     """
@@ -70,7 +70,7 @@ class Cylinder:
 
 
 class Plane:
-    """A plane slip surface a vertical depth depth below the ground z = x tan(beta).
+    """A plane slip surface a vertical depth `depth` below the ground z = x tan(beta).
 
     Give beta_deg in degrees; the plane covers the plan area bounds = (x0, x1, y0, y1).
     Pass plane.ground as ground.
@@ -150,7 +150,7 @@ def make_columns(
 
 
 def rotation_directions(col, axis):
-    """Local direction of sliding on each base for a rotation about the axis axis.
+    """Local direction of sliding on each base for a rotation about the axis `axis`.
 
     It is the direction of axis × n.
     """
@@ -184,7 +184,7 @@ def hovland(col, m):
 
 
 def arms(col, m, center, axis):
-    """Moment arms of unit forces about the axis axis through the point center.
+    """Moment arms of unit forces about the axis `axis` through the point `center`.
 
     In order: base shear force (direction m), weight (acting at mid-height of the
     column), and base normal force (direction n).
@@ -199,7 +199,7 @@ def arms(col, m, center, axis):
 
 
 def hovland_moment(col, center, axis):
-    """Ratio of moments about the axis axis, with the N of the Hovland method."""
+    """Ratio of moments about the axis `axis`, with the N of the Hovland method."""
     m = rotation_directions(col, axis)
     l_t, l_w, l_n = arms(col, m, center, axis)
     N = col.W * (col.n @ GRAVITY)
@@ -224,7 +224,7 @@ def bishop(col, center, axis, fs=1.5, tol=1e-10, max_iter=100):
     """Factor of safety by the 3D simplified Bishop method (Hungr, 1987).
 
     N comes from vertical force equilibrium of each column, then the ratio of moments
-    about the axis axis. F_s is on both sides, so it is iterated.
+    about the axis `axis`. F_s is on both sides, so it is iterated.
     """
     m = rotation_directions(col, axis)
     l_t, l_w, l_n = arms(col, m, center, axis)
@@ -241,7 +241,7 @@ def bishop(col, center, axis, fs=1.5, tol=1e-10, max_iter=100):
 def save_columns(path, col, center, axis):
     """Save the column table in .npz format.
 
-    It also saves the center of moments center and the axis of rotation axis.
+    It also saves the center of moments `center` and the axis of rotation `axis`.
     """
     np.savez(
         path,

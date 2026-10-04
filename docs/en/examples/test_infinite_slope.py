@@ -30,7 +30,7 @@ def test_dry_sand_at_its_friction_angle_is_just_stable():
     ) == pytest.approx(1.0)
 
 
-def test_the_base_of_section_6_of_document_1():
+def test_the_base_of_section_6_of_chapter_1():
     beta = math.degrees(math.atan(0.3))
     w = 100.0 / math.cos(math.radians(beta)) ** 2
     sigma_n, tau = infinite_slope.base_stresses(beta, w)
