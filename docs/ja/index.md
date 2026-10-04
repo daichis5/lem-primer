@@ -57,4 +57,4 @@ lem-glossary
 
 ## このシリーズについて
 
-このシリーズは，特定の解析ソフトウェアによらない，LEMの一般的な解説である．実装の一例として，斜面安定解析のコード[LEM Lab](https://github.com/daichis5/lem-lab)がある．
+このシリーズは，特定の解析ソフトウェアによらない，LEMの一般的な解説である．実装の一例として，斜面安定解析のコード[LEM Lab](https://github.com/ibaraki-kozo-lab/lem-lab)がある．

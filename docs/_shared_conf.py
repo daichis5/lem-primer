@@ -197,7 +197,7 @@ linkcheck_ignore = [
     # lem-lab is a private repository: GitHub answers 404 to unauthenticated
     # requests, so CI cannot verify this link. Remove this entry if it becomes
     # public.
-    r"https://github\.com/daichis5/lem-lab",
+    r"https://github\.com/ibaraki-kozo-lab/lem-lab",
 ]
 linkcheck_retries = 2
 linkcheck_timeout = 30
@@ -223,13 +223,13 @@ EDITIONS = {
 # Related destinations shown at the foot of the sidebar, per language.
 SIDEBAR_LINKS = {
     "ja": [
-        ("LEM Lab（実装例）", "https://github.com/daichis5/lem-lab"),
-        ("このサイトのソース", "https://github.com/daichis5/lem-primer"),
+        ("LEM Lab（実装例）", "https://github.com/ibaraki-kozo-lab/lem-lab"),
+        ("このサイトのソース", "https://github.com/ibaraki-kozo-lab/lem-primer"),
         ("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"),
     ],
     "en": [
-        ("LEM Lab (implementation)", "https://github.com/daichis5/lem-lab"),
-        ("Source of this site", "https://github.com/daichis5/lem-primer"),
+        ("LEM Lab (implementation)", "https://github.com/ibaraki-kozo-lab/lem-lab"),
+        ("Source of this site", "https://github.com/ibaraki-kozo-lab/lem-primer"),
         ("CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"),
     ],
 }

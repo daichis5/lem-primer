@@ -39,4 +39,4 @@ A shared glossary accompanies the three documents.
 
 This series is independent of any particular analysis software. For one
 implementation, see the slope-stability codebase
-[LEM Lab](https://github.com/daichis5/lem-lab).
+[LEM Lab](https://github.com/ibaraki-kozo-lab/lem-lab).
