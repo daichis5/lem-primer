@@ -119,7 +119,7 @@ compare a document with it.
 | 滑動力 | 駆動力 | the pair of 抵抗力: $F_s$＝抵抗力／滑動力 |
 | 内力 | 内部力 | |
 | 簡便分割法 | 簡易分割法 | as in the Japanese title of Ugai et al. (1986) |
-| 簡便法 | | the class of methods that drop part of the internal forces or of the equilibrium conditions; Japanese standards often mean Fellenius法 alone, so say so where the series defines it (第2資料 4節) |
+| つり合いの一部だけを満たす方法 | 簡便法 | the class of Fellenius法, 簡易Bishop法 and 簡易Janbu法, set against 静力学的に完全な方法; Japanese standards use 簡便法 for Fellenius法 alone, so the word appears only where the text reports that usage (第2資料 4.1節, the glossary entry) |
 | テンションクラック（引張亀裂） | 張力亀裂 | |
 | 表面力 | traction | gloss （traction） at its first use |
 | 不静定性の解消 | closure, 力学的な未知量の決定 | gloss （closure） at its first use |

@@ -163,10 +163,10 @@ Mohr–Coulomb則
 
   {term}`内力`の一部を無視する，内力の向きや成分の比を仮定する，使うつり合いの条件を一部に限る，といった仮定を加えて，問題を解ける形にする操作．LEMの各手法の違いは，主にここにある（→[第1資料 9節](#section-9)，[第2資料 3.3節](#what-section-3-3)）
 
-簡便法
+つり合いの一部だけを満たす方法
   simplified method
 
-  {term}`内力`の一部や，満たすつり合いの条件の一部を省く手法の総称．Fellenius法，簡易Bishop法，簡易Janbu法など．ただし，日本の基準や実務の資料では，簡便法がFellenius法（簡便分割法）だけを指すことが多い（→[第2資料 4節](#what-section-4)，[6節](#what-section-6)）
+  {term}`内力`の一部またはすべてを無視し，つり合い条件の一部だけを満たす手法の総称．Fellenius法，簡易Bishop法，簡易Janbu法など．日本の基準や実務の資料でいう簡便法は，このうちのFellenius法（簡便分割法）だけを指すことが多い（→[第2資料 4節](#what-section-4)，[6節](#what-section-6)）
 
 静力学的に完全な方法
   complete equilibrium method
