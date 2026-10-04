@@ -60,3 +60,12 @@ dl.glossary > dd > p:first-child {
     padding-top: 0.25rem;
   }
 }
+
+/* A link to a glossary entry, from the text or from another entry, is
+   dotted, so that it reads apart from a link that leads to a section.
+   Furo's underline colour is too pale to show dots, so these take the
+   darker one Furo gives an underline on hover. */
+a:has(> .std-term) {
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-foreground-border);
+}
