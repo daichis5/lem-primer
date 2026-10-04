@@ -113,6 +113,13 @@
   border-radius: 6px;
 }
 
+/* Furo drops the input's outline and marks focus by a change of background,
+   which this box already has; mark it with the border instead. */
+.site-header__search:focus-within {
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 0 0 1px var(--color-brand-primary);
+}
+
 .site-header__search:before {
   left: 0.625rem;
 }
@@ -134,7 +141,7 @@
   height: 1.25rem;
 }
 
-@media (max-width: 63em) {
+@media (max-width: 63em), print {
   .site-header {
     display: none;
   }
@@ -158,6 +165,22 @@
 
   .sidebar-scroll {
     padding-top: 1rem;
+  }
+
+  /* Furo leaves 2.5rem above a link's target on wide screens, where it has no
+     header, and drops its back-to-top button 1rem from the top; both would
+     sit under this header. Furo's narrow-screen values, with this header's
+     height. */
+  :target {
+    scroll-margin-top: calc(var(--site-header-height) + 2.5rem);
+  }
+
+  section > span:target {
+    scroll-margin-top: calc(var(--site-header-height) + 2.8rem);
+  }
+
+  .back-to-top {
+    top: calc(var(--site-header-height) + 0.5rem);
   }
 }
 

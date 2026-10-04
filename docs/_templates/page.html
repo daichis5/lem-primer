@@ -10,6 +10,8 @@ Furo's page template is extended, not copied: the header goes before the page,
 and everything else is Furo's. The search form is Furo's ``sidebar/search.html``
 without its ``#searchbox``, whose id the sidebar copy already uses. The toggle is
 Furo's button; Furo's script handles every ``.theme-toggle`` on the page.
+The script at the end points Sphinx's search shortcut at whichever search box
+is shown.
 
 -#}
 {% extends "!page.html" %}
@@ -39,4 +41,18 @@ Furo's button; Furo's script handles every ``.theme-toggle`` on the page.
   </div>
 </header>
 {{ super() }}
+<script>
+  // Sphinx's "/" shortcut focuses the first search box on the page, which is
+  // the header's even on narrow screens, where header.css hides it. Focus the
+  // first one that is shown instead. doctools.js loads after this script, so
+  // its ``Documentation`` exists only once the document has loaded.
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof Documentation === "undefined") return;
+    Documentation.focusSearchBar = () => {
+      for (const input of document.querySelectorAll("input[name=q]")) {
+        if (input.getClientRects().length) return input.focus();
+      }
+    };
+  });
+</script>
 {%- endblock %}
