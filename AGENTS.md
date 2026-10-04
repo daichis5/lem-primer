@@ -194,9 +194,11 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   the entry: `` {term}`全垂直応力 <垂直応力>` ``.
 - In each document, the first use of a term that the document does not
   explain, because its entry links only to other documents, links to the
-  entry with `{term}`. Count only the main text: not the lead, headings,
-  tables, equations, captions or dropdowns. Where the wording differs,
-  name the entry: `` {term}`LEM <極限平衡法>` ``.
+  entry with `{term}`; later uses stay plain. Count only the main text:
+  not the lead (up to the line that links the glossary), headings, tables,
+  equations, captions or dropdowns. A word inside a longer term is not a
+  use (間隙水圧 in 間隙水圧の合力), but another wording is: name the entry,
+  as in `` {term}`LEM <極限平衡法>` ``.
 - A term gets an entry when readers may meet it away from the section that
   explains it: another document uses it, the same document uses it far
   from that section, or LEM uses it more narrowly than 土質力学 or
