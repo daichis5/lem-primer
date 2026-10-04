@@ -182,9 +182,9 @@ a Sphinx glossary, so every term is a target for `{term}`, and
   centre).
 - Keep the equations in a definition short: in the narrow column a long
   one breaks across lines. Link to the section that derives it instead.
-- Link a related term inside a definition with `{term}`, once per entry: a
-  pair (抵抗力 and 滑動力), or a term the definition is built from
-  (せん断強度 and 動員せん断応力 in 安全率).
+- Link related terms inside a definition with `{term}`, each at most once
+  per entry: a pair (抵抗力 and 滑動力), or the terms a definition is built
+  from (せん断強度 and 動員せん断応力 in 安全率).
 - A term gets an entry when readers may meet it away from the section that
   explains it: more than one document uses it, or LEM uses it in a sense
   that 土質力学 and 材料力学 do not give it (内力).
