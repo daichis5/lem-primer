@@ -153,6 +153,42 @@ Every document ends its body with `## 確認問題`, opened by the line
 - In an answer, a reason ends 〜ため．, and a list of items may end without
   a predicate.
 
+## Glossary
+
+`docs/ja/lem-glossary.md` collects the terms the documents share. It stays
+a Sphinx glossary, so every term is a target for `{term}`, and
+`docs/_static/glossary.css` lays it out as a table. It has no 確認問題.
+
+- Terms sit in groups under `##` headings, one `{glossary}` block per group.
+  Within a group, they follow the order in which the documents introduce
+  them.
+- An entry has two paragraphs. The first gives the symbol and the English
+  term, split by a full-width space, or the English term alone; the
+  stylesheet sets it small and grey. The second is the definition, which
+  ends without ． in links to the sections that explain the term:
+
+  ```text
+  安全率
+    $F_s$　factor of safety
+
+    （定義）（→[第1資料「LEMの全体像」](#overview)，[6節](#section-6)）
+  ```
+- Link text names the document, then the section: 第1資料 6節, or the
+  heading in 「」 for a section without a number. A second section of the
+  same document drops the document's name. Give each target heading a
+  label, as for review questions.
+- The English term is the one the English literature uses (slip surface,
+  interslice force, direction of sliding), in Oxford spelling (mobilized,
+  centre).
+- Keep the equations in a definition short: in the narrow column a long
+  one breaks across lines. Link to the section that derives it instead.
+- Link a related term inside a definition with `{term}`, once per entry: a
+  pair (抵抗力 and 滑動力), or a term the definition is built from
+  (せん断強度 and 動員せん断応力 in 安全率).
+- A term gets an entry when readers may meet it away from the section that
+  explains it: more than one document uses it, or LEM uses it in a sense
+  that 土質力学 and 材料力学 do not give it (内力).
+
 ## Figures
 
 Each SVG in `docs/ja/figures/` is written by a script in `scripts/figures/`.
