@@ -2,7 +2,7 @@
 title: "Using the limit equilibrium method in practice: slip surfaces other than circles, the direction of sliding, and checking results"
 lang: en
 series: "3 of 3"
-translated_from: "3eed6cf"
+translated_from: "0970d91"
 translated_on: 2026-10-05
 ---
 
@@ -529,7 +529,7 @@ This improves consistency with equilibrium. However, a separate assumption for {
 Vary at least the following and compare the results.
 
 1. The number of slices or columns
-2. Simplified methods and complete equilibrium methods
+2. Simplified methods and complete equilibrium methods (in 3D, methods that satisfy more equilibrium conditions)
 3. The internal-force function, or the direction of the internal forces
 4. The center of moments, or the axis of rotation
 5. The azimuth of the 3D direction of sliding
