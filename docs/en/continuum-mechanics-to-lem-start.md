@@ -2,7 +2,7 @@
 title: "From continuum mechanics to where the limit equilibrium method begins: deriving the forces on a slice base from stress"
 lang: en
 series: "1 of 3"
-translated_from: "4396db4"
+translated_from: "7918faa"
 translated_on: 2026-10-05
 ---
 
@@ -45,10 +45,10 @@ $$
 F_s=\frac{\text{resisting force}}{\text{driving force}}
 $$ (eq-start-fs-definition-mod)
 
-Strictly speaking, the mobilized shear force in the denominator is not the driving force itself. It is a force that **resists** movement along the slip surface. However, consider the **force equilibrium** of a sliding mass at rest: the shear force mobilized on the slip surface balances the driving force from the weight and other loads. So the two are equal in magnitude, and treating the denominator as the driving force does not change the value of the factor of safety. For this reason, Eq. {eq}`eq-start-fs-definition-mod` is often used as the more intuitive form.
+Strictly speaking, the mobilized shear force in the denominator is a force that **resists** movement along the slip surface, not the driving force itself. However, consider the **force equilibrium** of a sliding mass at rest: the shear force mobilized on the slip surface balances the driving force from the weight and other loads. So the two are equal in magnitude, and treating the denominator as the driving force does not change the value of the factor of safety. For this reason, Eq. {eq}`eq-start-fs-definition-mod` is often used as the more intuitive form.
 
 ```{note}
-"Force" in Eqs. {eq}`eq-start-fs-definition` and {eq}`eq-start-fs-definition-mod` is a loose way of speaking, because some methods take a ratio of quantities that are not forces. For example, the simplified Bishop method finds the factor of safety as a ratio of **moments** about the center of the circle. This chapter, too, rewrites the definition in Section 6 as the ratio of the available shear strength to the shear stress needed to maintain equilibrium.
+"Force" in Eqs. {eq}`eq-start-fs-definition` and {eq}`eq-start-fs-definition-mod` is a collective name for the quantities in the ratio, not a strict term, because some methods take a ratio of quantities that are not forces. For example, the simplified Bishop method finds the factor of safety as a ratio of **moments** about the center of the circle. This chapter, too, rewrites the definition in Section 6 as the ratio of the available shear strength to the shear stress needed to maintain equilibrium.
 ```
 
 The rest of this chapter explains how $N_i$ and $T_i$ in the figure are built from the stress at each point in the ground. It also traces where the Mohr–Coulomb failure criterion, which describes the strength of the soil itself, turns into $T_i$ on the base. The end point is the following equation.
@@ -143,17 +143,19 @@ $$ (eq-start-stress-field)
 The distribution of stress along the slip surface is an unknown function even before discretization. Finding it as a continuum problem takes not only the equilibrium equations but also a constitutive law, displacement compatibility, boundary conditions and more. Instead of solving this whole boundary value problem, LEM usually divides the sliding mass into a finite number of slices or columns and works with the resultant forces on each and their equilibrium.
 
 ```{note}
-**The link to continuum mechanics**
+**Equilibrium at each point and the equilibrium equations of Section 9**
 
-In a continuum at rest, equilibrium of forces at each point reads
+In a continuum at rest, the following force equilibrium holds at each point.
 
 $$
 \nabla\!\cdot\!\boldsymbol{\sigma}+\rho\boldsymbol{b}=\boldsymbol{0}
 $$
 
-Here $\rho\boldsymbol{b}$ is the body force per unit volume; with gravity alone, $\boldsymbol{b}=\boldsymbol{g}$. In an ordinary continuum without couple stresses, the balance of angular momentum also gives $\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$.
+Here $\rho\boldsymbol{b}$ is the body force per unit volume; with gravity alone, $\boldsymbol{b}=\boldsymbol{g}$. Moment equilibrium at each point also makes the stress tensor symmetric ($\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$). The relation $\tau_{xy}=\tau_{yx}$ between complementary shear stresses, familiar from mechanics of materials, is this symmetry written in components.
 
-The rest of this chapter, however, uses only Cauchy's formula $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ from the next section. The two equations above are given to show where in continuum mechanics this chapter's starting point connects.
+Integrating the equation above over the volume of a slice or column gives the force equilibrium equation of [Section 9](#section-9). This is because the divergence theorem turns the volume integral of $\nabla\!\cdot\!\boldsymbol{\sigma}$ into a surface integral of the traction $\boldsymbol{\sigma}\boldsymbol{n}$ on the boundary. The integral of the body force becomes the weight $\boldsymbol{W}_i$. The integral of the traction becomes $N_i$ and $T_i$ on the base, $\boldsymbol{Q}_{ij}$ from the neighboring columns, and $\boldsymbol{P}_i$ such as loads on the ground surface.
+
+Next, let $\boldsymbol{r}$ be the position vector of each point from the reference point $O$ of Section 9, take the cross product of $\boldsymbol{r}$ with the equation above, and integrate it over the volume. Turning the result into a surface integral with the divergence theorem leaves a volume integral from the antisymmetric part of $\boldsymbol{\sigma}$. Since the stress tensor is symmetric, this term is zero, and the moment equilibrium equation of Section 9 follows.
 ```
 
 ---
@@ -453,7 +455,7 @@ $$
 $$ (eq-start-mobilized-vector)
 
 ```{note}
-Eqs. {eq}`eq-start-mobilized-stress` and {eq}`eq-start-mobilized-vector` do not mean that the current $\tau_m$ is measured first and the ratio taken afterward. First, how much of the shear strength is mobilized is expressed in terms of the unknown $F_s$. Then $F_s$ and the other unknown forces are found together so that the mass loaded by this traction satisfies force and moment equilibrium.
+Eqs. {eq}`eq-start-mobilized-stress` and {eq}`eq-start-mobilized-vector` express how much of the shear strength is mobilized in terms of the unknown $F_s$. Then $F_s$ and the other unknown forces are found together so that the mass loaded by this traction satisfies force and moment equilibrium. The two equations do not mean that the current $\tau_m$ is measured first and the ratio taken afterward.
 ```
 
 ```{figure} ./figures/fig_c03_strength_mobilization.svg
@@ -601,7 +603,7 @@ Left: the traction distributed over a curved base. Center: the resultant $\bolds
 
 ## 8. $N_i$, $U_i$ and $T_i$ in LEM
 
-LEM does not assume that the base $S_i$ of a slice or column is small. Instead, it assumes the following.
+Instead of assuming that the base $S_i$ of a slice or column is small, LEM assumes the following.
 
 > **Within $S_i$, the directions ($\boldsymbol{n},\boldsymbol{m}$) and the material parameters ($c',\phi'$) are held constant at representative values, and the stress and pore water pressure are represented by their surface integrals $N_i,U_i$.**
 
@@ -672,7 +674,7 @@ $$
 }
 $$ (eq-start-base-shear-vector)
 
-Note that the scalar equation $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ does not require the distributions of $\sigma_n$ and $u$ to be constant. If $c_i'$ and $\phi_i'$ are constant and $N_i$ and $U_i$ are defined by the integrals of Eq. {eq}`eq-start-ni-ui`, Eq. {eq}`eq-start-base-strength` holds.
+Note that the scalar equation $T_{f,i}=c_i'A_i+(N_i-U_i)\tan\phi_i'$ holds if $c_i'$ and $\phi_i'$ are constant and $N_i$ and $U_i$ are defined by the integrals of Eq. {eq}`eq-start-ni-ui`. The distributions of $\sigma_n$ and $u$ need not be constant.
 
 :::{dropdown} Supplement F: integrating the Mohr–Coulomb failure criterion over the base
 Suppose $c_i'$ and $\phi_i'$ are constant on the base $S_i$. The magnitude of the resultant available shear strength is found as follows.
@@ -778,7 +780,7 @@ $$ (eq-start-moment-balance)
 
 LEM finds $F_s$ and each resultant force by combining these force and moment equilibrium equations, the equation for strength mobilization, and the assumptions each method adds. Examples of such assumptions are ignoring the shear force between slices, assuming the direction of or a relation among interslice forces, and satisfying only some of the equilibrium equations. Methods such as those of Bishop, Janbu and Spencer differ in how they determine these unknowns.
 
-In other words, discretization in LEM does not create new unknowns. It replaces the continuous stress distribution, which was unknown from the start, with a finite number of unknown resultant forces. Representing the surface integrals over the bases by a finite number of quantities is also a separate issue from determining, by assumption, the unknowns that the equilibrium equations alone cannot fix.
+In other words, discretization in LEM replaces the continuous stress distribution, which was unknown from the start, with a finite number of unknown resultant forces, and does not create new unknowns. Representing the surface integrals over the bases by a finite number of quantities is also a separate issue from determining, by assumption, the unknowns that the equilibrium equations alone cannot fix.
 
 :::{dropdown} Supplement H: discretization, and how the unknowns are determined
 On the slip surface,
@@ -803,7 +805,7 @@ Discretization alone, however, does not determine $N_i$ or the interslice forces
 - **Closure**: adding method-specific assumptions about the direction or ratio of the interslice forces, the components to ignore and so on, so that the unknown resultants can be determined. Chapter 2 covers this in detail
 
 ```{note}
-It is not that "the stresses are unknown, so dividing finely will find them automatically." The unknown continuous distribution is first replaced with a finite number of unknowns, and then the equilibrium equations, the equation for strength mobilization and the added assumptions are solved together for $F_s$ and the resultant forces.
+The unknown continuous distribution is first replaced with a finite number of unknowns, and then the equilibrium equations, the equation for strength mobilization and the added assumptions are solved together for $F_s$ and the resultant forces. It is not that "the stresses are unknown, so dividing finely will find them automatically."
 ```
 :::
 
