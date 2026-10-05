@@ -7,7 +7,7 @@ translated_on: 2026-10-05
 
 # Equilibrium equations satisfied by 3D LEM
 
-A rigid body in 3D has six equilibrium equations. This page collects which of the six each method of LEM extended to 3D satisfies, as checked in the original papers. The check was made in October 2026. Where the full text of the original paper could not be read, the method was checked through its abstract or through other papers that describe it, and the tables say so.
+A rigid body in 3D has six equilibrium equations. For each LEM method extended to 3D, this page shows which of the six it satisfies, as checked in the original papers. The check was made in October 2026. Where the full text of the original paper could not be read, the method was checked through its abstract or through other papers that describe it, and the tables say so.
 
 This page assumes that you have read Sections 7 to 9 of [Chapter 2](what-is-limit-equilibrium-method.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
@@ -25,7 +25,7 @@ Papers set up their axes in different ways. This page restates every paper in th
 
 The six equilibrium equations are written $\sum F_x$, $\sum F_y$, $\sum F_z$, $\sum M_x$, $\sum M_y$ and $\sum M_z$. $\sum M_y$ is the moment about a horizontal axis normal to the direction of sliding, which corresponds to the moment about the center of a circle in 2D. The moment about the {term}`axis of rotation <center of moments>` in [Chapter 2, Section 8](#what-section-8) is also this equation in most cases. $\sum M_z$, on the other hand, is the moment about a vertical axis.
 
-For each method, three questions were kept apart.
+For each method, three questions were examined separately.
 
 1. Does it solve each equilibrium equation for the whole mass, or does the equation hold only by symmetry?
 2. Which equilibrium equations does it satisfy for each {term}`column`?
@@ -34,7 +34,7 @@ For each method, three questions were kept apart.
 The sources are sorted into four kinds. DOIs were checked against the publisher's or Crossref's records.
 
 - Full text: the full text of the original paper was read
-- Predecessor's full text: the original paper could not be read, but the full text of an earlier report or paper in which the same authors present the same method was
+- Predecessor's full text: the original paper could not be read, but the full text of an earlier report or paper by the same authors on the same method was read
 - Abstract: only the abstract of the original paper was read
 - Secondary sources: only other papers or documents that describe the method were read
 
@@ -67,7 +67,7 @@ The column methods that extend 2D methods are summarized in the following table.
 | 3D Spencer method: Ugai and Hosobori (1988) | ✓ | ✗ | ✓ | ✗ | ✓ | ✗ | Force in one direction | Full text |
 | 3D Spencer method: Ugai and Hosobori (1989) | ✓ | ✗ | ✓ | ✗ | ✓ | ✗ | Force in one direction | Full text |
 | 3D GLE: Lam and Fredlund (1993) | ? | ? | ? | ? | ? | ? | ? | Abstract, secondary sources |
-| Spencer type: Chen et al. (2003) | (✓) | (✓) | (✓) | (✗) | (✓) | (✗) | Force in one direction | Abstract, predecessor's full text |
+| Spencer-type method: Chen et al. (2003) | (✓) | (✓) | (✓) | (✗) | (✓) | (✗) | Force in one direction | Abstract, predecessor's full text |
 | 3D Spencer method: Jiang and Yamagami (2004) | ✓ | ✗ | ✓† | ✗ | ✓ | ✗ | Force in one direction | Full text |
 | 3D Morgenstern–Price method: Cheng and Yip (2007) | (✓) | (✓) | (✓)※ | (✓) | (✓) | (✗) | Vertical force | Abstract, secondary sources |
 
@@ -118,7 +118,7 @@ The original paper could not be read. What follows comes from the descriptions i
 
 ### 3.2 Chen and Chameau (1983): the 3D Spencer method
 
-The full text of the 1983 paper is not publicly available. Its abstract is almost word for word the summary of Chen's (1981) report, so the content was checked in the full text of that report. The report was written under the supervision of Chameau and others, and presents the same method as the program LEMIX. The equations may still have changed in the body of the 1983 paper. In the original axes, $X$ is the direction of sliding, $Y$ is vertical upward and $Z$ is lateral. The axis of rotation is parallel to $Z$, which corresponds to $y$ in the common axes.
+The full text of the 1983 paper is not publicly available. Its abstract is almost word for word the summary of Chen's (1981) report, so the content was checked in the full text of that report. The report was written under the supervision of Chameau and others, and implements the same method as a program, LEMIX. The equations may still have changed in the body of the 1983 paper. In the original axes, $X$ is the direction of sliding, $Y$ is vertical upward and $Z$ is lateral. The axis of rotation is parallel to $Z$, which corresponds to $y$ in the common axes.
 
 - **Scope**: handles only symmetric {term}`sliding masses <sliding mass>`, and divides only half of the mass into columns. The slip surface is a surface of revolution; the 1983 paper centers on an ellipsoid of revolution
 - **Intercolumn forces**: the forces on faces normal to the direction of sliding are assumed to have the same inclination $\theta$ throughout the mass. The shear forces on the lateral faces (faces normal to $y$) are also included, but not as unknowns: they are known values set from the $K_0$ state. The normal forces on the lateral faces do not appear in the equations
@@ -155,7 +155,7 @@ The full text of every paper by Ugai et al. is available on J-STAGE. Their axes 
 
 - **Intercolumn forces**: every method places its assumption not on the force on each side of a column but on their resultant $\Delta Q$. It does not treat the shear forces on the lateral faces separately either. The ordinary method of slices takes $\Delta Q$ parallel to the slip surface, and adds a separate lateral restraining force $\Delta H$. In the other methods, the component of $\Delta Q$ in the $yz$ plane makes an angle $\tan^{-1}(\eta\tan\alpha_{yz})$ with the horizontal, where $\alpha_{yz}$ is the lateral inclination of the base and $\eta$ is an unknown constant. The Spencer method further assumes that the component in the $xz$ plane makes an unknown angle $\delta$ with the horizontal. Only the inclination in the $xz$ plane is common to all columns. So, unlike in the 2D Spencer method, the resultants of all columns do not line up in one direction
 - **Each column**: takes force equilibrium in one direction, normal to the plane containing $\Delta Q$. As a result, even in the simplified Bishop method, the equation for each column is not vertical force equilibrium. In this it differs from Hungr's 3D simplified Bishop method in [Section 3.4](#equilibrium-section-3-4). Moment equilibrium of each column is not mentioned
-- **Symmetry**: the 1988 paper mentions neither $\sum F_y$, $\sum M_x$ and $\sum M_z$ nor symmetry. Its worked example is a symmetric slope. The 1987 and 1989 papers, on the other hand, also apply their methods to an asymmetric real slope (the Ontake collapse). There, $\sum F_y$, $\sum M_x$ and $\sum M_z$ need not hold, even by symmetry
+- **Symmetry**: the 1988 paper does not mention $\sum F_y$, $\sum M_x$, $\sum M_z$ or symmetry. Its worked example is a symmetric slope. The 1987 and 1989 papers, on the other hand, also apply their methods to a real asymmetric slope (the Ontake landslide). There, $\sum F_y$, $\sum M_x$ and $\sum M_z$ need not hold, even by symmetry
 - **The papers' description**: the 3D Spencer method is described as a method that satisfies all the equilibrium conditions. This "all" means three: horizontal force, vertical force and moment
 
 :::{dropdown} Quotes from the originals
@@ -253,10 +253,10 @@ The full text is available on J-STAGE. The paper's axes are the same as the comm
 
 ### 3.8 Cheng and Yip (2007): extension to asymmetric slopes
 
-The full text could not be read. What follows comes from the abstract, from the Slide3 theory document (Rocscience), which reproduces the equations of Cheng and Yip (2007), and from Read (2021), which quotes the paper word for word.
+The full text could not be read. What follows comes from the abstract, from the Slide3 theory document (Rocscience), which reproduces the equations of Cheng and Yip (2007), and from Read (2021), which quotes passages from the paper verbatim.
 
-- **Scope**: solves an asymmetric mass as a whole. The direction of sliding is one for all columns, and is solved for as an unknown
-- **Intercolumn forces**: places a normal force, a vertical shear force and a horizontal shear force on each face. So the shear forces on the lateral faces are included too. The vertical shear force is the normal force times a coefficient, $\lambda_x$ or $\lambda_y$. The horizontal shear forces in the two directions, on the other hand, are related to each other after the complementary shear stresses of an elastic body. This relation amounts to moment equilibrium of each column about a vertical axis, approximated for small columns
+- **Scope**: solves an asymmetric mass as a whole. All columns share one direction of sliding, which is solved for as an unknown
+- **Intercolumn forces**: places a normal force, a vertical shear force and a horizontal shear force on each face. So the shear forces on the lateral faces are included too. The vertical shear force is the normal force times a coefficient, $\lambda_x$ or $\lambda_y$. The horizontal shear forces in the two directions, on the other hand, are related to each other by analogy with complementary shear stresses in an elastic body. This relation amounts to moment equilibrium of each column about a vertical axis, approximated for small columns
 - **Unknowns**: $F$, $\lambda_x$, $\lambda_y$ and the direction of sliding
 - **Equilibrium**: uses vertical force equilibrium of each column, and for the whole mass the forces in $x$ and $y$ and the moments about two horizontal axes. There is no equation for the moment of the whole mass about a vertical axis
 - **The paper's description**: the abstract says that the direction of sliding is determined from 3D force and moment equilibrium. It does not use the word “rigorous”
@@ -272,11 +272,11 @@ The full text could not be read. What follows comes from the abstract, from the 
 
 ### 3.9 Methods that solve the six whole-mass equations
 
-Instead of assuming the direction of the intercolumn forces, Zhu and Qian (2007) and Zheng (2007) assume the distribution of {term}`normal stress` on the slip surface. They then solve the six equilibrium equations, treating the whole mass as one body. According to Jiang and Zhou (2018), Zheng (2009) takes the same approach. According to its abstract, Zheng (2012) places the Morgenstern–Price assumption on the {term}`internal forces <internal force>` of the mass. Its exact form could not be confirmed in the full text.
+Instead of assuming the direction of the intercolumn forces, Zhu and Qian (2007) and Zheng (2007) assume the distribution of {term}`normal stress` on the slip surface. They then solve the six equilibrium equations, treating the whole mass as one body. According to Jiang and Zhou (2018), Zheng (2009) takes the same approach. According to its abstract, Zheng (2012) places the Morgenstern–Price assumption on the {term}`internal forces <internal force>` of the mass. The exact form of that assumption could not be confirmed in the full text.
 
 - **Zhu and Qian (2007)**: full text read. Divides the mass into columns to compute the integrals, but sets up equilibrium as whole-mass equations. Presents a rigorous solution that solves the six equations, and a quasi-rigorous solution that leaves out only $\sum M_z$. The paper says that it is the first to obtain a 3D solution that satisfies all six equations
 - **Zheng (2007)**: full text read. Finds the factor of safety and five parameters of the normal-stress distribution from the six equations. The direction of sliding is given. Does not divide into columns
-- **Zheng (2009)**: abstract read. Solves the same idea as a generalized eigenvalue problem. Does not divide into columns
+- **Zheng (2009)**: abstract read. Formulates the same idea as a generalized eigenvalue problem. Does not divide into columns
 - **Zheng (2012)**: abstract read. Places the Morgenstern–Price assumption on the internal forces of the sliding mass, and presents the result as the 3D version of a 2D rigorous method of slices. It turns volume integrals into boundary integrals, and so does not divide into columns. That it satisfies the six equations comes from Jiang and Zhou (2018)
 - **Jiang and Zhou (2018)**: full text of the authors' manuscript read. Divides into columns, but sets up equilibrium as the six whole-mass equations, and also solves for the direction of sliding as an unknown
 
@@ -295,7 +295,7 @@ Instead of assuming the direction of the intercolumn forces, Zhu and Qian (2007)
 
 ### 3.10 Other methods
 
-- **Zhang (1988)**: the abstract says that force and moment equilibrium are satisfied. According to Kalatehjari and Ali (2013), the method handles only symmetric slopes. According to Zheng (2007), it satisfies the three force equations and $\sum M_y$, and $\sum M_x$ and $\sum M_z$ hold automatically by symmetry. Whether it solves $\sum F_y$ as an equation or satisfies it by symmetry could not be confirmed
+- **Zhang (1988)**: the abstract says that force and moment equilibrium are satisfied. According to Kalatehjari and Ali (2013), the method handles only symmetric slopes. According to Zheng (2007), it satisfies the three force equations and $\sum M_y$; $\sum M_x$ and $\sum M_z$ hold automatically by symmetry. Whether it solves $\sum F_y$ as an equation or satisfies it by symmetry could not be confirmed
 - **Leshchinsky and Huang (1992)**: finds the distribution of normal stress on the slip surface by a variational method. The abstract says that all the limit equilibrium equations are satisfied. The method, however, handles only symmetric problems. According to Zheng (2007), it satisfies the three force equations and one moment equation about the axis of rotation. Whether it solves $\sum F_y$ as an equation or satisfies it by symmetry could not be confirmed
 - **Huang et al. (2002)**: the abstract says that the method uses force and moment equilibrium in two directions. Jiang and Zhou (2018) call it a quasi-rigorous method that satisfies force in three directions and moment in two. Zhu and Qian (2007), on the other hand, say that it roughly satisfies four equations
 
@@ -321,15 +321,15 @@ Zheng (2007) cites Zhang et al. (2005) as a 3D Spencer method that satisfies fiv
 
 ### 4.2 Cheng and Yip's (2007) Morgenstern–Price method does not solve $\sum M_z$
 
-According to the Slide3 theory document and Read (2021), Cheng and Yip (2007) use the five equations other than $\sum M_z$. They do, however, use moment equilibrium of each column about a vertical axis approximately, in the form of complementary shear. Lam and Fredlund (1993) could not be checked in the original paper. The secondary sources that give a count put the number of equations satisfied at three or four, and none says that the method satisfies $\sum M_z$.
+According to the Slide3 theory document and Read (2021), Cheng and Yip (2007) use the five equations other than $\sum M_z$. They do, however, use an approximation of each column's moment equilibrium about a vertical axis, in the form of complementary shear. Lam and Fredlund (1993) could not be checked in the original paper. The secondary sources that give a count put the number of equations satisfied at three or four, and none says that the method satisfies $\sum M_z$.
 
 (equilibrium-section-4-3)=
 
-### 4.3 Methods that solve all six equations can be confirmed from 2007
+### 4.3 Methods that solve all six equations can be confirmed in papers from 2007 on
 
 3D {term}`LEM <limit equilibrium method>` methods that solve all six equations for the whole mass can be confirmed in the full texts of Zhu and Qian (2007) and Zheng (2007). Later, Zheng (2012) presented a 3D version of the Morgenstern–Price method that satisfies the six equations. That it satisfies them comes from the abstract and from Jiang and Zhou (2018). All of them set up the six equations treating the whole mass as one body. So none is a column method that extends a 2D method by assuming the direction of the intercolumn forces.
 
-The abstract of the variational method of Leshchinsky and Huang (1992) says that all equilibrium is satisfied. The method, however, handles only symmetric problems. According to Zheng (2007), it satisfies the three force equations and one moment equation about the axis of rotation.
+For the variational method of Leshchinsky and Huang (1992), the abstract says that all equilibrium is satisfied. The method, however, handles only symmetric problems. According to Zheng (2007), it satisfies the three force equations and one moment equation about the axis of rotation.
 
 ---
 
@@ -350,7 +350,7 @@ The first is that the method satisfies all of the equations it treats, which are
 
 The second sense is that the method satisfies all six equations for the whole mass. This sense is common in papers from 2007 on. Zhu and Qian (2007) and Jiang and Zhou (2018) define a rigorous 3D method as one that satisfies the six equations. They call a method that satisfies the five other than $\sum M_z$ quasi-rigorous. The abstract of Zheng (2012), too, defines rigorous methods as those that satisfy complete equilibrium conditions.
 
-In the papers that take the six equations as the standard, "all" refers to equilibrium of the whole mass. No paper was found that calls the six equations for each column "complete." Some papers also count equations that hold by symmetry and call a solution "rigorous." Zheng (2007) writes that the solution of Zhang (1988), for a symmetric mass divided symmetrically, can be regarded as rigorous.
+In the papers that take the six equations as the standard, "all" refers to equilibrium of the whole mass. No paper was found that calls the six equations for each column "complete." Equations that hold by symmetry are also sometimes counted toward calling a solution "rigorous." Zheng (2007) writes that the solution of Zhang (1988), for a symmetric mass divided symmetrically, can be regarded as rigorous.
 
 :::{dropdown} Quotes from the originals
 - Jiang and Zhou (2018): “In rigorous 3-d methods for slope stability analysis, all six equilibrium conditions (three directional force and three moment equilibrium equations) should be satisfied for the potential failure mass.”

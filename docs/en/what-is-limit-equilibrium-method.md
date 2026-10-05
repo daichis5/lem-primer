@@ -680,11 +680,11 @@ This work shows that the key to a 3D extension lies in **redefining in space the
 | Hovland method | Fellenius type | Ignored | Mainly sums global resisting and driving forces | Simple, but not a complete equilibrium method | Hovland (1977) |
 | Hungr's 3D simplified Bishop method | Simplified Bishop method | Vertical component of shear force simplified | Vertical force of each column + global moment | Suits rotational, fairly symmetric problems | Hungr (1987) |
 | Ugai et al.'s family | Simplified Bishop, simplified Janbu and Spencer methods | Assumed to match the original 2D method | Differs by method | Extends each 2D family to 3D | Ugai et al. (1986); Ugai & Hosobori (1988) |
-| Spencer method extended to 3D | Spencer method | Inclination in the vertical plane containing the direction of sliding assumed common | Force + moment about the axis of rotation | How "parallel" is defined in 3D differs by paper | Chen & Chameau (1983); Ugai & Hosobori (1988); Jiang & Yamagami (2004) |
+| Spencer method extended to 3D | Spencer method | Common inclination assumed in the vertical plane containing the direction of sliding | Force + moment about the axis of rotation | How "parallel" is defined in 3D differs by paper | Chen & Chameau (1983); Ugai & Hosobori (1988); Jiang & Yamagami (2004) |
 | Lam–Fredlund's 3D GLE | Morgenstern–Price method, GLE | Expressed by functions in two directions | Force + moment | Very general, but with more assumptions and unknowns | Lam & Fredlund (1993) |
 | Cheng–Yip | Simplified Bishop, simplified Janbu and Morgenstern–Price methods | Each 2D assumption extended to two directions | Differs by method | Handles asymmetric 3D shapes directly | Cheng & Yip (2007) |
 
-Of the methods in the table whose equations have been checked, none solves all six equilibrium equations for the whole mass. 3D LEM methods that satisfy all six have been presented in a form that treats the whole mass as one body, such as Zheng (2012). Which equations each method satisfies is collected in the appendix [Equilibrium equations satisfied by 3D LEM](three-dimensional-equilibrium.md).
+Of the methods in the table whose equations have been checked, none solves all six equilibrium equations for the whole mass. 3D LEM methods that satisfy all six, such as Zheng (2012), treat the whole mass as one body. The appendix [Equilibrium equations satisfied by 3D LEM](three-dimensional-equilibrium.md) collects which equations each method satisfies.
 
 #### Reading 3D factors of safety
 
