@@ -83,7 +83,7 @@ lang: ja
 | Zhu and Qian (2007)の厳密解 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | カラムに分けることもあるが，つり合いは土塊全体の6つの式だけで立てる | 全文 |
 | Zhu and Qian (2007)の準厳密解 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | 厳密解と同じ | 全文 |
 | Zheng (2007) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | カラムに分けない | 全文 |
-| Zheng (2009) | (✓) | (✓) | (✓) | (✓) | (✓) | (✓) | カラムに分けない | 要旨 |
+| Zheng (2009) | (✓) | (✓) | (✓) | (✓) | (✓) | (✓) | カラムに分けない | 要旨，二次文献 |
 | 3次元のMorgenstern–Price法：Zheng (2012) | (✓) | (✓) | (✓) | (✓) | (✓) | (✓) | カラムに分けない | 要旨，二次文献 |
 | Jiang and Zhou (2018) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | カラムに分けるが，つり合いは土塊全体の6つの式だけで立てる | 全文 |
 
@@ -99,7 +99,7 @@ lang: ja
 
 ### 3.1 Hovland (1977)：Hovland法
 
-原論文は読めなかった．次のことは，Chen (1981)とUgai et al. (1986, 1987, 1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
+原論文は読めなかった．次のことは，Chen (1981)，Ugai et al. (1986)，Ugai (1987)，Ugai and Hosobori (1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
 
 - カラム間力をすべて無視し，各カラムの重さの成分から，底面に働く垂直力とせん断力を求める
 - {term}`安全率`は，すべり面全体の抵抗の和と，滑動の和の比とする
@@ -257,7 +257,7 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 - **カラム間力**：各面に，垂直力，鉛直なせん断力，水平なせん断力を置く．つまり，横方向の面のせん断力も考える．鉛直なせん断力は，垂直力に係数 $\lambda_x$，$\lambda_y$ を掛けた形である．一方，2方向の水平なせん断力は，弾性体の共役せん断応力にならって関係づける．この関係は，カラムごとの鉛直な軸まわりのモーメントのつり合いを，小さなカラムで近似したものにあたる
 - **未知量**：$F$，$\lambda_x$，$\lambda_y$，すべり方向
 - **つり合い**：各カラムの鉛直方向の力のつり合いと，土塊全体の $x$ と $y$ の力，2つの水平な軸まわりのモーメントを使う．土塊全体の鉛直な軸まわりのモーメントの式はない
-- **論文の言い方**：要旨は，すべり方向を3次元の力とモーメントのつり合いから決めると書く．"rigorous" とは書いていない
+- **論文の言い方**：要旨は，すべり方向を3次元の力とモーメントのつり合いから決めると書く．“rigorous” とは書いていない
 
 :::{dropdown} 原文の引用
 - 要旨：“Most existing three-dimensional (3D) slope stability analysis methods are based on simple extensions of corresponding two-dimensional (2D) methods of analysis and a plane of symmetry or direction of slide is implicitly assumed. … Under these new formulations, the direction of slide is unique and is determined from 3D force/moment equilibrium.”
@@ -293,8 +293,8 @@ Zhu and Qian (2007)とZheng (2007)は，カラム間力の向きを仮定する�
 
 ### 3.10 その他の手法
 
-- **Zhang (1988)**：要旨は，力とモーメントのつり合いを満たすと書く．Zheng (2007)によれば，満たすのは3つの力の式と $\sum M_y$ で，対称なので $\sum M_x$ と $\sum M_z$ は自動的に成り立つ．$\sum F_y$ を式として解くか，対称性によって満たすかは，確かめられなかった
-- **Leshchinsky and Huang (1992)**：変分法で，すべり面の垂直応力の分布を求める．要旨は，極限平衡の式をすべて満たすと書く．ただし，扱うのは対称な問題に限られる．Zheng (2007)によれば，満たすのは3つの力の式と回転軸まわりの1つのモーメントの式である
+- **Zhang (1988)**：要旨は，力とモーメントのつり合いを満たすと書く．Kalatehjari and Ali (2013)によれば，対称な斜面だけを扱う．Zheng (2007)によれば，満たすのは3つの力の式と $\sum M_y$ で，対称なので $\sum M_x$ と $\sum M_z$ は自動的に成り立つ．$\sum F_y$ を式として解くか，対称性によって満たすかは，確かめられなかった
+- **Leshchinsky and Huang (1992)**：変分法で，すべり面の垂直応力の分布を求める．要旨は，極限平衡の式をすべて満たすと書く．ただし，扱うのは対称な問題に限られる．Zheng (2007)によれば，満たすのは3つの力の式と回転軸まわりの1つのモーメントの式である．$\sum F_y$ を式として解くか，対称性によって満たすかは，確かめられなかった
 - **Huang et al. (2002)**：要旨は，2方向の力とモーメントのつり合いを使うと書く．Jiang and Zhou (2018)は，3方向の力と2方向のモーメントを満たす準厳密な方法とする．一方，Zhu and Qian (2007)は，4つの式を大まかに満たすとする
 
 ---
@@ -309,7 +309,7 @@ Zhu and Qian (2007)とZheng (2007)は，カラム間力の向きを仮定する�
 
 調べた3次元のSpencer型の手法が，土塊全体で対称性に頼らずに満たすのは，3つか4つの式である．モーメントの式は，どれも $\sum M_y$ の1つだけを使う．
 
-- Chen and Chameau (1983)の対称な定式化は，$\sum F_x$，$\sum F_z$，$\sum M_y$ を満たす．つまり，対称性に頼らずに満たすのが3つで，残りの3つは対称な土塊でだけ，土塊全体で成り立つ．カラムごとには，射影した面の中の3つの式を満たす
+- Chen and Chameau (1983)の対称な定式化は，$\sum F_x$，$\sum F_z$，$\sum M_y$ を満たす．つまり，対称性に頼らずに満たすのが3つで，残りの3つは対称性によって成り立つ．カラムごとには，射影した面の中の3つの式を満たす
 - Ugai and Hosobori (1988, 1989)とJiang and Yamagami (2004)の定式化は，対称性を前提にしない．そのため，非対称な斜面では，$\sum F_y$，$\sum M_x$，$\sum M_z$ が成り立つとは限らない
 - Chen et al. (2003)は，3方向の力と $\sum M_y$ の4つを満たす
 
@@ -327,7 +327,7 @@ Slide3の理論資料とRead (2021)によれば，Cheng and Yip (2007)は，$\su
 
 土塊全体の6つの式をすべて解く3次元の{term}`LEM <極限平衡法>`は，Zhu and Qian (2007)とZheng (2007)から全文で確かめられる．その後，Zheng (2012)は，6つの式を満たすMorgenstern–Price法の3次元版を示した．6つの式を満たすことは，要旨とJiang and Zhou (2018)による．どれも，土塊全体を1つの物体として6つの式を立てる．つまり，カラム間力の向きを仮定して2次元の手法を拡張したカラム法ではない．
 
-変分法のLeshchinsky and Huang (1992)は，すべてのつり合いを満たすと要旨で書く．しかし，扱うのは対称な問題だけである．Zheng (2007)によれば，解くのは3つの力の式と1つのモーメントの式である．
+変分法のLeshchinsky and Huang (1992)は，すべてのつり合いを満たすと要旨で書く．しかし，扱うのは対称な問題だけである．Zheng (2007)によれば，この方法は，3つの力の式と，回転軸まわりの1つのモーメントの式を満たす．
 
 ---
 
@@ -406,7 +406,7 @@ DOIは，出版社かCrossrefの書誌情報で照合したものだけを載せ
 17. Huang, C.-C., Tsai, C.-C., and Chen, Y.-H. (2002). “Generalized method for three-dimensional slope stability analysis.” *Journal of Geotechnical and Geoenvironmental Engineering*, 128(10), 836–848. [https://doi.org/10.1061/(ASCE)1090-0241(2002)128:10(836)](https://doi.org/10.1061/%28ASCE%291090-0241%282002%29128%3A10%28836%29)
 18. Chen, Z., Mi, H., Zhang, F., and Wang, X. (2003). “A simplified method for 3D slope stability analysis.” *Canadian Geotechnical Journal*, 40(3), 675–683. [https://doi.org/10.1139/t03-002](https://doi.org/10.1139/t03-002)
 19. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
-20. 张均锋・王思莹・祈涛（Zhang et al.）(2005)．边坡稳定分析的三维 Spencer 法．*岩石力学与工程学报*，24(19)，3434–3439．書誌は，Zheng (2007)の文献表による
+20. 张均锋・王思莹・祈涛（Zhang et al.）(2005)．边坡稳定分析的三维 Spencer 法．*岩石力学与工程学报*，24(19)，3434–3439．ページは，Zheng (2007)の文献表による．[書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract21749.shtml)
 21. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
 22. 朱大勇・钱七虎（Zhu and Qian）(2007)．三维边坡严格与准严格极限平衡解答及工程应用．*岩石力学与工程学报*，26(8)，1513–1528．[書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22094.shtml)
 23. 郑宏（Zheng）(2007)．严格三维极限平衡法．*岩石力学与工程学报*，26(8)，1529–1537．[書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22095.shtml)
