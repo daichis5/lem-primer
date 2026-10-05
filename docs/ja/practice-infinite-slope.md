@@ -8,7 +8,7 @@ series: "practice 1 of 3"
 
 **表面力の分解から安全率までを，コードでたどる**
 
-この実践では，無限斜面の安全率を求めるPythonのコードを書く．無限斜面は，同じ傾きの斜面がどこまでも続くとみなす，最も単純な斜面のモデルである．安全率の式はよく知られているが，ここでは第1章の筋道に沿って，すべり面に働く表面力を法線成分とせん断成分に分けるところから組み立てる．作った関数は，実践2と実践3で答えを確かめるときにも使う．
+この実践では，無限斜面の安全率を求めるPythonのコードを書く．無限斜面は，同じ傾きの斜面がどこまでも続くとみなす，最も単純な斜面のモデルである．安全率の式はよく知られているが，ここでは第1章の筋道に沿って，すべり面に働く表面力を法線成分とせん断成分に分けるところから組み立てる．作った関数は，実践2と実践3で答えを確認するときにも使う．
 
 この実践は，[第1章](continuum-mechanics-to-lem-start.md)を読んだ前提で進める．用語と記号は，[用語集](lem-glossary.md)にまとめている．
 
@@ -143,14 +143,14 @@ $$ (eq-infinite-stresses)
 :pyobject: base_stresses
 ```
 
-ここまでを，テストで確かめる．`test_infinite_slope.py` を作り，最初に次を書く．
+ここまでを，テストで確認する．`test_infinite_slope.py` を作り，最初に次を書く．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
 :end-at: import infinite_slope
 ```
 
-続けて，2つのテストを書く．1つ目は，押す成分と抵抗する成分を組み合わせた表面力が，元の2つの成分に分けられることを確かめる．2つ目は，式 {eq}`eq-infinite-stresses` と比べるテストである．
+続けて，2つのテストを書く．1つ目は，押す成分と抵抗する成分を組み合わせた表面力が，元の2つの成分に分けられることを確認する．2つ目は，式 {eq}`eq-infinite-stresses` と比べるテストである．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -222,7 +222,7 @@ $$ (eq-infinite-fs)
 :pyobject: pore_pressure
 ```
 
-地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比べる．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．つまり，同じ地下水位でも，間隙水圧の決め方だけで，安全率が2割以上違う．2つの決め方の比が $\cos^2\beta$ になることを，テストで確かめる．
+地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比べる．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．つまり，同じ地下水位でも，間隙水圧の決め方だけで，安全率が2割以上違う．2つの決め方の比が $\cos^2\beta$ になることを，テストで確認する．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
@@ -289,12 +289,12 @@ uv run python run_infinite_slope.py
 
 | 表示や様子 | 原因と対処 |
 |---|---|
-| `ModuleNotFoundError: No module named 'infinite_slope'` | `lem-practice` の外で実行しているか，ファイルの名前が違う．`lem-practice` に移り，`infinite_slope.py` があることを確かめる．（→[準備](#infinite-setup)） |
+| `ModuleNotFoundError: No module named 'infinite_slope'` | `lem-practice` の外で実行しているか，ファイルの名前が違う．`lem-practice` に移り，`infinite_slope.py` があることを確認する．（→[準備](#infinite-setup)） |
 | `ModuleNotFoundError: No module named 'numpy'` | `uv run` を付けずに，NumPyのない環境のPythonで実行している．`uv run python …` や `uv run pytest` のように実行する．（→[準備](#infinite-setup)） |
-| `AttributeError: module 'infinite_slope' has no attribute …` | テストが使う関数を，まだ `infinite_slope.py` に書いていない．関数の名前の綴りも確かめる．（→[1節](#infinite-section-1)から[4節](#infinite-section-4)） |
+| `AttributeError: module 'infinite_slope' has no attribute …` | テストが使う関数を，まだ `infinite_slope.py` に書いていない．関数の名前の綴りも確認する．（→[1節](#infinite-section-1)から[4節](#infinite-section-4)） |
 | `ValueError: h_w は 0 以上 z 以下にする` | `column_weight` に，すべり面より下か，地表より上の地下水位を渡している．（→[4節](#infinite-section-4)） |
-| 安全率が負になる，または表の値と大きく違う | 角度を度のまま `math.sin`，`math.cos`，`math.tan` に渡していないかを確かめる．`math.radians` でラジアンに直す．（→[1節](#infinite-section-1)） |
-| 安全率が表の値と少し違う | 水の単位体積重量 `GAMMA_W` を，9.81 kN/m³にしているかを確かめる．（→[1節](#infinite-section-1)，[4節](#infinite-section-4)） |
+| 安全率が負になる，または表の値と大きく違う | 角度を度のまま `math.sin`，`math.cos`，`math.tan` に渡していないかを確認する．`math.radians` でラジアンに直す．（→[1節](#infinite-section-1)） |
+| 安全率が表の値と少し違う | 水の単位体積重量 `GAMMA_W` を，9.81 kN/m³にしているかを確認する．（→[1節](#infinite-section-1)，[4節](#infinite-section-4)） |
 
 ## まとめ
 
@@ -358,4 +358,4 @@ $w=18\times3=54$ kPa なので，$\sigma_n=54\cos^2 25^\circ=44.36$ kPa，$\tau=
 
 ## 次に読む
 
-この実践では，1本の柱のつり合いだけで，すべり面の力が決まるモデルを扱った．円弧のすべり面では，{term}`スライス`ごとに底面の向きが違い，スライス間力が打ち消し合わない．各手法の{term}`不静定性の解消`（closure）の仕方を，[実践2「スライス法で円弧すべりの安全率を計算する」](practice-slices-2d.md)でコードにする．平面のすべり面では，この実践の値に戻ることも確かめる．
+この実践では，1本の柱のつり合いだけで，すべり面の力が決まるモデルを扱った．円弧のすべり面では，{term}`スライス`ごとに底面の向きが違い，スライス間力が打ち消し合わない．各手法の{term}`不静定性の解消`（closure）の仕方を，[実践2「スライス法で円弧すべりの安全率を計算する」](practice-slices-2d.md)でコードにする．平面のすべり面では，この実践の値に戻ることも確認する．

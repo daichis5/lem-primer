@@ -143,7 +143,7 @@ compare a document with it.
   its clause or sentence, or in a sentence of its own.
 - Write the Japanese phrase, not the English one read through:
   この章 (not 本章，本稿), 満たす (not 満足する), 違う (not 異なる),
-  確かめる (not 確認する), できる (not 可能である), とき (not 場合，際),
+  確認する (not 確かめる), できる (not 可能である), とき (not 場合，際),
   次の (not 以下の), と・や (not および), つまり (not すなわち),
   〜のもとで・〜とき (not 〜の下で), 〜での・〜の (not 〜における),
   〜ことがある (not 〜し得る), 決める (not 決定する), グループ (not 族,
