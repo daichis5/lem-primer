@@ -146,7 +146,8 @@ compare a document with it.
   確かめる (not 確認する), できる (not 可能である), とき (not 場合，際),
   次の (not 以下の), と・や (not および), つまり (not すなわち),
   〜のもとで・〜とき (not 〜の下で), 〜での・〜の (not 〜における),
-  〜ことがある (not 〜し得る), 決める (not 決定する). A cleft sentence
+  〜ことがある (not 〜し得る), 決める (not 決定する), グループ (not 族,
+  as in すべり面のグループ), 必要である (not 要る). A cleft sentence
   (「重要なのは，…ことである」) becomes the plain statement.
 - Between equations, say what was done (「これを $\tau_m$ について解くと」
   「式 {eq}`eq-start-mohr-coulomb` を入れると」) rather than したがって.
@@ -165,6 +166,11 @@ compare a document with it.
 - Split a sentence past about 100 characters, not counting inline math, or
   one with a remark in parentheses inside a modifier, into two joined by a
   connective.
+- In a note, a supplement, a remark opened with なお, or an aside that
+  heads off a misreading, say what a thing is before what it is not:
+  「この近似は，スライス間力の効果を，安全率の計算に含めていないだけである．
+  スライス間力が物理的に存在しないとみなすものではない．」
+  (from 「…みなすものではない．…含めていないだけである．」).
 - Say each thing once.
 
 ### Notation
