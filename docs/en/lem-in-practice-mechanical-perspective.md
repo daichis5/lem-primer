@@ -2,7 +2,7 @@
 title: "Using the limit equilibrium method in practice: slip surfaces other than circles, the direction of sliding, and checking results"
 lang: en
 series: "3 of 3"
-translated_from: "4396db4"
+translated_from: "3eed6cf"
 translated_on: 2026-10-05
 ---
 
@@ -131,10 +131,10 @@ In other words, the mechanical character of a method is not determined by "the i
 :name: fig-s02-circle-general-surface
 :alt: A circular slip surface, on which the lines of action of all base normal forces pass through the center, and an elliptical slip surface, on which they do not
 
-Left: on a circle, the lines of action of all base normal forces pass through the center $O$. Every shear force has the radius $R$ as its arm. Right: on an ellipse, the lines of action do not pass through $O'$, so the normal forces have an arm $d$. The tangent directions also differ from the directions of velocity for a rotation about $O'$
+Left: on a circle, the lines of action of all base normal forces pass through the center $O$. Every shear force has the radius $R$ as its arm. Right: on an ellipse, the lines of action do not pass through $O'$, so the normal forces have an arm $d$. The tangent directions also differ, in general, from the directions in which a rotation about $O'$ moves the points of the base
 ```
 
-Being able to compute general shapes does not put circles on the same footing as other curves. A circle has properties that suit methods using moment equilibrium particularly well.
+A circle has properties that suit methods using moment equilibrium particularly well. So being able to compute general shapes does not put circles on the same footing as other curves.
 
 #### 2.1 The base normal forces pass through a common center
 
@@ -160,11 +160,11 @@ This makes the moment equation for the whole mass simple.
 
 #### 2.3 It is easy to read as a rigid-body rotation
 
-The direction of the tangent along a circle matches the direction of velocity for a rotation about the common center. This fits the picture of the sliding mass rotating as one rigid body.
+The direction of the tangent along a circle matches the direction in which a rotation about the center $O$ moves each point of the base. This fits the picture of the sliding mass rotating as one rigid body. Only the directions are compared here, not speeds or the size of displacements.
 
 Because of these properties, on a circular surface the moment equilibrium is often relatively insensitive to the assumption on the interslice shear forces. This is one reason why even the simplified Bishop method tends to give a reasonable factor of safety for circular slips. [Krahn (2003)](https://doi.org/10.1139/t03-024) shows that the sensitivity to the internal-force assumptions differs between circular, planar, composite and block-shaped surfaces.
 
-It is worth being clear here about what a term "missing" from the factor-of-safety equation means. About the center of a circle, $M_O(N_i)=0$, so the moment terms of the base normal forces drop out of the equilibrium equation. As a result, they may not appear as separate moment terms in the final factor-of-safety equation either. This does not mean that the base normal forces do not physically exist, or that they do not affect the factor of safety. Through the {term}`shear strength` $c_i'A_i+(N_i-U_i)\tan\phi_i'$, $N_i$ governs how large the resistance is. What is zero is only their contribution to the moment about the center, and that comes from geometry specific to circles: their lines of action pass through a common center.
+It is worth being clear here about what a term "missing" from the factor-of-safety equation means. About the center of a circle, $M_O(N_i)=0$, so the moment terms of the base normal forces drop out of the equilibrium equation. As a result, they may not appear as separate moment terms in the final factor-of-safety equation either. Even so, through the {term}`shear strength` $c_i'A_i+(N_i-U_i)\tan\phi_i'$, $N_i$ governs how large the resistance is. What is zero is only their contribution to the moment about the center, and that comes from geometry specific to circles: their lines of action pass through a common center. In other words, a term missing from the equation does not mean that the base normal forces do not physically exist, or that they do not affect the factor of safety.
 
 So care is needed when a final factor-of-safety equation from a paper or a textbook is used for a slip surface of a different shape. It has to be checked whether a term left out of the equation is unnecessary under general mechanical assumptions, or whether it dropped out during the derivation because of a property specific to circles. If only the local angles and coordinates of an ellipse, a composite surface or a surface of any shape are substituted into an equation of the latter kind, it may lose the moments of the base normal forces, the moment arms that differ from base to base, and the link to a motion about one center of rotation. To extend it to general shapes, the original equation cannot simply be reused. The formulation has to be rebuilt from force and moment equilibrium, including the lost terms.
 
@@ -205,7 +205,7 @@ The simplification with the common radius $R$ of a circle is not available.
 
 #### 3.3 It cannot be read as a rotation about one center
 
-The tangent directions of an ellipse do not match the directions of velocity of a rigid body rotating about one fixed point. On composite and polyline surfaces, the local direction changes even more abruptly.
+On an ellipse, a rigid-body rotation about one fixed point does not, in general, move the points of the base along the tangent. On composite and polyline surfaces, the local direction changes even more abruptly.
 
 LEM can still assign shear resistance to each base and compute a factor of safety, because it does not solve displacement compatibility. However, a factor of safety does not mean that the soil mass can actually move along that surface as one rigid body.
 
@@ -232,7 +232,7 @@ holds cannot be decided once and for all. In other words, a {term}`simplified me
 ### 4. What "it can compute any shape" means exactly
 
 ```{note}
-In this chapter, "any shape" does not mean that every mathematical curve or surface is allowed without conditions. "It can be applied to any shape" means that the internal-force assumptions and the equilibrium equations can be rebuilt in a generalized LEM framework. Substituting only the coordinates of the shape into a classical formula for circles does not guarantee that the properties of the original method still hold.
+In this chapter, "any shape" means a curve or surface that satisfies the conditions listed in this section. It does not mean that every mathematical curve or surface is allowed without conditions. "It can be applied to any shape" means that the internal-force assumptions and the equilibrium equations can be rebuilt in a generalized LEM framework. Substituting only the coordinates of the shape into a classical formula for circles does not guarantee that the properties of the original method still hold.
 ```
 
 To be treated as a general slip surface in LEM, a surface must satisfy at least the following conditions.
@@ -274,7 +274,7 @@ This phrase can be read in at least two ways.
 1. The local angles of a non-circular surface were substituted into the classical Bishop equation for circles
 2. Bishop's internal-force assumption was kept and extended to force and moment equations for general shapes
 
-The two are not the same. The second can be a mechanically consistent generalization. For the first, on the other hand, whether it is valid cannot be judged without checking which terms were left out.
+The second can be a mechanically consistent generalization. For the first, on the other hand, whether it is valid cannot be judged without checking which terms were left out. So the two are not the same.
 
 The same holds for names such as Fellenius-type, Spencer-type and 3D Bishop-type. A name displayed by software may refer not to the original method proposed in the paper but to **an implementation that inherits the internal-force assumption characteristic of that method**.
 
@@ -603,7 +603,7 @@ Even when "Bishop," "Spencer" or "3D Bishop" is displayed, it has to be checked 
 
 #### 14.4 The direction of sliding decides how forces are distributed
 
-The 3D direction of sliding is not a marker added to a figure. It is a variable of the formulation that determines the components of the base shear forces, the base normal forces, the intercolumn forces, the moments and the factor of safety.
+The 3D direction of sliding is a variable of the formulation that determines the components of the base shear forces, the base normal forces, the intercolumn forces, the moments and the factor of safety. It is not a marker added to a figure.
 
 #### 14.5 What to check at the end
 
