@@ -264,7 +264,7 @@ $$ (eq-columns-bishop-normal)
 uv run python run_columns.py
 ```
 
-出力の1.と2.が，この節の確認である．
+出力の1.と2.が，この節で確認する値である．
 
 ```{literalinclude} examples/output/run_columns.txt
 :language: text
