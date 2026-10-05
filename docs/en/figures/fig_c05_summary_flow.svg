@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="748" viewBox="0 0 760 748" role="img" aria-labelledby="title desc">
   <title id="title">From the stress in a continuum to the factor of safety</title>
-  <desc id="desc">The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the quantity and its formula. The arrow between two boxes is labelled with the formula or operation that leads to the next step. Sections 1 to 6 work with the stress at each point, Sections 7 to 9 with the resultants on each slice or column.</desc>
+  <desc id="desc">The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the quantity and its formula. The arrow between two boxes is labeled with the formula or operation that leads to the next step. Sections 1 to 6 work with the stress at each point, Sections 7 to 9 with the resultants on each slice or column.</desc>
   <style>.t{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="748" fill="#fff"/>
   <rect x="76" y="16" width="608" height="512" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>

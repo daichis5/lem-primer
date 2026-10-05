@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of a 3D slip surface with the method of columns: build a column table and check it against the infinite slope and the 2D values"
 lang: en
 series: "practice 3 of 3"
-translated_from: "4396db4"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -28,7 +28,9 @@ The {term}`direction of sliding` is $\boldsymbol{d}=(-1, 0, 0)$, down the slope.
 :name: fig-columns-3d-forces
 :alt: A 3D column with an inclined base, acted on by its weight, the normal and shear forces on the base, and the intercolumn forces on its sides
 
-Forces on a 3D column. As in the figure of Chapter 2, the strength equation does not determine the direction of the shear force on the base. This practice either ignores the effect of the intercolumn forces on the sides or takes them as horizontal
+Forces on a 3D column
+
+This is the same figure as {numref}`fig-05-3d-column-forces` of Chapter 2. The strength equation does not determine the direction of the shear force on the base. For the intercolumn forces on the sides, this practice either ignores their effect or takes them as horizontal.
 ```
 
 You build the following.

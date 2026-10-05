@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of a circular slip with the method of slices: implement four methods and check equilibrium in one framework"
 lang: en
 series: "practice 2 of 3"
-translated_from: "4396db4"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -10,7 +10,7 @@ translated_on: 2026-10-05
 
 **Implement four methods and check equilibrium in one framework**
 
-In this practice, you write code that computes the factor of safety of the slope and circle of Figure 1 of Chapter 1 with the 2D method of slices. First, you build a slice table and implement the Fellenius method, the simplified Bishop method and the simplified Janbu method exactly as the textbook formulas state them. Next, you build one framework in which the inclination of the interslice forces is a variable. With this framework, you check by residuals that the simplified Bishop and simplified Janbu methods are special cases of it, and that the Spencer method satisfies both force and moment equilibrium. Finally, on a slip surface that is not a circle, you see that the choice of the center of moments changes the factor of safety.
+In this practice, you write code that computes the factor of safety of the slope and circle of {numref}`fig-c00-slope-overview` of Chapter 1 with the 2D method of slices. First, you build a slice table and implement the Fellenius method, the simplified Bishop method and the simplified Janbu method exactly as the textbook formulas state them. Next, you build one framework in which the inclination of the interslice forces is a variable. With this framework, you check by residuals that the simplified Bishop and simplified Janbu methods are special cases of it, and that the Spencer method satisfies both force and moment equilibrium. Finally, on a slip surface that is not a circle, you see that the choice of the center of moments changes the factor of safety.
 
 This practice assumes that you have read [Chapter 2](what-is-limit-equilibrium-method.md) and [Chapter 3](lem-in-practice-mechanical-perspective.md) and finished [Practice 1](practice-infinite-slope.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
@@ -18,13 +18,15 @@ This practice assumes that you have read [Chapter 2](what-is-limit-equilibrium-m
 
 ## What you build
 
-The slope is the same as in Figure 1 of Chapter 1. The toe is at $x=0$ and the crest at $x=15$ m. The slope is 10 m high (a gradient of 1:1.5), and the ground stays flat to the right of the crest. The {term}`slip surface` is a circular arc with center $(6, 18)$ and radius 19.31 m. The arc leaves the ground at $x=-1$ m, left of the toe, and enters it at $x=23.58$ m, right of the crest. The soil is the same as in [Practice 1](practice-infinite-slope.md): $\gamma=18$ kN/m³, $c'=10$ kPa and $\phi'=30^\circ$. The slope is dry, except in the second half of Section 5, where a water table is added. On this basis, you compute the {term}`factor of safety` of this circle with four methods.
+The slope is the same as in {numref}`fig-c00-slope-overview` of Chapter 1. The toe is at $x=0$ and the crest at $x=15$ m. The slope is 10 m high (a gradient of 1:1.5), and the ground stays flat to the right of the crest. The {term}`slip surface` is a circular arc with center $(6, 18)$ and radius 19.31 m. The arc leaves the ground at $x=-1$ m, left of the toe, and enters it at $x=23.58$ m, right of the crest. The soil is the same as in [Practice 1](practice-infinite-slope.md): $\gamma=18$ kN/m³, $c'=10$ kPa and $\phi'=30^\circ$. The slope is dry, except in the second half of Section 5, where a water table is added. On this basis, you compute the {term}`factor of safety` of this circle with four methods.
 
 ```{figure} ./figures/fig_c00_slope_overview.svg
 :name: fig-slices-slope-overview
 :alt: The circular slip surface assumed in the slope, the sliding mass, six slices, and the weight, normal force and shear force on one slice
 
-The slope and circle computed in this practice. They are the same as in Figure 1 of Chapter 1, and the mass slides to the left. The six slices of the figure give the table of Section 1
+The slope and circle computed in this practice
+
+The mass slides to the left. The six slices of the figure give the table of Section 1.
 ```
 
 The coordinates and directions are the same as in Practice 1. The $x$ axis points horizontally to the right and the $z$ axis vertically upward. The unit normal vector $\boldsymbol{n}_i$ of a base points out of the {term}`sliding mass`. The unit vector in the direction of sliding is $\boldsymbol{m}_i$. Lengths are in m, and forces are in kN per meter of depth (kN/m). You build the following.
@@ -94,7 +96,7 @@ Next, write the slice table. Every quantity is a NumPy array ordered from the le
 
 When a water table `water_level` is given, the {term}`pore water pressure` on a base is the hydrostatic pressure at the depth measured vertically from the water table. This is the same rule as `"vertical"` in `pore_pressure` of Practice 1. Where the water table is above the ground surface, the water table is set to the ground surface, and water above the ground is ignored. The unit weight of the soil stays $\gamma$ below the water table too. This is so that Section 5 isolates the effect of the pore water pressure alone.
 
-With the six slices of Figure 1, the table is as follows. The output shown in this practice comes from `run_slices.py`, which you run at the end of Section 7.
+With the six slices of {numref}`fig-slices-slope-overview`, the table is as follows. The output shown in this practice comes from `run_slices.py`, which you run at the end of Section 7.
 
 ```{literalinclude} examples/output/run_slices.txt
 :language: text
@@ -314,7 +316,7 @@ Find $F_m(\theta)$ and $F_f(\theta)$ while varying $\theta$.
 :name: fig-e2-theta-curves
 :alt: Two curves of the factor of safety from moment equilibrium and from force equilibrium, plotted against the inclination of the resultant interslice force, with the points of the simplified Bishop, simplified Janbu and Spencer methods
 
-The inclination $\theta$ of the resultant interslice force, and the factors of safety from the two equilibrium conditions. $F_m$ at $\theta=0$ is the simplified Bishop method and $F_f$ the simplified Janbu method; the point where the two curves cross is the solution of the Spencer method
+The inclination $\theta$ of the resultant interslice force, and the factors of safety from the two equilibrium conditions
 ```
 
 Where the two curves cross, the same $F_s$ and $\theta$ make both the force and moment residuals zero. This is the solution of the Spencer method (Spencer, 1967) of [Chapter 2, Section 5.1](#what-section-5-1). The crossing is found by solving $F_m(\theta)-F_f(\theta)=0$ for $\theta$ with the secant method. Write `spencer(s, center)` and check it with a test.
@@ -347,7 +349,7 @@ As the number of slices $n$ changes, the four methods give the following values.
 :end-before: 3. one framework
 ```
 
-Beyond $n=50$, no method changes much in the first three digits. Even with the six slices of Figure 1, the values differ by only about 2%. As [Chapter 3, Section 11.5](#practice-section-11-5) showed, check that the values settle as the number of slices changes before comparing methods.
+Beyond $n=50$, no method changes much in the first three digits. Even with the six slices of {numref}`fig-slices-slope-overview`, the values differ by only about 2%. As [Chapter 3, Section 11.5](#practice-section-11-5) showed, check that the values settle as the number of slices changes before comparing methods.
 
 Next, put the water table on the horizontal line $z=4$ m. As decided in Section 1, the soil below the water table also keeps $\gamma=18$ kN/m³.
 
@@ -493,7 +495,7 @@ Click a question to see its answer. Do the (Try it) questions in `lem-practice`.
 It checked that, on every slice, the cross product of the position vector $\boldsymbol{r}_i$ from the center of the circle to the base point and the base normal $\boldsymbol{n}_i$ is only the size of rounding error. Since the cross product is zero, the line of action of each base normal force passes through the center and has no moment about it. (→[Section 1](#slices-section-1))
 :::
 
-:::{dropdown} Q2. (Try it) For the six slices of Figure 1, find $m_{\alpha,i}$ of each slice at the solution of the simplified Bishop method. Which slice has the smallest?
+:::{dropdown} Q2. (Try it) For the six slices of {numref}`fig-slices-slope-overview`, find $m_{\alpha,i}$ of each slice at the solution of the simplified Bishop method. Which slice has the smallest?
 :icon: question
 
 Compute `s = make_slices(Circle(), 6)` and `fs = bishop(s)`. Then compute `np.cos(s.alpha) + np.sin(s.alpha) * s.tan_phi / fs`. From left to right, the values are 0.894, 0.987, 1.033, 1.032, 0.973 and 0.822. The smallest is the sixth slice, whose base is steepest ($\alpha=53.5^\circ$). The first slice, on the exit side, has a gentle base ($\alpha=-14.9^\circ$), so its value stays at 0.894. $m_{\alpha,i}$ approaches zero when a base near the exit rises steeply ($\alpha_i$ a large negative value). (→[Section 2](#slices-section-2))
