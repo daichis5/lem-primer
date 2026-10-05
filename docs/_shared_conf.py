@@ -189,6 +189,7 @@ html_css_files = [
     "sidebar-links.css",
     "lists.css",
     "equations.css",
+    "figures.css",
     "header.css",
     "headings.css",
     "cards.css",
