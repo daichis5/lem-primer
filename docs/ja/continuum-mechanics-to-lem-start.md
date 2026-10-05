@@ -827,38 +827,14 @@ $$
 
 ここまでの流れをまとめると，次のようになる．
 
-$$
-\boxed{
-\begin{array}{c}
-\text{連続体の応力場と各点のつり合い}\\[1mm]
-\boldsymbol{\sigma},\quad
-\nabla\!\cdot\!\boldsymbol{\sigma}+\rho\boldsymbol{b}=\boldsymbol{0}
-\\[2mm]
-\downarrow\\[2mm]
-\text{すべり面上の表面力}\\[1mm]
-\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}
-\\[2mm]
-\downarrow\\[2mm]
-\text{法線成分とせん断成分に分ける}\\[1mm]
-\sigma_n,\quad\boldsymbol{\tau}
-\\[2mm]
-\downarrow\quad\text{有効応力}\\[2mm]
-\sigma_n'=\sigma_n-u
-\\[2mm]
-\downarrow\quad\text{Mohr--Coulomb則}\\[2mm]
-\tau_f=c'+\sigma_n'\tan\phi'
-\\[2mm]
-\downarrow\quad\text{安全率}\\[2mm]
-\tau_m=\tau_f/F_s
-\\[2mm]
-\downarrow\quad\text{面積分と，底面ごとのモデル化}\\[2mm]
-N_i,\quad U_i,\quad T_i
-\\[2mm]
-\downarrow\quad\text{つり合い式と，LEMに固有の仮定}\\[2mm]
-F_s\ \text{と各合力}
-\end{array}
-}
-$$ (eq-start-summary)
+```{figure} ./figures/fig_c05_summary_flow.svg
+:name: fig-c05-summary-flow
+:alt: 1節から9節の段階を上から順に並べ，応力場と各点のつり合いから，表面力，垂直応力とせん断応力，有効垂直応力，せん断強度，動員せん断応力，底面の合力を経て，安全率と各合力に至る流れを示した図
+
+連続体の応力から安全率までの流れ
+
+1節から6節は点ごとの応力を，7節から9節はスライスやカラムごとの合力を扱う．矢印には，次の段階に進むときに使う式や行う操作を書いている．
+```
 
 ---
 
