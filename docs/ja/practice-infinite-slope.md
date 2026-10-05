@@ -224,7 +224,7 @@ $$ (eq-infinite-fs)
 :pyobject: pore_pressure
 ```
 
-地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比較する．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．つまり，同じ地下水位でも，間隙水圧の算定方法だけで，安全率が2割以上異なる．2つの算定方法の比が $\cos^2\beta$ になることを，テストで確認する．
+地下水位が地表にあるとき（$h_w=z=5$ m，$\beta=30^\circ$）を比較する．$w=\gamma_{sat}z=100$ kPa なので，$\sigma_n=75.00$ kPa，$\tau=43.30$ kPa である．斜面に平行な浸透では，$u=36.79$ kPa で $F_s=0.740$ になる．一方，鉛直の静水圧では $u=49.05$ kPa で，$F_s$ は0.577まで下がる．つまり，同じ地下水位でも，間隙水圧の算定方法だけで，安全率が2割以上異なる．2つの算定方法による $u$ の比が $\cos^2\beta$ になることを，テストで確認する．
 
 ```{literalinclude} examples/test_infinite_slope.py
 :language: python
