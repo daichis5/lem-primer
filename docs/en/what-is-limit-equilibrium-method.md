@@ -2,7 +2,7 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: "0970d91"
+translated_from: "7918faa"
 translated_on: 2026-10-05
 ---
 
@@ -174,7 +174,15 @@ $$ (eq-what-indeterminacy)
 This is the static indeterminacy mentioned at the start of this chapter.
 
 ```{note}
-This table does not count the point where the base normal force $N_i$ acts as an unknown. That amounts to adopting, in advance, the customary assumption that $N_i$ acts at the middle of the base. Textbook counts that include these points of action, together with the Mohr–Coulomb equations, give $6n-2$ unknowns and $4n$ equations. If $n$ of the $2n-2$ missing conditions are supplied by assuming that $N_i$ acts at the middle of the base, $n-2$ remain, which agrees with the count in this table.
+The table in Section 3.1 does not count the point where the base normal force $N_i$ acts as an unknown. That amounts to adopting, in advance, the customary assumption that $N_i$ acts at the middle of the base. Some textbooks also count this point of action and the base shear force $T_i$ as unknowns, and include the Mohr–Coulomb equation, Eq. {eq}`eq-what-base-shear`, among the equations. From that count, two steps lead to the count in the table in Section 3.1.
+
+| Step | Unknowns | Equations | Unknowns minus equations |
+|---|---:|---:|---:|
+| Also count $T_i$ and the point of action of $N_i$ | $6n-2$ | $4n$ | $2n-2$ |
+| Assume that $N_i$ acts at the middle of the base | $5n-2$ | $4n$ | $n-2$ |
+| Eliminate $T_i$ with Eq. {eq}`eq-what-base-shear` (the table in Section 3.1) | $4n-2$ | $3n$ | $n-2$ |
+
+The assumption about the point of action reduces the difference by $n$. Eliminating $T_i$ removes $n$ unknowns and $n$ equations, so the difference does not change.
 ```
 
 #### 3.2 What a continuum analysis adds
