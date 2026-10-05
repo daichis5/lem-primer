@@ -250,7 +250,7 @@ D_i=-\boldsymbol{n}_i\cdot\boldsymbol{p}
 +\frac{\tan\phi_i'}{F_s}\,\boldsymbol{e}_i\cdot\boldsymbol{p}
 $$ (eq-slices-normal)
 
-$\theta=0$ なら $\boldsymbol{p}$ は鉛直上向きで，$D_i$ は式 {eq}`eq-slices-bishop` の $m_{\alpha,i}$ に一致する．つまり，式 {eq}`eq-slices-normal` は，簡易Bishop法の $N_i$ を，傾いたスライス間力に拡張したものである．一方，各スライスの $\boldsymbol{d}$ を底面に平行にとる（$\theta$ をスライスごとに $\alpha_i$ とする）と，$D_i=1$ で，$N_i=W_i\cos\alpha_i$ になる．これはFellenius法の $N_i$ である．$\theta$ がスライスごとに異なるので，Fellenius法は，$\theta$ を1つに決定するこの枠組みには入らない．
+$\theta=0$ なら $\boldsymbol{p}$ は鉛直上向きで，$D_i$ は式 {eq}`eq-slices-bishop` の $m_{\alpha,i}$ に一致する．つまり，式 {eq}`eq-slices-normal` は，簡易Bishop法の $N_i$ を，傾いたスライス間力に拡張したものである．一方，各スライスの $\boldsymbol{d}$ を底面に平行にとる（$\theta$ をスライスごとに $\alpha_i$ とする）と，$D_i=1$ で，$N_i=W_i\cos\alpha_i$ になる．これはFellenius法の $N_i$ である．$\theta$ がスライスごとに異なるので，Fellenius法は，全スライスで共通の $\theta$ を使うこの枠組みには入らない．
 
 ```{literalinclude} examples/slices.py
 :language: python
@@ -264,7 +264,7 @@ $\theta=0$ なら $\boldsymbol{p}$ は鉛直上向きで，$D_i$ は式 {eq}`eq-
 :pyobject: residuals
 ```
 
-$\theta$ を決定すれば，残差は $F_s$ だけの関数になる．モーメントの残差を0にする $F_s$ を $F_m(\theta)$，力の残差を0にする $F_s$ を $F_f(\theta)$ と表記する．どちらも，割線法で求める．割線法は，2点を通る直線が0になる点を次の点とする反復で，ニュートン法の微分を差分に置き換えたものにあたる．
+$\theta$ を固定すれば，残差は $F_s$ だけの関数になる．モーメントの残差を0にする $F_s$ を $F_m(\theta)$，力の残差を0にする $F_s$ を $F_f(\theta)$ と表記する．どちらも，割線法で求める．割線法は，2点を通る直線が0になる点を次の点とする反復で，ニュートン法の微分を差分に置き換えたものにあたる．
 
 ```{literalinclude} examples/slices.py
 :language: python
@@ -477,7 +477,7 @@ uv run python run_slices.py
 - Fellenius法，簡易Bishop法，簡易Janbu法は，教科書の式のとおりに実装できる．後の2つは右辺にも $F_s$ が現れるので，反復して求める（→[2節](#slices-section-2)）
 - スライス間力の合力の傾き $\theta$ を変数にすると，各スライスの $N_i$ が1本の式で定まる．$\theta=0$ でモーメントの残差を0にすると簡易Bishop法に，力の残差を0にすると簡易Janbu法になる（→[3節](#slices-section-3)）
 - $F_m(\theta)$ と $F_f(\theta)$ の交点がSpencer法の解で，力とモーメントの残差がともに0になる．円弧では $F_m$ が $\theta$ にほとんどよらないので，簡易Bishop法とSpencer法が近い（→[4節](#slices-section-4)）
-- 分割数を増加させて値が落ち着くことを確認してから，手法を比較する．安全率のほかに，有効垂直力が負になる底面がないかも確認する．Fellenius法の値は，地下水位があるとき，有効垂直力の近似の仕方でも変わる（→[5節](#slices-section-5)）
+- 分割数を増加させて値が落ち着くことと，有効垂直力が負になる底面がないことを確認してから，手法を比較する．Fellenius法の値は，地下水位があるとき，有効垂直力の近似の仕方でも変わる（→[5節](#slices-section-5)）
 - 平面のすべり面では，どの手法も無限斜面の値に一致する．どのスライスも単独でつり合うからである（→[6節](#slices-section-6)）
 - 円弧以外の面では，力のつり合いを満たさない方法ほど，モーメントの中心の選択が値に表れる（→[7節](#slices-section-7)）
 

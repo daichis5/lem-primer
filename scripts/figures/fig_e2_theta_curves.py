@@ -50,7 +50,7 @@ fig = Figure(
     360,
     L("スライス間力の合力の傾きと，2つのつり合いから求めた安全率",
       "The inclination of the interslice resultant, and the factors of safety from two equilibria"),
-    L("第1章の図1の円弧で，スライス間力の合力の傾き θ を決定して，モーメントのつり合いから求めた安全率 F_m と，"
+    L("第1章の図1の円弧で，スライス間力の合力の傾き θ を固定して，モーメントのつり合いから求めた安全率 F_m と，"
       "力のつり合いから求めた安全率 F_f を描いた図．θ = 0 の F_m は簡易Bishop法，F_f は簡易Janbu法の値で，"
       "2本の曲線が交わる点がSpencer法の解である．",
       "For the circle of Figure 1 in Chapter 1, the inclination θ of the resultant interslice force is "

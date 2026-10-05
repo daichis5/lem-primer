@@ -255,12 +255,12 @@ def secant(f, x0, x1, tol=1e-10, max_iter=100):
 
 
 def fs_moment(s, theta, center, fs=1.5):
-    """theta を決定したとき，center まわりのモーメントの残差を 0 にする F_s．"""
+    """theta を固定したとき，center まわりのモーメントの残差を 0 にする F_s．"""
     return secant(lambda f: residuals(s, f, theta, center)[1], fs, 1.1 * fs)
 
 
 def fs_force(s, theta, fs=1.5):
-    """theta を決定したとき，力の残差を 0 にする F_s．"""
+    """theta を固定したとき，力の残差を 0 にする F_s．"""
     return secant(lambda f: residuals(s, f, theta, (0.0, 0.0))[0], fs, 1.1 * fs)
 
 
