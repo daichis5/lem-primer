@@ -143,17 +143,19 @@ $$ (eq-start-stress-field)
 で表す．すべり面に沿った応力の分布は，離散化する前から未知の関数である．この分布を連続体の解析として求めるには，つり合い式だけでなく，構成則，変位の適合条件，境界条件なども必要である．LEMは，ふつう，この境界値問題をすべて解く代わりに，すべり土塊を有限個のスライスやカラムに分け，それぞれの合力とつり合いを扱う．
 
 ```{note}
-**連続体力学とのつながり**
+**各点のつり合いと，9節のつり合い式**
 
-静止している連続体では，各点での力のつり合いは
+静止している連続体では，各点で次の力のつり合いが成り立つ．
 
 $$
 \nabla\!\cdot\!\boldsymbol{\sigma}+\rho\boldsymbol{b}=\boldsymbol{0}
 $$
 
-と書ける．ここで $\rho\boldsymbol{b}$ は単位体積あたりの物体力で，重力だけなら $\boldsymbol{b}=\boldsymbol{g}$ である．また，偶力を考えないふつうの連続体では，角運動量のつり合いから $\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$ が成り立つ．
+ここで $\rho\boldsymbol{b}$ は単位体積あたりの物体力で，重力だけなら $\boldsymbol{b}=\boldsymbol{g}$ である．また，各点のモーメントのつり合いから，応力テンソルは対称になる（$\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$）．材料力学で学ぶ共役せん断応力の関係 $\tau_{xy}=\tau_{yx}$ は，この対称性を成分で書いたものである．
 
-ただし，この章でこの後に使うのは，次の節のCauchyの公式 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ だけである．上の2つの式は，この章の出発点が，連続体力学のどこにつながっているかを示すために載せている．
+上の式をスライスやカラムの体積で積分すると，[9節](#section-9)の力のつり合い式になる．発散定理によって，$\nabla\!\cdot\!\boldsymbol{\sigma}$ の体積積分が，境界に働く表面力 $\boldsymbol{\sigma}\boldsymbol{n}$ の面積分に変わるからである．物体力の積分は自重 $\boldsymbol{W}_i$ に，表面力の積分は底面の $N_i$ と $T_i$，隣のカラムからの $\boldsymbol{Q}_{ij}$，地表の荷重などの $\boldsymbol{P}_i$ になる．
+
+また，9節の基準点 $O$ から各点への位置ベクトルを $\boldsymbol{r}$ とし，$\boldsymbol{r}$ と上の式の外積を体積で積分する．発散定理で面積分に変えると，$\boldsymbol{\sigma}$ の非対称な部分による体積積分が残る．応力テンソルは対称なので，この項は0になり，9節のモーメントのつり合い式が得られる．
 ```
 
 ---
