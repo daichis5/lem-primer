@@ -570,7 +570,7 @@ Hovland法は，初期の一般的な3次元のLEMである．すべり土塊を
 
 Hungrは，簡易Bishop法を3次元に直接拡張した．Ugaiらも，簡便分割法，簡易Bishop法，簡易Janbu法，Spencer法を3次元に拡張する一連の研究を行った．
 
-##### 3次元の簡易Bishop法の考え方
+##### Hungrの3次元の簡易Bishop法
 
 - 2次元と同じく，カラム間のせん断力の鉛直成分を無視する
 - 各カラムの鉛直方向の力のつり合いから，底面垂直力を求める
@@ -581,7 +581,7 @@ Hungrは，簡易Bishop法を3次元に直接拡張した．Ugaiらも，簡便�
 
 ##### Ugaiらの位置付け
 
-Ugaiらは，まず3次元の簡便分割法を示し，その後，簡易Bishop法，簡易Janbu法，Spencer法を3次元に拡張した．このことから，3次元のLEMの発展は，**2次元での不静定性の解消の仕方を，カラムの集まりに移した，いくつもの系譜**からなることが分かる．1つの3次元の公式にまとまるものではない．
+Ugaiらは，まず3次元の簡便分割法を示し，その後，簡易Bishop法，簡易Janbu法，Spencer法を3次元に拡張した．このことから，3次元のLEMの発展は，**2次元での不静定性の解消の仕方を，カラムの集まりに移した，いくつもの系譜**からなることが分かる．1つの3次元の公式にまとまるものではない．同じ3次元の簡易Bishop法でも，Ugaiらの定式化は，カラムごとにつり合いをとる向きがHungrと違う．また，全体の鉛直方向の力のつり合いも満たす．
 
 **主な一次論文**：
 
@@ -592,6 +592,8 @@ Ugaiらは，まず3次元の簡便分割法を示し，その後，簡易Bishop
 
 ---
 
+(what-section-8-3)=
+
 #### 8.3 3次元のSpencer法：一定の向きの仮定を，平面と空間に拡張する
 
 2次元のSpencer法では，スライス間力の合力が，共通の傾きの角をもつ．3次元への拡張では，この「平行な内力」という考えを，2方向のカラムの境界での合力の向きや，共通の方向の面として表す．
@@ -601,13 +603,19 @@ Ugaiらは，まず3次元の簡便分割法を示し，その後，簡易Bishop
 - 主なすべり方向，または回転軸
 - 2組のカラム間力の向きの関係
 - 底面の接平面内でのせん断力の向き
-- 3方向の力のつり合いと，使うモーメントのつり合い条件
+- 使う力とモーメントのつり合い条件
 
-3次元のSpencer型の手法は，カラム間力の向きの仮定のもとで，Hovland法や3次元の簡易Bishop法より多くのつり合い条件を満たすことを目指す．ただし，2次元で「すべての内力が平行」とした1つの角度を，3次元にどう拡張するかは，1通りには決まらない．論文やソフトウェアによって，どの成分を平行とするか，どの軸まわりのモーメントのつり合いを使うかが違う．
+3次元のSpencer型の手法は，カラム間力の向きの仮定のもとで，Hovland法や3次元の簡易Bishop法より多くのつり合い条件を満たすことを目指す．ただし，2次元で「すべての内力が平行」とした1つの角度を，3次元にどう拡張するかは，1通りには決まらない．論文によって，どの成分を平行とするかと，どの方向の力のつり合いを解くかが違う．
+
+一方，モーメントのつり合いは，多くの論文が，すべり方向に直交する水平な軸まわりの1つだけを使う．つまり，6つのつり合い式のうち，対称性に頼らずに満たすのは3つか4つである．対称なすべり土塊では，残りの式が，土塊全体で対称性によって成り立つ．Chen and Chameauは，この対称性を使って，土塊の半分だけを解いた．
 
 Jiang and Yamagamiは，2次元のSpencer法の安全率の式をカラム法に拡張し，動的計画法で3次元の{term}`臨界すべり面`を探す方法と組み合わせた．
 
-**代表的な一次論文**：[J.-C. Jiang and T. Yamagami (2004), “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method,” *Soils and Foundations*, 44(4), 127–135. DOI: 10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
+**代表的な一次論文**：
+
+- [R.-H. Chen and J.-L. Chameau (1983), “Three-dimensional limit equilibrium analysis of slopes,” *Géotechnique*, 33(1), 31–40. DOI: 10.1680/geot.1983.33.1.31](https://doi.org/10.1680/geot.1983.33.1.31)
+- [K. Ugai and K. Hosobori (1988), “Extension of simplified Bishop method, simplified Janbu method and Spencer's method to three dimensions,” *土木学会論文集*, No. 394/III-9, 21–26. DOI: 10.2208/jscej.1988.394_21](https://doi.org/10.2208/jscej.1988.394_21)
+- [J.-C. Jiang and T. Yamagami (2004), “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method,” *Soils and Foundations*, 44(4), 127–135. DOI: 10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 
 ---
 
@@ -635,7 +643,8 @@ $$ (eq-what-3d-lambda-y)
 
 - 2次元の $X/E=\lambda f(x)$ を，2方向のカラム間力の関数に一般化する
 - カラム間力の合力の向きの変化を，任意の形の関数で表す
-- 力とモーメントのつり合いを同時に満たす，安全率と倍率を探す
+- 力のつり合いとモーメントのつり合いから，それぞれ安全率を求め，両者が一致する倍率を探す
+- すべり方向は，前もって仮定する
 - 斜面，地層，すべり面，間隙水圧を，3次元の空間でモデル化する
 
 この方法で，3次元のLEMはより一般的になる．一方で，仮定しなければならない内力の関数や，未知の倍率，収束計算が増える．自由度が増えた分だけ，入力した仮定が結果に与える影響を，よく確かめなければならない．
@@ -651,6 +660,7 @@ $$ (eq-what-3d-lambda-y)
 ##### 考え方の要点
 
 - 平面の形とすべり面が対称であることを，前提にしない
+- 全体すべり方向を，つり合いの未知量として解く
 - 2つの水平な軸の方向について，底面の力とカラム間力をはっきり書く
 - 2次元の各手法の「何を無視し，何をつり合わせるか」を，3次元に対応させる
 - Morgenstern–Price型では，2方向の内力の関数と係数を加える
@@ -670,9 +680,11 @@ $$ (eq-what-3d-lambda-y)
 | Hovland法 | Fellenius型 | 無視 | 主に全体の抵抗力と滑動力を足し合わせる | 単純だが，静力学的に完全ではない | Hovland (1977) |
 | Hungrの3次元の簡易Bishop法 | 簡易Bishop法 | せん断力の鉛直成分を簡略化 | カラムの鉛直方向の力＋全体のモーメント | 回転する，比較的対称な問題と相性がよい | Hungr (1987) |
 | Ugaiらの系統 | 簡易Bishop法・簡易Janbu法・Spencer法 | 元の2次元の手法に合わせて仮定 | 手法ごとに違う | 2次元の各系統を，それぞれ3次元に拡張した | Ugai et al. (1986); Ugai & Hosobori (1988) |
-| 3次元に拡張したSpencer法 | Spencer法 | 空間の中で平行と仮定 | 力＋使うモーメントの条件 | 3次元での「平行」の定め方が，実装によって違う | Jiang & Yamagami (2004) |
+| 3次元に拡張したSpencer法 | Spencer法 | 合力の傾きを共通と仮定 | 力＋回転軸まわりのモーメント | 3次元での「平行」の定め方が，実装によって違う | Chen & Chameau (1983); Ugai & Hosobori (1988); Jiang & Yamagami (2004) |
 | Lam–Fredlundの3次元のGLE | Morgenstern–Price法・GLE | 2方向の関数で表す | 力＋モーメント | 一般性は高いが，仮定と未知量も多い | Lam & Fredlund (1993) |
 | Cheng–Yip | 簡易Bishop法・簡易Janbu法・Morgenstern–Price法 | 2方向で，2次元の各仮定を拡張 | 手法ごとに違う | 非対称な3次元の形を，直接扱う | Cheng & Yip (2007) |
+
+表の手法は，どれも，土塊全体の6つのつり合い式を，すべては解かない．6つすべてを満たす3次元のLEMは，土塊全体を1つの物体として扱う形で示されている（例えば，Zheng 2012）．各手法がどの式を満たすかは，[付録「3次元のLEMが満たすつり合い式」](three-dimensional-equilibrium.md)にまとめている．
 
 #### 3次元の安全率を読むときの注意
 
@@ -1002,8 +1014,13 @@ $f(x)$ は，内力の向きが場所によってどう変わるかを表す関�
 
 ##### 3次元に拡張したSpencer法
 
-17. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
+17. Chen, R.-H., and Chameau, J.-L. (1983). “Three-dimensional limit equilibrium analysis of slopes.” *Géotechnique*, 33(1), 31–40. [https://doi.org/10.1680/geot.1983.33.1.31](https://doi.org/10.1680/geot.1983.33.1.31)
+18. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 
 ##### 非対称な斜面への3次元の拡張
 
-18. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
+19. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
+
+##### 6つのつり合い式を満たす3次元の方法
+
+20. Zheng, H. (2012). “A three-dimensional rigorous method for stability analysis of landslides.” *Engineering Geology*, 145–146, 30–40. [https://doi.org/10.1016/j.enggeo.2012.06.010](https://doi.org/10.1016/j.enggeo.2012.06.010)
