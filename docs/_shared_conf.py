@@ -220,6 +220,10 @@ linkcheck_ignore = [
     # requests, so CI cannot verify this link. Remove this entry if it becomes
     # public.
     r"https://github\.com/ibaraki-kozo-lab/lem-lab",
+    # The Wayback Machine returned 429 in CI after #30 merged, although the
+    # same snapshot had passed on the PR. Skip snapshot URLs so that rate
+    # limiting does not fail this advisory check.
+    r"https://web\.archive\.org/web/\d+/",
 ]
 linkcheck_retries = 2
 linkcheck_timeout = 30
