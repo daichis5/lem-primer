@@ -1,0 +1,19 @@
+/* Figure captions.
+
+   A caption is a short title, and the paragraph after it, when there is one,
+   explains the figure (docutils calls it the legend). Furo centres the whole
+   caption, which suits the title but makes several sentences hard to read.
+   The legend is set left-aligned instead, in a box ruled on its left, so it
+   reads as a note on the figure rather than as body text. */
+
+figcaption > div.legend {
+  margin: 0.5rem 0 0;
+  padding: 0.125rem 0 0.125rem 0.75rem;
+  border-left: 3px solid var(--color-background-border);
+  color: var(--color-foreground-secondary);
+  text-align: start;
+}
+
+figcaption > div.legend > p {
+  margin: 0;
+}

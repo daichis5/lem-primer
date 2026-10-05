@@ -117,10 +117,10 @@ compare a document with it.
   the endings: follow a である． with a different ending, and where three
   sentences in a row end in a verb, join two of them or open one with a
   connective or a linking phrase (そのため，, つまり，, 円弧では，). Noun
-  endings (体言止め) are for tables, captions, glossary entries, list items,
-  and review answers (see Review questions).
-- A list item and a caption have no closing ．; a sentence inside one that
-  another follows keeps its ．.
+  endings (体言止め) are for tables, figure titles, glossary entries, list
+  items, and review answers (see Review questions).
+- A list item and a figure's title have no closing ．; a sentence inside one
+  that another follows keeps its ．.
 - Link each sentence to the one before when the link is a cause, a
   condition, a contrast or the next step:
   「…滑動力とつり合っている．つまり，両者の大きさは等しい．」
@@ -390,6 +390,11 @@ from the committed files.
 - A figure is 760 px wide, the width of the text column, so labels show at
   their set size (14 px, 13 px for secondary text). It has no title inside;
   the caption carries it.
+- A caption is a short title, a noun phrase without ．. What the figure needs
+  explained goes in a paragraph after it, separated by a blank line: docutils
+  makes it the legend, which `docs/_static/figures.css` sets left-aligned
+  under the centred title. The legend is body text, its sentences ending
+  with ．.
 - Labels, `<title>` and `<desc>` follow the terms and notation of the body.
   After a change, look at the figure in both languages in a browser: no
   label may cross an arrow or leave its panel.

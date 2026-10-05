@@ -25,18 +25,18 @@
   <polygon points="401.3,396.7 394.8,382.9 407.8,382.9" fill="#d64545" stroke-linejoin="round"/>
   <text x="411.3" y="344.5" class="m" font-size="17" fill="#d64545" text-anchor="start"><tspan font-style="italic">W</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
   <circle cx="401.3" cy="280.6" r="3.2" fill="#d64545"/>
-  <line x1="305" y1="404" x2="354.5" y2="404" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="360,404 346.2,410.5 346.2,397.5" fill="#7c3aed" stroke-linejoin="round"/>
-  <text x="332.5" y="428" class="m" font-size="17" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">E</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan font-size="11.9" font-style="normal">−1</tspan></text>
-  <line x1="305" y1="404" x2="305" y2="379.5" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="305,374 311.5,387.8 298.5,387.8" fill="#7c3aed" stroke-linejoin="round"/>
-  <text x="311" y="370" class="m" font-size="17" fill="#7c3aed" text-anchor="start"><tspan font-style="italic">X</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan font-size="11.9" font-style="normal">−1</tspan></text>
-  <line x1="493" y1="272.1" x2="456" y2="272.1" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="450.5,272.1 464.3,265.6 464.3,278.6" fill="#7c3aed" stroke-linejoin="round"/>
-  <text x="442.5" y="278.1" class="m" font-size="17" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">E</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
-  <line x1="493" y1="272.1" x2="493" y2="290.5" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
-  <polygon points="493,296.1 486.5,282.2 499.5,282.2" fill="#7c3aed" stroke-linejoin="round"/>
-  <text x="487" y="312.1" class="m" font-size="17" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">X</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="300" y1="404" x2="349.5" y2="404" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="355,404 341.2,410.5 341.2,397.5" fill="#7c3aed" stroke-linejoin="round"/>
+  <text x="327.5" y="428" class="m" font-size="17" fill="#7c3aed" text-anchor="middle"><tspan font-style="italic">E</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan font-size="11.9" font-style="normal">−1</tspan></text>
+  <line x1="300" y1="404" x2="300" y2="379.5" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="300,374 306.5,387.8 293.5,387.8" fill="#7c3aed" stroke-linejoin="round"/>
+  <text x="306" y="370" class="m" font-size="17" fill="#7c3aed" text-anchor="start"><tspan font-style="italic">X</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan font-size="11.9" font-style="normal">−1</tspan></text>
+  <line x1="498" y1="272.1" x2="461" y2="272.1" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="455.5,272.1 469.3,265.6 469.3,278.6" fill="#7c3aed" stroke-linejoin="round"/>
+  <text x="447.5" y="278.1" class="m" font-size="17" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">E</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <line x1="498" y1="272.1" x2="498" y2="290.5" stroke="#7c3aed" stroke-width="2.6" stroke-linecap="butt"/>
+  <polygon points="498,296.1 491.5,282.2 504.5,282.2" fill="#7c3aed" stroke-linejoin="round"/>
+  <text x="492" y="312.1" class="m" font-size="17" fill="#7c3aed" text-anchor="end"><tspan font-style="italic">X</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
   <circle cx="300" cy="404" r="3" fill="#7c3aed"/>
   <circle cx="498" cy="272.1" r="3" fill="#7c3aed"/>
   <line x1="284" y1="470" x2="284" y2="404" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>

@@ -61,18 +61,17 @@ fig.arrow(v.p(sm.g), add(v.p(sm.g), (0, sm.W * FORCE)), WEIGHT)
 fig.math(add(v.p(sm.g), (10, 0.55 * sm.W * FORCE)), "W_i", color=WEIGHT)
 fig.circle(v.p(sm.g), 3.2, fill=WEIGHT)
 
-# Interslice forces at heights h above each base corner.
+# Interslice forces, starting at the points where they act: heights h above each base corner.
 pl, pr = sm.thrust_points()
 (e_l, e_r), (x_l, x_r) = sm.E, sm.X
-inset = 5
-fig.arrow(add(v.p(pl), (inset, 0)), add(v.p(pl), (inset + e_l * FORCE, 0)), INTER)
-fig.math(add(v.p(pl), (inset + 0.5 * e_l * FORCE, 24)), "E_{i−1}", color=INTER, anchor="middle")
-fig.arrow(add(v.p(pl), (inset, 0)), add(v.p(pl), (inset, -x_l * FORCE)), INTER)
-fig.math(add(v.p(pl), (inset + 6, -x_l * FORCE - 4)), "X_{i−1}", color=INTER)
-fig.arrow(add(v.p(pr), (-inset, 0)), add(v.p(pr), (-inset - e_r * FORCE, 0)), INTER)
-fig.math(add(v.p(pr), (-inset - e_r * FORCE - 8, 6)), "E_i", color=INTER, anchor="end")
-fig.arrow(add(v.p(pr), (-inset, 0)), add(v.p(pr), (-inset, x_r * FORCE)), INTER)
-fig.math(add(v.p(pr), (-inset - 6, x_r * FORCE + 16)), "X_i", color=INTER, anchor="end")
+fig.arrow(v.p(pl), add(v.p(pl), (e_l * FORCE, 0)), INTER)
+fig.math(add(v.p(pl), (0.5 * e_l * FORCE, 24)), "E_{i−1}", color=INTER, anchor="middle")
+fig.arrow(v.p(pl), add(v.p(pl), (0, -x_l * FORCE)), INTER)
+fig.math(add(v.p(pl), (6, -x_l * FORCE - 4)), "X_{i−1}", color=INTER)
+fig.arrow(v.p(pr), add(v.p(pr), (-e_r * FORCE, 0)), INTER)
+fig.math(add(v.p(pr), (-e_r * FORCE - 8, 6)), "E_i", color=INTER, anchor="end")
+fig.arrow(v.p(pr), add(v.p(pr), (0, x_r * FORCE)), INTER)
+fig.math(add(v.p(pr), (-6, x_r * FORCE + 16)), "X_i", color=INTER, anchor="end")
 fig.circle(v.p(pl), 3, fill=INTER)
 fig.circle(v.p(pr), 3, fill=INTER)
 
