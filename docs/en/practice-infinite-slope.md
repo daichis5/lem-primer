@@ -319,7 +319,7 @@ Click a question to see its answer. Do the (Try it) questions in `lem-practice`.
 Because the forces on the two sides of a column are equal in size and opposite in direction, and cancel. The slope is the same everywhere, so the left and right sides are in the same state. The slip surface therefore carries the whole weight of the column, and equilibrium alone determines $\sigma_n$ and $\tau$. (→[Section 2](#infinite-section-2))
 :::
 
-:::{dropdown} Q2. (Calculate) For a dry slope with $\beta=25^\circ$ and $z=3$ m, find $\sigma_n$, $\tau$ and $F_s$. The other conditions are as in Section 3.
+:::{dropdown} Q2. For a dry slope with $\beta=25^\circ$ and $z=3$ m, find $\sigma_n$, $\tau$ and $F_s$. The other conditions are as in Section 3.
 :icon: question
 
 Since $w=18\times3=54$ kPa, $\sigma_n=54\cos^2 25^\circ=44.36$ kPa and $\tau=54\sin 25^\circ\cos 25^\circ=20.68$ kPa. Then $F_s=(10+44.36\tan 30^\circ)/20.68=1.722$. Passing `base_stresses(25.0, 54.0)` to `factor_of_safety` gives the same value. (→[Section 2](#infinite-section-2), [Section 3](#infinite-section-3))

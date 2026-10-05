@@ -210,8 +210,8 @@ compare a document with it.
 Every document ends its body with `## 確認問題`, opened by the line
 「答えは問題をクリックすると開く．」.
 
-- 3 to 8 questions, about one per main section. Each is a collapsed dropdown
-  with the answer inside, so readers try before they look:
+- At least 3 questions, about one per main section. Each is a collapsed
+  dropdown with the answer inside, so readers try before they look:
 
   ```text
   :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が違うか
@@ -221,8 +221,8 @@ Every document ends its body with `## 確認問題`, opened by the line
   :::
   ```
 - Mix questions that check understanding (why something holds) with small
-  calculations marked （計算してみよう）, using numbers like those in the
-  text. Work each one through before printing its answer.
+  calculations, using numbers like those in the text. Work each one
+  through before printing its answer.
 - End an answer with a link to the section it draws on:
   （→[6節](#section-6)）. Give that heading an explicit label. Labels are
   shared by the whole site, so the second and third documents prefix theirs
@@ -333,7 +333,7 @@ for it.
   | 実践1，この実践 | Practice 1, this practice |
   | 用語集 | Glossary |
   | 確認問題，次に読む，参考文献 | Review questions, What to read next, References |
-  | （計算してみよう），（やってみよう） | (Calculate), (Try it) |
+  | （やってみよう） | (Try it) |
   | 補足A | Supplement A |
 
 - Terms are the glossary's English terms (the first paragraph of each entry
@@ -354,8 +354,8 @@ for it.
   (Chapter 1, Section 6).
   - On a practice page, the questions' opening line goes on "Do the
     (Try it) questions in `lem-practice`."
-  - A review question reads `Q1. …`, or `Q2. (Calculate) …`, and the
-    questions open with "Click a question to see its answer.".
+  - A review question reads `Q1. …`, and the questions open with "Click
+    a question to see its answer.".
   - An answer and a glossary definition end with `(→[Section 6](#section-6))`.
   - An equation is cited as Eq. {eq}`…`, or Eqs. for two.
 
