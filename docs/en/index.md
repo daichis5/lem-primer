@@ -1,15 +1,15 @@
 ---
 title: "LEM Primer"
 lang: en
-translated_from: "9b11256"
-translated_on: 2026-10-04
+translated_from: "4396db4"
+translated_on: 2026-10-05
 ---
 
 # LEM Primer
 
 **The limit equilibrium method, from first principles to how it is used in practice**
 
-The limit equilibrium method (LEM) is the most widely used way to assess the stability of slopes. Yet the factor-of-safety formulas in textbooks rarely show how they are derived, what they assume, and what they do not guarantee.
+The limit equilibrium method (LEM) is the most widely used way to assess the stability of slopes. Yet the factor-of-safety formulas in textbooks rarely show how they are derived, what they assume, and how far they apply.
 
 This primer is for readers who have not studied LEM before. It follows one thread from the stress of continuum mechanics to reading the results of a real analysis. It has three chapters of theory, practice pages that check them in code, and a shared glossary.
 

@@ -2,8 +2,8 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: "9b11256"
-translated_on: 2026-10-04
+translated_from: "4396db4"
+translated_on: 2026-10-05
 ---
 
 # What is the limit equilibrium method?
