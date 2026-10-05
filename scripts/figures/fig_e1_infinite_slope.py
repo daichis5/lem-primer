@@ -38,7 +38,7 @@ fig = Figure(
       "Forces on a column of an infinite slope, and the pore water pressure on the slip surface"),
     L("左は，無限斜面から取り出した柱に働く力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，"
       "両側の面に働く力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，"
-      "すべり面の点 P の間隙水圧の2つの決定方法．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，"
+      "すべり面の点 P の間隙水圧の2つの算定方法．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，"
       "P の圧力水頭は h_w cos²β になる．",
       "Left: the forces on a column taken from an infinite slope. The normal force N and the shear "
       "force T on the slip surface carry the weight W, and the forces on the two sides cancel. Right: "
