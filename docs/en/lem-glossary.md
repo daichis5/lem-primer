@@ -1,7 +1,7 @@
 ---
 title: "Glossary"
 lang: en
-translated_from: "4396db4"
+translated_from: "0970d91"
 translated_on: 2026-10-05
 ---
 
@@ -178,7 +178,7 @@ simplified method
 complete equilibrium method
   complete equilibrium method（静力学的に完全な方法）
 
-  A method that assumes the directions of the {term}`internal forces <internal force>` and then satisfies all force and moment equilibrium, such as the Spencer method and the Morgenstern–Price method. It is also called a rigorous method. "Complete" and "rigorous" hold only within the assumed model of internal forces, though: they do not mean an exact solution for a continuum (→[Chapter 2, Section 0](#what-section-0), [Section 5.1](#what-section-5-1))
+  A method that assumes the directions of the {term}`internal forces <internal force>` and then satisfies all force and moment equilibrium, such as the 2D Spencer method and the 2D Morgenstern–Price method. It is also called a rigorous method. "Complete" and "rigorous" hold only within the assumed model of internal forces, though: they do not mean an exact solution for a continuum. Most of the methods extended to 3D do not solve all six equilibrium equations (→[Chapter 2, Section 0](#what-section-0), [Section 5.1](#what-section-5-1), [Section 8.3](#what-section-8-3))
 
 general limit equilibrium
   general limit equilibrium (GLE)（一般極限平衡法）

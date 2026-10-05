@@ -2,7 +2,7 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: "3eed6cf"
+translated_from: "0970d91"
 translated_on: 2026-10-05
 ---
 
@@ -29,7 +29,7 @@ This chapter uses the word "rigorous" in two separate senses.
 1. **Rigor as continuum mechanics**: solving a boundary value problem for the stress and displacement fields that satisfies the constitutive law, compatibility and the boundary conditions all at once
 2. **Static rigor within LEM**: satisfying all the required force and moment equilibrium conditions under the assumed {term}`slip surface`, the assumed way strength is mobilized, and the assumed model of interslice or intercolumn forces
 
-The Spencer and Morgenstern–Price methods are sometimes called "rigorous methods." Here "rigorous" mostly has the second sense. These methods are not continuum analyses either: they do not solve for displacement compatibility or for the stress–strain relation of the soil.
+The 2D Spencer and Morgenstern–Price methods are sometimes called "rigorous methods." Here "rigorous" mostly has the second sense. These methods are not continuum analyses either: they do not solve for displacement compatibility or for the stress–strain relation of the soil.
 
 From here on, unless stated otherwise, strength follows the {term}`Mohr–Coulomb failure criterion` in terms of effective stress. The symbols are as follows.
 
@@ -528,6 +528,8 @@ A 3D extension must deal at once with the extra internal boundaries, the freedom
 
 ---
 
+(what-section-8)=
+
 ### 8. How was LEM extended to 3D?
 
 Most 3D methods extend 2D methods and were not built separately from scratch. The typical line of thought is the following.
@@ -568,7 +570,7 @@ It can represent the effect of a sliding mass of finite width, of a non-uniform 
 
 Hungr extended the simplified Bishop method directly to 3D. Ugai et al. also carried out a series of studies that extended the ordinary method of slices, the simplified Bishop method, the simplified Janbu method and the Spencer method to 3D.
 
-##### The idea of the 3D simplified Bishop method
+##### Hungr's 3D simplified Bishop method
 
 - As in 2D, ignores the vertical component of the intercolumn shear force
 - Finds the base normal force from vertical force equilibrium of each column
@@ -579,7 +581,7 @@ This extension keeps the simplified Bishop method easy to compute, while capturi
 
 ##### Where Ugai et al. stand
 
-Ugai et al. first presented the 3D ordinary method of slices, then extended the simplified Bishop, simplified Janbu and Spencer methods to 3D. This shows that the development of 3D LEM consists of **several lineages, each carrying a 2D way of closing the indeterminacy over to an assembly of columns**. It did not develop into a single 3D formula.
+Ugai et al. first presented the 3D ordinary method of slices, then extended the simplified Bishop, simplified Janbu and Spencer methods to 3D. Their 3D simplified Bishop method, though it has the same name as Hungr's, takes the equilibrium of each column in a different direction. This shows that the development of 3D LEM consists of **several lineages, each carrying a 2D way of closing the indeterminacy over to an assembly of columns**. It did not develop into a single 3D formula.
 
 **Main primary papers**:
 
@@ -590,6 +592,8 @@ Ugai et al. first presented the 3D ordinary method of slices, then extended the 
 
 ---
 
+(what-section-8-3)=
+
 #### 8.3 The 3D Spencer method: extending the constant-direction assumption to plan and space
 
 In the 2D Spencer method, the resultant interslice forces share a common angle of inclination. A 3D extension expresses this idea of "parallel internal forces" as the direction of the resultants on column boundaries in two directions, or as a plane of common direction.
@@ -599,13 +603,19 @@ In the 2D Spencer method, the resultant interslice forces share a common angle o
 - A main direction of sliding, or an axis of rotation
 - The relation between the directions of the two sets of intercolumn forces
 - The direction of the shear force in the tangent plane of the base
-- Force equilibrium in three directions, and the moment equilibrium conditions to be used
+- The force and moment equilibrium conditions to be used
 
-3D Spencer-type methods aim to satisfy more equilibrium conditions than the Hovland method or the 3D simplified Bishop method, under an assumption about the direction of the intercolumn forces. How to extend the single angle that makes "all internal forces parallel" in 2D to 3D, however, has no single answer. Papers and programs differ in which components they take as parallel and about which axes they use moment equilibrium.
+3D Spencer-type methods aim to satisfy more equilibrium conditions than the Hovland method or the 3D simplified Bishop method, under an assumption about the direction of the intercolumn forces. How to extend the single angle that makes "all internal forces parallel" in 2D to 3D, however, has no single answer. Papers differ in which components they take as parallel and in which directions they solve force equilibrium.
+
+For moment equilibrium, on the other hand, most papers use only the moment about the horizontal axis normal to the direction of sliding. As a result, they satisfy only three or four of the six equilibrium equations without relying on symmetry. For a symmetric sliding mass, the remaining equations hold for the whole mass by symmetry. Chen and Chameau used this symmetry and solved only half of the mass.
 
 Jiang and Yamagami extended the factor-of-safety equation of the 2D Spencer method to the column method, and combined it with a dynamic programming search for the 3D {term}`critical slip surface`.
 
-**Representative primary paper**: [J.-C. Jiang and T. Yamagami (2004), “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method,” *Soils and Foundations*, 44(4), 127–135. DOI: 10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
+**Representative primary papers**:
+
+- [R.-H. Chen and J.-L. Chameau (1983), “Three-dimensional limit equilibrium analysis of slopes,” *Géotechnique*, 33(1), 31–40. DOI: 10.1680/geot.1983.33.1.31](https://doi.org/10.1680/geot.1983.33.1.31)
+- [K. Ugai and K. Hosobori (1988), “Extension of simplified Bishop method, simplified Janbu method and Spencer's method to three dimensions,” *土木学会論文集*, No. 394/III-9, 21–26. DOI: 10.2208/jscej.1988.394_21](https://doi.org/10.2208/jscej.1988.394_21)
+- [J.-C. Jiang and T. Yamagami (2004), “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method,” *Soils and Foundations*, 44(4), 127–135. DOI: 10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 
 ---
 
@@ -633,7 +643,8 @@ The actual symbols for the components and the way the functions are set up diffe
 
 - Generalizes the 2D $X/E=\lambda f(x)$ to functions for intercolumn forces in two directions
 - Represents the change in direction of the resultant intercolumn forces by functions of any shape
-- Searches for the factor of safety and scale factors that satisfy force and moment equilibrium together
+- Finds a factor of safety from force equilibrium and another from moment equilibrium, and searches for the scale factors that make them agree
+- Assumes the direction of sliding in advance
 - Models the slope, the soil layers, the slip surface and the pore water pressure in 3D space
 
 This approach makes 3D LEM more general. On the other hand, it adds internal-force functions that must be assumed, unknown scale factors and iterative calculation. With more freedom, the effect of the input assumptions on the results needs careful checking.
@@ -649,6 +660,7 @@ Many early 3D methods implicitly assumed a plane of symmetry or a known main dir
 ##### Key ideas
 
 - Does not presume that the plan shape and the slip surface are symmetric
+- Solves for the direction of sliding as an unknown of the equilibrium equations
 - Writes out the base forces and intercolumn forces explicitly for two horizontal axis directions
 - Maps each 2D method's choice of "what to ignore and what to balance" onto 3D
 - In the Morgenstern–Price type, adds internal-force functions and coefficients for two directions
@@ -668,9 +680,11 @@ This work shows that the key to a 3D extension lies in **redefining in space the
 | Hovland method | Fellenius type | Ignored | Mainly sums global resisting and driving forces | Simple, but not a complete equilibrium method | Hovland (1977) |
 | Hungr's 3D simplified Bishop method | Simplified Bishop method | Vertical component of shear force simplified | Vertical force of each column + global moment | Suits rotational, fairly symmetric problems | Hungr (1987) |
 | Ugai et al.'s family | Simplified Bishop, simplified Janbu and Spencer methods | Assumed to match the original 2D method | Differs by method | Extends each 2D family to 3D | Ugai et al. (1986); Ugai & Hosobori (1988) |
-| Spencer method extended to 3D | Spencer method | Assumed parallel in space | Force + the moment conditions used | How "parallel" is defined in 3D differs by implementation | Jiang & Yamagami (2004) |
+| Spencer method extended to 3D | Spencer method | Inclination in the vertical plane containing the direction of sliding assumed common | Force + moment about the axis of rotation | How "parallel" is defined in 3D differs by paper | Chen & Chameau (1983); Ugai & Hosobori (1988); Jiang & Yamagami (2004) |
 | Lam–Fredlund's 3D GLE | Morgenstern–Price method, GLE | Expressed by functions in two directions | Force + moment | Very general, but with more assumptions and unknowns | Lam & Fredlund (1993) |
 | Cheng–Yip | Simplified Bishop, simplified Janbu and Morgenstern–Price methods | Each 2D assumption extended to two directions | Differs by method | Handles asymmetric 3D shapes directly | Cheng & Yip (2007) |
+
+Of the methods in the table whose equations have been checked, none solves all six equilibrium equations for the whole mass. 3D LEM methods that satisfy all six have been presented in a form that treats the whole mass as one body, such as Zheng (2012). Which equations each method satisfies is collected in the appendix [Equilibrium equations satisfied by 3D LEM](three-dimensional-equilibrium.md).
 
 #### Reading 3D factors of safety
 
@@ -1000,8 +1014,13 @@ The original papers discussed in the text and representative primary sources are
 
 ##### Spencer method extended to 3D
 
-17. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
+17. Chen, R.-H., and Chameau, J.-L. (1983). “Three-dimensional limit equilibrium analysis of slopes.” *Géotechnique*, 33(1), 31–40. [https://doi.org/10.1680/geot.1983.33.1.31](https://doi.org/10.1680/geot.1983.33.1.31)
+18. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 
 ##### 3D extension to asymmetric slopes
 
-18. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
+19. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
+
+##### 3D methods that satisfy all six equilibrium equations
+
+20. Zheng, H. (2012). “A three-dimensional rigorous method for stability analysis of landslides.” *Engineering Geology*, 145–146, 30–40. [https://doi.org/10.1016/j.enggeo.2012.06.010](https://doi.org/10.1016/j.enggeo.2012.06.010)
