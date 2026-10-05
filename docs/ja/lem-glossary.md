@@ -176,7 +176,7 @@ Mohr–Coulomb則
 静力学的に完全な方法
   complete equilibrium method
 
-  {term}`内力`の向きを仮定したうえで，力とモーメントのつり合いをすべて満たす手法．2次元のSpencer法，Morgenstern–Price法など．厳密法（rigorous method）とも呼ぶ．ここでの「完全」や「厳密」は，仮定した内力のモデルの中での話で，連続体としての厳密解という意味ではない．3次元に拡張した手法の多くは，6つのつり合い式の一部しか満たさない（→[第2章 0節](#what-section-0)，[5.1節](#what-section-5-1)，[8.3節](#what-section-8-3)）
+  {term}`内力`の向きを仮定したうえで，力とモーメントのつり合いをすべて満たす手法．2次元のSpencer法，Morgenstern–Price法など．厳密法（rigorous method）とも呼ぶ．ここでの「完全」や「厳密」は，仮定した内力のモデルの中での話で，連続体としての厳密解という意味ではない．3次元に拡張した手法の多くは，6つのつり合い式をすべては解かない（→[第2章 0節](#what-section-0)，[5.1節](#what-section-5-1)，[8.3節](#what-section-8-3)）
 
 GLE
   general limit equilibrium
