@@ -153,7 +153,9 @@ $$
 
 ここで $\rho\boldsymbol{b}$ は単位体積あたりの物体力で，重力だけなら $\boldsymbol{b}=\boldsymbol{g}$ である．また，各点のモーメントのつり合いから，応力テンソルは対称になる（$\boldsymbol{\sigma}=\boldsymbol{\sigma}^{\mathsf T}$）．材料力学で学ぶ共役せん断応力の関係 $\tau_{xy}=\tau_{yx}$ は，この対称性を成分で書いたものである．
 
-上の式をスライスやカラムの体積で積分すると，[9節](#section-9)の力のつり合い式になる．発散定理によって，$\nabla\!\cdot\!\boldsymbol{\sigma}$ の体積積分が，境界に働く表面力 $\boldsymbol{\sigma}\boldsymbol{n}$ の面積分に変わるからである．また，上の式と基準点からの位置ベクトルとの外積をとって積分し，応力テンソルの対称性を使うと，9節のモーメントのつり合い式になる．
+上の式をスライスやカラムの体積で積分すると，[9節](#section-9)の力のつり合い式になる．発散定理によって，$\nabla\!\cdot\!\boldsymbol{\sigma}$ の体積積分が，境界に働く表面力 $\boldsymbol{\sigma}\boldsymbol{n}$ の面積分に変わるからである．物体力の積分は自重 $\boldsymbol{W}_i$ に，表面力の積分は底面の $N_i$ と $T_i$，隣のカラムからの $\boldsymbol{Q}_{ij}$，地表の荷重などの $\boldsymbol{P}_i$ になる．
+
+また，9節の基準点 $O$ から各点への位置ベクトルを $\boldsymbol{r}$ とし，$\boldsymbol{r}$ と上の式の外積を体積で積分する．発散定理で面積分に変えると，$\boldsymbol{\sigma}$ の非対称な部分による体積積分が残る．応力テンソルは対称なので，この項は0になり，9節のモーメントのつり合い式が得られる．
 ```
 
 ---
