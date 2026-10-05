@@ -21,7 +21,7 @@ lang: ja
 - $y$：水平で，すべり方向に直交する（横方向）
 - $z$：鉛直上向き
 
-6つのつり合い式は，$\sum F_x$，$\sum F_y$，$\sum F_z$，$\sum M_x$，$\sum M_y$，$\sum M_z$ と書く．$\sum M_y$ は，すべり方向に直交する水平な軸まわりのモーメントで，2次元の円弧の中心まわりのモーメントにあたる．[第2章 8節](#what-section-8)の{term}`回転軸 <モーメントの中心>`まわりのモーメントも，多くはこの式である．$\sum M_z$ は，鉛直な軸まわりのモーメントである．
+6つのつり合い式は，$\sum F_x$，$\sum F_y$，$\sum F_z$，$\sum M_x$，$\sum M_y$，$\sum M_z$ と書く．$\sum M_y$ は，すべり方向に直交する水平な軸まわりのモーメントで，2次元の円弧の中心まわりのモーメントにあたる．[第2章 8節](#what-section-8)の{term}`回転軸 <モーメントの中心>`まわりのモーメントも，多くはこの式である．一方，$\sum M_z$ は，鉛直な軸まわりのモーメントを表す．
 
 手法ごとに，次の3つを分けて調べた．
 
@@ -44,30 +44,30 @@ lang: ja
 
 表の記号の意味は，次のとおりである．
 
-- ✓：土塊全体で，式として解く
+- ✓：土塊全体で，対称性に頼らずに成り立つ．多くは式として解く．※と†は，ほかの式から導けるもの
 - S：対称性によってだけ成り立つ．式としては解かない
-- ✗：満たさない
+- ✗：式として扱わないので，一般には成り立たない
 - ?：確かめられなかった
 - （　）：原論文の全文ではなく，前身の全文，要旨，または二次文献による
-- ✗／S：一般の形では満たさず，対称な形のときだけ対称性で成り立つ
-- ＊：論文はこの式に触れていない．すべり面の形と仮定から読み取った
+- ✗またはS：一般の形では成り立たず，対称な形のときだけ対称性で成り立つ
+- ＊：論文はこの式に触れていない．{term}`すべり面`の形と仮定から読み取った
 
 カラム法で，2次元の手法を拡張したものを，次の表にまとめる．
 
 | 手法・文献 | $\sum F_x$ | $\sum F_y$ | $\sum F_z$ | $\sum M_x$ | $\sum M_y$ | $\sum M_z$ | カラムごとに満たす式 | 確かめた資料 |
 |---|---|---|---|---|---|---|---|---|
 | Hovland法：Hovland (1977) | ? | ? | ? | ? | ? | ? | カラム間力を無視し，底面垂直力を重さの成分とする（二次文献） | 要旨，二次文献 |
-| 3次元のSpencer法：Chen and Chameau (1983) | (✓) | (S) | (✓) | (S) | (✓) | (S) | 中央断面に射影した $F_x$ と $F_z$，底面の中央まわりの $M_y$ | 前身の全文 |
+| 3次元のSpencer法：Chen and Chameau (1983) | (✓) | (S)＊ | (✓) | (S)＊ | (✓) | (S)＊ | 中央断面に射影した $F_x$ と $F_z$，底面の中央まわりの $M_y$ | 前身の全文 |
 | 3次元の簡便分割法：Ugaiら (1986) | ✗ | S＊ | ✗ | S＊ | ✓ | S＊ | 底面に垂直な方向の力 | 全文 |
 | 3次元の簡易Bishop法：Hungr (1987)，Hungr et al. (1989) | (✗) | (S) | (✓)※ | (S) | (✓) | (S) | 鉛直方向の力 | 要旨，二次文献 |
 | 3次元の簡易Janbu法：Ugai (1987) | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ | 1方向の力 | 全文 |
-| 3次元の簡易Bishop法：Ugai and Hosobori (1988) | ✗ | ✗／S＊ | ✓ | ✗／S＊ | ✓ | ✗／S＊ | 1方向の力 | 全文 |
-| 3次元の簡易Janbu法：Ugai and Hosobori (1988) | ✓ | ✗／S＊ | ✓ | ✗／S＊ | ✗ | ✗／S＊ | 1方向の力 | 全文 |
-| 3次元のSpencer法：Ugai and Hosobori (1988) | ✓ | ✗／S＊ | ✓ | ✗／S＊ | ✓ | ✗／S＊ | 1方向の力 | 全文 |
+| 3次元の簡易Bishop法：Ugai and Hosobori (1988) | ✗ | ✗またはS＊ | ✓ | ✗またはS＊ | ✓ | ✗またはS＊ | 1方向の力 | 全文 |
+| 3次元の簡易Janbu法：Ugai and Hosobori (1988) | ✓ | ✗またはS＊ | ✓ | ✗またはS＊ | ✗ | ✗またはS＊ | 1方向の力 | 全文 |
+| 3次元のSpencer法：Ugai and Hosobori (1988) | ✓ | ✗またはS＊ | ✓ | ✗またはS＊ | ✓ | ✗またはS＊ | 1方向の力 | 全文 |
 | 3次元のSpencer法：Ugai and Hosobori (1989) | ✓ | ✗ | ✓ | ✗ | ✓ | ✗ | 1方向の力 | 全文 |
 | 3次元のGLE：Lam and Fredlund (1993) | ? | ? | ? | ? | ? | ? | ? | 要旨，二次文献 |
-| Spencer型：Chen et al. (2003) | (✓) | (✓) | (✓) | (✗／S) | (✓) | (✗／S) | 1方向の力 | 前身の全文 |
-| 3次元のSpencer法：Jiang and Yamagami (2004) | ✓ | ✗／S | ✓† | ✗／S | ✓ | ✗／S | 1方向の力 | 全文 |
+| Spencer型：Chen et al. (2003) | (✓) | (✓) | (✓) | (✗またはS)＊ | (✓) | (✗またはS)＊ | 1方向の力 | 前身の全文 |
+| 3次元のSpencer法：Jiang and Yamagami (2004) | ✓ | ✗またはS | ✓† | ✗またはS | ✓ | ✗またはS | 1方向の力 | 全文 |
 | 3次元のMorgenstern–Price法：Cheng and Yip (2007) | (✓) | (✓) | (✓)※ | (✓) | (✓) | (✗) | 鉛直方向の力 | 二次文献 |
 
 ※ 各カラムの鉛直方向の力のつり合いを足し合わせると，成り立つ．
@@ -78,9 +78,9 @@ lang: ja
 
 | 手法・文献 | $\sum F_x$ | $\sum F_y$ | $\sum F_z$ | $\sum M_x$ | $\sum M_y$ | $\sum M_z$ | カラムごとに満たす式 | 確かめた資料 |
 |---|---|---|---|---|---|---|---|---|
-| Zhang (1988) | (✓) | (S) | (✓) | (S) | (✓) | (S) | 力（二次文献） | 要旨，二次文献 |
+| Zhang (1988) | (✓) | ? | (✓) | (S) | (✓) | (S) | 力（二次文献） | 要旨，二次文献 |
 | 変分法：Leshchinsky and Huang (1992) | (✓) | ? | (✓) | (S) | (✓) | (S) | カラムに分けない | 要旨，二次文献 |
-| Huang et al. (2002) | (✓) | (✓) | (✓) | (✓) | (✓) | (✗) | ? | 要旨，二次文献 |
+| Huang et al. (2002) | (✓) | (✓) | (✓) | (✓) | (✓) | (✗) | ? | 要旨，二次文献．記号はJiang and Zhou (2018)の紹介による．Zhu and Qian (2007)は，大まかに4つを満たすとする |
 | Zhu and Qian (2007)の厳密解 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | カラムに分けない | 全文 |
 | Zhu and Qian (2007)の準厳密解 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | カラムに分けない | 全文 |
 | Zheng (2007) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | カラムに分けない | 全文 |
@@ -94,7 +94,7 @@ lang: ja
 
 ## 3. 手法ごとの根拠
 
-各節では，対象，カラム間力の仮定，解く未知量，満たすつり合い，論文自身の言い方の順に書く．原文の引用は，折りたたみの中に，ページと式番号を付けて載せている．
+各節では，対象，{term}`カラム間力 <スライス間力>`の仮定，解く未知量，満たすつり合い，論文自身の言い方の順に書く．原文の引用は，折りたたみの中に，ページと式番号を付けて載せている．
 
 (equilibrium-section-3-1)=
 
@@ -102,9 +102,9 @@ lang: ja
 
 原論文は読めなかった．次のことは，Chen (1981)とUgaiら (1986, 1987, 1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
 
-- {term}`カラム間力 <スライス間力>`をすべて無視し，底面の{term}`垂直応力`とせん断応力を，各カラムの重さの成分として求める
+- カラム間力をすべて無視し，各カラムの重さの成分から，底面に働く垂直力とせん断力を求める
 - {term}`安全率`は，すべり面全体の抵抗の和と，滑動の和の比とする
-- 土塊全体のつり合いについては，紹介が食い違う．Ugaiら (1986)は，土塊全体のモーメントのつり合いから安全率を決めるとする．一方，Ugai (1987)とUgai and Hosobori (1989)は，土塊全体のつり合いを何も満たさないとする．回転体のすべり面なら，抵抗と滑動の和の比は，回転軸まわりのモーメントの比に等しい．そのため，1986年の紹介は，回転体の面に限った説明とも読める．原論文で確かめていないので，表では ? とした
+- 土塊全体のつり合いについては，紹介が食い違う．Ugaiら (1986)は，土塊全体のモーメントのつり合いから安全率を決めるとする．一方，Ugai (1987)とUgai and Hosobori (1989)は，土塊全体のつり合いを何も満たさないとする．表では ? としている．原論文で確かめていないからである
 
 :::{dropdown} 原文の引用
 - Chen (1981), pp. 31–32：“defining the factor of safety as the ratio of the total available resistance along a failure surface to the total mobilized stress along it. In order to simplify the analysis, the ordinary method of slices was used. Thus the inter-column forces can be ignored and both normal and shear stresses on the base of each column are obtained simply as the component of the weight of the column.”
@@ -119,10 +119,10 @@ lang: ja
 
 1983年の論文は，全文が公開されていない．要旨は，Chen (1981)の報告書の要約とほぼ同じ文である．そのため，この報告書の全文で中身を確かめた．報告書は，Chameauらの指導のもとで書かれ，同じ手法をプログラムLEMIXとして示している．ただし，1983年の本文で式が変わった可能性は残る．元の座標は，$X$ がすべり方向，$Y$ が鉛直上向き，$Z$ が横方向である．回転軸は $Z$ に平行で，共通の取り方の $y$ にあたる．
 
-- **対象**：対称なすべり土塊だけを扱い，その半分だけをカラムに分けて解く．すべり面は回転体の面で，1983年の論文の中心は回転楕円体である
+- **対象**：対称な{term}`すべり土塊`だけを扱い，その半分だけをカラムに分けて解く．すべり面は回転体の面で，1983年の論文の中心は回転楕円体である
 - **カラム間力**：すべり方向に垂直な面の力は，土塊全体で同じ傾き $\theta$ をもつと仮定する．横方向の面（$y$ に垂直な面）のせん断力も考えるが，未知量ではない．$K_0$ の状態から決めた既知の値とする．横方向の面の垂直力は，式に現れない
 - **未知量**：安全率 $F$ と傾き $\theta$ の2つ．すべり方向は $x$ に固定する
-- **土塊全体**：力の和が0という式（$\sum F_x$ と $\sum F_z$．$\theta$ が一定なので1つの式になる）と，回転軸まわりのモーメントの式（$\sum M_y$）を解く．$\sum F_y$，$\sum M_x$，$\sum M_z$ は，鏡像の半分と合わせた土塊全体で，対称性によって成り立つ
+- **土塊全体**：$\sum F_x$ と $\sum F_z$ のつり合いを使う．$\theta$ が一定なので，この2つは1つの式にまとまる．これと，回転軸まわりのモーメントの式（$\sum M_y$）を解く．$\sum F_y$，$\sum M_x$，$\sum M_z$ は，鏡像の半分と合わせた土塊全体で，対称性によって成り立つ
 - **カラムごと**：中央断面に射影した2つの力の式と，底面の中央まわりの1つのモーメントの式を満たす．モーメントの式は，カラム間力の作用高さを決めるのに使う．つまり，カラムごとのモーメントを，カラム間力の作用位置で満たしている．ただし，$y$ に平行な1つの軸についてだけである．カラムごとの $F_y$，$M_x$，$M_z$ はない
 - **力の式の近似**：Ugaiら (1986)は，このカラムの力の式が，{term}`底面垂直力`の $y$ 方向の成分を無視していると指摘している
 - **論文の言い方**：要旨は，力とモーメントのつり合いを，各カラムでも土塊全体でも満たすと書く．これは，射影した面の中の3つの式の意味で，6つの式の意味ではない
@@ -141,7 +141,7 @@ lang: ja
 
 ### 3.3 Ugaiらの一連の研究（1986〜1989）
 
-Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通の取り方と同じである．Ugaiらは，2次元の手法を1つずつ3次元に拡張した．どの手法も，各カラムでは1つの方向の力のつり合いだけをとり，底面垂直力を求める．そのうえで，土塊全体のつり合いを2つか3つ解く．
+Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通の取り方と同じである．Ugaiらは，2次元の手法を1つずつ3次元に拡張した．どの手法も，各カラムでは1つの方向の力のつり合いだけをとり，底面垂直力を求める．そのうえで，土塊全体では，簡便分割法は1つ，簡易Bishop法と簡易Janbu法は2つ，Spencer法は3つのつり合い式を解く．
 
 | 文献 | 手法 | すべり面 | 未知量 | 土塊全体で解く式 |
 |---|---|---|---|---|
@@ -154,7 +154,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 - **カラム間力**：どの手法も，カラムの各側面の力ではなく，その合力 $\Delta Q$ に仮定を置く．横方向の面のせん断力も，個別には扱わない．簡便分割法では，$\Delta Q$ をすべり面に平行とする．ほかの手法では，$\Delta Q$ の $yz$ 面内の成分は，水平面と $\tan^{-1}(\eta\tan\alpha_{yz})$ の角をなすとする．$\alpha_{yz}$ は底面の横の傾き，$\eta$ は未知の定数である．Spencer法では，さらに $xz$ 面内の成分が，水平面と未知の角 $\delta$ をなすとする．つまり，「平行」は全カラムに共通な1つの向きではない．$xz$ 面内の傾きだけが，全カラムで共通である
 - **カラムごと**：$\Delta Q$ を含む面に垂直な方向の力のつり合いを1つとる．そのため，簡易Bishop法でも，カラムごとの式は鉛直方向の力ではない．この点が，[3.4節](#equilibrium-section-3-4)のHungrの3次元の簡易Bishop法と違う．カラムごとのモーメントには触れない
-- **対称性**：1988年の論文は，$\sum F_y$，$\sum M_x$，$\sum M_z$ にも，対称性にも触れない．計算例は対称な斜面である．一方，1987年と1989年の論文は，非対称な実際の斜面（御岳崩壊）にも当てはめている．このとき，残りの3つの式は対称性でも成り立たない
+- **対称性**：1988年の論文は，$\sum F_y$，$\sum M_x$，$\sum M_z$ にも，対称性にも触れない．計算例は対称な斜面である．一方，1987年と1989年の論文は，非対称な実際の斜面（御岳崩壊）にも当てはめている．このとき，残りの3つの式は，対称性によっても成り立つとは限らない
 - **論文の言い方**：3次元のSpencer法を，つり合い条件をすべて満たす方法と書く．この「すべて」は，水平力，鉛直力，モーメントの3つを指す
 
 :::{dropdown} 原文の引用
@@ -192,7 +192,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 - **対象**：要旨の1つの版は，すべり方向を前もって仮定すると書く．Kalatehjari and Ali (2013)は，すべり方向が1つの回転体の面で，対称な問題を扱うとする
 - **カラム間力**：Morgenstern–Price法と同じ形の関数で，カラム間力の合力の向きを表す．Kalatehjari and Ali (2013)は，垂直力とせん断力の関係が5つあり，そのうち3つを影響が小さいとして無視したとする．Chen et al. (2001)は，係数 $\lambda_3$，$\lambda_4$ が残り，$\lambda_3$ は安全率が最小になる値を選んだとする．各関係が，どの面のどの成分の比かは，確かめられなかった
-- **つり合い**：2次元のGLEと同じく，力のつり合いとモーメントのつり合いから，それぞれ安全率を求めて一致させる．ただし，二次文献はどれも，満たすつり合いを3つか4つとしている．$\sum M_z$ を満たすとする文献はない
+- **つり合い**：2次元の{term}`GLE`と同じく，力のつり合いとモーメントのつり合いから，それぞれ安全率を求めて一致させる．ただし，二次文献はどれも，満たすつり合いを3つか4つとしている．$\sum M_z$ を満たすとする文献はない
 
 :::{dropdown} 原文の引用
 - 要旨：“A generalized model for three-dimensional analysis, using the method of columns, is presented. The model is an extension of the two-dimensional general limit equilibrium formulation. Intercolumn force functions of arbitrary shape can be specified to simulate various directions for the intercolumn resultant forces.”
@@ -213,7 +213,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 - **対象**：非対称な土塊も扱い，すべり面の形を仮定しない．主なすべり方向は与える
 - **カラム間力**：すべり方向に垂直な面の力は，鉛直な $xz$ 面に平行で，その傾き $\beta$ が全カラムで一定とする．2次元のSpencer法にあたる仮定である．横方向の面の力は，$y$ 方向の垂直力だけで，せん断力はない．底面のせん断力の向き $\rho$ には，分布の形を仮定する
 - **未知量**：$F$，$\beta$，$\rho$
-- **土塊全体**：$\sum F_x$，$\sum F_y$，$\sum F_z$ と，横方向の軸まわりのモーメント（$\sum M_y$）の4つを解く．$\sum M_x$ と $\sum M_z$ の式はない
+- **土塊全体**：$\sum F_x$，$\sum F_y$，$\sum F_z$ と，横方向の軸まわりのモーメント（$\sum M_y$）の4つを満たす．$\sum M_x$ と $\sum M_z$ の式はない
 - **カラムごと**：カラム間力に垂直な1つの方向の力のつり合い
 - **論文の言い方**：要旨の “complete overall force equilibrium conditions” は，土塊全体の3方向の力を指す．2001年の論文は，この方法を近似的な計算法とし，下界の解になるとしている
 
@@ -230,7 +230,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 J-STAGEで全文を読める．座標は，共通の取り方と同じである．
 
-- **対象**：任意形状のすべり面を，動的計画法で探す．土塊全体が1つの方向（$x$）にすべると仮定する．計算例は対称な円錐状の盛土である
+- **対象**：{term}`任意形状のすべり面 <一般形状のすべり面>`を，動的計画法で探す．土塊全体が1つの方向（$x$）にすべると仮定する．計算例は対称な円錐状の盛土である
 - **カラム間力**：Ugai and Hosobori (1989)と同じく，カラムの全側面の合力 $Q$ に仮定を置く．$Q$ の $xz$ 面内の成分は，$x$ 軸と未知の角 $\delta$ をなし，この角は全カラムで共通である．$yz$ 面内の成分は，$y$ 軸に平行とする．Ugai and Hosobori (1989)は，この成分を $\tan^{-1}(\eta\tan\alpha_{yz})$ だけ傾けていた．論文は，この違いを説明していない
 - **未知量**：$F$ と $\delta$
 - **土塊全体**：$\sum F_x$ から安全率 $F_f$ を，$y$ に平行な回転軸まわりの $\sum M_y$ から安全率 $F_m$ を求め，両者が一致する $\delta$ を探す．$\sum F_z$ は，式としては書いていない．ただし，各カラムの力の式の方向は $xz$ 面内にあり，全カラムで同じである．そのため，カラムごとの式と土塊全体の $\sum F_x$ が成り立てば，$\sum F_z$ も成り立つ
@@ -270,12 +270,12 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 
 ### 3.9 土塊全体の6つの式を解く方法
 
-次の方法は，カラム間力の向きを仮定する代わりに，すべり面の垂直応力の分布を仮定する．そのうえで，土塊全体を1つの物体として，6つのつり合い式を解く．
+Zhu and Qian (2007)とZheng (2007, 2009)は，カラム間力の向きを仮定する代わりに，すべり面の{term}`垂直応力`の分布を仮定する．そのうえで，土塊全体を1つの物体として，6つのつり合い式を解く．Zheng (2012)は，要旨によれば，土塊の{term}`内力`にMorgenstern–Price法の仮定を置く．その詳しい形は，本文で確かめられなかった．
 
 - **Zhu and Qian (2007)**：全文を読んだ．6つの式を解く厳密解と，$\sum M_z$ だけを省いた準厳密解を示す．論文は，6つの式を満たす3次元の解を初めて得たと書く
 - **Zheng (2007)**：全文を読んだ．安全率と，垂直応力の分布の5つのパラメータを，6つの式から求める．{term}`全体すべり方向`は与える．カラムには分けない
 - **Zheng (2009)**：要旨を読んだ．同じ考え方を，一般化固有値問題として解く．カラムには分けない
-- **Zheng (2012)**：要旨を読んだ．すべり土塊の{term}`内力`にMorgenstern–Price法の仮定を置き，2次元の厳密な分割法の3次元版として示す．体積積分を境界積分に変えるので，カラムに分けない．6つの式を満たすことは，Jiang and Zhou (2018)の紹介による
+- **Zheng (2012)**：要旨を読んだ．すべり土塊の内力にMorgenstern–Price法の仮定を置き，2次元の厳密な分割法の3次元版として示す．体積積分を境界積分に変えるので，カラムに分けない．6つの式を満たすことは，Jiang and Zhou (2018)の紹介による
 - **Jiang and Zhou (2018)**：著者稿の全文を読んだ．カラムに分けるが，つり合いは土塊全体の6つの式で立て，全体すべり方向も未知量として解く
 
 :::{dropdown} 原文の引用
@@ -293,7 +293,7 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 
 ### 3.10 その他の手法
 
-- **Zhang (1988)**：要旨は，力とモーメントのつり合いを満たすと書く．Zheng (2007)によれば，解くのは3つの力の式と $\sum M_y$ で，対称なので $\sum M_x$ と $\sum M_z$ は自動的に成り立つ
+- **Zhang (1988)**：要旨は，力とモーメントのつり合いを満たすと書く．Zheng (2007)によれば，満たすのは3つの力の式と $\sum M_y$ で，対称なので $\sum M_x$ と $\sum M_z$ は自動的に成り立つ．$\sum F_y$ を式として解くか，対称性によって満たすかは，確かめられなかった
 - **Leshchinsky and Huang (1992)**：変分法で，すべり面の垂直応力の分布を求める．要旨は，極限平衡の式をすべて満たすと書く．ただし対称な問題に限り，Zheng (2007)によれば，満たすのは3つの力の式と回転軸まわりの1つのモーメントの式である
 - **Huang et al. (2002)**：要旨は，2方向の力とモーメントのつり合いを使うと書く．Jiang and Zhou (2018)は，3方向の力と2方向のモーメントを満たす準厳密な方法とする．一方，Zhu and Qian (2007)は，4つの式を大まかに満たすとする
 
@@ -305,27 +305,27 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 
 (equilibrium-section-4-1)=
 
-### 4.1 3次元のSpencer型の手法は，6つの式をすべては解かない
+### 4.1 3次元のSpencer型の手法は，6つの式をすべては満たさない
 
-調べた3次元のSpencer型の手法は，土塊全体で2つから4つの式を解く．モーメントは，どれも $\sum M_y$ の1つだけである．
+調べた3次元のSpencer型の手法が，土塊全体で対称性に頼らずに満たすのは，3つか4つの式である．モーメントは，どれも $\sum M_y$ の1つだけである．
 
-- 対称な定式化（Chen and Chameau 1983）は，3つの式を解き，残りの3つは土塊全体で対称性によって成り立つ．つまり，「3つしか満たさない」ではなく，「3つしか式として解かない」が正確である．カラムごとには，射影した面の中の3つの式を満たす
-- Ugai and Hosobori (1988, 1989)とJiang and Yamagami (2004)は，対称性を前提にしない．そのため，非対称な斜面では，$\sum F_y$，$\sum M_x$，$\sum M_z$ が成り立たない
-- Chen et al. (2003)は，3方向の力と $\sum M_y$ の4つを解く
+- 対称な定式化（Chen and Chameau 1983）は，$\sum F_x$，$\sum F_z$，$\sum M_y$ を満たし，残りの3つは土塊全体で対称性によって成り立つ．つまり，「3つしか満たさない」より，「対称性に頼らずに満たすのは3つ」が正確である．カラムごとには，射影した面の中の3つの式を満たす
+- Ugai and Hosobori (1988, 1989)とJiang and Yamagami (2004)は，対称性を前提にしない．そのため，非対称な斜面では，$\sum F_y$，$\sum M_x$，$\sum M_z$ が成り立つとは限らない
+- Chen et al. (2003)は，3方向の力と $\sum M_y$ の4つを満たす
 
 Zheng (2007)は，$\sum M_z$ だけを省いた5つの式を満たす3次元のSpencer法として，中国語の論文を挙げている．この論文は読んでいない．
 
 (equilibrium-section-4-2)=
 
-### 4.2 Morgenstern–Price型の手法も，$\sum M_z$ は解かない
+### 4.2 Cheng and Yip (2007)のMorgenstern–Price法は，$\sum M_z$ を解かない
 
 Cheng and Yip (2007)は，$\sum M_z$ を除く5つの式を使う．ただし，カラムごとの鉛直な軸まわりのモーメントを，共役せん断として近似的に使う．Lam and Fredlund (1993)は，原論文で確かめられなかった．二次文献は，満たす式を3つか4つとし，$\sum M_z$ を満たすとする文献はない．
 
 (equilibrium-section-4-3)=
 
-### 4.3 6つの式をすべて解く方法は，2007年に現れた
+### 4.3 6つの式をすべて解く方法は，2007年の論文から確かめられる
 
-土塊全体の6つの式をすべて解く3次元のLEMは，Zhu and Qian (2007)とZheng (2007)から全文で確かめられる．Zheng (2012)はその後の仕事で，6つの式を満たすMorgenstern–Price法の3次元版である．どれも，すべり面の垂直応力の分布を仮定し，土塊全体を1つの物体として扱う．カラム間力の向きを仮定して2次元の手法を拡張したカラム法ではない．
+土塊全体の6つの式をすべて解く3次元の{term}`LEM <極限平衡法>`は，Zhu and Qian (2007)とZheng (2007)から全文で確かめられる．Zheng (2012)はその後の仕事で，6つの式を満たすMorgenstern–Price法の3次元版である．どれも，土塊全体を1つの物体として扱い，カラムに分けない．つまり，カラム間力の向きを仮定して2次元の手法を拡張したカラム法ではない．
 
 変分法のLeshchinsky and Huang (1992)は，すべてのつり合いを満たすと要旨で書く．しかし，対称な問題に限り，6つの式を解いてはいない．
 
@@ -337,7 +337,7 @@ Cheng and Yip (2007)は，$\sum M_z$ を除く5つの式を使う．ただし，
 
 3次元の論文では，「厳密」（rigorous）や「すべて満たす」が，2つの意味で使われている．
 
-1つ目は，論文が解いている2つから4つの式を，すべて満たすという意味である．古い論文に多い．
+1つ目は，論文が扱う一部の式を，すべて満たすという意味である．古い論文に多い．
 
 - Ugai and Hosobori (1988)は，$\sum F_x$，$\sum F_z$，$\sum M_y$ の3つを解く方法を，つり合い条件をすべて満たす方法と呼ぶ
 - Ugai and Hosobori (1989)は，同じ3つの式を解く方法を，非対称な斜面に当てはめ，力とモーメントのつり合いがすべて満たされると書く
@@ -346,7 +346,7 @@ Cheng and Yip (2007)は，$\sum M_z$ を除く5つの式を使う．ただし，
 - Chen et al. (2003)の “complete overall force equilibrium” は，土塊全体の3方向の力だけを指す
 - Zhang (1988)とLeshchinsky and Huang (1992)の要旨も，力とモーメントのつり合い，または極限平衡の式をすべて満たすと書く．実際に解くモーメントの式は，$\sum M_y$ の1つである
 
-2つ目は，土塊全体の6つの式をすべて満たすという意味である．2007年以降の論文に多い．Zhu and Qian (2007)とJiang and Zhou (2018)は，3次元の厳密な方法を，6つの式を満たす方法と定義する．$\sum M_z$ を除く5つを満たす方法は，準厳密（quasi-rigorous）と呼ぶ．Zheng (2012)の要旨も，厳密な方法を，つり合いの条件をすべて満たす方法とする．
+2つ目は，土塊全体の6つの式をすべて満たすという意味である．2007年以降の論文に多い．Zhu and Qian (2007)とJiang and Zhou (2018)は，3次元の厳密な方法を，6つの式を満たす方法と定義する．$\sum M_z$ を除く5つを満たす方法は，準厳密（quasi-rigorous）と呼ぶ．また，Zheng (2012)の要旨も，厳密な方法を，つり合いの条件をすべて満たす方法とする．
 
 どちらの意味でも，「すべて」は土塊全体のつり合いを指す．カラムごとの6つの式を「完全」とする論文は，見つからなかった．なお，対称性で成り立つ式を数えて「厳密」とする例もある．Zheng (2007)は，対称な土塊を対称に分けたZhang (1988)の解を，厳密な解とみなせると書いている．
 
@@ -388,25 +388,25 @@ DOIは，出版社かCrossrefの書誌情報で照合したものだけを載せ
 1. Hovland, H. J. (1977). “Three-Dimensional Slope Stability Analysis Method.” *Journal of the Geotechnical Engineering Division*, 103(9), 971–986. [https://doi.org/10.1061/AJGEB6.0000493](https://doi.org/10.1061/AJGEB6.0000493)
 2. Chen, R. H. (1981). *Three-Dimensional Slope Stability Analysis*. Joint Highway Research Project, Report JHRP-81-17, Purdue University. [書誌情報](https://docs.lib.purdue.edu/jtrp/897/)
 3. Chen, R.-H., and Chameau, J.-L. (1983). “Three-dimensional limit equilibrium analysis of slopes.” *Géotechnique*, 33(1), 31–40. [https://doi.org/10.1680/geot.1983.33.1.31](https://doi.org/10.1680/geot.1983.33.1.31)
-4. Ugai, K., Hosobori, K., Nagase, H., and Enokido, M. (1986). “Three-dimensional stability analysis of slopes by simple slice method.” *土木学会論文集*, No. 376/III-6, 267–276. [https://doi.org/10.2208/jscej.1986.376_267](https://doi.org/10.2208/jscej.1986.376_267)
-5. Ugai, K. (1987). “Three-dimensional slope stability analysis by simplified Janbu method.” *地すべり*, 24(3), 8–14. [https://doi.org/10.3313/jls1964.24.3_8](https://doi.org/10.3313/jls1964.24.3_8)
+4. 鵜飼恵三・細堀建司・永瀬英生・榎戸源則（Ugaiら）(1986)．簡便分割法による斜面の三次元安定解析．*土木学会論文集*，No. 376/III-6，267–276．[https://doi.org/10.2208/jscej.1986.376_267](https://doi.org/10.2208/jscej.1986.376_267)
+5. 鵜飼恵三（Ugai）(1987)．簡易Janbu法による斜面の3次元安定解析．*地すべり*，24(3)，8–14．[https://doi.org/10.3313/jls1964.24.3_8](https://doi.org/10.3313/jls1964.24.3_8)
 6. Hungr, O. (1987). “An extension of Bishop's simplified method of slope stability analysis to three dimensions.” *Géotechnique*, 37(1), 113–117. [https://doi.org/10.1680/geot.1987.37.1.113](https://doi.org/10.1680/geot.1987.37.1.113)
 7. Zhang, X. (1988). “Three-dimensional stability analysis of concave slopes in plan view.” *Journal of Geotechnical Engineering*, 114(6), 658–671. [https://doi.org/10.1061/(ASCE)0733-9410(1988)114:6(658)](https://doi.org/10.1061/%28ASCE%290733-9410%281988%29114%3A6%28658%29)
-8. Ugai, K., and Hosobori, K. (1988). “Extension of simplified Bishop method, simplified Janbu method and Spencer's method to three dimensions.” *土木学会論文集*, No. 394/III-9, 21–26. [https://doi.org/10.2208/jscej.1988.394_21](https://doi.org/10.2208/jscej.1988.394_21)
+8. 鵜飼恵三・細堀建司（Ugai and Hosobori）(1988)．簡易Bishop法，簡易Janbu法およびSpencer法の三次元への拡張．*土木学会論文集*，No. 394/III-9，21–26．[https://doi.org/10.2208/jscej.1988.394_21](https://doi.org/10.2208/jscej.1988.394_21)
 9. Hungr, O., Salgado, F. M., and Byrne, P. M. (1989). “Evaluation of a three-dimensional method of slope stability analysis.” *Canadian Geotechnical Journal*, 26(4), 679–686. [https://doi.org/10.1139/t89-079](https://doi.org/10.1139/t89-079)
-10. Ugai, K., and Hosobori, K. (1989). “Stability analysis for slopes with arbitrarily-shaped geometry and sliding surface.” *土木学会論文集*, No. 412/III-12, 183–186. [https://doi.org/10.2208/jscej.1989.412_183](https://doi.org/10.2208/jscej.1989.412_183)
+10. 鵜飼恵三・細堀建司（Ugai and Hosobori）(1989)．任意形状の地形とすべり面を有する斜面の安定解析．*土木学会論文集*，No. 412/III-12，183–186．[https://doi.org/10.2208/jscej.1989.412_183](https://doi.org/10.2208/jscej.1989.412_183)
 11. Leshchinsky, D., and Huang, C.-C. (1992). “Generalized three-dimensional slope-stability analysis.” *Journal of Geotechnical Engineering*, 118(11), 1748–1764. [https://doi.org/10.1061/(ASCE)0733-9410(1992)118:11(1748)](https://doi.org/10.1061/%28ASCE%290733-9410%281992%29118%3A11%281748%29)
 12. Lam, L., and Fredlund, D. G. (1993). “A general limit equilibrium model for three-dimensional slope stability analysis.” *Canadian Geotechnical Journal*, 30(6), 905–919. [https://doi.org/10.1139/t93-089](https://doi.org/10.1139/t93-089)
 13. Hungr, O. (1994). “A general limit equilibrium model for three-dimensional slope stability analysis: Discussion.” *Canadian Geotechnical Journal*, 31(5), 793–795. [https://doi.org/10.1139/t94-093](https://doi.org/10.1139/t94-093)
 14. Lam, L., and Fredlund, D. G. (1994). “A general limit equilibrium model for three-dimensional slope stability analysis: Reply.” *Canadian Geotechnical Journal*, 31(5), 795–796. [https://doi.org/10.1139/t94-094](https://doi.org/10.1139/t94-094)
 15. Huang, C.-C., and Tsai, C.-C. (2000). “New method for 3D and asymmetrical slope stability analysis.” *Journal of Geotechnical and Geoenvironmental Engineering*, 126(10), 917–927. [https://doi.org/10.1061/(ASCE)1090-0241(2000)126:10(917)](https://doi.org/10.1061/%28ASCE%291090-0241%282000%29126%3A10%28917%29)
-16. Chen, Z., Mi, H., and Wang, X. (2001). “A three-dimensional limit equilibrium method for slope stability analysis.” *岩土工程学报*, 23(5), 525–529 (in Chinese). [書誌情報](https://www.cgejournal.com/cn/article/id/10783)
+16. 陈祖煜・弥宏亮・汪小刚（Chen et al.）(2001)．边坡稳定三维分析的极限平衡方法．*岩土工程学报*，23(5)，525–529．[書誌情報](https://www.cgejournal.com/cn/article/id/10783)
 17. Huang, C.-C., Tsai, C.-C., and Chen, Y.-H. (2002). “Generalized method for three-dimensional slope stability analysis.” *Journal of Geotechnical and Geoenvironmental Engineering*, 128(10), 836–848. [https://doi.org/10.1061/(ASCE)1090-0241(2002)128:10(836)](https://doi.org/10.1061/%28ASCE%291090-0241%282002%29128%3A10%28836%29)
 18. Chen, Z., Mi, H., Zhang, F., and Wang, X. (2003). “A simplified method for 3D slope stability analysis.” *Canadian Geotechnical Journal*, 40(3), 675–683. [https://doi.org/10.1139/t03-002](https://doi.org/10.1139/t03-002)
 19. Jiang, J.-C., and Yamagami, T. (2004). “Three-Dimensional Slope Stability Analysis Using an Extended Spencer Method.” *Soils and Foundations*, 44(4), 127–135. [https://doi.org/10.3208/sandf.44.4_127](https://doi.org/10.3208/sandf.44.4_127)
 20. Cheng, Y. M., and Yip, C. J. (2007). “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques.” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. [https://doi.org/10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
-21. Zhu, D., and Qian, Q. (2007). “Rigorous and quasi-rigorous limit equilibrium solutions of 3D slope stability and application to engineering.” *岩石力学与工程学报*, 26(8), 1513–1528 (in Chinese). [書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22094.shtml)
-22. Zheng, H. (2007). “A rigorous three-dimensional limit equilibrium method.” *岩石力学与工程学报*, 26(8), 1529–1537 (in Chinese). [書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22095.shtml)
+21. 朱大勇・钱七虎（Zhu and Qian）(2007)．三维边坡严格与准严格极限平衡解答及工程应用．*岩石力学与工程学报*，26(8)，1513–1528．[書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22094.shtml)
+22. 郑宏（Zheng）(2007)．严格三维极限平衡法．*岩石力学与工程学报*，26(8)，1529–1537．[書誌情報](https://rockmech.whrsm.ac.cn/CN/abstract/abstract22095.shtml)
 23. Zheng, H. (2009). “Eigenvalue problem from the stability analysis of slopes.” *Journal of Geotechnical and Geoenvironmental Engineering*, 135(5), 647–656. [https://doi.org/10.1061/(ASCE)GT.1943-5606.0000071](https://doi.org/10.1061/%28ASCE%29GT.1943-5606.0000071)
 24. Zheng, H. (2012). “A three-dimensional rigorous method for stability analysis of landslides.” *Engineering Geology*, 145–146, 30–40. [https://doi.org/10.1016/j.enggeo.2012.06.010](https://doi.org/10.1016/j.enggeo.2012.06.010)
 25. Jiang, Q., and Zhou, C. (2018). “A rigorous method for three-dimensional asymmetrical slope stability analysis.” *Canadian Geotechnical Journal*, 55(4), 495–513. [https://doi.org/10.1139/cgj-2017-0317](https://doi.org/10.1139/cgj-2017-0317)
