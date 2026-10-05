@@ -32,7 +32,7 @@ fig = Figure(
     420,
     L("Fellenius法，簡易Bishop法，簡易Janbu法の比較",
       "The Fellenius, simplified Bishop and simplified Janbu methods compared"),
-    L("同じスライスで，3つの手法が無視する内力と，使うつり合いを比べる．無視する力は薄い破線で示す．"
+    L("同じスライスで，3つの手法が無視する内力と，使うつり合いを比較する．無視する力は薄い破線で示す．"
       "Fellenius法はスライス間力を無視し，全体のモーメントのつり合いを使う．"
       "簡易Bishop法はスライス間のせん断力を無視し，各スライスの鉛直方向の力と全体のモーメントのつり合いを使う．"
       "簡易Janbu法はスライス間のせん断力を無視し，力のつり合いを使う．",

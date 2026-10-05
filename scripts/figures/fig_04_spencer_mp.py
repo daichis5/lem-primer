@@ -26,7 +26,7 @@ fig = Figure(
     360,
     L("Spencer法とMorgenstern–Price法の，スライス間力の向きの仮定",
       "The direction of the interslice forces assumed by the Spencer and Morgenstern–Price methods"),
-    L("同じスライスの境界に働くスライス間力の合力を，2つの手法で比べる．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．"
+    L("同じスライスの境界に働くスライス間力の合力を，2つの手法で比較する．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．"
       "Morgenstern–Price法では，合力の傾き X/E が λf(x) に従って場所ごとに変わる．"
       "下のグラフは，それぞれの f(x) を同じ横軸で示す．Spencer法は f(x)=1 の場合にあたる．",
       "The resultant interslice forces on the same slice boundaries under two methods. In the Spencer "

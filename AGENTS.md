@@ -133,8 +133,8 @@ compare a document with it.
   Neighbouring sentences take turns with ので，, ため， and そのため，.
 - Where a document says how it is written or where something is in the
   series, write the present, as Japanese textbooks do:
-  「用語と記号は，用語集にまとめている．」「補足には，…を書いている．」
-  (not まとめた，書いた). The past stays for what an earlier section or
+  「用語と記号は，用語集にまとめている．」「補足には，…を記述している．」
+  (not まとめた，記述した). The past stays for what an earlier section or
   document did (「第1章では，…を導出した」), and for a document's closing
   look back at its own sections (「この章では，…を整理した」).
 - A parenthesis may stay mid-sentence when it is short and holds no ． and
@@ -142,15 +142,28 @@ compare a document with it.
   or a brief aside. A remark with its own ．, or a link, goes at the end of
   its clause or sentence, or in a sentence of its own.
 - Write the Japanese phrase, not the English one read through:
-  この章 (not 本章，本稿), 満たす (not 満足する), 違う (not 異なる),
-  確認する (not 確かめる), できる (not 可能である), とき (not 場合，際),
+  この章 (not 本章，本稿), 満たす (not 満足する), とき (not 場合，際),
   次の (not 以下の), と・や (not および), つまり (not すなわち),
   〜のもとで・〜とき (not 〜の下で), 〜での・〜の (not 〜における),
-  〜ことがある (not 〜し得る), 決める (not 決定する), グループ (not 族,
-  as in すべり面のグループ), 必要である (not 要る). A cleft sentence
-  (「重要なのは，…ことである」) becomes the plain statement.
+  〜ことがある (not 〜し得る), グループ (not 族, as in すべり面の
+  グループ). A cleft sentence (「重要なのは，…ことである」) becomes the
+  plain statement.
+- For a step of a derivation or a calculation, and for the verbs below,
+  write the 漢語 verb a textbook uses, not the everyday word:
+  導出する (not 導く), 代入する (not 入れる), 分解する・分割する (not 分ける),
+  拡張する (not 広げる), 適用する (not 当てはめる), 加える・和をとる
+  (not 足す), 比較する (not 比べる), 検討する (not 調べる), 変換する
+  (not 直す), 導入する・考慮する (not 組み込む，入れる), 増加する・減少する
+  (not 増える，減る), 選択する (not 選ぶ), 移動する (not 動く), 表す
+  (not 書く, for an equation), 求められる・得られる (not 求まる),
+  決定する・定まる (not 決める，決まる), 異なる (not 違う; the noun 違い
+  stays), 確認する (not 確かめる), 必要である (not 要る).
+  For writing, 記述する is this primer describing itself, 述べる a paper
+  stating a claim, 示す a figure, table or glossary entry showing something,
+  発表する an author publishing a method, and 実装する writing code. できる
+  stays: 可能である reads stiff in every place the primer uses it.
 - Between equations, say what was done (「これを $\tau_m$ について解くと」
-  「式 {eq}`eq-start-mohr-coulomb` を入れると」) rather than したがって.
+  「式 {eq}`eq-start-mohr-coulomb` を代入すると」) rather than したがって.
   A consequence in prose takes そのため， or つまり，.
 - Unpack a 漢語 compound made by translating an English phrase
   (幾何学的入力可能性 → 形を入力できるか, 強度動員式 → 強度の動員を表す
@@ -211,7 +224,6 @@ compare a document with it.
 | 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
 | 元の手法 | 原法 | |
 | 射影 | 投影 | projecting onto a plane, as in 補足C |
-| 導出する，導出 | 導く，導き方 | deriving an equation or a force, as textbooks write it; also in titles |
 | 実践1，実践2，実践3，この実践 | 演習，課題 | the practice pages, and a practice page referring to itself |
 
 ## Review questions
@@ -223,7 +235,7 @@ Every document ends its body with `## 確認問題`, opened by the line
   dropdown with the answer inside, so readers try before they look:
 
   ```text
-  :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が違うか
+  :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が異なるか
   :icon: question
 
   （答え）（→[2節](#section-2)）

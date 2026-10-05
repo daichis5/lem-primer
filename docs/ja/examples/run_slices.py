@@ -31,7 +31,7 @@ for i in range(6):
     print(f"   {i + 1:2d}  {s.x[i]:6.2f}  {s.z[i]:6.2f}  {s.b[i]:6.3f}", end="")
     print(f"  {alpha:6.2f}  {s.W[i]:6.1f}  {s.l[i]:6.3f}")
 r = np.stack([s.x - CENTRE[0], s.z - CENTRE[1]], axis=1)
-# 丸め誤差の大きさは環境で違うので，値ではなく，十分小さいかどうかを表示する
+# 丸め誤差の大きさは環境で異なるので，値ではなく，十分小さいかどうかを表示する
 small = np.abs(cross(r, s.n)).max() < 1e-12
 print(f"   every |r x n| about the centre is below 1e-12 m: {small}")
 

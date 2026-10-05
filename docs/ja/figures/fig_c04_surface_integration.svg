@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
   <title id="title">曲面の底面に働く表面力から，底面の合力へ</title>
-  <desc id="desc">左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとしてつないだ図．向きを考えて足した合力は，大きさだけを足した値より短い．右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを足した Ni と Ti を置いたモデル．</desc>
+  <desc id="desc">左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとしてつないだ図．ベクトル和として求めた合力は，大きさだけの和より短い．右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを合計した Ni と Ti を置いたモデル．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="330" fill="#fff"/>
   <polygon points="57.1,188.4 59.9,191.7 62.9,194.9 65.9,198.1 69.1,201.1 72.3,204.1 75.6,206.9 79,209.7 82.4,212.3 86,214.9 89.6,217.3 93.3,219.7 97,221.9 100.8,224 104.7,226 108.6,227.9 112.6,229.7 116.6,231.4 120.7,233 124.8,234.4 129,235.7 133.2,236.9 137.4,238 141.7,238.9 146,239.7 150.3,240.4 154.6,241 158.9,241.4 163.3,241.7 167.6,241.9 172,242 176.4,241.9 180.7,241.7 185.1,241.4 189.4,241 193.7,240.4 198,239.7 202.3,238.9 206.6,238 210.8,236.9 215,235.7 219.2,234.4 223.3,233 227.4,231.4 231.4,229.7 235.4,227.9 239.3,226 243.2,224 247,221.9 250.7,219.7 254.4,217.3 258,214.9 261.6,212.3 265,209.7 268.4,206.9 271.7,204.1 274.9,201.1 278.1,198.1 281.1,194.9 284.1,191.7 286.9,188.4 286.9,40 57.1,40" fill="#f4e7c5" stroke-linejoin="round"/>
@@ -57,7 +57,7 @@
   <text x="495.1" y="277" class="m" font-size="15" fill="#3b82f6" text-anchor="start"><tspan font-style="normal">∫</tspan><tspan font-style="italic">σ</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">n</tspan><tspan dy="-4.2" font-style="normal"> </tspan><tspan font-style="italic">dA</tspan></text>
   <line x1="362" y1="290" x2="473.5" y2="290" stroke="#2563eb" stroke-width="6" stroke-linecap="butt"/>
   <text x="481.5" y="295" class="m" font-size="15" fill="#2563eb" text-anchor="start"><tspan font-style="normal">‖</tspan><tspan font-style="italic" font-weight="bold">N</tspan><tspan dy="4.2" font-size="10.5" font-style="italic">i</tspan><tspan dy="-4.2" font-style="normal">‖</tspan></text>
-  <text x="462" y="30" class="t" font-size="13" fill="#475569" text-anchor="middle">ベクトルとして足す</text>
+  <text x="462" y="30" class="t" font-size="13" fill="#475569" text-anchor="middle">ベクトル和をとる</text>
   <polygon points="580,214 756,214 756,40 580,40" fill="#f4e7c5" stroke-linejoin="round"/>
   <polygon points="580,214 756,214 756,312 580,312" fill="#ece4d0" stroke-linejoin="round"/>
   <line x1="580" y1="214" x2="756" y2="214" stroke="#172033" stroke-width="3" stroke-linecap="round"/>

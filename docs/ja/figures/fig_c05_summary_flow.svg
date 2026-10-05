@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="748" viewBox="0 0 760 748" role="img" aria-labelledby="title desc">
   <title id="title">連続体の応力から安全率までの流れ</title>
-  <desc id="desc">1節から9節の段階を，上から順に箱で示す．各箱には，節，量，式を並べている．箱の間の矢印には，次の段階に進むときに使う式や行う操作を書いている．2つのパネルのうち，上は1節から6節の点ごとの応力，下は7節から9節のスライスやカラムごとの合力である．</desc>
+  <desc id="desc">1節から9節の段階を，上から順に箱で示す．各箱には，節，量，式を並べている．箱の間の矢印には，次の段階に進むときに使う式や行う操作を示している．2つのパネルのうち，上は1節から6節の点ごとの応力，下は7節から9節のスライスやカラムごとの合力である．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="748" fill="#fff"/>
   <rect x="76" y="16" width="608" height="512" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
@@ -44,7 +44,7 @@
   <text x="394" y="118.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">Cauchyの公式</tspan></text>
   <line x1="380" y1="182" x2="380" y2="209.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
   <polygon points="380,214 374.7,202.9 385.3,202.9" fill="#475569" stroke-linejoin="round"/>
-  <text x="394" y="202.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">法線成分とせん断成分に分ける</tspan></text>
+  <text x="394" y="202.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">法線成分とせん断成分に分解する</tspan></text>
   <line x1="380" y1="266" x2="380" y2="293.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
   <polygon points="380,298 374.7,286.9 385.3,286.9" fill="#475569" stroke-linejoin="round"/>
   <text x="394" y="286.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">間隙水圧 </tspan><tspan font-style="italic">u</tspan><tspan font-style="normal" class="t" font-size="13"> を引く</tspan></text>

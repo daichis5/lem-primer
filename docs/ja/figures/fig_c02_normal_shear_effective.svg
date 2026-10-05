@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" role="img" aria-labelledby="title desc">
   <title id="title">表面力の分解と有効垂直応力</title>
-  <desc id="desc">左は，面に働く表面力を，法線成分とせん断成分の和に分けた図．右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．</desc>
+  <desc id="desc">左は，面に働く表面力を，法線成分とせん断成分の和に分解した図．右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="380" fill="#fff"/>
   <polygon points="20,307.2 360,196.8 360,40 20,40" fill="#f4e7c5" stroke-linejoin="round"/>

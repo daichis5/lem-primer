@@ -108,7 +108,7 @@ class Slices:
 def make_slices(
     surface, n, *, gamma=18.0, c=10.0, phi_deg=30.0, water_level=None, ground=ground
 ):
-    """すべり面を n 本の等幅のスライスに分け，スライスの表を返す．
+    """すべり面を n 本の等幅のスライスに分割し，スライスの表を返す．
 
     各底面は，幅の中央の点と，そこでの接線で代表させる．地下水位
     water_level [m] を与えると，底面の間隙水圧を，地下水位から鉛直に
@@ -146,7 +146,7 @@ def fellenius(s, *, effective_weight=False):
 
     円弧の中心まわりのモーメントの比をとる．底面の有効垂直力は，既定では
     W cos(alpha) - u l とする．effective_weight=True なら，有効重量 W - u b を
-    底面の法線方向に分けた (W - u b) cos(alpha) とする．
+    底面の法線方向に分解した (W - u b) cos(alpha) とする．
     """
     if effective_weight:
         n_eff = (s.W - s.u * s.b) * np.cos(s.alpha)
@@ -215,7 +215,7 @@ def base_forces(s, fs, theta):
     """スライス間力の合力の傾きを theta [rad] とし，各スライスの N と T を求める．
 
     合力に直交する向き p で各スライスの力のつり合いをとると，合力が式から
-    消え，N が1本の式で決まる．theta = 0 なら p は鉛直で，D は m_alpha になる．
+    消え，N が1本の式で定まる．theta = 0 なら p は鉛直で，D は m_alpha になる．
     """
     p = np.array([-math.sin(theta), math.cos(theta)])
     e = -s.m  # すべりに抵抗する向き
@@ -255,12 +255,12 @@ def secant(f, x0, x1, tol=1e-10, max_iter=100):
 
 
 def fs_moment(s, theta, center, fs=1.5):
-    """theta を決めたとき，center まわりのモーメントの残差を 0 にする F_s．"""
+    """theta を決定したとき，center まわりのモーメントの残差を 0 にする F_s．"""
     return secant(lambda f: residuals(s, f, theta, center)[1], fs, 1.1 * fs)
 
 
 def fs_force(s, theta, fs=1.5):
-    """theta を決めたとき，力の残差を 0 にする F_s．"""
+    """theta を決定したとき，力の残差を 0 にする F_s．"""
     return secant(lambda f: residuals(s, f, theta, (0.0, 0.0))[0], fs, 1.1 * fs)
 
 

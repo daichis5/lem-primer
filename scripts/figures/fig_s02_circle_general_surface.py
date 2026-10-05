@@ -20,7 +20,7 @@ fig = Figure(
       "The direction of the base normal forces on a circular and an elliptical slip surface"),
     L("左の円弧では，底面垂直力の作用線がすべて中心 O を通るので，O まわりのモーメントは0になる．"
       "底面のせん断力の腕は，どれも半径 R である．右の楕円では，作用線が中心 O′ を通らない．"
-      "そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の方向が，O′ まわりに回転したときに底面の点が動く方向と，一般に一致しない．",
+      "そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の方向が，O′ まわりに回転したときに底面の点が移動する方向と，一般に一致しない．",
       "On the circle (left), the lines of action of the base normal forces all pass through the center "
       "O, so their moment about O is zero. Every base shear force has the same arm, the radius R. On "
       "the ellipse (right), the lines of action miss the center O′. The base normal force therefore has "
@@ -115,7 +115,7 @@ for k, t in enumerate([214, 240, 260, 294]):
         # Above and right of the arrowhead, clear of the normal arrow, its dashed line and the arc.
         # English is wider: higher and further right.
         fig.text(L(add(tv, (10, -24)), add(tv, (14, -30))),
-                 L("動く方向", "direction of motion"), SMALL, MUTED, "middle")
+                 L("移動方向", "direction of motion"), SMALL, MUTED, "middle")
         fig.text(add(tt, (4, 16)), L("接線", "tangent"), SMALL, UNIT)
 
 
@@ -125,7 +125,7 @@ fig.math((574, 282),
          L(r"\t{作用線は }O′\t{ を通らない}", r"\t{The lines of action miss }O′"), 15, INK, "middle")
 fig.math((574, 305), "M_{O′}(N_i) = N_i d ≠ 0", 15, INK, "middle")
 fig.math((574, 328),
-         L(r"\t{接線と，}O′\t{ まわりの回転で動く方向が違う}", r"\t{Rotation about }O′\t{ does not follow the tangent}"),
+         L(r"\t{接線と，}O′\t{ まわりの回転による移動方向が異なる}", r"\t{Rotation about }O′\t{ does not follow the tangent}"),
          15, INK, "middle")
 fig.line((380, 20), (380, 330), "#e2e8f0", 1)
 

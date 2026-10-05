@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc">
   <title id="title">Fellenius法，簡易Bishop法，簡易Janbu法の比較</title>
-  <desc id="desc">同じスライスで，3つの手法が無視する内力と，使うつり合いを比べる．無視する力は薄い破線で示す．Fellenius法はスライス間力を無視し，全体のモーメントのつり合いを使う．簡易Bishop法はスライス間のせん断力を無視し，各スライスの鉛直方向の力と全体のモーメントのつり合いを使う．簡易Janbu法はスライス間のせん断力を無視し，力のつり合いを使う．</desc>
+  <desc id="desc">同じスライスで，3つの手法が無視する内力と，使うつり合いを比較する．無視する力は薄い破線で示す．Fellenius法はスライス間力を無視し，全体のモーメントのつり合いを使う．簡易Bishop法はスライス間のせん断力を無視し，各スライスの鉛直方向の力と全体のモーメントのつり合いを使う．簡易Janbu法はスライス間のせん断力を無視し，力のつり合いを使う．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="420" fill="#fff"/>
   <text x="130" y="28" class="t" font-size="15" fill="#172033" text-anchor="middle" font-weight="bold">Fellenius法</text>
