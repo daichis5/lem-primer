@@ -395,7 +395,7 @@ $$
 
 表面力の分解と有効垂直応力
 
-左：表面力 $\boldsymbol{t}$ は，法線成分 $-\sigma_n\boldsymbol{n}$ とせん断成分 $\boldsymbol{\tau}$ の和になる．右：垂直応力 $\sigma_n$ は，有効垂直応力 $\sigma_n'$ と間隙水圧 $u$ の和である．数値は，6節の例を使っている．
+左：表面力 $\boldsymbol{t}$ は，法線成分 $-\sigma_n\boldsymbol{n}$ とせん断成分 $\boldsymbol{\tau}$ の和になる．右：垂直応力 $\sigma_n$ は，有効垂直応力 $\sigma_n'$ と間隙水圧 $u$ の和である．数値には，6節の例を使っている．
 ```
 
 ---

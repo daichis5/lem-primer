@@ -286,8 +286,8 @@ of the documents: it has no subtitle, builds-on line or 確認問題.
   `{term}`; later uses stay plain. Count only the main text: not the lead
   (up to the line that links the glossary), headings, tables, equations,
   figures (titles and legends) or dropdowns. A use is the term itself, its
-  abbreviation, a name its entry gives, or another form of the same words (LEM,
-  任意形状のすべり面, 回転軸; 離散化, 不静定性を解消, 局所的なすべり方向);
+  abbreviation, a name its entry gives, or another form of the same words
+  (LEM, 任意形状のすべり面, 回転軸; 離散化, 不静定性を解消, 局所的なすべり方向);
   for all but the term itself, name the entry, as in
   `` {term}`LEM <極限平衡法>` ``. A word inside a use of another term is
   not a use (間隙水圧 in 間隙水圧の合力), and neither is a common word
