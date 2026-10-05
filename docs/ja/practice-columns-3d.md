@@ -428,7 +428,7 @@ uv run python save_table.py
 | `ModuleNotFoundError: No module named 'infinite_slope'` | 実践1の `infinite_slope.py` が，同じフォルダにない．テストと `run_columns.py` が読み込む．（→[準備](#columns-setup)） |
 | `RuntimeWarning: invalid value encountered in sqrt` | `Ellipsoid.z` で，楕円体と交わらない鉛直線でも平方根を計算している．`np.where` は両方の値を先に計算するので，`np.sqrt(np.abs(q))` とする．（→[1節](#columns-section-1)） |
 | `ValueError: m_alpha が 0 以下になるカラムがある` | 3次元の簡易Bishop法の反復で，$F_s$ が小さくなりすぎたか，底面が急に上るカラムや，横に急に傾いたカラムがある．初期値 `fs` を大きくするか，すべり面を見直す．（→[4節](#columns-section-4)） |
-| 計算に時間がかかる | カラムの数は $h^2$ に反比例して増える．$h=0.25$ mの球で約9200本である．確認している間は $h=0.5$ mや1 mで試す．（→[7節](#columns-section-7)） |
+| 計算に時間がかかる | カラムの数は $h^2$ に反比例して増える．$h=0.25$ mの球で約9200本である．動作を確認する間は $h=0.5$ mや1 mで試す．（→[7節](#columns-section-7)） |
 | 値が表と少し違う | $h$ と，カラムの並び（`centres`）を確認する．並びが対称でないと，左右に回した全体すべり方向の値もずれる．（→[1節](#columns-section-1)） |
 
 ## まとめ
