@@ -166,11 +166,13 @@ compare a document with it.
 - Split a sentence past about 100 characters, not counting inline math, or
   one with a remark in parentheses inside a modifier, into two joined by a
   connective.
-- In a note, a supplement, a remark opened with なお, or an aside that
-  heads off a misreading, say what a thing is before what it is not:
+- Say what a thing is before what it is not, in the body as in notes and
+  supplements:
   「この近似は，スライス間力の効果を，安全率の計算に含めていないだけである．
   スライス間力が物理的に存在しないとみなすものではない．」
-  (from 「…みなすものではない．…含めていないだけである．」).
+  (from 「…みなすものではない．…含めていないだけである．」). An answer to a
+  yes/no question still answers first, and one sentence 「AではなくB」 may
+  stay.
 - Say each thing once.
 
 ### Notation
