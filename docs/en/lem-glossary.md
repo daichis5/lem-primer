@@ -1,8 +1,8 @@
 ---
 title: "Glossary"
 lang: en
-translated_from: "9b11256"
-translated_on: 2026-10-04
+translated_from: "4396db4"
+translated_on: 2026-10-05
 ---
 
 # Glossary
