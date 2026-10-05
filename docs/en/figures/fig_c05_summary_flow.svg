@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="748" viewBox="0 0 760 748" role="img" aria-labelledby="title desc">
+  <title id="title">From the stress in a continuum to the factor of safety</title>
+  <desc id="desc">The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the quantity and its formula. The arrow between two boxes is labelled with what that step does. Sections 1 to 6 work with the stress at each point, Sections 7 to 9 with the resultants on each base.</desc>
+  <style>.t{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
+  <rect width="760" height="748" fill="#fff"/>
+  <rect x="96" y="16" width="568" height="512" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="110" y="38" class="t" font-size="13" fill="#475569" text-anchor="start">stress at each point</text>
+  <rect x="96" y="556" width="568" height="176" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="110" y="578" class="t" font-size="13" fill="#475569" text-anchor="start">resultants on each base</text>
+  <rect x="120" y="50" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="76.7" class="t" font-size="13" fill="#475569" text-anchor="start">§1</text>
+  <text x="196" y="77" class="t" font-size="14" fill="#172033" text-anchor="start">equilibrium at each point</text>
+  <text x="444" y="77.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic" font-weight="bold">σ</tspan><tspan font-style="normal">,  ∇·</tspan><tspan font-style="italic" font-weight="bold">σ</tspan><tspan font-style="normal"> + </tspan><tspan font-style="italic">ρ</tspan><tspan font-style="italic" font-weight="bold">b</tspan><tspan font-style="normal"> = </tspan><tspan font-style="normal" font-weight="bold">0</tspan></text>
+  <rect x="120" y="134" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="160.7" class="t" font-size="13" fill="#475569" text-anchor="start">§2</text>
+  <text x="196" y="161" class="t" font-size="14" fill="#172033" text-anchor="start">traction on the slip surface</text>
+  <text x="444" y="161.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic" font-weight="bold">t</tspan><tspan font-style="normal"> = </tspan><tspan font-style="italic" font-weight="bold">σn</tspan></text>
+  <rect x="120" y="218" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="244.7" class="t" font-size="13" fill="#475569" text-anchor="start">§3</text>
+  <text x="196" y="245" class="t" font-size="14" fill="#172033" text-anchor="start">normal and shear stress</text>
+  <text x="444" y="245.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">σ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal">,  </tspan><tspan font-style="italic" font-weight="bold">τ</tspan></text>
+  <rect x="120" y="302" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="328.7" class="t" font-size="13" fill="#475569" text-anchor="start">§4</text>
+  <text x="196" y="329" class="t" font-size="14" fill="#172033" text-anchor="start">effective normal stress</text>
+  <text x="444" y="329.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">σ</tspan><tspan font-style="normal">′</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal"> = </tspan><tspan font-style="italic">σ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal"> − </tspan><tspan font-style="italic">u</tspan></text>
+  <rect x="120" y="386" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="412.7" class="t" font-size="13" fill="#475569" text-anchor="start">§5</text>
+  <text x="196" y="413" class="t" font-size="14" fill="#172033" text-anchor="start">shear strength</text>
+  <text x="444" y="413.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">τ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">f</tspan><tspan dy="-4.8" font-style="normal"> = </tspan><tspan font-style="italic">c</tspan><tspan font-style="normal">′ + </tspan><tspan font-style="italic">σ</tspan><tspan font-style="normal">′</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">n</tspan><tspan dy="-4.8" font-style="normal"> tan </tspan><tspan font-style="italic">ϕ</tspan><tspan font-style="normal">′</tspan></text>
+  <rect x="120" y="470" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="496.7" class="t" font-size="13" fill="#475569" text-anchor="start">§6</text>
+  <text x="196" y="497" class="t" font-size="14" fill="#172033" text-anchor="start">mobilized shear stress</text>
+  <text x="444" y="497.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">τ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">m</tspan><tspan dy="-4.8" font-style="normal"> = </tspan><tspan font-style="italic">τ</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">f</tspan><tspan dy="-4.8" font-style="normal"> / </tspan><tspan font-style="italic">F</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">s</tspan></text>
+  <rect x="120" y="590" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="616.7" class="t" font-size="13" fill="#475569" text-anchor="start">§7–8</text>
+  <text x="196" y="617" class="t" font-size="14" fill="#172033" text-anchor="start">resultant forces on a base</text>
+  <text x="444" y="617.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">N</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan dy="-4.8" font-style="normal">,  </tspan><tspan font-style="italic">U</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan><tspan dy="-4.8" font-style="normal">,  </tspan><tspan font-style="italic">T</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">i</tspan></text>
+  <rect x="120" y="674" width="520" height="44" rx="6" fill="#fff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="136" y="700.7" class="t" font-size="13" fill="#475569" text-anchor="start">§9</text>
+  <text x="196" y="701" class="t" font-size="14" fill="#172033" text-anchor="start">factor of safety and the forces</text>
+  <text x="444" y="701.6" class="m" font-size="17" fill="#172033" text-anchor="start"><tspan font-style="italic">F</tspan><tspan dy="4.8" font-size="11.9" font-style="italic">s</tspan></text>
+  <line x1="380" y1="98" x2="380" y2="125.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,130 374.7,118.9 385.3,118.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="118.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">Cauchy's formula</tspan></text>
+  <line x1="380" y1="182" x2="380" y2="209.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,214 374.7,202.9 385.3,202.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="202.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">split along and across the surface</tspan></text>
+  <line x1="380" y1="266" x2="380" y2="293.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,298 374.7,286.9 385.3,286.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="286.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">subtract the pore pressure </tspan><tspan font-style="italic">u</tspan></text>
+  <line x1="380" y1="350" x2="380" y2="377.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,382 374.7,370.9 385.3,370.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="370.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">Mohr–Coulomb failure criterion</tspan></text>
+  <line x1="380" y1="434" x2="380" y2="461.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,466 374.7,454.9 385.3,454.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="454.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">divide by the factor of safety </tspan><tspan font-style="italic">F</tspan><tspan dy="3.6" font-size="9.1" font-style="italic">s</tspan></text>
+  <line x1="380" y1="518" x2="380" y2="581.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,586 374.7,574.9 385.3,574.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="546.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">integrate over each base, and model it</tspan></text>
+  <line x1="380" y1="638" x2="380" y2="665.6" stroke="#475569" stroke-width="1.8" stroke-linecap="butt"/>
+  <polygon points="380,670 374.7,658.9 385.3,658.9" fill="#475569" stroke-linejoin="round"/>
+  <text x="394" y="658.3" class="m" font-size="13" fill="#475569" text-anchor="start"><tspan font-style="normal" class="t" font-size="13">equilibrium equations and LEM's assumptions</tspan></text>
+</svg>
