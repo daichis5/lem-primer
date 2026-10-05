@@ -5,7 +5,7 @@ Left: a circular arc. Every base normal force N acts along the radius, so
 its line passes through O and M_O(N) = 0; every base shear has the same
 arm R. Right: an elliptical arc. The normals miss the centre O', so N has
 an arm d about O' and a moment N d; and the tangent no longer matches the
-velocity of a rotation about O'.
+direction in which a rotation about O' moves a point of the base.
 """
 
 import math
@@ -20,7 +20,7 @@ fig = Figure(
       "The direction of the base normal forces on a circular and an elliptical slip surface"),
     L("左の円弧では，底面垂直力の作用線がすべて中心 O を通るので，O まわりのモーメントは0になる．"
       "底面のせん断力の腕は，どれも半径 R である．右の楕円では，作用線が中心 O′ を通らない．"
-      "そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の向きが，O′ まわりの回転の速度の向きと一致しない．",
+      "そのため，底面垂直力は O′ まわりに腕 d をもつ．また，接線の方向が，O′ まわりに回転したときに底面の点が動く方向と，一般に一致しない．",
       "On the circle (left), the lines of action of the base normal forces all pass through the center "
       "O, so their moment about O is zero. Every base shear force has the same arm, the radius R. On "
       "the ellipse (right), the lines of action miss the center O′. The base normal force therefore has "
@@ -100,20 +100,21 @@ for k, t in enumerate([214, 240, 260, 294]):
         fig.math(add(lerp(O2, foot, 0.5), (-4, -8)), "d", 16, INK, "end")
         fig.math(add(p, (-8, 20)), "N_i", 16, NORMAL, "end")
     if k == 3:
-        # Tangent (dashed) against the velocity of a rotation about O' (grey).
+        # Tangent (dashed) against the direction a rotation about O' moves the point (grey).
         r = sub(p, O2)
-        vel = unit((r[1], -r[0]))
-        if vel[0] < 0:
-            vel = (-vel[0], -vel[1])
+        motion = unit((r[1], -r[0]))
+        if motion[0] < 0:
+            motion = (-motion[0], -motion[1])
         tg = (-u[1], u[0])
         if tg[0] < 0:
             tg = (-tg[0], -tg[1])
         fig.line(sub(p, mul(tg, 20)), add(p, mul(tg, 60)), UNIT, 1.3, "5 4")
-        fig.arrow(p, add(p, mul(vel, 50)), MUTED, 2)
-        tv, tt = add(p, mul(vel, 50)), add(p, mul(tg, 60))
-        # English is wider: higher and further right, clear of the dashed normal and the arc.
-        fig.text(L(add(tv, (-4, -8)), add(tv, (14, -30))),
-                 L("回転の速度", "velocity of rotation"), SMALL, MUTED, "middle")
+        fig.arrow(p, add(p, mul(motion, 50)), MUTED, 2)
+        tv, tt = add(p, mul(motion, 50)), add(p, mul(tg, 60))
+        # Above and right of the arrowhead, clear of the normal arrow, its dashed line and the arc.
+        # English is wider: higher and further right.
+        fig.text(L(add(tv, (10, -24)), add(tv, (14, -30))),
+                 L("動く方向", "velocity of rotation"), SMALL, MUTED, "middle")
         fig.text(add(tt, (4, 16)), L("接線", "tangent"), SMALL, UNIT)
 
 
@@ -123,7 +124,7 @@ fig.math((574, 282),
          L(r"\t{作用線は }O′\t{ を通らない}", r"\t{The lines of action miss }O′"), 15, INK, "middle")
 fig.math((574, 305), "M_{O′}(N_i) = N_i d ≠ 0", 15, INK, "middle")
 fig.math((574, 328),
-         L(r"\t{接線と，}O′\t{ まわりの回転の速度の向きが違う}", r"\t{Tangent and velocity of rotation about }O′\t{ differ}"),
+         L(r"\t{接線と，}O′\t{ まわりの回転で動く方向が違う}", r"\t{Tangent and velocity of rotation about }O′\t{ differ}"),
          15, INK, "middle")
 fig.line((380, 20), (380, 330), "#e2e8f0", 1)
 
