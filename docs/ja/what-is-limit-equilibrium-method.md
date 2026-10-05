@@ -262,7 +262,7 @@ $$ (eq-what-fellenius)
 この近似は，スライス間力の効果を，安全率の計算に含めていないだけである．スライス間力が物理的に存在しないとみなすものではない．
 ```
 
-**原典**：Felleniusの方法は，1920年代の著作までさかのぼる．書誌を確かめられた資料には，W. Fellenius, *Erdstatische Berechnungen mit Reibung und Kohäsion (Adhäsion) und unter Annahme kreiszylindrischer Gleitflächen*, Ernst & Sohn, Berlin, 1927がある（[書誌情報](https://books.google.com/books?id=yHhHAAAAIAAJ)）．もう1つは，“Calculation of the Stability of Earth Dams,” *Proceedings of the Second Congress on Large Dams*, Vol. 4, pp. 445–462, 1936である（[書誌情報](https://cir.nii.ac.jp/crid/1573950399306830336)）．どちらにも，確かめられる現代のDOIはない．
+**原典**：Felleniusの方法は，1920年代の著作までさかのぼる．書誌を確認できた資料には，W. Fellenius, *Erdstatische Berechnungen mit Reibung und Kohäsion (Adhäsion) und unter Annahme kreiszylindrischer Gleitflächen*, Ernst & Sohn, Berlin, 1927がある（[書誌情報](https://books.google.com/books?id=yHhHAAAAIAAJ)）．もう1つは，“Calculation of the Stability of Earth Dams,” *Proceedings of the Second Congress on Large Dams*, Vol. 4, pp. 445–462, 1936である（[書誌情報](https://cir.nii.ac.jp/crid/1573950399306830336)）．どちらにも，確認できる現代のDOIはない．
 
 ---
 
@@ -332,7 +332,7 @@ $$ (eq-what-bishop-janbu)
 補正係数は，特定の仮定と経験的な整理のもとで，安全率の偏りを減らすための補正である．補正係数を掛けても，満たしていないモーメントのつり合いが厳密に満たされるわけではない．
 ```
 
-**初期の文献**：N. Janbu (1954), “Application of composite slip surfaces for stability analysis,” *Proceedings of the European Conference on Stability of Earth Slopes*, Stockholm, Vol. 3, pp. 43–49（[書誌情報](https://cir.nii.ac.jp/crid/1570009750148611712)）．確かめられるDOIはない．一般化して整理した文献として，N. Janbu (1973), “Slope Stability Computations,” in *Embankment-Dam Engineering: Casagrande Volume*, pp. 47–86もよく参照される．
+**初期の文献**：N. Janbu (1954), “Application of composite slip surfaces for stability analysis,” *Proceedings of the European Conference on Stability of Earth Slopes*, Stockholm, Vol. 3, pp. 43–49（[書誌情報](https://cir.nii.ac.jp/crid/1570009750148611712)）．確認できるDOIはない．一般化して整理した文献として，N. Janbu (1973), “Slope Stability Computations,” in *Embankment-Dam Engineering: Casagrande Volume*, pp. 47–86もよく参照される．
 
 ---
 
@@ -420,7 +420,7 @@ $f(x)=1$ とすれば，$X/E=\lambda$ は一定になる．つまり，Spencer�
 | Morgenstern–Price法 | 任意形状 | $X/E=\lambda f(x)$ | 力＋モーメント | 内力の関数 $f(x)$ | 一般化したLEM |
 
 ```{note}
-「主に満たすつり合い」は，標準的な定式化についてのまとめである．ソフトウェアの実装は，同じ名前の手法でも，拡張した式や，地震荷重・補強材・非円弧面の扱いによって，細部が違う．使う前に，マニュアルに書かれた式と収束の判定を確かめておく．
+「主に満たすつり合い」は，標準的な定式化についてのまとめである．ソフトウェアの実装は，同じ名前の手法でも，拡張した式や，地震荷重・補強材・非円弧面の扱いによって，細部が違う．使う前に，マニュアルに書かれた式と収束の判定を確認しておく．
 ```
 
 ---
@@ -577,7 +577,7 @@ Hungrは，簡易Bishop法を3次元に直接拡張した．Ugaiらも，簡便�
 - 仮定した回転軸まわりの，全体のモーメントのつり合いから，$F_s$ を求める
 - 水平な2方向の力のつり合いは，一般に満たさない
 
-この拡張は，簡易Bishop法の計算のしやすさを保ちながら，有限の幅，端部，平面の形の効果を取り込む．しかし，回転しない機構の問題や，非対称性が強い問題，底面のせん断力の向きが複雑な問題では，元の仮定が適切かを別に確かめなければならない．
+この拡張は，簡易Bishop法の計算のしやすさを保ちながら，有限の幅，端部，平面の形の効果を取り込む．しかし，回転しない機構の問題や，非対称性が強い問題，底面のせん断力の向きが複雑な問題では，元の仮定が適切かを別に確認しなければならない．
 
 ##### Ugaiらの位置付け
 
@@ -647,7 +647,7 @@ $$ (eq-what-3d-lambda-y)
 - すべり方向は，前もって仮定する
 - 斜面，地層，すべり面，間隙水圧を，3次元の空間でモデル化する
 
-この方法で，3次元のLEMはより一般的になる．一方で，仮定しなければならない内力の関数や，未知の倍率，収束計算が増える．自由度が増えた分だけ，入力した仮定が結果に与える影響を，よく確かめなければならない．
+この方法で，3次元のLEMはより一般的になる．一方で，仮定しなければならない内力の関数や，未知の倍率，収束計算が増える．自由度が増えた分だけ，入力した仮定が結果に与える影響を，よく確認しなければならない．
 
 **原著論文**：[L. Lam and D. G. Fredlund (1993), “A general limit equilibrium model for three-dimensional slope stability analysis,” *Canadian Geotechnical Journal*, 30(6), 905–919. DOI: 10.1139/t93-089](https://doi.org/10.1139/t93-089)
 
@@ -684,7 +684,7 @@ $$ (eq-what-3d-lambda-y)
 | Lam–Fredlundの3次元のGLE | Morgenstern–Price法・GLE | 2方向の関数で表す | 力＋モーメント | 一般性は高いが，仮定と未知量も多い | Lam & Fredlund (1993) |
 | Cheng–Yip | 簡易Bishop法・簡易Janbu法・Morgenstern–Price法 | 2方向で，2次元の各仮定を拡張 | 手法ごとに違う | 非対称な3次元の形を，直接扱う | Cheng & Yip (2007) |
 
-表の手法のうち，満たす式を確かめられたものは，どれも土塊全体の6つのつり合い式をすべては解かない．6つすべてを満たす3次元のLEMは，Zheng (2012)のように，土塊全体を1つの物体として扱う形で示されている．各手法がどの式を満たすかは，[付録「3次元のLEMが満たすつり合い式」](three-dimensional-equilibrium.md)にまとめている．
+表の手法のうち，満たす式を確認できたものは，どれも土塊全体の6つのつり合い式をすべては解かない．6つすべてを満たす3次元のLEMは，Zheng (2012)のように，土塊全体を1つの物体として扱う形で示されている．各手法がどの式を満たすかは，[付録「3次元のLEMが満たすつり合い式」](three-dimensional-equilibrium.md)にまとめている．
 
 #### 3次元の安全率を読むときの注意
 
@@ -780,7 +780,7 @@ LEMの各手法の名前は，主にこの層を表している．
 
 LEMは，仮定した破壊の機構について，全体の安定性を見通しのよい力学で評価する．一方，連続体の解析は，変形と応力の再配分を扱える．ただし，その結果は，構成則，メッシュ，境界条件，強度低減の手順に左右される．つまり，両者は，どちらが優れているという関係ではない．
 
-実務では，両者を補い合う形で使うとよい．まずLEMで複数の手法と複数のすべり面を比べ，必要に応じて，連続体の解析で変形，局所的な応力，施工の過程，進行性破壊を確かめる．
+実務では，両者を補い合う形で使うとよい．まずLEMで複数の手法と複数のすべり面を比べ，必要に応じて，連続体の解析で変形，局所的な応力，施工の過程，進行性破壊を確認する．
 
 ---
 
@@ -845,7 +845,7 @@ $$ (eq-what-summary-shear)
 
 #### 13.5 解析結果の読み方
 
-解析結果を見るときは，手法の名前だけでなく，次の点を確かめる．
+解析結果を見るときは，手法の名前だけでなく，次の点を確認する．
 
 1. すべり面を，どのように仮定し，どう探したか
 2. 強度と安全率を，どう定めたか
@@ -960,7 +960,7 @@ $f(x)$ は，内力の向きが場所によってどう変わるかを表す関�
 
 ### 手法ごとの原著論文
 
-本文で扱った原著論文と，代表的な一次文献を，手法ごとにまとめる．DOIは，出版社やCrossrefの書誌情報で照合できたものだけを載せている．DOIを確かめられなかったFellenius (1927, 1936)とJanbu (1954, 1973)には，DOIを付けていない．書誌ページが見つかったものには，そのリンクを付けている．
+本文で扱った原著論文と，代表的な一次文献を，手法ごとにまとめる．DOIは，出版社やCrossrefの書誌情報で照合できたものだけを載せている．DOIを確認できなかったFellenius (1927, 1936)とJanbu (1954, 1973)には，DOIを付けていない．書誌ページが見つかったものには，そのリンクを付けている．
 
 #### 2次元の手法
 
