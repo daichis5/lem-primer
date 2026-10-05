@@ -22,8 +22,8 @@ fig = Figure(
     330,
     L("曲面の底面に働く表面力から，底面の合力へ", "From the traction on a curved base to the base resultants"),
     L("左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとして"
-      "つないだ図．向きを考えて足した合力は，大きさだけを足した値より短い．"
-      "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを足した Ni と Ti を置いたモデル．",
+      "つないだ図．ベクトル和として求めた合力は，大きさだけの和より短い．"
+      "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを合計した Ni と Ti を置いたモデル．",
       "Left: the normal and shear components of the traction distributed along a curved base. Middle: "
       "the normal force at each point joined head to tail as vectors. The resultant, added with their "
       "directions, is shorter than the sum of their sizes alone. Right: LEM's model, which represents "
@@ -82,7 +82,7 @@ fig.line((bx, by), (bx + chain, by), LIGHT, 6, cap="butt")
 fig.math((bx + chain + 8, by + 5), "∫σ_n dA", 15, "#3b82f6")
 fig.line((bx, by + 18), (bx + resultant, by + 18), NORMAL, 6, cap="butt")
 fig.math((bx + resultant + 8, by + 23), r"‖\v{N}_i‖", 15, NORMAL)
-fig.text((462, 30), L("ベクトルとして足す", "added as vectors"), SMALL, MUTED, "middle")
+fig.text((462, 30), L("ベクトル和をとる", "added as vectors"), SMALL, MUTED, "middle")
 
 # In LEM's model the base forces are sums of sizes: N_i = ∫σ_n dA, and T_i alike.
 shear_sum = sum(0.33 * sigma(k) * SCALE for k in range(POINTS))

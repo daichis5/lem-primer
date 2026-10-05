@@ -21,7 +21,7 @@ def plane_vectors(beta_deg: float) -> tuple[np.ndarray, np.ndarray]:
 
 
 def split_traction(t: np.ndarray, n: np.ndarray) -> tuple[float, np.ndarray]:
-    """表面力 t を，外向きの単位法線ベクトル n の面について分ける．
+    """表面力 t を，外向きの単位法線ベクトル n の面について分解する．
 
     圧縮を正とする垂直応力 sigma_n = -n·t と，せん断成分 (I - n nᵀ) t を返す．
     """

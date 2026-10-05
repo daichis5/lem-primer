@@ -18,7 +18,7 @@ fig = Figure(
     "fig_02_indeterminacy",
     370,
     L("5つのスライスに残る未知量", "Unknowns left in five slices"),
-    L("5つのスライスに分けたすべり土塊で，未知量が働く場所を示す．各底面に垂直力 N が1つずつ，"
+    L("5つのスライスに分割したすべり土塊で，未知量が働く場所を示す．各底面に垂直力 N が1つずつ，"
       "スライスの間の4つの境界に E，X，作用位置 h が1つずつあり，安全率 Fs は全体で1つである．"
       "未知量は18個で，つり合い式の15本より多い．",
       "A sliding mass cut into five slices, showing where the unknowns act. Each base carries one "

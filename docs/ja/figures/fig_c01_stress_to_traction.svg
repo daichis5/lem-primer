@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
   <title id="title">応力テンソルと，面に働く表面力</title>
-  <desc id="desc">左は，1つの点の応力の状態を，小さな要素の面に働く応力の成分で表した図．中と右は，同じ点を向きの違う2つの面で切り，それぞれの面に働く表面力を同じ応力から計算して描いた図．面の向きが変わると，表面力の向きと大きさも変わる．</desc>
+  <desc id="desc">左は，1つの点の応力の状態を，小さな要素の面に働く応力の成分で表した図．中と右は，同じ点を向きの異なる2つの面で切り，それぞれの面に働く表面力を同じ応力から計算して描いた図．面の向きが変わると，表面力の向きと大きさも変わる．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="330" fill="#fff"/>
   <rect x="74" y="129" width="92" height="92" rx="2" fill="#f1f5f9" stroke="#172033" stroke-width="1.6"/>

@@ -64,18 +64,18 @@ def test_fellenius_about_the_centre_of_a_circle_is_the_formula():
 def test_the_moment_centre_matters_only_where_force_equilibrium_is_missing():
     s = slices.make_slices(slices.Ellipse(), 50)
     o, up, right = (6.0, 18.0), (6.0, 25.0), (10.0, 18.0)
-    # 全体の力のつり合いを満たさない Fellenius法は，上にも右にも動かすと値が変わる
+    # 全体の力のつり合いを満たさない Fellenius法は，上にも右にも移動させると値が変わる
     assert slices.fellenius_about(s, up) != pytest.approx(
         slices.fellenius_about(s, o), abs=1e-3
     )
     assert slices.fellenius_about(s, right) != pytest.approx(
         slices.fellenius_about(s, o), abs=1e-3
     )
-    # 鉛直方向のつり合いを満たす簡易Bishop法は，横に動かしても変わらない
+    # 鉛直方向のつり合いを満たす簡易Bishop法は，横に移動させても変わらない
     bishop_o = slices.fs_moment(s, 0.0, o)
     assert slices.fs_moment(s, 0.0, up) != pytest.approx(bishop_o, abs=1e-3)
     assert slices.fs_moment(s, 0.0, right) == pytest.approx(bishop_o, abs=1e-9)
-    # 力とモーメントのつり合いをともに満たす Spencer法は，どこに動かしても変わらない
+    # 力とモーメントのつり合いをともに満たす Spencer法は，どこに移動させても変わらない
     spencer_o = slices.spencer(s, o)[0]
     assert slices.spencer(s, up)[0] == pytest.approx(spencer_o, abs=1e-6)
     assert slices.spencer(s, right)[0] == pytest.approx(spencer_o, abs=1e-6)

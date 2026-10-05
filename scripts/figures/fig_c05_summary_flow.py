@@ -15,7 +15,7 @@ STEPS = [  # (section, quantity, formula, label of the arrow into the next step)
     (L("1節", "Section 1"), L("応力場と各点のつり合い", "stress field and equilibrium"),
      r"\v{σ},  ∇·\v{σ} + ρ\v{b} = \v{0}", L(r"\t{Cauchyの公式}", r"\t{Cauchy's formula}")),
     (L("2節", "Section 2"), L("すべり面上の表面力", "traction on the slip surface"),
-     r"\v{t} = \v{σ}\v{n}", L(r"\t{法線成分とせん断成分に分ける}", r"\t{split into normal and shear components}")),
+     r"\v{t} = \v{σ}\v{n}", L(r"\t{法線成分とせん断成分に分解する}", r"\t{split into normal and shear components}")),
     (L("3節", "Section 3"), L("垂直応力とせん断応力", "normal and shear stress"),
      r"σ_n,  \v{τ}", L(r"\t{間隙水圧 }u\t{ を引く}", r"\t{subtract the pore water pressure }u")),
     (L("4節", "Section 4"), L("有効垂直応力", "effective normal stress"),
@@ -52,7 +52,7 @@ fig = Figure(
     height,
     L("連続体の応力から安全率までの流れ", "From the stress in a continuum to the factor of safety"),
     L("1節から9節の段階を，上から順に箱で示す．各箱には，節，量，式を並べている．箱の間の矢印には，"
-      "次の段階に進むときに使う式や行う操作を書いている．2つのパネルのうち，上は1節から6節の点ごとの応力，下は7節から9節のスライスやカラムごとの合力である．",
+      "次の段階に進むときに使う式や行う操作を示している．2つのパネルのうち，上は1節から6節の点ごとの応力，下は7節から9節のスライスやカラムごとの合力である．",
       "The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the "
       "quantity and its formula. The arrow between two boxes is labeled with the formula or "
       "operation that leads to the next step. Sections 1 to 6 work with the stress at each point, "

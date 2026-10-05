@@ -119,7 +119,7 @@ def centres(lo, hi, h):
 def make_columns(
     surface, h, *, gamma=18.0, c=10.0, phi_deg=30.0, water_level=None, ground=ground
 ):
-    """平面図を一辺 h の正方形に分け，カラムの表を返す．
+    """平面図を一辺 h の正方形に分割し，カラムの表を返す．
 
     中心ですべり面が地表より下にある正方形を，カラムにする．各底面は，中心の
     鉛直線上の点と，そこでの接平面で代表させる．地下水位 water_level [m] を
@@ -176,7 +176,7 @@ def projected_directions(col, d):
 def hovland(col, m):
     """Hovland法の安全率．m は各底面の局所すべり方向．
 
-    カラム間力を無視し，各カラムの抵抗力と滑動力を足し合わせて比をとる．
+    カラム間力を無視し，各カラムの抵抗力と滑動力を合計して比をとる．
     """
     N = col.W * (col.n @ GRAVITY)  # 自重の法線方向の成分
     S = col.c * col.A + (N - col.u * col.A) * col.tan_phi  # 発揮できるせん断力
