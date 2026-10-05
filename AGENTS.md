@@ -135,7 +135,7 @@ compare a document with it.
   series, write the present, as Japanese textbooks do:
   「用語と記号は，用語集にまとめている．」「補足には，…を書いている．」
   (not まとめた，書いた). The past stays for what an earlier section or
-  document did (「第1章では，…を導いた」), and for a document's closing
+  document did (「第1章では，…を導出した」), and for a document's closing
   look back at its own sections (「この章では，…を整理した」).
 - A parenthesis may stay mid-sentence when it is short and holds no ． and
   no link: a term (「単位面積あたりの力を，**表面力**（traction）という」)
@@ -211,6 +211,7 @@ compare a document with it.
 | 任意形状，一般形状 | 任意の形 | as in 任意形状のすべり面 |
 | 元の手法 | 原法 | |
 | 射影 | 投影 | projecting onto a plane, as in 補足C |
+| 導出する，導出 | 導く，導き方 | deriving an equation or a force, as textbooks write it; also in titles |
 | 実践1，実践2，実践3，この実践 | 演習，課題 | the practice pages, and a practice page referring to itself |
 
 ## Review questions
