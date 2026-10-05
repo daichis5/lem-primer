@@ -24,7 +24,8 @@ fig = Figure(
       "On the circle (left), the lines of action of the base normal forces all pass through the center "
       "O, so their moment about O is zero. Every base shear force has the same arm, the radius R. On "
       "the ellipse (right), the lines of action miss the center O′. The base normal force therefore has "
-      "an arm d about O′. Also, the tangent does not point along the velocity of a rotation about O′."),
+      "an arm d about O′. Also, a rotation about O′ does not, in general, move the points of the base "
+      "along the tangent."),
 )
 
 
@@ -114,7 +115,7 @@ for k, t in enumerate([214, 240, 260, 294]):
         # Above and right of the arrowhead, clear of the normal arrow, its dashed line and the arc.
         # English is wider: higher and further right.
         fig.text(L(add(tv, (10, -24)), add(tv, (14, -30))),
-                 L("動く方向", "velocity of rotation"), SMALL, MUTED, "middle")
+                 L("動く方向", "direction of motion"), SMALL, MUTED, "middle")
         fig.text(add(tt, (4, 16)), L("接線", "tangent"), SMALL, UNIT)
 
 
@@ -124,7 +125,7 @@ fig.math((574, 282),
          L(r"\t{作用線は }O′\t{ を通らない}", r"\t{The lines of action miss }O′"), 15, INK, "middle")
 fig.math((574, 305), "M_{O′}(N_i) = N_i d ≠ 0", 15, INK, "middle")
 fig.math((574, 328),
-         L(r"\t{接線と，}O′\t{ まわりの回転で動く方向が違う}", r"\t{Tangent and velocity of rotation about }O′\t{ differ}"),
+         L(r"\t{接線と，}O′\t{ まわりの回転で動く方向が違う}", r"\t{Rotation about }O′\t{ does not follow the tangent}"),
          15, INK, "middle")
 fig.line((380, 20), (380, 330), "#e2e8f0", 1)
 

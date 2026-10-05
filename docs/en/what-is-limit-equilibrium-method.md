@@ -2,7 +2,7 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: "4396db4"
+translated_from: "3eed6cf"
 translated_on: 2026-10-05
 ---
 
@@ -10,12 +10,12 @@ translated_on: 2026-10-05
 
 **What assumptions does each method use to determine the remaining unknowns?**
 
-Chapter 1 derived the equation for the forces on a slice base. That equation alone, however, determines neither the magnitude of the base forces nor the factor of safety. This chapter compares 2D and 3D limit equilibrium methods (LEM) by asking which assumption each method uses to supply the missing conditions. The aim is not to memorize each method's formula. Instead, the chapter sets each method against the full statics problem, with all its forces, and sorts out what the method satisfies, what it simplifies and what it leaves unsolved.
+Chapter 1 derived the equation for the forces on a slice base. That equation alone, however, determines neither the magnitude of the base forces nor the factor of safety. This chapter compares 2D and 3D limit equilibrium methods (LEM) by asking which assumption each method uses to supply the missing conditions. The chapter sets each method against the full statics problem, with all its forces, and sorts out what the method satisfies, what it simplifies and what it leaves unsolved. The aim is not to memorize each method's formula.
 
 This chapter assumes that you have read [Chapter 1](continuum-mechanics-to-lem-start.md). The terms and symbols are collected in the [Glossary](lem-glossary.md).
 
 ```{admonition} Key points of this chapter
-Limit equilibrium methods do not differ only in the form of their formulas. Once a continuum is divided into slices or columns, the equilibrium equations alone cannot determine the internal forces. This state is called **static indeterminacy**. The methods differ in **which assumption about the internal forces, and which equilibrium conditions, they use to resolve this indeterminacy**.
+Once a continuum is divided into slices or columns, the equilibrium equations alone cannot determine the internal forces. This state is called **static indeterminacy**. Limit equilibrium methods differ not only in the form of their formulas but in **which assumption about the internal forces, and which equilibrium conditions, they use to resolve this indeterminacy**.
 ```
 
 ---
@@ -259,7 +259,7 @@ How the water pressure term is written depends on the choice of symbols.
 It is an approximation that leaves the effect of the resultant interslice forces out of the factor of safety. For this reason, it is not suited to finding the base normal force or the internal forces of each slice.
 
 ```{note}
-This approximation does not treat the interslice forces as physically absent. The interslice forces exist; their effect is simply left out of the factor-of-safety calculation.
+This approximation simply leaves the effect of the interslice forces out of the factor-of-safety calculation. It does not treat the interslice forces as physically absent.
 ```
 
 **Original sources**: Fellenius's method goes back to works from the 1920s. One source whose bibliographic details could be checked is W. Fellenius, *Erdstatische Berechnungen mit Reibung und Kohäsion (Adhäsion) und unter Annahme kreiszylindrischer Gleitflächen*, Ernst & Sohn, Berlin, 1927 ([Bibliographic record](https://books.google.com/books?id=yHhHAAAAIAAJ)). Another is “Calculation of the Stability of Earth Dams,” *Proceedings of the Second Congress on Large Dams*, Vol. 4, pp. 445–462, 1936 ([Bibliographic record](https://cir.nii.ac.jp/crid/1573950399306830336)). Neither has a modern DOI that could be verified.
@@ -329,7 +329,7 @@ $$
 $$ (eq-what-bishop-janbu)
 
 ```{note}
-Applying the correction factor does not make the unsatisfied moment equilibrium strictly satisfied. The correction factor reduces the bias of the factor of safety under particular assumptions and an empirical fit.
+The correction factor reduces the bias of the factor of safety under particular assumptions and an empirical fit. Applying it does not make the unsatisfied moment equilibrium strictly satisfied.
 ```
 
 **Early sources**: N. Janbu (1954), “Application of composite slip surfaces for stability analysis,” *Proceedings of the European Conference on Stability of Earth Slopes*, Stockholm, Vol. 3, pp. 43–49 ([Bibliographic record](https://cir.nii.ac.jp/crid/1570009750148611712)). It has no DOI that could be verified. A widely cited work that generalizes and organizes the method is N. Janbu (1973), “Slope Stability Computations,” in *Embankment-Dam Engineering: Casagrande Volume*, pp. 47–86.
@@ -477,7 +477,7 @@ Eq. {eq}`eq-what-column-shear` alone, however, does not fix the **direction** in
 - Assume a direction of sliding that is common to all columns, or that follows a rule
 - Use the direction of steepest slope at each point
 - Solve for the direction, as an unknown, so that it agrees with global equilibrium
-- Take the direction from a velocity field or a kinematic mechanism
+- Take the direction from an assumed mechanism of how each part of the soil mass moves (a kinematic mechanism)
 
 In 2D, the direction of the shear force is effectively fixed within the cross section, so this problem goes unnoticed. In 3D, the formulation includes not only the factor of safety but also **the direction in which the mass is assumed to slide**.
 
@@ -492,7 +492,7 @@ When columns are laid out along the orthogonal $x$ and $y$ directions, the inter
 - The horizontal component of the shear force in the face
 - The point where each resultant acts
 
-So it is not enough to have more copies of the 2D $E$ and $X$. The resultant internal forces gain freedom in their direction, and their contributions to the moment equations increase.
+So in 3D, the resultant internal forces gain freedom in their direction, and their contributions to the moment equations increase. It is not enough to have more copies of the 2D $E$ and $X$.
 
 #### 7.3 There are six equilibrium equations, but even more unknowns
 
@@ -530,7 +530,7 @@ A 3D extension must deal at once with the extra internal boundaries, the freedom
 
 ### 8. How was LEM extended to 3D?
 
-Most 3D methods were not built separately from scratch. The typical line of thought is the following.
+Most 3D methods extend 2D methods and were not built separately from scratch. The typical line of thought is the following.
 
 1. Replace slices with columns
 2. Extend the internal-force assumptions made in 2D to the column boundaries in two directions
@@ -579,7 +579,7 @@ This extension keeps the simplified Bishop method easy to compute, while capturi
 
 ##### Where Ugai et al. stand
 
-Ugai et al. first presented the 3D ordinary method of slices, then extended the simplified Bishop, simplified Janbu and Spencer methods to 3D. This shows that 3D LEM did not develop into a single 3D formula. Instead, it consists of **several lineages, each carrying a 2D way of closing the indeterminacy over to an assembly of columns**.
+Ugai et al. first presented the 3D ordinary method of slices, then extended the simplified Bishop, simplified Janbu and Spencer methods to 3D. This shows that the development of 3D LEM consists of **several lineages, each carrying a 2D way of closing the indeterminacy over to an assembly of columns**. It did not develop into a single 3D formula.
 
 **Main primary papers**:
 
@@ -653,7 +653,7 @@ Many early 3D methods implicitly assumed a plane of symmetry or a known main dir
 - Maps each 2D method's choice of "what to ignore and what to balance" onto 3D
 - In the Morgenstern–Price type, adds internal-force functions and coefficients for two directions
 
-This work shows that the key to a 3D extension is not only making the shape solid. It lies in **redefining in space the internal-force assumption and the direction of sliding, both of which were one-directional in 2D**.
+This work shows that the key to a 3D extension lies in **redefining in space the internal-force assumption and the direction of sliding, both of which were one-directional in 2D**. The key is not only making the shape solid.
 
 **Original paper**: [Y. M. Cheng and C. J. Yip (2007), “Three-Dimensional Asymmetrical Slope Stability Analysis—Extension of Bishop's, Janbu's, and Morgenstern–Price's Techniques,” *Journal of Geotechnical and Geoenvironmental Engineering*, 133(12), 1544–1555. DOI: 10.1061/(ASCE)1090-0241(2007)133:12(1544)](https://doi.org/10.1061/%28ASCE%291090-0241%282007%29133%3A12%281544%29)
 
@@ -764,7 +764,7 @@ Even with the same theoretical equations, different numerical implementations or
 | Effort for input and computation | Relatively small | Generally large |
 | What is mainly read from the results | Factor of safety and sliding mechanism | Stresses, displacements, plastic zones, failure process |
 
-Neither one is simply better than the other. LEM evaluates global stability for an assumed failure mechanism with mechanics that are easy to follow. Continuum analysis, on the other hand, can handle deformation and stress redistribution. Its results, however, depend on the constitutive law, the mesh, the boundary conditions and the strength reduction procedure.
+LEM evaluates global stability for an assumed failure mechanism with mechanics that are easy to follow. Continuum analysis, on the other hand, can handle deformation and stress redistribution. Its results, however, depend on the constitutive law, the mesh, the boundary conditions and the strength reduction procedure. So neither one is simply better than the other.
 
 In practice, the two work best as complements. First compare several methods and several slip surfaces with LEM. Then, as needed, check deformation, local stresses, the construction sequence and progressive failure with a continuum analysis.
 
@@ -787,7 +787,7 @@ Continuum mechanics
     └─ Morgenstern–Price method, GLE → 3D GLE of Lam–Fredlund and Cheng–Yip
 ```
 
-This lineage is not a chronological history of inventions. It is a conceptual map of **how the mechanical assumptions were passed on**.
+This lineage is a conceptual map of **how the mechanical assumptions were passed on**, not a chronological history of inventions.
 
 ---
 
@@ -840,7 +840,7 @@ When reading analysis results, check the following points, not only the name of 
 5. In 3D, how the direction of sliding and the axis of rotation were chosen
 6. Whether the distributions of normal forces and internal forces in the converged solution are physically reasonable
 
-In short, LEM is not simply "a method that divides the resisting force by the driving force."
+In short, LEM is the following.
 
 $$
 \boxed{
@@ -851,6 +851,8 @@ $$
 \end{aligned}
 }
 $$ (eq-what-summary)
+
+LEM is not simply "a method that divides the resisting force by the driving force."
 
 ---
 
