@@ -7,6 +7,8 @@ group the steps: Sections 1 to 6 work with the stress at each point,
 Sections 7 to 9 with the resultants on each slice or column.
 """
 
+import re
+
 from figlib import INK, LABEL, LANGS, MATH, MUTED, RULE, SMALL, TINT, Figure, L, pick, text_width
 
 STEPS = [  # (section, quantity, formula, label of the arrow into the next step)
@@ -24,7 +26,7 @@ STEPS = [  # (section, quantity, formula, label of the arrow into the next step)
      r"τ_m = τ_f / F_s", L(r"\t{面積分と，底面ごとのモデル化}", r"\t{integrate over each base, and model it}")),
     (L("7・8節", "Sections 7–8"), L("底面に働く合力", "resultant forces on a base"),
      r"N_i,  U_i,  T_i", L(r"\t{つり合い式と，LEMに固有の仮定}", r"\t{equilibrium and LEM's assumptions}")),
-    (L("9節", "Section 9"), L("安全率と各合力", "factor of safety and the resultants"), r"F_s", None),
+    (L("9節", "Section 9"), L("安全率と各合力", "factor of safety and the resultants"), r"F_s,  N_i,  T_i", None),
 ]
 POINT_STEPS = 6  # Sections 1 to 6 are in the first panel
 
@@ -50,7 +52,7 @@ fig = Figure(
     height,
     L("連続体の応力から安全率までの流れ", "From the stress in a continuum to the factor of safety"),
     L("1節から9節の段階を，上から順に箱で示す．各箱には，節，量，式を並べている．箱の間の矢印には，"
-      "その段階で行うことを書いている．1節から6節は点ごとの応力を，7節から9節はスライスやカラムごとの合力を扱う．",
+      "次の段階に進むときに使う式や行う操作を書いている．1節から6節は点ごとの応力を，7節から9節はスライスやカラムごとの合力を扱う．",
       "The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the "
       "quantity and its formula. The arrow between two boxes is labelled with what that step does. "
       "Sections 1 to 6 work with the stress at each point, Sections 7 to 9 with the resultants on "
@@ -80,15 +82,19 @@ for k, (*_, step) in enumerate(STEPS[:-1]):
     fig.math((CX + 14, label_y), step, SMALL, MUTED, vcenter=True)
 
 # Every label must end inside its column or panel, in both languages. The width is
-# figlib's estimate, a little wider than the fonts draw.
+# figlib's estimate of the label without its markup, a little wider than the fonts draw.
+def plain(src):
+    return re.sub(r"\\[vrt]\{|[{}]", "", src)
+
+
 for lang in LANGS:
     name_x = pick(NAME_X, lang)
     for section, name, formula, step in pick(STEPS, lang):
         assert BOX_X + 16 + text_width(section, SMALL) < name_x - 8, (lang, section)
         assert name_x + text_width(name, LABEL) < FORMULA_X - 8, (lang, name)
+        assert FORMULA_X + text_width(plain(formula), MATH) < BOX_X + BOX_W - 8, (lang, formula)
         if step:
-            label = step.replace(r"\t{", "").replace("}", "")
-            assert CX + 14 + text_width(label, SMALL) < PANEL_X + PANEL_W - 8, (lang, label)
+            assert CX + 14 + text_width(plain(step), SMALL) < PANEL_X + PANEL_W - 8, (lang, step)
 
 if __name__ == "__main__":
     fig.save()
