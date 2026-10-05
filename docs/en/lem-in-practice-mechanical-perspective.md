@@ -2,7 +2,7 @@
 title: "Using the limit equilibrium method in practice: slip surfaces other than circles, the direction of sliding, and checking results"
 lang: en
 series: "3 of 3"
-translated_from: "0970d91"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -131,7 +131,9 @@ In other words, the mechanical character of a method is not determined by "the i
 :name: fig-s02-circle-general-surface
 :alt: A circular slip surface, on which the lines of action of all base normal forces pass through the center, and an elliptical slip surface, on which they do not
 
-Left: on a circle, the lines of action of all base normal forces pass through the center $O$. Every shear force has the radius $R$ as its arm. Right: on an ellipse, the lines of action do not pass through $O'$, so the normal forces have an arm $d$. The tangent directions also differ, in general, from the directions in which a rotation about $O'$ moves the points of the base
+Lines of action of the base normal forces on circular and elliptical slip surfaces
+
+Left: on a circle, the lines of action of all base normal forces pass through the center $O$. Every shear force has the radius $R$ as its arm. Right: on an ellipse, the lines of action do not pass through $O'$, so the normal forces have an arm $d$. The tangent directions also differ, in general, from the directions in which a rotation about $O'$ moves the points of the base.
 ```
 
 A circle has properties that suit methods using moment equilibrium particularly well. So being able to compute general shapes does not put circles on the same footing as other curves.
@@ -339,7 +341,9 @@ These points matter especially when the simplified Bishop method or the Felleniu
 :name: fig-s03-sliding-direction
 :alt: The long axis of a slip surface and the direction of sliding in plan view, and the projection onto the tangent plane of a column base
 
-Left: the long axis of the slip surface and the direction of sliding $\boldsymbol{d}$ do not necessarily coincide. Right: the direction of $\boldsymbol{p}_i$, the projection of $\boldsymbol{d}$ onto the tangent plane of the base, is the local direction of sliding $\boldsymbol{m}_i$. $\boldsymbol{T}_i$ acts in the opposite direction
+The direction of sliding and the local direction of sliding
+
+Left: the long axis of the slip surface and the direction of sliding $\boldsymbol{d}$ do not necessarily coincide. Right: the direction of $\boldsymbol{p}_i$, the projection of $\boldsymbol{d}$ onto the tangent plane of the base, is the local direction of sliding $\boldsymbol{m}_i$. $\boldsymbol{T}_i$ acts in the opposite direction.
 ```
 
 In a 2D analysis, motion is confined to the section being analyzed. Of the two directions along the tangent to the slip surface, the base shear force takes the one that opposes the assumed sliding, almost automatically.

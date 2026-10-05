@@ -54,9 +54,9 @@ fig = Figure(
     L("1節から9節の段階を，上から順に箱で示す．各箱には，節，量，式を並べている．箱の間の矢印には，"
       "次の段階に進むときに使う式や行う操作を書いている．2つのパネルのうち，上は1節から6節の点ごとの応力，下は7節から9節のスライスやカラムごとの合力である．",
       "The steps of Sections 1 to 9, as boxes from top to bottom. Each box gives the section, the "
-      "quantity and its formula. The arrow between two boxes is labelled with the formula or operation that leads to the next step. "
-      "Sections 1 to 6 work with the stress at each point, Sections 7 to 9 with the resultants on "
-      "each slice or column."),
+      "quantity and its formula. The arrow between two boxes is labeled with the formula or "
+      "operation that leads to the next step. Sections 1 to 6 work with the stress at each point, "
+      "Sections 7 to 9 with the resultants on each slice or column."),
 )
 
 panels = [

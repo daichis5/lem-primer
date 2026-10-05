@@ -2,7 +2,7 @@
 title: "What is the limit equilibrium method? What assumptions does each method use to determine the remaining unknowns?"
 lang: en
 series: "2 of 3"
-translated_from: "7918faa"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -105,7 +105,9 @@ So the real starting point of LEM is not Eq. {eq}`eq-what-base-shear` itself, bu
 :name: fig-01-2d-slice-forces
 :alt: Free-body diagram of a slice with vertical sides, showing its weight, the normal and shear forces on the base, and the interslice forces on the left and right
 
-Free-body diagram of a 2D slice. It shows $N_i$ and $T_i$ on the base, $E$ and $X$ on the left and right boundaries, the weight $W_i$, the base inclination $\alpha_i$, and the height $h$ at which the interslice force acts. The arrow lengths are drawn to satisfy force equilibrium
+Free-body diagram of a 2D slice
+
+It also shows the base inclination $\alpha_i$ and the heights $h_{i-1}$ and $h_i$ at which the interslice forces act. The arrow lengths are drawn to satisfy force equilibrium.
 ```
 
 When slice $i$ is cut out of the soil mass, at least the following forces must be considered.
@@ -145,7 +147,9 @@ LEM lumps this distribution into the resultants $E$ and $X$ and, if needed, the 
 :name: fig-02-indeterminacy
 :alt: Five slices, showing where the normal force on each base, the interslice forces and their points of action on each boundary, and the single factor of safety for the whole mass act
 
-The unknowns left for $n=5$ slices. Each base has $N$, each boundary between slices has $E$, $X$ and $h$, and there is one $F_s$ for the whole mass: 18 in all
+The unknowns left for $n=5$ slices
+
+Each base has $N$, each boundary between slices has $E$, $X$ and $h$, and there is one $F_s$ for the whole mass: 18 in all.
 ```
 
 (what-section-3-1)=
@@ -221,7 +225,9 @@ Each method can be classified by its combination of these three. [Fredlund and K
 :name: fig-03-2d-methods
 :alt: The same slice drawn for the Fellenius method, the simplified Bishop method and the simplified Janbu method, comparing the internal forces each ignores and the equilibrium each uses
 
-Comparison of the Fellenius, simplified Bishop and simplified Janbu methods. The same slice shows the internal forces each ignores (pale dashes) and the equilibrium each uses
+Comparison of the Fellenius, simplified Bishop and simplified Janbu methods
+
+On the same slice, pale dashes show the internal forces each method ignores.
 ```
 
 The rest of this part compares the methods from four viewpoints.
@@ -350,7 +356,9 @@ The correction factor reduces the bias of the factor of safety under particular 
 :name: fig-04-spencer-mp
 :alt: Comparison of the inclination of the resultant on the slice boundaries, and of the function f(x), for the Spencer method and the Morgenstern–Price method
 
-In the Spencer method, the resultant has the same inclination on every boundary. In the Morgenstern–Price method, the inclination varies as $\lambda f(x)$. The graph below shows each $f(x)$ on the same horizontal axis
+Inclination of the resultant interslice force in the Spencer and Morgenstern–Price methods
+
+In the Spencer method, the resultant has the same inclination on every boundary. In the Morgenstern–Price method, the inclination varies as $\lambda f(x)$. The graph below shows each $f(x)$ on the same horizontal axis.
 ```
 
 (what-section-5-1)=
@@ -443,7 +451,9 @@ Even if several reasonable choices of $f(x)$ give similar factors of safety, the
 :name: fig-05-3d-column-forces
 :alt: The weight, the normal and shear forces on the base, and the intercolumn forces on the sides of a 3D column with an inclined base
 
-Forces on a 3D column. The base shear force $\boldsymbol{T}_i$ is a vector in the tangent plane, and the strength equation does not fix its direction (dotted circle). Each side carries a normal component and two shear components
+Forces on a 3D column
+
+The base shear force $\boldsymbol{T}_i$ is a vector in the tangent plane. The strength equation does not fix its direction (dotted circle). Each side carries a normal component and two shear components of the intercolumn force.
 ```
 
 In 2D, the {term}`sliding mass` is divided in one direction only, and each element is called a "slice." In 3D, it is divided in two directions in plan, so each element becomes a prism-shaped "column."

@@ -2,7 +2,7 @@
 title: "Computing the factor of safety of an infinite slope: from splitting the traction to the factor of safety, in code"
 lang: en
 series: "practice 1 of 3"
-translated_from: "4396db4"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -24,7 +24,9 @@ Assume a {term}`slip surface` parallel to the ground surface, at a vertical dept
 :name: fig-e1-infinite-slope
 :alt: The weight of a column taken from an infinite slope, the normal and shear forces on the slip surface, the forces on its two sides, and two ways to set the pore water pressure on the slip surface when there is a water table
 
-Left: the forces on a column of the infinite slope. The forces on its two sides cancel, so the normal force $N$ and the shear force $T$ on the slip surface carry the weight $W$. Right: the pore water pressure at point P on the slip surface, with the water table at a vertical height $h_w$ above the slip surface. With seepage parallel to the slope, the equipotential line through P is perpendicular to the slope
+Forces on a column of the infinite slope, and the pore water pressure on the slip surface
+
+Left: the forces on the column's two sides cancel, so the normal force $N$ and the shear force $T$ on the slip surface carry the weight $W$. Right: the figure shows the pore water pressure at point P on the slip surface when the water table is a vertical height $h_w$ above the slip surface. With seepage parallel to the slope, the equipotential line through P is perpendicular to the slope.
 ```
 
 The $x$ axis points horizontally to the right, and the $z$ axis points vertically up. The depth $z$ of the slip surface is not this coordinate: it is a length measured vertically down from the ground surface. In these coordinates, the ground surface rises to the right, and the soil slides down to the left. As in Chapter 1, the unit normal vector $\boldsymbol{n}$ of the slip surface points outward from the {term}`sliding mass`, toward the ground below the slip surface. The unit vector in the direction of sliding is $\boldsymbol{m}$.

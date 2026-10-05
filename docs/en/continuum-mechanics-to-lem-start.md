@@ -2,7 +2,7 @@
 title: "From continuum mechanics to where the limit equilibrium method begins: deriving the forces on a slice base from stress"
 lang: en
 series: "1 of 3"
-translated_from: "7918faa"
+translated_from: "aa01203"
 translated_on: 2026-10-05
 ---
 
@@ -24,7 +24,9 @@ To check whether a slope will fail, LEM sets up the problem as follows.
 :name: fig-c00-slope-overview
 :alt: A circular slip surface assumed in a slope, the sliding mass, six slices, and the weight, normal force and shear force acting on one slice
 
-The setting LEM deals with. A slip surface is assumed in the slope, the soil above it is divided into slices, and the analysis handles the forces on each base. Interslice forces are omitted
+The setting LEM deals with
+
+Interslice forces are omitted.
 ```
 
 1. Assume one surface in the slope along which it may fail (the **slip surface**)
@@ -180,7 +182,9 @@ The stress tensor $\boldsymbol{\sigma}$ is a second-order tensor, while the trac
 :name: fig-c01-stress-to-traction
 :alt: An element representing the stress at one point, and the tractions on two surfaces of different orientation cut through the same point
 
-The stress tensor at a point and the tractions $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ on two surfaces of different orientation. When the orientation of the surface changes, the direction and magnitude of the traction change too
+The stress tensor at a point and the tractions $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ on two surfaces of different orientation
+
+When the orientation of the surface changes, the direction and magnitude of the traction change too.
 ```
 
 ---
@@ -389,7 +393,9 @@ This traction always acts in the direction $-\boldsymbol{n}$, that is, it pushes
 :name: fig-c02-normal-shear-effective
 :alt: A diagram splitting the traction into the sum of a normal component and a shear component, and a diagram showing that the normal stress is the sum of the effective normal stress and the pore water pressure
 
-Left: the traction $\boldsymbol{t}$ is the sum of the normal component $-\sigma_n\boldsymbol{n}$ and the shear component $\boldsymbol{\tau}$. Right: the normal stress $\sigma_n$ is the sum of the effective normal stress $\sigma_n'$ and the pore water pressure $u$. The values are from the example in Section 6
+Splitting the traction, and the effective normal stress
+
+Left: the traction $\boldsymbol{t}$ is the sum of the normal component $-\sigma_n\boldsymbol{n}$ and the shear component $\boldsymbol{\tau}$. Right: the normal stress $\sigma_n$ is the sum of the effective normal stress $\sigma_n'$ and the pore water pressure $u$. The values are from the example in Section 6.
 ```
 
 ---
@@ -462,7 +468,9 @@ Eqs. {eq}`eq-start-mobilized-stress` and {eq}`eq-start-mobilized-vector` express
 :name: fig-c03-strength-mobilization
 :alt: A plot of shear stress against effective normal stress showing the Mohr–Coulomb line and the two states of the numerical example in Section 6
 
-The Mohr–Coulomb line and the numerical example of Section 6. When the water level rises and $\sigma_n'$ drops from 60 kPa to 40 kPa, $\tau_f$ drops from 44.6 kPa to 33.1 kPa, and $F_s=\tau_f/\tau_m$ drops from 1.49 to 1.10
+The Mohr–Coulomb line and the numerical example of Section 6
+
+When the water level rises, $\sigma_n'$ and $\tau_f$ drop, and $F_s=\tau_f/\tau_m$ drops too.
 ```
 
 ```{admonition} Working through the numbers
@@ -594,7 +602,9 @@ This links the scalar $N_i$ used in LEM to the vector resultant.
 :name: fig-c04-surface-integration
 :alt: The traction distributed over a curved base, the normal forces at each point added as vectors, and the LEM model that represents the base as a single plane
 
-Left: the traction distributed over a curved base. Center: the resultant $\boldsymbol{N}_i$ of the normal forces at each point added as vectors is shorter than $\int_{S_i}\sigma_n\,dA$, which adds only the magnitudes. Right: LEM represents the base by one plane and one direction, and takes the magnitude of the normal force as $N_i=\int_{S_i}\sigma_n\,dA$
+The traction distributed over a base, and the base normal force in LEM
+
+Left: traction is distributed over a curved base. Center: the resultant $\boldsymbol{N}_i$ of the normal forces at each point added as vectors is shorter than $\int_{S_i}\sigma_n\,dA$, which adds only the magnitudes. Right: LEM represents the base by one plane and one direction, and takes the magnitude of the normal force as $N_i=\int_{S_i}\sigma_n\,dA$.
 ```
 
 ---
@@ -811,38 +821,14 @@ The unknown continuous distribution is first replaced with a finite number of un
 
 The steps so far can be summarized as follows.
 
-$$
-\boxed{
-\begin{array}{c}
-\text{continuum stress field and equilibrium at each point}\\[1mm]
-\boldsymbol{\sigma},\quad
-\nabla\!\cdot\!\boldsymbol{\sigma}+\rho\boldsymbol{b}=\boldsymbol{0}
-\\[2mm]
-\downarrow\\[2mm]
-\text{traction on the slip surface}\\[1mm]
-\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}
-\\[2mm]
-\downarrow\\[2mm]
-\text{split into normal and shear components}\\[1mm]
-\sigma_n,\quad\boldsymbol{\tau}
-\\[2mm]
-\downarrow\quad\text{effective stress}\\[2mm]
-\sigma_n'=\sigma_n-u
-\\[2mm]
-\downarrow\quad\text{Mohr--Coulomb failure criterion}\\[2mm]
-\tau_f=c'+\sigma_n'\tan\phi'
-\\[2mm]
-\downarrow\quad\text{factor of safety}\\[2mm]
-\tau_m=\tau_f/F_s
-\\[2mm]
-\downarrow\quad\text{surface integrals and per-base modeling}\\[2mm]
-N_i,\quad U_i,\quad T_i
-\\[2mm]
-\downarrow\quad\text{equilibrium equations and LEM-specific assumptions}\\[2mm]
-F_s\ \text{and each resultant force}
-\end{array}
-}
-$$ (eq-start-summary)
+```{figure} ./figures/fig_c05_summary_flow.svg
+:name: fig-c05-summary-flow
+:alt: A flow chart of the steps of Sections 1 to 9 from top to bottom, from the stress field and equilibrium at each point, through the traction, the normal and shear stress, the effective normal stress, the shear strength, the mobilized shear stress and the resultant forces on a base, to the factor of safety and the resultants
+
+From the stress in a continuum to the factor of safety
+
+Sections 1 to 6 work with the stress at each point, and Sections 7 to 9 with the resultants on each slice or column. Each arrow is labeled with the formula or operation that leads to the next step.
+```
 
 ---
 
