@@ -56,7 +56,7 @@ three-dimensional-equilibrium
 :link: what-is-limit-equilibrium-method
 :link-type: doc
 
-残った未知量を決定するために，各手法はどのような仮定を用いるか
+つり合い式だけでは定まらない未知量を，各手法はどのような仮定で決定するか
 :::
 
 :::{grid-item-card} 第3章　極限平衡法を実際に使うとき

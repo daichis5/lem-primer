@@ -260,7 +260,7 @@ $$ (eq-infinite-effective)
 
 (infinite-section-6)=
 
-## 6. 条件を変えて表示する
+## 6. 条件を変えて安全率を表示する
 
 ここまでの関数を使い，条件を変えた値をまとめて表示する．{download}`run_infinite_slope.py <examples/run_infinite_slope.py>` をダウンロードして `lem-practice` に置き，実行する．
 
