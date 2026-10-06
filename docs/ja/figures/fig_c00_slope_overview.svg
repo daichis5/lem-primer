@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
   <title id="title">LEMが対象とする斜面，すべり面，スライス</title>
-  <desc id="desc">斜面の中に円弧のすべり面を仮定し，その上のすべり土塊を鉛直なスライスに分割する．1つのスライスに，自重と，底面に働く垂直力とせん断力を示す．</desc>
+  <desc id="desc">斜面の中に円弧のすべり面を仮定し，その上のすべり土塊を鉛直なスライスに分割する．1つのスライスに，自重と，底面にはたらく垂直力とせん断力を示す．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="330" fill="#fff"/>
   <polygon points="2.5,268 178,268 470.5,73 753.2,73 753.2,326.5 2.5,326.5" fill="#ece4d0" stroke-linejoin="round"/>

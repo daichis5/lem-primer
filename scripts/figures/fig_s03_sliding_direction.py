@@ -19,7 +19,7 @@ fig = Figure(
       "The direction of sliding, and the local direction of sliding at a column's base"),
     L("左は平面図で，すべり面の長軸と全体すべり方向 d が一致するとは限らないことを示す．"
       "右は1つのカラムの底面の接平面で，d を接平面に射影したベクトル p を計算して描く．"
-      "局所すべり方向 m は p の向きの単位ベクトルで，底面のせん断力 T はその逆向きに働く．",
+      "局所すべり方向 m は p の向きの単位ベクトルで，底面のせん断力 T はその逆向きにはたらく．",
       "Left, in plan: the long axis of the slip surface and the direction of sliding d need not "
       "coincide. Right: the tangent plane of one column's base, with the vector p, the projection of d "
       "onto that plane, computed and drawn. The local direction of sliding m is the unit vector along "

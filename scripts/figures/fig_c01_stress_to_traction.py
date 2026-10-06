@@ -21,9 +21,9 @@ def traction(n):
 fig = Figure(
     "fig_c01_stress_to_traction",
     330,
-    L("応力テンソルと，面に働く表面力", "The stress tensor and the traction on a plane"),
-    L("左は，1つの点の応力の状態を，小さな要素の面に働く応力の成分で表した図．"
-      "中と右は，同じ点を向きの異なる2つの面で切り，それぞれの面に働く表面力を同じ応力から計算して描いた図．"
+    L("応力テンソルと，面にはたらく表面力", "The stress tensor and the traction on a plane"),
+    L("左は，1つの点の応力の状態を，小さな要素の面にはたらく応力の成分で表した図．"
+      "中と右は，同じ点を向きの異なる2つの面で切り，それぞれの面にはたらく表面力を同じ応力から計算して描いた図．"
       "面の向きが変わると，表面力の向きと大きさも変わる．",
       "Left: the state of stress at a point, shown by the stress components on the faces of a small "
       "element. Middle and right: the same point cut by two planes of different orientation, with the "

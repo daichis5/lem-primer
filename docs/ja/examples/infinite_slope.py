@@ -1,4 +1,4 @@
-"""無限斜面の安全率を，すべり面に働く表面力から求める（実践1）．
+"""無限斜面の安全率を，すべり面にはたらく表面力から求める（実践1）．
 
 x を水平右向き，z を鉛直上向きにとる．地表は右に上がり，土塊は左下へすべる．
 法線ベクトル n は，第1章と同じく，すべり土塊の外向き（すべり面より下の
@@ -37,7 +37,7 @@ def base_stresses(beta_deg: float, w: float) -> tuple[float, float]:
     n, _ = plane_vectors(beta_deg)
     weight = np.array([0.0, -w])  # 幅 1 m，奥行き 1 m の柱の重さ [kN]
     area = 1.0 / math.cos(math.radians(beta_deg))  # その柱の下のすべり面の面積 [m²]
-    t = -weight / area  # 下の地盤から柱に働く表面力．両隣の柱から受ける力は打ち消し合う
+    t = -weight / area  # 下の地盤から柱にはたらく表面力．両隣の柱からの力は打ち消し合う
     sigma_n, shear = split_traction(t, n)
     return sigma_n, float(np.linalg.norm(shear))
 

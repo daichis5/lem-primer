@@ -18,7 +18,7 @@ fig = Figure(
     "fig_c02_normal_shear_effective",
     380,
     L("表面力の分解と有効垂直応力", "Splitting the traction, and the effective normal stress"),
-    L("左は，面に働く表面力を，法線成分とせん断成分の和に分解した図．"
+    L("左は，面にはたらく表面力を，法線成分とせん断成分の和に分解した図．"
       "右は，同じ面で，垂直応力が有効垂直応力と間隙水圧の和になることと，間隙水圧がせん断成分を変えないことを示す図．",
       "Left: the traction on a plane, split into the sum of its normal and shear components. Right: on "
       "the same plane, the normal stress is the sum of the effective normal stress and the pore water "

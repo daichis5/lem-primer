@@ -75,7 +75,7 @@ $$ (eq-practice-surface-2d)
 - {term}`間隙水圧の合力 <底面の間隙水圧の合力>` $U_i$
 - 任意の基準点から底面の合力までの位置ベクトル $\boldsymbol{r}_i$
 
-ここで，$\boldsymbol{n}_i$ は{term}`すべり土塊`の外向きにとり，$\boldsymbol{m}_i$ は仮定したすべりの向きとする．この向きのとり方では，底面からすべり土塊に働く圧縮の垂直力と，すべりに抵抗するせん断力は，それぞれ $-N_i\boldsymbol{n}_i$ と $-T_i\boldsymbol{m}_i$ である．
+ここで，$\boldsymbol{n}_i$ は{term}`すべり土塊`の外向きにとり，$\boldsymbol{m}_i$ は仮定したすべりの向きとする．この向きのとり方では，底面からすべり土塊にはたらく圧縮の垂直力と，すべりに抵抗するせん断力は，それぞれ $-N_i\boldsymbol{n}_i$ と $-T_i\boldsymbol{m}_i$ である．
 
 底面の合力は，次のように表せる．
 
@@ -345,7 +345,7 @@ $$ (eq-practice-unbalanced-force)
 
 全体すべり方向と局所すべり方向
 
-左：すべり面の長軸と全体すべり方向 $\boldsymbol{d}$ は，一致するとは限らない．右：$\boldsymbol{d}$ を底面の接平面に射影した $\boldsymbol{p}_i$ の向きが，局所すべり方向 $\boldsymbol{m}_i$ である．$\boldsymbol{T}_i$ は，その逆向きに働く．
+左：すべり面の長軸と全体すべり方向 $\boldsymbol{d}$ は，一致するとは限らない．右：$\boldsymbol{d}$ を底面の接平面に射影した $\boldsymbol{p}_i$ の向きが，局所すべり方向 $\boldsymbol{m}_i$ である．$\boldsymbol{T}_i$ は，その逆向きにはたらく．
 ```
 
 2次元の解析では，運動は解析する断面の中に限られる．底面せん断力の向きは，すべり面の接線に沿う2つの向きのうち，仮定したすべりを妨げる側として，ほぼ自動的に定まる．

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="600" viewBox="0 0 760 600" role="img" aria-labelledby="title desc">
-  <title id="title">2次元のスライスに働く力の自由物体図</title>
-  <desc id="desc">側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力が働く．底面の傾き，スライスの幅，スライス間力が働く高さ，外向きの法線と仮定したすべり方向も示す．</desc>
+  <title id="title">2次元のスライスにはたらく力の自由物体図</title>
+  <desc id="desc">側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力がはたらく．底面の傾き，スライスの幅，スライス間力がはたらく高さ，外向きの法線と仮定したすべり方向も示す．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="600" fill="#fff"/>
   <polygon points="214.2,510 583.8,337.7 583.8,410.3 214.2,582.6" fill="#ece4d0" stroke-linejoin="round"/>

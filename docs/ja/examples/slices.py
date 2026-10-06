@@ -231,7 +231,7 @@ def base_forces(s, fs, theta):
 def residuals(s, fs, theta, center):
     """力の残差と，点 center まわりのモーメントの残差を返す．
 
-    各スライスに働くスライス間力の合力 Q（向き d）を求め，その和を力の残差，
+    各スライスにはたらくスライス間力の合力 Q（向き d）を求め，その和を力の残差，
     center まわりのモーメントの和をモーメントの残差とする．
     """
     N, T = base_forces(s, fs, theta)

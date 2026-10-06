@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
   <title id="title">Spencer法とMorgenstern–Price法の，スライス間力の向きの仮定</title>
-  <desc id="desc">同じスライスの境界に働くスライス間力の合力を，2つの手法で比較する．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．Morgenstern–Price法では，合力の傾き X/E が λf(x) に従って場所ごとに変わる．下のグラフは，それぞれの f(x) を同じ横軸で示す．Spencer法は f(x)=1 の場合にあたる．</desc>
+  <desc id="desc">同じスライスの境界にはたらくスライス間力の合力を，2つの手法で比較する．Spencer法では，すべての境界で合力が同じ角度 θ で傾く．Morgenstern–Price法では，合力の傾き X/E が λf(x) に従って場所ごとに変わる．下のグラフは，それぞれの f(x) を同じ横軸で示す．Spencer法は f(x)=1 の場合にあたる．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="360" fill="#fff"/>
   <text x="190" y="26" class="t" font-size="15" fill="#172033" text-anchor="middle" font-weight="bold">Spencer法</text>

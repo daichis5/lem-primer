@@ -16,9 +16,9 @@ v = View(66, (300, 470))
 fig = Figure(
     "fig_01_2d_slice_forces",
     600,
-    L("2次元のスライスに働く力の自由物体図", "Free-body diagram of a 2D slice"),
-    L("側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力が働く．"
-      "底面の傾き，スライスの幅，スライス間力が働く高さ，外向きの法線と仮定したすべり方向も示す．",
+    L("2次元のスライスにはたらく力の自由物体図", "Free-body diagram of a 2D slice"),
+    L("側面が鉛直で底面が傾いたスライスに，自重，底面の垂直力とせん断力，左右の境界のスライス間力がはたらく．"
+      "底面の傾き，スライスの幅，スライス間力がはたらく高さ，外向きの法線と仮定したすべり方向も示す．",
       "A slice with vertical sides and an inclined base carries its weight, the normal and shear forces "
       "on its base, and the interslice forces on its two sides. The figure also shows the inclination of "
       "the base, the width of the slice, the heights at which the interslice forces act, the outward "
