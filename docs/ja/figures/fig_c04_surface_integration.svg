@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
-  <title id="title">曲面の底面に働く表面力から，底面の合力へ</title>
+  <title id="title">曲面の底面にはたらく表面力から，底面の合力へ</title>
   <desc id="desc">左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとしてつないだ図．ベクトル和として求めた合力は，大きさだけの和より短い．右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを合計した Ni と Ti を置いたモデル．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="330" fill="#fff"/>

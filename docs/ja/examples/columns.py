@@ -186,7 +186,7 @@ def hovland(col, m):
 def arms(col, m, center, axis):
     """点 center を通る軸 axis のまわりの，単位の力のモーメントの腕．
 
-    底面のせん断力（向き m），重さ（カラムの高さの中央に働く），底面の
+    底面のせん断力（向き m），重さ（カラムの高さの中央にはたらく），底面の
     法線方向の力（向き n）の順に返す．
     """
     rb = col.base - center

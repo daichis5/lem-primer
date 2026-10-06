@@ -22,7 +22,7 @@ fig = Figure(
     330,
     L("LEMが対象とする斜面，すべり面，スライス", "The slope, slip surface and slices that LEM deals with"),
     L("斜面の中に円弧のすべり面を仮定し，その上のすべり土塊を鉛直なスライスに分割する．"
-      "1つのスライスに，自重と，底面に働く垂直力とせん断力を示す．",
+      "1つのスライスに，自重と，底面にはたらく垂直力とせん断力を示す．",
       "A circular slip surface is assumed in the slope, and the sliding mass above it is cut into "
       "vertical slices. One slice shows its weight and the normal and shear forces on its base."),
 )

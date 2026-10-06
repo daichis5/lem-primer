@@ -20,7 +20,7 @@ POINTS = 7
 fig = Figure(
     "fig_c04_surface_integration",
     330,
-    L("曲面の底面に働く表面力から，底面の合力へ", "From the traction on a curved base to the base resultants"),
+    L("曲面の底面にはたらく表面力から，底面の合力へ", "From the traction on a curved base to the base resultants"),
     L("左は，曲面の底面に沿って分布する表面力の法線成分とせん断成分．中は，各点の垂直力をベクトルとして"
       "つないだ図．ベクトル和として求めた合力は，大きさだけの和より短い．"
       "右は，LEMが底面を1つの平面と1つの向きで表し，大きさだけを合計した Ni と Ti を置いたモデル．",

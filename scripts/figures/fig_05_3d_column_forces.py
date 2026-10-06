@@ -29,8 +29,8 @@ pr = Oblique(64, (150, 396), depth=0.6)
 fig = Figure(
     "fig_05_3d_column_forces",
     470,
-    L("3次元のカラムに働く力", "Forces on a 3D column"),
-    L("傾いた底面をもつ3次元のカラムに，自重，底面の垂直力とせん断力，側面のカラム間力が働く．"
+    L("3次元のカラムにはたらく力", "Forces on a 3D column"),
+    L("傾いた底面をもつ3次元のカラムに，自重，底面の垂直力とせん断力，側面のカラム間力がはたらく．"
       "底面のせん断力は接平面の中のベクトルで，その向きは強度の式からは定まらない．"
       "点線の円は，接平面の中で向きがとりうる範囲を示す．",
       "A 3D column with an inclined base carries its weight, the normal and shear forces on its base, "

@@ -20,7 +20,7 @@ series: "practice 2 of 3"
 
 ```{figure} ./figures/fig_c00_slope_overview.svg
 :name: fig-slices-slope-overview
-:alt: 斜面に仮定した円弧のすべり面，すべり土塊，6つのスライスと，1つのスライスに働く自重・垂直力・せん断力
+:alt: 斜面に仮定した円弧のすべり面，すべり土塊，6つのスライスと，1つのスライスにはたらく自重・垂直力・せん断力
 
 この実践で計算する斜面と円弧
 
@@ -217,7 +217,7 @@ $$ (eq-slices-janbu)
 
 ## 3. スライス間力の傾きを変数にして，1つの枠組みにまとめる
 
-2節の3つの式は，手法ごとに別々に導出されたように見える．しかし，[第2章 3.3節](#what-section-3-3)で見たように，手法の違いは{term}`不静定性の解消`（closure）の仕方の違いである．Fredlund and Krahn (1977)は，この見方で2次元の各手法を1つの枠組みにまとめ，比較した．そこで，この実践でも，[第2章 5.1節](#what-section-5-1)のSpencer法の仮定を，変数のまま使う．各スライスに働くスライス間力の合力 $Q_i$ が，どのスライスでも同じ向き
+2節の3つの式は，手法ごとに別々に導出されたように見える．しかし，[第2章 3.3節](#what-section-3-3)で見たように，手法の違いは{term}`不静定性の解消`（closure）の仕方の違いである．Fredlund and Krahn (1977)は，この見方で2次元の各手法を1つの枠組みにまとめ，比較した．そこで，この実践でも，[第2章 5.1節](#what-section-5-1)のSpencer法の仮定を，変数のまま使う．各スライスにはたらくスライス間力の合力 $Q_i$ が，どのスライスでも同じ向き
 
 $$
 \boldsymbol{d}=
@@ -229,7 +229,7 @@ $$ (eq-slices-direction)
 
 をもつとする．$\theta$ は，水平からはかった合力の傾きである．
 
-スライス $i$ に働く力は，自重 $W_i$，底面の垂直力 $-N_i\boldsymbol{n}_i$，{term}`底面のせん断力 <底面せん断力>` $T_i\boldsymbol{e}_i$，スライス間力の合力 $Q_i\boldsymbol{d}$ である．ここで $\boldsymbol{e}_i=-\boldsymbol{m}_i$ は，すべりに抵抗する向きを表す．$T_i$ は，[第1章 8節](#section-8)の強度の動員を表す式で $N_i$ と結び付く．
+スライス $i$ にはたらく力は，自重 $W_i$，底面の垂直力 $-N_i\boldsymbol{n}_i$，{term}`底面のせん断力 <底面せん断力>` $T_i\boldsymbol{e}_i$，スライス間力の合力 $Q_i\boldsymbol{d}$ である．ここで $\boldsymbol{e}_i=-\boldsymbol{m}_i$ は，すべりに抵抗する向きを表す．$T_i$ は，[第1章 8節](#section-8)の強度の動員を表す式で $N_i$ と結び付く．
 
 $$
 T_i=\frac{c_i'l_i+(N_i-U_i)\tan\phi_i'}{F_s}
@@ -257,7 +257,7 @@ $\theta=0$ なら $\boldsymbol{p}$ は鉛直上向きで，$D_i$ は式 {eq}`eq-
 :pyobject: base_forces
 ```
 
-もう1つの向き $\boldsymbol{d}$ のつり合いからは，$Q_i$ が得られる．スライス間力は{term}`内力`なので，土塊全体では打ち消し合う．そのため，土塊全体の力のつり合いは，$\sum_i Q_i=0$ と同じになる．この表では，自重も，底面の代表点を通る鉛直線上に働くとする．すると，スライス $i$ の自重と底面の力の，点 $O$ のまわりのモーメントの和は，$-\boldsymbol{r}_i\times Q_i\boldsymbol{d}$ になる．ここで $\boldsymbol{r}_i$ は，$O$ から底面の代表点への位置ベクトルである．つまり，$O$ のまわりのモーメントのつり合いは，$\sum_i \boldsymbol{r}_i\times Q_i\boldsymbol{d}=\boldsymbol{0}$ と同じになる．この2つの和を，力の残差とモーメントの残差と呼ぶ．
+もう1つの向き $\boldsymbol{d}$ のつり合いからは，$Q_i$ が得られる．スライス間力は{term}`内力`なので，土塊全体では打ち消し合う．そのため，土塊全体の力のつり合いは，$\sum_i Q_i=0$ と同じになる．この表では，自重も，底面の代表点を通る鉛直線上にはたらくとする．すると，スライス $i$ の自重と底面の力の，点 $O$ のまわりのモーメントの和は，$-\boldsymbol{r}_i\times Q_i\boldsymbol{d}$ になる．ここで $\boldsymbol{r}_i$ は，$O$ から底面の代表点への位置ベクトルである．つまり，$O$ のまわりのモーメントのつり合いは，$\sum_i \boldsymbol{r}_i\times Q_i\boldsymbol{d}=\boldsymbol{0}$ と同じになる．この2つの和を，力の残差とモーメントの残差と呼ぶ．
 
 ```{literalinclude} examples/slices.py
 :language: python

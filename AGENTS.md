@@ -214,6 +214,7 @@ compare a document with it.
 | 法線ベクトル，法線方向，法線成分 | | the vector $\boldsymbol{n}$ and components along it keep 法線 |
 | 滑動力 | 駆動力 | the pair of 抵抗力: $F_s$＝抵抗力／滑動力 |
 | 内力 | 内部力 | |
+| はたらく | 働く | a force acting, as in 高校物理 textbooks: 底面にはたらく力 |
 | 簡便分割法 | 簡易分割法 | as in the Japanese title of Ugai et al. (1986) |
 | つり合いの一部だけを満たす方法 | 簡便法 | the class of Fellenius法, 簡易Bishop法 and 簡易Janbu法, set against 静力学的に完全な方法; Japanese standards use 簡便法 for Fellenius法 alone, so the word appears only where the text reports that usage (第2章 4.1節, the glossary entry) |
 | テンションクラック（引張亀裂） | 張力亀裂 | |
@@ -235,7 +236,7 @@ Every document ends its body with `## 確認問題`, opened by the line
   dropdown with the answer inside, so readers try before they look:
 
   ```text
-  :::{dropdown} 問1　応力テンソルと，ある面に働く表面力は，何が異なるか
+  :::{dropdown} 問1　応力テンソルと，ある面にはたらく表面力は，何が異なるか
   :icon: question
 
   （答え）（→[2節](#section-2)）

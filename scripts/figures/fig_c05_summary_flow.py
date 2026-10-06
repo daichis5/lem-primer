@@ -24,7 +24,7 @@ STEPS = [  # (section, quantity, formula, label of the arrow into the next step)
      r"τ_f = c′ + σ′_n \r{tan} ϕ′", L(r"\t{安全率 }F_s\t{ で割る}", r"\t{divide by the factor of safety }F_s")),
     (L("6節", "Section 6"), L("動員せん断応力", "mobilized shear stress"),
      r"τ_m = τ_f / F_s", L(r"\t{面積分と，底面ごとのモデル化}", r"\t{integrate over each base, and model it}")),
-    (L("7・8節", "Sections 7–8"), L("底面に働く合力", "resultant forces on a base"),
+    (L("7・8節", "Sections 7–8"), L("底面にはたらく合力", "resultant forces on a base"),
      r"N_i,  U_i,  T_i", L(r"\t{つり合い式と，LEMに固有の仮定}", r"\t{equilibrium and LEM's assumptions}")),
     (L("9節", "Section 9"), L("安全率と各合力", "factor of safety and the resultants"), r"F_s,  N_i,  T_i,  \v{Q}_{ij}", None),
 ]

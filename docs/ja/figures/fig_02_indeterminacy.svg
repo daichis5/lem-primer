@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="370" viewBox="0 0 760 370" role="img" aria-labelledby="title desc">
   <title id="title">5つのスライスに残る未知量</title>
-  <desc id="desc">5つのスライスに分割したすべり土塊で，未知量が働く場所を示す．各底面に垂直力 N が1つずつ，スライスの間の4つの境界に E，X，作用位置 h が1つずつあり，安全率 Fs は全体で1つである．未知量は18個で，つり合い式の15本より多い．</desc>
+  <desc id="desc">5つのスライスに分割したすべり土塊で，未知量がはたらく場所を示す．各底面に垂直力 N が1つずつ，スライスの間の4つの境界に E，X，作用位置 h が1つずつあり，安全率 Fs は全体で1つである．未知量は18個で，つり合い式の15本より多い．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="370" fill="#fff"/>
   <polygon points="6.9,290 100,290 467.5,45 751.7,45 751.7,353.7 6.9,353.7" fill="#ece4d0" stroke-linejoin="round"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc">
-  <title id="title">無限斜面の柱に働く力と，すべり面の間隙水圧</title>
-  <desc id="desc">左は，無限斜面から取り出した柱に働く力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，両側の面に働く力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，すべり面の点 P の間隙水圧の2つの算定方法．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，P の圧力水頭は h_w cos²β になる．</desc>
+  <title id="title">無限斜面の柱にはたらく力と，すべり面の間隙水圧</title>
+  <desc id="desc">左は，無限斜面から取り出した柱にはたらく力．自重 W を，すべり面の垂直力 N とせん断力 T が支え，両側の面にはたらく力は打ち消し合う．右は，地下水位がすべり面から鉛直に h_w の高さにあるときの，すべり面の点 P の間隙水圧の2つの算定方法．斜面に平行に浸透するときは，等ポテンシャル線が斜面に直交するので，P の圧力水頭は h_w cos²β になる．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="330" fill="#fff"/>
   <polygon points="54,283.7 278,154.4 278,196.4 54,325.7" fill="#ece4d0" stroke-linejoin="round"/>

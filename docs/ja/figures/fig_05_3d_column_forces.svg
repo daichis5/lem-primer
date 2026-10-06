@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470" role="img" aria-labelledby="title desc">
-  <title id="title">3次元のカラムに働く力</title>
-  <desc id="desc">傾いた底面をもつ3次元のカラムに，自重，底面の垂直力とせん断力，側面のカラム間力が働く．底面のせん断力は接平面の中のベクトルで，その向きは強度の式からは定まらない．点線の円は，接平面の中で向きがとりうる範囲を示す．</desc>
+  <title id="title">3次元のカラムにはたらく力</title>
+  <desc id="desc">傾いた底面をもつ3次元のカラムに，自重，底面の垂直力とせん断力，側面のカラム間力がはたらく．底面のせん断力は接平面の中のベクトルで，その向きは強度の式からは定まらない．点線の円は，接平面の中で向きがとりうる範囲を示す．</desc>
   <style>.t{font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Yu Gothic',Meiryo,sans-serif}.m{font-family:'STIX Two Text','Cambria','Times New Roman',serif}</style>
   <rect width="760" height="470" fill="#fff"/>
   <polygon points="69.1,443.4 350.7,316.7 483.7,193.8 202.1,320.5" fill="#ece4d0" stroke="#c9b88f" stroke-width="1.2" stroke-linejoin="round"/>

@@ -64,12 +64,12 @@ lang: ja
 応力テンソル
   $\boldsymbol{\sigma}$　stress tensor
 
-  点ごとに定まる2階のテンソル．ある面に働く力そのものではなく，どの面に働く力も，ここから取り出せる（→[第1章 1節](#section-1)，[2節](#section-2)）
+  点ごとに定まる2階のテンソル．ある面にはたらく力そのものではなく，どの面にはたらく力も，ここから取り出せる（→[第1章 1節](#section-1)，[2節](#section-2)）
 
 表面力
   $\boldsymbol{t}$　traction
 
-  ある面に働く，単位面積あたりの力のベクトル．{term}`応力テンソル`と外向きの単位法線ベクトル $\boldsymbol{n}$ から，Cauchyの公式 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ で定まる（→[第1章 2節](#section-2)）
+  ある面にはたらく，単位面積あたりの力のベクトル．{term}`応力テンソル`と外向きの単位法線ベクトル $\boldsymbol{n}$ から，Cauchyの公式 $\boldsymbol{t}=\boldsymbol{\sigma}\boldsymbol{n}$ で定まる（→[第1章 2節](#section-2)）
 
 垂直応力
   $\sigma_n$　normal stress
@@ -79,7 +79,7 @@ lang: ja
 間隙水圧
   $u$　pore water pressure
 
-  土の間隙を満たす水の圧力．等方的に働くので，{term}`表面力`のせん断成分を直接は変えない（→[第1章 4節](#section-4)）
+  土の間隙を満たす水の圧力．等方的にはたらくので，{term}`表面力`のせん断成分を直接は変えない（→[第1章 4節](#section-4)）
 
 有効垂直応力
   $\sigma_n'$　effective normal stress
@@ -89,7 +89,7 @@ lang: ja
 せん断強度
   $\tau_f$　shear strength
 
-  破壊するときに発揮できるせん断抵抗の上限．今働いているせん断応力ではない（→[第1章 5節](#section-5)）
+  破壊するときに発揮できるせん断抵抗の上限．今はたらいているせん断応力ではない（→[第1章 5節](#section-5)）
 
 Mohr–Coulomb則
   Mohr–Coulomb failure criterion
@@ -99,7 +99,7 @@ Mohr–Coulomb則
 動員せん断応力
   $\tau_m$　mobilized shear stress
 
-  つり合いを保つために，実際に働いているせん断応力．強度のうち，どれだけが使われているかを表す（→[第1章 6節](#section-6)）
+  つり合いを保つために，実際にはたらいているせん断応力．強度のうち，どれだけが使われているかを表す（→[第1章 6節](#section-6)）
 ```
 
 ## 安全率
@@ -121,13 +121,13 @@ Mohr–Coulomb則
   すべり土塊をすべらせようとする側の力．自重の，すべり面に沿う成分などにあたる．つり合っている土塊では，すべり面が動員しているせん断力と大きさが等しい（→[第1章「LEMの全体像」](#overview)）
 ```
 
-## スライス・カラムに働く力
+## スライス・カラムにはたらく力
 
 ```{glossary}
 底面垂直力
   $N_i$　base normal force
 
-  第 $i$ 要素の底面にわたって，{term}`全垂直応力 <垂直応力>`を面積分した値．すべり土塊に働く力は，ベクトルで表すと $-N_i\boldsymbol{n}_i$（→[第1章 8節](#section-8)）
+  第 $i$ 要素の底面にわたって，{term}`全垂直応力 <垂直応力>`を面積分した値．すべり土塊にはたらく力は，ベクトルで表すと $-N_i\boldsymbol{n}_i$（→[第1章 8節](#section-8)）
 
 底面の間隙水圧の合力
   $U_i$　pore water force on the base
@@ -142,7 +142,7 @@ Mohr–Coulomb則
 内力
   internal force
 
-  材料力学と同じく，物体を仮想的に切った面で，両側が互いに及ぼし合う力．LEMでは，スライスやカラムの境界に働く{term}`スライス間力`とカラム間力だけを指す．各要素の中の応力は扱わない（→[第2章 1節](#what-section-1)）
+  材料力学と同じく，物体を仮想的に切った面で，両側が互いに及ぼし合う力．LEMでは，スライスやカラムの境界にはたらく{term}`スライス間力`とカラム間力だけを指す．各要素の中の応力は扱わない（→[第2章 1節](#what-section-1)）
 
 スライス間力
   $E$，$X$　interslice force
