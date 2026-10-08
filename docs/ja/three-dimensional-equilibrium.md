@@ -44,7 +44,7 @@ lang: ja
 
 表の記号の意味は，次のとおりである．
 
-- ✓：土塊全体で，対称性に頼らずに成り立つ．多くは式として解く．※と†は，ほかの式から導出できるもの
+- ✓：土塊全体で，対称性に頼らずに成り立つ．多くは式として解く．※と†は，ほかの式から導出できるもの．‡は，条件つきで成り立つもの
 - S：対称な土塊だけを扱う手法で，対称性によって成り立つ．式としては解かない
 - ✗：式として扱わない．対称な土塊では対称性で成り立つこともあるが，一般には成り立たない
 - ?：確認できなかった
@@ -58,7 +58,8 @@ lang: ja
 | Hovland法：Hovland (1977) | ? | ? | ? | ? | ? | ? | カラム間力を無視し，底面垂直力を重さの成分とする（二次文献） | 要旨，二次文献 |
 | 3次元のSpencer法：Chen and Chameau (1983) | (✓) | (S)＊ | (✓) | (S)＊ | (✓) | (S)＊ | 中央断面に射影した $F_x$ と $F_z$，底面の中央まわりの $M_y$ | 要旨，前身の全文 |
 | 3次元の簡便分割法：Ugai et al. (1986) | ✗ | S＊ | ✗ | S＊ | ✓ | S＊ | 底面に垂直な方向の力 | 全文 |
-| 3次元の簡易Bishop法：Hungr (1987)，Hungr et al. (1989) | (✗) | (✗) | (✓)※ | (✗) | (✓) | (✗) | 鉛直方向の力 | 要旨，二次文献 |
+| 3次元の簡易Bishop法：Hungr (1987) | ✗ | ✗ | ✓※ | ✗＊ | ✓‡ | ✗＊ | 鉛直方向の力 | 全文 |
+| 3次元の簡易Bishop法：Hungr et al. (1989) | (✗) | (✗) | (✓)※ | (✗) | (✓) | (✗) | 鉛直方向の力 | 要旨，二次文献 |
 | 3次元の簡易Janbu法：Ugai (1987) | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ | 1方向の力 | 全文 |
 | 3次元の簡易Bishop法：Ugai and Hosobori (1988) | ✗ | ✗ | ✓ | ✗ | ✓ | ✗ | 1方向の力 | 全文 |
 | 3次元の簡易Janbu法：Ugai and Hosobori (1988) | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ | 1方向の力 | 全文 |
@@ -72,6 +73,8 @@ lang: ja
 ※ 各カラムの鉛直方向の力のつり合いの和をとると，成り立つ．
 
 † 論文は式として示していない．各カラムの式と，土塊全体の $\sum F_x$ から導出できる（[3.7節](#equilibrium-section-3-7)）．
+
+‡ 底面から回転軸までの距離が，どのカラムでも等しいときに成り立つ（[3.4節](#equilibrium-section-3-4)）．
 
 カラム法で2次元の手法を拡張したものではない手法や，比較するために調査した手法を，次の表にまとめる．
 
@@ -99,7 +102,7 @@ lang: ja
 
 ### 3.1 Hovland (1977)：Hovland法
 
-原論文は読めなかった．次のことは，Chen (1981)，Ugai et al. (1986)，Ugai (1987)，Ugai and Hosobori (1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
+原論文は読めなかった．次のことは，Chen (1981)，Ugai et al. (1986)，Ugai (1987)，Hungr (1987)，Ugai and Hosobori (1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
 
 - カラム間力をすべて無視し，各カラムの重さの成分から，底面にはたらく垂直力とせん断力を求める
 - {term}`安全率`は，すべり面全体の抵抗の和と，滑動の和の比とする
@@ -109,6 +112,7 @@ lang: ja
 - Chen (1981), pp. 31–32：“defining the factor of safety as the ratio of the total available resistance along a failure surface to the total mobilized stress along it. In order to simplify the analysis, the ordinary method of slices was used. Thus the inter-column forces can be ignored and both normal and shear stresses on the base of each column are obtained simply as the component of the weight of the column.”
 - Ugai et al. (1986), p. 268：「各柱体の力のつり合いよりすべり面上の垂直力ΔNとせん断力ΔT（x軸に平行と仮定）を求め，土塊全体のモーメントのつり合いより安全率を決定するというものである．」「このような仮定のもとではy軸方向の力のつり合いが成り立たないからである．」
 - Ugai (1987), p. 14：「Hovlandの方法はすべり土塊全体のつり合い条件（力のつり合い，モーメントのつり合い）を何も満たしていないため，計算結果の信頼性に疑問が生じる．」
+- Hungr (1987), p. 113：“Hovland (1977) developed a limiting equilibrium stability algorithm for an arbitrary three-dimensional curved sliding surface, assuming zero stresses on all the vertical intercolumn surfaces. This corresponds to the ordinary method of slices in two dimensions (Bishop, 1955).”
 - Ugai and Hosobori (1989), p. 183：「Hovland法は簡便であるが土塊全体のつり合いが全く満たされない」
 :::
 
@@ -169,17 +173,23 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 ### 3.4 Hungr (1987)，Hungr et al. (1989)：3次元の簡易Bishop法
 
-どちらの論文も，全文は読めなかった．次のことは，要旨と，Kalatehjari and Ali (2013)，Read (2021)，Zheng (2007)の紹介による．
+Hungr (1987)の座標は，$y$ がすべり方向，$x$ が回転軸の方向（横方向），$z$ が鉛直である．つまり，このページの $x$ と $y$ が入れ替わっている．Hungr et al. (1989)は全文を読めなかったので，この論文についての記述は，要旨と二次文献による．
 
-- **対象**：Hungr (1987)は，対称な問題で，中央断面が円の回転体の面を扱う．Hungr et al. (1989)は，回転しない面や非対称な面にも適用している
-- **カラム間力**：2次元の簡易Bishop法と同じく，カラム間のせん断力の鉛直成分を無視する．カラム間の垂直力と水平なせん断力は無視しない
-- **つり合い**：各カラムの鉛直方向の力のつり合いと，回転軸まわりの土塊全体のモーメントのつり合いから，安全率を求める．すべり方向の水平な力のつり合いは満たさない
+- **対象**：Hungr (1987)は，1本の回転軸をもつ回転体の面を扱う．比較の例は，中央の鉛直面に対して対称な土塊である．非対称なくさびも，半径の大きな回転体で近似して解いている．Hungr et al. (1989)は，回転しない面や非対称な面にも適用している
+- **カラム間力**：2次元の簡易Bishop法の仮定をそのまま使い，カラムの側面にはたらくせん断力の鉛直成分を無視する．カラム間の垂直力と水平なせん断力は無視しない．これらは式に現れないので，大きさも作用点も決定しなくてよい
+- **未知量**：各カラムの底面垂直力 $N$ と，安全率 $F$
+- **つり合い**：各カラムの鉛直方向の力のつり合いと，回転軸まわりの土塊全体のモーメントのつり合いから，安全率を求める．Hungrは，水平な2方向の力のつり合いを，2次元と同じく考慮しないと述べている
+- **モーメントの式**：論文の式 (6) は，底面から回転軸までの距離を含まない．この式が回転軸まわりのモーメントのつり合いと一致するのは，どのカラムの底面も回転軸から等しい距離にあるとき，つまり円柱の面のときである．一般の回転体の面では，一致するとは限らない
+- **論文の言い方**：3次元への拡張は，新しい仮定を加えず，元の簡易Bishop法と物理的に完全に対応すると述べている．厳密な方法とは述べていない
 - **Hungr et al. (1989)**：回転体で対称なすべり面では，ほかの方法とよく合う．一方，回転しない面や非対称な面では，安全率が小さめに出る
 
 :::{dropdown} 原文の引用
 - Hungr et al. (1989)の要旨：“Very good correspondence is found in cases of rotational and symmetric sliding surfaces, such as ellipsoids. The Bishop method tends to be conservative when applied to nonrotational and asymmetric surfaces because it neglects internal strength.”
-- Kalatehjari and Ali (2013), p. 125：“In this symmetrical problem, a rotational surface with circular central cross section was assumed as the failure surface. Following the assumption of Bishop, Hungr neglected the vertical Inter-column shear forces on the sides of columns. This method considered vertical force equilibriums of all columns as well as overall moment equilibrium of sliding mass about the axis of rotation to establish the equation of FOS.”
-- Read (2021)：“Hungr's analysis neglects vertical intercolumn shear but not the intercolumn normal forces and horizontal shear forces”
+- Hungr (1987), p. 113：“its extension into three dimensions involves no additional assumptions and is fully physically analogous to Bishop's original simplified method.”
+- Hungr (1987), p. 114：“(a) vertical shear forces acting on both the longitudinal and the lateral vertical faces of each column can be neglected in the equilibrium equations (b) the vertical force equilibrium equation of each column and the summary moment equilibrium equation of the entire assemblage of columns are sufficient conditions to determine all the unknown forces. It is implicit in the second assumption that both the lateral and the longitudinal horizontal force equilibrium conditions are neglected, as they are in the two-dimensional model.”
+- Hungr (1987), p. 115：“The normal intercolumn forces P and horizontal shear forces T are not neglected in the analysis, although they do not enter the equations and neither their magnitudes nor the position of their points of application need be known.”
+- Hungr (1987), p. 115の式 (6)：$\sum_{i=1}^{j}(N-uA)\dfrac{\tan\phi}{F}+\dfrac{cA}{F}=\sum_{i=1}^{j}W\sin\alpha_y$
+- Hungr (1987), p. 116：“Since the present version of CLARA-3 cannot accept other than rotational geometry, the wedge geometry was approximated by a rotational body with a very large radius and a V-shaped cross-section. Both symmetrical and asymmetrical fully drained wedges have been analysed”
 - Zheng (2007), p. 1530：「有些方法，如 Hungr 法等，甚至连 3 个力平衡条件都未满足，其计算结果可能与坐标轴的选取有关。」
 :::
 
@@ -368,7 +378,6 @@ Slide3の理論資料とRead (2021)によれば，Cheng and Yip (2007)は，$\su
 |---|---|---|
 | Hovland (1977) | 要旨，二次文献 | 有料で，公開されている版がない |
 | Chen and Chameau (1983) | 要旨．前身のChen (1981)は全文 | 有料で，公開されている版がない |
-| Hungr (1987) | 二次文献 | 有料で，要旨も表示されない |
 | Hungr et al. (1989) | 要旨，二次文献 | 有料で，公開されている版がない |
 | Lam and Fredlund (1993)と，その討議と回答 | 要旨，二次文献 | 有料で，公開されている版がない |
 | Chen et al. (2003) | 要旨．前身のChen et al. (2001)は全文 | 有料で，公開されている版がない |
