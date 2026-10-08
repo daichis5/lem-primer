@@ -31,10 +31,10 @@ lang: ja
 
 確認した資料は，次の4種類に分類している．DOIは，出版社かCrossrefの書誌情報で照合した．
 
-- 全文：原論文の全文を読んだ
-- 前身の全文：原論文は読めなかったが，同じ著者が同じ手法を発表した，それより前の報告書や論文の全文を読んだ
-- 要旨：原論文の要旨だけを読んだ
-- 二次文献：その手法を紹介した別の論文や資料だけを読んだ
+- 全文：原論文の全文で確認した
+- 前身の全文：原論文の代わりに，同じ著者が同じ手法を発表した，それより前の報告書や論文の全文で確認した
+- 要旨：原論文の要旨だけで確認した
+- 二次文献：その手法を紹介した別の論文や資料だけで確認した
 
 ---
 
@@ -44,7 +44,7 @@ lang: ja
 
 表の記号の意味は，次のとおりである．
 
-- ✓：土塊全体で，対称性に頼らずに成り立つ．多くは式として解く．※と†は，ほかの式から導出できるもの
+- ✓：土塊全体で，対称性に頼らずに成り立つ．多くは式として解く．※と†は，ほかの式から導出できるもの．‡は，条件つきで成り立つもの
 - S：対称な土塊だけを扱う手法で，対称性によって成り立つ．式としては解かない
 - ✗：式として扱わない．対称な土塊では対称性で成り立つこともあるが，一般には成り立たない
 - ?：確認できなかった
@@ -58,7 +58,8 @@ lang: ja
 | Hovland法：Hovland (1977) | ? | ? | ? | ? | ? | ? | カラム間力を無視し，底面垂直力を重さの成分とする（二次文献） | 要旨，二次文献 |
 | 3次元のSpencer法：Chen and Chameau (1983) | (✓) | (S)＊ | (✓) | (S)＊ | (✓) | (S)＊ | 中央断面に射影した $F_x$ と $F_z$，底面の中央まわりの $M_y$ | 要旨，前身の全文 |
 | 3次元の簡便分割法：Ugai et al. (1986) | ✗ | S＊ | ✗ | S＊ | ✓ | S＊ | 底面に垂直な方向の力 | 全文 |
-| 3次元の簡易Bishop法：Hungr (1987)，Hungr et al. (1989) | (✗) | (✗) | (✓)※ | (✗) | (✓) | (✗) | 鉛直方向の力 | 要旨，二次文献 |
+| 3次元の簡易Bishop法：Hungr (1987) | ✗ | ✗ | ✓※ | ✗＊ | ✓‡ | ✗＊ | 鉛直方向の力 | 全文 |
+| 3次元の簡易Bishop法：Hungr et al. (1989) | (✗) | (✗) | (✓)※ | (✗) | (✓) | (✗) | 鉛直方向の力 | 要旨，二次文献 |
 | 3次元の簡易Janbu法：Ugai (1987) | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ | 1方向の力 | 全文 |
 | 3次元の簡易Bishop法：Ugai and Hosobori (1988) | ✗ | ✗ | ✓ | ✗ | ✓ | ✗ | 1方向の力 | 全文 |
 | 3次元の簡易Janbu法：Ugai and Hosobori (1988) | ✓ | ✗ | ✓ | ✗ | ✗ | ✗ | 1方向の力 | 全文 |
@@ -72,6 +73,8 @@ lang: ja
 ※ 各カラムの鉛直方向の力のつり合いの和をとると，成り立つ．
 
 † 論文は式として示していない．各カラムの式と，土塊全体の $\sum F_x$ から導出できる（[3.7節](#equilibrium-section-3-7)）．
+
+‡ 底面から回転軸までの距離が，どのカラムでも等しいときに成り立つ（[3.4節](#equilibrium-section-3-4)）．
 
 カラム法で2次元の手法を拡張したものではない手法や，比較するために調査した手法を，次の表にまとめる．
 
@@ -99,7 +102,7 @@ lang: ja
 
 ### 3.1 Hovland (1977)：Hovland法
 
-原論文は読めなかった．次のことは，Chen (1981)，Ugai et al. (1986)，Ugai (1987)，Ugai and Hosobori (1989)の紹介による．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
+原論文は読めなかったので，Chen (1981)，Ugai et al. (1986)，Ugai (1987)，Hungr (1987)，Ugai and Hosobori (1989)の紹介に基づいて記述する．元の座標は，$Y$ がすべり方向，$X$ が横方向，$Z$ が鉛直である．
 
 - カラム間力をすべて無視し，各カラムの重さの成分から，底面にはたらく垂直力とせん断力を求める
 - {term}`安全率`は，すべり面全体の抵抗の和と，滑動の和の比とする
@@ -109,6 +112,7 @@ lang: ja
 - Chen (1981), pp. 31–32：“defining the factor of safety as the ratio of the total available resistance along a failure surface to the total mobilized stress along it. In order to simplify the analysis, the ordinary method of slices was used. Thus the inter-column forces can be ignored and both normal and shear stresses on the base of each column are obtained simply as the component of the weight of the column.”
 - Ugai et al. (1986), p. 268：「各柱体の力のつり合いよりすべり面上の垂直力ΔNとせん断力ΔT（x軸に平行と仮定）を求め，土塊全体のモーメントのつり合いより安全率を決定するというものである．」「このような仮定のもとではy軸方向の力のつり合いが成り立たないからである．」
 - Ugai (1987), p. 14：「Hovlandの方法はすべり土塊全体のつり合い条件（力のつり合い，モーメントのつり合い）を何も満たしていないため，計算結果の信頼性に疑問が生じる．」
+- Hungr (1987), p. 113：“Hovland (1977) developed a limiting equilibrium stability algorithm for an arbitrary three-dimensional curved sliding surface, assuming zero stresses on all the vertical intercolumn surfaces. This corresponds to the ordinary method of slices in two dimensions (Bishop, 1955).”
 - Ugai and Hosobori (1989), p. 183：「Hovland法は簡便であるが土塊全体のつり合いが全く満たされない」
 :::
 
@@ -140,7 +144,7 @@ lang: ja
 
 ### 3.3 Ugaiらの一連の研究（1986〜1989）
 
-Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通の取り方と同じである．Ugaiらは，2次元の手法を1つずつ3次元に拡張した．どの手法も，各カラムでは1つの方向の力のつり合いだけをとり，底面垂直力を求める．そのうえで，土塊全体では，簡便分割法は1つ，簡易Bishop法と簡易Janbu法は2つ，Spencer法は3つのつり合い式を解く．
+座標は，共通の取り方と同じである．Ugaiらは，2次元の手法を1つずつ3次元に拡張した．どの手法も，各カラムでは1つの方向の力のつり合いだけをとり，底面垂直力を求める．そのうえで，土塊全体では，簡便分割法は1つ，簡易Bishop法と簡易Janbu法は2つ，Spencer法は3つのつり合い式を解く．
 
 | 文献 | 手法 | すべり面 | 未知量 | 土塊全体で解く式 |
 |---|---|---|---|---|
@@ -169,17 +173,23 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 ### 3.4 Hungr (1987)，Hungr et al. (1989)：3次元の簡易Bishop法
 
-どちらの論文も，全文は読めなかった．次のことは，要旨と，Kalatehjari and Ali (2013)，Read (2021)，Zheng (2007)の紹介による．
+Hungr (1987)の座標は，$y$ がすべり方向，$x$ が回転軸の方向（横方向），$z$ が鉛直である．つまり，このページの $x$ と $y$ が入れ替わっている．Hungr et al. (1989)は全文を読めなかったので，この論文についての記述は，要旨と二次文献による．
 
-- **対象**：Hungr (1987)は，対称な問題で，中央断面が円の回転体の面を扱う．Hungr et al. (1989)は，回転しない面や非対称な面にも適用している
-- **カラム間力**：2次元の簡易Bishop法と同じく，カラム間のせん断力の鉛直成分を無視する．カラム間の垂直力と水平なせん断力は無視しない
-- **つり合い**：各カラムの鉛直方向の力のつり合いと，回転軸まわりの土塊全体のモーメントのつり合いから，安全率を求める．すべり方向の水平な力のつり合いは満たさない
+- **対象**：Hungr (1987)は，1本の回転軸をもつ回転体の面を扱う．比較の例は，中央の鉛直面に対して対称な土塊である．非対称なくさびも，半径の大きな回転体で近似して解いている．Hungr et al. (1989)は，回転しない面や非対称な面にも適用している
+- **カラム間力**：2次元の簡易Bishop法の仮定をそのまま使い，カラムの側面にはたらくせん断力の鉛直成分を無視する．カラム間の垂直力と水平なせん断力は無視しない．これらは式に現れないので，大きさも作用点も決定しなくてよい
+- **未知量**：各カラムの底面垂直力 $N$ と，安全率 $F$
+- **つり合い**：各カラムの鉛直方向の力のつり合いと，回転軸まわりの土塊全体のモーメントのつり合いから，安全率を求める．Hungrは，水平な2方向の力のつり合いを，2次元と同じく考慮しないと述べている
+- **モーメントの式**：論文の式 (6) は，底面から回転軸までの距離を含まない．この式が回転軸まわりのモーメントのつり合いと一致するのは，どのカラムの底面も回転軸から等しい距離にあるとき，つまり円柱の面のときである．一般の回転体の面では，一致するとは限らない
+- **論文の言い方**：3次元への拡張は，新しい仮定を加えず，元の簡易Bishop法と物理的に完全に対応すると述べている．厳密な方法とは述べていない
 - **Hungr et al. (1989)**：回転体で対称なすべり面では，ほかの方法とよく合う．一方，回転しない面や非対称な面では，安全率が小さめに出る
 
 :::{dropdown} 原文の引用
 - Hungr et al. (1989)の要旨：“Very good correspondence is found in cases of rotational and symmetric sliding surfaces, such as ellipsoids. The Bishop method tends to be conservative when applied to nonrotational and asymmetric surfaces because it neglects internal strength.”
-- Kalatehjari and Ali (2013), p. 125：“In this symmetrical problem, a rotational surface with circular central cross section was assumed as the failure surface. Following the assumption of Bishop, Hungr neglected the vertical Inter-column shear forces on the sides of columns. This method considered vertical force equilibriums of all columns as well as overall moment equilibrium of sliding mass about the axis of rotation to establish the equation of FOS.”
-- Read (2021)：“Hungr's analysis neglects vertical intercolumn shear but not the intercolumn normal forces and horizontal shear forces”
+- Hungr (1987), p. 113：“its extension into three dimensions involves no additional assumptions and is fully physically analogous to Bishop's original simplified method.”
+- Hungr (1987), p. 114：“(a) vertical shear forces acting on both the longitudinal and the lateral vertical faces of each column can be neglected in the equilibrium equations (b) the vertical force equilibrium equation of each column and the summary moment equilibrium equation of the entire assemblage of columns are sufficient conditions to determine all the unknown forces. It is implicit in the second assumption that both the lateral and the longitudinal horizontal force equilibrium conditions are neglected, as they are in the two-dimensional model.”
+- Hungr (1987), p. 115：“The normal intercolumn forces P and horizontal shear forces T are not neglected in the analysis, although they do not enter the equations and neither their magnitudes nor the position of their points of application need be known.”
+- Hungr (1987), p. 115の式 (6)：$\sum_{i=1}^{j}(N-uA)\dfrac{\tan\phi}{F}+\dfrac{cA}{F}=\sum_{i=1}^{j}W\sin\alpha_y$
+- Hungr (1987), p. 116：“Since the present version of CLARA-3 cannot accept other than rotational geometry, the wedge geometry was approximated by a rotational body with a very large radius and a V-shaped cross-section. Both symmetrical and asymmetrical fully drained wedges have been analysed”
 - Zheng (2007), p. 1530：「有些方法，如 Hungr 法等，甚至连 3 个力平衡条件都未满足，其计算结果可能与坐标轴的选取有关。」
 :::
 
@@ -187,7 +197,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 ### 3.5 Lam and Fredlund (1993)：3次元のGLE
 
-本文も，Hungr (1994)の討議とLam and Fredlund (1994)の回答も，公開されている全文が見つからなかった．次のことは，要旨と二次文献による．
+本文も，Hungr (1994)の討議とLam and Fredlund (1994)の回答も，公開されている全文が見つからなかった．そのため，要旨と二次文献に基づいて記述する．
 
 - **対象**：要旨の1つの版は，すべり方向を前もって仮定すると述べている．Kalatehjari and Ali (2013)は，すべり方向が1つの回転体の面で，対称な問題を扱うとする
 - **カラム間力**：Morgenstern–Price法と同じ形の関数で，カラム間力の合力の向きを表す．Kalatehjari and Ali (2013)は，垂直力とせん断力の関係が5つあり，そのうち3つを影響が小さいとして無視したとする．Chen et al. (2001)は，係数 $\lambda_3$，$\lambda_4$ が残り，$\lambda_3$ は安全率が最小になる値を選択したとする．各関係が，どの面のどの成分の比かは，確認できなかった
@@ -207,7 +217,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 ### 3.6 Chen et al. (2003)：Spencer型の方法
 
-2003年の論文は，要旨だけを読んだ．同じ著者が同じ手法を中国語で発表したChen et al. (2001)の全文で，中身を確認した．仮定と満たす式が要旨と一致し，例題の安全率2.187も一致する．元の座標は，$x$ がすべり方向と逆向き，$y$ が鉛直上向き，$z$ が横方向である．
+2003年の論文（要旨のみの確認）については，同じ著者が同じ手法を中国語で発表したChen et al. (2001)の全文に基づいて記述する．仮定と満たす式が要旨と一致し，例題の安全率2.187も一致する．元の座標は，$x$ がすべり方向と逆向き，$y$ が鉛直上向き，$z$ が横方向である．
 
 - **対象**：非対称な土塊も扱い，すべり面の形を仮定しない．主なすべり方向は与える
 - **カラム間力**：すべり方向に垂直な面の力は，鉛直な $xz$ 面に平行で，その傾き $\beta$ が全カラムで一定とする．2次元のSpencer法にあたる仮定である．横方向の面の力は，$y$ 方向の垂直力だけで，せん断力はない．底面のせん断力の向き $\rho$ には，分布の形を仮定する
@@ -227,7 +237,7 @@ Ugaiらの論文は，どれもJ-STAGEで全文を読める．座標は，共通
 
 ### 3.7 Jiang and Yamagami (2004)：3次元のSpencer法
 
-J-STAGEで全文を読める．座標は，共通の取り方と同じである．
+座標は，共通の取り方と同じである．
 
 - **対象**：{term}`任意形状のすべり面 <一般形状のすべり面>`を，動的計画法で探す．土塊全体が1つの方向（$x$）にすべると仮定する．計算例は対称な円錐状の盛土である
 - **カラム間力**：Ugai and Hosobori (1989)と同じく，カラムの全側面の合力 $Q$ に仮定を置く．$Q$ の $xz$ 面内の成分は，$x$ 軸と未知の角 $\delta$ をなし，この角は全カラムで共通である．$yz$ 面内の成分は，$y$ 軸に平行とする．Ugai and Hosobori (1989)は，この成分を $\tan^{-1}(\eta\tan\alpha_{yz})$ だけ傾けていた．論文は，この違いを説明していない
@@ -251,7 +261,7 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 
 ### 3.8 Cheng and Yip (2007)：非対称な斜面への拡張
 
-本文は読めなかった．次のことは，要旨と，Cheng and Yip (2007)の式を転載したSlide3の理論資料（Rocscience），本文を逐語で引用したRead (2021)による．
+本文は読めなかったので，要旨と，Cheng and Yip (2007)の式を転載したSlide3の理論資料（Rocscience），本文を逐語で引用したRead (2021)に基づいて記述する．
 
 - **対象**：非対称な土塊を，全体のまま解く．すべり方向は全カラムで1つで，未知量として解く
 - **カラム間力**：各面に，垂直力，鉛直なせん断力，水平なせん断力を置く．つまり，横方向の面のせん断力も考える．鉛直なせん断力は，垂直力に係数 $\lambda_x$，$\lambda_y$ を掛けた形である．一方，2方向の水平なせん断力は，弾性体の共役せん断応力にならって関係づける．この関係は，カラムごとの鉛直な軸まわりのモーメントのつり合いを，小さなカラムで近似したものにあたる
@@ -272,11 +282,11 @@ J-STAGEで全文を読める．座標は，共通の取り方と同じである�
 
 Zhu and Qian (2007)とZheng (2007)は，カラム間力の向きを仮定する代わりに，すべり面の{term}`垂直応力`の分布を仮定する．そのうえで，土塊全体を1つの物体として，6つのつり合い式を解く．Zheng (2009)も，Jiang and Zhou (2018)によれば同じ考え方である．Zheng (2012)は，要旨によれば，土塊の{term}`内力`にMorgenstern–Price法の仮定を置く．その詳しい形は，本文で確認できなかった．
 
-- **Zhu and Qian (2007)**：全文を読んだ．積分を計算するときは土塊をカラムに分割するが，つり合いは土塊全体の式で立てる．6つの式を解く厳密解と，$\sum M_z$ だけを省いた準厳密解を示す．論文は，6つの式を満たす3次元の解を初めて得たと述べている
-- **Zheng (2007)**：全文を読んだ．安全率と，垂直応力の分布の5つのパラメータを，6つの式から求める．全体すべり方向は与える．カラムには分割しない
-- **Zheng (2009)**：要旨を読んだ．同じ考え方を，一般化固有値問題として解く．カラムには分割しない
-- **Zheng (2012)**：要旨を読んだ．すべり土塊の内力にMorgenstern–Price法の仮定を置き，2次元の厳密な分割法の3次元版として示す．体積積分を境界積分に変えるので，カラムに分割しない．6つの式を満たすことは，Jiang and Zhou (2018)の紹介による
-- **Jiang and Zhou (2018)**：著者稿の全文を読んだ．カラムに分割するが，つり合いは土塊全体の6つの式で立て，全体すべり方向も未知量として解く
+- **Zhu and Qian (2007)**：積分を計算するときは土塊をカラムに分割するが，つり合いは土塊全体の式で立てる．6つの式を解く厳密解と，$\sum M_z$ だけを省いた準厳密解を示す．論文は，6つの式を満たす3次元の解を初めて得たと述べている
+- **Zheng (2007)**：安全率と，垂直応力の分布の5つのパラメータを，6つの式から求める．全体すべり方向は与える．カラムには分割しない
+- **Zheng (2009)**（要旨のみの確認）：同じ考え方を，一般化固有値問題として解く．カラムには分割しない
+- **Zheng (2012)**（要旨のみの確認）：すべり土塊の内力にMorgenstern–Price法の仮定を置き，2次元の厳密な分割法の3次元版として示す．体積積分を境界積分に変えるので，カラムに分割しない．6つの式を満たすことは，Jiang and Zhou (2018)の紹介による
+- **Jiang and Zhou (2018)**：カラムに分割するが，つり合いは土塊全体の6つの式で立て，全体すべり方向も未知量として解く
 
 :::{dropdown} 原文の引用
 - Zhu and Qian (2007), p. 1514：「严格的三维极限平衡法需满足 6 个平衡方程，即 3个方向力平衡条件与绕 3个方向轴的力矩平衡。但大多数条柱法只能满足 3 个平衡条件，严格来说这些方法只适合对称边坡」
@@ -313,7 +323,7 @@ Zhu and Qian (2007)とZheng (2007)は，カラム間力の向きを仮定する�
 - Ugai and Hosobori (1988, 1989)とJiang and Yamagami (2004)の定式化は，対称性を前提にしない．そのため，非対称な斜面では，$\sum F_y$，$\sum M_x$，$\sum M_z$ が成り立つとは限らない
 - Chen et al. (2003)は，3方向の力と $\sum M_y$ の4つを満たす
 
-Zheng (2007)は，$\sum M_z$ だけを省いた5つの式を満たす3次元のSpencer法として，Zhang et al. (2005)を挙げている．この論文は読んでいない．
+Zheng (2007)は，$\sum M_z$ だけを省いた5つの式を満たす3次元のSpencer法として，Zhang et al. (2005)を挙げている．この論文は確認していない．
 
 (equilibrium-section-4-2)=
 
@@ -364,11 +374,10 @@ Slide3の理論資料とRead (2021)によれば，Cheng and Yip (2007)は，$\su
 
 ## 6. 確認できなかった文献
 
-| 文献 | 読めたもの | 理由 |
+| 文献 | 確認した資料 | 理由 |
 |---|---|---|
 | Hovland (1977) | 要旨，二次文献 | 有料で，公開されている版がない |
 | Chen and Chameau (1983) | 要旨．前身のChen (1981)は全文 | 有料で，公開されている版がない |
-| Hungr (1987) | 二次文献 | 有料で，要旨も表示されない |
 | Hungr et al. (1989) | 要旨，二次文献 | 有料で，公開されている版がない |
 | Lam and Fredlund (1993)と，その討議と回答 | 要旨，二次文献 | 有料で，公開されている版がない |
 | Chen et al. (2003) | 要旨．前身のChen et al. (2001)は全文 | 有料で，公開されている版がない |

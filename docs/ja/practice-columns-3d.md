@@ -233,7 +233,9 @@ $$ (eq-columns-bishop-normal)
 :pyobject: vertical_normal_force
 ```
 
-この $N_i$ を式 {eq}`eq-columns-moment` に代入すると，右辺にも $F_s$ が現れる．そのため，実践2の簡易Bishop法と同じく，反復して求める．`bishop(col, center, axis)` を実装する．
+この $N_i$ を式 {eq}`eq-columns-moment` に代入すると，右辺にも $F_s$ が現れる．そのため，実践2の簡易Bishop法と同じく，反復して求める．
+
+Hungr (1987)のモーメントの式（論文の式 (6)）は，底面から回転軸までの距離を含まない．そのため，この式が式 {eq}`eq-columns-moment` と一致するのは，円柱のときである．この実践では，球や楕円体でも回転軸まわりのモーメントがつり合うように，モーメントの腕を残した式 {eq}`eq-columns-moment` を使う．`bishop(col, center, axis)` を実装する．
 
 :::{dropdown} 実装の例
 ```{literalinclude} examples/columns.py
