@@ -106,6 +106,23 @@ def test_practice_2():
     )
     assert np.sum(s.u * s.l) / np.sum(s.W) == pytest.approx(0.28, abs=5e-3)
 
+    # 問9：右端のスライスの，式 eq-slices-normal の分子の2つの項と N - U
+    for level, expected_fs, expected in (
+        (None, 2.059, (4.36, 3.86, 0.56)),
+        (4.0, 1.544, (4.40, 5.26, -0.91)),
+    ):
+        s = slices.make_slices(slices.Circle(), 50, water_level=level)
+        fs, theta = slices.spencer(s, (6.0, 18.0))
+        p = np.array([-np.sin(theta), np.cos(theta)])
+        N = slices.base_forces(s, fs, theta)[0][-1]
+        assert s.u[-1] == 0.0
+        assert fs == pytest.approx(expected_fs, abs=1e-3)
+        assert (
+            s.W[-1] * p[1],
+            s.c[-1] * s.l[-1] * (-s.m[-1] @ p) / fs,
+            N - s.u[-1] * s.l[-1],
+        ) == pytest.approx(expected, abs=0.005)
+
 
 def test_practice_3():
     assert 0.25**2 / math.cos(math.radians(30.0)) == pytest.approx(0.0722, abs=1e-4)
